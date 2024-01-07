@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Using Sounds | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Using Sounds | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/audio/sound.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>A <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sound.md"> Sound </a> resource is created for every imported audio file. Sounds can be attached to any number of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundcue.md">SoundCues</a>, allowing the user to play the same sound multiple ways while only storing the file once.</p>
+<h1 id="using-sounds">Using Sounds</h1>
+<h2 id="supported-audio-formats">Supported Audio Formats</h2>
+<p>The Zilch Engine supports audio files in both PCM WAV format (16 or 24 bit) and Ogg format, with up to eight audio channels, at almost any sample rate. (Note that audio output is usually at a sample rate of 44100 Hz or 48000 Hz, depending on the computer's output device, so it is best to use audio files with similar sample rates.)</p>
+<h2 id="importing-audio-files">Importing Audio Files</h2>
+<p>The easiest way to import audio files is to drag them directly onto a level. The Add window can also be used to choose the audio file. Both of these methods will then open a window with options for creating a SoundCue that will contain this Sound resource.</p>
+<p>Once files are imported, they will be resampled to 48000 Hz and stored in a custom format using the Opus codec. Opus is a high-quality, low-latency compression format which can be quickly decoded at runtime. Using this format has little to no effect on what the user hears and significantly reduces the size of the project's audio.</p>
+<h1 id="soundbuilder-options">SoundBuilder Options</h1>
+<p>When a Sound resource is selected, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundbuilder.md"> SoundBuilder </a> properties will be shown in the Property window.</p>
+<p>NOTE: When changing these properties for an existing resource the user must click on the Reload button before the settings will take effect.</p>
+<h2 id="streaming-files">Streaming Files</h2>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/85541.png" alt="SoundBuilder"></p>
+<p>When the Streamed checkBox property is un-checked the entire audio file is loaded into memory as soon as the resource is loaded. This simplifies the audio decoding, as all the data is stored and only decoded once. If Streamed checkBox is checked only a small piece of the file will be held in memory at any one time; these pieces will be repeatedly read from the disk as needed to play the file. This means that audio decoding will be happening continuously and repeatedly. Streaming files can negatively affect performance in some cases since they are repeatedly reading from disk while playing.</p>
+<p>In general the only audio that should be streamed are long files, such as background music, and only when worried about memory usage.</p>
+<p>NOTE: Streaming files can't be played multiple times simultaneously, can't have their playback position set directly, and can't use the LoopTailLength  property on <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundcue.md#soundentries">SoundEntries</a>.</p>
+<h2 id="normalizing">Normalizing</h2>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/85543.png" alt="SoundBuilder2"></p>
+<p>If the Normalize checkBox property is checked the MaxVolume  property will be shown and the volume of the audio file will be adjusted when it is processed and encoded. The volume of the entire audio file will be changed equally so that the highest volume peak will match the MaxVolume  property value. This can be used to either raise or lower the volume of an audio file.</p>
+<hr>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundcue.md">SoundCue </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundcue.md#soundentries">SoundEntry </a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sound.md"> Sound </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundbuilder.md"> SoundBuilder </a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/audio/sound.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

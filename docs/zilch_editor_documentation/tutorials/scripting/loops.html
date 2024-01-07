@@ -1,0 +1,699 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Learning Objectives | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Learning Objectives | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/scripting/loops.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>This lesson covers loops in Nada scripting.</p>
+<h1 id="learning-objectives">Learning Objectives</h1>
+<ul>
+<li>When and how to write loops</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">while</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">for</a> loops</li>
+<li>Looping keywords: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">continue</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">break</a></li>
+<li>Infinite loops</li>
+<li>Nested loops</li>
+</ul>
+<h1 id="level-setup">Level Setup</h1>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li>Create a NadaScript resource using the Component template template and name it <code>LoopExamples</code></li>
+<li>In the <code>LoopExamples</code> NadaScript</li>
+<li>Replace the script's contents with the following:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">class LoopExamples : NadaComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    
+  }
+}
+</code></pre>
+<ul>
+<li>In the <code>Objects Window</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : LevelSettings object</li>
+<li>In the <code>Properties Window</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : LoopExamples button</li>
+</ul>
+<h1 id="getting-started">Getting Started</h1>
+<p>Recall the <code>Square</code> function from the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/functions.md"> Functions Tutorial</a>. It takes a Real parameter, multiplies it by itself, and returns the result:</p>
+<pre><code class="lang-lang=csharp,">function Square(number : Real) : Real
+{
+  return number * number;
+}
+</code></pre>
+<p>Thus, the returned result of <code>Square(x)</code> is equal to <code>x</code> squared. But what about <code>x</code> cubed? Here's another function:</p>
+<pre><code class="lang-lang=csharp,">function Cube(number : Real) : Real
+{
+  return number * number * number;
+}
+</code></pre>
+<p>The result of <code>Cube(x)</code> equals <code>x</code> cubed. What about <code>x</code> to the fourth power, or the fifth, or the fifteenth? It would be impossible to write a function for every power to which a number could be raised. It is more practical to write a function that raises <code>x</code> to the <code>y</code> power, where <code>y</code> is another function parameter. This function multiplies a given <code>number</code> parameter by itself some variable number of times equal to a given <code>exponent</code> parameter. Let's begin writing an incomplete version of this function.</p>
+<ul>
+<li>In the <code>LoopExamples</code> NadaScript resource</li>
+<li>Add the following function to the <code>LoopExamples</code> class:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function IncompletePower(number : Real, exponent : Integer) : Real
+{
+  var result = 1.0;
+  var multiplications = 0;
+
+  // math goes here
+
+  return result;
+}
+</code></pre>
+<p>This function has a <code>result</code> variable that will be returned at the end, but not before repeatedly multiplying it by <code>number</code>. It uses the <code>multiplications</code> variable to keep track of how many times it has performed that multiplication.</p>
+<p>Now to fill in the math. Before each multiplication is done, if the number of multiplications is still less than the <code>exponent</code> passed into the function, then <code>result</code> gets multiplied by <code>number</code> again and again, checking each time.</p>
+<ul>
+<li>Add the following code to the <code>IncompletePower</code> function:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function IncompletePower(number : Real, exponent : Integer) : Real
+{
+  var result = 1.0;
+  var multiplications = 0;
+  
+  if (multiplications &lt; exponent)
+  {
+    result *= number;
+    ++multiplications;
+  }
+  if (multiplications &lt; exponent)
+  {
+    result *= number;
+    ++multiplications;
+  }
+  if (multiplications &lt; exponent)
+  {
+    result *= number;
+    ++multiplications;
+  }
+  if (multiplications &lt; exponent)
+  {
+    result *= number;
+    ++multiplications;
+  }
+
+  //
+  // etc......
+  //
+  
+  return result;
+}
+</code></pre>
+<p>As its name implies, this function is incomplete, but it should work in some cases. Let's try it out, and compare it to Nada's built-in exponentiation operator.</p>
+<ul>
+<li>Add the following code to the <code>Initialize</code> function:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+{
+  Console.WriteLine(&quot;IncompletePower: `this.IncompletePower(2.0, 2)`, x ^ y: `2.0 ^ 2`&quot;);
+  Console.WriteLine(&quot;IncompletePower: `this.IncompletePower(2.0, 3)`, x ^ y: `2.0 ^ 3`&quot;);
+  Console.WriteLine(&quot;IncompletePower: `this.IncompletePower(2.0, 4)`, x ^ y: `2.0 ^ 4`&quot;);
+  Console.WriteLine(&quot;IncompletePower: `this.IncompletePower(2.0, 5)`, x ^ y: `2.0 ^ 5`&quot;);
+  Console.WriteLine(&quot;IncompletePower: `this.IncompletePower(2.0, 6)`, x ^ y: `2.0 ^ 6`&quot;);
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name=&quot;Console">IncompletePower: 4, x ^ y: 4
+IncompletePower: 8, x ^ y: 8
+IncompletePower: 16, x ^ y: 16
+IncompletePower: 16, x ^ y: 32
+IncompletePower: 16, x ^ y: 64
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>The function works as intended if the desired power is small enough, but it will always return the same result for <code>exponent</code> values of 4 and above. To accommodate for larger powers, the <code>if</code>  block could be copied and pasted in additional times. That's a bad idea, though: the function would have to grow to a preposterous length for it to work with large powers. What this problem really needs is a loop.</p>
+<h1 id="what-is-a-loop">What is a Loop?</h1>
+<p>A <strong>loop</strong> is a block of code that runs multiple times. Normally, when a program runs, the computer executes each line of code in the program exactly once, in order. Code written in a loop, however, runs repeatedly, in some cases with slight variations from one iteration to the next.</p>
+<p>There are several reasons to use loops. First of all, they serve the central tenet in programming that one should avoid writing the same code multiple times whenever possible. Second, changing a single loop is easier than making the same change to several repeated blocks of code. Third, loops are more visually compact and usually result in smaller file sizes. Finally, there are some problems that are nearly impossible to solve without loops.</p>
+<p>Nada recognizes several different kinds of loops; this lesson will cover two of the most common kinds.</p>
+<h1 id="while-loops">While Loops</h1>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/89904.png" alt="image"> <em>Figure 1: the anatomy of a <code>while</code> loop</em></p>
+<p>A <strong>while loop</strong> includes a <em>loop condition</em> and a //loop body//. The loop condition is a Boolean expression (that is, an expression that evaluates to a Boolean, regardless of the types it contains), and the loop body is zero or more statements.</p>
+<p>When a <code>while</code> loop is executed...</p>
+<h1 id="the-loop-condition-is-evaluated">The <strong>loop condition</strong> is evaluated.</h1>
+<ul>
+<li>If it equals <code>true</code>...</li>
+</ul>
+<h1 id="the-loop-body-is-run">The <strong>loop body</strong> is run.</h1>
+<h1 id="then-the-loop-condition-is-checked-again">Then the <strong>loop condition</strong> is checked again.</h1>
+<ul>
+<li>If it still equals <code>true</code>, the loop body runs again, and so on.</li>
+</ul>
+<p>As long as the condition remains <code>true</code>, the body is repeatedly run.</p>
+<p>Take another look at the <code>IncompletePower</code> function. Note that the <em>if</em> block is perfectly duplicated again and again, each time incrementing a variable and then checking that variable to determine whether it should run its contents. This is exactly what a <code>while</code> loop does, so rewriting this function to use a <code>while</code> loop should be very easy.</p>
+<ul>
+<li>Add the following function to the <code>LoopExamples</code> class:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function WhileLoopPower(number : Real, exponent : Integer) : Real
+{
+  var result = 1.0;
+  var multiplications = 0;
+  
+  while (multiplications &lt; exponent)
+  {
+    result *= number;
+    ++multiplications;
+  }
+  
+  return result;
+}
+</code></pre>
+<p>Let's test this new version of the function.</p>
+<ul>
+<li>Replace the contents of the <code>Initialize</code> function with the following code:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+{
+  Console.WriteLine(&quot;WhileLoopPower: `this.WhileLoopPower(5.0, 6)`, x ^ y: `5.0 ^ 6`&quot;);
+  Console.WriteLine(&quot;WhileLoopPower: `this.WhileLoopPower(Math.Pi, 7)`, x ^ y: `Math.Pi ^ 7`&quot;);
+  Console.WriteLine(&quot;WhileLoopPower: `this.WhileLoopPower(0.1, 16)`, x ^ y: `0.1 ^ 16`&quot;);
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name=&quot;Console">WhileLoopPower: 15625, x ^ y: 15625
+WhileLoopPower: 3020.29, x ^ y: 3020.29
+WhileLoopPower: 1e-16, x ^ y: 1e-16
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> StopGame</a></li>
+</ul>
+<p>The results match. Of course, <code>WhileLoopPower</code> still has some severe limitations when compared to Nada's exponentiation operator, perhaps the largest of which being that its exponent values must be nonnegative Integers.</p>
+<h1 id="infinite-loops">Infinite Loops</h1>
+<p>Let's look again at the loop inside the <code>WhileLoopPower</code> function:</p>
+<pre><code class="lang-lang=csharp,">while (multiplications &lt; exponent)
+{
+  result *= number;
+  ++multiplications;
+}
+</code></pre>
+<p>This runs over and over again, as long as <code>multiplications</code> is less than <code>exponent</code>. <code>multiplications</code> does eventually reach <code>exponent</code>, because it gets incremented with the <code>++</code> operator every loop iteration. What would happen if that didn't occur?</p>
+<ul>
+<li>Update the <code>WhileLoopPower</code> function with the following change:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function WhileLoopPower(number : Real, exponent : Integer) : Real
+{
+  var result = 1.0;
+  var multiplications = 0;
+  
+  while (multiplications &lt; exponent)
+  {
+    result *= number;
+    //++multiplications;
+  }
+  
+  return result;
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p>The editor hangs for a few moments, and then an exception is thrown:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90198.png" alt="image"> //Figure 2: infinite loop timeout. The error message reads: //Exceeded the allowed execution time of 5 second(s). Use the <code>timeout</code> statement to increase allowed time</p>
+<p>Since the <code>++multiplications</code> statement has been commented out, the <code>while</code> loop's loop condition will always be true. Such a loop is called an <strong>infinite loop</strong>, or an <em>unconditional</em> loop. This is generally undesireable behavior.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>Infinite loops are dangerous if handled improperly. Zilch has timeout functionality to catch infinite loops, but at best, they will still throw an error and halt the game. (Other software might not be so forgiving.) Be aware that a simple mistake could lead to an infinite loop!</p>
+<p>Let's move on to another kind of loop.</p>
+<h1 id="for-loops">For Loops</h1>
+<p>A <code>while</code> loop is simple: if the loop condition is true, the loop body continues to run; when it becomes false, it stops. The loop condition is usually dependent on some variable that was introduced earlier, and the loop body typically contains code that will eventually cause the loop condition to become false, thus breaking the loop so that the flow of the program can continue.</p>
+<p>There is another kind of more specialized loop that builds some of these common elements into its syntax: the <code>for</code> loop.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/89906.png" alt="image"> <em>Figure 3: the anatomy of a <code>for</code> loop</em></p>
+<p>A <strong>for loop</strong> contains a <em>loop condition// and a //loop body// just like a <code>while</code> loop, but it also has an //initialization statement</em> and an //update statement//. When a <code>for</code> loop is run...</p>
+<h1 id="the-initialization-statement-is-executed-once-at-the-beginning">The <strong>initialization statement</strong> is executed once at the beginning.</h1>
+<ul>
+<li>The initialization statement is usually used to declare a variable, known as an //iteration index//, or just an //index//, that typically appears in the loop condition.</li>
+</ul>
+<h1 id="then-the-loop-condition-is-checked">Then the <strong>loop condition</strong> is checked.</h1>
+<ul>
+<li>As in a <code>while</code> loop, if the loop condition equals <code>true</code>...</li>
+</ul>
+<h1 id="the-loop-body-runs-next">The <strong>loop body</strong> runs next.</h1>
+<h1 id="after-the-loop-body-runs-the-update-statement-is-executed">After the loop body runs, the <strong>update statement</strong> is executed.</h1>
+<ul>
+<li>The update statement is usually used to increment the index � typically taking it one step closer to making the loop condition become <code>false</code>.</li>
+</ul>
+<h1 id="then-the-loop-condition-is-checked-again-1">Then the <strong>loop condition</strong> is checked again.</h1>
+<ul>
+<li>If it still equals <code>true</code>, the loop body executes again, and so on.</li>
+</ul>
+<p>As long as the condition remains <code>true</code>, the body is repeatedly run, and the update statement is executed at the end of each iteration.</p>
+<p>Let's write a new version of <code>WhileLoopPower</code> that uses a <code>for</code> loop instead of a <code>while</code> loop.</p>
+<ul>
+<li>Add the following function to the <code>LoopExamples</code> class:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function ForLoopPower(number : Real, exponent : Integer) : Real
+{
+  var result = 1.0;
+  
+  for (var multiplications = 0; multiplications &lt; exponent; ++multiplications)
+  {
+    result *= number;
+  }
+  
+  return result;
+}
+</code></pre>
+<p>Compared to the <code>while</code> loop from before:</p>
+<ul>
+<li>the loop condition remains unchanged</li>
+<li>the loop body remains unchanged, except...</li>
+<li>the <code>++multiplications</code> expression has moved to the update statement</li>
+<li>the declaration of the <code>multiplications</code> variable has moved to the initialization statement</li>
+</ul>
+<p>Let's test the new function with the same arguments that were supplied to the old one.</p>
+<ul>
+<li>Update the <code>Initialize</code> function with the following changes:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+{
+  Console.WriteLine(&quot;ForLoopPower: `this.ForLoopPower(5.0, 6)`, x ^ y: `5.0 ^ 6`&quot;);
+  Console.WriteLine(&quot;ForLoopPower: `this.ForLoopPower(Math.Pi, 7)`, x ^ y: `Math.Pi ^ 7`&quot;);
+  Console.WriteLine(&quot;ForLoopPower: `this.ForLoopPower(0.1, 16)`, x ^ y: `0.1 ^ 16`&quot;);
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name=&quot;Console">ForLoopPower: 15625, x ^ y: 15625
+ForLoopPower: 3020.29, x ^ y: 3020.29
+ForLoopPower: 1e-16, x ^ y: 1e-16
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>It's still the same as before. In general, <strong>any <code>for</code> loop can be rewritten as a <code>while</code> loop, and vice versa</strong>.</p>
+<p>So, what happens if a loop is written inside another loop?</p>
+<h1 id="nested-loops">Nested Loops</h1>
+<p>Let's write a function that draws boxes in the console.</p>
+<ul>
+<li>Add the following function to the <code>LoopExamples</code> class:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function DrawBoxes(count : Integer)
+{
+  for (var i = 0; i &lt; count; ++i)
+  {
+    Console.Write(&quot;[]&quot;);
+  }
+
+  Console.WriteLine();
+}
+</code></pre>
+<p><code>DrawBoxes</code> takes an Integer argument and draws that many boxes to the console.</p>
+<p>A few remarks:</p>
+<ul>
+<li>the index of a <code>for</code> loop is conventionally named <code>i</code></li>
+<li>the body of the loop calls <code>Console.Write</code> instead of <code>Console.WriteLine</code> so that more than one box can be drawn on the same line</li>
+<li>after the end of the loop, <code>Console.WriteLine</code> is called with no arguments, just to write a newline to the console. This way, the next time something is printed, it will appear on the next line down instead of on the same line as the boxes</li>
+</ul>
+<p>Let's try it out.</p>
+<ul>
+<li>Replace the contents of the <code>Initialize</code> function with the following code:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+{
+  this.DrawBoxes(10);
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name=&quot;Console">[][][][][][][][][][]
+</code></pre>
+<p>Everything seems to be in order, but regardless of what number is passed into the function, all the boxes will always be drawn on the same line. In order to create multiple rows of boxes, the <code>DrawBoxes</code> function should employ another looping concept, called a nested loop.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>The <code>DrawBoxes</code> function, as it exists right now, already does a perfectly good job of drawing a single row of boxes. The only modification it needs is to make its contents run several times. And what is a good way to make code run several times? Of course, it's a loop. A <strong>nested loop</strong> is a loop written inside the body of another loop. Nested loops are often used in multi-dimensional tasks, such as drawing a 2D grid of boxes.</p>
+<ul>
+<li>Add the following function to the <code>LoopExamples</code> class:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function DrawBoxesInGrid(columns : Integer, rows : Integer)
+{
+  var totalBoxesDrawn = 0;
+  
+  for (var i = 0; i &lt; rows; ++i)
+  {
+    for (var j = 0; j &lt; columns; ++j)
+    {
+      Console.Write(&quot;[]&quot;);
+      ++totalBoxesDrawn;
+    }
+    
+    Console.WriteLine();
+  }
+  
+  Console.WriteLine(&quot;Total boxes drawn: `totalBoxesDrawn`&quot;);
+}
+</code></pre>
+<p>A few remarks:</p>
+<ul>
+<li>in a nested loop, it is customary to use <code>i</code> for the index of the outer loop and <code>j</code> for the index of the inner loop</li>
+<li>the entire contents of the function as written before have been placed inside the outer loop</li>
+<li>also, for reference purposes, the function now keeps track of how many boxes have been drawn, and prints the number at the end</li>
+</ul>
+<p>The key thing to understand here is that in each iteration of the outer loop, the inner loop runs anew in its entirety. When a nested <code>for</code> loop runs...</p>
+<h1 id="the-outer-initialization-statement-is-executed-once-at-the-beginning-of-the-outer-loop">The <strong>outer initialization statement</strong> is executed once at the beginning of the outer loop.</h1>
+<h1 id="then-the-outer-loop-condition-is-checked-if-it-equals-true">Then the <strong>outer loop condition</strong> is checked. If it equals <code>true</code>...</h1>
+<h1 id="the-outer-loop-body-runs-the-outer-loop-body-contains-the-inner-loop">The <strong>outer loop body</strong> runs. The outer loop body contains the inner loop.</h1>
+<h1 id="the-inner-initialization-statement-is-executed-once-at-the-beginning-of-the-inner-loop">The <strong>inner initialization statement</strong> is executed once at the beginning of the inner loop.</h1>
+<h1 id="then-the-inner-loop-condition-is-checked-if-it-equals-true">Then the <strong>inner loop condition</strong> is checked. If it equals <code>true</code>...</h1>
+<h1 id="the-inner-loop-body-runs">The <strong>inner loop body</strong> runs.</h1>
+<h1 id="then-the-inner-update-statement-is-executed">Then the <strong>inner update statement</strong> is executed.</h1>
+<h1 id="then-the-inner-loop-condition-is-checked-again-and-if-it-equals-true-the-inner-loop-continues-to-run-until-it-is-complete">Then the <strong>inner loop condition</strong> is checked again, and if it equals <code>true</code>, the inner loop continues to run until it is complete.</h1>
+<ul>
+<li>When the inner loop completes, every variable declared within its scope is cleaned up, //including anything declared in its initialization statement//.</li>
+</ul>
+<h1 id="then-the-outer-update-statement-is-executed">Then the <strong>outer update statement</strong> is executed.</h1>
+<h1 id="then-the-outer-loop-condition-is-checked-again-and-if-it-equals-true">Then the <strong>outer loop condition</strong> is checked again, and if it equals <code>true</code>...</h1>
+<h1 id="the-outer-loop-body-runs-the-outer-loop-body-contains-the-inner-loop-1">The <strong>outer loop body</strong> runs. The outer loop body contains the inner loop.</h1>
+<h1 id="the-inner-initialization-statement-is-executed-again-because-it-is-now-the-beginning-of-the-inner-loop-again">The <strong>inner initialization statement</strong> is executed again, because it is now the beginning of the inner loop again.</h1>
+<ul>
+<li>Anything that was initialized here before fell out of scope and was cleaned up at the end of the inner loop, so it can be declared anew with the same identifier name.</li>
+</ul>
+<h1 id="then-the-inner-loop-condition-is-checked-again-and-the-inner-loop-continues-to-run-until-it-is-complete">Then the <strong>inner loop condition</strong> is checked again, and the inner loop continues to run until it is complete.</h1>
+<h1 id="then-the-outer-update-statement-is-executed-again">Then the <strong>outer update statement</strong> is executed again.</h1>
+<h1 id="then-the-outer-loop-condition-is-checked-again-and-if-it-equals-true-the-nested-loop-continues-to-run-in-this-manner-until-the-outer-loop-is-complete">Then the <strong>outer loop condition</strong> is checked again, and if it equals <code>true</code>, the nested loop continues to run in this manner until the outer loop is complete.</h1>
+<p>Let's try out the function.</p>
+<ul>
+<li>Update the <code>Initialize</code> function with the following changes:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+{
+  this.DrawBoxesInGrid(8, 4);
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name=&quot;Console">[][][][][][][][]
+[][][][][][][][]
+[][][][][][][][]
+[][][][][][][][]
+Total boxes drawn: 32
+</code></pre>
+<p>Four perfect rows of eight boxes each!</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>Loops can be nested arbitrarily deep: a 3D array of boxes, for example, would call for a loop within a loop within a loop, and if each box is also a container that can hold objects, still another loop could be used to populate each one.</p>
+<h1 id="loop-keywords">Loop Keywords</h1>
+<p>There are two keywords that can be used to further control the execution flow through a loop: <strong>continue</strong> and <strong>break</strong>. Each of these statements is used to move the program flow to a different point, but it is important to remember that each of them functions <strong>only on the most nested loop scope</strong> in which it appears.</p>
+<h2 id="continue">Continue</h2>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/89994.png" alt="image"> <em>Figure 4: program flow controlled by <code>continue</code></em></p>
+<p>The <code>continue</code> statement jumps the program flow forward to the very end of the body of the current loop iteration (in a <code>for</code> loop, just before the update statement is executed). Nothing between the <code>continue</code> statement and the end of the loop body is executed. Effectively, it skips ahead to the next iteration.</p>
+<p>Let's return to the <code>DrawBoxes</code> function. What if we want it to skip a given spot in the grid, not draw a box there, but leave it blank, and keep going afterward? This is a good task for the <code>continue</code> keyword.</p>
+<p>First off, the function needs to take two new Integer parameters, specifying the column-row coordinates of the box to skip, designated as <code>skipX</code> and <code>skipY</code>. Then, when the <code>i</code> value (counting the rows) matches the given <code>skipY</code> value <em>and</em> <code>j</code> (counting the columns) matches <code>skipX</code>, instead of drawing a box, the function should print a blank space and then <code>continue</code>.</p>
+<ul>
+<li>Add the following function to the <code>LoopExamples</code> class:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function DrawBoxesWithGap(columns : Integer, rows : Integer, skipX : Integer, skipY : Integer)
+{
+  var totalBoxesDrawn = 0;
+  
+  for (var i = 0; i &lt; rows; ++i)
+  {
+    for (var j = 0; j &lt; columns; ++j)
+    {
+      if (i == skipY &amp;&amp; j == skipX)
+      {
+        Console.Write(&quot;  &quot;);
+        continue;
+      }
+      
+      Console.Write(&quot;[]&quot;);
+      ++totalBoxesDrawn;
+    }
+    
+    Console.WriteLine();
+  }
+  
+  Console.WriteLine(&quot;Total boxes drawn: `totalBoxesDrawn`&quot;);
+}
+</code></pre>
+<p>Now to test it out.</p>
+<ul>
+<li>Update the <code>Initialize</code> function with the following changes:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+{
+  this.DrawBoxesWithGap(8, 4, 6, 2);
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name=&quot;Console">[][][][][][][][]
+[][][][][][][][]
+[][][][][][]  []
+[][][][][][][][]
+Total boxes drawn: 31
+</code></pre>
+<p>The specified box is skipped, and the printed total reflects this.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h2 id="break">Break</h2>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/89999.png" alt="image"> <em>Figure 5: program flow controlled by <code>break</code></em></p>
+<p>The <code>break</code> statement <em>breaks</em> the looping flow of the program, skipping any remaining loop iterations, as well as any code remaining in the current iteration. Effectively, it leaves the loop altogether.</p>
+<p>In <code>DrawBoxes</code>, what if we want to specify a maximum number of boxes that should be drawn, regardless of the other given values? If, say, ten rows and ten columns are specified, but with a max of 40, then only forty boxes should be drawn, even though ten times ten is a hundred. A <code>break</code> statement is just right for this.</p>
+<p>First of all, yet another new Integer parameter is needed for the <code>DrawBoxes</code> function, <code>max</code>, which specifies the maximum number of boxes to draw. Since the function already keeps track of the number that have been drawn so far, it only needs to check before drawing to see if it's hit the max. If it has, then a <code>break</code> statement should be executed.</p>
+<ul>
+<li>Add the following function to the <code>LoopExamples</code> class:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function DrawBoxesWithMax(columns : Integer, rows : Integer, max : Integer)
+{
+  var totalBoxesDrawn = 0;
+  
+  for (var i = 0; i &lt; rows; ++i)
+  {
+    for (var j = 0; j &lt; columns; ++j)
+    {
+      if (totalBoxesDrawn &gt;= max)
+        break;
+      
+      Console.Write(&quot;[]&quot;);
+      ++totalBoxesDrawn;
+    }
+    
+    Console.WriteLine();
+  }
+  
+  Console.WriteLine(&quot;Total boxes drawn: `totalBoxesDrawn`&quot;);
+}
+</code></pre>
+<p>Now to test the changes.</p>
+<ul>
+<li>Update the <code>Initialize</code> function with the following changes:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+{
+  this.DrawBoxesWithMax(10, 10, 40);
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name=&quot;Console">[][][][][][][][][][]
+[][][][][][][][][][]
+[][][][][][][][][][]
+[][][][][][][][][][]
+
+
+
+
+
+
+Total boxes drawn: 40
+</code></pre>
+<p>Only forty boxes are drawn (and the specified box is still skipped). There's an awful lot of blank space, though, after the last box. This is because the <code>break</code> statement only causes the inner loop to end. The outer loop keeps running, writing another newline to the console with each iteration.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>To modify the function to make it break out of both loops, just add a Boolean variable that keeps track of whether the max has been reached. In the inner loop, if the function has drawn enough boxes, before breaking, set that variable to be <code>true</code>. In the outer loop, just after the inner loop is complete, check it. If it's true, <code>break</code> again.</p>
+<ul>
+<li>Update the <code>DrawBoxesWithMax</code> function with the following changes:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">function DrawBoxesWithMax(columns : Integer, rows : Integer, max : Integer)
+{
+  var totalBoxesDrawn = 0;
+  var maxReached = false;
+  
+  for (var i = 0; i &lt; rows; ++i)
+  {
+    for (var j = 0; j &lt; columns; ++j)
+    {
+      if (totalBoxesDrawn &gt;= max)
+      {
+        maxReached = true;
+        break;
+      }
+      
+      Console.Write(&quot;[]&quot;);
+      ++totalBoxesDrawn;
+    }
+    
+    if (maxReached)
+      break;
+    
+    Console.WriteLine();
+  }
+  
+  Console.WriteLine(&quot;Total boxes drawn: `totalBoxesDrawn`&quot;);
+}
+</code></pre>
+<p>Let's test out this final modification.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name=&quot;Console">[][][][][][][][][][]
+[][][][][][][][][][]
+[][][][][][][][][][]
+[][][][][][][][][][]
+Total boxes drawn: 40
+</code></pre>
+<p>Forty boxes were drawn, and the loop stops after they're all done.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h3 id="breaking-an-infinite-loop">Breaking an Infinite Loop</h3>
+<p>Rarely, it's actually desirable to create a loop that is intentionally unconditional, as long as it contains at least one code path to a <code>break</code> statement. This technique is used sparingly; it generally only occurs when the loop's exit conditions are too complex or numerous to fit comfortably in its definition.</p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md"> Looping</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md"> Create a New 2D Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">while</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">keywords</a></li>
+</ul>
+<h2 id="tutorials">Tutorials</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/functions.md"> Functions Tutorial</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<h3 id="nada-base-types">Nada Base Types</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/math.md"> Math</a></li>
+</ul>
+<h3 id="commands">Commands</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/scripting/loops.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

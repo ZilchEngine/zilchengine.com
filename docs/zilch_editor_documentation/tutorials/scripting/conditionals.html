@@ -1,0 +1,492 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Learning Objectives | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Learning Objectives | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/scripting/conditionals.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/conditionals.md"> Conditionals</a> allow a developer to make decisions in code based off of <code>true</code> &amp; <code>false</code> values.</p>
+<h1 id="learning-objectives">Learning Objectives</h1>
+<ul>
+<li>Evaluating Expressions</li>
+<li>Console Printing Expressions and their results</li>
+<li><code>if</code>, <code>else</code>, and <code>else if</code></li>
+</ul>
+<h1 id="level-setup">Level Setup</h1>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createtransform">CreateTransform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a>
+<ul>
+<li>Create a NadaScript resource using the Component template template and name it <code>ConditionalsLogic</code></li>
+</ul>
+</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Transform object</li>
+<li>In the <code>Properties Window</code>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>icon=square-o, name = ConditionalsLogic</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="if-statements"><code>if</code> Statements</h1>
+<p>An <code>if</code> statement evaluates an expression to a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">Boolean</a> value of <code>true</code> or <code>false</code>. If the expression is true, code within the scope of the <code>if</code> statement will be executed, otherwise the application focus will skip over its scope.</p>
+<ul>
+<li>Update the <code>icon=square-o, name =ConditionalsLogic</code> script:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">class ConditionalsLogic : NadaComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    if(true)
+    {
+      Console.WriteLine(&quot;This will print to console.&quot;);
+    }
+    
+    if(false)
+    {
+      Console.WriteLine(&quot;This will not print to console.&quot;);
+    }
+  }
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name=Console">---------------- Begin Game ----------------
+This will print to console.
+Level 'Level' was loaded.
+Loaded level 0.00s
+</code></pre>
+<p>Notice how the output displays only text within the <code>if(true)</code> conditional.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h1 id="boolean-operators">Boolean Operators</h1>
+<p><code>if</code> statements are primarily used to determine whether an entire sequence results in <code>true</code> or <code>false</code>. By using <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md"> Boolean Operators </a> an entire sequence can be evaluated rather than a single variable.</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md#equality"> Equality Operator </a> <code>==</code> is used to determine if two values are the same. This is different than the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md"> Assignment Operator</a> <code>=</code> that is used to assign a new value to a variable.</p>
+<p>NOTE: The Equality Operator is a type of comparison operator that returns a boolean operator.</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md#inequality"> Inequality Operator</a> <code>!=</code> is used to determine if two values are not the same. As long as the two values are not exactly the same, the <code>if</code> statement will be evaluated as <code>true</code>.</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md"> Negation Operator</a> <code>!</code> is used to reverse some values when possible. In the example below, the <code>!</code> operator is used to reverse the value of a boolean.</p>
+<ul>
+<li>Update the <code>icon=square-o, name =ConditionalsLogic</code> script:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">class ConditionalsLogic : NadaComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    var booleanTest = true;
+    var comparison = false;
+    
+    // Check to see if the two have the same value.
+    if(booleanTest == comparison)
+    {
+      Console.WriteLine(&quot;`true` and `false` are not the same thing.&quot;);
+    }
+    
+    // If `false` is not the same as `true`
+    if(booleanTest != comparison)
+    {
+      // Flips the `booleanTest` variable.
+      booleanTest = !booleanTest;
+    }
+    
+    // Check to see if the two have the same value.
+    if(booleanTest == comparison)
+    {
+      Console.WriteLine(&quot;`false` and `false` are the same thing.&quot;);
+    }
+  }
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name=Console">---------------- Begin Game ----------------
+false and false are the same thing.
+Level 'Level' was loaded.
+Loaded level 0.00s
+</code></pre>
+<p>Notice how <code>false</code> and <code>false</code> are the same, resulting in a <code>true</code> conditional.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h1 id="else-if-statements"><code>else if</code> Statements</h1>
+<p>Where <code>if</code> statements determine if a situation is <code>true</code>, <code>else if</code> statements can determine if alternative situations are <code>true</code> as long as previous conditionals are <code>false</code>. <code>else</code> statements catch all remaining conditions.</p>
+<ul>
+<li>Update the <code>icon=square-o, name =ConditionalsLogic</code> script:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">class ConditionalsLogic : NadaComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    var grade = 85;
+    
+    if(grade &lt; 70)
+      Console.WriteLine(&quot;Failing Grade&quot;);
+    else if(grade &lt; 80)
+      Console.WriteLine(&quot;Grade: C&quot;);
+    else if(grade &lt; 90)
+      Console.WriteLine(&quot;Grade: B&quot;);
+    else
+      Console.WriteLine(&quot;Grade: A&quot;);
+  }
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name=Console">---------------- Begin Game ----------------
+Grade: B
+Level 'Level' was loaded.
+Loaded level 0.00s
+</code></pre>
+<p>Notice how the lines checking if <code>grade &lt; 70</code> and <code>grade &lt; 80</code> each ran first. They were skipped over since they evaluated to a <code>false</code> condition, but the <code>grade &lt; 90</code> conditional was true. The remaining line containing an <code>else</code> conditional was not considered.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p><code>if</code> statements also can be used to evaluate the current state of a variable, such as time passed. This can be useful when evaluating variables.</p>
+<ul>
+<li>Update the <code>icon=square-o, name = ConditionalsLogic</code> script:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">class ConditionalsLogic : NadaComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    var timePassed = 0.01;
+    
+    // Has any time passed
+    if(timePassed != 0 &amp;&amp; timePassed &lt; 10)
+    {
+      Console.WriteLine(&quot;Time Passed: `timePassed` seconds&quot;);
+    }
+  }
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name">---------------- Begin Game ----------------
+Time Passed: 0.01 seconds
+Level 'Level' was loaded.
+Loaded level 0.00s
+</code></pre>
+<p>Notice that the <code>if</code> statement is run and the <code>timePassed</code> variable was used.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h1 id="non-bracketed-scopes">Non-Bracketed Scopes</h1>
+<p>Once an <code>if</code> statement is found to be <code>true</code>, any code nested within is run. There are different ways to write these lines of code, based on what is easy to read and understand.</p>
+<p>The most common way to follow an <code>if</code> statement is to use the brackets discussed above. This is best used when more than one line of code is needed to be run.</p>
+<ul>
+<li>Update the <code>icon=square-o, name = ConditionalsLogic</code> script:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">class NumberGenerator : NadaComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    if(true)
+    {
+      Console.WriteLine(1);
+      Console.WriteLine(2);
+      Console.WriteLine(3);
+    }
+  }
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name">---------------- Begin Game ----------------
+1
+2
+3
+Level 'Level' was loaded.
+Loaded level 0.00s
+</code></pre>
+<p>Notice that all three lines of code were run. All actions within brackets immediately following a <code>true</code> <code>if</code> statement will be performed.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>Alternatively, if only one line of code needs to be performed, it can be common practice to not use braces, as long as code it positioned properly.</p>
+<ul>
+<li>Update the <code>icon=square-o, name = ConditionalsLogic</code> script:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">class NumberGenerator : NadaComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    if(true)
+      Console.WriteLine(1);
+  }
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name">---------------- Begin Game ----------------
+1
+Level 'Level' was loaded.
+Loaded level 0.00s
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>The line of code was run due being indented and following a <code>true</code> <code>if</code> statement. Indention matters as some code can be skipped over or even unintentionally run if not written correctly.</p>
+<ul>
+<li>Update the <code>icon=square-o, name = ConditionalsLogic</code> script:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">class NumberGenerator : NadaComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    if(false)
+      Console.WriteLine(1);
+    Console.WriteLine(2);
+    Console.WriteLine(3);
+  }
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name">---------------- Begin Game ----------------
+2
+3
+Level 'Level' was loaded.
+Loaded level 0.00s
+</code></pre>
+<p>Notice how <code>1</code> was never printed due to the <code>false</code> <code>if</code> statement, but <code>2</code> and <code>3</code> were.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>Only the first indented line following a <code>true</code> <code>if</code> statement is performed. This is why it is important to use brackets for more than one line, for readability purposes. The following code is exactly the same as the previous example except that the second and third lines printed to Console are indented as well.</p>
+<ul>
+<li>Update the <code>icon=square-o, name = ConditionalsLogic</code> script:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">class NumberGenerator : NadaComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    if(false)
+      Console.WriteLine(1);
+      Console.WriteLine(2);
+      Console.WriteLine(3);
+  }
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name">---------------- Begin Game ----------------
+2
+3
+Level 'Level' was loaded.
+Loaded level 0.00s
+</code></pre>
+<p>Notice how <code>2</code> and <code>3</code> were still printed to console, even though they match the indention of the line above it.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h1 id="nested-if-else-statements">Nested <code>If Else</code> Statements</h1>
+<p>It is important to realize that <code>if</code> statements can be nested within one another. Further, <code>else</code> statements take advantage of scenarios where a statement returns false.</p>
+<ul>
+<li>Update the <code>icon=square-o, name =ConditionalsLogic</code> script:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">class ConditionalsLogic: NadaComponent
+{
+  // Ingredients Boolean
+  var TwoSlicesOfBread : Boolean = true;
+  var PeanutButter : Boolean = true;
+  var Jelly : Boolean = false;
+  var Bacon : Boolean = true;
+  var Banana : Boolean = true;
+  var Turkey : Boolean = false;
+  
+  function Initialize(init : CogInitializer)
+  {
+    // Can't have a sandwich without bread
+    if(this.TwoSlicesOfBread)
+    {
+      // Continue if we have a source of protein
+      if(this.PeanutButter || this.Turkey)
+      {
+        // If there is Peanut Butter...
+        if(this.PeanutButter)
+        {
+          // Determine which Peanut Butter sandwich this is
+          if(this.Jelly)
+            Console.WriteLine(&quot;Peanut Butter and Jelly Sandwich&quot;);
+          else
+          {
+            // Preface the sandwich type
+            Console.Write(&quot;Elvis Sandwich&quot;);
+            
+            // If bacon exists, it's a true Elvis Sandwich
+            if(this.Bacon)
+              Console.Write(&quot; with Bacon&quot;);
+            
+            Console.WriteLine();
+          }
+        }
+        // Otherwise, we have Turkey
+        else
+          Console.WriteLine(&quot;Turkey Sandwich&quot;);
+      }
+      else // No protein
+        // Blues Brothers Special
+        Console.WriteLine(&quot;Wish Sandwich - Two slices of bread and you wish you had some meat&quot;);
+    }
+    // No Bread
+    else
+      Console.WriteLine(&quot;Not a sandwich&quot;);
+  }
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<pre><code class="lang-name=">---------------- Begin Game ----------------
+Elvis Sandwich with Bacon
+Level 'Level' was loaded.
+Loaded level 0.00s
+</code></pre>
+<p>Notice how the output tells the user what kind of sandwich they have based on the ingredients selected. The nested If Statements make it possible to follow through based on the Boolean variables</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md">Boolean Operators</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/conditionals.md">Conditionals</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">Variables and Data Types</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">Keywords</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md">Operators Precedence Chart</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md"> Boolean Operators </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md"> Operator Precedence</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<h3 id="classes">Classes</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/nadascript.md">NadaScript</a></li>
+</ul>
+<h3 id="nada-base-types">Nada Base Types</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types.md">Nada Base Types</a></li>
+</ul>
+<h3 id="commands">Commands</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createtransform">CreateTransform</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/scripting/conditionals.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

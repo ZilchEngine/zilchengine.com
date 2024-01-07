@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>ContentComponents for a Sample Mesh | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="ContentComponents for a Sample Mesh | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/models/mesh.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Imported meshes may be used to apply to a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/models/model_component.md">Model</a> or <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/models/model_component.md#skinned-model">SkinnedModel</a> component as well as to create a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmesh.md">PhysicsMesh</a> for that object. This page focuses solely on using a mesh for a Model and SkinnedModel. Clicking on a particular mesh in the Library window will open up the ContentComponents of that mesh in the Properties window:</p>
+<h1 id="contentcomponents-for-a-sample-mesh">ContentComponents for a Sample Mesh</h1>
+<p>The properties in the ContentComponents are the same as those found in the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/adding_assets/adding_scene_assets.md#group-import-options">Group Import Options</a>, along with a few additional properties. One can fix incorrect values set during import as well as add or remove automatic resource generation (e.g. importing textures and animations from the same .fbx that included the base mesh).</p>
+<p>WARNING: All meshes imported from a single .fbx or other scene asset file will have the same values in the properties of the ContentComponents. It is therefore recommended to only import one object per scene asset file.</p>
+<h1 id="meshbuilder">MeshBuilder</h1>
+<p>The MeshBuilder ContentComponent includes those properties specifically related to an imported mesh (instead of other resources imported in the same file that are associated with the mesh such as animations and textures).</p>
+<h1 id="animationbuilder-and-animationclips">AnimationBuilder and AnimationClips</h1>
+<p>The AnimationBuilder ContentComponent defines clips of animation that have been imported. If importing a single animation, the AnimationClip will be automatically generated and there is nothing more to do. If using a workflow where all animations for a certain mesh are included in the same timeline or track in an asset file, different AnimationClips will need to added for each separate animation, defined by their start and end frames. If using such a workflow, the artist should provide the user with the frame specifications for each distinct animation.</p>
+<p>Every AnimationClip can be named, have its start and end frames defined, and its looping mode set (<code>Default</code>, <code>Once</code>, or <code>Looping</code>). Once an AnimationClip is added it is treated like an Animation Resource in Zilch and can be accessed in NadaScript like any other Animation.</p>
+<h1 id="texturecontent-and-generatedarchetype">TextureContent and GeneratedArchetype</h1>
+<p>These components have no properties and are there only if <code>ImportTextures</code> and <code>GenerateArchetype</code> are set to true in the Group Import Options window when importing an asset. If a scene asset file has textures in it, but <code>ImportTextures</code> was set to false when imported, adding the TextureContent component and reloading the mesh will add the textures to the project Library. If no archetype was created on import, adding GenerateArchetype and reloading will create an archetype in the project Library.</p>
+<hr>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/models/model_component.md">model_component</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/adding_assets/adding_scene_assets.md">adding_scene_assets</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/model.md">model</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/skinnedmodel.md">skinnedmodel</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmesh.md">PhysicsMesh</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/models/mesh.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

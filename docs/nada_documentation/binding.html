@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Compiling C++ | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Compiling C++ | ZilchEngine ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/nada_documentation/binding.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>To get started, download the latest F{Nada library}. For convenience, all of the Nada C++ code is compacted into one header and one cpp.</p>
+<p>WARNING: Nada uses its own containers, including Array, HashMap, String, etc. For compatibility with STL, the containers support <code>.begin()</code> and <code>.end()</code> iterators, as well as <code>.size()</code>. The String class supports <code>.c_str()</code>.</p>
+<h1 id="compiling-c">Compiling C++</h1>
+<p>Include the Nada.cpp into your compilation process, and start by having your main include the Nada.hpp</p>
+<pre><code class="lang-lang=csharp">
+# include &quot;Nada.hpp&quot;
+
+
+using namespace Nada;
+
+int main()
+{
+  return 0;
+}
+</code></pre>
+<p>So long as Nada.cpp is built and linked in, this program should fully compile.</p>
+<h1 id="compiling-a-nada-script">Compiling a Nada script</h1>
+<pre><code class="lang-lang=csharp">
+# include &quot;Nada.hpp&quot;
+
+
+using namespace Nada;
+
+int main()
+{
+  // Any one time startup and static initialization Nada needs to do
+  // This also registers a custom assertion handler (Nada code has many user friendly asserts!)
+  NadaSetup setup(StartupFlags::None);
+
+  // A project contains all of the code we combine together to make a single Nada library
+  // The project also sends events for compilation errors that occur (includes friendly messages / error codes)
+  Project project;
+
+  // Here, we can register our own callback for when compilation errors occur
+  // The default callback prints the file, line/character number, and message to stderr
+  EventConnect(&amp;project, Events::CompilationError, DefaultErrorCallback);
+
+  // Add some test Nada code that does NOT compile, just to try it out!
+  // The second parameter provides a name for when compilation errors come up, in this case 'MyCode'
+  project.AddCodeFromString(&quot;class Foozle++&quot;, &quot;MyCode&quot;);
+
+  // Create a list of dependent libraries, in our case we're really not adding anything to this
+  // A side note: the Core library in Nada is always added as a dependency, because Core includes
+  // things like Integer, Boolean, Real, the basic vector types, String, etc
+  Module dependencies;
+
+  // Compile all the code we added together into a single library named &quot;Game&quot;
+  // We already know this is going to fail to compile, so the error callback
+  // we provided above should get called
+  project.Compile(&quot;Game&quot;, dependencies, EvaluationMode::Project);
+
+  return 0;
+}
+</code></pre>
+<h1 id="running-a-nada-script">Running a Nada script</h1>
+<p>As a language meant to be called and run from C++, Nada has no 'main entrypoint' of its own. Instead it is up to the user to instantiate types defined witNadailch scripts and call functions on them (or invoke static methods).</p>
+<p>Create a Nada script with code that we want to test out.</p>
+<h2 id="playernada">Player.Nada</h2>
+<pre><code class="lang-lang=csharp">class Player
+{
+  var Health : Real = 100;
+
+  [Static]
+  function SayHello()
+  {
+    Console.WriteLine(&quot;Hello world!&quot;);
+  }
+
+  function TakeDamage(amount : Real)
+  {
+    this.Health -= amount;
+    Console.WriteLine(&quot;Ouch! I've got `this.Health` health left!&quot;);
+  }
+}
+</code></pre>
+<p>From the C++ side change <code>AddCodeFromString</code> to <code>AddCodeFromFile</code>.</p>
+<p><code>project.AddCodeFromFile(&quot;Player.nada&quot;);</code></p>
+<p>WARNING: Make sure to put the <code>Player.nada</code> file side by side with the executable, or make sure that the working directory is setup correctly so that the executable can find the script file.</p>
+<p>We now need to compile the code into a Library, and finally link that library into an ExecutableState. A Library stores all the compiled types and functions. The ExecutableState has its own stack and virtual machine, and is responsible for executing Nada code.</p>
+<pre><code class="lang-lang=csharp">
+# include &quot;Nada.hpp&quot;
+
+
+using namespace Nada;
+
+int main()
+{
+  // Any one time startup and static initialization Nada needs to do
+  // This also registers a custom assertion handler (Nada code has many user friendly asserts!)
+  NadaSetup setup(StartupFlags::None);
+
+  // A project contains all of the code we combine together to make a single Nada library
+  // The project also sends events for all compilation errors that occur (which includes friendly messages and error codes)
+  Project project;
+
+  // Here, we can register our own callback for when compilation errors occur
+  // The default callback prints the file, line/character number, and message to stderr
+  EventConnect(&amp;project, Events::CompilationError, DefaultErrorCallback);
+
+  // Load the Nada code for our Player class from disk (make sure the working directory is setup properly)
+  project.AddCodeFromFile(&quot;Player.nada&quot;);
+
+  // Create a list of dependent libraries, in our case we're really not adding anything to this
+  // A side note: the Core library in Nada is always added as a dependency, because Core includes
+  // things like Integer, Boolean, Real, the basic vector types, String, etc
+  Module dependencies;
+
+  // The 'Compile' function actually returns a Nada Library
+  // Be careful! If the code fails to compile, this function will return null
+  LibraryRef library = project.Compile(&quot;Test&quot;, dependencies, EvaluationMode::Project);
+  ErrorIf(library == nullptr, &quot;Failed to compiler library&quot;);
+
+  // We want to link together all the libraries that we depended upon, along with our own library
+  dependencies.push_back(library);
+
+  // Link all the libraries together into one ExecutableState
+  ExecutableState* state = dependencies.Link();
+  ErrorIf(state == nullptr, &quot;Failed to link libraries together&quot;);
+
+  // Find the Player type we created in Nada
+  BoundType* playerType = library-&gt;BoundTypes.findValue(&quot;Player&quot;, nullptr);
+  ErrorIf(playerType == nullptr, &quot;Failed to find a Nada type named 'Player'&quot;);
+
+  // Find the static SayHello function we defined on the Player type
+  // We pass in an array of types to specify the arguments we want, in this case its an empty array
+  // We also pass in the void type because we don't expect a return value
+  Function* sayHelloFunction = playerType-&gt;FindFunction(&quot;SayHello&quot;, Array&lt;Type*&gt;(), NadaTypeId(void), FindMemberOptions::Static);
+  ErrorIf(sayHelloFunction == nullptr, &quot;Failed to find function 'SayHello' on Nada type 'Player'&quot;);
+
+  // Find the instance 'TakeDamage' function on the Player which accepts a Real and returns nothing (Void)
+  Function* takeDamageFunction = playerType-&gt;FindFunction(&quot;TakeDamage&quot;, Array&lt;Type*&gt;(ZilchInit, NadaTypeId(Real)), NadaTypeId(void), FindMemberOptions::None);
+  ErrorIf(takeDamageFunction == nullptr, &quot;Failed to find function 'TakeDamage' on Nada type 'Player'&quot;);
+
+  // Find the instance data member 'Health' on the Player (a data member is called a Field in Nada)
+  Field* healthField = playerType-&gt;InstanceFields.findValue(&quot;Health&quot;, nullptr);
+  ErrorIf(healthField == nullptr, &quot;Failed to find field 'Health' on Nada type 'Player'&quot;);
+
+  // Setup the console so that when we call 'Console.WriteLine' it outputs to stdio
+  EventConnect(&amp;Console::Events, Events::ConsoleWrite, DefaultWriteText);
+
+  // We can also setup the console so that any 'Read' functions will attempt to read from stdin
+  EventConnect(&amp;Console::Events, Events::ConsoleRead, DefaultReadText);
+
+  // The call object uses its constructor to initialize a stack frame in
+  // the ExecutableState, and removes that stack frame inside its destructor
+  // It is important to wrap this in a scope to ensure destruction happens when we intend it to
+
+  // Player.SayHello()
+  {
+    // The exception report stores any exceptions that may have occurred while executing code
+    // Exceptions include accessing arrays out of bounds, dereferencing null, etc
+    ExceptionReport report;
+
+    // Invoke the SayHello function, which should print out to the console
+    Call call(sayHelloFunction, state);
+    call.Invoke(report);
+
+    // You can check 'report.HasThrownExceptions()' to see if the script threw an exception
+    // This is useful if you want to stop a particular script from running again, or abort the program
+  }
+    
+  // var playerInstance = new Player();
+  // playerInstance.Health = 200.0;
+  // playerInstance.TakeDamage(10.0);
+  {
+    // Allocate the player and call a default constructor if one is provided
+    // It is legal to allocate Nada objects that have no defined default constructor
+    // The object will first be entirely set to zero (all null and zero values)
+    // Then the pre-constructor will run, which initializes any members in the class to the value after the '='
+    ExceptionReport report;
+    Handle playerInstance = state-&gt;AllocateDefaultConstructedHeapObject(playerType, report, HeapFlags::ReferenceCounted);
+
+    // Set the health field by invoking its automatically generated setter function
+    // Getters and setters always take the form of:
+    //   Get() : PropertyType
+    //   Set(value : PropertyType)
+    // We're invoking the setter, so parameter 0 must be of type Real
+    {
+      Call call(healthField-&gt;Set, state);
+      call.Set&lt;Handle&gt;(Call::This, playerInstance);
+      call.Set&lt;Real&gt;(0, 200.0f);
+      call.Invoke(report);
+    }
+      
+    // Now invoke the member function 'TakeDamage'
+    {
+      Call call(takeDamageFunction, state);
+      call.Set&lt;Handle&gt;(Call::This, playerInstance);
+      call.Set&lt;Real&gt;(0, 10.0f);
+      call.Invoke(report);
+    }
+  }
+
+  // Finally, we're done with the executable state so get rid of it
+  delete state;
+
+  return 0;
+}
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/nada_documentation/binding.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

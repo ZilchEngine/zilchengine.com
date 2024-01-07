@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Contents | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Contents | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Classes and structs define the type of certain objects in Nada, and the <code>class</code> keyword can create user-defined data types.  The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">Variables</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">Functions</a> defined in a class or struct are all stored and referenced from instantiations.  In contrast with how Structs handle <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md">Memory Management</a>, classes are copied <code>by-reference</code>.</p>
+<h1 id="class-contents">Class Contents</h1>
+<p>Classes in Nada must be defined in <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md#global-scope">global scope</a>.  The format for classes and structs are as shown below:</p>
+<pre><code class="lang-lang=csharp,">struct SimpleStruct {}
+class SimpleClass {}
+</code></pre>
+<p>Any members that belong to <code>SimpleStruct</code> or <code>SimpleClass</code> will be defined within their curly braces.</p>
+<h2 id="struct-members-in-classes">Struct Members in Classes</h2>
+<p>Because structs are copied <code>by-value</code>, structs cannot have class members.  As shown in the code snippet below, any other permutation of containment is valid.</p>
+<pre><code class="lang-lang=csharp,">struct StructInStruct { var MyStruct : SimpleStruct; }
+struct ClassInStruct { var MyClass : SimpleClass; } // ERROR
+class StructInClass { var MyStruct : SimpleStruct; }
+class ClassInClass { var MyClass : SimpleClass; }
+</code></pre>
+<p>The class <code>MyClass</code> is a member of <code>ClassInStruct</code>, which is a struct.  Having a class in a struct will cause Nada to throw a compile-time exception.</p>
+<h2 id="static-vs-non-static-members">Static vs Non-Static Members</h2>
+<p>Variables and functions inside a class or struct are known as members. Most member variables must be accessed through instantiations of the object.  The one exception are member variables with the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md#static">Static</a> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">Attribute</a>.</p>
+<pre><code class="lang-lang=csharp,">class MyClass
+{
+  // standard variable instantiation and initialization
+  var MyReal : Real = 0;
+  
+  // static variable
+  [Static]
+  var MyStaticBoolean : Boolean = false;
+  
+  // static function
+  [Static]
+  function MyStaticFunction() {}
+}
+</code></pre>
+<p>Accessing static members can be done with <code>MyVariableClass.MyStaticReal</code> or <code>MyVariableClass.MyStaticFunction</code>, while <code>MyVariableClass().MyReal</code> is a way of accessing a non-static member.</p>
+<h2 id="member-variable-declaration">Member Variable Declaration</h2>
+<p>Member variables define the data in a class.  The rules for defining member variables differ from how local variables are defined.</p>
+<pre><code class="lang-lang=csharp,">class MyClass
+{
+  // variable instantiation only is allowed
+  var MyDoubleReal : DoubleReal;
+  
+  // ERROR: type deduction not allowed on member variables
+  var MyBoolean = false;
+}
+</code></pre>
+<p>Notice how <code>MyDoubleReal</code> isn't initialized.  At the class scope, uninitialized member variables will be set to the default values of their types. Also note that member variables must be explicitly typed.  <code>MyBoolean</code> is set to <code>false</code>, but Nada will still throw a compiler error if the type is omitted.</p>
+<h2 id="member-functions">Member Functions</h2>
+<p>Member functions hold executable code, can take input parameters, and can return data.  Member functions without the <code>[Static]</code> attribute  also have access to the instantiated object that invoked them.</p>
+<pre><code class="lang-lang=csharp,">class MyClass
+{
+  var MyReal : Real = 1.2;
+  
+  function MyFunc()
+  {
+    var localReal = this.MyReal;
+  }
+  
+  [Static]
+  function MyFunc()
+  {
+    var localReal = this.MyReal; // ERROR
+  }
+}
+</code></pre>
+<p>Notice how <code>MyReal</code>, a member variable of <code>MyClass</code>, is accessed in <code>MyFunc</code> using the <code>this</code> keyword.  <code>this</code> refers to the instantiated object.  If the function is static, then <code>this</code> cannot be used as there is no instantiation of <code>MyClass</code>.  Also notice how there are two versions of <code>MyFunc</code>, one static and one not.  This is valid because static members must always be accessed through the class with the format <code>&lt;class&gt;.&lt;function&gt;</code>.</p>
+<h2 id="constructors-and-destructors">Constructors and Destructors</h2>
+<p>Structs/Classes can have constructor and destructors, which are special functions with no return type.  Constructors are called when an object is instantiated, and the destructor is called when the object is deleted.</p>
+<pre><code class="lang-lang=csharp,">class ExplicitDefault
+{
+  constructor() {}
+}
+
+class ImplicitDefault {}
+
+class Driver
+{
+  function MyFunction()
+  {
+    ExplicitDefault(); // call default constructor
+    ImplicitDefault(); // call default constructor (implicitly defined)
+  }
+}
+</code></pre>
+<p>The class <code>ExplicitDefault</code> has a single constructor that takes no parameters.  This constructors type is known as the //default constructor//.  Notice how the constructor is called by the class name in the statement <code>ExplicitDefault();</code>  Also notice how <code>ImplicitDefault</code> is constructed with the default constructor in the statement <code>ImplicitDefault();</code>.  As long as there are no constructors defined, the default will always be defined by nada.</p>
+<pre><code class="lang-lang=csharp,">class ExplicitCustom
+{
+  constructor(r : Real) {}
+}
+
+class ExplicitCustomAndDefault
+{
+  constructor() {}
+  constructor(r : Real) {}
+}
+
+class Driver
+{
+  function MyFunction()
+  {
+    ExplicitCustom(); // ERROR
+    ExplicitCustom(1.0);
+    ExplicitCustomAndDefault();
+    ExplicitCustomAndDefault(1.0);
+  }
+}
+</code></pre>
+<p>The class <code>ExplicitCustom</code> defines a single constructor that takes a single <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>.  This means that <code>ExplicitCustom</code> cannot be default constructed, therefore the statement <code>ExplicitCustom();</code> fails to compile.  The default constructor can still be readded by explicitly defining it alongside other constructors, as shown in the class <code>ExplicitCustomAndDefault</code>.</p>
+<p>NOTE: Explcitly defining a constructor is <strong>not required</strong> in Nada as long as every data member of the class has a default constructor.</p>
+<p>Destructors are called when all handles to an object are destroyed.  The exception is when an object is not a copy by reference type, in which case the destructor isn't called.</p>
+<pre><code class="lang-lang=csharp,">struct MyStruct
+{
+  var Id : Integer;
+  constructor(id : Integer)
+  {
+    this.Id = id;
+  }
+  destructor()
+  {
+    Console.WriteLine(this.Id);
+  }
+}
+
+class MyClass : MyStruct {}
+
+class Driver2
+{
+  [Static]
+  function MyFunction()
+  {
+    var v1 = MyStruct(1);
+    var v2 = local MyStruct(2);
+    var v3 = new MyStruct(3);
+    var v4 = MyClass(4);
+    var v5 = new MyClass(5);
+  } // end of the scope, all unreferenced objects are destroyed
+}
+</code></pre>
+<pre><code class="lang-name=Console">3
+4
+5
+</code></pre>
+<p>In the example above, <code>MyClass</code> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inherits</a> from <code>MyStruct</code>.  <code>MyClass</code> has the same members as <code>MyStruct</code>, and the only difference between the two is that <code>MyClass</code> is a <code>class</code>.  Observe how <code>3</code>, <code>4</code>, and <code>5</code> are printed, which means that the destructor got called on <code>v3</code>, <code>v4</code>, and <code>v5</code>.  All struct destructors were ignored, while all class destructors were called.  The one exception is <code>v3</code>, which is of the type <code>ref MyStruct</code> and has the copy <code>by-reference</code> quality.</p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">Variables</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">Functions</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md">memory_management</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">attributes</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inheritance</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md#static">Static</a></li>
+</ul>
+<h2 id="code-reference">Code Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

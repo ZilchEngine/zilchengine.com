@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Discrete Collision Detection | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Discrete Collision Detection | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/tunneling.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Sometimes when a small object is moving fast it might seem to pass through other objects. This is an artifact in physics engines known as tunneling. Before explaining this, understanding some basic concepts in physics engines is important.</p>
+<h1 id="discrete-collision-detection">Discrete Collision Detection</h1>
+<p>Game physics engines are commonly implemented using a discrete collision detection model. In a discrete model, objects teleport from frame-to-frame. One way to view this is as a picture flip-book; in each subsequent picture the object teleports to its new position.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46691.gif" alt="DiscretePhysics"></p>
+<p>Pictured above is an illustration of discrete physics. Notice how there are gaps in the object's movement trail due to a lowered framerate. Typically a physics engine runs at a much higher framerate which is why motion seems smooth.</p>
+<h1 id="tunneling">Tunneling</h1>
+<p>As an object becomes smaller and moves faster it becomes more likely to tunnel. Tunneling is when an object misses a collision due to moving too fast.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46693.PNG" alt="Tunneling"></p>
+<p>In the above picture, the red ball is moving at a constant speed to the right with a framerate of <code>1</code> fps. In this example no collision is detected as the ball teleports past the wall without ever coming into contact with it.</p>
+<p>Tunneling happens even if the framerate is high. The faster and smaller an object the more likely tunneling is to happen. Additionally, tunneling doesn't just result in collisions being missed. Sometimes tunneling can result in wrong collisions.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46695.PNG" alt="Tunneling2"></p>
+<p>In the above picture the ball does end up hitting the wall; however, it hits on the opposite side. In this way the collision will be detected but in the wrong direction.</p>
+<h1 id="fixing-tunneling">Fixing Tunneling</h1>
+<p>The easiest way to fix tunneling is to limit the size and speed of an object. If an object can't move faster than its &quot;radius&quot; each frame then it won't tunnel.</p>
+<p>Another way to avoid tunneling is to increase the framerate of the simulation. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/physicsspace.md">PhysicsSpace</a> exposes SubStepCount  which allows the user to run physics at a higher framerate.</p>
+<p>The final way to avoid tunneling is to use continuous collision detection. Currently, continuous collision detection is only available through PhysicsSpace's <code>SweepCollider</code> function  which is meant for character controllers. See the SweptController script for an example. Future plans include making this an option on rigid bodies.</p>
+<p>NOTE: Continuous collision detection is significantly more computationally expensive than discrete.</p>
+<hr>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting.md">physicstroubleshooting.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/collisionoverview.md">collisionoverview.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/physicsspace.md">physicsspace.md</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsspace.md">PhysicsSpace</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/tunneling.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

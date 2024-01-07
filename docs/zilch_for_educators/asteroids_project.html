@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Learning Objectives | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Learning Objectives | ZilchEngine ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_for_educators/asteroids_project.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>This page outlines the steps need to create a basic version of the classic game Asteroids. You should make sure you understand the content of the #basic_tutorials tagged with #beginner_iii before beginning this project.</p>
+<p>NOTE: Like other project pages this tutorial does not cover every tiny step the user must complete and instead summarizes. This requires the reader to understand basic concepts from preceeding tutorials to complete the project.</p>
+<h1 id="learning-objectives">Learning Objectives</h1>
+<ul>
+<li>Reaffirm the learning objectives of #beginner_iii tutorials.</li>
+</ul>
+<h1 id="level-setup">Level Setup</h1>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Remove </a> the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">GravityEffect</a> from the LevelSettings object.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Remove </a> the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/drageffect.md">DragEffect</a> from the LevelSettings object.</li>
+</ul>
+<h1 id="the-player">The Player</h1>
+<h2 id="player-archetype">Player Archetype</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/createobject.md">CreateSprite</a></li>
+<li>Rename the new sprite to <code>Player</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a> to the Player object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md">Orientation</a> to the Player object</li>
+<li>Set <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#defaultorientationbases">Orientation.DefaultOrienationBases</a> to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#orientationbases">ForwardZUpY</a></li>
+<li>Upload the Player object to a new archetype called <code>Player</code></li>
+</ul>
+<h2 id="player-movement">Player Movement</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li>Create a NadaScript resource using the Component template template and name it <code>PlayerMovement</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> <code>PlayerMovement</code> to the Player object</li>
+<li>Upload the Player object to a new archetype called <code>Player</code></li>
+</ul>
+<h3 id="properties">Properties</h3>
+<ul>
+<li>Define properties of type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#keys">Keys</a> in <code>PlayerMovement</code> for the forward, backward, left, right, and shoot keys for the player</li>
+<li>Define properties of type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">Real</a> called <code>Speed</code> and <code>RotationSpeed</code></li>
+</ul>
+<h3 id="moving">Moving</h3>
+<ul>
+<li>Connect to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate">LogicUpdate</a> in the <code>PlayerMovement</code> component.</li>
+<li>In <code>PlayerMovement</code> in <code>OnLogicUpdate</code></li>
+<li>Declare a local <code>movement</code> variable</li>
+<li>Check if the <code>Forward</code> and <code>Backward</code> input keys defined above are down using <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboard.md#keyisdown-zilch-engine-do">Zilch.Keyboard.KeyIsDown()</a></li>
+<li>If the <code>Forward</code> is down add <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#worldforward-zilch-engine">Orientation.WorldForward</a> to <code>movement</code></li>
+<li>If the <code>Backward</code> is down subtract <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#worldforward-zilch-engine">Orientation.WorldForward</a> to <code>movement</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/math.md#normalize-zilch-engine-do">Normalize</a> <code>movement</code></li>
+<li>Set <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md#velocity-zilch-engine-doc">RigidBody.Velocity</a> to <code>movement * this.Speed</code></li>
+</ul>
+<h3 id="rotating">Rotating</h3>
+<ul>
+<li>In <code>PlayerMovement</code> in <code>OnLogicUpdate</code></li>
+<li>Declare a local <code>rotation</code> variable</li>
+<li>Check if the <code>Left</code> and <code>Right</code> input keys defined above are down using <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboard.md#keyisdown-zilch-engine-do">Zilch.Keyboard.KeyIsDown()</a></li>
+<li>If the <code>Left</code> is down add <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#worldup-zilch-engine-docu">Orientation.WorldUp</a> to <code>rotation</code></li>
+<li>If the <code>Right</code> is down subtract <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#worldup-zilch-engine-docu">Orientation.WorldUp</a> to <code>rotation</code></li>
+<li>Declare a local variable <code>rotationSpeedRadians</code> and initialize it to <code>RotationSpeed</code> converted <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/math.md#toradians-zilch-engine-do">to radians</a>.</li>
+<li>Use <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md#rotateworld-void">Transform.RotateWorld()</a> to rotate the object by <code>rotation * rotationSpeedRadians * event.Dt</code></li>
+</ul>
+<h2 id="player-shooting">Player Shooting</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li>Add a NadaScript resource using the Component template template and name it <code>ObjectSpawner</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> <code>ObjectSpawner</code> to the Player object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li>Add a NadaScript resource using the Component template template and name it <code>CreateOnInput</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> <code>CreateOnInput</code> to the Player object</li>
+<li>Upload the Player object to a new archetype called <code>Player</code></li>
+</ul>
+<h3 id="properties-1">Properties</h3>
+<ul>
+<li><p>In <code>ObjectSpawner</code></p>
+</li>
+<li><p>Define a property of type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/archetype.md">Archetype</a> named <code>ArchetypeToSpawn</code></p>
+</li>
+<li><p>Define a property of type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">Real</a> named <code>InitialVelocity</code></p>
+</li>
+<li><p>Define a property of type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">Boolean</a> named <code>UseRandomDirection</code> (defaulting to <code>false</code>)</p>
+</li>
+<li><p>In <code>CreateOnInput</code></p>
+</li>
+<li><p>Define a property of type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#keys">Keys</a> in <code>ObjectSpawner</code> named <code>SpawnKey</code></p>
+</li>
+</ul>
+<h3 id="spawning-projectiles">Spawning Projectiles</h3>
+<ul>
+<li><p>In the <code>ObjectSpawner</code> component</p>
+</li>
+<li><p>Create a new function named <code>SpawnObject()</code></p>
+</li>
+<li><p>In <code>SpawnObject()</code></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/space.md#createatposition-zilch-en">Create</a> a <code>ArchetypeToSpawn</code> object at the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md#worldtranslation-zilch-en">position</a> of the Player object</p>
+</li>
+<li><p>If <code>ObjectSpawner.UseRandomDirection</code> is true then get a normalized random direction, or if <code>UseRandomDirection</code> is false use <code>Orientation.WorldForward</code> for the direction of the object's inital velocity.</p>
+</li>
+<li><p>Set the initial velocity of the object.</p>
+</li>
+<li><p>In the <code>CreateOnInput</code> component.</p>
+</li>
+<li><p>Connect to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate">LogicUpdate</a></p>
+</li>
+<li><p>In <code>OnLogicUpdate</code></p>
+</li>
+<li><p>Check if <code>SpawnKey</code> is down using <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboard.md#keyisdown-zilch-engine-do">Zilch.Keyboard.KeyIsDown()</a></p>
+</li>
+<li><p>If <code>SpawnKey</code> is down then call <code>ObjectSpawner.SpawnObject()</code></p>
+</li>
+<li><p>Set the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md#velocity-zilch-engine-doc">velocity</a> of the newly created Projectile object to <code>this.InitialVelocity * this.Owner.Orientation.WorldForward</code></p>
+</li>
+</ul>
+<h1 id="the-projectile">The Projectile</h1>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li>Create a NadaScript resource using the Component template template and name it <code>DestroyOnCollision</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> <code>DestroyOnCollision</code> to the Projectile object</li>
+<li>Under the <code>Sprite</code> component change the <code>VertexColor</code></li>
+<li>Upload the Projectile object to a new archetype called <code>Projectile</code></li>
+</ul>
+<h2 id="destroyoncollision">DestroyOnCollision</h2>
+<h3 id="properties-2">Properties</h3>
+<ul>
+<li>In <code>DestroyOnCollision</code></li>
+<li>Define a property of type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">Boolean</a> named <code>DestroyOwner</code> (defaulting to <code>false</code>)</li>
+<li>Define a property of type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">Boolean</a> named <code>DestroyOther</code> (defaulting to <code>false</code>)</li>
+</ul>
+<h3 id="destroying-on-collision">Destroying On Collision</h3>
+<ul>
+<li><p>In <code>DestroyOnCollision</code></p>
+</li>
+<li><p>Connect to the <code>CollisionStarted</code> event</p>
+</li>
+<li><p>In <code>OnCollisionStarted</code></p>
+</li>
+<li><p>If <code>DestroyOther</code> is true call <code>event.OtherObject.Destroy()</code></p>
+</li>
+<li><p>If <code>DestroyOwner</code> is true call <code>this.Owner.Destroy()</code></p>
+</li>
+<li><p>Play the game</p>
+</li>
+<li><p>At this point the ship should be able to move, rotate, and shoot.</p>
+</li>
+</ul>
+<h1 id="astroids">Astroids</h1>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/createobject.md">CreateSprite</a></li>
+<li>Rename the new sprite to <code>Asteroid</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a> to the Asteroid object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a> to the Asteroid object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> <code>DestroyOnCollision</code> to the Asteroid object</li>
+<li>Upload the <code>Asteroid</code> archetype</li>
+</ul>
+<h2 id="spawning-asteroids">Spawning Asteroids</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/createobject.md">CreateSprite</a></li>
+<li>Rename the new sprite to <code>AsteroidSpawner</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md">Orientation</a> to the AsteroidSpawner object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> <code>ObjectSpawner</code> to the AsteroidSpawner object</li>
+</ul>
+<h3 id="createoninterval-component">CreateOnInterval Component</h3>
+<ul>
+<li>Add a NadaScript resource using the Component template template and name it <code>CreateOnInterval</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> <code>CreateOnInterval</code> to the AsteroidSpawner object</li>
+<li>Move the AsteroidSpawner object outside the viewport so the GameCamera object can not see it</li>
+<li>Upload the AsteroidSpawner object to a new archetype called <code>AsteroidSpawner</code></li>
+</ul>
+<h3 id="properties-3">Properties</h3>
+<ul>
+<li>In <code>CreateOnInterval</code></li>
+<li>Define a property of type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">Real</a> in <code>CreateOnInterval</code> named <code>SpawnRate</code></li>
+<li>Define a property of type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">Boolean</a> in <code>CreateOnInterval</code> named <code>StartOnInit</code> defaulting to <code>true</code></li>
+<li>Define a non-property member variable of type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/actionset.md">ActionsSet</a> in <code>CreateOnInterval</code> named <code>SpawnSequence</code></li>
+</ul>
+<h3 id="interval-spawning">Interval Spawning</h3>
+<ul>
+<li>In <code>CreateOnInterval</code></li>
+<li>Declare a function named <code>StartSpawnSequence</code></li>
+<li>In <code>StartSpawnSequence</code></li>
+<li>Construct a new ActionSequence using <code>this.Owner.Actions</code> and assign it to the member variable <code>SpawnSequence</code></li>
+<li>Construct a <code>Delay</code> action using <code>SpawnSequence</code> and <code>SpawnRate</code></li>
+<li>Construct a <code>Call</code> action using <code>SpawnSequence</code> and <code>ObjectSpawner.SpawnObject</code></li>
+<li>Construct a <code>Call</code> action using <code>SpawnSequence</code> and <code>StartSpawnSequence</code></li>
+<li>In the <code>Initialize</code> function</li>
+<li>If <code>StartOnInit</code> is <code>true</code></li>
+<li>Call <code>StartSpawnSequence</code></li>
+</ul>
+<h1 id="the-screenwrap-component">The ScreenWrap Component</h1>
+<ul>
+<li>Add a NadaScript resource using the Component template template and name it <code>ScreenWrap</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> <code>ScreenWrap</code> to the Asteroid resource and Player resource archetypes</li>
+</ul>
+<h2 id="screenwrapping">ScreenWrapping</h2>
+<ul>
+<li>The <code>ScreenWrap</code> component should look like this</li>
+</ul>
+<pre><code class="lang-name=ScreenWrap,">class ScreenWrap : NadaComponent
+{
+  [Dependency] var Transform : Transform;
+  
+  [Property]
+  var Camera : CogPath = CogPath();
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zilch.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    //Get the viewport component
+    var viewport = this.Camera.Cog.CameraViewport;
+    
+    //prevent dividing by zero when the viewport resolution is (0,0) on game close
+    if(Math.LengthSq(viewport.ViewportResolution) == 0.0)
+      return;
+      
+    //get the normalized viewport
+    var worldPos = this.Transform.WorldTranslation;
+    var screenPos = viewport.WorldToScreen(worldPos);
+    var viewportPos = viewport.ScreenToViewport(screenPos);
+    var normalizedViewportPos = viewportPos / viewport.ViewportResolution;
+    
+    //screen wrap in normalized viewport space
+    if(normalizedViewportPos.X &gt; 1.0)
+      normalizedViewportPos.X = 0.0;
+    else if(normalizedViewportPos.X &lt; 0.0)
+      normalizedViewportPos.X = 1.0;
+    
+    if(normalizedViewportPos.Y &gt; 1.0)
+      normalizedViewportPos.Y = 0.0;
+    else if(normalizedViewportPos.Y &lt; 0.0)
+      normalizedViewportPos.Y = 1.0;
+    
+    //convert the wrapped viewport position to world space
+    viewportPos = normalizedViewportPos * viewport.ViewportResolution;
+    screenPos = viewport.ViewportToScreen(viewportPos);
+    worldPos = viewport.ScreenToWorldZPlane(screenPos, worldPos.Z);
+    
+    //set the object's position
+    this.Transform.WorldTranslation = worldPos;
+  }
+}
+</code></pre>
+<ul>
+<li>Drag and drop an instance of the Asteroid Asteroid resource and Player resource in the level</li>
+<li>Under ObjectSpawner</li>
+<li>Set the <code>Camera</code> CogPath property to reference the Gamecamera object</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94409.zip" alt="Asteroids"></p>
+<p>At this point you should have a small ship navigating the screen, shooting, screenwrapping, and destroying asteroids.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_for_educators/asteroids_project.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,975 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/nada_base_types/filepath.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Core</code></p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#addtrailingdirectorysepa">AddTrailingDirectorySeparator</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#directoryseparator-zero">DirectorySeparator</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#changeextension-zilch-eng">ChangeExtension</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#executabledirectory-zero">ExecutableDirectory</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#combinedirectories-zero">CombineDirectories</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#executablefile-zilch-engi">ExecutableFile</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#combinedirectoriesandfil">CombineDirectoriesAndFile</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#temporarydirectory-zero">TemporaryDirectory</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#getcanonicalizedpathfrom">GetCanonicalizedPathFromAbsolutePath</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#userdocumentsdirectory-z">UserDocumentsDirectory</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#getcomparablepathfromabs">GetComparablePathFromAbsolutePath</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#userlocaldirectory-zero">UserLocalDirectory</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#getdirectoryname-zilch-en">GetDirectoryName</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#workingdirectory-zilch-en">WorkingDirectory</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#getdirectorypath-zilch-en">GetDirectoryPath</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#getextensionwithdot-zero">GetExtensionWithDot</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#getextensionwithoutdot-z">GetExtensionWithoutDot</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#getfilenamewithextension">GetFileNameWithExtension</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#getfilenamewithoutextens">GetFileNameWithoutExtension</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#isrelative-zilch-engine-d">IsRelative</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/filepath.md#removetrailingdirectorys">RemoveTrailingDirectorySeparator</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="directoryseparator--string">DirectorySeparator : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>read-only</code> <code>static</code></p>
+<blockquote>
+<p>Gets the character(s) used for separating directories and files. This value is often different depending on the operating system (generally either '/' or '')</p>
+</blockquote>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var DirectorySeparator : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="executabledirectory--string">ExecutableDirectory : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>read-only</code> <code>static</code></p>
+<blockquote>
+<p>The directory the executable lives with in (exe, elf...). This will always include a directory separator at the end of the result.</p>
+</blockquote>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var ExecutableDirectory : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="executablefile--string">ExecutableFile : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>read-only</code> <code>static</code></p>
+<blockquote>
+<p>A path directly to the executable itself (exe, elf...).</p>
+</blockquote>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var ExecutableFile : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="temporarydirectory--string">TemporaryDirectory : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>read-only</code> <code>static</code></p>
+<blockquote>
+<p>Temporary files should be placed here. This will always include a directory separator at the end of the result.</p>
+</blockquote>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var TemporaryDirectory : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="userdocumentsdirectory--string">UserDocumentsDirectory : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>read-only</code> <code>static</code></p>
+<blockquote>
+<p>User saved data that the user can backup or modify should be placed here (read/write/create permissions should be allowed). This will always include a directory separator at the end of the result.</p>
+</blockquote>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var UserDocumentsDirectory : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="userlocaldirectory--string">UserLocalDirectory : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>read-only</code> <code>static</code></p>
+<blockquote>
+<p>Application saved information should be placed here (read/write/create permissions should be allowed). This will always include a directory separator at the end of the result.</p>
+</blockquote>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var UserLocalDirectory : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="workingdirectory--string">WorkingDirectory : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>A directory that all relative paths start resolving from. In general the changing of the working directory is discouraged because it may affect assumptions of the host application. This will always include a directory separator at the end of the result.</p>
+</blockquote>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorkingDirectory : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="addtrailingdirectoryseparator--string">AddTrailingDirectorySeparator : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Pass in a directory path with or without the separator and this will add it at the end (if needed).
+Example: ('Content\Powerups') results in 'Content\Powerups'
+Example: ('Content\Powerups') results in 'Content\Powerups'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function AddTrailingDirectorySeparator(p0 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="changeextension--string">ChangeExtension : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Changes the extension of a path (with file name at the end) to a new extension. If the file has no extension, then this will automatically add the extension to the end. The extension is allowed to contain a leading dot '.' character (or not). The path is also allowed to contain a trailing dot '.' character (or not).
+Example: ('Content\Player.png', 'jpg') results in 'Content\Player.jpg'
+Example: ('Content\Player', 'jpg') results in 'Content\Player.jpg'
+Example: ('Content\Player.', '.jpg') results in 'Content\Player.jpg'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>p1</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function ChangeExtension(p0 : String, p1 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="combinedirectories--string">CombineDirectories : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Combines directory paths and directories names together (empty entries are skipped). This will always include a directory separator at the end of the result.
+Example: ('Content', 'Powerups') results in 'Content\Powerups'
+Example: ('Content', 'Powerups') results in 'Content\Powerups'
+Example: ('Content', '', 'Powerups') results in 'Content\Powerups'
+Example: ('C:\Sandbox', 'Content') results in 'C:\Sandbox\Content'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dir0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir1</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function CombineDirectories(dir0 : String, dir1 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="combinedirectories--string-1">CombineDirectories : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Combines directory paths and directories names together (empty entries are skipped). This will always include a directory separator at the end of the result.
+Example: ('Content', 'Powerups') results in 'Content\Powerups'
+Example: ('Content', 'Powerups') results in 'Content\Powerups'
+Example: ('Content', '', 'Powerups') results in 'Content\Powerups'
+Example: ('C:\Sandbox', 'Content') results in 'C:\Sandbox\Content'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dir0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir1</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir2</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function CombineDirectories(dir0 : String, dir1 : String, dir2 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="combinedirectories--string-2">CombineDirectories : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Combines directory paths and directories names together (empty entries are skipped). This will always include a directory separator at the end of the result.
+Example: ('Content', 'Powerups') results in 'Content\Powerups'
+Example: ('Content', 'Powerups') results in 'Content\Powerups'
+Example: ('Content', '', 'Powerups') results in 'Content\Powerups'
+Example: ('C:\Sandbox', 'Content') results in 'C:\Sandbox\Content'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dir0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir1</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir2</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir3</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function CombineDirectories(dir0 : String, dir1 : String, dir2 : String, dir3 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="combinedirectories--string-3">CombineDirectories : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Combines directory paths and directories names together (empty entries are skipped). This will always include a directory separator at the end of the result.
+Example: ('Content', 'Powerups') results in 'Content\Powerups'
+Example: ('Content', 'Powerups') results in 'Content\Powerups'
+Example: ('Content', '', 'Powerups') results in 'Content\Powerups'
+Example: ('C:\Sandbox', 'Content') results in 'C:\Sandbox\Content'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dir0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir1</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir2</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir3</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir4</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function CombineDirectories(dir0 : String, dir1 : String, dir2 : String, dir3 : String, dir4 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="combinedirectoriesandfile--string">CombineDirectoriesAndFile : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Combines directory paths, directories names, and a single file name together (empty entries are skipped). Because we are combining a file name at the end, this will not result in a trailing directory separator.
+Example: ('Content\Powerups', 'Recharge.png') results in 'Content\Powerups\Recharge.png'
+Example: ('Content\Powerups', '', 'Recharge.png') results in 'Content\Powerups\Recharge.png'
+Example: ('Content', 'Powerups', 'Recharge.png') results in 'Content\Powerups\Recharge.png'
+Example: ('C:\Sandbox', 'Content\Player.png') results in 'C:\Sandbox\Content\Player.png'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dir0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>fileName</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function CombineDirectoriesAndFile(dir0 : String, fileName : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="combinedirectoriesandfile--string-1">CombineDirectoriesAndFile : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Combines directory paths, directories names, and a single file name together (empty entries are skipped). Because we are combining a file name at the end, this will not result in a trailing directory separator.
+Example: ('Content\Powerups', 'Recharge.png') results in 'Content\Powerups\Recharge.png'
+Example: ('Content\Powerups', '', 'Recharge.png') results in 'Content\Powerups\Recharge.png'
+Example: ('Content', 'Powerups', 'Recharge.png') results in 'Content\Powerups\Recharge.png'
+Example: ('C:\Sandbox', 'Content\Player.png') results in 'C:\Sandbox\Content\Player.png'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dir0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir1</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>fileName</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function CombineDirectoriesAndFile(dir0 : String, dir1 : String, fileName : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="combinedirectoriesandfile--string-2">CombineDirectoriesAndFile : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Combines directory paths, directories names, and a single file name together (empty entries are skipped). Because we are combining a file name at the end, this will not result in a trailing directory separator.
+Example: ('Content\Powerups', 'Recharge.png') results in 'Content\Powerups\Recharge.png'
+Example: ('Content\Powerups', '', 'Recharge.png') results in 'Content\Powerups\Recharge.png'
+Example: ('Content', 'Powerups', 'Recharge.png') results in 'Content\Powerups\Recharge.png'
+Example: ('C:\Sandbox', 'Content\Player.png') results in 'C:\Sandbox\Content\Player.png'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dir0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir1</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir2</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>fileName</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function CombineDirectoriesAndFile(dir0 : String, dir1 : String, dir2 : String, fileName : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="combinedirectoriesandfile--string-3">CombineDirectoriesAndFile : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Combines directory paths, directories names, and a single file name together (empty entries are skipped). Because we are combining a file name at the end, this will not result in a trailing directory separator.
+Example: ('Content\Powerups', 'Recharge.png') results in 'Content\Powerups\Recharge.png'
+Example: ('Content\Powerups', '', 'Recharge.png') results in 'Content\Powerups\Recharge.png'
+Example: ('Content', 'Powerups', 'Recharge.png') results in 'Content\Powerups\Recharge.png'
+Example: ('C:\Sandbox', 'Content\Player.png') results in 'C:\Sandbox\Content\Player.png'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dir0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir1</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir2</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dir3</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>fileName</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function CombineDirectoriesAndFile(dir0 : String, dir1 : String, dir2 : String, dir3 : String, fileName : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getcanonicalizedpathfromabsolutepath--string">GetCanonicalizedPathFromAbsolutePath : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Changes all directory separators to be the current operating system directory separator, removes duplicate separators, and removes '..' and '.' from the paths. Canonicalized is only guaranteed to work on absolute paths. This behavior is operating system dependent and may call the related OS functions.
+Example: ('C:/Sandbox//Engine/../Content/./Player.png') results in 'C:\Sandbox\Content\Player.png'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function GetCanonicalizedPathFromAbsolutePath(p0 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getcomparablepathfromabsolutepath--string">GetComparablePathFromAbsolutePath : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>First this normalizes the path, then if the operating system is case insensative, it will make the path all lowercase so that it compares.
+Example: ('C:\Sandbox\Engine..\Content.\Player.png') results in 'c:\sandbox\content\player.png'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function GetComparablePathFromAbsolutePath(p0 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getdirectoryname--string">GetDirectoryName : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>If a file path is passed in, this will return the name of the parent directory. If a directory path is passed in (ending in a separator), this will return the name of the directory. A directory path without a trailing separator is abiguous with a file that has no extension. In this case, we always assume it is a file and therefore get the parent directory's name.
+Example: ('Content\Powerups\Recharge.png') results in 'Powerups'
+Example: ('Content\Powerups') results in 'Powerups'
+Example: ('Content\Powerups') results in 'Content'
+Example: ('Content') results in ''</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function GetDirectoryName(p0 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getdirectorypath--string">GetDirectoryPath : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>If a file path is passed in, this will return the parent directory. If a directory path is passed in (ending in a separator), this will return the directy back with no modifications. A directory path without a trailing separator is abiguous with a file that has no extension. This will always include a directory separator at the end of the result. In this case, we always assume it is a file and therefore get the parent directory's name.
+Example: ('Content\Powerups\Recharge.png') results in 'Content\Powerups'
+Example: ('Content\Powerups') results in 'Content\Powerups'
+Example: ('Content\Powerups') results in 'Content'
+Example: ('Content') results in ''</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function GetDirectoryPath(p0 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getextensionwithdot--string">GetExtensionWithDot : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Returns only the extension of a file (everything after the last dot, including the dot). If the file has no extension then this will return an empty string.
+Example: ('Content\Player.png') results in '.png'
+Example: ('Content\Player.') results in ''
+Example: ('Parent.Directory\Log') results in ''</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function GetExtensionWithDot(p0 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getextensionwithoutdot--string">GetExtensionWithoutDot : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Returns only the extension of a file (everything after the last dot, not including the dot). If the file has no extension then this will return an empty string.
+Example: ('Content\Player.png') results in 'png'
+Example: ('Content\Player.') results in ''
+Example: ('Parent.Directory\Log') results in ''</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function GetExtensionWithoutDot(p0 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getfilenamewithextension--string">GetFileNameWithExtension : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Returns only the file portion of a path (everything past the last separator including the extension).
+Example: ('Content\Player.png') results in 'Player.png'
+Example: ('Content\Powerups') results in ''
+Example: ('Content\Powerups') results in 'Powerups'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function GetFileNameWithExtension(p0 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getfilenamewithoutextension--string">GetFileNameWithoutExtension : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Returns only the file portion of a path (everything past the last separator excluding the extension).
+Example: ('Content\Player.png') results in 'Player'
+Example: ('Content\Powerups') results in ''
+Example: ('Content\Powerups') results in 'Powerups'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function GetFileNameWithoutExtension(p0 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isrelative--boolean">IsRelative : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Returns true if a path has no root (such as a volume/hard drive specifier, or unix like systems a beginning slash). Even a beginning slash that means 'relative to the current working directory volume' is still relative. Empty paths will return that they are relative.
+Example: ('C:\Sandbox\Engine..\Content.\Player.png') results in 'false'
+Example: ('Sandbox') results in 'true'
+Example: ('Content\Powerups\Recharge.png') results in 'true'
+Example: ('/usr/Content/Player.png') results in 'false'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function IsRelative(p0 : String) : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="removetrailingdirectoryseparator--string">RemoveTrailingDirectorySeparator : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<p>Pass in a directory path with or without the separator and this will remove it from the end (if needed).
+Example: ('Content\Powerups') results in 'Content\Powerups'
+Example: ('Content\Powerups') results in 'Content\Powerups'</p>
+</blockquote>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function RemoveTrailingDirectorySeparator(p0 : String) : String
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/nada_base_types/filepath.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

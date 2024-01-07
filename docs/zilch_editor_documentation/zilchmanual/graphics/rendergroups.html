@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>RenderGroup usage in the DeferredRenderer | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="RenderGroup usage in the DeferredRenderer | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/rendergroups.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendergroup.md"> RenderGroup</a> resources act as categories for <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/materials_overview.md"> Materials</a>. In a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer.md">Renderer</a> script, when adding a RenderPass task, a RenderGroup is used to specify which set of objects is to be drawn by that render task. When that render task is executed, all Graphicals in the scene that are using a Material that is categorized as that RenderGroup will be drawn.</p>
+<h1 id="rendergroup-usage-in-the-deferredrenderer">RenderGroup usage in the DeferredRenderer</h1>
+<p>A variety of RenderGroup usage examples can be found in the DeferredRenderer resource script. The table below provides some brief descriptions for how it uses different groups of objects to define different steps of the rendering pipeline, in the order they're used.</p>
+<table>
+<thead>
+<tr>
+<th>RenderGroup</th>
+<th>Usage Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Opaque</code></td>
+<td>Renders scene geometry and PBR attributes to buffers that are used throughout the pipeline.</td>
+</tr>
+<tr>
+<td><code>OpaqueDoubleSided</code></td>
+<td>Same as Opaque but for backface triangle culling to be disabled.</td>
+</tr>
+<tr>
+<td><code>Lights</code></td>
+<td>Renders lights to detect overlaps with scene geometry to perform light calculations.</td>
+</tr>
+<tr>
+<td><code>AdditiveBlend</code></td>
+<td>Renders additively to the lighting results so that objects can invoke the Bloom effect if enabled.</td>
+</tr>
+<tr>
+<td><code>AlphaBlend</code></td>
+<td>Renders with semi-transparency after lighting effects.</td>
+</tr>
+<tr>
+<td><code>DebugDraw</code></td>
+<td>Same as AlphaBlend but is a different RenderGroup so debug drawing can be arbitrarily disabled.</td>
+</tr>
+<tr>
+<td><code>DebugDrawOnTop</code></td>
+<td>Same as DebugDraw but does not depth test with scene geometry, so objects are not occluded.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="assigning-rendergroups">Assigning RenderGroups</h1>
+<p>To assign a RenderGroup to a Material, open the Material in the Properties window window. Under the RenderGroups drop-down menu dropdown are all the RenderGroups currently assigned to that Material. Assign a new RenderGroup by clicking {nav icon=square-o, name=Add RenderGroup...} and select one from the list. Clicking on one in the current list will select that RenderGroup in the Properties window window and clicking the x button will remove it from the list.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47760.png" alt="DefaultRenderGroups"></p>
+<p>While this way of assigning RenderGroups is sufficient in most cases, there may be times when an existing Material should have a RenderGroup but the Material either can't or shouldn't be modified. For this reason, a RenderGroup can also reference a Material by selecting a RenderGroup and adding a Material to its list in the same way. If either or both resources reference one another then that Material belongs to that RenderGroup.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/66419.png" alt="AddMatToGroup"></p>
+<p>(NOTE)<strong>For Convenience</strong> If either a RenderGroup or Material reference one another, the ReferencedBy drop-down menu list displays which resources are referencing it. Resources can also be selected from this list by clicking on them.<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/66421.png" alt="ReferencedBy"></p>
+<h1 id="sort-method">Sort Method</h1>
+<p>No matter what the renderer is, the order that graphicals are drawn will almost always be important.  In a 3D game, depth tests can be used instead of any sorting.  In a 2D game, where every graphical shares the same z coordinate the player should be drawn after the background.  In some cases like this, usual Z-based sorting methods wont work.  On each RenderGroup, there's a GraphicalSortMethod drop-down menu property that defines how graphicals in that RenderGroup are sorted.  Below are all the sorting methods and what they do:</p>
+<table>
+<thead>
+<tr>
+<th>Sort Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>None</code></td>
+<td>No sorting is done</td>
+</tr>
+<tr>
+<td><code>GraphicalSortValue</code></td>
+<td>Graphicals are sorted by their GroupSortValue</td>
+</tr>
+<tr>
+<td><code>BackToFrontView</code></td>
+<td>Graphicals are sorted back to front on the View space Z axis</td>
+</tr>
+<tr>
+<td><code>BackToFrontZ</code></td>
+<td>Graphicals are sorted back to front on the World space Z axis</td>
+</tr>
+<tr>
+<td><code>FrontToBackView</code></td>
+<td>Graphicals are sorted front to back on the View space Z axis</td>
+</tr>
+<tr>
+<td><code>FrontToBackZ</code></td>
+<td>Graphicals are sorted front to back on the World space Z axis</td>
+</tr>
+<tr>
+<td><code>SortEvent</code></td>
+<td>Sorting is done by a value handled in the SortEvent</td>
+</tr>
+</tbody>
+</table>
+<h1 id="creating-rendergroups">Creating RenderGroups</h1>
+<p>To create a RenderGroup, use <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#add">Add</a> or the Add button button.  From the resource list, select <code>RenderGroup  &gt; DefaultRenderGroup</code>:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46036.png" alt="image"></p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer.md">Renderer</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer/deferred_renderer.md">Deferred and Forward Renderer</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendergroup.md">rendergroup</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/rendergroups.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

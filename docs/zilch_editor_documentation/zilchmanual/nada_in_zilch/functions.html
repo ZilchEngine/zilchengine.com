@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Function Rules | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Function Rules | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>A function is a named block of code (with its own <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md#scope">scope</a> that performs a task. Ideally, one function should perform just one task. A function may return a value of a specific <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">type</a> based on the operation performed in the function or it may return nothing at all. Functions can also take in values of a specific type, which are called parameters, that are used and/or changed by the operation of the function.</p>
+<p>Functions are declared using the <strong>function</strong> keyword:</p>
+<pre><code class="lang-lang=csharp,">// Note:
+// -function keyword is used
+// -function name is capitalized
+// -function name is followed by ()
+// -when present parameters go in between ()
+//  -parameter names must start with a lowercase character
+//  -parameters must have their type specified
+// -when a return type is present a colon ':' follows the ')' &amp; the returned type follows the ':'
+function MyFunctionName(param1: MyParamType1, param2: MyParamType2) : MyReturnType
+{// Scope of the function in wrapped in {}
+  // function operations within this scope.
+  
+  // return keyword used to pass back return value specified.
+  return MyReturnType(param1 + param2);
+}
+</code></pre>
+<h1 id="function-rules">Function Rules</h1>
+<p>There are a number of important rules that functions in Nada must follow. If these rules are not followed, an error will be thrown, as can be seen in the examples below.</p>
+<h2 id="no-global-functions">No Global Functions</h2>
+<p>Nada <strong>does not support</strong> global functions. They must be contained within the scope of either a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">class</a> or <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/structs.md">struct</a>. Thus, the above would actually be encased like this:</p>
+<pre><code class="lang-lang=csharp,">class MyClassName
+{
+    function MyFunctionName(param1: MyParamType1, param2: MyParamType2) : MyReturnType
+    {
+        // Perform function operations here.
+        return MyReturnType(param1 + param2);
+    }
+}
+</code></pre>
+<p>or this:</p>
+<pre><code class="lang-lang=csharp,">struct MyStructName
+{
+  function MyFunctionName(param1: MyParamType1, param2: MyParamType2) : MyReturnType
+  {
+    // Perform function operations here.
+    return MyReturnType(param1 + param2);
+  }
+}
+</code></pre>
+<p>Otherwise you may see an error like this</p>
+<pre><code class="lang-name=Console">Parsing could not be completed (we ran into something we didn't understand). The token we hit was 'function' with token type 'Function'.
+</code></pre>
+<h1 id="the-static-keyword">The Static Keyword</h1>
+<p>Static functions can be implemented using the <code>[Static]</code> attribute. Operations performed by functions which are static should be independent of independent of any particular data of the class. This is important as static functions can also be called with out access to an instance of the class by referencing the function through the non-instantied type:</p>
+<pre><code class="lang-lang=csharp,">class MyClass
+{
+  [Static] // Marking it static allows you to reference the function without creating an instance.
+  function ClassName():String
+  {
+    return &quot;MyClass&quot;;
+  }
+}
+</code></pre>
+<p>If we were to test it:</p>
+<pre><code>Console.WriteLine(MyClass.ClassName());
+</code></pre>
+<p>the result would be</p>
+<pre><code class="lang-name=ConsoleWindow">MyClass
+</code></pre>
+<p>NOTE: Unlike other languages static functions <strong>cannot</strong> be called from an instance, <strong>only</strong> from the class name.</p>
+<h1 id="function-naming">Function Naming</h1>
+<p>The first letter of a function name MUST be capitalized. While the rest of the name may remain un-capitalized, function names are traditionally written using <a href="https://en.wikipedia.org/wiki/Camel_case">upper camel case</a> (e.g. <code>MyFunctionName</code> instead of <code>Myfunctionname</code>).</p>
+<pre><code class="lang-lang=csharp,">// Lowercase function name will cause a compiler error.
+function myFunctionName() // This won't work..
+{
+  // Perform function operations here.
+}
+</code></pre>
+<pre><code class="lang-name=Console">Function declaration is missing a name. Upper-camel case names are required here (use 'MyFunctionName' instead of 'myFunctionName').
+</code></pre>
+<h1 id="parameter-and-variable-naming">Parameter and Variable Naming</h1>
+<p>Parameters and locally-scoped (to the function scope in this case) MUST start with a lowercase character. While the rest of the name may remain un-capitalized, parameter and local variables are traditionally written using lower camel case (e.g. <code>myParamName</code> instead of <code>myparamname</code>).</p>
+<pre><code class="lang-lang=csharp,">// Capitalized parameter identifiers will cause a compiler error.
+function MyFunctionName(Param1: MyParamType) // This won't work.
+{
+  // Capitalized locally-scoped variables will also cause a compiler error.
+  var Count: Integer = 10; // This won't work.
+}
+</code></pre>
+<pre><code class="lang-name=Console">Function declaration 'MyFunctionName' has an invalid argument list. We found 'UpperIdentifier' but we expected to find ')'.
+</code></pre>
+<p>In this error, <code>UpperIdentifier</code> refers to the uppercase letter 'P' used in <code>Param1</code>. As this is unacceptable for a parameter name, the error states that it expects to find the closing parenthesis instead.</p>
+<h1 id="return-types">Return Types</h1>
+<p>Return types are appended to the function signature <strong>after</strong> the argument list separated by the <code>:</code> operator. When this is left off the return type is assumed to be Void. You can use the <strong>return</strong> keyword to return a value from the function; however, if the function signature has a Void return type, the return statement must be omitted.</p>
+<pre><code class="lang-lang=csharp,">// Leaving off the return value, assumes nothing is returned.
+function MyFunctionName()
+{
+  // 8 will NOT be returned since the signature does not specify a 
+  // return type (a compiler error will occur)
+  return 8;
+}
+</code></pre>
+<pre><code class="lang-name=Console">The return statement was not expected to return a '[ErrorType]' value, since the function does not declare it (no ':' at the end).
+</code></pre>
+<h2 id="code-paths">Code Paths</h2>
+<p>Occasionally you will run into situations such as this:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/66750.png" alt="image"></p>
+<p>If we look at the possible logical flows of the <code>FunctionThatReturns</code> it should be noted that either the <code>if</code> or <code>else</code> case will run, never both. However, if the <code>else</code> case were to run the function would never hit a <code>return</code> statement. Normally this would not be an issue, but in this case the <code>FunctionThatReturns</code> defines a return type and there is a way for the function to fail to do so. This is not ok as it essentially amounts to a dead end in code. This issue throws and exception until all <em>code paths</em> return a value of the correct type.</p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">attributes</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">classes</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">variables_and_data_types</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">classes</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/structs.md">structs</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

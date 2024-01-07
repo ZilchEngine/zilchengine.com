@@ -1,0 +1,724 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/editor.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Editor</code></p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#addresource-void">AddResource</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#actions-zilch-engine-docu">Actions</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/multidock.md">multidock</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editormain.md">editormain</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#addresourcetype-void">AddResourceType</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#editgamesession-zilch-eng">EditGameSession</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#createdockablewindow-voi">CreateDockableWindow</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#editlevel-zilch-engine-do">EditLevel</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#displaygamesession-void">DisplayGameSession</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#editspace-zilch-engine-do">EditSpace</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#editgamespaces-void">EditGameSpaces</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#operationqueue-zilch-engi">OperationQueue</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#editresource-void">EditResource</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#projectcog-zilch-engine-d">ProjectCog</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#executecommand-void">ExecuteCommand</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#selection-zilch-engine-do">Selection</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#pausegame-void">PauseGame</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#playgame-zilch-engine-doc">PlayGame</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#playnewgame-zilch-engine">PlayNewGame</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#playsinglegame-zilch-engi">PlaySingleGame</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#selectprimary-void">SelectPrimary</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#selecttool-void">SelectTool</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#setfocus-void">SetFocus</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#setgamepaused-void">SetGamePaused</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#setmainpropertyviewobjec">SetMainPropertyViewObject</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#stepgame-void">StepGame</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#stopgame-void">StopGame</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#togglegamepaused-void">ToggleGamePaused</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/editor.md#zoomongame-void">ZoomOnGame</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="actions--actions">Actions : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/actions.md">actions</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var Actions : Actions
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="editgamesession--gamesession">EditGameSession : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamesession.md">gamesession</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var EditGameSession : GameSession
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="editlevel--level">EditLevel : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/level.md">level</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var EditLevel : Level
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="editspace--space">EditSpace : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/space.md">space</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var EditSpace : Space
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="operationqueue--operationqueue">OperationQueue : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/operationqueue.md">operationqueue</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var OperationQueue : OperationQueue
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="projectcog--cog">ProjectCog : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">cog</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var ProjectCog : Cog
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="selection--metaselection">Selection : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/metaselection.md">metaselection</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var Selection : MetaSelection
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="addresource--void">AddResource : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function AddResource()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addresourcetype--void">AddResourceType : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boundtype.md">boundtype</a></td>
+<td></td>
+</tr>
+<tr>
+<td>p1</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function AddResourceType(p0 : BoundType, p1 : String)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="createdockablewindow--void">CreateDockableWindow : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>p1</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md">cameraviewport</a></td>
+<td></td>
+</tr>
+<tr>
+<td>p2</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></td>
+<td></td>
+</tr>
+<tr>
+<td>p3</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td>p4</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#dockarea">DockArea</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function CreateDockableWindow(p0 : String, p1 : CameraViewport, p2 : Real2, p3 : Boolean, p4 : DockArea)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="displaygamesession--void">DisplayGameSession : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+<tr>
+<td>p1</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamesession.md">gamesession</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function DisplayGameSession(p0 : String, p1 : GameSession)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="editgamespaces--void">EditGameSpaces : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function EditGameSpaces()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="editresource--void">EditResource : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td>Resource</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function EditResource(p0 : Resource)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="executecommand--void">ExecuteCommand : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function ExecuteCommand(p0 : String)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="pausegame--void">PauseGame : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function PauseGame()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="playgame--gamesession">PlayGame : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamesession.md">gamesession</a></h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#playgameoptions">PlayGameOptions</a></td>
+<td></td>
+</tr>
+<tr>
+<td>p1</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></td>
+<td></td>
+</tr>
+<tr>
+<td>p2</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function PlayGame(p0 : PlayGameOptions, p1 : Boolean, p2 : Boolean) : GameSession
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="playnewgame--gamesession">PlayNewGame : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamesession.md">gamesession</a></h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function PlayNewGame() : GameSession
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="playsinglegame--gamesession">PlaySingleGame : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamesession.md">gamesession</a></h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function PlaySingleGame() : GameSession
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="selectprimary--void">SelectPrimary : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/anyhandle.md">anyhandle</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function SelectPrimary(p0 : AnyHandle)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="selecttool--void">SelectTool : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function SelectTool(p0 : String)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="setfocus--void">SetFocus : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/space.md">space</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function SetFocus(p0 : Space)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="setgamepaused--void">SetGamePaused : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function SetGamePaused(p0 : Boolean)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="setmainpropertyviewobject--void">SetMainPropertyViewObject : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td>Object</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function SetMainPropertyViewObject(p0 : Object)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="stepgame--void">StepGame : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function StepGame()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="stopgame--void">StopGame : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function StopGame()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="togglegamepaused--void">ToggleGamePaused : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function ToggleGamePaused()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="zoomongame--void">ZoomOnGame : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamesession.md">gamesession</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function ZoomOnGame(p0 : GameSession)
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/editor.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,673 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/randomcontext.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Component</code> <code>Gameplay</code></p>
+<p>(NOTE) A random object that contains its own unique random state apart from all other instances of this class.</p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#bellcurve-zilch-engine-do">BellCurve</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#maxint-zilch-engine-docum">MaxInt</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/component.md">component</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#bellcurvedistribution-ze">BellCurveDistribution</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#randomseed-zilch-engine-d">RandomSeed</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#bellcurverange-zilch-engi">BellCurveRange</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#seed-zilch-engine-documen">Seed</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#bool-zilch-engine-documen">Bool</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#coinflip-zilch-engine-doc">CoinFlip</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#dieroll-zilch-engine-docu">DieRoll</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#doublerange-zilch-engine">DoubleRange</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#doublereal-zilch-engine-d">DoubleReal</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#doublerealvariance-zero">DoubleRealVariance</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#float-zilch-engine-docume">Float</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#floatvariance-zilch-engin">FloatVariance</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#int-zilch-engine-document">Int</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#intvariance-zilch-engine">IntVariance</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#probability-zilch-engine">Probability</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#quaternion-zilch-engine-d">Quaternion</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#randomcontext-void">Constructor</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#range-zilch-engine-docume">Range</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#rangeexclusivemax-zilch-e">RangeExclusiveMax</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#rangeinclusivemax-zilch-e">RangeInclusiveMax</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#real-zilch-engine-documen">Real</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#real2-zilch-engine-docume">Real2</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#real3-zilch-engine-docume">Real3</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#realvariance-zilch-engine">RealVariance</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#rotation-zilch-engine-doc">Rotation</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#unitreal2-zilch-engine-do">UnitReal2</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#unitreal3-zilch-engine-do">UnitReal3</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#unitvector2-zilch-engine">UnitVector2</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#unitvector3-zilch-engine">UnitVector3</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#vector2-zilch-engine-docu">Vector2</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md#vector3-zilch-engine-docu">Vector3</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="maxint--integer">MaxInt : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>The max integer value that can be returned.</p>
+<pre><code class="lang-lang=cpp,">var MaxInt : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="randomseed--boolean">RandomSeed : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var RandomSeed : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="seed--integer">Seed : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<blockquote>
+<p>Seeds the random number generator.</p>
+<pre><code class="lang-lang=cpp,">var Seed : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="bellcurve--real">BellCurve : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>Samples a bell curve with standard normal distribution in the range [0,1] This is equivalent to a Gaussian distribution with standard deviation of 1.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function BellCurve() : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="bellcurvedistribution--real">BellCurveDistribution : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>Samples a bell curve in the range [center - range, center + range] with the given standard deviation. Around 68% will lie within the 1st standard deviation.
+|Name|Type|Description|
+|---|---|---|
+|center|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|range|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|standardDeviation|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function BellCurveDistribution(center : Real, range : Real, standardDeviation : Real) : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="bellcurverange--real">BellCurveRange : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>Samples a bell curve with in the range [center - range, center + range] This uses a standard deviation of 1.
+|Name|Type|Description|
+|---|---|---|
+|center|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|range|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function BellCurveRange(center : Real, range : Real) : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="bool--boolean">Bool : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Returns a random bool value.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function Bool() : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="coinflip--boolean">CoinFlip : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Returns true if the coin flips heads.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function CoinFlip() : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="dieroll--integer">DieRoll : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<blockquote>
+<p>Randomly rolls a number in the range [1, sides].
+|Name|Type|Description|
+|---|---|---|
+|sides|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function DieRoll(sides : Integer) : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="doublerange--doublereal">DoubleRange : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doublereal.md">doublereal</a></h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doublereal.md">doublereal</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doublereal.md">doublereal</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function DoubleRange( : DoubleReal,  : DoubleReal) : DoubleReal
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="doublereal--doublereal">DoubleReal : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doublereal.md">doublereal</a></h1>
+<blockquote>
+<p>Returns a random double real in the range [0,1].
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function DoubleReal() : DoubleReal
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="doublerealvariance--doublereal">DoubleRealVariance : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doublereal.md">doublereal</a></h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doublereal.md">doublereal</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doublereal.md">doublereal</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function DoubleRealVariance( : DoubleReal,  : DoubleReal) : DoubleReal
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="float--real">Float : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>Returns a random float in the range [0,1].
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function Float() : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="floatvariance--real">FloatVariance : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>Returns a float in the range [base - variance, base + variance].
+|Name|Type|Description|
+|---|---|---|
+|base|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|variance|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function FloatVariance(base : Real, variance : Real) : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="int--integer">Int : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<blockquote>
+<p>Returns a random int in the range of [0, MaxInt].
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function Int() : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="intvariance--integer">IntVariance : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<blockquote>
+<p>Int in the range [base - variance, base + variance].
+|Name|Type|Description|
+|---|---|---|
+|base|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |
+|variance|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function IntVariance(base : Integer, variance : Integer) : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="probability--boolean">Probability : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Takes a given probability that we get a true value.
+|Name|Type|Description|
+|---|---|---|
+|probOfTrue|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function Probability(probOfTrue : Real) : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="quaternion--quaternion">Quaternion : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/quaternion.md">quaternion</a></h1>
+<blockquote>
+<p>Random unit length quaternion. This is also a unit quaternion.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function Quaternion() : Quaternion
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="randomcontext--void">RandomContext : Void</h1>
+<p><code>constructor</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function RandomContext()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="range--real">Range : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>A random float in the range [min,max].
+|Name|Type|Description|
+|---|---|---|
+|min|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|max|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function Range(min : Real, max : Real) : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="rangeexclusivemax--integer">RangeExclusiveMax : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<blockquote>
+<p>Int in the range [min, max)
+|Name|Type|Description|
+|---|---|---|
+|min|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |
+|max|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function RangeExclusiveMax(min : Integer, max : Integer) : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="rangeinclusivemax--integer">RangeInclusiveMax : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<blockquote>
+<p>Int in the range [min, max].
+|Name|Type|Description|
+|---|---|---|
+|min|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |
+|max|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function RangeInclusiveMax(min : Integer, max : Integer) : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="real--real">Real : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>Returns a random real in the range [0,1].
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function Real() : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="real2--real2">Real2 : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<p>Randomly generates a Real2 with its length between min and max.
+|Name|Type|Description|
+|---|---|---|
+|minLength|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|maxLength|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function Real2(minLength : Real, maxLength : Real) : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="real3--real3">Real3 : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a></h1>
+<blockquote>
+<p>Randomly generates a Real3 with its length between min and max.
+|Name|Type|Description|
+|---|---|---|
+|minLength|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|maxLength|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function Real3(minLength : Real, maxLength : Real) : Real3
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="realvariance--real">RealVariance : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>Returns a real in the range [base - variance, base + variance].
+|Name|Type|Description|
+|---|---|---|
+|base|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|variance|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function RealVariance(base : Real, variance : Real) : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="rotation--quaternion">Rotation : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/quaternion.md">quaternion</a></h1>
+<blockquote>
+<p>Random rotation quaternion. This is the same as calling Quaternion()
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function Rotation() : Quaternion
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="unitreal2--real2">UnitReal2 : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<p>Generates a unit length Real2.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function UnitReal2() : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="unitreal3--real3">UnitReal3 : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a></h1>
+<blockquote>
+<p>Generates a unit length Real3.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function UnitReal3() : Real3
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="unitvector2--real2">UnitVector2 : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<p>Generates a unit length Vec2.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function UnitVector2() : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="unitvector3--real3">UnitVector3 : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a></h1>
+<blockquote>
+<p>Generates a unit length Vec3.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function UnitVector3() : Real3
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="vector2--real2">Vector2 : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<p>Randomly generates a Vec2 with its length between min and max.
+|Name|Type|Description|
+|---|---|---|
+|minLength|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|maxLength|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function Vector2(minLength : Real, maxLength : Real) : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="vector3--real3">Vector3 : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a></h1>
+<blockquote>
+<p>Randomly generates a Vec3 with its length between min and max.
+|Name|Type|Description|
+|---|---|---|
+|minLength|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|maxLength|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function Vector3(minLength : Real, maxLength : Real) : Real3
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/randomcontext.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

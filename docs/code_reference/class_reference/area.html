@@ -1,0 +1,754 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/area.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Component</code> <code>Engine</code></p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#area-void">Constructor</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#bottomcenter-zilch-engine">BottomCenter</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/component.md">component</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#getlocallocation-zilch-en">GetLocalLocation</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#bottomleft-zilch-engine-d">BottomLeft</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#getworldlocation-zilch-en">GetWorldLocation</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#bottomright-zilch-engine">BottomRight</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localoffsetof-zilch-engin">LocalOffsetOf</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#center-zilch-engine-docum">Center</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#setlocallocation-void">SetLocalLocation</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#centerleft-zilch-engine-d">CenterLeft</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#setworldlocation-void">SetWorldLocation</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#centerright-zilch-engine">CenterRight</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localbottom-zilch-engine">LocalBottom</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localbottomcenter-zilch-e">LocalBottomCenter</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localbottomleft-zilch-eng">LocalBottomLeft</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localbottomright-zilch-en">LocalBottomRight</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localcenter-zilch-engine">LocalCenter</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localcenterleft-zilch-eng">LocalCenterLeft</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localcenterright-zilch-en">LocalCenterRight</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localleft-zilch-engine-do">LocalLeft</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localrectangle-zilch-engi">LocalRectangle</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localright-zilch-engine-d">LocalRight</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localtop-zilch-engine-doc">LocalTop</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localtopcenter-zilch-engi">LocalTopCenter</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localtopleft-zilch-engine">LocalTopLeft</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#localtopright-zilch-engin">LocalTopRight</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#origin-zilch-engine-docum">Origin</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#size-zilch-engine-documen">Size</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#topcenter-zilch-engine-do">TopCenter</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#topleft-zilch-engine-docu">TopLeft</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#topright-zilch-engine-doc">TopRight</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldbottom-zilch-engine">WorldBottom</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldbottomcenter-zilch-e">WorldBottomCenter</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldbottomleft-zilch-eng">WorldBottomLeft</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldbottomright-zilch-en">WorldBottomRight</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldcenter-zilch-engine">WorldCenter</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldcenterleft-zilch-eng">WorldCenterLeft</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldcenterright-zilch-en">WorldCenterRight</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldleft-zilch-engine-do">WorldLeft</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldrectangle-zilch-engi">WorldRectangle</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldright-zilch-engine-d">WorldRight</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldtop-zilch-engine-doc">WorldTop</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldtopcenter-zilch-engi">WorldTopCenter</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldtopleft-zilch-engine">WorldTopLeft</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md#worldtopright-zilch-engin">WorldTopRight</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="bottomcenter--real2">BottomCenter : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var BottomCenter : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="bottomleft--real2">BottomLeft : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var BottomLeft : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="bottomright--real2">BottomRight : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var BottomRight : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="center--real2">Center : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var Center : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="centerleft--real2">CenterLeft : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var CenterLeft : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="centerright--real2">CenterRight : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var CenterRight : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localbottom--real">LocalBottom : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LocalBottom : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localbottomcenter--real2">LocalBottomCenter : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LocalBottomCenter : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localbottomleft--real2">LocalBottomLeft : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LocalBottomLeft : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localbottomright--real2">LocalBottomRight : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LocalBottomRight : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localcenter--real2">LocalCenter : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LocalCenter : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localcenterleft--real2">LocalCenterLeft : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LocalCenterLeft : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localcenterright--real2">LocalCenterRight : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LocalCenterRight : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localleft--real">LocalLeft : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LocalLeft : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localrectangle--rectangle">LocalRectangle : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rectangle.md">rectangle</a></h1>
+<blockquote>
+<p>Rectangle representing the area relative to parent.</p>
+<pre><code class="lang-lang=cpp,">var LocalRectangle : Rectangle
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localright--real">LocalRight : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LocalRight : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localtop--real">LocalTop : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LocalTop : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localtopcenter--real2">LocalTopCenter : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LocalTopCenter : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localtopleft--real2">LocalTopLeft : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LocalTopLeft : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localtopright--real2">LocalTopRight : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LocalTopRight : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="origin--location">Origin : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#location">Location</a></h1>
+<blockquote>
+<p>Location of the Origin of the Area.</p>
+<pre><code class="lang-lang=cpp,">var Origin : Location
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="size--real2">Size : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<p>Size of the Area.</p>
+<pre><code class="lang-lang=cpp,">var Size : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="topcenter--real2">TopCenter : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var TopCenter : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="topleft--real2">TopLeft : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var TopLeft : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="topright--real2">TopRight : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var TopRight : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldbottom--real">WorldBottom : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorldBottom : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldbottomcenter--real2">WorldBottomCenter : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorldBottomCenter : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldbottomleft--real2">WorldBottomLeft : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorldBottomLeft : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldbottomright--real2">WorldBottomRight : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorldBottomRight : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldcenter--real2">WorldCenter : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorldCenter : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldcenterleft--real2">WorldCenterLeft : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorldCenterLeft : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldcenterright--real2">WorldCenterRight : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorldCenterRight : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldleft--real">WorldLeft : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorldLeft : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldrectangle--rectangle">WorldRectangle : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rectangle.md">rectangle</a></h1>
+<blockquote>
+<p>Rectangle representing the area in world space.</p>
+<pre><code class="lang-lang=cpp,">var WorldRectangle : Rectangle
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldright--real">WorldRight : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorldRight : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldtop--real">WorldTop : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorldTop : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldtopcenter--real2">WorldTopCenter : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorldTopCenter : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldtopleft--real2">WorldTopLeft : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorldTopLeft : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldtopright--real2">WorldTopRight : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var WorldTopRight : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="area--void">Area : Void</h1>
+<p><code>constructor</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function Area()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getlocallocation--real2">GetLocalLocation : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>location</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#location">Location</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function GetLocalLocation(location : Location) : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getworldlocation--real2">GetWorldLocation : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>location</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#location">Location</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function GetWorldLocation(location : Location) : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="localoffsetof--real2">LocalOffsetOf : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<p>Offset of the given location in local space.
+|Name|Type|Description|
+|---|---|---|
+|location|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#location">Location</a>| |</p>
+<pre><code class="lang-lang=cpp,">function LocalOffsetOf(location : Location) : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="setlocallocation--void">SetLocalLocation : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>location</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#location">Location</a></td>
+<td></td>
+</tr>
+<tr>
+<td>localTranslation</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function SetLocalLocation(location : Location, localTranslation : Real2)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="setworldlocation--void">SetWorldLocation : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>location</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#location">Location</a></td>
+<td></td>
+</tr>
+<tr>
+<td>worldTranslation</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function SetWorldLocation(location : Location, worldTranslation : Real2)
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/area.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

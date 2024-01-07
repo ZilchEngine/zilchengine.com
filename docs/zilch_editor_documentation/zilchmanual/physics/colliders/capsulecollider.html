@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Radius | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Radius | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/physics/colliders/capsulecollider.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/capsulecollider.md">CapsuleCollider</a> defines a <a href="https://en.wikipedia.org/wiki/Capsule_(geometry)">capsule</a> shape for collision. The base size of the capsule is determined by the Radius  and Height  properties. Scale is applied afterwards to determine the final capsule's size.</p>
+<p>Capsules are often used as a combination of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/cylindercollider.md">cylinders</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/ellipsoidcollider.md">ellipsoids</a> for collision, primarily for long thin shapes.  An ellipsoid tends to be undesired when stretched on one axis due its curved sides. A cylinder fixes this but loses the curved caps of the ellipsoid. A capsule combines these by having a cylinder that can be scaled in one axis while containing smooth edge caps.</p>
+<p>Capsules are also commonly used for a player. The player's height can be scaled without affecting its width. Additionally, the curved caps help to avoid <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/physicstroubleshooting/edgecatching.md">edge catching</a> issues.</p>
+<p>(NOTE) <strong>Recommended Reading:</strong> The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md">Collider</a> page should be read before this page.</p>
+<h1 id="radius">Radius</h1>
+<p>Radius  defines the radius of the capsule in local space.</p>
+<h1 id="height">Height</h1>
+<p>Height  defines the local space height of the cylinder. The height is defined as the distance from the center of the bottom sphere to the center of the top sphere.</p>
+<h1 id="direction">Direction</h1>
+<p>Direction enum is used to configure which local-space axis the height of the capsule runs along. This allows aligning a capsule with an asset that was configured about a different axis.</p>
+<h1 id="scaling-mode-and-non-uniform-scale">Scaling Mode and Non-Uniform Scale</h1>
+<p>Like most other Collider types, CapsuleCollider will maintain a perfect capsule shape when non-uniform scale is present. That is to say that the spherical caps on the end of the capsule will always be perfect spheres, never ellipsoids. This creates a dilemma when non-uniform scale is applied to the height axis. There's two different behaviors that a user could expect that is controlled via ScalingMode enum:</p>
+<h2 id="scalingmodepreservescale">ScalingMode.PreserveScale</h2>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46697.png" alt="PreserveScale"></p>
+<p><code>PreserveScale</code> applies scale to the full height of the capsule (including the end caps). The easiest way to understand this mode is by comparing it to a cylinder with the same total height as the capsule, both of which are pictured on the left. After scaling both objects their total heights should be the same as pictured on the right.</p>
+<p>To fully understand what this is doing requires a numerical example. In the above picture, the capsule has a height of <code>1</code> and a radius of <code>0.5</code>. The capsule's total height is <code>2 (height + 2 * radius)</code>. After scaling, the total height should now be <code>4</code>, however no scale was applied in the y-axis so the radius must stay at <code>0.5</code>. This means that the capsule's world height must be <code>3</code> after scaling <code>(height = 4 - 2 * radius)</code>.</p>
+<h2 id="scalingmodepreserveheight">ScalingMode.PreserveHeight</h2>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46699.png" alt="PreserveHeight"></p>
+<p><code>PreserveHeight</code> applies scale just to the capsule's height (not including the end caps). The easiest way to understand this is to compare to a cylinder with the same height as the capsule (pictured on the left). After scaling, the internal cylinder of the capsule matches the scaled cylinder (pictured on the right).</p>
+<p>This mode does not preserve the total scale of the capsule though. The original capsule had a total height of <code>2</code>. Since no scale was applied in the y-axis, the radius has to stay at <code>0.5</code>. Now the scaled capsule has a height of <code>2</code> with a radius of <code>0.5</code> which produces a total height of <code>3</code>.</p>
+<p>This mode is often desired when a model is attached to a cog that should match the inner cylinder. Additionally, this can be useful when game-logic cares about the positioning of the cap centers as opposed to the tips of the capsule.</p>
+<hr>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/cylindercollider.md">cylindercollider.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/ellipsoidcollider.md">ellipsoidcollider.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/physicstroubleshooting/edgecatching.md">edgecatching.md</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/capsulecollider.md">CapsuleCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cylindercollider.md">CylinderCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/ellipsoidcollider.md">EllipsoidCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md">Collider</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/physics/colliders/capsulecollider.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

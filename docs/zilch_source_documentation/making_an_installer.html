@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | ZilchEngine ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_source_documentation/making_an_installer.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>These steps are what the build machine does to make a build. This assumes you have msbuild installed (normally through Visual Studio), Innosetup, and currently Winrar, although a different kind of zipping utility can be used.</p>
+<p>Note that I will use mix using cmd style environment variables: %EnvironmentVarName and msbuild style environment variables: <code>$(EnvironmentVarName)</code>.</p>
+<p>How to build an Zilch for an installer (not actually making the installer, just the exe):</p>
+<ol>
+<li>The first thing you have to do to build Zilch is have a copy of it. You  must check out the ZilchCore depo. This should check out the necessary sub-depos of Tools, ExtensionLibraries, StandardLibraries, and Nada.</li>
+</ol>
+<ul>
+<li>To actually make the installer you also need to checkout the DevTools repo into the Zilch folder, that is you should have <code>Zilch/DevTools/OpenDevTools.cmd</code>.</li>
+</ul>
+<ol start="2">
+<li>For a clean build, make sure that any old build artifacts are deleted for the configuration you are running. That is, go to wherever <code>$(ZILCH_OUTPUT)</code> is defined and delete the folders <code>$(ZILCH_OUTPUT)/Int/$(Platform)/$(Configuration)</code> and <code>$(ZILCH_OUTPUT)/Out/$(Platform)/$(Configuration)</code>.</li>
+</ol>
+<ul>
+<li>For example, <code>$(Platform)</code> is Win32 and <code>$(Configuration)</code> is Release.</li>
+</ul>
+<ol start="3">
+<li>Actually build the configuration. In Visual Studio this is just done by opening and building. To use msbuild via command line you must first open via the visual studio command prompt or first run <code>vcvars32.bat</code> which is located at <code>%VS100COMNTOOLS%/../../VC/bin/vcvars32.bat</code> (or whatever version of visual studio, where VS100 is 2010). The arguments for msbuild are: <code>msbuild Zilch.sln /p:Configuration=$(Configuration) /p:Platform=$(Platform) /t:rebuild</code>. Expand <code>$(Configuration)</code> and <code>$(Platform)</code> yourself to whatever the correct names are. For making an actual build use Win32 and Release.</li>
+<li>You should now have <code>ZilchEditor.Exe</code> located at <code>$(ZILCH_OUTPUT)/Out/$(Platform)/$(Configuration)/Win32Editor</code></li>
+</ol>
+<p>How to make an installer from an already built exe:</p>
+<ol>
+<li>Make sure the devtools depo is checked out</li>
+<li>Make sure that you run <code>SetUpBuildEnvironment.cmd</code> under <code>Zilch/DevTools</code>. This setups up the location of <code>$(ZILCH_OUTPUT)</code> and <code>$(ZILCH_SOURCE)</code> for use in further steps</li>
+<li>Run the <code>BuildMaker.exe</code> tool. It is located in <code>DevTools/BuildMaker</code>. You can either run the pre-cached exe in this folder or open the project and build it. To make a build run the command: <code>BuildMaker.exe -outputSuffix Out/$(Platform)/$(Configuration)/Win32Editor -prefix ZilchEngineSetup -branch default</code>. The <code>-prefix</code> command is the prefix to assign to the exe's name. This will invoke innosetup and make the <code>ZilchEngineSetup.Version.Date.exe</code> under the folder <code>Zilch/Build/Output</code>. For details on how this works see the section on the inno setup build script.</li>
+<li>To make the .zilchbuild file currently you must install Zilch and then zip up the install directory. Ideally you should also delete the <code>unins00.exe</code> and other uninstaller portions first. The current command line to do this (ignoring the deletion of the uninstall exe) is for winrar. WinRar.exe: <code>a -r -ep1 -m5 &quot;$(OutputDir)/ZilchEngine.zip&quot; &quot;$(InstallDir)\*. $(OutputDir)</code> is wherever you want to save the output zip to and <code>$(InstallDir)</code> is likely to be <code>C:\Program Files (x86)\ZilchEditor</code>. The arguments for winrar archive the entire directory with a good compression and it recursively iterates all folders while keeping the folder structure (in case you need to do this in another zipping program). This zip should then be renamed to match the exe's name (with the version and date).</li>
+</ol>
+<p>How to archive data for symbol servers and source indexing:</p>
+<ul>
+<li>These steps are how to save data for debugging at a later date from a built exe. Note that this works after building the Zilch's exe and must be performed on the same exe (and pdb and so on) as the one used to make the installer.</li>
+</ul>
+<ol>
+<li>Make sure the devtools repo is checked out.</li>
+<li>Make sure that you run SetUpBuildEnvironment.cmd under <code>Zilch/DevTools</code>. This setups up the location of <code>$(ZILCH_OUTPUT)</code> and <code>$(ZILCH_SOURCE)</code> for use in further steps</li>
+<li>Add source indexing to the pdb. Source indexing adds information to the pdb to check out the correct version of a file for the date the exe was made. A small tools was added to make this easier. The current arguments are:</li>
+</ol>
+<ul>
+<li><code>SourceIndexer.exe -depo &quot;$(ZILCH_SOURCE)&quot; -depo &quot;$(ZILCH_SOURCE)\Nada&quot; -depo &quot;$(ZILCH_SOURCE)\ExtensionLibraries&quot; -depo &quot;$ZILCH_SOURCE)\ExtensionLibraries\StandardLibraries&quot; -pdb &quot;$(ZILCH_OUTPUT)/Out/$(Platform)/$(Configuration)/Win32Editor/ZilchEditor.pdb&quot;</code></li>
+<li>Basically you need to add every location that a repository exists (including sub-repos) and then provide the location of the pdb to edit. For more information on how to use/test this see <code>Readme.txt</code> in <code>Zilch/DevTools/SourceIndexer</code>.</li>
+</ul>
+<ol start="4">
+<li>This modifies the pdb in place to contain all extra symbol information. Do not release this pdb to other people as it tells them how to check out source code.</li>
+<li>Add the symbols to the symbol server. The symbol server is a local &quot;server&quot; that stores information to be looked up by visual studio at a later date for debugging crash dumps. Search for symstore for more information on command line args. The current arguments we use to store are:</li>
+</ol>
+<ul>
+<li><code>symbstore add /f &quot;($ZILCH_OUTPUT)/Out/$(Platform)/$(Configuration)/Win32Editor&quot; /s &quot;$(SymbolServerLocation)&quot; /t ZilchEditor /compress</code></li>
+<li>The <code>$(SymbolServerLocation)</code> is the local location of the symbol server. <code>/t</code> gives a name to the items being added (change accordingly) and <code>/compress</code> compresses the symbols by a significant factor. The <code>symstore.exe</code> is located under <code>Zilch/DevTools/SourceIndexer/symstore</code>. Additional tools useful for debugging this process are lcoated in the srcsrv folder next to it.</li>
+</ul>
+<p>How to run a project unit test:</p>
+<ul>
+<li><p>First assume that we already have an exe for Zilch somewhere defined via $(ZilchExe).</p>
+</li>
+<li><p>Before running all tests it is a good idea to delete all cached content for Zilch to avoid any build artifacts. This is accomplished by deleting the folder %Temp%/ZilchContent.</p>
+</li>
+<li><p>For each project you want to test:</p>
+<ol>
+<li><p>Delete the old project folder so as to avoid any accidental build artifacts.</p>
+</li>
+<li><p>Check out the project via mercurial. The exact location doesn't matter.</p>
+</li>
+<li><p>Run the project via the args: <code>$(ZilchExe) -file $(ZilchProjPath) -RunUnitTests -logStdOut -ProjectName $(ProjectName) -Builder $(BuilderName)</code></p>
+<p>-ProjectName and -Builder are arguments that affect where screenshots are saved to. This depends on the project's exact implementation, but most go to <span class="math">\((Temp)/ZilchScreenshots/\)</span>(Builder)/$(ProjectName).</p>
+</li>
+<li><p>To diff screenshots currently you must run the ImageDifferTest.py script in the buildbot depo with the location of the saved previous results and the new results.</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>Zilch's InnoSetupScript:</p>
+<ul>
+<li><p>The inno setup script is located at Zilch/Build/ZilchEngineInstall.exe. Do note that we expect <code>$(ZILCH_SOURCE)</code> and <code>$(ZILCH_OUTPUT)</code> to be defined. Read the first comment to show how to replace #defines via command line arguments.</p>
+</li>
+<li><p>Now for some important locations:</p>
+<ol>
+<li>The <code>[Files]</code> tag defines what folders/files we package up. This currently includes everything in the Tools, Resource, and Data folders next to Zilch. Additionally we grab the Win32Editor folder's contents, ignoring certain file types (see the Excludes: section).</li>
+<li><code>[Registry]</code> defines the additional registry keys we make. These are to define the file association, the icon, and the open command.</li>
+<li><code>[Run]</code> deletes the old content cache. This should be less necessary now that content is cached into a folder based upon the version number.</li>
+<li><code>[Code]</code> section runs some commands to uninstall Zilch if it was already installed and to close any open copies.</li>
+</ol>
+</li>
+</ul>
+<p>Zilch Launcher:</p>
+<ol>
+<li>Checkout and build the launcher the same as with Zilch, the only difference is that the output exe and dll go to the Win32ZilchLauncher folder.</li>
+<li>Make sure the devtools repo is checked out.</li>
+<li>Run the ZilchLauncherVersionIdUpdater:</li>
+</ol>
+<ul>
+<li>This program does 3 things, first of all it copies all of the necessary files into one location to make it easier to generate an installer and zip (it makes the zip for you). It also will contact the server and check the current ZilchLauncherVersionId.txt file (located currently under <code>data/www/Builds/StandAlones</code> and then generate a local copy of the file with a newer version number. Finally it'll actually run the inno setup script.</li>
+<li>The current arguments for this are:
+<ul>
+<li><code>ZilchLauncherVersionIdUpdater.exe --ZilchOutDir &quot;$(ZILCH_OUTPUT)/Out/$(Platform)/$(Configuration)/Win32ZilchLauncher&quot; --SourceDir &quot;$(ZILCH_SOURCE)&quot; --OutDir &quot;$(PackageOutDir)&quot;</code> where the <code>$(PackageOutDir)</code> is wherever you want to save the package to.</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>To actually update what's on the server you must then copy the <code>ZilchLauncherVersionId.txt</code> file and the <code>ZilchLauncherPackage.zip</code> file to <code>data/www/Builds/StandAlones</code> folder on the server. You should also copy the <code>ZilchLauncherSetup.exe</code> to <code>data/www/Builds</code> folder.</li>
+<li>To debug crashes with the launcher SourceIndexing and the SymbolServer should also be run. This is basically the same, just provided the correct different names and paths.</li>
+</ol>
+<p>Zilch Launcher Innoscript:</p>
+<ol>
+<li><code>[Registry]</code> section is almost the same, the main new items are the subkey's of Upgrade and Run which add new right-click context menus. There's alos a section down below that adds the ValueName: &quot;Icon&quot; which adds custom icons for these items.</li>
+<li><code>[Files]</code> since the package is made with all of the needed files, we only have to include this folder.</li>
+</ol>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_source_documentation/making_an_installer.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

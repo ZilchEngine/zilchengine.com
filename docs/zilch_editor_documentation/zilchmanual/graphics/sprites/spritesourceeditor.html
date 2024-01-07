@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Using the Sprite Source Editor | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Using the Sprite Source Editor | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/sprites/spritesourceeditor.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>(NOTE)<strong>Recommended Reading</strong> This page includes topics one might not have addressed yet. To learn about or review these topics, the following list provides the links to their respective Manual or Tutorial pages: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/adding_assets/adding_textures_and_sprites.md">Adding Textures and Sprites</a></p>
+<p>Frequently, when a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritesource.md">SpriteSource</a> has been imported into Zilch, it still needs some minor modifications; this is where the Sprite Source Editor comes into play. This can be used not only to make changes to the SpriteSource, but also to cut a SpriteSource into multiple <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprites</a> or animate a Multi-Frame Sprite.</p>
+<h1 id="using-the-sprite-source-editor">Using the Sprite Source Editor</h1>
+<p>Once the SpriteSource has been imported, the Sprite Source Editor can be opened by going into the Library tab and double clicking on the SpriteSource that needs to be edited. It can also be opened by clicking on the small grey arrow next to the <code>name=SpriteSource, icon=picture-o</code> Property, as seen below on the Sprite Component.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47067.png" alt="image"> <em>Edit SpriteSource Arrow</em></p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47069.png" alt="image"> <em>Sprite Source Editor window</em></p>
+<h2 id="sprite-source-editor-ui-overview">Sprite Source Editor UI Overview</h2>
+<p>SpriteName : The name of the <code>SpriteSource</code>.
+<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#origin">Origin</a>: The point of the given frame that is <code>(0,0,0)</code> in object space.</p>
+<ul>
+<li><strong>Custom</strong>: choose your own origin</li>
+<li><strong>Center</strong>: the middle of the frame</li>
+<li><strong>UpperLeft</strong>: the top left of the image</li>
+<li><strong>BottomLeft</strong>: the bottom left of the frame</li>
+<li><strong>BottomCenter</strong>: the bottom center of the frame
+OriginX : The origin's x value when Origin drop-down menu is <strong>Custom</strong>, where <code>0</code> is the far left
+OriginY : The origin's y value when Origin drop-down menu is <strong>Custom</strong>, where <code>0</code> is the very top
+Looping checkBox: Toggle whether the sprite animation should loop (if it is an animation)
+<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#spritesampling">Sprite Sampling</a>: The method of sampling used.</li>
+<li><strong>Nearest</strong>: looks more discrete, or 'pixelated'</li>
+<li><strong>Linear</strong>: pixels are blurred together
+FrameRate : Number of frames to display in one second.
+PixelsPerUnit : Number of pixels in the texture that will fit in one unit length in the GameSession's world space.</li>
+</ul>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#spritefill">SpriteFill</a>: The method of filling the sprite into a given <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/area.md">Area</a></li>
+</ul>
+<ul>
+<li><strong>Stretch</strong>: The sprites texture is stretched to fit the area component of a cog.</li>
+<li><strong>NineSlice</strong>: The sprite texture is stretched, but only within the nine-sliced middle region.</li>
+<li><strong>Tiled</strong>: The sprite texture is tiled evenly across the area component of a cog.
+Left : pixel offset from the left marking the unstretchable left region, if SpriteFill drop-down menu is <strong>NineSlice</strong>.
+Right : pixel offset from the right marking the unstretchable right region, if SpriteFill drop-down menu is <strong>NineSlice</strong>.
+Top : pixel offset from the top marking the unstretchable top region, if SpriteFill drop-down menu is <strong>NineSlice</strong>.
+Bottom : pixel offset from the bottom marking the unstretchable bottom region, if SpriteFill drop-down menu is <strong>NineSlice</strong>.
+CurrentFrame : Set the previewed animation frame.
+PreviewAnimation checkBox: Toggle viewing the animation.</li>
+</ul>
+<h2 id="smoothing--sampling">Smoothing / Sampling</h2>
+<p>When displaying a 2D image in a 3D environment, the step where a texel is accessed from the image is known as Smoothing drop-down menu, or sampling.  More specifically, a point in 3D space is mapped into texture space to get the right color to place on the screen/texture buffer.  When the output color is the color of the texel we found, this is known as the <strong>Nearest</strong> method because only the nearest texel color is used. While initially it might make sence to always access textures in this way, there are bound to be poor quality results.  The poor quality comes from mismatches between the sprite's texels and the screen's texels.  T</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47073.png" alt="image"> <em>Near and Far sprites displaying artifacts of <strong>Nearest</strong> blending</em></p>
+<p>From just this one generic example, it becomes clear that there needs to be a better way of sampling textures.  Instead of taking just one texel, we will take a weight of texels in the proximity of the single mapped texel.  Linear sampling is a method that uses weights to retain details, but at the cost of a blurrier image.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47075.png" alt="image"> <em>Near and Far sprites using <strong>Linear</strong> blending</em></p>
+<p>When choosing a blending method, remember that <strong>Linear</strong> blending will retain detail at far distances and small angles, but the image will look blurry.</p>
+<h2 id="setting-the-origin">Setting the Origin</h2>
+<p>The Origin drop-down menu property will place whichever point on the Sprite that is chosen at the coordinates chosen in the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a> Component. It is also possible to use OriginX  and OriginY  to set the origin in a specific spot, as opposed to one of the four preset options. All of the Sprites below, for example, have had their Origins changed while the position of their Game Objects are represented by the white Sprites.</p>
+<p>(NOTE)<strong>The Origin Property</strong> The origin of any SpriteSource can be changed by adjusting the OriginX  and OriginY  properties, but only if the Origin drop-down menu property is set to <strong>Custom</strong>. If it is set to any of the preset options (<strong>Center</strong>, <strong>UpperLeft</strong>, <strong>BottomLeft</strong> or <strong>BottomCenter</strong>) then the Zilch Engine will calculate the OriginX  and OriginY  to set the origin in the selected location.</p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/adding_assets/adding_textures_and_sprites.md">Adding Textures and Sprites</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spriteimporter.md">Sprite Importer</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/basesprite.md">BaseSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/area.md">Area</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritesource.md">SpriteSource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#origin">Origin</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#spritesampling">Sprite Sampling</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#spritefill">SpriteFill</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/sprites/spritesourceeditor.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

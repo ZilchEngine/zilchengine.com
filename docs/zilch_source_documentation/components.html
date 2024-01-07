@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | ZilchEngine ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_source_documentation/components.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Component Example
+#################</p>
+<p>The following example guides you through making a component in C++ and exposing it to Zilch so that it can be added to a Cog, serialized, and interact with other components.</p>
+<p>The bare minimum requirements for making a component are as follows:</p>
+<ul>
+<li>You must publicly inherit from Component</li>
+<li>You must use the ZilchDeclareType macro within the public section of the class</li>
+<li>You must implement the InitializeMeta function and bind the base Component class</li>
+<li>Our macros currently expect the component to be within the Zilch namespace</li>
+</ul>
+<p>Within the <code>CustomComponent.hpp</code> header file:</p>
+<pre><code>
+# pragma once
+
+
+namespace Zilch
+{
+  class CustomComponent : public Component
+  {
+  public:
+    ZilchDeclareType(CustomComponent);
+    static void InitializeMeta(MetaType* meta);
+  };
+}
+</code></pre>
+<p>It is our coding style to not tab in the namespace. We also generally rely upon all compilers supporing #pragma once (though you can use include guards if you wish).</p>
+<p>Within the <code>CustomComponent.cpp</code> file:</p>
+<pre><code>
+# include &quot;Precompiled.hpp&quot;
+
+#include &quot;CustomComponent.hpp&quot;
+
+namespace Zilch
+{
+  ZilchDefineType(CustomComponent);
+  void CustomComponent::InitializeMeta(MetaType* meta)
+  {
+    BindBase(Component);
+    BindSetup(SetupMode::DefaultSerialization);
+  }
+}
+</code></pre>
+<p>The inclusion of <code>Precompiled.hpp</code> is only required if your project is using precompiled headers. All projects within Zilch have this option enabled.</p>
+<p>The <code>ZilchDeclareType</code> macro within the hpp file must be matched by <code>ZilchDefineType</code> in the cpp file. These macros create a reflection <code>MetaType</code> for your class so that we can use it within script, create it via a factory, and display it in a property grid. For more information on meta binding, visit the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_source_documentation/meta_binding.md">meta_binding</a> section.</p>
+<p><code>InitializeMeta</code> is called once when your component's <code>MetaType</code> gets initialized. <code>BindBase</code> tells your type that it inherits from the Component class. The <code>BindSetup</code> call with <code>DefaultSerialization</code> lets the engine know that when we create your component from a factory we'll immediately set all your member variables to their default values via the SerializeNameDefault macro (see Serialization below).</p>
+<p>Last but not least, we must register our component with the factory and ensure that all the meta/reflection information is also initialized. This is done with one simple macro call to <code>RegisterComponent(CustomComponent);</code>. This call should be made within your project's initialization area. For example in the Engine project you would add <code>RegisterComponent</code> within <code>Engine\Initialization.cpp</code>. The easiest way to find where to initialize a component within a particular project is to look for another component defined within that project and then find its <code>RegisterComponent(X)</code> call.</p>
+<h2 id="component-interface">Component Interface</h2>
+<p>Within the component there are a few virtual functions which can be overridden.</p>
+<ul>
+<li><p><code>Serialize</code> which is responsible for saving and loading your component</p>
+</li>
+<li><p><code>Initialize</code> which will be run once upon your component being added or loaded (after <code>Serialize</code>)</p>
+</li>
+<li><p><code>OnAllObjectsCreated</code> which is run after all objects within a context have had <code>Initialize</code> called upon them</p>
+<ul>
+<li>For example, when loading a level</li>
+<li>Or when creating an archetype (all objects within that archetype)</li>
+</ul>
+</li>
+<li><p><code>DebugDraw</code> will be called when your object is selected (use the <code>Z::gDrawer</code> interface)</p>
+</li>
+<li><p><code>OnDestroy</code> which will be called when your component is removed or the object is being destructed</p>
+<ul>
+<li>Be very careful with this event, as there are many unsafe things you can do here</li>
+<li>Accessing another component can be unsafe</li>
+<li>Accessing another object (such as a child)</li>
+<li>Creating an object here, etc</li>
+</ul>
+</li>
+</ul>
+<p>Add the following code to <code>CustomComponent.hpp</code> right after <code>InitializeMeta</code>:</p>
+<pre><code>// These functions are in the order they will be invoked:
+void Serialize(Serializer&amp; stream) override;
+void Initialize(CogInitializer&amp; initializer) override;
+void OnAllObjectsCreated(CogInitializer&amp; initializer) override;
+void DebugDraw() override;
+void OnDestroy(uint flags) override;
+</code></pre>
+<p>You may implement these functions as you see fit. Empty implementations are OK, and they do NOT need to invoke the base class version of the function.</p>
+<p>The following includes some common example implementations of the above functions:</p>
+<pre><code>void CustomComponent::InitializeMeta(MetaType* meta)
+{
+  BindBase(Component);
+  BindSetup(SetupMode::DefaultSerialization);
+  
+  // This means we require the component Transform
+  // before our component can be added
+  // This also guarantees that it is safe to hold onto mTransform
+  BindDependency(Transform);
+  
+  BindMemberProperty(mLives);
+  BindMemberEnumProperty(ButtonState, mState);
+  
+  // If we had a GetSize and SetSize...
+  BindGetSetProperty(Size);
+  
+  // Binding resources currently requires both Get/Set functions
+  // For example, if we had a GetFace and SetFace which took a Material...
+  BindGetSetResourceProperty(Material, Face);
+
+  // These methods will be callable by script
+  BindMethod(Speak);
+}
+</code></pre>
+<pre><code>void CustomComponent::Serialize(Serializer&amp; stream)
+{
+  // Our serialization handles both directions (saving and loading)
+  SerializeNameDefault(mLives, 9);
+  SerializeEnumName(ButtonState, mState);
+  SerializeResourceName(mFace, MaterialManager);
+}
+</code></pre>
+<pre><code>void CustomComponent::Initialize(CogInitializer&amp; initializer)
+{
+  // You might grab another component on your object
+  // Remember that component could not have Initialize called on it
+  // if it were added AFTER your component (see Dependencies)
+  mTransform = GetOwner()-&gt;has(Transform);
+}
+</code></pre>
+<pre><code>void CustomComponent::OnAllObjectsCreated(CogInitializer&amp; initializer)
+{
+  // Find another object within the space (everything should be created by here)
+  Cog* player = GetSpace()-&gt;FindObjectByName(&quot;Player&quot;);
+}
+</code></pre>
+<pre><code>void CustomComponent::DebugDraw()
+{
+  // Draw a red sphere at our position
+  gDrawer-&gt;Add(Debug::Sphere(mTransform-&gt;GetWorldTranslation(), 0.5f).Color(Color::Red));
+}
+</code></pre>
+<pre><code>void CustomComponent::OnDestroy(uint flags)
+{
+  // Disconnect ourselves from any lists we've been added to
+}
+</code></pre>
+<p>Last but not least, if you would like your component to be automatically documented by doxygen, you must use tripple slashes <code>///</code> for comments above any classes, functions, properties, or members you want to be documented. The file header that doxygen requires should look something like:</p>
+<pre><code>*///////////////////////////////////////////////////////////////////////////*
+///
+/// \file CustomComponent.hpp
+/// 
+/// Authors: Your Name
+///
+*///////////////////////////////////////////////////////////////////////////*
+</code></pre>
+<p>Remember to also put this header in your cpp file and rename <code>.hpp</code> to <code>.cpp</code></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_source_documentation/components.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

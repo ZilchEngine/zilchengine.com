@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Using a Custom Cursor | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Using a Custom Cursor | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/gameplay/input/customcursor.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Custom Cursors are a great way to add a level of professionalism and polish to any project. A Cursor created specifically for a project can be used for player feedback and fits into the project universe better than the normal  <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/mouse.md">Mouse</a>  icon in most situations. There are several methods that can be used to add this functionality, all of which come with their own strengths and weaknesses.</p>
+<p>NOTE: <strong>Recommended Reading</strong> This section covers topics that may not have been encountered yet. To learn or review those topics, please see: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/gameplay/input/mouseinput.md">Mouse Input</a> and  {icon university}[[zilch_engine_documentation/zilch_editor_documentation/ZilchManual/Graphics/CamerasViewportsRenderers/|Cameras, Viewports and Renderers]]</p>
+<h1 id="using-a-custom-cursor">Using a Custom Cursor</h1>
+<h2 id="hiding-the-mouse">Hiding the Mouse</h2>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quick to implement</td>
+<td>Mouse Icon can leave window bounds</td>
+</tr>
+<tr>
+<td>Retains all mouse functionality</td>
+<td>Will become visible if it does</td>
+</tr>
+</tbody>
+</table>
+<p>The first option involves making the Mouse Cursor invisible while not affecting any of its functionality. This has two easy-to-see benefits: it's quick to implement and all functionality is retained.</p>
+<pre><code>class HiddenMouseExample : NadaComponent
+{
+     [Dependency]
+     var Transform : Transform;
+     function Initialize(init : CogInitializer)
+    {
+        // Set the Mouse to invisible
+        Zilch.Mouse.Cursor = Cursor.Invisible;
+         // Connect to MouseMove Event
+        Zilch.Connect(this.Space, Events.MouseMove, this.OnMouseMove);
+    }
+// Code continued below
+</code></pre>
+<p>This would be the start of a component attached to the object that will act as the Custom Cursor. After making sure the object has a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/transform.md">transform</a> Component using the Dependency <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/codereference/reference/transform.md">-</a> Component using the Dependency <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">attributes</a>, it then sets the Mouse Cursor to be invisible. The final part of the code-block connects to the MouseMove event, which is fleshed out in the following code-block:</p>
+<pre><code>    // continued from above
+        function OnMouseMove(event : ViewportMouseEvent)
+        {
+            // Get mouse WorldPosition on the Z-Plane at depth 0
+            var mousePosition = event.ToWorldZPlane(0);
+            // Set the MouseCursor Objects position to the Mouse position
+            this.Transform.Translation = mousePosition;
+        }
+    }
+
+</code></pre>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/mouseevent.md">OnMouseMove</a> function will fire every time the Mouse is moved, keeping the custom cursor in the same location as the invisible Mouse. It could also connect to other Mouse Events, such as MouseDown or MouseUp, in order to interact with these events visually (e.g., by changing the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/spritesource.md">SpriteSource</a> of the object). All other working functionality can then be given to the Mouse itself, so that it can react with objects that have the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/reactive.md">Reactive</a> Component attached the them.</p>
+<p>A large drawback to using this method is the fact that it allows the Mouse icon to leave the boundaries of the Game window, which will make the Mouse visible and not hide it again even if the Game is brought back into focus. Below is an example of how a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a> with this script attached would act:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47511.gif" alt="MouseCursorMove"></p>
+<p>It would also be possible to set the Mouse invisible from the LogicUpdate event, keeping the cursor invisible in within the editor even when leaving the game window.</p>
+<h2 id="locking-the-mouse">Locking the Mouse</h2>
+<table>
+<thead>
+<tr>
+<th>Pros</th>
+<th>Cons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mouse stays within widow bounds</td>
+<td>Loses most mouse functionality</td>
+</tr>
+<tr>
+<td>Allows use of multiple Spaces</td>
+<td>More complex the hiding the mouse</td>
+</tr>
+</tbody>
+</table>
+<p>A second option, rather than hiding the Mouse, is to lock it to the center of the screen. It helps to solve the issue of the the Mouse staying within the the Game boundaries but also comes with its own set of problems.</p>
+<pre><code>class LockedMouseExample : NadaComponent
+{
+    // An Archetype of the Custom Cursor Object
+    [Property] var CursorArchetype : Archetype;
+
+    // An Archetype of the Space to be built
+    [Property] var CursorSpaceArchetype : Archetype;
+
+    // An Archetype of the GameCamera to use in the Cursor Level
+    [Property] var CameraArchetype : Archetype;
+
+    // Reference to the CameraViewport of the created Cursor Space
+    var CurViewport : CameraViewport = null;
+
+    // An empty Level used to create the Custom Cursor in
+    [Property] var CursorLevel : Level;
+
+    // Reference to the Custom Cursor Object once it's created
+    var CursorObj : Cog = null;
+
+    // The Space the Custom Cursor will inhabit
+    var CursorSpace : Space = null;
+
+    // Reference to the Translation of the Custom Cursor
+    var CursorTranslation : Real3
+    {
+        get { return this.CursorObj.Transform.Translation; }
+    }
+
+    // Calls a function to give the Cursor Position in Screen Space
+    var CursorScreenSpacePosition : Real2
+    {
+        get { return this.CurViewport.WorldToScreen(this.CursorTranslation); }
+    }
+
+    // Calls a function to give the Cursor Position in the Viewport
+    var CursorViewportPosition : Real2
+    {
+        get { return this.CurViewport.ScreenToViewport(this.CursorScreenSpacePosition); }
+    }
+// Code continued below
+</code></pre>
+<p>Just from the initial setup it becomes obvious that this method is much more complex than simply making the Mouse invisible and having an Object follow it, but it also offers benefits.</p>
+<p>NOTE: <strong>Get-Sets</strong> In order to reduce the amount of repetitive typing, a number of <code>getters</code> have been used to hold references to other functions. For further explanation of get-sets, see <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/properties.md">Get-Sets</a>.</p>
+<p>When this component is attached to the current level's <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/objects/levelsettings.md">LevelSettings</a>  object, it will create an Object in a new  <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/space.md">Space</a>  that is built on top of the GameSpace. This object allows it to function properly in a 3D game. As the getters have defined most of the variables, much of the script is ready to be used.</p>
+<pre><code>...
+    function Initialize(init : CogInitializer)
+    {
+        // Traps the Mouse, locking it and making it invisible
+        Zilch.Mouse.Trapped = true;
+
+        // Creates a new Space for the Cursor to inhabit
+        this.CursorSpace = this.GameSession.CreateNamedSpace(&quot;CursorSpace&quot;, this.CursorSpaceArchetype);
+        // Loads the CursorLevel inside the newly made space
+        this.CursorSpace.LoadLevel(this.CursorLevel);
+        // Create the GameCamera
+        var cam = this.CursorSpace.Create(this.CameraArchetype);
+        // Set the viewport based on the GameCamera
+        this.CurViewport = cam.CameraViewport;
+        // Creates the Custom Cursor at (0,0,0) in the new Level
+        this.CursorObj = this.CursorSpace.CreateAtPosition(this.CursorArchetype, Real3());
+        // Connects to the MouseMove Event In the Cursor Space, NOT the Game Space
+        Zilch.Connect(this.CursorSpace, Events.MouseMove, this.OnMouseMove);
+    }
+...
+</code></pre>
+<p>The Initialize function creates the required Space, Level and Object for the Custom Cursor. It's important to make sure that the objects are being made in the CursorSpace, not the main GameSpace.</p>
+<pre><code>...
+    function OnMouseMove(event : ViewportMouseEvent)
+    {
+        // Get a new position by adding the distance of the MoveEvent to the Cursors current position
+        var newPos = this.CursorViewportPosition + event.Movement;
+         // Create a new position within the Viewport for the Cursor while also Clamping the range
+        var newCurViewportPos = Math.Clamp(newPos, Real2(), this.CurViewport.ViewportResolution);
+         // Adjust the Viewport position to the proper Screen position
+        var newCurScreenPos = this.CurViewport.ViewportToScreen(newCurViewportPos);
+         // Set the Cursor Objects position to the newly determined position in World Space
+        this.CursorObj.Transform.Translation = 
+        this.CurViewport.ScreenToWorldZPlane(newCurScreenPos, 0.0);
+    }
+}
+</code></pre>
+<p>Similar to hiding the mouse, the code-block above uses MouseMove Events to control the movement of the Custom Cursor object. This time, however, a few more steps are needed:</p>
+<h1 id="the-intended-new-cursor-position-is-found-by-adding-the-current-viewport-position-of-the-cursor-and-the-mouse-movement-vector-given-in-the-mousemove-event">The intended new cursor position is found by adding the current viewport position of the Cursor and the Mouse Movement vector given in the MouseMove Event.</h1>
+<h1 id="the-new-cursor-viewport-position-must-be-clamped-within-the-boundaries-of-the-viewport">The new cursor viewport position must be clamped within the boundaries of the viewport.</h1>
+<h1 id="the-viewport-position-must-be-converted-to-screen-position-as-there-is-no-way-to-directly-convert-from-viewport-space-coordinates-directly-to-worldspace">The viewport position must be converted to screen position as there is no way to directly convert from viewport space coordinates directly to worldspace.</h1>
+<h1 id="the-cursor-screenspace-position-must-be-converted-to-worldspace-so-the-custom-cursor-can-be-moved">The cursor screenspace position must be converted to worldspace so the custom cursor can be moved.</h1>
+<p>The biggest problem with using this method is the fact that most Mouse functionality is lost, as it becomes locked to the center of the screen. All Cursor functionality will have to be determined using either collision events or Cursor position, which can become taxing on the system as it has to either check the position every frame or resolve various collisions.</p>
+<p>Below is an example of this script attached to the <code>LevelSettings</code> object of an empty level, with the blue sprite given as the <code>CursorArchetype</code> and the white sprite following the same script as the hidden cursor example, to show how the mouse is attempting to move from the world origin.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47514.gif" alt="LockedMouseCursorMove"></p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation.md">Mouse Input</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/properties.md">Getters and Setters</a></li>
+<li>{icon university}[[zilch_engine_documentation/zilch_editor_documentation/ZilchManual/Graphics/CamerasViewportsRenderers/|Cameras, Viewports and Renderers]]</li>
+</ul>
+<h2 id="code-reference">Code Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/mouse.md">Mouse</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/transform.md">Transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/reactive.md">Reactive</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/space.md">Space</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/gameplay/input/customcursor.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

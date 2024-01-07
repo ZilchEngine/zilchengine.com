@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>The Cursor | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="The Cursor | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/editor/texteditor/texteditorhotkeys.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>While Zilch implements many features found in other common code editors, it also has many additional features users may find useful in their workflow.</p>
+<h1 id="the-cursor">The Cursor</h1>
+<p>The Cursor serves to indicate the location in a text file or script where new text will be entered. By default the cursor is set to insertion mode like most text editors. In insertion mode the cursor highlights the space between two characters. Pressing a character key will insert the character at the location of the cursor.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47351.png" alt="image"></p>
+<h2 id="moving-the-cursor-by-character">Moving The Cursor By Character</h2>
+<p>The cursor can be moved left, right, up, and down between characters using the arrow keys. You can also move the cursor by clicking on any space between two characters to move the cursor to that location.</p>
+<ul>
+<li><code>Left</code>, <code>Right</code>, <code>Up</code>, and <code>Down</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47353.gif" alt="KeyboardCursor"></p>
+<ul>
+<li><code>Left-Click</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47355.gif" alt="MouseCursor"></p>
+<h2 id="moving-the-cursor-by-token--whitespace">Moving The Cursor By Token &amp; Whitespace</h2>
+<p>Often in a text file a single character will not have much meaning in the context of the whole file. So at times it make sense to navigate code at the conceptual level one is thinking about it. By using <code>Control</code> and an arrow key we can moving the cursor by token jumping over characters which belong to the previous or next token or whitespace sequence.</p>
+<ul>
+<li><code>Control + Left</code></li>
+<li><code>Control + Right</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47357.gif" alt="ControlCursor"></p>
+<h2 id="moving-the-file">Moving the File</h2>
+<p>Continuing the trend of minimizing unnecessary mouse use while typing in the text editor the hotkeys <code>Control + Up</code> &amp; <code>Control + Down</code> can be used to scroll the file view up and down.</p>
+<ul>
+<li><code>Control + Up</code></li>
+<li><code>Control + Down</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47359.gif" alt="ControlScrolling"></p>
+<h2 id="multi-cursors">Multi-Cursors</h2>
+<p>The Zilch text editor has the capability of placing multiple cursors in the file from which one is currently editing. Holding <code>Control</code> while clicking in the text file will result in the placement of additional cursors instead of moving the original cursor.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47361.gif" alt="ControlMultiCursor"></p>
+<p>Each of these cursors can be expanded uniformly into a selection using the various methods of selection outlined below. Keep in mind that each keystroke will be applied to each cursor and/or selection. This is particularly useful when there are multiple identical constructs that need to be identically modified.</p>
+<h2 id="column-cursors">Column Cursors</h2>
+<p>Another form of cursor is the vertically extended column cursor. A column cursor can be created from a standard cursor by holding <code>Alt + Shift</code> and pressing <code>Up + Down</code>.</p>
+<ul>
+<li><code>Alt + Shift + Up</code></li>
+<li><code>Alt + Shift + Down</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47363.gif" alt="AltShiftMultiCursor"></p>
+<h1 id="selection">Selection</h1>
+<p>Cursors can be extended into selections, allowing the user to modify entire sections of text.</p>
+<h2 id="row--token-selection">Row &amp; Token Selection</h2>
+<p>To use row selection using the only the keyboard, <code>Shift</code> should be held while performing standard cursor commands.</p>
+<p>By holding <code>Shift + Left</code> characters are selected along the row. If <code>Shift + Right</code> is held the selection cursor box will continue expanding to the right until it wraps around with the text to the next row.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47365.gif" alt="ShiftSelect"></p>
+<p>To select entire rows with each keystroke use <code>Shift + Up</code>, or <code>Shift + Down</code> can also be used.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47367.gif" alt="ShiftSelectRows"></p>
+<p>This is the same behavior one would get if one were to <code>Click + Drag</code> in the text file.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47369.gif" alt="ClickDragSelect"></p>
+<p><code>Shift</code> can also be held while clicking to extend the current cursor or selection.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47371.gif" alt="ClickShiftSelect"></p>
+<h3 id="row-selection-by-token-and-whitespace">Row Selection by Token and WhiteSpace</h3>
+<p>Row selection can be done by token just as you can move the cursor with <code>Control + Left</code> and <code>Control + right</code>.</p>
+<ul>
+<li><code>Control + Shift + Left</code></li>
+<li><code>Control + Shift + Right</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47373.gif" alt="ControlShiftSelect"></p>
+<h2 id="token--line-selection">Token &amp; Line Selection</h2>
+<p>One can also select any given token by double clicking it, an entire line can be selected by triple clicking it.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47375.gif" alt="MultiClickSelect"></p>
+<p>Once a token is selected to can add the next instance of that token to appear in the file to the selection by pressing <code>Control + D</code>.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47377.gif" alt="ControlD"></p>
+<h2 id="column-selection">Column Selection</h2>
+<p>NOTE: Column selection is also sometimes called rectangle selection.</p>
+<p>Column selections can be created in various ways with and without a preexisting column cursor.</p>
+<h3 id="creating-a-column-selection-from-a-standard-cursor">Creating a Column Selection From a Standard Cursor</h3>
+<p>By holding <code>Alt + Shift</code> and then pressing <code>Left-Click</code> you can create a column selection that covers all character between the cursor and the point clicked.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47379.gif" alt="AltShiftMultiCursor"></p>
+<h3 id="expanding-a-column-cursor-into-a-selection">Expanding a Column Cursor Into a Selection</h3>
+<p><code>Alt + Shift</code> and <code>Left</code> <code>Right</code> <code>Up</code> <code>Down</code> can be used to expand an existing column cursor into a column selection.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47381.gif" alt="AltShiftArrowSelect"></p>
+<h2 id="selecting-the-entire-file">Selecting the Entire File</h2>
+<p>To select all text in the focused file use the <code>Control + A</code> hotkey.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47383.gif" alt="ControlA"></p>
+<h1 id="row-operations">Row Operations</h1>
+<p>Some hotkeys perform a basic operation on the row that the cursor is currently on.</p>
+<h2 id="commenting">Commenting</h2>
+<p>To quickly comment in and out all lines on which cursors/selections exist use the <code>Control + K</code> hotkey.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47385.gif" alt="ControlK"></p>
+<h2 id="duplication">Duplication</h2>
+<p>Use the <code>Control + Shift + D</code> hotkey to duplicate each line with a cursor on it.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47387.gif" alt="ControlShiftD"></p>
+<h2 id="cutting">Cutting</h2>
+<p>Use the <code>Control + L</code> hotkey to quickly cut the current line from the file.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47389.gif" alt="ControlL"></p>
+<h2 id="swapping">Swapping</h2>
+<p>Use the <code>Control + T</code> hotkey to quickly swap each line with a cursor on it with the line above it with out moving the cursor.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47391.gif" alt="ControlT"></p>
+<p>The hotkeys <code>Control + Shift + Up</code> or <code>Control + Shift + Down</code> to swap each line with a cursor on it with the line above or below it.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47393.gif" alt="ControlShiftUpDown"></p>
+<p>This command also shifts the cursor to the newline. This allows the line to be continuously shifted up or down by repeating the hotkey sequence.</p>
+<h1 id="clipboard-operations">Clipboard Operations</h1>
+<p>The Zilch Editor supports the standard clipboard operations of copy, cut, and paste. To copy selected text to the clipboard use the <code>Control + C</code> hotkey. To copy selected text to the clipboard and remove it from the file use the <code>Control + X</code> hotkey. To paste the text from the clipboard to the location of each cursor in a file use the <code>Control + V</code> hotkey. All three operations are shown in the gif below.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47395.gif" alt="CopyPAste"></p>
+<h2 id="undo--redo">Undo &amp; Redo</h2>
+<p>To undo a previous operation use the <code>Control + Z</code> hotkey. To redo a previous operation use the <code>Control + Y</code> hotkey.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47397.gif" alt="UndoRedo"></p>
+<h1 id="search-operations">Search Operations</h1>
+<p>The search tool is useful for finding instances of specific text through out individual files or an entire project.</p>
+<h2 id="find-mode">Find Mode</h2>
+<p>To quickly access the search window in find mode use the <code>Control + F</code> hotkey.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47399.gif" alt="ControlF"></p>
+<p>If there is an active selection in the current text file, it will be pasted in as the search argument upon opening the window. Notice that because the search window is in find mode it will find locations of the given text but not modify them.</p>
+<h2 id="replace-mode">Replace Mode</h2>
+<p>To quickly access the search window in replace mode use the <code>Control + H</code> hotkey.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47401.gif" alt="ControlH"></p>
+<p>If there is an active selection in the current text file, it will be pasted in as the search argument upon opening the window. Notice that because the search window is in replace mode it will find locations of the given text and replace them with whatever string is in the replace field of the search window.</p>
+<h2 id="go-to-definition">Go to Definition</h2>
+<p>One of the most common patterns while programming is to reference the definition of a particular type being used. This can be done in Zilch via a shortcut.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47403.gif" alt="GotToDef"></p>
+<p>When the user right clicks in a text file <code>GoToDefintion</code> is listed as an option in the context. If the context menu option is chosen, then the definition of the type currently highlighted by or containing the cursor will be displayed in the file that contains it. This functionality can also be activated by pressing <code>F12</code> while the text editor cursor is highlighting or sitting within a valid type.</p>
+<h1 id="window-operations">Window Operations</h1>
+<p>Some hotkeys used in the text editor will not actually affect the text file or cursor. By using the <code>Ctrl + Tab</code> and <code>Ctrl + Shift + Tab</code> hotkey sequences the tabs in the main docked window can be cycled through to the right and left, respectively.</p>
+<ul>
+<li><code>Control + Tab</code></li>
+<li><code>Control + Shift + Tab</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47405.gif" alt="ControlTab"></p>
+<h1 id="hotkey-reference">Hotkey Reference</h1>
+<p>The tables below are meant for both quick reference via the name column as well as more detailed information in the description column.</p>
+<h2 id="keyboard-sequences">Keyboard Sequences</h2>
+<table>
+<thead>
+<tr>
+<th>Keyboard Command</th>
+<th>Brief</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Left</code></td>
+<td>Move cursor left by character</td>
+</tr>
+<tr>
+<td><code>Right</code></td>
+<td>Move cursor right by character</td>
+</tr>
+<tr>
+<td><code>Up</code></td>
+<td>Move cursor up one row</td>
+</tr>
+<tr>
+<td><code>Down</code></td>
+<td>Move cursor down one row</td>
+</tr>
+<tr>
+<td><code>Control + Left</code></td>
+<td>Move cursor left by symbol</td>
+</tr>
+<tr>
+<td><code>Control + Right</code></td>
+<td>Move cursor right by one symbol</td>
+</tr>
+<tr>
+<td><code>Control + Up</code></td>
+<td>Scroll file up</td>
+</tr>
+<tr>
+<td><code>Control + Down</code></td>
+<td>Scroll file down</td>
+</tr>
+<tr>
+<td><code>Control + F</code></td>
+<td>Open the search window in find mode</td>
+</tr>
+<tr>
+<td><code>Control + H</code></td>
+<td>Open the search window in replace mode</td>
+</tr>
+<tr>
+<td><code>F12</code></td>
+<td>Go to Definition of the highlighted type.</td>
+</tr>
+<tr>
+<td><code>Control + A</code></td>
+<td>Select all text in the file</td>
+</tr>
+<tr>
+<td><code>Control + T</code></td>
+<td>Swap line with the row above without the cursor</td>
+</tr>
+<tr>
+<td><code>Control + K</code></td>
+<td>Comment/Uncomment current line</td>
+</tr>
+<tr>
+<td><code>Control + L</code></td>
+<td>Cut current line</td>
+</tr>
+<tr>
+<td><code>Control + S</code></td>
+<td>Save project</td>
+</tr>
+<tr>
+<td><code>Control + Z</code></td>
+<td>Undo last action</td>
+</tr>
+<tr>
+<td><code>Control + Z</code></td>
+<td>Redo last action</td>
+</tr>
+<tr>
+<td><code>Control + X</code></td>
+<td>Cut current selection</td>
+</tr>
+<tr>
+<td><code>Control + C</code></td>
+<td>Copy current selection</td>
+</tr>
+<tr>
+<td><code>Control + V</code></td>
+<td>Paste from the clipboard</td>
+</tr>
+<tr>
+<td><code>Control + =</code></td>
+<td>Increase font size</td>
+</tr>
+<tr>
+<td><code>Control + -</code></td>
+<td>Decrease font size</td>
+</tr>
+<tr>
+<td><code>Control + Tab</code></td>
+<td>Cycle to the next tab in the window</td>
+</tr>
+<tr>
+<td><code>Control + Shift + Tab</code></td>
+<td>Cycle to the previous tab in the window</td>
+</tr>
+<tr>
+<td><code>Control + Shift + D</code></td>
+<td>Duplicate the line the cursor is on</td>
+</tr>
+<tr>
+<td><code>Control + Shift + Up</code></td>
+<td>Swap line with row above with the cursor</td>
+</tr>
+<tr>
+<td><code>Control + Shift + Down</code></td>
+<td>Swap line with row below with the cursor</td>
+</tr>
+<tr>
+<td><code>Control + Shift + Left</code></td>
+<td>Row selection/deselection left by symbol</td>
+</tr>
+<tr>
+<td><code>Control + Shift + Right</code></td>
+<td>Row selection/deselection right by symbol</td>
+</tr>
+<tr>
+<td><code>Shift + Left</code></td>
+<td>Row selection/deselection to the left by character</td>
+</tr>
+<tr>
+<td><code>Shift + Right</code></td>
+<td>Row selection/deselection to the right by character</td>
+</tr>
+<tr>
+<td><code>Shift + Up</code></td>
+<td>Row selection/deselection up by character</td>
+</tr>
+<tr>
+<td><code>Shift + Down</code></td>
+<td>Row selection/deselection down by character</td>
+</tr>
+<tr>
+<td><code>Alt + Shift + Left</code></td>
+<td>Column selection/deselection left by character</td>
+</tr>
+<tr>
+<td><code>Alt + Shift + Right</code></td>
+<td>Column selection/deselection right by character</td>
+</tr>
+<tr>
+<td><code>Alt + Shift + Up</code></td>
+<td>Column selection/deselection up by row</td>
+</tr>
+<tr>
+<td><code>Alt + Shift + Down</code></td>
+<td>Column selection/deselection down by row</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mouse-actions">Mouse Actions</h3>
+<table>
+<thead>
+<tr>
+<th>Mouse Command</th>
+<th>Brief</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Left-Click</code></td>
+<td>Move cursor</td>
+</tr>
+<tr>
+<td><code>Left-Click</code> x2</td>
+<td>Select token</td>
+</tr>
+<tr>
+<td><code>Left-Click</code> x3</td>
+<td>Select entire line</td>
+</tr>
+<tr>
+<td><code>Left-Click + Drag</code></td>
+<td>Row selection</td>
+</tr>
+<tr>
+<td><code>Control + Left-Click</code></td>
+<td>Create additional cursor</td>
+</tr>
+<tr>
+<td><code>Shift + Left-Click</code></td>
+<td>Row selection</td>
+</tr>
+<tr>
+<td><code>Alt + Shift + Left-Click</code></td>
+<td>Column selection</td>
+</tr>
+</tbody>
+</table>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual-pages">Manual Pages</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/texteditor/codecompletion.md">Code Completion</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/texteditor/texteditorconfig.md">Text Editor Config</a></li>
+</ul>
+<h2 id="code-reference">Code Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/texteditorconfig.md">TextEditorConfig</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/editor/texteditor/texteditorhotkeys.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

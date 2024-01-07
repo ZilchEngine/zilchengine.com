@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/joint.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Component</code> <code>Physics</code></p>
+<p>(NOTE) Joints connect two objects together with one or more constraints. A constraint is a mathematical rule that restricts object movement, typically defined in terms of the position and velocities of the objects involved.</p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/joint.md#getcog-zilch-engine-docum">GetCog</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/joint.md#active-zilch-engine-docum">Active</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/component.md">component</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customjoint.md">customjoint</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/joint.md#getotherobject-zilch-engi">GetOtherObject</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/joint.md#autosnaps-zilch-engine-do">AutoSnaps</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/fixedanglejoint.md">fixedanglejoint</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/joint.md#joint-void">Constructor</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/joint.md#collideconnected-zilch-en">CollideConnected</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gearjoint.md">gearjoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/joint.md#maximpulse-zilch-engine-d">MaxImpulse</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/linearaxisjoint.md">linearaxisjoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/joint.md#sendsevents-zilch-engine">SendsEvents</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/manipulatorjoint.md">manipulatorjoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/phygunjoint.md">phygunjoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/positionjoint.md">positionjoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/prismaticjoint.md">prismaticjoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/prismaticjoint2d.md">prismaticjoint2d</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/pulleyjoint.md">pulleyjoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/relativevelocityjoint.md">relativevelocityjoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/revolutejoint.md">revolutejoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/revolutejoint2d.md">revolutejoint2d</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/stickjoint.md">stickjoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/universaljoint.md">universaljoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uprightjoint.md">uprightjoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/weldjoint.md">weldjoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/wheeljoint.md">wheeljoint</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/wheeljoint2d.md">wheeljoint2d</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="active--boolean">Active : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Determines if this joint is currently active. Used for runtime enabling/disabling of joints.</p>
+<pre><code class="lang-lang=cpp,">var Active : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="autosnaps--boolean">AutoSnaps : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Determines if this joint will automatically delete itself if any of its constraints reach the max impulse value. This will still send an event if it snaps.</p>
+<pre><code class="lang-lang=cpp,">var AutoSnaps : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="collideconnected--boolean">CollideConnected : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Determines if the two objects connected by this joint can collide. If any joint between this pair does not collide, then the pair does not collide. All joints have to be set to true in order to have the objects collide.</p>
+<pre><code class="lang-lang=cpp,">var CollideConnected : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="maximpulse--real">MaxImpulse : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>The maximum impulse (instantaneous force) that this joint can apply to correct itself.</p>
+<pre><code class="lang-lang=cpp,">var MaxImpulse : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="sendsevents--boolean">SendsEvents : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Determines if this joint will send any events. Used for a small efficiency boost and for reducing the number of events.</p>
+<pre><code class="lang-lang=cpp,">var SendsEvents : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="getcog--cog">GetCog : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">cog</a></h1>
+<blockquote>
+<p>Returns the cog associated with an index. Index of 0 is ObjectA, index 1 is ObjectB. Used to write more streamline functions where you index into the objects in a loop.
+|Name|Type|Description|
+|---|---|---|
+|index|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function GetCog(index : Integer) : Cog
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getotherobject--cog">GetOtherObject : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">cog</a></h1>
+<blockquote>
+<p>If the passed in object is ObjectA, returns ObjectB. Provides easier logic for traversing across joints.
+|Name|Type|Description|
+|---|---|---|
+|cog|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">cog</a>| |</p>
+<pre><code class="lang-lang=cpp,">function GetOtherObject(cog : Cog) : Cog
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="joint--void">Joint : Void</h1>
+<p><code>constructor</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function Joint()
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/joint.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

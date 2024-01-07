@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>PhysicsCasting | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="PhysicsCasting | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/physics/physicscasting.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="physicscasting">PhysicsCasting</h1>
+
+<p>One of the most common run-time interactions with a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsspace.md">PhysicsSpace</a> is casting, which queries for all objects within a region of space. This allows common operations such as line-of-sight queries, volume queries, and so on.</p>
+<p>Typically a cast will take 3 arguments:</p>
+<h1 id="the-shape-to-cast">The shape to cast</h1>
+<h1 id="how-many-results-to-receive-at-max-this-is-needed-for-internal-optimizations-in-physics-for-raysegments-the-results-will-be-sorted-by-the-t-value">How many results to receive at max. This is needed for internal optimizations in physics. For Ray/Segments, the results will be sorted by the t-value.</h1>
+<h1 id="the-castfilter-describes-how-to-filter-out-results-when-casting-common-operations-include-skipping-objects-of-certain-configurations-static-kinematic-collisiongroups-etc">The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/castfilter.md">CastFilter</a> describes how to filter out results when casting. Common operations include skipping objects of certain configurations (Static, Kinematic, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisiongroupsandtables.md">CollisionGroups</a>, etc...).</h1>
+<p>Currently, the physics systems supports a few common casting types:</p>
+<h2 id="ray-casting">Ray Casting</h2>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/ray.md">ray</a> casting checks for all shapes in a direction. Ray casts are common for things like line-of-sight tests.</p>
+<h2 id="segment-casting">Segment Casting</h2>
+<p>A <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/segment.md">segment</a> cast is like a ray cast except it has an end position. Segment casts are used when there is a known max distance for the cast.</p>
+<h2 id="sphere-casting">Sphere Casting</h2>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sphere.md">sphere</a> casting checks to see what objects are within a sphere. Useful for simple volume queries such as finding all objects within an explosion radius.</p>
+<h2 id="aabb-casting">Aabb Casting</h2>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/aabb.md">aabb</a> casting checks what objects are within an axis-aligned box. Sometimes a box is a better shape for casting, especially when the query area is long an thin.</p>
+<h2 id="frustum-casting">Frustum Casting</h2>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/frustum.md">frustum</a> casting checks what objects are within a frustum. Useful for queries that come from a camera where perspective should be taken into account.</p>
+<h2 id="collider-casting">Collider Casting</h2>
+<p>Sometimes a more complicated shape query is desired. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md">Collider</a> casting allows the user to say: &quot;What if this collider was over there&quot;. This is commonly used for a simple preventative collision check.</p>
+<h2 id="castfirst">CastFirst</h2>
+<p>Ray and Segments have an additional &quot;CastFirst&quot; operation for convenience. These cast functions implicitly have a max object count of <code>1</code>.</p>
+<h1 id="dispatchwithin">DispatchWithin</h1>
+<p>In addition to regular casting, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsspace.md">physicsspace.md</a> contains other common cast related functions. Sometimes casts are performed just to send events to all shapes within a region. This is common for a generic interaction system where each object may or may-not handle some event. Instead of casting and iterating over all results, the PhysicsSpace has the &quot;DispatchWithin&quot; functions. Currently only Sphere and Aabb dispatch functions exist.</p>
+<h1 id="sweeping">Sweeping</h1>
+<p>While a cast can be used as a preventative check, sometimes the accuracy is not enough. This is where the <code>SweepCollider</code> function comes in. Sweeping can be thought of as extending a collider's volume in a direction to find the exact times that a collision would happen with static objects. This allows writing Time-of-Impact logic to avoid missing any collisions.</p>
+<p>NOTE: Swept casts are expensive operations and should be used only when important, such as a player.</p>
+<hr>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsspace.md">physicsspace.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisiongroupsandtables.md">collisiongroupsandtables.md</a></li>
+</ul>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/castfilter.md">CastFilter</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/castresult.md">CastResult</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sweepresult.md">SweepResult</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/ray.md">Ray</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/segment.md">Segment</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/aabb.md">Aabb</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sphere.md">Sphere</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/frustum.md">Frustum</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsspace.md">PhysicsSpace</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiongroup.md">CollisionGroup</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md">Collider</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/physics/physicscasting.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

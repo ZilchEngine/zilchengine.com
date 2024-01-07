@@ -1,0 +1,564 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/cameraviewport.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Component</code> <code>Gameplay</code></p>
+<p>(NOTE) Manages all setup between Camera, Renderer, and viewport UI that is required to define how anything is to be rendered.</p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#cameraviewport-void">Constructor</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#camera-zilch-engine-docum">Camera</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/component.md">component</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#screentoviewport-zilch-en">ScreenToViewport</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#camerapath-zilch-engine-d">CameraPath</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#screentoworldplane-zero">ScreenToWorldPlane</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#finaltexture-zilch-engine">FinalTexture</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#screentoworldray-zilch-en">ScreenToWorldRay</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#forwardviewportevents-ze">ForwardViewportEvents</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#screentoworldviewplane-z">ScreenToWorldViewPlane</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#frustum-zilch-engine-docu">Frustum</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#screentoworldzplane-zero">ScreenToWorldZPlane</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#margincolor-zilch-engine">MarginColor</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#viewplanesize-zilch-engin">ViewPlaneSize</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#mouseworldray-zilch-engin">MouseWorldRay</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#viewporttakefocus-zilch-e">ViewportTakeFocus</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#normalizedoffset-zilch-en">NormalizedOffset</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#viewporttoscreen-zilch-en">ViewportToScreen</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#normalizedsize-zilch-engi">NormalizedSize</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#worldtoscreen-zilch-engin">WorldToScreen</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#rendererpath-zilch-engine">RendererPath</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#renderineditor-zilch-engi">RenderInEditor</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#renderingame-zilch-engine">RenderInGame</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#renderorder-zilch-engine">RenderOrder</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#rendertoviewport-zilch-en">RenderToViewport</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#resolutionoraspect-zero">ResolutionOrAspect</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#viewporthasfocus-zilch-en">ViewportHasFocus</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#viewportoffset-zilch-engi">ViewportOffset</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#viewportoffsetwithmargin">ViewportOffsetWithMargin</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#viewportresolution-zero">ViewportResolution</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#viewportresolutionwithma">ViewportResolutionWithMargin</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#viewportscaling-zilch-eng">ViewportScaling</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#viewtoperspective-zilch-e">ViewToPerspective</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#worldtoperspective-zero">WorldToPerspective</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md#worldtoview-zilch-engine">WorldToView</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="camera--camera">Camera : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/camera.md">camera</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Find the Camera component from the CameraPath (or null if it doesn't exist).</p>
+<pre><code class="lang-lang=cpp,">var Camera : Camera
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="camerapath--cogpath">CameraPath : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cogpath.md">cogpath</a></h1>
+<blockquote>
+<p>Object with the Camera component to be used for rendering. A Camera can only be used by one CameraViewport, if already used by another usage will be stolen when assigned.</p>
+<pre><code class="lang-lang=cpp,">var CameraPath : CogPath
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="finaltexture--texture">FinalTexture : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/texture.md">texture</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Texture that contains the end result of this CameraViewport's rendering. Must be explicitly written to in renderer script.</p>
+<pre><code class="lang-lang=cpp,">var FinalTexture : Texture
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="forwardviewportevents--boolean">ForwardViewportEvents : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Forwards mouse events to viewports underneath this viewport.</p>
+<pre><code class="lang-lang=cpp,">var ForwardViewportEvents : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="frustum--frustum">Frustum : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/frustum.md">frustum</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Creates a frustum using the CameraViewport's settings (including aspect ratio). If the Camera is null, then this will throw an exception.</p>
+<pre><code class="lang-lang=cpp,">var Frustum : Frustum
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="margincolor--real4">MarginColor : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a></h1>
+<blockquote>
+<p>Color to used for letterbox/scaling margins.</p>
+<pre><code class="lang-lang=cpp,">var MarginColor : Real4
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="mouseworldray--ray">MouseWorldRay : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/ray.md">ray</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Get the world ray starting from the mouse.</p>
+<pre><code class="lang-lang=cpp,">var MouseWorldRay : Ray
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="normalizedoffset--real2">NormalizedOffset : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<p>Offset of the viewport in normalized UI coordinates.</p>
+<pre><code class="lang-lang=cpp,">var NormalizedOffset : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="normalizedsize--real2">NormalizedSize : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<p>Size of viewport in normalized UI coordinates.</p>
+<pre><code class="lang-lang=cpp,">var NormalizedSize : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="rendererpath--cogpath">RendererPath : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cogpath.md">cogpath</a></h1>
+<blockquote>
+<p>Object with renderer script that connects to RenderTasksUpdate that determines what rendering will be done.</p>
+<pre><code class="lang-lang=cpp,">var RendererPath : CogPath
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="renderineditor--boolean">RenderInEditor : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>If rendering will be ran in edit mode.</p>
+<pre><code class="lang-lang=cpp,">var RenderInEditor : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="renderingame--boolean">RenderInGame : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>If rendering will be ran in play game mode.</p>
+<pre><code class="lang-lang=cpp,">var RenderInGame : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="renderorder--integer">RenderOrder : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<blockquote>
+<p>The order that rendering should be done relative to other CameraViewports, lowest to highest.</p>
+<pre><code class="lang-lang=cpp,">var RenderOrder : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="rendertoviewport--boolean">RenderToViewport : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>If the rendering result in FinalTexture should also be placed on the UI viewport.</p>
+<pre><code class="lang-lang=cpp,">var RenderToViewport : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="resolutionoraspect--integer2">ResolutionOrAspect : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer2.md">integer2</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var ResolutionOrAspect : Integer2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="viewporthasfocus--boolean">ViewportHasFocus : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>If the viewport created by this CameraViewport, if rendering to one, has focus.</p>
+<pre><code class="lang-lang=cpp,">var ViewportHasFocus : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="viewportoffset--real2">ViewportOffset : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>The current offset of the viewport, in pixels.</p>
+<pre><code class="lang-lang=cpp,">var ViewportOffset : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="viewportoffsetwithmargin--real2">ViewportOffsetWithMargin : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>The current offset of the viewport's margin, in pixels.</p>
+<pre><code class="lang-lang=cpp,">var ViewportOffsetWithMargin : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="viewportresolution--real2">ViewportResolution : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>The current resolution of the viewport.</p>
+<pre><code class="lang-lang=cpp,">var ViewportResolution : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="viewportresolutionwithmargin--real2">ViewportResolutionWithMargin : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>The current resolution of the viewport including margin.</p>
+<pre><code class="lang-lang=cpp,">var ViewportResolutionWithMargin : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="viewportscaling--viewportscaling">ViewportScaling : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#viewportscaling">ViewportScaling</a></h1>
+<blockquote>
+<p>Method to use for sizing the viewport.</p>
+<pre><code class="lang-lang=cpp,">var ViewportScaling : ViewportScaling
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="viewtoperspective--real4x4">ViewToPerspective : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4x4.md">real4x4</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Transformation that defines how the view frustum is mapped to normalized coordinates, pre W divide.</p>
+<pre><code class="lang-lang=cpp,">var ViewToPerspective : Real4x4
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldtoperspective--real4x4">WorldToPerspective : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4x4.md">real4x4</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Concatenation of the WorldToView and ViewToPerspective transformations.</p>
+<pre><code class="lang-lang=cpp,">var WorldToPerspective : Real4x4
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldtoview--real4x4">WorldToView : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4x4.md">real4x4</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Transformation that defines view space as the Camera at the origin and the view direction as -Z.</p>
+<pre><code class="lang-lang=cpp,">var WorldToView : Real4x4
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="cameraviewport--void">CameraViewport : Void</h1>
+<p><code>constructor</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function CameraViewport()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="screentoviewport--real2">ScreenToViewport : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<p>Convert a screen point to a point relative to the viewport.
+|Name|Type|Description|
+|---|---|---|
+|screenPoint|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a>| |</p>
+<pre><code class="lang-lang=cpp,">function ScreenToViewport(screenPoint : Real2) : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="screentoworldplane--real3">ScreenToWorldPlane : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a></h1>
+<blockquote>
+<p>Convert the screen point to a position on a given plane.
+|Name|Type|Description|
+|---|---|---|
+|screenPoint|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a>| |
+|worldPlaneNormal|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a>| |
+|worldPlanePosition|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a>| |</p>
+<pre><code class="lang-lang=cpp,">function ScreenToWorldPlane(screenPoint : Real2, worldPlaneNormal : Real3, worldPlanePosition : Real3) : Real3
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="screentoworldray--ray">ScreenToWorldRay : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/ray.md">ray</a></h1>
+<blockquote>
+<p>Convert a screen point to a ray.
+|Name|Type|Description|
+|---|---|---|
+|screenPoint|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a>| |</p>
+<pre><code class="lang-lang=cpp,">function ScreenToWorldRay(screenPoint : Real2) : Ray
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="screentoworldviewplane--real3">ScreenToWorldViewPlane : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a></h1>
+<blockquote>
+<p>Convert the screen point to a position on the view plane at a given depth.
+|Name|Type|Description|
+|---|---|---|
+|screenPoint|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a>| |
+|viewDepth|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function ScreenToWorldViewPlane(screenPoint : Real2, viewDepth : Real) : Real3
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="screentoworldzplane--real3">ScreenToWorldZPlane : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a></h1>
+<blockquote>
+<p>Convert the screen point to a position on the z plane at a given depth.
+|Name|Type|Description|
+|---|---|---|
+|screenPoint|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a>| |
+|worldDepth|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function ScreenToWorldZPlane(screenPoint : Real2, worldDepth : Real) : Real3
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="viewplanesize--real2">ViewPlaneSize : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<p>Size of the screen at a Depth.
+|Name|Type|Description|
+|---|---|---|
+|viewDepth|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function ViewPlaneSize(viewDepth : Real) : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="viewporttakefocus--boolean">ViewportTakeFocus : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Returns whether or not it succeeded in taking focus. Will always fail if RenderToViewport is false.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function ViewportTakeFocus() : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="viewporttoscreen--real2">ViewportToScreen : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<p>Convert a viewport point to a screen point.
+|Name|Type|Description|
+|---|---|---|
+|viewportPoint|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a>| |</p>
+<pre><code class="lang-lang=cpp,">function ViewportToScreen(viewportPoint : Real2) : Real2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldtoscreen--real2">WorldToScreen : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></h1>
+<blockquote>
+<p>Convert a world point to a screen point.
+|Name|Type|Description|
+|---|---|---|
+|worldPoint|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a>| |</p>
+<pre><code class="lang-lang=cpp,">function WorldToScreen(worldPoint : Real3) : Real2
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/cameraviewport.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

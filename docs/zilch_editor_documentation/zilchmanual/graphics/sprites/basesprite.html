@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Using the Color Picker | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Using the Color Picker | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/sprites/basesprite.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>While not being a class that is directly accessed by the User, both the Sprite class and the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritetext.md">SpriteText</a> class inherit directly from the BaseSprite class, making it an important class on its own. Any of the Properties of the BaseSprite class can be directly used by either Sprites or SpriteText, changing many of the visual aspects of the Object.</p>
+<h1 id="using-the-color-picker">Using the Color Picker</h1>
+<p>The base color of a  <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a>  can be changed in several different methods:</p>
+<ul>
+<li>Entering the Hex Code of the desired color into the Color Picker. For example, <code>FF0000</code> for Red.</li>
+<li>Click and Drag the Eye Dropper tool onto the desired color on screen.</li>
+<li>By setting the VertexColor  property to a Real4 within a NadaScript.</li>
+<li>Choosing the desired color in the Color Picker either in the gradient window or by directly setting either the RGBA or HSV values.</li>
+</ul>
+<p>(NOTE)<strong>The Strength of the Eye Dropper:</strong>  Using the Eye Dropper tool, it's possible to take colors from any image that is on the computer screen. For example, by having an image of a painting open, it becomes possible to take the colors used for the painting and make the same color palette.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/1160.png" alt="colorpicker"></p>
+<p>(NOTE)<strong>Nadascript vs Editor Differences:</strong>  You'll notice when using the Color Picker tool in Editor the RGB values go between 0 and 255, however when changing the color through a NadaScript the Color Property takes a Real4  with the parameters of (R, G, B, A) that are between 0 and 1. You can get these values by dividing the RGB values by 255; for example, a purple color with an RGB of (255, 0, 185) and Alpha of 1 would have a Real4 of (1.0, 0.0, 0.73, 1).</p>
+<p>As you can see, there are several parameters that can be changed using the Color Picker:</p>
+<ul>
+<li>(H)ue: The base color of the Sprite object, ranging between <code>0</code> and <code>360</code></li>
+<li>(S)aturation: How deep the base color is, ranging from <code>0</code> to <code>100</code></li>
+<li>(V)alue: How bright the color is, ranging from <code>0</code> to <code>100</code></li>
+<li>(R)ed: Between <code>0</code> and <code>255</code></li>
+<li>(B)lue: Between <code>0</code> and <code>255</code></li>
+<li>(G)reen: Between <code>0</code> and <code>255</code></li>
+<li>(A)lpha: Transparency, ranging between <code>0</code> and <code>1</code></li>
+<li>HDR: High Dynamic Range, which allows for the Sprite to show a higher luminosity value than normal</li>
+<li>#: Hex Code of the current color</li>
+</ul>
+<p>Depending on the current parameter chosen the Color Picker will change how it looks, however two things will always remain constant:</p>
+<ul>
+<li>The Parameter Bar will always adjust the currently selected parameter between 0 at the bottom, and that parameters maximum value at the top</li>
+<li>The Alpha Bar will always adjust the Alpha value, from 0 at the bottom to 1 at the top</li>
+</ul>
+<p>Using these the color can be changed to any shade needed. Alternately if either the HSV or RGB values are known, they can also simply be typed in.</p>
+<h1 id="alpha-blending">Alpha Blending</h1>
+<p>When using alpha blending, a renderpass must be performed with the appropriate blendsettings set.  The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer.md">DeferredRenderer</a> performs an linearly interpolating blend by default using the AlphaBlend resource <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/rendergroups.md">RenderGroup</a>.  Since the AlphaSprite resource <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/materials_overview.md">Material</a> is already in AlphaBlend resource, setting the alpha value of the VertexColor  is sufficient in making transparent sprites.  Additive blending is also available through the alternative AdditiveBlend resource RenderGroup.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/28541.png" alt="image"> <em>Alpha Blending(left) vs. Additive Blending(right)</em></p>
+<h2 id="rendergroups-for-sprites">RenderGroups for Sprites</h2>
+<table>
+<thead>
+<tr>
+<th>RenderGroup</th>
+<th>Equation</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlphaBlend resource</td>
+<td><code>Color = Lerp(Source, Destination, Alpha)</code></td>
+<td>Linear Interpolation between sprite and image</td>
+</tr>
+<tr>
+<td>AdditiveBlend resource</td>
+<td><code>Color = Source*Alpha + Destination</code></td>
+<td>Adding the sprite to the image</td>
+</tr>
+</tbody>
+</table>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li>{icon university}[[<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritetext.md">spritetext</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer.md">DeferredRenderer</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/rendergroups.md">RenderGroup</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/materials_overview.md">Material</a></li>
+</ul>
+<h2 id="code-reference">Code Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/basesprite.md">BaseSprite Code Reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/sprites/basesprite.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

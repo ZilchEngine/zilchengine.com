@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Using a SampleCurve | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Using a SampleCurve | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/architecture/resources/samplecurve.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/samplecurve.md">SampleCurve</a> editor is Zilch's tool for creating custom curves that can be used with any value that can be normalized, such as the Ease parameter in Actions. Just as eases can be represented on a graph as a function of a change of one value given another, the same applies to the curves created with the SampleCurve editor.</p>
+<h2 id="common-uses">Common Uses</h2>
+<ul>
+<li>Creating a custom curve that can be used in place of the <code>Ease</code> parameter in an Action.</li>
+<li>Visually representing a range of outputs for a range of inputs.</li>
+</ul>
+<h1 id="using-a-samplecurve">Using a SampleCurve</h1>
+<h2 id="creating-a-samplecurve">Creating a SampleCurve</h2>
+<p>A new SampleCurve can be added by using the Add <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a>  or clicking on the <code>Add</code> button, followed by selecting <code>SampleCurve</code>. By default, the initial curve shows a linear progression. To begin manipulating the curve, an anchor point will need to be added by double-clicking on the curve where the anchor point is desired. It can then be grabbed by holding down the left mouse button on top of the point, and moved around the graph, as is demonstrated below:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47266.gif" alt="AddAnchorPoint"></p>
+<p>If more anchor points are needed on the curve, simply double-click again on the curve at the next desired edit point. A virtually unlimited number of anchor points may be added, but eventually the curve will fill up to the point where effective edits are no longer possible.</p>
+<h1 id="editing-a-samplecurve">Editing a SampleCurve</h1>
+<p>Once an anchor point has been created, the tangents of that point can be manipulated using one of four options: Linear Tangents, Weighted Linear Tangents, Split Tangents, and Weighted Split Tangents. All four are demonstrated below:</p>
+<h2 id="linear-tangents">Linear Tangents</h2>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47268.gif" alt="LinearTangets"></p>
+<h2 id="weighted-linear-tangents">Weighted Linear Tangents</h2>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47270.gif" alt="WeightedLinearTangents"></p>
+<h2 id="split-tangents">Split Tangents</h2>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47272.gif" alt="SplitTangents"></p>
+<h2 id="weighted-split-tangents">Weighted Split Tangents</h2>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47274.gif" alt="WeightedTangents"></p>
+<p>NOTE: While Linear and Weighted Linear Tangents are mutually exclusive and selecting one will deselect the other, Split Tangents act as a toggle and can be used alongside either Linear or Weighted Linear Tangents.</p>
+<h1 id="applying-the-samplecurve">Applying the SampleCurve</h1>
+<p>In the abstract a SampleCurve is a visual representation of a change over time or any other range. Once a SampleCurve has been created and edited to the desired result, it can then be used to effect changes in various Component properties such as position, color, light intensity, etc. The upcoming examples of using SampleCurves will be using the same Curve:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47276.png" alt="ExampleCurve"></p>
+<h2 id="using-actions">Using Actions</h2>
+<p>A SampleCurve can be used in place of the <code>Ease</code> parameter of an Action and alters the manner in which the value changes between its starting and ending values. The vertical axis of the SampleCurve represents a normalized value of the property being changed, with <code>0</code> representing the starting value and <code>1</code> representing the desired ending value.</p>
+<pre><code>class SampleCurveTests : NadaComponent
+{
+  // The SampleCurve to be used
+  [Property] var Curve : SampleCurve;
+  
+  function Initialize(init : CogInitializer)
+  {
+    // The property to be changed; in this case, the object's translation
+    var propertyToChange = @this.Owner.Transform.Translation;
+    // The target translation
+    var targetTrans = Real3(0, 5, 0);
+    // The time it takes to move
+    var time = 5.0;
+    
+    // Call the action property
+    Action.Property(this.Owner.Actions,
+                    propertyToChange,
+                    targetTrans,
+                    time,
+                    this.Curve);
+  }
+}
+</code></pre>
+<p>This code will move an object from <code>(0,1,0)</code> to <code>(0,5,0)</code> over a period of 5 seconds, with the SampleCurve determining the path of the object. The shape of the SampleCurve will dictate where along the path the object should be, with <code>1</code> on the vertical axis representing the end value (in this case <code>(0,5,0)</code>) and <code>1</code> on the horizontal axis representing the total time (5 seconds).</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47278.gif" alt="TranslationTest"></p>
+<p>While the maximum value of both axes can be modified, using a SampleCurve in an action will still always use <code>1</code> from both axes as representing the ending values. Therefore moving past <code>1</code> along the vertical axis will change the property beyond what the final result will be; in this case the object moves past its final location, as it is having its <code>Translation</code> modified. Likewise if the horizontal maximum is changed: if it is set to a value lower than <code>1</code> then it will finish moving in the manner the SampleCurve dictates early then wait until the total time has passed before moving to its final position, and if it is set higher than <code>1</code> it simply will not finish the entirety of the curve.</p>
+<h2 id="sampling-from-the-samplecurve">Sampling from the SampleCurve</h2>
+<p>SampleCurve has access to a function,  <code>Sample()</code> , that returns the value of the curve at a given point. It takes one argument of type Real , which represents an input value on the horizontal axis, and returns an output of type Real, representing the value of the vertical axis at that point.</p>
+<p>The return value is scaled by the Y maximum as defined in the curve editor. If the input value is less that the X value of the curve's first anchor point (usually <code>0.0</code>), or greater than the X value of the curve's final anchor point (usually the X maximum as defined in the curve editor), then the value will clamp to the Y value of that anchor point.</p>
+<pre><code>class LightTest : NadaComponent
+{
+  [Dependency] var DirectionalLight : DirectionalLight;
+  
+  [Property] var Curve : SampleCurve; // The SampleCurve to be used
+  [Property] var Lifetime : Real;     // The lifetime of the light
+  
+  var Timer : Real; // Timer to track how long object has existed
+    
+  function Initialize(init : CogInitializer)
+  {
+    Zilch.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    // Increment the timer by Dt
+    this.Timer += event.Dt;
+    // Adjust intensity according to value sampled from curve
+    this.DirectionalLight.LightIntensity = this.Curve.Sample(this.Timer);
+    // Destroy self once timer reaches lifetime limit
+    if(this.Timer &gt; this.Lifetime)
+    {
+      this.Owner.Destroy();
+    }
+  }
+}
+</code></pre>
+<p>By adding this component to an archetype, it can then be created at runtime to create a sudden burst of light that will destroy itself after it flashes.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47284.gif" alt="DirectionalLightTest1"></p>
+<p>Since using <code>SampleCurve.Sample()</code> uses the full values of both axes, if they are changed then it will affect the light's behavior. By changing the vertical axis to <code>5</code> and the horizontal axis to <code>2</code> it's possible to both extend its lifetime and make it brighter easily.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47286.gif" alt="DirectionalLightTest2"></p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/usingcustomeaseinactions.md">Using Custom Eases in Actions </a></li>
+</ul>
+<h2 id="tutorials">Tutorials</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/actions.md">Using Actions</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/samplecurve.md">SampleCurve</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/architecture/resources/samplecurve.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

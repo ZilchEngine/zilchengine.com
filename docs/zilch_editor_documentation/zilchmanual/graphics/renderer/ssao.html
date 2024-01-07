@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Theory | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Theory | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/renderer/ssao.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="theory">Theory</h1>
+
+<p>Screen Space Ambient Occlusion(SSAO) is a method of simulating Ambient Occlusion.  Ambient Occlusion refers to the amount a point on a surface is occluded by objects.  A shadow effect occurs, but the shadow doesn't come from any particular light source.  It comes from the ambient light, hence the name.</p>
+<p>Specifically, SSAO uses the depth of the visible pixels to compute the AO map, which is then applied to the light buffer of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer/deferred_renderer.md">Deferred Renderer</a>.</p>
+<p>(WARNING)<strong>Performance Impact</strong> SSAO will decrease performance when more pixels on the screen are occluded.</p>
+<h1 id="property-overview">Property Overview</h1>
+<p>Active checkBox: Toggle the SSAO effect on the final target.
+Radius : The radius that ssao will sample from in perspective space.
+Intensity : The amount that light is shadowed by Ambient Occlusion.
+BlurDepthThreshold : A threshold of depth for when pixels should be blurred.
+DebugBuffer checkBox: If on, the output light buffer will be set to the ambient occlusion for debugging.</p>
+<h1 id="world-scale-and-ssao">World Scale and SSAO</h1>
+<p>SSAO gives the user control of the radius of the spherical sampling region.  This should be set proportional to normal sized objects in the scene.  The player is usually a good object to model the SSAO radius with.  Make the radius too small for the character, and the ambient occlusion effect will be weak.  Make the radius too large however, and other far away objects will start to cast shadows on your character model.  The properties of SSAO are constant across the entire scene, so one should experiment with Radius  to get the desired ambient occlusion effect.</p>
+<h1 id="ambient-occlusion-intensity">Ambient Occlusion Intensity</h1>
+<p>While the Intensity  property has a direct influence on the shadow introduced in SSAO, one should first choose the appropriate Radius  value.  In general, the larger the sampling radius from a fragment, the further away the sampled geometry will be, and thus the lighter it will become.  Intensity  should be used to mitigate the effect that Radius  has on the ambient occlusion.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48206.gif" alt="SSAO_RadiusVsIntensity"></p>
+<h1 id="blur-depth">Blur Depth</h1>
+<p>SSAO can introduce artifacts, so the ambient occlusion layer is blurred.  To see why this is important, observe the following image with no blurring:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/28587.png" alt="image"> *No BlurDepthThreshold *</p>
+<p>Horizontal patterns become noticeable from the shadow and the sphere has repeating dots introduced in ambient occlusion.  Here is the same sphere with a large blurring threshold:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/28585.png" alt="image"> <em>BlurDepthThreshold  is too high</em></p>
+<p>The artifacts are gone and the result looks far better, however the blur is too intense and has bled the AO shadow onto the surface of the sphere in an unrealistic way.  To avoid this, the blur should only occur at small changes in depth, which is determined by BlurDepthThreshold .  There's a fine range of thresholds that are large enough to avoid horizontal patterns, and small enough to avoid separating the shadow from the object.  A correct depth value can produce the following result:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/28583.png" alt="image"> <em>BlurDepthThreshold  is just right</em></p>
+<h1 id="related-material">Related Material</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer/deferred_renderer.md">Deferred and Forward Renderer</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/renderer/ssao.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

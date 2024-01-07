@@ -1,0 +1,393 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/soundnode.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Sound</code></p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#addinputnode-void">AddInputNode</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#autocollapse-zilch-engine">AutoCollapse</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/referencecountedeventobject.md">referencecountedeventobject</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/additivesynthnode.md">additivesynthnode</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#insertnodeafter-void">InsertNodeAfter</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#bypasspercent-zilch-engin">BypassPercent</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/addnoisenode.md">addnoisenode</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#insertnodebefore-void">InsertNodeBefore</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#bypassvalue-zilch-engine">BypassValue</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/bandpassnode.md">bandpassnode</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#removeallinputs-void">RemoveAllInputs</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#hasinputs-zilch-engine-do">HasInputs</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/chorusnode.md">chorusnode</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#removealloutputs-void">RemoveAllOutputs</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#hasoutputs-zilch-engine-d">HasOutputs</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/compressornode.md">compressornode</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#removeandattachinputstoo">RemoveAndAttachInputsToOutputs</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#inputcount-zilch-engine-d">InputCount</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customaudionode.md">customaudionode</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#removeinputnode-void">RemoveInputNode</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#outputcount-zilch-engine">OutputCount</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/delaynode.md">delaynode</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md#replacewith-void">ReplaceWith</a></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/equalizernode.md">equalizernode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/expandernode.md">expandernode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/flangernode.md">flangernode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/generatedwavenode.md">generatedwavenode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/granularsynthnode.md">granularsynthnode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/highpassnode.md">highpassnode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/lowpassnode.md">lowpassnode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/microphoneinputnode.md">microphoneinputnode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/modulationnode.md">modulationnode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/panningnode.md">panningnode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/pitchnode.md">pitchnode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/recordingnode.md">recordingnode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/reverbnode.md">reverbnode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/saveaudionode.md">saveaudionode</a></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/volumenode.md">volumenode</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="autocollapse--boolean">AutoCollapse : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>If true, this node will automatically remove itself from the graph when its last input node is removed.</p>
+<pre><code class="lang-lang=cpp,">var AutoCollapse : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="bypasspercent--real">BypassPercent : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>DEPRECATED The BypassValue property should be used instead.</p>
+<pre><code class="lang-lang=cpp,">var BypassPercent : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="bypassvalue--real">BypassValue : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>The percentage of output (0 to 1.0) that should skip whatever processing the node does.</p>
+<pre><code class="lang-lang=cpp,">var BypassValue : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="hasinputs--boolean">HasInputs : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Will be true if this node has any input nodes.</p>
+<pre><code class="lang-lang=cpp,">var HasInputs : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="hasoutputs--boolean">HasOutputs : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Will be true if this node has any output nodes.</p>
+<pre><code class="lang-lang=cpp,">var HasOutputs : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="inputcount--integer">InputCount : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>The number of input nodes that are currently attached to this node.</p>
+<pre><code class="lang-lang=cpp,">var InputCount : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="outputcount--integer">OutputCount : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>The number of output nodes that are currently attached to this node.</p>
+<pre><code class="lang-lang=cpp,">var OutputCount : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="addinputnode--void">AddInputNode : Void</h1>
+<blockquote>
+<p>Adds the passed in node to this node's inputs.
+|Name|Type|Description|
+|---|---|---|
+|node|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md">soundnode</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddInputNode(node : SoundNode)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="insertnodeafter--void">InsertNodeAfter : Void</h1>
+<blockquote>
+<p>Inserts the passed in node after this node in the signal path, placing it between this node and any nodes which were connected to this node's output.
+|Name|Type|Description|
+|---|---|---|
+|node|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md">soundnode</a>| |</p>
+<pre><code class="lang-lang=cpp,">function InsertNodeAfter(node : SoundNode)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="insertnodebefore--void">InsertNodeBefore : Void</h1>
+<blockquote>
+<p>Inserts the passed in node before this node in the signal path, placing it between this node and any nodes which were connected to this node as inputs.
+|Name|Type|Description|
+|---|---|---|
+|node|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md">soundnode</a>| |</p>
+<pre><code class="lang-lang=cpp,">function InsertNodeBefore(node : SoundNode)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="removeallinputs--void">RemoveAllInputs : Void</h1>
+<blockquote>
+<p>Removes the connections between this node and all of its input nodes.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function RemoveAllInputs()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="removealloutputs--void">RemoveAllOutputs : Void</h1>
+<blockquote>
+<p>Removes the connections between this node and all of its output nodes, disconnecting this node from the graph. If this node has no inputs it will be deleted when no longer referenced.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function RemoveAllOutputs()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="removeandattachinputstooutputs--void">RemoveAndAttachInputsToOutputs : Void</h1>
+<blockquote>
+<p>Removes this node from the graph by disconnecting it from all inputs and outputs and attaching the input nodes to the output nodes, keeping the rest of the graph intact. This node will be deleted when it is no longer referenced.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function RemoveAndAttachInputsToOutputs()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="removeinputnode--void">RemoveInputNode : Void</h1>
+<blockquote>
+<p>Removes the node passed in as a parameter from this node's inputs.
+|Name|Type|Description|
+|---|---|---|
+|node|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md">soundnode</a>| |</p>
+<pre><code class="lang-lang=cpp,">function RemoveInputNode(node : SoundNode)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="replacewith--void">ReplaceWith : Void</h1>
+<blockquote>
+<p>Replaces this node in the graph with the node passed in as a parameter. This node will be deleted when it is no longer referenced.
+|Name|Type|Description|
+|---|---|---|
+|node|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md">soundnode</a>| |</p>
+<pre><code class="lang-lang=cpp,">function ReplaceWith(node : SoundNode)
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/soundnode.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

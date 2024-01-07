@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>The Negation Operator ! | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="The Negation Operator ! | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>NOTE: It is highly suggested you read <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/conditionals.md">conditionals</a> before this page, as the concepts of conditionals are used through out to demonstrate Boolean Operators.</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a> type has special operators that work with it.</p>
+<h1 id="the-negation-operator-">The Negation Operator <code>!</code></h1>
+<p>The <code>!</code> operator, called the negation operator, is typically the simplest of the boolean operators as it changes the value of its operand to <code>true</code> if it was <code>false</code>, and changes the value to <code>false</code> if it was <code>true</code>.</p>
+<pre><code class="lang-name=The">var a = true;
+Console.WriteLine(&quot;a starts as `a`&quot;);
+a = !a;
+Console.WriteLine(&quot;a is negated and is now `a`&quot;);
+a = !a;
+Console.WriteLine(&quot;a is negated again and is now `a` again&quot;);
+</code></pre>
+<pre><code class="lang-name=Console">a starts as true
+a is negated and is now false
+a is negated again and is now true again
+</code></pre>
+<h1 id="comparison-operators">Comparison Operators</h1>
+<p>All comparison operators take a left side and right side operand and evaluate to a boolean value.</p>
+<h2 id="equality-">Equality <code>==</code></h2>
+<p>Often certain code should only run under specific conditions. The <code>==</code> operator, called the Equality operator, determines if the value of two operands are equalivalent and returns <code>true</code> or <code>false</code>.</p>
+<pre><code class="lang-name=Equality">var a = true;
+var b = true;
+var c = false;
+
+Console.WriteLine(&quot;a is equal to b: `a == b`&quot;);
+Console.WriteLine(&quot;a is equal to c: `a == c`&quot;);
+Console.WriteLine(&quot;b is equal to c: `b == c`&quot;);
+Console.WriteLine(&quot;a, b, and c are equal: `a == b == c`&quot;);
+</code></pre>
+<pre><code class="lang-name=Console">a is equal to b: true
+a is equal to c: false
+b is equal to c: false
+a, b, and c are equal: false
+</code></pre>
+<p>While the Equality operator is not exclusively used with booleans it does always result in a boolean value.</p>
+<table>
+<thead>
+<tr>
+<th>Equality</th>
+<th></th>
+<th><code>==</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="inequality-">Inequality <code>!=</code></h2>
+<p>The <code>!=</code> operator, called the inequality operator, is the logical inverse of the equality operator return <code>true</code> if the operands are not the equal and <code>false</code> if they are.</p>
+<pre><code class="lang-name=Inequality">
+var a = true;
+var b = true;
+var c = false;
+
+Console.WriteLine(&quot;a is not equal to b: `a != b`&quot;);
+Console.WriteLine(&quot;a is not equal to c: `a != c`&quot;);
+Console.WriteLine(&quot;b is not equal to c: `b != c`&quot;);
+Console.WriteLine(&quot;a, b, and c are not equal: `a != b != c`&quot;);
+</code></pre>
+<pre><code class="lang-name=Console">a is not equal to b: false
+a is not equal to c: true
+b is not equal to c: true
+a, b, and c are not equal: false
+</code></pre>
+<p>Notice that <code>a != b != c</code> results in false. This is because <code>==</code> and <code>!=</code> are evaluated left to right. So first <code>a != b</code> returns <code>false</code> as both variables have a value of <code>true</code>. Because <code>a != b</code> evaluates to <code>false</code> and <code>c</code> has a value of <code>false</code> <code>a != b != c</code> is reduced to <code>false != c</code>. The reduced form evaluates to <code>false</code> since both operands have a value of <code>false</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Inequality</th>
+<th></th>
+<th><code>!=</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="less-than--greater-than---">Less Than &amp; Greater Than <code>&lt;</code> &amp; <code>&gt;</code></h2>
+<p>The <code>&lt;</code> and <code>&gt;</code> operators, called the less or greater then operators respectively, evaluate if one operand has a smaller/larger value than the other.</p>
+<pre><code class="lang-name=Less/Greater">var i = 0;
+var j = 1;
+var k = 0;
+
+Console.WriteLine(&quot;i is less than j: `i &lt; j`&quot;);
+Console.WriteLine(&quot;i is less than k: `i &lt; k`&quot;);
+Console.WriteLine(&quot;j is less than k: `j &lt; k`&quot;);
+Console.WriteLine(&quot;i is greater than j: `i &gt; j`&quot;);
+Console.WriteLine(&quot;i is greater than k: `i &gt; k`&quot;);
+Console.WriteLine(&quot;j is greater than k: `j &gt; k`&quot;);
+</code></pre>
+<pre><code class="lang-name=Console">i is less than j: true
+i is less than k: false
+j is less than k: false
+i is greater than j: false
+i is greater than k: false
+j is greater than k: true
+</code></pre>
+<p>Notice that <code>i</code> is not less or greater than <code>k</code> as <code>0</code> is not less or greater than <code>0</code>.</p>
+<h2 id="less-than-or-equal--greater-than-or-equal---">Less Than or Equal &amp; Greater Than or Equal (<code>&lt;=</code> &amp; <code>&gt;=</code>)</h2>
+<p>The <code>&lt;=</code> and <code>&gt;=</code>, called the <code>less than or equal to</code> and <code>greater than or equal to</code> operators, determine if the value of the left operand is lesser than, greater than, or equal to the right operand.</p>
+<pre><code class="lang-name=Less/Greater">var i = 0;
+var j = 1;
+var k = 0;
+
+Console.WriteLine(&quot;i is less or equal to than j: `i &lt;= j`&quot;);
+Console.WriteLine(&quot;i is less or equal to than k: `i &lt;= k`&quot;);
+Console.WriteLine(&quot;j is less or equal to than k: `j &lt;= k`&quot;);
+Console.WriteLine(&quot;i is greater than or equal to j: `i &gt;= j`&quot;);
+Console.WriteLine(&quot;i is greater than or equal to k: `i &gt;= k`&quot;);
+Console.WriteLine(&quot;j is greater than or equal to k: `j &gt;= k`&quot;);
+</code></pre>
+<pre><code class="lang-name=Console">i is less than or equal to j: true
+i is less than or equal to k: true
+j is less than or equal to k: false
+i is greater than or equal to j: false
+i is greater than or equal to k: true
+j is greater than or equal to k: true
+</code></pre>
+<h1 id="logical-operators">Logical Operators</h1>
+<p>Logical operators take a left and a right side areguement, both of which must evaluate to boolean values, and evaluates them returning another boolean value.</p>
+<h1 id="and-">and <code>&amp;&amp;</code></h1>
+<p>The <code>&amp;&amp;</code> operator, called the <code>and</code> operator, takes two boolean values and evaluates them, returning true only if both operands evaluate to true. This can be very useful as often one may find that a condition in script may depend on two seperate factors.</p>
+<pre><code class="lang-name=Nested">var i = true;
+var j = false;
+
+if(i)
+{
+  if(j)
+  {
+    Console.WriteLine(&quot;Both i and j are true&quot;);
+  }
+  else
+  {
+    Console.WriteLine(&quot;Inner Else: Either i or j is false&quot;);
+  }
+}
+else
+{
+  Console.WriteLine(&quot;Outer Else: Either i or j is false&quot;);
+}
+</code></pre>
+<pre><code class="lang-name=Console">Inner Else: Either i or j is false
+</code></pre>
+<p>This can be simplified using the <code>&amp;&amp;</code> operator to evaluate both <code>i</code> and <code>j</code> within the same <code>if</code> statement.</p>
+<pre><code class="lang-name=&amp;&amp;,">var i = true;
+var j = false;
+
+if(i &amp;&amp; j)
+{
+  Console.WriteLine(&quot;Both i and j are true&quot;);
+}
+else
+{
+  Console.WriteLine(&quot;Either i or j is false&quot;);
+}
+</code></pre>
+<pre><code class="lang-name=Console">Either i or j is false
+</code></pre>
+<p>The nested <code>if</code> version of the above code does allow information about whether it is <code>i</code> or <code>j</code> which is <code>false</code> to be gathered, but in many cases the <em>which</em> doesn't matter, just that one of them is <code>false</code> is enough.</p>
+<table>
+<thead>
+<tr>
+<th>And</th>
+<th></th>
+<th><code>&amp;&amp;</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p>(NOTE)<strong>Short Circuiting the Right Side Operand</strong>: Since logical <code>and</code> is an operator which is resolved left to right is can always be assumed that the left operand will be evaluated to either <code>true</code> or <code>false</code> before the righthand operand is evaluated at all. This is important as if the first operand does not evaluate to <code>true</code> the operator will immeidiately evaluate to <code>false</code> <em>short circuiting</em> the right side an causing it to not resolve and evaluate the expression of the right side operand at all. A good usage example is when checking object validity before accessing members such as components.</p>
+<h1 id="or-">or <code>||</code></h1>
+<p>The <code>||</code> operator, called the <code>or</code> operator, takes two boolean values and evaluates them, returning true if either operands evaluates to true.</p>
+<pre><code class="lang-name=||,">var i = true;
+var j = false;
+
+if(i || j)
+{
+  Console.WriteLine(&quot;Either i or j is true&quot;);
+}
+else
+{
+  Console.WriteLine(&quot;Neither i or j is true&quot;);
+}
+</code></pre>
+<pre><code class="lang-name=Console">Either i or j is true
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>And</th>
+<th></th>
+<th><code>||</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>true</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/conditionals.md">conditionals</a></li>
+</ul>
+<h2 id="code-reference">Code Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

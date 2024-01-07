@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>The Loop Keyword | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="The Loop Keyword | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Looping is a technique used to execute code an arbitrary number of times.</p>
+<h1 id="the-loop-keyword">The Loop Keyword</h1>
+<p>The <code>loop</code> keyword defines the most basic type of looping structure in Nada.  This is most useful when processing each element in a container, where the container size may not be known.</p>
+<pre><code class="lang-lang=csharp,">var i = 0;
+var sum = 0;
+loop
+{
+  sum += i;
+  Console.WriteLine(sum);
+  if (i &gt;= 3)
+    return;
+  ++i;
+}
+</code></pre>
+<pre><code class="lang-name=Console">0
+1
+3
+</code></pre>
+<p>The values of <code>sum</code> printed are <code>0</code>, <code>1</code>, and <code>3</code> because <code>sum += 0</code>, <code>sum += 1</code>, and <code>sum += 2</code> are all executed in sequence with a call to <code>Console.WriteLine</code> after each.  Whatever code is in the block following <code>loop</code> will be repeatedly executed until the <code>loop</code> is escaped with <code>return</code>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md#navigating-loops">break</a>, or <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md#continue">continue</a>.  <code>return</code> is a directive that leaves the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">function</a>, and therefore can be used to exit a loop.</p>
+<h1 id="while-and-do-while">While and Do While</h1>
+<p>While the <code>loop</code> keyword is sufficient in executing code an arbitrary ammount of times, there are other types of loop blocks that make for cleaner code.</p>
+<pre><code class="lang-lang=csharp,">var i = 0;
+var sum = 0;
+while(i &lt; 3)
+{
+  sum += i;
+  Console.WriteLine(sum);
+  ++i;
+}
+</code></pre>
+<pre><code class="lang-name=Console">0
+1
+3
+</code></pre>
+<p>The above snippet will sum together numbers in sequence like in the <code>Loop</code> code snippet, but this time using the <code>while</code> keyword.  <code>while</code> will run when <code>i</code> is <code>0</code>, <code>1</code>, and <code>2</code>, and the sequence of sums will be the same as in the <code>Loop</code> code snippet.</p>
+<pre><code class="lang-lang=csharp,">var i = 0;
+var sum = 0;
+do
+{
+  sum += i;
+  Console.WriteLine(sum);
+  ++i;
+}
+while(i &lt; 3)
+</code></pre>
+<pre><code class="lang-name=Console">0
+1
+3
+</code></pre>
+<p>The above snippet also produces the same result as the <code>While</code> code snippet, but with <code>do while</code> instead of <code>while</code>.  The <code>do while</code> structure is similar to a <code>while</code> loop, but with the looping condition is checked after the loop is run.  One should be mindful of the implications of <code>do while</code>, that whatever is in the code block following <code>do</code> will run at least once.  Still, the <code>do while</code> block is executed when <code>i</code> is <code>0</code>, <code>1</code>, and <code>2</code>.</p>
+<pre><code class="lang-lang=csharp,">var i = 100;
+var sum = 0;
+do
+{
+  sum += i;
+  Console.WriteLine(sum);
+  ++i;
+}
+while(i &lt; 3)
+</code></pre>
+<pre><code class="lang-name=Console">100
+</code></pre>
+<p>Notice how the above code snippet is a modification of <code>Do While 1</code>, showing how choosing the wrong type of loop can result in logical errors. The initial value of <code>i</code> is now <code>100</code>, and therefore the summation range is <code>[100,3]</code>.  In the field of mathematics, <code>[100,3]</code> is an empty interval, and the proper sum would be <code>0</code>.  Since a <code>do while</code> is used here, the result is instead <code>100</code>.  If the above example instead used a <code>while</code> loop, the code block would never execute and the result would be <code>0</code>.</p>
+<h1 id="for-loop">For loop</h1>
+<p>A common use for looping is to iterate over a set, whether it's numbers or elements in a container.  The <code>for</code> loop provides an even shorter syntax than the <code>while</code> loop.</p>
+<pre><code class="lang-lang=csharp,">var myArray = Array[Integer]();
+var sum = 0;
+for (var j = 0; j &lt; 3; ++j)
+{
+  myArray.Add(j);
+}
+Console.WriteLine(myArray);
+
+for(var i = 0; i &lt; 3; ++i)
+{
+  sum += myArray.Get(i);
+  Console.WriteLine(sum);
+}
+</code></pre>
+<pre><code class="lang-name=Console">{0, 1, 2}
+0
+1
+3
+</code></pre>
+<p>Notice how the above code snippet and the <code>While</code> code snippet loops produce the same result: <code>0</code>, <code>1</code>, and <code>3</code>.  First <code>i</code> is <strong>initialized</strong> to <code>0</code>.  Then in a loop, the <code>i &lt; 3</code> <strong>condition</strong> is checked, <code>sum</code> is increased and printed, and <code>i</code> is incremented at the end of the <strong>iteration</strong>.  The <code>for</code> loop follows the format <code>for(&lt;initialization&gt;; &lt;condition&gt;; &lt;iteration&gt;)</code>.  In addition, the above code snippet uses an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md">array</a>. An array is a container with the <em>indexable</em> quality, which means the i-th element can be directly accessed.  This access is done by calling the function <code>myArray.Get</code>.</p>
+<h1 id="for-each-loop">For Each loop</h1>
+<p>The <code>foreach</code> loop is reserved for iterating over containers, and is shorter than its equivalent <code>for</code> loop.</p>
+<pre><code class="lang-lang=csharp,">var myArray = Array[Integer]();
+var sum = 0;
+for (var i = 0; i &lt; 3; ++i)
+{
+  myArray.Add(i);
+}
+Console.WriteLine(myArray);
+
+foreach (var val in myArray)
+{
+  sum += val;
+  Console.WriteLine(sum);
+}
+</code></pre>
+<pre><code class="lang-name=Console">{0, 1, 2}
+0
+1
+3
+</code></pre>
+<p>Any array that is <em>indexable</em> is also //iteratable//.  The Array container in Nada can be iterated over as shown in <code>foreach (var val in myArray)</code>.  Take note that the index isn't accessable in a <code>foreach</code> loop, and that <code>foreach</code> should only be used when the order that elements are iterated over isn't relevant.</p>
+<h1 id="navigating-loops">Navigating Loops</h1>
+<p>There are two ways to exit from a loop.  When the loop condition is evaluated to false, the loop will end.  The other way is to use either <code>return</code> or <code>break</code>.  As explained on the function page, <code>return</code> will exit the current function while <code>break</code> will leave the next highest loop.  The following code snippet uses <code>myArray</code> from the <code>For Each</code> code snippet.</p>
+<pre><code class="lang-lang=csharp,">var target : Integer = 1;
+for (var index : Integer = 0; index &lt; myArray.Count; ++index)
+{
+  if(myArray.Get(index) == target)
+  {
+    Console.WriteLine(index);
+    break;
+  }
+}
+Console.WriteLine(&quot;Loop Finished&quot;);
+</code></pre>
+<pre><code class="lang-name=Console">1
+Loop Finished
+</code></pre>
+<p>The above code snippet looks for the index of the value <code>1</code> in <code>myArray</code>.  The array holds <code>{0, 1, 2}</code> from the <code>For Each</code> code snippet, so the index of the value <code>1</code> is <code>1</code>.  Once the <code>break</code> statement is reached, Nada will jump directly to the final <code>}</code>.  This is the closing brace of the <code>for</code> loop block.</p>
+<h2 id="nested-loops">Nested Loops</h2>
+<p>Any loop inside another loop is considered nested.  Be aware in these situations that <code>break</code> will exit out of only one loop, while <code>return</code> will leave all of them.</p>
+<pre><code class="lang-lang=csharp,">for (var i = 0; i &lt; 3; ++i)
+{
+  for (var j = 0; j &lt; 3; ++j)
+  {
+    if(j &gt;= i)
+      break;
+    
+    Console.WriteLine(&quot;(`i`, `j`)&quot;);
+  }
+}
+</code></pre>
+<pre><code class="lang-name=Console">(1, 0)
+(2, 0)
+(2, 1)
+</code></pre>
+<p>Notice how the <code>break</code> statement only exits the inner <code>for</code> loop.  The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/strings.md">string</a> passed into <code>Console.WriteLine</code> will evaluate to <code>(1, 0)</code>, <code>(2, 0)</code>, and <code>(2, 1)</code>.  In other words, the result is printed when <code>j &lt; i</code>.</p>
+<h2 id="continue">Continue</h2>
+<p>The <code>continue</code> keyword operates similarly to <code>break</code>.  While <code>break</code> will jump to the end of the loop's scope <strong>and</strong> exit the loop, <code>continue</code> will only jump to the end of the loop's scope.</p>
+<pre><code class="lang-lang=csharp,">for(var i = 0; i &lt; 5; ++i)
+{
+  if(i == 2)
+    continue;
+  
+  Console.WriteLine(i);
+}
+</code></pre>
+<pre><code class="lang-name=Console">0
+1
+3
+4
+</code></pre>
+<p>Notice how <code>Console.WriteLine(i)</code> executes for each <code>i</code> in the range <code>[0, 4]</code> with the exception of <code>2</code>.  When <code>i == 2</code>, <code>continue</code> is reached and the next iteration is reached.  Also note that even when using <code>continue</code> in a for loop, the iterative statement <code>++i</code> is still executed.</p>
+<h1 id="condensed-loops">Condensed Loops</h1>
+<p>In the case that a loops only contains one statement within its scope (simliar to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/conditionals.md#condensed-conditionals"> conditionals </a>) then no <code>{}</code> brackets are needed.</p>
+<pre><code class="lang-name=Single">for(var i = 0; i &lt; 3; ++i)
+  Console.WriteLine(i);
+  Console.WriteLine(&quot;-&quot;);
+</code></pre>
+<pre><code class="lang-name=Console">0
+1
+2
+-
+</code></pre>
+<p>Here you can see that the second instance of <code>Console.WriteLine(i);</code> is only executed once as it falls outside the scope of the for loop.</p>
+<h1 id="related-material">Related Material</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">functions</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/strings.md">strings</a></li>
+</ul>
+<h2 id="code-reference">Code Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md">array_t</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/netchannel.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Networking</code></p>
+<p>(NOTE) Network Channel. Manages the replication of a set of properties on the network.</p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#getnetproperty-zilch-engi">GetNetProperty</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#authority-zilch-engine-do">Authority</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/safeid32object.md">safeid32object</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#hasnetproperty-zilch-engi">HasNetProperty</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#changeflag-zilch-engine-d">ChangeFlag</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#replicatenow-zilch-engine">ReplicateNow</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#isnapping-zilch-engine-do">IsNapping</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#takenap-void">TakeNap</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#isscheduled-zilch-engine">IsScheduled</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#wakeup-void">WakeUp</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#lastchangetimepassed-zer">LastChangeTimePassed</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#lastchangetimestamp-zero">LastChangeTimestamp</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#name-zilch-engine-documen">Name</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#netchanneltype-zilch-engi">NetChannelType</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="authority--authority">Authority : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#authority">Authority</a></h1>
+<blockquote>
+<p>Controls which peer has the authority to observe and replicate property changes. (Client: Indicates both the client and server are allowed to observe and replicate property changes) (Server: Indicates only the server is allowed to observe and replicate property changes) Only a single client, specified by NetObject::NetUserOwnerPeerId, may possess client authority at any given time. The server is still responsible for relaying contained property changes to other clients, but will not replicate contained property changes back to the authority client. However, the server is also still responsible for other replication commands (such as object creation/destruction), and these WILL be replicated to the authority client.</p>
+<pre><code class="lang-lang=cpp,">var Authority : Authority
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="changeflag--boolean">ChangeFlag : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Manual change flag (checked upon manual change observation).</p>
+<pre><code class="lang-lang=cpp,">var ChangeFlag : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isnapping--boolean">IsNapping : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if the net channel is currently napping (performing change detection on longer intervals), else false.</p>
+<pre><code class="lang-lang=cpp,">var IsNapping : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isscheduled--boolean">IsScheduled : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if this net channel is scheduled for change observation, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsScheduled : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="lastchangetimepassed--real">LastChangeTimePassed : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Elapsed time passed since this net channel was last changed, else 0.</p>
+<pre><code class="lang-lang=cpp,">var LastChangeTimePassed : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="lastchangetimestamp--real">LastChangeTimestamp : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Timestamp indicating when this net channel was last changed, else 0.</p>
+<pre><code class="lang-lang=cpp,">var LastChangeTimestamp : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="name--string">Name : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Net channel name.</p>
+<pre><code class="lang-lang=cpp,">var Name : String
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="netchanneltype--netchanneltype">NetChannelType : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchanneltype.md">netchanneltype</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Operating net channel type.</p>
+<pre><code class="lang-lang=cpp,">var NetChannelType : NetChannelType
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="getnetproperty--netproperty">GetNetProperty : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netproperty.md">netproperty</a></h1>
+<blockquote>
+<p>[Client/Server] Returns the specified net property, else nullptr.
+|Name|Type|Description|
+|---|---|---|
+|component|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/component.md">component</a>| |
+|propertyName|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a>| |</p>
+<pre><code class="lang-lang=cpp,">function GetNetProperty(component : Component, propertyName : String) : NetProperty
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="hasnetproperty--boolean">HasNetProperty : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>[Client/Server] Returns true if the net object has the specified net property, else false.
+|Name|Type|Description|
+|---|---|---|
+|component|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/component.md">component</a>| |
+|propertyName|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a>| |</p>
+<pre><code class="lang-lang=cpp,">function HasNetProperty(component : Component, propertyName : String) : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="replicatenow--boolean">ReplicateNow : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Replicates net property changes immediately (only if changes are detected). Will also update nap state as configured. Returns true if changes were replicated, else false.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function ReplicateNow() : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="takenap--void">TakeNap : Void</h1>
+<blockquote>
+<p>Forces the net channel to start napping immediately.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function TakeNap()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="wakeup--void">WakeUp : Void</h1>
+<blockquote>
+<p>Forces the net channel to stop napping immediately.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function WakeUp()
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/netchannel.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

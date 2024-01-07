@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>typeid | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="typeid | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/reflection.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Reflection describes an objects ability to &quot;reflect&quot; on itself, generally this means to understand it's type and relationships to other types. Although Nada does not boast a robust reflection library it does have a basic typeid for by-value types and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/property_delegates.md">property_delegates</a>:</p>
+<h1 id="typeid">typeid</h1>
+<pre><code class="lang-lang=csharp">  var i = 0;
+  var di = 0d;
+  var real = 0.0;
+  var double = 0.0d;
+  var word = &quot;&quot;;
+  var refType = null;
+  var boolTrue = true;
+  var boolFalse = false;
+  var prop = new Property[Real]();        
+  
+  Console.Write(&quot;integer, 0 is of type: &quot;);
+  Console.WriteLine(typeid(i).Name);               // integer, 0 is of type: Integer
+  Console.Write(&quot;doubleinteger, 0d is of type: &quot;);
+  Console.WriteLine(typeid(di).Name);              // doubleinteger, 0d is of type: DoubleInteger
+  Console.Write(&quot;real, 0.0 is of type: &quot;);
+  Console.WriteLine(typeid(real).Name);            // real, 0.0 is of type: Real
+  Console.Write(&quot;doublereal, 0.0d is of type: &quot;);
+  Console.WriteLine(typeid(double).Name);          // doublereal, 0.0d is of type: DoubleReal
+  Console.Write(&quot;string, \&quot;\&quot; is of type: &quot;);
+  Console.WriteLine(typeid(word).Name);            // string, &quot;&quot; is of type: String
+  Console.Write(&quot;null, null is of type: &quot;);
+  Console.WriteLine(typeid(refType).Name);         // refTypeHandle, null is of type: Null
+  Console.Write(&quot;boolean, true is of type: &quot;);
+  Console.WriteLine(typeid(boolTrue).Name);        // boolean, true is of type: Boolean
+  Console.Write(&quot;boolean, false is of type: &quot;);
+  Console.WriteLine(typeid(boolFalse).Name);       // boolean, false is of type: Boolean   
+  Console.Write(&quot;Real property delegate is of type: &quot;); 
+  Console.WriteLine(typeid(prop).Name);            // Real property delegate is of type: Property[Real]
+</code></pre>
+<pre><code class="lang-name=Console">  ---------------- Begin Game ---------------
+  integer, 0 is of type: Integer
+  doubleinteger, 0d is of type: DoubleInteger
+  real, 0.0 is of type: Real
+  doublereal, 0.0d is of type: DoubleReal
+  string, &quot;&quot; is of type: String
+  null, null is of type: Null
+  boolean, true is of type: Boolean
+  boolean, false is of type: Boolean
+  Real property delegate is of type: Property[Real]
+</code></pre>
+<hr>
+<h1 id="string-interpolation">String Interpolation</h1>
+<p>Those types that are <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md">memory_management</a> or <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/delegates.md">delegates</a> types can be inspected with <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/nada_base_types/string.md">string</a> Interpolation:</p>
+<pre><code class="lang-lang=csharp">class Utility
+{
+  constructor()
+  {
+  }
+  [Static]
+  function HelloWorld()
+  {
+    Console.WriteLine(&quot;Hello World&quot;);
+  }
+  
+  function Add(a: Integer, b: Integer): Integer
+  {
+    return a+b;
+  }
+}
+
+class Driver 
+{
+  function TypeidForRefAndDelegates()
+  {
+    var del = Utility.HelloWorld;
+    var temp = new Utility();
+    var del2 = temp.Add;
+    var vectorRef = new Real3(0.0, 1.0, 2.0);
+
+    Console.Write(&quot;delegate(), Utility.HelloWorld can be string interpolated to read: &quot;); 
+    Console.WriteLine(&quot;`del`&quot;);
+    
+    Console.Write(&quot;delegate(a:Integer, b:Integer):Integer, Utility.Add&quot;);
+    Console.Write(&quot; can be string interpolated to read: &quot;);
+    Console.WriteLine(&quot;`del2`&quot;);
+
+    
+    Console.Write(&quot;ref Real3, (0.0, 1.0, 2.0) is of type: &quot;);
+    Console.WriteLine(&quot;`vectorRef`&quot;);
+  }
+}
+</code></pre>
+<pre><code class="lang-name=Console">---------------- Begin Game ---------------
+delegate(), Utility.HelloWorld can be string interpolated to read: Utility.HelloWorld()
+delegate(a:Integer, b:Integer):Integer, Utility.Add can be string interpolated to read: 
+Utility.Add(a : Integer, b : Integer) : Integer
+ref Real3, (0.0, 1.0, 2.0) is of type: ref Real3
+</code></pre>
+<hr>
+<h1 id="consoledumpvalue">Console.DumpValue</h1>
+<p>Useful in understanding the current state of a Nada object, Console.DumpValue prints out the names of the variables and their type, if a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">class</a>, or their value if a basic, built-in data type.</p>
+<pre><code class="lang-lang=csharp">class TopLevel
+{
+  var MyVariable: MidLevel = null;
+  constructor()
+  {
+  }
+}
+
+class MidLevel
+{
+  var MyVariable: BottomLevel = BottomLevel(false);
+  constructor()
+  {
+  }
+}
+
+struct BottomLevel
+{
+  var IsBottom: Boolean = true;
+  var UpAxis: Real3 = Real3(0.0, 1.0, 0.0);
+  constructor(param: Boolean)
+  {
+    this.IsBottom = param;
+  }
+}
+    
+class ReflectionDriver
+{
+  [Static]
+  function Dumping()
+  {
+    var top = TopLevel();
+    var mid = MidLevel();
+    var bot = BottomLevel(true);
+    
+    Console.DumpValue(top);
+    Console.DumpValue(mid, 8); // The second parameter indicates the depth of recursion cut-off
+    Console.DumpValue(bot);
+    
+  }
+}
+</code></pre>
+<pre><code class="lang-name=Console">---------------- Begin Game ---------------
+TopLevel
+  MyVariable: (null) MidLevel
+MidLevel
+  MyVariable: BottomLevel
+    IsBottom: False
+    UpAxis: (0, 1, 0)
+      X: 0
+      Y: 1
+      Z: 0
+BottomLevel
+  IsBottom: True
+  UpAxis: (0, 1, 0)
+</code></pre>
+<p><em>Notice how the MidLevel dumps more information than the BottomLevel with comparable information, due to the second parameter.</em></p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/property_delegates.md">property_delegates</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md">memory_management</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/delegates.md">delegates</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/nada_base_types/string.md">string</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">classes</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/reflection.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

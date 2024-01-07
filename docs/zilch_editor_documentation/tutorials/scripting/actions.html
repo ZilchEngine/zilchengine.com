@@ -1,0 +1,726 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Learning Objectives | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Learning Objectives | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/scripting/actions.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Actions are a handy way to animate properties with just a few lines of code. They can also be a way to call a function or dispatch an event after a delay. You can make actions happen in a paticular order, all at the same time, or some combination of the two. Let's take a look.</p>
+<h1 id="learning-objectives">Learning Objectives</h1>
+<ul>
+<li>Property Actions</li>
+<li>Delay Actions</li>
+<li>Call Actions</li>
+<li>ActionSequences</li>
+<li>ActionGroups</li>
+<li>Looped Actions</li>
+</ul>
+<h1 id="level-setup">Level Setup</h1>
+<ul>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">Create a New 2D Project</a></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></p>
+</li>
+<li><p>Create a NadaScript resource using the Component template template and name it <code>SpriteFader</code></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : GameCamera object</p>
+</li>
+<li><p>In the <code>Properties Window</code></p>
+</li>
+<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/camera.md">Camera</a></p>
+</li>
+<li><p>Set Size  to <code>5</code></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</p>
+</li>
+<li><p>In the <code>Properties Window</code></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/area.md">Area</a></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>SpriteFader</code></p>
+</li>
+</ul>
+<h1 id="what-are-actions">What Are Actions</h1>
+<p>Often in games we find that we wish to smoothly transition a property from its existing value to another target value. This is often done by calculating interpolated values on logic update between an the existing value and the target value using a function such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/math.md#lerp-zilch-engine-documen">Math.Lerp</a>. While there are times when it is advantageous to perform these operations in an update function it is more common to want to begin an interpolation operation and have it finish on its own. Actions can do this and more and act as a generic structure to organize in game <em>actions</em> that need to occur in sequence or parrallel.</p>
+<h1 id="property-actions">Property Actions</h1>
+<p>The first and most common action type is a Property Action which allows us to interpolate a property from its current value to a target value, over a specific duration, at a rate defined by an easing function. We can break down the construction of a property action parameter by parameter.</p>
+<pre><code class="lang-name=Example">Actions.Property(this.Owner.Actions,
+                 @this.Area.Size,
+                 this.TargetSize,
+                 this.Duration,
+                 Ease.Linear);
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Action Property Parameters</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>this.Owner.Actions</code></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/actionset.md">ActionSet</a></td>
+<td>The ActionSet which will update this action</td>
+</tr>
+<tr>
+<td><code>@this.Area.Size</code></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master//zilch_editor_documentation/zilchmanual/nada_in_zilch/property_delegates.md">PropertyDelegate</a></td>
+<td>Delegate of the property to be modified by the action</td>
+</tr>
+<tr>
+<td><code>this.TargetValue</code></td>
+<td>Property type of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master//zilch_editor_documentation/zilchmanual/nada_in_zilch/property_delegates.md"> PropertyDelegate</a> passed into the previous parameter (<strong>i.e.</strong> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">Real3</a> in this example)</td>
+<td>Value to which the action will interpolate the given property</td>
+</tr>
+<tr>
+<td><code>this.Duration</code></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">Real</a></td>
+<td>The duration over which the action will be completed</td>
+</tr>
+<tr>
+<td><code>Ease.Linear</code></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#ease">Ease</a></td>
+<td>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#ease">Ease</a> function used to calculate the rate of interpolation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-a-property-action">Using a Property Action</h2>
+<p>Now that we've covered the basics of what a property action is let's try using one:</p>
+<ul>
+<li>Update the <code>SpriteFader</code> script:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">class SpriteFader : NadaComponent
+{
+  [Dependency] var Sprite : Sprite;
+  [Dependency] var Area : Area;
+  
+  //Target scale to interpolate towards  
+  [Property]
+  var TargetSize : Real2 = Real2(2, 2);
+  
+  //Duration of the interpolation
+  [Property]
+  var Duration : Real = 1.0;
+  
+  function Initialize(init : CogInitializer)
+  {
+    //Call the animate function
+    this.Animate();
+  }
+  
+  //Interpolate the object's scale to a target value over a duration
+  function Animate()
+  {
+    Actions.Property(this.Owner.Actions,
+                     @this.Area.Size,
+                     this.TargetSize,
+                     this.Duration,
+                     Ease.Linear);
+  }
+}
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93871.gif" alt="ScaleOnly"></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>Here you can see the property action interpolating the title scale over the given period of one second.</p>
+<h1 id="action-sequences">Action Sequences</h1>
+<p>You may already be wondering how to chain actions together, well this is the purpose of an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/actionsequence.md">ActionSequence</a>.</p>
+<ul>
+<li>Add the following property to <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=Color,">  [Property]
+  var TargetColor : Real4 = Real4(1,0,0,1);
+</code></pre>
+<ul>
+<li>Update the <code>Animate</code> function in <code>SpriteFader</code> script:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">  function Animate()
+  {
+    //create a sequence driven by the object
+    var actionSequence = Actions.Sequence(this.Owner.Actions);
+    //put the scaling property action first in the sequence
+    Actions.Property(actionSequence,
+                     @this.Area.Size,
+                     this.TargetSize,
+                     this.Duration,
+                     Ease.Linear);
+    //put the color interpolation property action second in the sequence
+    Actions.Property(actionSequence,
+                     @this.Sprite.VertexColor,
+                     this.TargetColor,
+                     this.Duration,
+                     Ease.Linear);
+  }
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93873.gif" alt="ScaleThenColor"></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>Here we can see sequences allow up to play actions in a linear order. This is very helpful, but what if we want to make these actions happen at the same time?</p>
+<h1 id="action-groups">Action Groups</h1>
+<p>Similiar to how an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/actionsequence.md">ActionSequence</a> will let us perform actions in sequence an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/actiongroup.md">ActionGroup</a> will let us perform actions in parallel (at the same time).</p>
+<ul>
+<li>Update the <code>Animate</code> function in <code>SpriteFader</code> script:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">  function Animate()
+  {
+    //Create a group driven by the object
+    var actionGroup = Actions.Group(this.Owner.Actions);
+    //Put the scaling property  in the group
+    Actions.Property(actionGroup,
+                     @this.Area.Size,
+                     this.TargetSize,
+                     this.Duration,
+                     Ease.Linear);
+    //Put the color interpolation property action the group
+    Actions.Property(actionGroup,
+                     @this.Sprite.VertexColor,
+                     this.TargetColor,
+                     this.Duration,
+                     Ease.Linear);
+  }
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93875.gif" alt="ScaleAndColor"></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>Now that the property actions are in a <code>group</code> instead of in a <code>sequence</code> they happen at the same time.</p>
+<h1 id="combining-sequences-and-groups">Combining Sequences and Groups</h1>
+<p>So far we have seen sequences and groups working seperately but what if we wanted to combine them. That would mean we could make sequences of grouped actions, or groups of sequenced actions. We can use the <code>SpriteFader</code> component to test this.</p>
+<ul>
+<li>Add the following variables to <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=Original">  var OriginalSize : Real2;
+  
+  var OriginalColor : Real4;
+</code></pre>
+<ul>
+<li>Update the <code>Initialize</code> function in <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=SpriteFader.Initialize(),">  function Initialize(init : CogInitializer)
+  {
+    //Capture original values
+    this.OriginalSize = this.Area.Size;
+    this.OriginalColor = this.Sprite.VertexColor;
+    
+    //Call the animate function
+    this.Animate();
+  }
+</code></pre>
+<ul>
+<li>Update the <code>Animate</code> function in <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=SpriteFader">  function Animate()
+  {
+    //Create a group driven by the object
+    var actionGroup = Actions.Group(this.Owner.Actions);
+    //Create the sequence to the text up and down
+    var scaleSequence = Actions.Sequence(actionGroup);
+    //Put the scale up property action in the sequence
+    Actions.Property(scaleSequence,
+                     @this.Area.Size,
+                     this.TargetSize,
+                     this.Duration,
+                     Ease.Linear);
+    //Put the scale down property action in the sequence
+    Actions.Property(scaleSequence,
+                     @this.Area.Size,
+                     this.OriginalSize,
+                     this.Duration,
+                     Ease.Linear);
+    
+    //Create the sequence to interpolate
+    var colorSequence = Actions.Sequence(actionGroup);
+    //Put the interpolate to black property action in the color sequence
+    Actions.Property(colorSequence,
+                     @this.Sprite.VertexColor,
+                     this.TargetColor,
+                     this.Duration,
+                     Ease.Linear);
+    //Put the interpolate to white property action in the color sequence
+    Actions.Property(colorSequence,
+                     @this.Sprite.VertexColor,
+                     this.OriginalColor,
+                     this.Duration,
+                     Ease.Linear);
+  }
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93877.gif" alt="GroupedSequences"></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>It should be noted that <code>this.Owner.Actions</code> is an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/actiongroup.md">ActionGroup</a> so in this simple case we could have just passed it to the constructor for the action sequences. We could also invert the group and sequence nesting to achieve the same affect from a different approach.</p>
+<ul>
+<li>Update the <code>Animate</code> function in <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=SpriteFader">  function Animate()
+  {
+    //Create a group driven by the object
+    var actionSequence = Actions.Sequence(this.Owner.Actions);
+    //Create the group to scale up and black out the text
+    var scaleUpGroup = Actions.Group(actionSequence);
+    //Put the scaling property  in the group
+    Actions.Property(scaleUpGroup,
+                     @this.Area.Size,
+                     this.TargetSize,
+                     this.Duration,
+                     Ease.Linear);
+    //Put the color interpolation property action the group
+    Actions.Property(scaleUpGroup,
+                     @this.Sprite.VertexColor,
+                     this.TargetColor,
+                     this.Duration,
+                     Ease.Linear);
+    
+    //Create the group to scale down and white out the text
+    var scaleDownGroup = Actions.Group(actionSequence);
+    Actions.Property(scaleDownGroup,
+                     @this.Area.Size,
+                     this.OriginalSize,
+                     this.Duration,
+                     Ease.Linear);
+    //Put the color interpolation property action the group
+    Actions.Property(scaleDownGroup,
+                     @this.Sprite.VertexColor,
+                     this.OriginalColor,
+                     this.Duration,
+                     Ease.Linear);
+  }
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93879.gif" alt="SequencedGroups"></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>Now we can see both property actions in the <code>scaleUpGroup</code> complete and then the two actions in the <code>scaleDownGroup</code> run.</p>
+<h1 id="call-actions">Call Actions</h1>
+<p>Another type of action is the call option. This allows you to put calls to functions in your sequences or groups. Test this out by printing at the beginning and end of the title animation sequences.</p>
+<ul>
+<li>Add the following <code>Print</code> function to <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=Print">  function Print(str : String)
+  {
+    Console.WriteLine(str);
+  }
+</code></pre>
+<ul>
+<li>Update the <code>Animate</code> function in <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=SpriteFader">  function Animate()
+  {
+    //Create a group driven by the object
+    var actionSequence = Actions.Sequence(this.Owner.Actions);
+    Actions.Call(actionSequence, this.Print, &quot;Animation sequence started&quot;);
+    
+    //Create the group to scale up and black out the text
+    var scaleUpGroup = Actions.Group(actionSequence);
+    //Put the scaling property  in the group
+    Actions.Property(scaleUpGroup,
+                     @this.Area.Size,
+                     this.TargetSize,
+                     this.Duration,
+                     Ease.Linear);
+    //Put the color interpolation property action the group
+    Actions.Property(scaleUpGroup,
+                     @this.Sprite.VertexColor,
+                     this.TargetColor,
+                     this.Duration,
+                     Ease.Linear);
+    
+    //Create the group to scale down and white out the text
+    var scaleDownGroup = Actions.Group(actionSequence);
+    Actions.Property(scaleDownGroup,
+                     @this.Area.Size,
+                     this.OriginalSize,
+                     this.Duration,
+                     Ease.Linear);
+    //Put the color interpolation property action the group
+    Actions.Property(scaleDownGroup,
+                     @this.Sprite.VertexColor,
+                     this.OriginalColor,
+                     this.Duration,
+                     Ease.Linear);
+    
+    Actions.Call(actionSequence, this.Print, &quot;Animation sequence complete&quot;);
+  }
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93881.gif" alt="SequencedGroupsWithPrint"></p>
+<p><em><code>SpriteFader</code> scaling up and changing the color of the menu title at the same time using a group in a sequence then reversing the actions with another group. The animation is followed by the following console output</em></p>
+<pre><code class="lang-name=Console">Animation sequence started
+Animation sequence complete
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>Now you can see the print function executed at the beginning and end of the sequence. This can be very helpful with debugging the behaviors of actions but it also has a slightly more complex application.</p>
+<p>(NOTE)<strong>Call Action Function Parameters</strong>: <code>Action.Call</code> is overloaded to take multiple parameters for the function passed to it. As seen above you pass the values that should be passed to the given function as parameters to the call action constructor itself.</p>
+<h2 id="action-loops">Action Loops</h2>
+<ul>
+<li>Add the following property to <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=Action">  var LoopedSequence : ActionSet;
+</code></pre>
+<ul>
+<li>Update the <code>Animate</code> function in <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=SpriteFader">  function Animate()
+  {
+    if(this.LoopedSequence != null)
+      this.LoopedSequence.Cancel();
+    
+    //Create a seqeunce driven by the object
+    this.LoopedSequence = Actions.Sequence(this.Owner.Actions);
+    Actions.Call(this.LoopedSequence, this.Print, &quot;Animation sequence started&quot;);
+    
+    //Create the group to scale up and black out the text
+    var scaleUpGroup = Actions.Group(this.LoopedSequence);
+    //Put the scaling property  in the group
+    Actions.Property(scaleUpGroup,
+                     @this.Area.Size,
+                     this.TargetSize,
+                     this.Duration,
+                     Ease.Linear);
+    //Put the color interpolation property action the group
+    Actions.Property(scaleUpGroup,
+                     @this.Sprite.VertexColor,
+                     this.TargetColor,
+                     this.Duration,
+                     Ease.Linear);
+    
+    //Create the group to scale down and white out the text
+    var scaleDownGroup = Actions.Group(this.LoopedSequence);
+    Actions.Property(scaleDownGroup,
+                     @this.Area.Size,
+                     this.OriginalSize,
+                     this.Duration,
+                     Ease.Linear);
+    //Put the color interpolation property action the group
+    Actions.Property(scaleDownGroup,
+                     @this.Sprite.VertexColor,
+                     this.OriginalColor,
+                     this.Duration,
+                     Ease.Linear);
+    
+    //Call animate at the end of the sequence to loop
+    Actions.Call(this.LoopedSequence, this.Print, &quot;Animation sequence complete&quot;);
+    Actions.Call(this.LoopedSequence, this.Animate);
+  }
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93883.gif" alt="Looped"></p>
+<p><em><code>SpriteFader</code> scaling up and changing the color of the menu title at the same time using a group in a sequence then reversing the actions with another group, then looping the sequence</em></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>Now we can see the action sequence call the function that originally set it up. This create a loop in the sequence of actions which will repeat. You should also notice that we started storing the action sequence in a member variable of <code>SpriteFader</code> instead of a local variable. This does not change the behavior of the action sequence, but it does allow us to examine, pause, and cancel the sequence while it is running. This usually good practice for all action sets. We actually already introduced a small example of how one may use an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/actionset.md"> ActionSet</a> member variable when we introduced these two lines at the top of <code>animate</code>.</p>
+<pre><code class="lang-name=Checking">  if(this.LoopedSequence != null)
+      this.LoopedSequence.Cancel();
+</code></pre>
+<p>By checking if <code>this.LoopedSequence</code> is not <code>null</code> we can determine if there is already a sequence in existence intended to animate the sprite. If the <code>Animate</code> function were to be called elsewhere without this check it could result in multiple sequence performing the same scaling and color interpolation operations on the same object independently and simultainiously. This can result in so very undesirable bugs where actions overlap each other in unintended ways. By cancelling any existing <code>LoopedSequence</code> before we start another we can avoid this issue almost entirely.</p>
+<h1 id="delay-actions">Delay Actions</h1>
+<p>Delay actions allow the insertion of a time based delay in an action sequence. When put in a group they can prevent the group completing but will not keep other actions in the group from running.</p>
+<ul>
+<li>Update the <code>Animate</code> function in <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=SpriteFader">  function Animate()
+  {
+    if(this.LoopedSequence != null)
+      this.LoopedSequence.Cancel();
+    
+    //Create a group driven by the object
+    this.LoopedSequence = Actions.Sequence(this.Owner.Actions);
+    Actions.Call(this.LoopedSequence, this.Print, &quot;Animation sequence started&quot;);
+    
+    //Create the group to scale up and black out the text
+    var scaleUpGroup = Actions.Group(this.LoopedSequence);
+    //Put the scaling property  in the group
+    Actions.Property(scaleUpGroup,
+                     @this.Area.Size,
+                     this.TargetSize,
+                     this.Duration,
+                     Ease.Linear);
+    //Put the color interpolation property action the group
+    Actions.Property(scaleUpGroup,
+                     @this.Sprite.VertexColor,
+                     this.TargetColor,
+                     this.Duration,
+                     Ease.Linear);
+    
+    //Create the group to scale down and white out the text
+    var scaleDownGroup = Actions.Group(this.LoopedSequence);
+    Actions.Property(scaleDownGroup,
+                     @this.Area.Size,
+                     this.OriginalSize,
+                     this.Duration,
+                     Ease.Linear);
+    //Put the color interpolation property action the group
+    Actions.Property(scaleDownGroup,
+                     @this.Sprite.VertexColor,
+                     this.OriginalColor,
+                     this.Duration,
+                     Ease.Linear);
+    
+    Actions.Call(this.LoopedSequence, this.Print, &quot;Animation sequence complete&quot;);
+    //Delay the animation loop
+    Actions.Delay(this.LoopedSequence, this.Duration);
+    Actions.Call(this.LoopedSequence, this.Print, &quot;Animation loop delay complete&quot;);
+    Actions.Call(this.LoopedSequence, this.Animate);
+  }
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93885.gif" alt="LoopedDelayed"></p>
+<p><em><code>SpriteFader</code> scaling up and changing the color of the menu title at the same time using a group in a sequence then reversing the actions with another group, then looping the sequence after a short delay</em></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>Now we have the title animating in a loop with a short delay in the sequence before the next itteration of the loop.</p>
+<h1 id="event-actions">Event Actions</h1>
+<p>The final action type is the event action. This allows you to instantiate an even object as if you were about to dispatch it, but instead it pass it to the action to be dispatched later.</p>
+<ul>
+<li>Add the following in the <code>SpriteFader</code> class within <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=Event">  sends SpriteFaded : NadaEvent;
+</code></pre>
+<ul>
+<li>Update the <code>Initialize</code> function in <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=SpriteFader">  function Initialize(init : CogInitializer)
+  {
+    //Capture original values
+    this.OriginalSize = this.Area.Size;
+    this.OriginalColor = this.Sprite.VertexColor;
+    
+    Zilch.Connect(this.Space, Events.SpriteFaded, this.OnSpriteFaded);
+    
+    //Call the animate function
+    this.Animate();
+  }
+</code></pre>
+<ul>
+<li>Add the following function to <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=Event">  function OnSpriteFaded(event : NadaEvent)
+  {
+    Console.WriteLine(&quot;Sprite Faded&quot;);
+  }
+</code></pre>
+<ul>
+<li>Update the <code>Initialize</code> function in <code>SpriteFader</code>:</li>
+</ul>
+<pre><code class="lang-name=Animate">  function Animate()
+  {
+    if(this.LoopedSequence != null)
+      this.LoopedSequence.Cancel();
+    
+    //Create a group driven by the object
+    this.LoopedSequence = Actions.Sequence(this.Owner.Actions);
+    Actions.Call(this.LoopedSequence, this.Print, &quot;Animation sequence started&quot;);
+    
+    //Create the group to scale up and black out the text
+    var scaleUpGroup = Actions.Group(this.LoopedSequence);
+    //Put the scaling property  in the group
+    Actions.Property(scaleUpGroup,
+                     @this.Area.Size,
+                     this.TargetSize,
+                     this.Duration,
+                     Ease.Linear);
+    //Put the color interpolation property action the group
+    Actions.Property(scaleUpGroup,
+                     @this.Sprite.VertexColor,
+                     this.TargetColor,
+                     this.Duration,
+                     Ease.Linear);
+    
+    //Create the group to scale down and white out the text
+    var scaleDownGroup = Actions.Group(this.LoopedSequence);
+    Actions.Property(scaleDownGroup,
+                     @this.Area.Size,
+                     this.OriginalSize,
+                     this.Duration,
+                     Ease.Linear);
+    //Put the color interpolation property action the group
+    Actions.Property(scaleDownGroup,
+                     @this.Sprite.VertexColor,
+                     this.OriginalColor,
+                     this.Duration,
+                     Ease.Linear);
+    
+    //Delay the animation loop
+    Actions.Delay(this.LoopedSequence, this.Duration);
+    Actions.Event(this.LoopedSequence, this.Space, Events.SpriteFaded, NadaEvent());
+    Actions.Call(this.LoopedSequence, this.Animate);
+  }
+</code></pre>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93888.gif" alt="LoopedDelayedEvents"></p>
+<p><em><code>SpriteFader</code> scaling up and changing the color of the menu title at the same time using a group in a sequence then reversing the actions with another group, then looping the sequence after a short delay</em></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master//zilch_editor_documentation/zilchmanual/nada_in_zilch/property_delegates.md"> PropertyDelegate</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<h3 id="classes">Classes</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/action.md">action</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/actions.md">actions</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/actiondelay.md">actiondelay</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/actiongroup.md">actiongroup</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/actionsequence.md">actionsequence</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/actionset.md">actionset</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#ease">Ease</a></li>
+</ul>
+<h3 id="nada-base-types">Nada Base Types</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">Real</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">Real3</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/math.md#lerp-zilch-engine-documen">Math.Lerp</a></li>
+</ul>
+<h3 id="commands">Commands</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h2 id="tasks">Tasks</h2>
+<ul>
+<li>T782</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/scripting/actions.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

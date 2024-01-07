@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Learning Objectives | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Learning Objectives | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/external_zilch_engine_tools/the_market.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>This lesson covers the Market, and how to use it to download content for your projects.</p>
+<h1 id="learning-objectives">Learning Objectives</h1>
+<ul>
+<li>Becoming acquainted with the Market's interface</li>
+<li>Learning how to download content and use it in a project</li>
+</ul>
+<h1 id="level-setup">Level Setup</h1>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li>Create a new project using the {nav icon=clone, name=2D Project} template</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
+<li>In the <code>Properties Window</code></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Set Translation  to <code>[0, -3, 0]</code></li>
+<li>Set Scale  to <code>[10, 1, 1]</code></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
+<li>Set SpriteSource enum to <code>Square</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>BoxCollider</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101883.png" alt="image"> <em>The level so far</em></p>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/using_the_market.md"> The Market</a> is an online content collection. Users (including the #zilch_engine_developers) can upload and download assets to and from the Market for use in their projects. The Market can be accessed from within the Zilch Editor or from a web browser, but this tutorial will just use the Market's in-editor interface.</p>
+<h1 id="accessing-the-market">Accessing the Market</h1>
+<p>To open the Market, just click its button in the upper right corner of the editor.</p>
+<ul>
+<li>Left-click  the <strong>Market button</strong></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/100750.gif" alt="Market Button"> <em>The Market button opens the Market</em></p>
+<p>There's a lot to see in the Market, but this tutorial will just cover downloading a specific package. Among the assets on the Market is a professional-quality character controller written by the Zilch Engine developers, and that's what we want to download. It's included in the <code>Sample Character Controller</code> content pack.</p>
+<ul>
+<li>In the <code>Search field</code></li>
+<li>Search for <code>sample character controller</code>
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101083.gif" alt="Searching the Market"></li>
+</ul>
+<p>The search results show the content pack we're looking for.</p>
+<ul>
+<li>In <code>the Market</code></li>
+<li>Left-click  the <code>Sample Character Controller</code> product banner image
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101085.png" alt="image"></li>
+</ul>
+<p>When you click the product's banner image, you're taken to its page.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101087.png" alt="image"> <em>The product page for the Sample Character Controller content pack</em></p>
+<p>This product supplies two separate downloads: a content pack and a demo project showing it off. The demo's file extension is <code>.zeroprojpack</code>, while the content pack's is <code>.zeropack</code>. Let's download the content pack.</p>
+<ul>
+<li>In <code>the Market</code></li>
+<li>In the <code>Sample Character Controller</code> product page</li>
+<li>In the <strong>Download</strong> section</li>
+<li>Left-click  the content pack download link
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101095.png" alt="image"></li>
+</ul>
+<p>After you click the download link, a few things will happen (usually very quickly). First, Zilch adds the task of downloading the content pack to its list of <strong>Background Tasks</strong>, which can be viewed in the upper-right corner of the editor:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101098.png" alt="image"> <em>The Background Tasks panel</em></p>
+<p>When that task is completed, a notification to that effect will pop up in the lower-right corner of the editor:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101100.png" alt="image"> <em>The notification pop-up</em></p>
+<p>Finally, and most importantly, the <code>Import Content Package Window</code> will appear, listing the assets from the content pack:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101893.png" alt="image"> <em>The Import Content Package Window</em></p>
+<ul>
+<li>In the <code>Import Content Package Window</code></li>
+<li>Left-click  the Import button button</li>
+</ul>
+<p>This content pack includes the <code>SweptController</code> character controller component, plus a set of archetypes demonstrating it. Let's try out the 2D archetype.</p>
+<ul>
+<li>In the <code>Library Window</code></li>
+<li>Under Archetype</li>
+<li><code>Drag and drop</code> an instance of <code>SweptPlayer2D</code> into the <code>Level Window</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101885.png" alt="image"> <em>The level with a player</em></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li>Use the <code>A</code> and <code>D</code> keys and the <code>Space</code> bar to move the player and jump</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101887.gif" alt="SweptController Demonstration"> <em>The SweptController in action</em></p>
+<p>You can use the Market to add content like the SweptController to any of your future projects.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/using_the_market.md">using_the_market</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<h3 id="commands">Commands</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> NewProject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h3 id="classes">Classes</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">boxcollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
+</ul>
+<h2 id="development-task">Development Task</h2>
+<ul>
+<li>{T1450}</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/external_zilch_engine_tools/the_market.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

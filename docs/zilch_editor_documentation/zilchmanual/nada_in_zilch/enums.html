@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Enum Rules | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Enum Rules | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/enums.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>An enum, or enumerated type, is a set custom identifiers that are enumerated. An enumerated type may be defined with the <strong>enum</strong> keyword:</p>
+<pre><code class="lang-lang=csharp,">enum ControllerButtons {Start, Select, Up=0, Down, Left, Right, A=0, B=1} // no semicolon
+</code></pre>
+<p>The names line up with incrementing <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">Integers</a> where the default starting value is 0. The values can be manually set in which case the following values will increment off of that manually defined value. Note that to access these Integer values, the enum must be <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/casting.md">casted</a> to an Integer:</p>
+<pre><code class="lang-lang=csharp,">Console.WriteLine(&quot;ControllerButtons.Start  = `ControllerButtons.Start  as Integer`  &quot; );
+Console.WriteLine(&quot;ControllerButtons.Select = `ControllerButtons.Select as Integer`  &quot; );
+Console.WriteLine(&quot;ControllerButtons.Up     = `ControllerButtons.Up     as Integer`  &quot; );
+Console.WriteLine(&quot;ControllerButtons.Down   = `ControllerButtons.Down   as Integer`  &quot; );
+Console.WriteLine(&quot;ControllerButtons.Left   = `ControllerButtons.Left   as Integer`  &quot; );
+Console.WriteLine(&quot;ControllerButtons.Right  = `ControllerButtons.Right  as Integer`  &quot; );
+Console.WriteLine(&quot;ControllerButtons.A      = `ControllerButtons.A      as Integer`  &quot; );
+Console.WriteLine(&quot;ControllerButtons.B      = `ControllerButtons.B      as Integer`  &quot; );
+</code></pre>
+<pre><code class="lang-name=Console">---------------- Begin Game ---------------
+ControllerButtons.Start  = 0  
+ControllerButtons.Select = 1  
+ControllerButtons.Up     = 0  
+ControllerButtons.Down   = 1  
+ControllerButtons.Left   = 2  
+ControllerButtons.Right  = 3  
+ControllerButtons.A      = 0  
+ControllerButtons.B      = 1  
+</code></pre>
+<h1 id="enum-rules">Enum Rules</h1>
+<p>There a number of rules that must be followed when defining enums. If these rules are not followed, an error will be thrown, as can be seen in the examples below.</p>
+<h2 id="type-name-and-value-capitalization">Type Name and Value Capitalization</h2>
+<p>Identifiers for the enum type name and the enumerated values must be capitalized.</p>
+<pre><code class="lang-lang=csharp,">// This will not compile. 
+enum Directions {up, down, left, right}
+</code></pre>
+<pre><code class="lang-name=Console">Enum declaration 'Directions' does not have a closing '}'. We found 'LowerIdentifier' but we expected to find '}'.
+</code></pre>
+<pre><code class="lang-lang=csharp,">// This won't compile either.
+enum directions {Up, Down, Left, Right}
+</code></pre>
+<pre><code class="lang-name=Console">Enum declaration is missing a name. Upper-camel case names are required here (use 'Directions'
+instead of 'directions').    
+</code></pre>
+<h2 id="unique-identifiers">Unique Identifiers</h2>
+<p>Identifiers for the enumerated values must be unique.</p>
+<pre><code class="lang-lang=csharp,">// This will not compile.
+enum Directions {Up, Down, Up, Down}
+</code></pre>
+<pre><code class="lang-name=Console">A value of the same name 'Up' has already been declared in the enum 'Directions'. Names must 
+only be used once.
+</code></pre>
+<h2 id="definition-scope">Definition Scope</h2>
+<p>Enums cannot be defined inside classes, structs, or other enums.</p>
+<pre><code class="lang-lang=csharp,">// Classes cannot contain enums.
+class EnumWrapper
+{
+  // This won't compile.
+  enum ControllerButtons {Start, Select, Up=0, Down, Left, Right, A=0, B=1}
+}
+</code></pre>
+<pre><code class="lang-name=Console">Class declaration 'EnumWrapper' does not have a closing '}'. We found 'enum' but we expected to find '}'.
+</code></pre>
+<h1 id="enums-and-integers">Enums and Integers</h1>
+<p>As in other languages, Integers make up the backbone of how enums work, and thus they work together in many situations.</p>
+<h2 id="casting">Casting</h2>
+<p>Because of this, Nada will implicitly cast from an enum to an Integer when necessary:</p>
+<p>Given this:</p>
+<pre><code class="lang-lang=csharp,">enum ControllerButtons {Start, Select, Up=0, Down, Left, Right, A=0, B=1}
+
+class Controller
+{
+  [Static]
+  // This function accepts an enum type.
+  function AcceptsEnum(param: ControllerButtons)
+  {
+    Console.WriteLine(&quot; turned into `param`!&quot;);
+  }
+  
+  [Static]
+  // This function accepts an integer type.
+  function AcceptsInt(param: Integer)
+  {
+    Console.WriteLine(&quot; turned into `param`!&quot;);
+  }
+}
+</code></pre>
+<p>We can test the calls to these <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">functions</a> to see the interplay of casting:</p>
+<pre><code class="lang-lang=csharp,">var paramInt = 3;
+var paramEnum = ControllerButtons.Right;
+
+// This works, as you'd expect
+Console.Write(paramEnum);
+Controller.AcceptsEnum(paramEnum);
+
+// But if you want to accept an Integer in an enum's place you MUST cast. 
+Console.Write(paramInt);
+Controller.AcceptsEnum(paramInt as ControllerButtons);
+</code></pre>
+<pre><code class="lang-name=Console">---------------- Begin Game ---------------
+Right turned into Right!
+3 turned into Right!    
+</code></pre>
+<pre><code class="lang-lang=csharp,">// Attempting to pass an Integer without casting to an enum 
+// will cause a compiler error
+Console.Write(paramInt);
+Controller.AcceptsEnum(paramInt);
+</code></pre>
+<pre><code class="lang-name=Console">The function 'AcceptsEnum' exists, but could not be resolved since the types of the arguments 
+used did not match. The arguments you gave were: 
+
+  AcceptsEnum(Integer)
+
+The possible choices were: 
+
+  AcceptsEnum(param : ControllerButtons)
+</code></pre>
+<pre><code class="lang-lang=csharp,">// This also works as you'd expect. 
+Console.Write(paramInt);
+Controller.AcceptsInt(paramInt);
+
+// The enum type parameter is implicitly casted to an Integer and is then passed to the function. 
+Console.Write(paramEnum);
+Controller.AcceptsInt(paramEnum);
+</code></pre>
+<pre><code class="lang-name=Console">---------------- Begin Game ---------------
+3 turned into 3!
+Right turned into 3!
+</code></pre>
+<h2 id="enum-integer-operations">Enum-Integer Operations</h2>
+<p>Enums can perform all operations as if they were Integers. For instance, you can perform all of the normal Integer math operations as implicit conversion will happen as necessary:</p>
+<pre><code class="lang-lang=csharp,">// Here you can see use of the +, -, *, /, (), ^ and % Integer operators.
+var math = (ControllerButtons.Start + ControllerButtons.Right) ^ ControllerButtons.Left % 
+           ControllerButtons.Right - ControllerButtons.Right * ControllerButtons.Select;
+           
+// When the math evaluates to an unaliased number, the variable, although still of the enum type, 
+// prints out its integer value.
+Console.WriteLine(math); 
+Console.WriteLine(typeid(math).Name);
+</code></pre>
+<pre><code class="lang-name=Console">---------------- Begin Game ---------------
+-3
+ControllerButtons
+</code></pre>
+<p>Notice that the typeid is not an Integer but <code>ControllerButtons</code>. An Integer value was printed because there was no alias in the enum that maps to <code>-3</code>.</p>
+<p>Because the type is still that of the enum, it can be passed to the <code>Controller.AcceptsEnum()</code> function without issue.</p>
+<p>When an operation includes both an enum and an Integer the result is always promoted to the enum type. To get an Integer either</p>
+<ul>
+<li>Declare the variable you are storing the result in as an Integer: <code>var result : Integer</code></li>
+<li>Cast it: <code>result as Integer</code></li>
+</ul>
+<h2 id="caveat">Caveat</h2>
+<p>Although enums cast to Integers, they <strong>will not</strong> cast to Integers to perform cross-enum operations.</p>
+<pre><code class="lang-lang=csharp,">// This won't compile.
+Console.WriteLine(ControllerButtons.Down + Directions.Down);
+</code></pre>
+<pre><code class="lang-name=Console">The binary '+' operator 'Positive / Add' is not valid with 'ControllerButtons' and 'Directions'.
+</code></pre>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/casting.md">casting</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">functions</a></li>
+</ul>
+<h2 id="code-reference">Code Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md">enum_reference</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/enums.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

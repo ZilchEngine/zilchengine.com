@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Learning Objectives | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Learning Objectives | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/architecture/archetypes.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>This lesson focuses on covering the basics of how Archetypes work in Zilch Engine.</p>
+<h1 id="learning-objectives">Learning Objectives</h1>
+<ul>
+<li>Creating Archetypes</li>
+<li>Instantiating objects from Archetypes</li>
+<li>Uploading and modifying Archetypes</li>
+<li>Reverting objects and properties to match an Archetype</li>
+<li>Turning hierarchies into archetypes</li>
+</ul>
+<h1 id="level-setup">Level Setup</h1>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</li>
+<li>In the <code>Properties Window</code></li>
+<li>Rename Sprite object to <code>RedCircle</code></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
+<li>Set VertexColor  to <code>Red: [R:255, G:0, B:0, A:1.00]</code></li>
+<li>Set  SpriteSource texture to <code>Circle</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46908.gif" alt="ArchetypeSetup"></p>
+<h1 id="creating-archetypes">Creating Archetypes</h1>
+<p>An <strong>Archetype</strong> in Zilch Engine (similar to blueprints, prefabs or templates in other engines) is a collection of objects in a hierarchy. Archetypes are used to quickly instantiate (create a copy of) and modify copies of objects. Let's take a closer look:</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RedCircle object</li>
+<li>In the <code>Properties Window</code></li>
+<li>In the Archetype  field</li>
+<li>Type <code>RedCircleArchetype</code> then press <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46915.png" alt="image"> or <code>Enter</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46917.gif" alt="ArchetypeCreate"></p>
+<p>Now we have made an archetype out of our RedCircle object object, which we can verify by looking at the <code>Object Window</code> and the <code>Library Window</code>.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46921.png" alt="image"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46923.png" alt="image"></p>
+<h1 id="instantiating-from-archetypes">Instantiating from Archetypes</h1>
+<p>As previously mentioned, one of the major benefits of Archetypes resource is being able to quickly make copies of it.</p>
+<ul>
+<li>In the <code>Library Window</code></li>
+<li>Under Archetype</li>
+<li><code>Click + Drag</code> the <code>RedCircleArchetype</code> into the <code>Level Window</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46925.gif" alt="ArchetypeInstantiate"></p>
+<ul>
+<li><p>In the <code>Library Window</code></p>
+</li>
+<li><p>Under Archetype</p>
+</li>
+<li><p><code>Click + Drag</code> the <code>RedCircleArchetype</code> to the <code>Level Window</code></p>
+</li>
+<li><p>In the <code>Properties Window</code></p>
+</li>
+<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></p>
+</li>
+<li><p>Set Translation  to: <code>[-2, 0, 0]</code></p>
+</li>
+<li><p>In the <code>Library Window</code></p>
+</li>
+<li><p>Under Archetype</p>
+</li>
+<li><p><code>Click + Drag</code> the <code>RedCircleArchetype</code> to the <code>Level Window</code></p>
+</li>
+<li><p>In the <code>Properties Window</code></p>
+</li>
+<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></p>
+</li>
+<li><p>Set Translation  to: <code>[2, 0, 0]</code></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46927.png" alt="image"></p>
+<h1 id="modifying-archetypes">Modifying Archetypes</h1>
+<p>The other useful property of Archetypes is being able to edit their definition and have the changes propagate to all instances.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RedCircle object</li>
+<li>In the <code>Properties Window</code></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
+<li>Set VertexColor  to <code>Blue: [R:0, G:0, B:255, A:1.00]</code></li>
+</ul>
+<p>Notice that the modified property turns orange; this means that this property has been modified from the archetype this object is associated with.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46929.png" alt="image"></p>
+<p>We can then upload our changes to the <strong>Archetype</strong> to have them propagate to other objects that were instantiated from it.</p>
+<ul>
+<li>In the <code>Properties Window</code></li>
+<li>Press the <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46915.png" alt="image"> button</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46931.gif" alt="ArchetypeUpload"></p>
+<p>Once we upload our changes, the Archetype's definition changes and all properties of instances that were not modified will update to match the new definition.</p>
+<h1 id="reverting-to-archetypes">Reverting to Archetypes</h1>
+<p>Another benefit of Archetypes is being able to revert an instance with modified properties back to match the archetype. This can be done for all modified properties or for individual properties.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RedCircle object (the left most)</li>
+<li>In the <code>Properties Window</code></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
+<li>Set VertexColor  to <code>Green: [R:0, G:255, B:0, A:1.00]</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46936.png" alt="image"></p>
+<p>As we have seen before, the VertexColor property turns orange to indicate that it has been modified from its Archetype. Let's say you didn't like this change and want to revert it.</p>
+<ul>
+<li>In the <code>Properties Window</code></li>
+<li>Press the <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46938.png" alt="image"> button</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46940.gif" alt="ArchetypeRevert1"></p>
+<p>You can also revert that property individually (in case you want to retain other changes) by right-clicking the individual property and selecting the revert option.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46942.gif" alt="ArchetypeRevert2"></p>
+<h1 id="archeytpes-and-hierarchies">Archeytpes and Hierarchies</h1>
+<p>In addition to single objects you can also turn object hierarchies into archetypes. Let's see how:</p>
+<ul>
+<li><p>In the <code>Level Window</code></p>
+</li>
+<li><p>Press  <code>Ctrl + A</code></p>
+</li>
+<li><p>Press  <code>Delete</code></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</p>
+</li>
+<li><p>In the <code>Properties Window</code></p>
+</li>
+<li><p>Rename Sprite object to <code>ParentSquare</code></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></p>
+</li>
+<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></p>
+</li>
+<li><p>Set Translation  to <code>[0, 0, 0]</code></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</p>
+</li>
+<li><p>In the <code>Properties Window</code></p>
+</li>
+<li><p>Rename Sprite object to <code>ChildSquare</code></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></p>
+</li>
+<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></p>
+<ul>
+<li>Set Translation  to: <code>[1, -1, 0]</code></li>
+</ul>
+</li>
+<li><p>In the <code>Object Window</code></p>
+</li>
+<li><p>Parent the ChildSquare object object to the ParentSquare object</p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : ParentSquare object</p>
+</li>
+<li><p>In the <code>Properties Window</code></p>
+</li>
+<li><p>Set Archetype  to <code>Squares</code></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/88648.gif" alt="SquaresArchetype"></p>
+<p>You can now create multiple copies of that new hierarchy by instantiating it.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/88650.gif" alt="SquaresArchetypeInstances"></p>
+<p>Once parented, both objects behave physically as if they were a single one. Let's test that by adding the following:</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createcube">CreateCube</a></li>
+<li>In the <code>Properties Window</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Remove Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a>
+<ul>
+<li>Set Translation  to: <code>[-2, -4, 0]</code></li>
+<li>Set Scale  to: <code>[4, 1, 1]</code></li>
+</ul>
+</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/88652.gif" alt="SquaresCollision"></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">Create a New 2D Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/cogs/gameobjectsconcept.md"> COGs</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/archetypes.md"> Archetypes</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<h3 id="classes">Classes</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">Cog</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
+</ul>
+<h3 id="commands">Commands</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createcube">CreateCube</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/architecture/archetypes.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

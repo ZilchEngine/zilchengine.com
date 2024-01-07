@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Using the Sprite Importer | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Using the Sprite Importer | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/sprites/spriteimporter.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>(NOTE)<strong>Recommended Reading</strong> This page includes topics one might not have addressed yet. To learn about or review these topics, the following list provides the links to their respective Manual or Tutorial pages: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritesourceeditor.md">Sprite Source Editor</a></p>
+<h1 id="using-the-sprite-importer">Using the Sprite Importer</h1>
+<p>By taking a SpriteSource that has multiple frames and opening it in the Sprite Source Editor, it is possible to turn it into a moving animation. The first step is to open a <code>SpriteSource</code> in the Sprite Source Editor, then click on <code>Convert To Animation</code>.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47816.png" alt="ImportMonkey"> <em>Sprite sheet in Sprite Source Editor</em></p>
+<p>While a majority of the information is the same as that found in the Sprite Source Editor, there are a few very important differences highlighted here:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47804.png" alt="Proerpties"> <em>Sprite Source Editor Properties</em></p>
+<h2 id="sprite-importer-ui-overview">Sprite Importer UI Overview</h2>
+<p>Name : The name of the output animation/sprites.
+FrameWidth : Uniform width of each sprite frame.
+FrameHeight : Uniform height of each sprite frame.
+FramesPerRow : Total image width divided by FrameWidth  (not accounting for offset and spacing)
+NumberOfRows : Total image height divided by FrameHeight  (not accounting for offset and spacing)
+OffsetX : Horizontal frame grid offset.
+OffsetY : Vertical frame grid offset.
+SpacingX : Horizontal space between frames.
+SpacingY : Vertical space between frames.
+FrameRate : Number of frames to display in one second.
+PixelsPerUnit : Number of pixels in the texture that will fit in one unit length in the GameSession's world space.
+<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#spritesampling">Smoothing</a>: The method of sampling used.</p>
+<ul>
+<li><strong>Nearest</strong>: looks more discrete, or 'pixelated'</li>
+<li><strong>Linear</strong>: pixels are blurred together
+CreatePalette checkBox: Creates a TilePalette with the {Add Frames as Sprites<code>action. [Origin](https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#spriteorigin): The point of the given frame that is</code>(0,0,0)` in object space.</li>
+<li><strong>Custom</strong>: choose your own origin</li>
+<li><strong>Center</strong>: the middle of the frame</li>
+<li><strong>UpperLeft</strong>: the top left of the image</li>
+<li><strong>BottomLeft</strong>: the bottom left of the frame</li>
+<li><strong>BottomCenter</strong>: the bottom center of the frame
+PreviewAnimate checkBox: Toggle viewing the animation.
+PreviewFrame : Set the previewed animation frame.
+UserAlphaColorKey checkBox: Toggle whether or not to convert the alpha of AlphaColor  to <code>0</code>.
+AlphaColor : The color to be transparent if UserAlphaColorKey checkBox is <code>true</code>.
+FrameCount : The number of frames that will be output.
+<code>Clear Frames</code>: Unselect all frames.
+<code>Add Frames as Sprites</code>: Add each frame as a new sprite, where the name is appended with the frame index for each new sprite.
+<code>Add and Close</code>: Perform <code>Add and Continue</code>, then Close button.
+<code>Add and Continue</code>: Create a new animated <code>SpriteSource</code> from the selected frames.
+Close button: Close the Sprite Source Editor.</li>
+</ul>
+<h2 id="frame-cell-sizes">Frame Cell Sizes</h2>
+<p>When parsing images in a spritesheet, it's standard to have every frame of a set of animations alligned to a 2D grid.  The red grid in the Sprite Source Editor shows how the sprite sheet is subdivided into frames.  The size of each frame is controlled by one of two pairs of options:  FrameWidth  and FrameHeight , or FramesPerRow  and NumberOfRows . If the width and the height of each frame are known, then by putting that into FrameWidth  and FrameHeight  it will calculate how many Rows to break the original image into as well as how many Frames are in each Row. Likewise by setting the NumberOfRows  and FramesPerRow  it will calculate what the width and height of each frame should be.</p>
+<h2 id="frame-cell-offsetting">Frame Cell Offsetting</h2>
+<p>OffsetX , OffsetY , SpacingX  and SpacingY  are used to control the offset of the frame cells into the spritesheet. OffsetX  and OffsetY  will move the starting point of the first frame forward, which will also push every other frame forward by the same amount.  SpacingX  and SpacingY  do not effect the first Frame or Row, but rather adds a space in between each instead.  When changing the frame cell offsets, NumberOfRows  and FramesPerRow  will be modified such that the number of frames cells is maximized, and so that no frame cell reaches outside the bounds of the sprite sheet.</p>
+<h3 id="choosing-frames-for-animations">Choosing Frames for Animations</h3>
+<p>At this point, if the animation is playing properly, it's simply a matter of clicking either <code>Add and Close</code> or <code>Add and Continue</code> to add the animations as SpriteSources. <code>Add Frames as Sprites</code> will add each individual frame as its own SpriteSource, and Close button will close the window and discard all work done to the <code>SpriteSource</code>. This assumes, however, that all cells within the grid are apart of the animation.  Here's an example where this isn't the case:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47806.png" alt="AllFrames"> <em>Sprite sheet with all frames selected by default</em></p>
+<p>The SpriteSource uses the top row for one animation while the bottom row contains separate sprite frames.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47810.gif" alt="AllFrameAnim"> <em>Animation with all frames</em></p>
+<p>The second row contains frames that are not part of the animation contained in the first row; therefore, they should be ommited from the animation.  To do this, every frame in the animation needs to explicitly be selected with the mouse.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47812.gif" alt="SelectingFrames"> <em>Sprite sheet selecting all relevant frames</em></p>
+<p>(WARNING)<strong>Mouse Selected Frame Order</strong>: The default frames are indexed from left to right, and top to bottom.  When selecting frames explicitly with the mouse, the order of frames in the animation is the order that the frames are clicked.  The index of each frame is also denoted by an integer in the top left of each cell in the sprite sheet.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47814.gif" alt="FinalAnim"> <em>Animation without blank frame</em></p>
+<p>If your SpriteSource doesn't have a blank background, it's possible to use the Sprite Importer to erase the background color. Simply set AlphaColor  to the color that needs to be erased (this is the perfect application for the EyeDropper tool), and set UseAlphaColorKey checkBox to <code>true</code>. On importing the Sprite, the color chosen will be erased.</p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritesourceeditor.md">Sprite Source Editor</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation.md">Sprite</a></li>
+</ul>
+<h2 id="code-reference">Code Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/spritesource.md">SpriteSource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#spritesampling">Smoothing</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#spriteorigin">Origin</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/sprites/spriteimporter.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

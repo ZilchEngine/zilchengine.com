@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Component Based Design | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Component Based Design | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/architecture/components.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Components are bits of functionality that can be added to a game object.
+You can see the three components on our Player in the Properties window: Transform, Sprite, and RigidBody.</p>
+<ul>
+<li>Transform gives our game object a position, rotation, and scale.</li>
+<li>Sprite, which requires a Transform, allows us to visualize our game object.</li>
+<li>RigidBody allows our Transform's Translation (position) and Rotation to be altered by the Physics engine.</li>
+</ul>
+<p>By using components to create our game objects we can easily reuse our code to make new and different items. This set-up can aid you in rapid prototyping when making your own games.</p>
+<p>Lets imagine we are making Bats, Wolves, and Birds. You could create 3 components:</p>
+<ul>
+<li>BatLogic</li>
+<li>WolfLogic</li>
+<li>BirdLogic</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/786.png" alt="badcomponentsexample"></p>
+<p>While making them you find they have some things in common. Rather than copying and pasting (which becomes messy fast), we can use the component-based engine to our advantage and rearrange our logic. By making smaller components of functionality, we can factor out the code into common components making it easier to share between them, for instance:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/789.png" alt="venn"></p>
+<p><em>The ones in gray are built-in to the Zilch Engine</em></p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/787.png" alt="componentexample"></p>
+<p><em>Noticing shared functionality allows us to restructure our code</em></p>
+<p>By having these things separated you can more easily prototype and create new game objects.</p>
+<p>For instance, in our example you later decide to create a flying healthpack. By utilizing the components you already
+ade, Flying and ChangeOtherHealth, most of the work is done.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/788.png" alt="flyingpowerup"></p>
+<p><em>Something we// <strong>can't</strong> //make with BatLogic, WolfLogic or BirdLogic components</em></p>
+<p>Components are meant to be generic (when plausible), in order to allow for reuse. In many ways, components can be
+ade more generic by adding Properties to components.</p>
+<p>In our example, we could make our DropLoot component more generic by having a Property represent which loot is dropped. With this new property our component could allow our Bat to drop health, while the Wolf drops a power-up, etc.</p>
+<h1 id="component-based-design">Component Based Design</h1>
+<p>When building in the Zilch Engine your Workflow can be optimized by building things in a component based manner. What this means is that instead of attaching a single script component to a single archetype and using it to drive all the functionality of that object, your workflow can be sped up by building specific smaller actions to specific components.</p>
+<p>When choosing how to construct a set of script components for a project it's helpful to play several games in the chosen genre and look at what commonalities they have. Using what you find you can generate a set of components you will need.
+For instance, the shooter could have used an &quot;input component&quot; for mouse and keyboard input, a &quot;shoot component&quot; to handle how shooting is done in the world, a &quot;movement component&quot; to handle movement through the world, a &quot;sound component&quot; to handle the various sounds the player will create and other varied game logic components to handle things such as health (e.g. &quot;health component&quot;), power ups, collisions, etc. Enemies in a shooter would probably also need a &quot;damage on collision component&quot; and a &quot;special shooting component&quot; and a &quot;behavior component&quot;.</p>
+<p>As with all design the correct way depends on the project. No single set of script components that will give you all your required functionality for all projects.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/architecture/components.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,372 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/soundspace.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Component</code> <code>Sound</code></p>
+<p>(NOTE) Sound functionality associated with a Space.</p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#interpolatedecibels-void">InterpolateDecibels</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#decibels-zilch-engine-doc">Decibels</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/component.md">component</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#interpolatepitch-void">InterpolatePitch</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#inputnode-zilch-engine-do">InputNode</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#interpolatesemitones-voi">InterpolateSemitones</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#muteaudio-zilch-engine-do">MuteAudio</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#interpolatevolume-void">InterpolateVolume</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#outputnode-zilch-engine-d">OutputNode</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#playcue-zilch-engine-docu">PlayCue</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#paused-zilch-engine-docum">Paused</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#playcuepaused-zilch-engin">PlayCuePaused</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#pausewithtimespace-zero">PauseWithTimeSpace</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#soundspace-void">Constructor</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#pitch-zilch-engine-docume">Pitch</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#pitchwithtimespace-zero">PitchWithTimeSpace</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#semitones-zilch-engine-do">Semitones</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#soundnodeinput-zilch-engi">SoundNodeInput</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#soundnodeoutput-zilch-eng">SoundNodeOutput</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md#volume-zilch-engine-docum">Volume</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="decibels--real">Decibels : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>The volume adjustment, in decibels, applied to all sounds in the space. A value of 0 does nothing, 6 will double the sound's volume, -6 will halve it.</p>
+<pre><code class="lang-lang=cpp,">var Decibels : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="inputnode--soundnode">InputNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md">soundnode</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>DEPRECATED The SoundNodeInput property should be used instead.</p>
+<pre><code class="lang-lang=cpp,">var InputNode : SoundNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="muteaudio--boolean">MuteAudio : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Silences all audio output from this space but processes audio normally.</p>
+<pre><code class="lang-lang=cpp,">var MuteAudio : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="outputnode--soundnode">OutputNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md">soundnode</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>DEPRECATED The SoundNodeOutput property should be used instead.</p>
+<pre><code class="lang-lang=cpp,">var OutputNode : SoundNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="paused--boolean">Paused : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Setting this Property to true will pause all audio in the space. Setting it to false will resume all audio.</p>
+<pre><code class="lang-lang=cpp,">var Paused : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="pausewithtimespace--boolean">PauseWithTimeSpace : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>If true, the audio of the space will pause when the space is paused.</p>
+<pre><code class="lang-lang=cpp,">var PauseWithTimeSpace : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="pitch--real">Pitch : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>The pitch adjustment applied to all sounds in the space. A value of 0 will do nothing, 1 will raise the pitch by an octave and speed up the sound, -1 will lower the sound by an octave and slow it down.</p>
+<pre><code class="lang-lang=cpp,">var Pitch : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="pitchwithtimespace--boolean">PitchWithTimeSpace : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>If true, the audio in the SoundSpace will be pitched according to the TimeScale of the Space(if time slows down the audio will slow down and lower in pitch, if it speeds up the audio will speed up and raise in pitch).</p>
+<pre><code class="lang-lang=cpp,">var PitchWithTimeSpace : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="semitones--real">Semitones : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>The pitch adjustment, in semitones (or half-steps), applied to all sounds in the space. A value of 0 will do nothing, 12 will raise the pitch by an octave and speed up the sound,.</p>
+<pre><code class="lang-lang=cpp,">var Semitones : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="soundnodeinput--soundnode">SoundNodeInput : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md">soundnode</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>The SoundNode which is the ultimate output of all sounds in this space.</p>
+<pre><code class="lang-lang=cpp,">var SoundNodeInput : SoundNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="soundnodeoutput--soundnode">SoundNodeOutput : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md">soundnode</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>The SoundNode which can be used to attach other nodes which should process all audio in the SoundSpace.</p>
+<pre><code class="lang-lang=cpp,">var SoundNodeOutput : SoundNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="volume--real">Volume : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>The volume adjustment applied to all sounds in the space. A value of 1 does nothing, 2 will double the volume, 0.5 will halve it.</p>
+<pre><code class="lang-lang=cpp,">var Volume : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="interpolatedecibels--void">InterpolateDecibels : Void</h1>
+<blockquote>
+<p>Interpolates the SoundSpace's Decibels property from its current value to the value passed in as the first parameter, over the number of seconds passed in as the second parameter.
+|Name|Type|Description|
+|---|---|---|
+|decibels|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|interpolationTime|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function InterpolateDecibels(decibels : Real, interpolationTime : Real)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="interpolatepitch--void">InterpolatePitch : Void</h1>
+<blockquote>
+<p>Interpolates the SoundSpace's Pitch property from its current value to the value passed in as the first parameter, over the number of seconds passed in as the second parameter.
+|Name|Type|Description|
+|---|---|---|
+|pitch|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|time|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function InterpolatePitch(pitch : Real, time : Real)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="interpolatesemitones--void">InterpolateSemitones : Void</h1>
+<blockquote>
+<p>Interpolates the SoundSpace's Semitones property from its current value to the value passed in as the first parameter, over the number of seconds passed in as the second parameter.
+|Name|Type|Description|
+|---|---|---|
+|pitch|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|time|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function InterpolateSemitones(pitch : Real, time : Real)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="interpolatevolume--void">InterpolateVolume : Void</h1>
+<blockquote>
+<p>Interpolates the SoundSpace's Volume property from its current value to the value passed in as the first parameter, over the number of seconds passed in as the second parameter.
+|Name|Type|Description|
+|---|---|---|
+|value|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|interpolationTime|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function InterpolateVolume(value : Real, interpolationTime : Real)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="playcue--soundinstance">PlayCue : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundinstance.md">soundinstance</a></h1>
+<blockquote>
+<p>Plays the passed-in SoundCue non-positionally and returns the resulting SoundInstance.
+|Name|Type|Description|
+|---|---|---|
+|cue|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundcue.md">soundcue</a>| |</p>
+<pre><code class="lang-lang=cpp,">function PlayCue(cue : SoundCue) : SoundInstance
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="playcuepaused--soundinstance">PlayCuePaused : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundinstance.md">soundinstance</a></h1>
+<blockquote>
+<p>Plays the passed-in SoundCue non-positionally and returns the resulting SoundInstance, which starts off paused.
+|Name|Type|Description|
+|---|---|---|
+|cue|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundcue.md">soundcue</a>| |</p>
+<pre><code class="lang-lang=cpp,">function PlayCuePaused(cue : SoundCue) : SoundInstance
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="soundspace--void">SoundSpace : Void</h1>
+<p><code>constructor</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function SoundSpace()
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/soundspace.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

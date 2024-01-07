@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | ZilchEngine ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_source_documentation/platform.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><strong>This section is important for anyone doing cross platform work</strong></p>
+<p>The Platform library provides file IO, threading, timers, sockets, and other common operating system primitives. Platform by itself is mostly a collection of headers (interface only) with a PIMPL style pattern to hide the implementation of each primitive. In specific it provides:</p>
+<ul>
+<li><p>File</p>
+<ul>
+<li>Read/write stream, seeking, etc</li>
+</ul>
+</li>
+<li><p>File Path</p>
+<ul>
+<li>Concatenation of paths and helpers with OS specific / or \</li>
+</ul>
+</li>
+<li><p>File System</p>
+<ul>
+<li>Iteration over directories/files, file existence, delete / move files, etc</li>
+</ul>
+</li>
+<li><p>Floating Point Control</p>
+<ul>
+<li>Turning on or off processor specific float extensions</li>
+</ul>
+</li>
+<li><p>Process</p>
+<ul>
+<li>Execution of an external process with stdin/out hooks (not via the sell)</li>
+</ul>
+</li>
+<li><p>Socket</p>
+</li>
+<li><p>Thread</p>
+</li>
+<li><p>Thread Synchronization</p>
+<ul>
+<li>Mutex, Critical Section, Semaphore, Events, etc</li>
+</ul>
+</li>
+<li><p>Timer</p>
+<ul>
+<li>Highest resolution timer supported by the OS</li>
+</ul>
+</li>
+<li><p>External Library Loading (.dll, .so)</p>
+</li>
+<li><p>Crash Handler</p>
+</li>
+<li><p>Directory Watcher</p>
+</li>
+</ul>
+<h2 id="project-layout">Project Layout</h2>
+<p>Some code exists within Platform where we determined it was similar enough on most operating systems (e.g. Berkeley sockets). We have separate projects for each operating system, e.g. WindowsPlatform, PosixPlatform, etc. These platforms implement each primitive interface to the best of their ability. The reason we chose to use separate implementation projects was to avoid the explosion of #if/#endif. Any code that is considered 'helper' code that would be exactly the same among all platforms can be directly implemented in Platform.</p>
+<p>The PosixPlatform is ideally usable among Unix like platforms with minor #ifdef modifications (Linux, OsX, iOS, Android). The EmptyPlatform is ideally a stub that can be copied onto brand new platforms (with all functions stubbed out to do nothing) just to get code up and running quickly.</p>
+<h2 id="private-implementation">Private Implementation</h2>
+<p>One particular point of interest is the ZilchDeclarePrivateData macros inside of PrivateImplementation.hpp. Typically the PIMPL pattern is implemented via a pointer on the class to a forward declared private data structure. This pattern typically requires allocation of some sort. To avoid allocation, we instead created a byte buffer on each primitive that is sized to the largest size of all platforms we implement. ZilchDeclarePrivateData will create this buffer, and other macros allow us easy access to the buffer. Static asserts are used to ensure that the buffer will never be too small for the contents placed within it. Though this pattern does avoid allocation, we may in the future opt for a more classic PIMPL pattern to allow objects to vary more widely in size and just for ease of use.</p>
+<h2 id="shell-library">Shell Library</h2>
+<p>Platform differs from the Shell library (e.g. WindowsShell or any other platform Shell) in two ways. Platform does not rely on virtual functions for its abstraction, and it separates the interface from implementation via header and cpp files. The Shell library uses an abstract base class with virtual functions that get overridden for the current platform. Moreover, the Shell also may not exist such as when running from a console or server. In the future, the Shell may change to be more like the Platform library.</p>
+<h2 id="how-to-extend-platform">How To Extend Platform</h2>
+<p>Any time a new primitive needs to be implemented that touches OS specific code, it is often best done in Platform. The simplest approach to add a new primitive is to copy the Thread or File header, clear them out, and start from there. Go into EmptyPlatform and copy either the Thread or File cpp, and stub it out to match the hpp interface. From there, copy it into WindowsPlatform, PosixPlatform, and any other platforms. Be sure to adjust 'ZilchDeclarePrivateData' on the header to account for enough space for all the private data. Global functions are useful for quick helpers (such as getting the OS user-name, where no primitive needs to be allocated and stored).</p>
+<p>Another consideration is what errors we return from the OS when using primitives. In the beginning we either opted to ignore errors (asserting when they would happen) or to return bools. This proved to be insufficient because often we needed to give feedback to the user. For example, we attempt to open a file in their game's Content directory, but it fails due to security permissions. The assert would catch this on developer computers only because asserts are stripped in Release mode. These situations typically happen in the wild, and not on developer machines. A bool would at least give us information as to why it failed, but that's not enough for the user to correct a situation. The best approach was to use the 'Status' object. is basically a standardized way for us to return pseudo exceptions without using exception handling. We generally take the Status object by reference as the first parameter, and we set it to either success or failure with an error message provided by the OS. Callers can easily check status for failure, as well as print messages to the console or do popups in the GUI. In the future, all primitives will be moved to status (status may also get an option to automatically assert on failure, just to give more control to the caller).</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_source_documentation/platform.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

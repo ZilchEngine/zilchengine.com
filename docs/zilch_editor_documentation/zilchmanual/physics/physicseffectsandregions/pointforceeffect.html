@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Effect Interpolation | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Effect Interpolation | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/pointforceeffect.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/pointgravityeffect.md">PointGravityEffect</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/pointforceeffect.md">PointForceEffect</a> are effects that apply linear forces towards a central point based upon an inner and outer strength. This is commonly used to create spherical effects such as planetary gravity or explosive shockwaves.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46383.png" alt="image"></p>
+<p>There's two main differences between the PointGravityEffect and PointForceEffect. The first is whether a positive strength points inwards or outwards. PointGravityEffect points inwards with a positive strength while PointForceEffect points outwards. The other difference is whether the applied <em>force// is actually a force or an acceleration. PointGravityEffect applies an acceleration to objects, i.e. the resultant acceleration is independent of the object's mass. PointForceEffect applies a force to object, i.e. the object's mass is taken into account. The rest of this page will use //force</em> to refer to the acceleration or force depending on the effect type attached.</p>
+<p>The center of a point force's effect is the object's translation by default. This position can be moved with {nav icon=pencil-square-o, name=&quot;LocalPositionOffset&quot;}, typically to align the position with some visual center on the object.</p>
+<h1 id="effect-interpolation">Effect Interpolation</h1>
+<p>The <em>force</em> applied to an object is always linear (no angular //force//) and is computed as an interpolation between the two strength values based upon the object's distance from the effect's center. This is best illustrated with some graphs.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46385.png" alt="image"></p>
+<p>When the distance is less than {nav icon=pencil-square-o, name=&quot;MinDistance&quot;}, the effect will always apply {nav icon=pencil-square-o, name=&quot;MinStrength&quot;} as a constant <em>force// value. When in-between the min and max distance values, the //force</em> will be an interpolation between the min and max strength values. Linear interpolation is pictured above.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46390.png" alt="QuadraticNoEffect"></p>
+<p>Quadratic interpolation can also be used for smoother interpolation.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46390.png" alt="QuadraticNoEffect"></p>
+<p>When the distance from the effect center is beyond {nav icon=pencil-square-o, name=&quot;MaxDistance&quot;}, how the effect is computed is based upon the {nav icon=list, name=&quot;EndCondition&quot;} property. The <code>NoEffect</code> value will not apply any <em>force</em> beyond {nav icon=pencil-square-o, name=&quot;MaxDistance&quot;}.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46389.png" alt="QuadraticClampToMax"></p>
+<p><code>ClampToMax</code> will always apply {nav icon=pencil-square-o, name=&quot;MaxStrength&quot;} regardless of how far away the object is.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46392.png" alt="QuadraticContinueFalloff"></p>
+<p><code>ContinueFalloff</code> will extrapolate the curve beyond {nav icon=pencil-square-o, name=&quot;MaxDistance&quot;} using the interpolation method specified by {nav icon=list, name=&quot;InterpolationMode&quot;}.</p>
+<p>NOTE: a <em>force</em> is only computed if the effect's Collider has collision, regardless of {nav icon=list, name=&quot;EndCondition's&quot;} value.</p>
+<p>With the two ring strength values it's possible to make a wide variety of point effects. Some possibilities include:</p>
+<ul>
+<li>A standard gravity can be made by setting the inner strength larger than the outer strength.</li>
+<li>The two effects can be set with opposite signs so as to attract to the center of the ring instead of the effect's center.</li>
+<li>An explosion can be made by setting the inner ring's strength large than the other ring's.</li>
+</ul>
+<h1 id="application-modes">Application Modes</h1>
+<p>Point effects are only expected to be used as Region effects. Other application modes are undefined.</p>
+<hr>
+<h1 id="related-materials">Related Materials</h1>
+<h3 id="manual">Manual</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions.md">physicseffectsandregions.md</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/pointforceeffect.md">PointForceEffect</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/pointgravityeffect.md">PointGravityEffect</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicseffect.md">PhysicsEffect</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/region.md">Region</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#physicseffectinterpolationtype">PhysicsEffectInterpolationType</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/pointforceeffect.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

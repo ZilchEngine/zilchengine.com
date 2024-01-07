@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Configuring Orientation | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Configuring Orientation | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/gameplay/vectormath/orientation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md">orientation</a> component is a utility component that helps makes the manipulation of the transform of an object easier. It can be particularly useful when an object has its own sense of forward (for example where a person or a spaceship is facing).</p>
+<h1 id="configuring-orientation">Configuring Orientation</h1>
+<p>The first step after attaching an Orientation component to an object is to configure the orientation basis. By redefining forward, up, and right for an object, many calculations of finding those values at runtime can be avoided later. In the image below a cube can be seen with the default orientation values. The blue arrow is the <code>WorldForward</code>, the green arrow is the <code>WorldUp</code>, and the red arrow is the <code>WorldRight</code> of the cube.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47526.png" alt="image"></p>
+<p>The cube has defined the <code>-Z</code> axis as its <code>LocalForward</code> and the <code>+Y</code> axis as its <code>LocalUp</code>. This means that its <code>LocalRight</code> is the <code>+X</code> axis. This can be changed to a number of common presets as scene in the next image.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47532.gif" alt="5ad9c149-9f8f-4646-aacd-cf838d759c86"></p>
+<p><em>The built in Orientation presets.</em></p>
+<p>Occasionally, an object's default rotation does not align with any World axis, making all the built in Orientation presets unusable. In cases such as these it is possible to manually define the orientation bases by rotation.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47534.gif" alt="ce0d6555-e050-4fc3-a535-86c2ae6a5826"></p>
+<p><em>Defining a custom Orientation Bases.</em></p>
+<p>The Orientation component calculates the WorldDirections from its LocalDirection Properties by applying the object's Rotation.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47530.gif" alt="c4cd957d-06d4-4c28-b8d2-dd386755a1ef"> <em>When an Oriented object is rotated, its WorldDirections are rotated with it.</em></p>
+<h1 id="using-orientation">Using Orientation</h1>
+<p>Oriented directions are helpful in and of themselves. Attaching <code>Orientation</code> to a character is an easy way to determine which direction the character is looking at any given moment with out having to calculate it in script. This can come in useful for vision checks, aligning two objects, etc.</p>
+<h2 id="look-at-functions">Look At Functions</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#lookatpoint-void">Orientation.LookAtPoint()</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#lookatdirection-void">Orientation.LookAtDirection()</a></li>
+</ul>
+<p>The most common use of <code>Orientation</code> is to make the object face a given point or direction. There are multiple ways to do this in the script below uses the <code>LookAtPoint</code> function to make the cube face the mouse position on the world Z-Plane.</p>
+<pre><code>class LookAtMouse : NadaComponent
+{
+  [Dependency]
+  var Orientation : Orientation;
+  
+  [Property]
+  var CameraPath : CogPath = CogPath();
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zilch.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    var mousePos = this.CameraPath.Cog.CameraViewport.ScreenToWorldZPlane(Zilch.Mouse.ClientPosition, 0.0);
+    var debugSphere = DebugSphere(mousePos, 0.1);
+    DebugDraw.Add(debugSphere);
+    
+    this.Orientation.LookAtPoint(mousePos);
+  }
+}
+
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47538.gif" alt="5989cc9d-d580-41b2-ad47-5bd32e0f3ab9"></p>
+<p><em>P576 in rotating the object to face the mouse.</em></p>
+<p>The same functionality can be achieved with <code>LookAtDirection</code> by slightly altering the script.</p>
+<pre><code>class LookAtMouse : NadaComponent
+{
+  [Dependency]
+  var Orientation : Orientation;
+  
+  [Property]
+  var CameraPath : CogPath = CogPath();
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zilch.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    var mousePos = this.CameraPath.Cog.CameraViewport.ScreenToWorldZPlane(Zilch.Mouse.ClientPosition, 0.0);
+    var debugSphere = DebugSphere(mousePos, 0.1);
+    DebugDraw.Add(debugSphere);
+    
+    var direction = Math.Normalize(mousePos - this.Owner.Transform.Translation);
+    this.Orientation.LookAtDirection(direction);
+  }
+}
+
+</code></pre>
+<p>Notice that when the <code>WorldForward</code> of the cube rotates past the <code>Y</code> axis, its <code>WorldUp</code>, the <code>WorldRight</code> flips to the other side of the object. This is because typically the <code>WorldRight</code> is derived from the cross product of the object's <code>WorldForward</code> and <code>WorldUp</code>. The orientation component does not care about any previous rotation of the object and <code>LookAt</code> functions will always result in a normalized rotation, meaning all Euler Angles will fall in the range [-180.0, 180.0] when <code>LookAt</code> functions are used to set an object's <code>Rotation</code>. This issue can be fixed by properly setting <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#worldup-zilch-engine-docu">Orientation.WorldUp</a> to <code>[0,0,1]</code> to match the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#defaultorientationbases">DefaultOrientationBases</a> of the object.</p>
+<h2 id="withup-functions"><code>WithUp...</code> Functions</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#lookatpointwithup-void">Orientation.LookAtPointWithUp()</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#lookatdirectionwithup-void">Orientation.LookAtDirectionWithUp()</a></li>
+</ul>
+<p>The <code>LookAt</code> functions on <code>Orientation</code> each have a corresponding version with <code>WithUp</code> appended. These functions let the user define the <code>WorldUp</code> to rotate around instead of the objects <code>WorldUp</code> defined on the <code>Orientation</code> component.</p>
+<pre><code>class LookAtMouse : NadaComponent
+{
+  [Dependency]
+  var Orientation : Orientation;
+  
+  [Property]
+  var CameraPath : CogPath = CogPath();
+  
+  [Property]
+  var Up : Real3 = Real3(1,0,0);
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zilch.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    var mousePos = this.CameraPath.Cog.CameraViewport.ScreenToWorldZPlane(Zilch.Mouse.ClientPosition, 0.0);
+    var debugSphere = DebugSphere(mousePos, 0.1);
+    DebugDraw.Add(debugSphere);
+    
+    var direction = Math.Normalize(mousePos - this.Owner.Transform.Translation);
+    this.Orientation.LookAtDirectionWithUp(direction, this.Up);
+  }
+}
+
+</code></pre>
+<p>In this example <code>LookAtDirectionwithUp()</code> was called with and up value of <code>(1, 0, 0)</code>. Notice that now the <code>WorldRight</code> of the cube now flips when the <code>WorldForward</code> crosses over the <code>X</code> axis instead of the <code>Z</code> axis as before.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47575.gif" alt="c2dc9d51-7c44-4cf6-a894-5cada4944de7"></p>
+<h2 id="getlookatrotation-functions"><code>GetLookAt...Rotation</code> Functions</h2>
+<p>While the <code>LookAt</code> functions can be very useful, they will often not be smooth enough for gameplay; in such cases, the <code>GetLookAt</code> functions must be used. These are &quot;query-only&quot; functions and return the <code>Quaternion</code> representing the rotation that the corresponding <code>LookAt</code> function would have set <code>Transform.Rotation</code> to.</p>
+<pre><code>class LookAtMouse : NadaComponent
+{
+  [Dependency]
+  var Transform : Transform;
+  
+  [Dependency]
+  var Orientation : Orientation;
+  
+  [Property]
+  var CameraPath : CogPath = CogPath();
+  
+  [Property]
+  var Up : Real3 = Real3(1,0,0);
+  
+  [Property]
+  var Interpolated : Boolean = true;
+  
+  [Property]
+  var InterpolationSpeed : Real = 1.0;
+  
+  function Initialize(init : CogInitializer)
+  {
+    Zilch.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+  }
+
+  function OnLogicUpdate(event : UpdateEvent)
+  {
+    var mousePos = this.CameraPath.Cog.CameraViewport.ScreenToWorldZPlane(Zilch.Mouse.ClientPosition, 0.0);
+    var debugSphere = DebugSphere(mousePos, 0.1);
+    DebugDraw.Add(debugSphere);
+    
+    var direction = Math.Normalize(mousePos - this.Owner.Transform.Translation);
+    var targetRotation = this.Orientation.GetLookAtDirectionWithUpRotation(direction, this.Up);
+    
+    if(this.Interpolated)
+    {
+      var newRotation = Math.Slerp(this.Transform.Rotation, targetRotation, this.InterpolationSpeed * event.Dt);
+      this.Transform.Rotation = newRotation;
+    }
+    else
+      this.Transform.Rotation = targetRotation;
+  }
+}
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47595.gif" alt="test"></p>
+<p>With the cube's <code>Rotation</code> being interpolated instead of directly set it is now possible to see the behavior that the flip of <code>WorldRight</code> will cause, and it is most often undesirable. However, this flip only occurs because <code>Up</code> is set to a value that the <code>WorldForward</code> aligns with and then crosses over.</p>
+<p>By setting the <code>Up</code> axis to be the intended axis of rotation (the world <code>Z</code> axis) the cube no longer flips, as the cube's <code>WorldForward</code> no longer crosses over the defined <code>Up</code> for the rotation.</p>
+<p>(WARNING)<strong>Slow Interpolation Speeds</strong>: A common mistake when using <code>GetLookAt</code> functions in combination with <code>Math.Slerp</code> is to set the interpolation speed to slow. In this case because the mouse has no digital limit on the speed of movement the target rotation of the cube can change much faster than the <code>InterpolationSpeed</code> allows the cube's <code>Rotation</code> to change. <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47597.gif" alt="SlowInterpolationLookAt"> As shown, due to the normalized rotation values returned by <code>GetLookAtDirectionWithUpRotation</code> the cube never makes a full rotation despite the mouse making multiple full rotation around it.</p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="code-reference">Code Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md">orientation</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/gameplay/vectormath/orientation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

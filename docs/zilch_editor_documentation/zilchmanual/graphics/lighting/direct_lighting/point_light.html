@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>LightIntensity and LightRadius | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="LightIntensity and LightRadius | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/lighting/direct_lighting/point_light.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>A point light is a light that has a defined shape, exists at particular point in space, and sends light out equally from all points on that shape. It uses a sphere <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mesh.md">mesh</a> to define its volume, as can be seen on the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/models/model_component.md">Model component</a>. The light that is emitted will only be processed on geometry that the light overlaps, which is found using a special depth test unique to the point light.</p>
+<h1 id="lightintensity-and-lightradius">LightIntensity and LightRadius</h1>
+<p>LightIntensity  falls off as the distance increases from the surface of the light as defined by the LightRadius . The fall off follows the inverse square law. The LightIntensity  and FalloffRadius  are independent from each other.</p>
+<p>LightRadius  defines the size of the &quot;physical&quot; object that represents the object emitting the light. This &quot;physical&quot; object that can only be seen in the reflection of the PointLight (see screenshots below) As this radius approaches zero, it comes to represent an infinitely small point. As the radius increases and the intensity stays the same, the light emitted will be spread out as the same intensity must now be spread across the surface of a larger object. The following series of screenshots shows a point light in the Editor view where LightIntensity  remains constant at <code>50</code>, but LightRadius  changes to values of  <code>0.0</code>, <code>0.5</code>, and <code>1.0</code>, respectively:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46605.png" alt="Radius0"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46613.png" alt="Radius0_5"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46609.png" alt="Radius1"></p>
+<p>As is illustrated in the screenshots above, when the value LightRadius  increases, the size of the specular, or reflected, light grows. This is most obvious when looking at the reflection of the light source: the sphere reflected on the surface of the floor and wall objects gets larger. As the specular light increases, however, the intensity also dims, as the amount of energy emitted remains the same despite increasing the area from which it is emitted.</p>
+<h1 id="falloffradius">FalloffRadius</h1>
+<p>FalloffRadius  defines the size of the sphere mesh that acts as the volume in which emitted light may be processed. If the value defines a volume larger than what the emitted light would reach, increasing it any further will have no effect. If the value defines a volume below what the emitted light would reach, the intensity falloff is truncated. The following series of screenshots show a point light in Editor view where the value of FalloffRadius  is set to <code>10</code>, <code>7</code>, and <code>5</code>, respectively:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46617.png" alt="Falloff10"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46619.png" alt="Falloff7"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46623.png" alt="Falloff5"></p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/models/model_component.md">Model component</a></li>
+</ul>
+<h2 id="code-reference">Code Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mesh.md">Mesh</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/lighting/direct_lighting/point_light.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

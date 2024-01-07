@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/rendertasksevent.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Event</code> <code>Graphics</code></p>
+<p>(NOTE) Interface for adding tasks for the renderer, essentially defining a rendering pipeline.</p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertasksevent.md#addrendertaskcleartarget">AddRenderTaskClearTarget</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertasksevent.md#cameraviewportcog-zilch-e">CameraViewportCog</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/event.md">event</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertasksevent.md#addrendertaskpostprocess">AddRenderTaskPostProcess</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertasksevent.md#viewportsize-zilch-engine">ViewportSize</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertasksevent.md#addrendertaskrenderpass">AddRenderTaskRenderPass</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertasksevent.md#addrendertasksubrendergr">AddRenderTaskSubRenderGroupPass</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertasksevent.md#createsubrendergrouppass">CreateSubRenderGroupPass</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertasksevent.md#getfinaltarget-zilch-engi">GetFinalTarget</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertasksevent.md#getrendertarget-zilch-eng">GetRenderTarget</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="cameraviewportcog--cog">CameraViewportCog : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">cog</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Object with the CameraViewport component that this event is getting tasks for.</p>
+<pre><code class="lang-lang=cpp,">var CameraViewportCog : Cog
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="viewportsize--integer2">ViewportSize : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer2.md">integer2</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Size of the UI viewport, or the resolution on CameraViewport if not rendering to viewport.</p>
+<pre><code class="lang-lang=cpp,">var ViewportSize : Integer2
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="addrendertaskcleartarget--void">AddRenderTaskClearTarget : Void</h1>
+<blockquote>
+<p>Initializes all the internal texture data for the given RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|renderSettings|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendersettings.md">rendersettings</a>| |
+|color|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(renderSettings : RenderSettings, color : Real4)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskcleartarget--void-1">AddRenderTaskClearTarget : Void</h1>
+<blockquote>
+<p>Initializes all the internal texture data for the given RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|renderSettings|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendersettings.md">rendersettings</a>| |
+|color|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a>| |
+|depth|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(renderSettings : RenderSettings, color : Real4, depth : Real)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskcleartarget--void-2">AddRenderTaskClearTarget : Void</h1>
+<blockquote>
+<p>Initializes all the internal texture data for the given RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|renderSettings|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendersettings.md">rendersettings</a>| |
+|color|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a>| |
+|depth|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|stencil|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(renderSettings : RenderSettings, color : Real4, depth : Real, stencil : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskcleartarget--void-3">AddRenderTaskClearTarget : Void</h1>
+<blockquote>
+<p>Initializes all the internal texture data for the given RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|renderSettings|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendersettings.md">rendersettings</a>| |
+|color|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a>| |
+|depth|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|stencil|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |
+|stencilWriteMask|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(renderSettings : RenderSettings, color : Real4, depth : Real, stencil : Integer, stencilWriteMask : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskcleartarget--void-4">AddRenderTaskClearTarget : Void</h1>
+<blockquote>
+<p>Initializes all the internal texture data for the given RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|depthTarget|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a>| |
+|depth|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(depthTarget : RenderTarget, depth : Real)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskcleartarget--void-5">AddRenderTaskClearTarget : Void</h1>
+<blockquote>
+<p>Initializes all the internal texture data for the given RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|depthTarget|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a>| |
+|depth|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|stencil|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(depthTarget : RenderTarget, depth : Real, stencil : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskcleartarget--void-6">AddRenderTaskClearTarget : Void</h1>
+<blockquote>
+<p>Initializes all the internal texture data for the given RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|depthTarget|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a>| |
+|depth|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|stencil|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |
+|stencilWriteMask|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(depthTarget : RenderTarget, depth : Real, stencil : Integer, stencilWriteMask : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskcleartarget--void-7">AddRenderTaskClearTarget : Void</h1>
+<blockquote>
+<p>Initializes all the internal texture data for the given RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|colorTarget|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a>| |
+|color|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(colorTarget : RenderTarget, color : Real4)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskcleartarget--void-8">AddRenderTaskClearTarget : Void</h1>
+<blockquote>
+<p>Initializes all the internal texture data for the given RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|colorTarget|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a>| |
+|depthTarget|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a>| |
+|color|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a>| |
+|depth|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(colorTarget : RenderTarget, depthTarget : RenderTarget, color : Real4, depth : Real)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskcleartarget--void-9">AddRenderTaskClearTarget : Void</h1>
+<blockquote>
+<p>Initializes all the internal texture data for the given RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|colorTarget|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a>| |
+|depthTarget|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a>| |
+|color|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a>| |
+|depth|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|stencil|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(colorTarget : RenderTarget, depthTarget : RenderTarget, color : Real4, depth : Real, stencil : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskcleartarget--void-10">AddRenderTaskClearTarget : Void</h1>
+<blockquote>
+<p>Initializes all the internal texture data for the given RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|colorTarget|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a>| |
+|depthTarget|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a>| |
+|color|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a>| |
+|depth|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
+|stencil|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |
+|stencilWriteMask|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(colorTarget : RenderTarget, depthTarget : RenderTarget, color : Real4, depth : Real, stencil : Integer, stencilWriteMask : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskpostprocess--void">AddRenderTaskPostProcess : Void</h1>
+<blockquote>
+<p>Invokes the pixel shader for every pixel of the RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|renderSettings|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendersettings.md">rendersettings</a>| |
+|material|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/material.md">material</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskPostProcess(renderSettings : RenderSettings, material : Material)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskpostprocess--void-1">AddRenderTaskPostProcess : Void</h1>
+<blockquote>
+<p>Invokes the pixel shader for every pixel of the RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|renderSettings|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendersettings.md">rendersettings</a>| |
+|postProcess|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/materialblock.md">materialblock</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskPostProcess(renderSettings : RenderSettings, postProcess : MaterialBlock)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskpostprocess--void-2">AddRenderTaskPostProcess : Void</h1>
+<blockquote>
+<p>Invokes the pixel shader for every pixel of the RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|renderTarget|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a>| |
+|material|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/material.md">material</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskPostProcess(renderTarget : RenderTarget, material : Material)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskpostprocess--void-3">AddRenderTaskPostProcess : Void</h1>
+<blockquote>
+<p>Invokes the pixel shader for every pixel of the RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|renderTarget|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a>| |
+|postProcess|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/materialblock.md">materialblock</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskPostProcess(renderTarget : RenderTarget, postProcess : MaterialBlock)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskrenderpass--void">AddRenderTaskRenderPass : Void</h1>
+<blockquote>
+<p>Renders a group of objects with the given settings. The RenderPass fragment defines what data is written to RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|renderSettings|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendersettings.md">rendersettings</a>| |
+|graphicalRange|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/graphicalrangeinterface.md">graphicalrangeinterface</a>| |
+|renderPass|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/materialblock.md">materialblock</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskRenderPass(renderSettings : RenderSettings, graphicalRange : GraphicalRangeInterface, renderPass : MaterialBlock)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertaskrenderpass--void-1">AddRenderTaskRenderPass : Void</h1>
+<blockquote>
+<p>Renders a group of objects with the given settings. The RenderPass fragment defines what data is written to RenderTargets.
+|Name|Type|Description|
+|---|---|---|
+|renderSettings|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendersettings.md">rendersettings</a>| |
+|renderGroup|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendergroup.md">rendergroup</a>| |
+|renderPass|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/materialblock.md">materialblock</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskRenderPass(renderSettings : RenderSettings, renderGroup : RenderGroup, renderPass : MaterialBlock)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addrendertasksubrendergrouppass--void">AddRenderTaskSubRenderGroupPass : Void</h1>
+<blockquote>
+<p>Renders all objects within a RenderGroup hierarchy, sorted in the order defined by the base RenderGroup, and can use unique render settings for each RenderGroup in the hierarchy.
+|Name|Type|Description|
+|---|---|---|
+|subRenderGroupPass|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/subrendergrouppass.md">subrendergrouppass</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddRenderTaskSubRenderGroupPass(subRenderGroupPass : SubRenderGroupPass)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="createsubrendergrouppass--subrendergrouppass">CreateSubRenderGroupPass : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/subrendergrouppass.md">subrendergrouppass</a></h1>
+<blockquote>
+<p>Creates the interface used to define unique render settings for a base RenderGroup and its sub RenderGroups. The given RenderGroup is used to define the hierarchy, or sub hierarchy, that should be rendered. The given RenderGroup also defines the sort order for all objects that are within its hierarchy. Returned SubRenderGroupPass is only valid during this event.
+|Name|Type|Description|
+|---|---|---|
+|baseGroup|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendergroup.md">rendergroup</a>| |</p>
+<pre><code class="lang-lang=cpp,">function CreateSubRenderGroupPass(baseGroup : RenderGroup) : SubRenderGroupPass
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getfinaltarget--rendertarget">GetFinalTarget : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a></h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer2.md">integer2</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#textureformat">TextureFormat</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function GetFinalTarget( : Integer2,  : TextureFormat) : RenderTarget
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getfinaltarget--rendertarget-1">GetFinalTarget : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a></h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer2.md">integer2</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#textureformat">TextureFormat</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/samplersettings.md">samplersettings</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function GetFinalTarget( : Integer2,  : TextureFormat,  : SamplerSettings) : RenderTarget
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getrendertarget--rendertarget">GetRenderTarget : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a></h1>
+<blockquote>
+<p>Returns a RenderTarget for use when adding render tasks. Target only valid during this event. Will render to the given texture instead of an internally managed texture.
+|Name|Type|Description|
+|---|---|---|
+||<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer2.md">integer2</a>| |
+||<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#textureformat">TextureFormat</a>| |</p>
+<pre><code class="lang-lang=cpp,">function GetRenderTarget( : Integer2,  : TextureFormat) : RenderTarget
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getrendertarget--rendertarget-1">GetRenderTarget : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a></h1>
+<blockquote>
+<p>Returns a RenderTarget for use when adding render tasks. Target only valid during this event. Will render to the given texture instead of an internally managed texture.
+|Name|Type|Description|
+|---|---|---|
+||<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer2.md">integer2</a>| |
+||<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#textureformat">TextureFormat</a>| |
+||<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/samplersettings.md">samplersettings</a>| |</p>
+<pre><code class="lang-lang=cpp,">function GetRenderTarget( : Integer2,  : TextureFormat,  : SamplerSettings) : RenderTarget
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getrendertarget--rendertarget-2">GetRenderTarget : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendertarget.md">rendertarget</a></h1>
+<blockquote>
+<p>Returns a RenderTarget for use when adding render tasks. Target only valid during this event. Will render to the given texture instead of an internally managed texture.
+|Name|Type|Description|
+|---|---|---|
+|texture|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/texture.md">texture</a>| |</p>
+<pre><code class="lang-lang=cpp,">function GetRenderTarget(texture : Texture) : RenderTarget
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/rendertasksevent.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

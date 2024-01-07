@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Using the Space | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Using the Space | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/architecture/objects/spaces.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/space.md">Space</a> is the infinite three-dimensional extent in which objects and events have relative position and direction. It consists of 3 dimensional axes and time.</p>
+<p>Spaces in the Zilch Engine are containers for game objects. When a level is loaded, all the game objects from that level are put into a space. Also, when you create a game object in code, you must put it into a space, usually the same one that the level was loaded into. In a simple game you only have one space, which is where all your game objects go. Each space has its own instances of the core systems of the engine: graphics, physics, etc. Because of this, game objects in two different spaces will not collide or otherwise physically interact. Game objects in different spaces are rendered separately, but can be layered, such as when using one space for level game objects and another for UI game objects. Creating a separate space for UI game objects is one of the most common uses of multiple spaces in a game.</p>
+<h1 id="using-the-space">Using the Space</h1>
+<h2 id="creating-a-space">Creating a Space</h2>
+<p>You can create a space through the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/objects/gamesession.md">GameSession</a> object.</p>
+<pre><code>    class SpaceCreator : NadaComponent
+    {
+      [Property]
+      var MySpaceArchetype : Archetype;
+      
+      [Property]
+      var MySpaceName : String = &quot;MyNamedSpace&quot;;
+      
+      var MyNewSpace : Space;
+      
+      var MyNewNamedSpace : Space;
+      
+      function Initialize(init : CogInitializer)
+      {
+        //Here we create an unnamed Space object
+        this.MyNewSpace = this.GameSession.CreateSpace(this.MySpaceArchetype);
+        //Here we create a Space object named &quot;MyNamedspace&quot;
+        this.MyNewNamedSpace = this.GameSession.CreateNamedSpace(this.MySpaceName, this.MySpaceArchetype);
+      }
+    }
+
+</code></pre>
+<p>Naming a space is not absolutely necessary, if you have a good system keeping track of the spaces you are creating. However, naming your space is a good general practice as you'll find when trying to access Spaces you have created.</p>
+<h2 id="accessing-a-the-space">Accessing a the Space</h2>
+<p>You can access the Space object from scripts via any component or Cog:</p>
+<pre><code>  class ExampleComponent : NadaComponent
+  {
+    // Accessing the Space object through the component
+    var CurrentSpace : Cog
+    {
+      get { return this.Space; }
+    }
+    
+    // Accessing the Space object through the component's object
+    var AlsoCurrentSpace : Cog
+    {
+      get { return this.Owner.Space; }
+    }
+    
+    function Initialize(init : CogInitializer)
+    {
+      // If we compare the values of the to properties which access the
+      // Space object through different objects we can prove that they
+      // are accessing the same Space object.
+      if(this.CurrentSpace == this.AlsoCurrentSpace)
+      {
+        Console.WriteLine(&quot;These properties reference the same Space object.&quot;);
+      }
+    }
+  }
+
+</code></pre>
+<p>Accessing the Space this way will give you a reference to the Space that the object <code>ExampleComponent</code> is attached to exists in.
+n some games you may have multiple spaces in order to implement certain features such as an in game HUD. In situations such as this you must store a reference to the <code>HUDSpace</code> on creation in order to access it later.</p>
+<h1 id="space-components">Space Components</h1>
+<p>Spaces have special space components that can not be removed. These are core engine components for containing different aspects of the game objects like physics, graphics, and sound.</p>
+<p>Spaces are stored as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/archetypes.md">Archetypes</a> and can be modified to change the properties of a space.</p>
+<p>To access the space of the current level Press:</p>
+<ul>
+<li>In the <code>name=Level Window, icon=window-restore</code></li>
+<li>Press <code>shift + s</code></li>
+</ul>
+<p><strong>Or</strong></p>
+<ul>
+<li>In Select drop down</li>
+<li>Click Select Space</li>
+</ul>
+<p>When opened, a space should look something like this:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46992.png" alt="image"></p>
+<p>By default a space has four components TimeSpace, GraphicsSpace, PhysicsSpace, and SoundSpace, but if needed you may add more by creating a new space archetype and adding the desired components. In each component of the space properties can be found that will affect the entire space.</p>
+<p>NOTE: The ReactiveSpace component is deprecated and changes made to it will have no effect on the Space or how using the Reactive component works.</p>
+<h1 id="events-dispatched-on-the-space-object">Events Dispatched On The Space Object</h1>
+<table>
+<thead>
+<tr>
+<th>Event Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PhysicsUpdateFinished</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/objectevent.md">objectevent</a></td>
+<td>Dispatched immediately after physics has finished updating.</td>
+</tr>
+<tr>
+<td>LogicUpdate</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/updateevent.md">updateevent</a></td>
+<td>Dispatched after the major systems's updates (doesn't run in editor)</td>
+</tr>
+<tr>
+<td>FrameUpdate</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/updateevent.md">updateevent</a></td>
+<td>Dispatched after the engine update. Runs in editor.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/archetypes.md">Archetypes</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/objects/gamesession.md">GameSession object</a></li>
+</ul>
+<h2 id="code-reference">Code Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/timespace.md">timespace</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/graphicsspace.md">graphicsspace</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsspace.md">physicsspace</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundspace.md">soundspace</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/objectevent.md">objectevent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/updateevent.md">updateevent</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/architecture/objects/spaces.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

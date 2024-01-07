@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Using SoundNodes | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Using SoundNodes | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/audio/soundnode/soudnode_overview.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46355.png" alt="Graph"></p>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md"> SoundNodes </a> are the building blocks behind all audio in the Zilch Engine. A SoundNode receives audio data from other SoundNodes through its input connections, modifies that data in some way (or simply collects it), then passes it along to more SoundNodes through its output connections.</p>
+<p>Some SoundNodes only generate audio data, like <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode/soundinstance.md">SoundInstances</a>. Those nodes do not collect anything from their input connections and attaching nodes to their input would have no effect.</p>
+<p>All sound objects in the Zilch Engine use some type of SoundNode. These nodes are connected together into a tree-like graph, with generating nodes as the topmost branches, and the output node of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode/soundspace.md">SoundSpace </a> as the root node at the bottom. The SoundNode graph processes audio by starting at the root node and requesting data from its input nodes. These nodes then request data from their inputs, and so on, until the request reaches a generating node which returns audio data that then follows the chain back down the graph.</p>
+<p>There are many types of SoundNodes that can only be created and added to the node graph in NadaScripts. These SoundNodes are reference counted: they will stay alive as long as the user stores a variable with the SoundNode assigned to it. If it is not stored, the node will be alive as long as it is connected to the graph, but users can no longer access it.</p>
+<p>The SoundNodes of built-in objects are also exposed in Nada, and users can freely edit most of the graph connections, giving them a great deal of flexibility in creating audio. When building connections it is important to remember that nodes closer to the generating node modify the audio before nodes that are further away. For example, to change the pitch of a sound before applying reverb, the PitchNode must be between the SoundInstance and the ReverbNode.</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode/soundnode_graph.md">SoundNode Graph </a> tool can be extremely helpful when editing the graph directly.</p>
+<p>WARNING: SoundNodes can be connected in many complicated ways, but users must be careful not to create a loop. If loops are created, the user will receive an error, and the SoundNodes will be automatically disconnected.</p>
+<p>In most cases, nodes can be connected in any order and to any number of other nodes. The exception is the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode/pitchnode.md">PitchNode </a>. The PitchNode changes the pitch of a sound by essentially stretching or squishing the sound waves, which means that it needs a different amount of data than other nodes. This causes a problem when a PitchNode and a node that was not pitch-shifted request data from the same SoundInstance.</p>
+<p>WARNING: When using PitchNodes, if a generating node has multiple output connections the user must make sure all of them are at the same pitch. If SoundNodes request data from the generating node at different pitch settings there will be an error and the nodes will be disconnected.</p>
+<h1 id="using-soundnodes">Using SoundNodes</h1>
+<p>In NadaScripts, all SoundNodes are created using the appropriate method on the Audio object. The following code block shows how you would create a PitchNode.</p>
+<pre><code class="lang-lang=csharp">var myPitchNode = Audio.PitchNode();
+</code></pre>
+<p>There are multiple places in the SoundNode Graph that sound nodes can be attached.  Here is an example of a component that creates and controls a PitchNode for its neighboring <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundemitter.md">SoundEmitter</a>:</p>
+<pre><code class="lang-lang=csharp">class EmitterPitch : NadaComponent
+{
+  [Dependency] var SoundEmitter : SoundEmitter;
+  
+  var PitchNode : PitchNode = Audio.PitchNode();
+  [Property] var Pitch : Real
+  {
+    get { return this.PitchNode.Pitch; }
+    set { this.PitchNode.Pitch = value; }
+  }
+  
+  function Initialize(init : CogInitializer)
+  {
+    this.SoundEmitter.OutputNode.InsertNodeAfter(this.PitchNode);
+  }
+}
+</code></pre>
+<p>The functionality described below is available on all SoundNodes. See the individual <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode.md">Manual pages</a> for details about each SoundNode type.</p>
+<h2 id="adding-and-removing-soundnodes">Adding and Removing SoundNodes</h2>
+<p>To add a SoundNode as input on another SoundNode, call the <code>AddInputNode</code> method on the SoundNode that should receive the input, passing in the input SoundNode as the parameter.</p>
+<p>There are two ways to insert a SoundNode into the existing graph, <code>InsertNodeAfter</code> and <code>InsertNodeBefore</code>. As expected, <code>InsertNodeAfter</code> will insert a SoundNode into the graph after the SoundNode the method is called on (placing it between that SoundNode and all its output nodes), and <code>InsertNodeBefore</code> will insert a SoundNode before the SoundNode the method is called on (placing it between that SoundNode and all its input nodes).</p>
+<p>NOTE: Some built-in objects do not allow insertion and will give a warning if the user calls this method.</p>
+<p>To disconnect a SoundNode's input, the <code>RemoveAllInputs</code> method can be used to remove all input connections from the SoundNode. Removing a single input can be done using the <code>RemoveInputNode</code> method, which will remove the SoundNode passed in as the parameter from the inputs of the SoundNode the method is called on. The <code>RemoveAllOutputs</code> method will remove all output connections from the SoundNode, disconnecting it from the node graph.</p>
+<p>There are two ways to remove a SoundNode from the graph while keeping the rest of the graph intact. The <code>RemoveAndAttachInputsToOutputs</code> method will remove the SoundNode from the graph but will also connect all of the SoundNode's input SoundNodes to all of its output SoundNodes. The <code>ReplaceWith</code> method will replace the SoundNode the method is called on with the SoundNode passed in as the parameter; all inputs and outputs of the SoundNode the method is called on will be switched to the new SoundNode.</p>
+<p>NOTE: Built in objects that do not allow insertion before their SoundNode also do not allow you to remove all of their inputs. Built in objects such as  SoundSpaces will not allow you to remove them from the graph.</p>
+<h2 id="bypassing-soundnodes">Bypassing SoundNodes</h2>
+<p>The <code>BypassPercent</code> property sets a percentage of a SoundNode's input that will be sent directly to its outputs, without any processing. In other words, if the <code>BypassPercent</code> is set to 30.0, seventy percent of the sound will be processed by the SoundNode while thirty percent will not. This can be a useful way to turn nodes on and off without removing them from the graph, or to reduce the strength of an audio effect.</p>
+<p>NOTE: On some types of SoundNodes changing this value by large amounts at runtime could result in clicks or other problems with the audio.</p>
+<h2 id="collapsing-unused-soundnodes">Collapsing Unused SoundNodes</h2>
+<p>If the <code>AutoCollapse</code> property is set to True, the SoundNode will automatically remove itself from the graph when its last input node is removed. This property is set to False by default.</p>
+<h2 id="nada-events">Nada Events</h2>
+<ul>
+<li>The <code>SoundNodeDisconnected</code> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundevent.md"> SoundEvent </a> is sent by all SoundNodes when they are is completely disconnected from the graph (when the node has no more inputs or outputs).</li>
+</ul>
+<hr>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode/soundinstance.md">SoundInstance </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode/soundspace.md">SoundSpace </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode/soundnode_graph.md">SoundNode Graph </a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md"> SoundNode </a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/audio/soundnode/soudnode_overview.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Declaration | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Declaration | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>A HashMap is a templated data structure that can map unique keys of type A to values of type B (where A and B can be the same type).</p>
+<h1 id="declaration">Declaration</h1>
+<p>NOTE: The types <code>HashMap</code> and <code>KeyValue</code> not currently appear in the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types.md">nada_base_types</a> list and does not currently show up in code completion suggestions (T552) during initial declaration.</p>
+<p>HashMap declaration is similiar to the declaration of any templated type in Nada. When a HashMap is created, by default, it has no elements.</p>
+<pre><code class="lang-name=HashMap">var namesToObjects = HashMap[String, Cog]();
+var idToCost = HashMap[Integer, Real]();
+var spawnerToEnemyType = HashMap[Cog, Archetype]();
+var enemyType = HashMap[Archetype, Integer]();
+</code></pre>
+<p>HashMaps have a variety of uses. One may use them to keep track of objects at runtime by an alternate name, or to keep count of how many of each enemy archetype a spawner has created at runtime. Below are some simple example of HashMap functionality which map unique <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a> keys to non-unique <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a> values.</p>
+<h2 id="initialization">Initialization</h2>
+<p>It is common for a HashMap to be populated at runtime, but it is also possible to define elements within an initializer list.</p>
+<pre><code class="lang-name=Initializer">var hash = HashMap[Integer, String]()
+{
+  {1, &quot;one&quot;},
+  {2, &quot;two&quot;},
+  {3, &quot;three&quot;}
+};
+this.PrintHashMap(hash);
+</code></pre>
+<pre><code class="lang-name=Console">HashMap[Integer, String] (20744110) 
+{
+  {2, two}
+  {1, one}
+  {3, three}
+}
+</code></pre>
+<p>Notice that the order in which the elements are printed is not the order in which they were added to the HashMap. This is due to HashMaps having no inherent order, unlike <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md">Arrays</a>. Instead of the pairs being printed in an indexed order they are printed in an arbitrary order based on the hash of the pair.</p>
+<p>NOTE: The HashMap templated type is currently lacking templated print functionality similiar to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/arrays.md">Arrays</a>. The <code>PrintHashMap</code> function used in this page is implemented below:</p>
+<pre><code class="lang-name=PrintHashMap,">function PrintHashMap(hash : HashMap[Integer, String])
+{
+  Console.WriteLine(&quot;`hash` \n{&quot;);
+  foreach(var pair in hash.All)
+  {
+    Console.WriteLine(&quot;  {`pair.Key`, `pair.Value`}&quot;);
+  }
+  Console.WriteLine(&quot;}&quot;);
+}
+</code></pre>
+<h1 id="hashmap-access">HashMap Access</h1>
+<p>HashMap elements can be accessed for reading or writing in a few different ways which have different primary use cases.</p>
+<h2 id="the--operator">The <code>[]</code> Operator</h2>
+<p>The <code>[]</code> (pronounced subscript) operator is the primary way to access any <em>value// within a HashMap. When a valid //key</em> is passed to the subscript operator the corresponding value is returned from the HashMap. The <code>[]</code> operator can also be used to assign new values to keys within the HashMap.</p>
+<pre><code class="lang-name=[]">var hash = HashMap[Integer, String]()
+{
+  {1, &quot;one&quot;},
+  {2, &quot;two&quot;}
+};
+hash[3] = &quot;three&quot;;
+Console.WriteLine(hash[1]);
+Console.WriteLine(hash[2]);
+Console.WriteLine(hash[3]);
+</code></pre>
+<pre><code class="lang-name=Console">one
+two
+three
+</code></pre>
+<p>IMPORTANT: If an invalid key is passed to the <code>[]</code> operator a runtime exception will be thrown: <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90723.png" alt="image"></p>
+<h2 id="get-functions">Get Functions</h2>
+<p>Another way to access the <code>KeyValue</code> pairs of a HashMap is to use the <code>get</code> functions.</p>
+<h3 id="hashmapget">HashMap.Get</h3>
+<p><code>HashMap.Get</code> behaves the same as the <code>[]</code> operator, as it is the function actually called by the <code>[]</code> operator. However, being a function, <code>Get</code> can be referenced by a delegate.</p>
+<pre><code class="lang-name=HashMap.Get">var hash = HashMap[Integer, String]()
+{
+  {1, &quot;one&quot;},
+  {2, &quot;two&quot;},
+  {3, &quot;three&quot;}
+};
+Console.WriteLine(hash.Get(1));
+Console.WriteLine(hash.Get(2));
+Console.WriteLine(hash.Get(3));
+</code></pre>
+<pre><code class="lang-name=Console">one
+two
+three
+</code></pre>
+<h3 id="hashmapgetordefault">HashMap.GetOrDefault</h3>
+<p><code>HashMap.GetOrDefault</code> behaves the same as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-get">Get</a>, but instead of throwing an exception when passed an invalid key it returns a <em>default// value that is the same type as the //values</em> of the HashMap.</p>
+<pre><code class="lang-name=HashMap.GetOrDefault">var hash = HashMap[Integer, String]()
+{
+  {1, &quot;one&quot;},
+  {2, &quot;two&quot;},
+  {3, &quot;three&quot;}
+};
+Console.WriteLine(hash.GetOrDefault(1, &quot;default&quot;));
+Console.WriteLine(hash.GetOrDefault(2, &quot;default&quot;));
+Console.WriteLine(hash.GetOrDefault(3, &quot;default&quot;));
+Console.WriteLine(hash.GetOrDefault(4, &quot;default&quot;));
+Console.WriteLine(hash.GetOrDefault(5));
+</code></pre>
+<pre><code class="lang-name=Console">one
+two
+three
+default
+(null) String
+</code></pre>
+<h3 id="hashmapgetorerror">HashMap.GetOrError</h3>
+<p><code>GetOrError</code> has the same functionality as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-get">Get</a>, the only difference being that it is not called by the <code>[]</code> operator.</p>
+<h1 id="adding-to-a-hashmap">Adding to a HashMap</h1>
+<p>There are multiple ways to add <code>KeyValue</code> pairs to HashMaps. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-add">Add</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-set">Set</a>, and the <code>[]</code> operator can all be used to add <code>KeyValue</code> pairs to the HashMap.</p>
+<h2 id="hashmapadd">HashMap.Add</h2>
+<p><code>Add</code> takes a <em>key</em> and //value//, adding the pair to the HashMap. If the given key already exists then a runtime exception will be thrown.</p>
+<pre><code class="lang-name=Add,">var hash = HashMap[Integer, String]();
+hash.Add(1, &quot;one&quot;);
+hash.Add(2, &quot;two&quot;);
+hash.Add(3, &quot;three&quot;);
+this.PrintHashMap(hash);
+</code></pre>
+<pre><code class="lang-name=Console">HashMap[Integer, String] (20744110) 
+{
+  {2, two}
+  {1, one}
+  {3, three}
+}
+</code></pre>
+<p>It should be noted that the <code>Add</code> function is called for each <code>KeyValue</code> pair when a HashMap is populated using an initializer list.</p>
+<h2 id="hashmapset">HashMap.Set</h2>
+<p><code>Set</code> is very similar to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-add">Add</a>. <code>Set</code> takes a <em>key// and //value//, adding the pair to the HashMap if the key does not exist. If the key does exist then the //value</em> paired with the given key will be replaced with the //given value//.</p>
+<pre><code class="lang-name=Set,">var hash = HashMap[Integer, String]();
+hash.Set(1, &quot;one&quot;);
+hash.Set(2, &quot;two&quot;);
+hash.Set(2, &quot;three&quot;);
+this.PrintHashMap(hash);
+</code></pre>
+<pre><code class="lang-name=Console">HashMap[Integer, String] (20744110) 
+{
+  {2, three}
+  {1, one}
+}
+</code></pre>
+<h3 id="hashmapsetoroverwrite">HashMap.SetOrOverwrite</h3>
+<p>The relationship of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-set">Set</a> and <code>SetOrOverwrite</code> is simliar to that of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-get">Get</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-getorerror">GetOrError</a> in that they have the same behavior. However, like <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-get">Get</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-set">Set</a> is called by the <code>[]</code> operator during assignment.</p>
+<pre><code class="lang-name=SetOrOverwrite,">var hash = HashMap[Integer, String]();
+hash.SetOrOverwrite(1, &quot;one&quot;);
+hash.SetOrOverwrite(2, &quot;two&quot;);
+hash.SetOrOverwrite(2, &quot;three&quot;);
+this.PrintHashMap(hash);
+</code></pre>
+<pre><code class="lang-name=Console">HashMap[Integer, String] (20744110) 
+{
+  {2, three}
+  {1, one}
+}
+</code></pre>
+<h3 id="hashmapsetorignore">HashMap.SetOrIgnore</h3>
+<p><code>SetOrIgnore</code> behaves the same as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-set">Set</a> except if the given <em>key</em> already exists the function returns leaving the HashMap unmodified.</p>
+<pre><code class="lang-name=SetOrIgnore,">var hash = HashMap[Integer, String]();
+hash.SetOrIgnore(1, &quot;one&quot;);
+hash.SetOrIgnore(2, &quot;two&quot;);
+hash.SetOrIgnore(2, &quot;three&quot;);
+this.PrintHashMap(hash);
+</code></pre>
+<pre><code class="lang-name=Console">HashMap[Integer, String] (20744110) 
+{
+  {2, two}
+  {1, one}
+}
+</code></pre>
+<h3 id="hashmapsetorerror">HashMap.SetOrError</h3>
+<p><code>SetOrError</code> follows a similiar behavior to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-getorerror">GetOrError</a>. If the key passed to <code>SetOrError</code> already exists in the HashMap then an exception will be thrown.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90732.png" alt="image"></p>
+<h1 id="hashmap-container-operations">HashMap Container Operations</h1>
+<h2 id="hashmapclear">HashMap.Clear</h2>
+<p>The <code>Clear</code> function simply removes all <code>KeyValue</code> pairs from the HashMap.</p>
+<pre><code class="lang-name=Clear">var hash = HashMap[Integer, String]();
+hash[1] = &quot;one&quot;;
+hash[2] = &quot;two&quot;;
+hash[3] = &quot;three&quot;;
+this.PrintHashMap(hash);
+hash.Clear();
+this.PrintHashMap(hash);
+</code></pre>
+<pre><code class="lang-name=Console">HashMap[Integer, String] (20712538) 
+{
+  {2, two}
+  {1, one}
+  {3, three}
+}
+HashMap[Integer, String] (20712538) 
+{
+}
+</code></pre>
+<h2 id="hashmapcontains">HashMap.Contains</h2>
+<p><code>Contains</code> takes a parameter matching the <em>key</em> type of the HashMap and returns <code>true</code> if the given key exists in the HashMap.</p>
+<pre><code class="lang-name=Contains">var hash = HashMap[Integer, String]();
+hash[1] = &quot;one&quot;;
+hash[2] = &quot;two&quot;;
+hash[3] = &quot;three&quot;;
+this.PrintHashMap(hash);
+Console.WriteLine(&quot;This HashMap contains the key 2: `hash.Contains(2)`&quot;);
+Console.WriteLine(&quot;This HashMap contains the key 4: `hash.Contains(4)`&quot;);
+</code></pre>
+<pre><code class="lang-name=Console">HashMap[Integer, String] (20713030) 
+{
+  {2, two}
+  {1, one}
+  {3, three}
+}
+This HashMap contains the key 2: true
+This HashMap contains the key 4: false
+</code></pre>
+<h1 id="hashmap-range-functions">HashMap Range Functions</h1>
+<p>There are a number of HashMap properties providing iterable ranges that are particularly useful for examining each pair in a HashMap.</p>
+<h2 id="hashmapall">HashMap.All</h2>
+<p>Contains an iterable range of all <code>KeyValue</code> pairs in the HashMap.</p>
+<pre><code class="lang-name=PrintHashMap,">function PrintHashMap(hash : HashMap[Integer, String])
+{
+  Console.WriteLine(&quot;`hash` \n{&quot;);
+  foreach(var pair in hash.All)
+  {
+    Console.WriteLine(&quot;  {`pair.Key`, `pair.Value`}&quot;);
+  }
+  Console.WriteLine(&quot;}&quot;);
+}
+</code></pre>
+<p>The <code>PrintHashMap</code> function is an excellent example of how one may use <code>All</code>.</p>
+<h2 id="hashmapkeys--hashmapvalues">HashMap.Keys &amp; HashMap.Values</h2>
+<p><code>Keys</code> and <code>Values</code> return iterable ranges of containing the keys and values in the HashMap correspondingly.</p>
+<h1 id="hashmapcount">HashMap.Count</h1>
+<p><code>Count</code> returns the number of pairs in the HashMap.</p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/arrays.md">Arrays</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md">Arrays</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></li>
+</ul>
+<h2 id="task">Task</h2>
+<ul>
+<li>T1317</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

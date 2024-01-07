@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | ZilchEngine ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_source_documentation/editor.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>The editor is created once and manages:</p>
+<ul>
+<li>All windows and docking (done through the base MultiDock class)</li>
+<li>The current level(s) being edited</li>
+<li>All running game sessions</li>
+<li>Selection</li>
+<li>Operation queue (undo/redo)</li>
+<li>Commands</li>
+<li>Tools</li>
+</ul>
+<p>Project loading</p>
+<h3 id="section"></h3>
+<p>Why we restart editor when loading projects (meta flush)</p>
+<p>Commands</p>
+<h3 id="section-1"></h3>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h2 id="commands-from-data">Commands from Data</h2>
+<p>Commands are loaded from the Data\Commands.data file in the Zilch repository. These commands are then bound in C++ to specific functions on the editor.</p>
+<h2 id="cog-commands">Cog Commands</h2>
+<p>CogCommands are just Cogs that are marked as a command object, and when the command is invoked, the 'ExecuteEvent' event will be sent on the cog. This allows for users to create custom commands without learning a new system. They use what they're used to and just respond to a different event. The command Cogs are all created in a single Space (named &quot;CommandSpace&quot;) that lives under the editors game session.</p>
+<p>There are two ways a CogCommand can be created:</p>
+<ul>
+<li>A Component with the [Command] attribute with the attribute parameter 'autoCommand' set to true.</li>
+<li>An Archetype with tag &quot;Command&quot;.</li>
+</ul>
+<h2 id="command-context">Command Context</h2>
+<p>This gives commands more information about the circumstances they were invoked in, such as which viewport has focus when the command is invoked.</p>
+<h2 id="command-active-state">Command 'Active' state</h2>
+<p>Used for Tools and toggle-able commands. Example: Tools have Commands that enable them, so when the tool is selected, that command is now considered 'Active' until another tool is selected. This allows the IconButton in the Ui to display that the tool is active.</p>
+<p>Gizmos</p>
+<h3 id="section-2"></h3>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h2 id="basic-gizmos">Basic Gizmos</h2>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<p>Tools</p>
+<h3 id="section-3"></h3>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h2 id="events">Events</h2>
+<p>Connect to this.Owner for all events. They will all be sent directly to the tool when the tool is selected.</p>
+<ul>
+<li><p>Events.ToolActivate   - Sent when the tool has been selected</p>
+</li>
+<li><p>Events.ToolDeactivate - Sent when the tool has been de-selected</p>
+</li>
+<li><p>Events.ToolDraw       - Sent every frame to debug draw</p>
+</li>
+<li><p>Events::MouseDown</p>
+</li>
+<li><p>Events::MouseMove</p>
+</li>
+<li><p>Events::MouseUpdate</p>
+</li>
+<li><p>Events::LeftMouseDown</p>
+</li>
+<li><p>Events::LeftMouseUp</p>
+</li>
+<li><p>Events::DoubleClick</p>
+</li>
+<li><p>Events::RightMouseDown</p>
+</li>
+<li><p>Events::RightMouseUp</p>
+</li>
+<li><p>Events::MiddleMouseDown</p>
+</li>
+<li><p>Events::MouseScroll</p>
+</li>
+<li><p>Events::KeyDown</p>
+</li>
+<li><p>Events::KeyUp</p>
+</li>
+</ul>
+<p>Operations</p>
+<h3 id="section-4"></h3>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h2 id="custom-tools">Custom Tools</h2>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<p>Viewports</p>
+<h3 id="section-5"></h3>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h2 id="editorviewport">EditorViewport</h2>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h2 id="gameviewport">GameViewport</h2>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<p>Notifications</p>
+<h3 id="section-6"></h3>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<p>Windows</p>
+<h3 id="section-7"></h3>
+<h2 id="text-editor">Text Editor</h2>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h2 id="main-property-grid">Main Property Grid</h2>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h2 id="resource-library">Resource Library</h2>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h2 id="object-view">Object View</h2>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h2 id="console">Console</h2>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h2 id="tools-window">Tools Window</h2>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h2 id="resource-editors">Resource Editors</h2>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<p>Downloads</p>
+<h3 id="section-8"></h3>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<p>Automation</p>
+<h3 id="section-9"></h3>
+<ul>
+<li>Stress Test</li>
+<li>Coming soon</li>
+</ul>
+<p>Animator</p>
+<h3 id="section-10"></h3>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h2 id="rich-animation">Rich Animation</h2>
+<ul>
+<li>Requires documentation</li>
+<li>Fbx -&gt; RichAnimation issues</li>
+</ul>
+<h2 id="animation-editor">Animation Editor</h2>
+<ul>
+<li>AnimationEditorData</li>
+</ul>
+<h2 id="controls">Controls</h2>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h4 id="track-view">Track View</h4>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h4 id="scrubber">Scrubber</h4>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h4 id="graph">Graph</h4>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h4 id="dope-sheet">Dope Sheet</h4>
+<ul>
+<li>Requires documentation</li>
+</ul>
+<h4 id="controls-1">Controls</h4>
+<ul>
+<li>Requires documentation</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_source_documentation/editor.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

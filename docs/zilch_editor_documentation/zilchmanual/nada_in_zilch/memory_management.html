@@ -1,0 +1,539 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Types of Memory Storage | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Types of Memory Storage | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>This section covers the basics of memory management in Nada. Specifically, the topics covered include: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md#types-of-memory-storage">Types of Memory Storage</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md#allocating-memory">#allocating-memory</a>, and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md#freeing-memory">#freeing-memory</a></p>
+<h1 id="types-of-memory-storage">Types of Memory Storage</h1>
+<h2 id="by-value">By-Value</h2>
+<p>There are two main types of storage, <code>by-value</code> and <code>by-reference</code> (or <code>by-ref</code> for short). <code>By-value</code> is stored on the local stack and the storage is cleaned up once it goes out of scope. When passed into a function it copies data <code>by-value</code>. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/structs.md">Structs</a> and primitives are <code>by-value</code>.</p>
+<pre><code class="lang-lang=csharp,">struct ByValue
+{
+    var ID: Integer = 0;
+    constructor(guid: Integer)
+    {
+        this.ID = guid;
+    }
+     
+    [Static]
+    function IncrementID(a: ByValue)
+    {
+        a.ID += 1;
+    }
+    
+    function ToString() : String
+    {
+        return &quot;ID: `this.ID`\n&quot;;
+    }
+}
+</code></pre>
+<pre><code class="lang-name=Usage,">// If we were to test it:
+var byValA: ByValue = local ByValue(1111111);
+      
+Console.Write(&quot;byValA &quot;);
+Console.WriteLine(byValA.ToString());           // byValA ID: 1111111
+                                                  // by-value copy does not update the passed in argument.
+ByValue.IncrementID(byValA);                    // Since it was copied, the changes were to a 
+                                                  // local variable. The local variable is destroyed at 
+Console.Write(&quot;byValA &quot;);                       // the end of the function's scope.
+Console.WriteLine(byValA.ToString());           // byValA ID: 1111111
+</code></pre>
+<pre><code class="lang-name=Console">byValA
+ID: 1111111
+
+byValA
+ID: 1111111
+</code></pre>
+<h2 id="by-reference">By-Reference</h2>
+<p><code>By-reference</code> is stored on the heap and the storage is cleaned up once there are no longer references to it, or the handle is explicitly deleted in code. When passed into a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">function</a> it copies it <code>by-reference</code>. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">Classes</a> and structs promoted with the <code>ref</code> keyword are <code>by-reference</code>.</p>
+<h3 id="by-ref-storage-in-a-struct-and-a-class">By-Ref Storage in a Struct and a Class</h3>
+<pre><code class="lang-lang=csharp,">struct ByValue
+{
+    var ID: Integer = 0;
+    constructor(guid: Integer)
+    {
+        this.ID = guid;
+    }
+
+    [Static]
+    function IncrementID(a: ref ByValue)
+    {
+        a.ID += 1;
+    }
+      
+    function ToString() : String
+    {
+        return &quot;ID: `this.ID`\n&quot;;
+    }
+}
+</code></pre>
+<pre><code class="lang-name=ByRef">class ByRef
+{
+    var ID: Integer = 0;
+    constructor(guid: Integer)
+    {
+        this.ID = guid;
+    }
+
+    [Static]
+    function IncrementID(a: ByRef)
+    {
+        a.ID += 1;
+    }
+      
+    function ToString() : String
+    {
+        return &quot;ID: `this.ID`\n&quot;;
+    }
+}
+</code></pre>
+<pre><code class="lang-name=Usage,">// If we were to test ByValue:
+var byValC: ref ByValue = new ByValue(3333333);
+  
+Console.Write(&quot;byValC &quot;);
+Console.WriteLine(byValC.ToString());           // byValC ID: 3333333
+  
+ByValue.IncrementID(byValC);
+                                                // Similar to a pointer, by-ref argument allows for
+Console.Write(&quot;byValC &quot;);                       // persistent changes to its internals:
+Console.WriteLine(byValC.ToString());           // byValC ID: 3333334
+
+// If we were to test ByRef:
+var byRefA: ByRef = new ByRef(5555555);
+      
+Console.Write(&quot;byRefA &quot;);
+Console.WriteLine(byRefA.ToString());           // byRefA ID: 5555555
+  
+ByRef.IncrementID(byRefA);                      // Since classes are made to be passed by-reference
+                                                  // this works without adding the ref keyword
+Console.Write(&quot;byRefA &quot;);                       // (adding it would make it not compile!)
+Console.WriteLine(byRefA.ToString());           // byRefA ID: 5555556 
+</code></pre>
+<pre><code class="lang-name=Console">byValC 
+ID: 3333333
+
+byValC 
+ID: 3333334
+
+byRefA 
+ID: 5555555
+
+byRefA 
+ID: 5555556
+</code></pre>
+<h1 id="allocating-memory">Allocating Memory</h1>
+<h2 id="null">Null</h2>
+<p>Null is a special type of its own:</p>
+<pre><code class="lang-name=null,">Console.Write(typeid(null).Name);  // Null
+</code></pre>
+<p>NOTE: A <code>by-ref</code> type can be set to null, but a <code>by-value</code> type cannot.</p>
+<h2 id="creating-variables-by-value-and-by-ref">Creating variables <code>by-value</code> and <code>by-ref</code></h2>
+<h3 id="local">Local</h3>
+<p>When working with by-value types that have constructors, such as structs or more complex stack primitive data types, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">keyword</a> <strong>local</strong> may be used:</p>
+<pre><code class="lang-lang=csharp">var up: Real3 = local Real3(0.0, 1.0, 0.0);
+var stackStructInstance: CustomStruct = local CustomStruct();
+</code></pre>
+<p>The compiler will infer the use of local for by-value types:</p>
+<pre><code class="lang-lang=csharp">// This is also valid.
+var up: Real3 = Real3(0.0, 1.0, 0.0);
+var stackStructInstance: CustomStruct = CustomStruct();
+</code></pre>
+<h3 id="new">New</h3>
+<p>When working with classes, references, or other or anything located on the heap with a constructor, use the <strong>new</strong> keyword:</p>
+<pre><code class="lang-lang=csharp">var heapObject: CustomClass = new CustomClass();
+var heapStructInstance: ref CustomStruct = new CustomStruct();
+</code></pre>
+<p>Once again the compiler will infer the use of new for by-ref types:</p>
+<pre><code class="lang-lang=csharp">// This is also valid.
+var heapObject: CustomClass = CustomClass();
+</code></pre>
+<p>Since structs are by-value, in order to get a ref you <strong>must</strong> specify new.</p>
+<pre><code class="lang-lang=csharp">// This does not compile
+var heapStructInstance: ref CustomStruct = CustomStruct();
+</code></pre>
+<pre><code class="lang-name=Console">The value being assigned to 'heapStructInstance' must be of type 'ref CustomStruct'. Its type is 'CustomStruct'.
+</code></pre>
+<hr>
+<p>IMPORTANT: Nada does not currently have a dereferencing operator. Although you can still use the <code>ref</code> type with the <strong>dot operator</strong> to access functionality, those typed with <code>ref</code> will not be equivalent to the <code>non-ref</code> type. <em>Anything expecting a// <code>non-ref</code> //type will not accept a// <code>ref</code> //type without dereferencing.</em> Consider the following:</p>
+<pre><code class="lang-lang=csharp,">var heapObject: ref CustomStruct = new CustomStruct();
+// The following will not compile because they are different types:
+//              CustomStruct != ref CustomStruct
+var stackObject: CustomStruct = heapObject;
+</code></pre>
+<h2 id="constructors">constructors</h2>
+<p>Constructors are required when calling local or new. The only times you wouldn't have a constructor is when your class or struct lacks instanced data, or you are using a primitive data type that can be created from a literal.</p>
+<pre><code class="lang-lang=csharp">class MyClass
+{
+  constructor()
+  {
+    // Initialize members here.
+  }
+}
+</code></pre>
+<p>A class or struct may possess one or more constructors. Like <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">functions</a> they can be overloaded via their <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/named_parameters.md">named_parameters</a>. Special syntax is also used when constructing a derived class, see <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inheritance</a> for more.</p>
+<h1 id="freeing-memory">Freeing Memory</h1>
+<p>Nada does not have a full-fledged garbage collector, but it does have ref-counted handles. When you use local to make things on the stack they are cleaned up upon leaving the scope. When you use new to construct objects on the heap they are cleaned up when:</p>
+<ul>
+<li><p>You call delete on the handle.</p>
+</li>
+<li><p>No references to the object exist.</p>
+</li>
+</ul>
+<h2 id="important-things-to-note">Important things to note:</h2>
+<ol>
+<li>Nada <strong>cannot</strong> detect cycles. These must be deleted explicitly.</li>
+</ol>
+<pre><code class="lang-lang=csharp,">  // Cycles will not get cleaned up without explicitly deleting.
+  var gh: ARefHolder = new ARefHolder(&quot;gh&quot;);
+  var ef: ARefHolder = new ARefHolder(&quot;ef&quot;);
+  // Simply having one point at another is not
+  // a cycle, it cleans up just fine.
+  gh.Handle = ef; // Both gh &amp; ef will clean up at the end of the scope.
+  
+  var ab: ARefHolder = new ARefHolder(&quot;ab&quot;);
+  var ba: ARefHolder = new ARefHolder(&quot;ba&quot;);
+  
+  ab.Handle = ba;
+  ba.Handle = ab;
+  Console.WriteLine(&quot;Note ba's handle is valid: `ba.Handle`&quot;);
+  
+  // Cleans up when you explicitly delete one of the 
+  // Objects as it becomes null and nulls all references
+  // to it as ARefHolder is a NadaType.
+  delete ab;
+  Console.WriteLine(&quot;Note ba's handle has been made null: `ba.Handle`&quot;);
+  
+  var cd: ARefHolder = new ARefHolder(&quot;cd&quot;);
+  var dc: ARefHolder = new ARefHolder(&quot;dc&quot;);
+  
+  cd.Handle = dc;
+  dc.Handle = cd;
+  
+  // Making a reference type null does not delete it. 
+  // The object is still alive in dc's handle
+  // and since that handle has an object that refers 
+  // back to it; the cycle remains uncollected. (memory leak)
+  cd = null;
+  
+  var ij: ARefHolder = new ARefHolder(&quot;ij&quot;);
+  var ji: ARefHolder = new ARefHolder(&quot;ji&quot;);
+  
+  ij.Handle = ji;
+  ji.Handle = ij;
+  
+  // Making null the cyclic handle breaks the cycle
+  // allowing ref-counting to take care of the clean up:
+  ij.Handle = null;
+  
+  
+  var abc: ARefHolder = new ARefHolder(&quot;abc&quot;);
+  var bca: ARefHolder = new ARefHolder(&quot;bca&quot;);
+  var cab: ARefHolder = new ARefHolder(&quot;cab&quot;);
+  
+  abc.Handle = bca;
+  bca.Handle = cab;
+  cab.Handle = abc;
+  // Without deleting any of the objects
+  // e.g. delete abc;
+  // or breaking the cycle
+  // e.g. abc.Handle = null;
+  // abc, bca, and cab will leak.
+</code></pre>
+<ol start="2">
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/delegates.md">delegates</a> containing an instance member function hold the <code>this</code> handle to the object, and thus will keep ref-counted objects alive.</li>
+</ol>
+<pre><code class="lang-lang=csharp,">class Utility
+{
+  [Static]
+  function NullDelegate()
+  {
+  }
+}
+
+class DelegateHolder
+{
+  var Name:String = &quot;Unnamed&quot;;
+  var Greeting: delegate() = Utility.NullDelegate;
+  
+  constructor(name: String)
+  {
+    this.Name = name;
+  }
+  
+  function Introduce()
+  {
+    Console.WriteLine(&quot;Hi I'm `this.Name`&quot;);
+  }
+  
+  destructor()
+  {
+    onsole.WriteLine(&quot;Dtor: `this.Name`&quot;);
+  }
+}
+
+class Driver
+{
+  function DelegateLeaking()
+  {
+    // Here are five Objects with the ability to hold delegates:
+    var leaky = new DelegateHolder(&quot;Leaky&quot;);
+    var tarp = new DelegateHolder(&quot;Tarp&quot;);
+    var waterproof = new DelegateHolder(&quot;Waterproof&quot;);
+    var mop = new DelegateHolder(&quot;Mop&quot;);
+    var morph = new DelegateHolder(&quot;Morph&quot;);
+    
+    // This one has another object's delegate.
+    // There is no cycle so they are all cleaned up
+    // via ref-counting at the end of the scope.
+    tarp.Greeting = waterproof.Introduce;
+    
+    // This instance holds a delegate to its own function. 
+    // The delegate, referring to a member function, includes
+    // a handle to the instance it is associated with.
+    // This creates a cycle between the delegate and the 
+    // the instance.
+    leaky.Greeting = leaky.Introduce; // This will leak. 
+    mop.Greeting = mop.Introduce;
+    morph.Greeting = morph.Introduce;
+
+    // To not leak you'd have to either manually delete: 
+    delete mop;
+
+    // or break the cycle by changing
+    // what the delegate points to:
+    morph.Greeting = tarp.Introduce;
+    
+    // Upon completion the console prints out:
+    // Dtor: Mop
+    // Dtor: Morph
+    // Dtor: Tarp
+    // Dtor: Waterproof
+    // The Dtor for Leaky is never called; it is a
+    // memory leak in this snippet.   
+  }
+}
+</code></pre>
+<h2 id="deleting-variables">Deleting variables</h2>
+<pre><code class="lang-lang=csharp,">// Using ByValue and ByRef as defined above &amp; the Utility class:
+class Utility
+{
+  [Static]
+  function SafeToString(a: ref ByValue, name: String)
+  {
+    Console.Write(name);
+    if (a == null)
+    {
+      Console.WriteLine(&quot; is null&quot;);
+    }
+    else
+    {
+      Console.WriteLine(a.ToString());
+    }
+  }
+  
+  [Static]
+  function SafeToString(a: ByRef, name: String)
+  {
+    Console.Write(name);
+    if (a == null)
+    {
+      Console.WriteLine(&quot; is null&quot;);
+    }
+    else
+    {
+      Console.WriteLine(a.ToString());
+    }
+  }
+}
+</code></pre>
+<pre><code class="lang-name=Examples">// Examples of deleting:
+
+// 1. Delete a by-value struct instance:
+var byValA: ByValue = local ByValue(1111111);
+// Unable to delete a non reference type;
+delete byValA; // This line won't compile.
+
+// 2. Delete an instance of a struct promoted to by-reference:
+var byValB: ref ByValue = new ByValue(1111111);
+var byValC: ref ByValue = byValB;
+var byValD: ref ByValue = byValB;
+var byValK: ref ByValue = byValC;
+
+// Utility function calls ToString method, when ref is valid.
+// If invalid, it indicates it is null.
+Utility.SafeToString(byValB, &quot;byValB&quot;);  // byValBID: 1111111
+Utility.SafeToString(byValC, &quot;byValC&quot;);  // byValCID: 1111111
+Utility.SafeToString(byValD, &quot;byValD&quot;);  // byValDID: 1111111
+Utility.SafeToString(byValK, &quot;byValK&quot;);  // byValKID: 1111111
+
+// Simply use the delete keyword on the handle.
+delete byValB; 
+// Since these are all handles to NadaTypes, all references
+// are made null.
+Utility.SafeToString(byValB, &quot;byValB&quot;);  // byValB is null
+Utility.SafeToString(byValC, &quot;byValC&quot;);  // byValC is null
+Utility.SafeToString(byValD, &quot;byValD&quot;);  // byValD is null
+Utility.SafeToString(byValK, &quot;byValK&quot;);  // byValK is null
+
+// 3. Delete an instance of a class:
+var byRefA: ByRef = new ByRef(22222222);
+var byRefB: ByRef = byRefA;
+var byRefC: ByRef = byRefA;
+var byRefK: ByRef = byRefC;
+
+Utility.SafeToString(byRefA, &quot;byRefA&quot;);  // byRefAID: 22222222
+Utility.SafeToString(byRefB, &quot;byRefB&quot;);  // byRefBID: 22222222
+Utility.SafeToString(byRefC, &quot;byRefC&quot;);  // byRefCID: 22222222
+Utility.SafeToString(byRefK, &quot;byRefK&quot;);  // byRefKID: 22222222
+
+delete byRefA;
+
+// Since these are all handles to NadaTypes, all references
+// are made null.
+Utility.SafeToString(byRefA, &quot;byRefA&quot;);  // byRefA is null
+Utility.SafeToString(byRefB, &quot;byRefB&quot;);  // byRefB is null
+Utility.SafeToString(byRefC, &quot;byRefC&quot;);  // byRefC is null
+Utility.SafeToString(byRefK, &quot;byRefK&quot;);  // byRefK is null
+</code></pre>
+<h3 id="important-things-to-note-1">Important things to note:</h3>
+<ol>
+<li><p>Nada <strong>always</strong> sets the deleted handle to null after deletion. Only if the handle points to a <em>NadaType// does it make null the other objects referencing it. It //cannot</em> automatically do things for objects bound through C++. In order to have C++ BoundTypes work the same as NadaTypes it must be handled in C++ by the object bound.</p>
+</li>
+<li><p>Deleting in Nada forwards delete calls to C++ bound objects. Thus, when you call delete in Nada on a C++ BoundType, that bound type will have the C++ delete called allowing it to call its destructor.</p>
+</li>
+</ol>
+<h2 id="destructors">Destructors</h2>
+<pre><code class="lang-lang=csharp">class MyClass
+{
+  constructor()
+  {
+    // Initialize members here.
+  }
+  
+  destructor()
+  {
+    // Do any object clean-up here.
+  }
+}
+</code></pre>
+<p>Destructors allow you to do any necessary clean up on your part, such as free memory. You can only have one, and there are no parameters or return values. It's important to know that stack allocated instances (i.e. non-ref <code>by-value</code> types, or non-ref primitives) have no guarantee they'll call the destructor. Only those objects with handles that do not leak are guaranteed to have their destructors called.</p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">Classes</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/structs.md">Structs</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">Functions</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">Keywords</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/named_parameters.md">named_parameters</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inheritance</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/delegates.md">delegates</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

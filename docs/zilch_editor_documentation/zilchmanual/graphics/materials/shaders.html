@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Shader Translation Debug Helper | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Shader Translation Debug Helper | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/materials/shaders.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Shaders may be added to Zilch in the form of NadaFragments, allowing the user to write shaders using the Nada language. Zilch currently supports the following types of shaders:</p>
+<ul>
+<li><strong>Pixel</strong> - Operates on individual pixels, setting and changing their properties.</li>
+<li><strong>Vertex</strong> - Operates on individual vertices, setting and changing their properties.</li>
+<li><strong>Geometry</strong> - Operates on transformed primitives (e.g. point, lines,  triangles), setting and changing their properties.</li>
+<li><strong>PostProcess</strong> - Operates on the window of an entire scene, after that scene has been processed.</li>
+</ul>
+<p>When adding a new NadaFragment, there are multiple templates for each type of shader:</p>
+<table>
+<thead>
+<tr>
+<th>Shader</th>
+<th>Template</th>
+<th>Source</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pixel</td>
+<td>Pixel Annotated</td>
+<td>P559</td>
+<td>All of the built-in inputs  that may be used have been commented.</td>
+</tr>
+<tr>
+<td>Pixel</td>
+<td>Pixel Empty</td>
+<td>P561</td>
+<td>No inputs or outputs pre-defined.</td>
+</tr>
+<tr>
+<td>Pixel</td>
+<td>Pixel Normal Map</td>
+<td>P560</td>
+<td>Uses a NormalMap to perturb the surface normal</td>
+</tr>
+<tr>
+<td>Vertex</td>
+<td>Vertex Annotated</td>
+<td>P562</td>
+<td>All of the built-in inputs that may be used have been commented.</td>
+</tr>
+<tr>
+<td>Vertex</td>
+<td>Vertex Empty</td>
+<td>P564</td>
+<td>No inputs or outputs pre-defined.</td>
+</tr>
+<tr>
+<td>Vertex</td>
+<td>Vertex Oscillate</td>
+<td>P563</td>
+<td>Demonstration of a vertex shader that applies a simple oscillation to all vertices.</td>
+</tr>
+<tr>
+<td>Geometry</td>
+<td>Point To Quad</td>
+<td>P565</td>
+<td>Demonstration of generating geometry, creating quads from points.</td>
+</tr>
+<tr>
+<td>Geometry</td>
+<td>Polygon Normals</td>
+<td>P566</td>
+<td>Demonstration of manipulating geometry, changing normals of a triangle.</td>
+</tr>
+<tr>
+<td>PostProcess</td>
+<td>Post Process Blur</td>
+<td>P567</td>
+<td>Applies a simple post-process blur effect.</td>
+</tr>
+<tr>
+<td>PostProcess</td>
+<td>Post Process Copy</td>
+<td>P568</td>
+<td>Copies a texture.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="shader-translation-debug-helper">Shader Translation Debug Helper</h1>
+<p>This tool translates Materials�rather, thNadachFragments that make up the Material�into different versions of the shader language GLSL.</p>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#debugshadertranslation"> DebugShaderTranslation</a> will open the tool</p>
+<p>On the left hand side of the window are properties that set the parameters that define the shaders to be be translated: CoreVertex enum, Material enum, and RenderPass enum. <code>Translation Language</code> set the version of GLSL to translate to.  These options set what exactly will be translated. Material enum, for example, sets the Material to be translated as its name would suggest.</p>
+<p>Here's a screenshot of a dragon material made for PBR:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/88445.png" alt="Gold Dragon Material"> <strong>Figure 1</strong>: A material to apply to a dragon material made with PBR in mind.</p>
+<p>Figure 1 shows that the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/materials_overview.md">Material</a> has Material Blocks for the four inputs expected by the physically-based renderer as well as a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/normal_map.md">NormalMap</a>. When setting the Material enum to the Golden Dragon material and and set LightPass enum the shader outputs are:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/88447.png" alt="Gold Dragon Light Pass"></p>
+<p>If not familiar with GLSL, these will become overwhelmingly complex very quickly. With at least an intermediate amount of experience in GLSL, however, this translator provides a valuable tool for debugging your NadaFragment shaders. Changing the other attributes to different settings will result in different outputs, so try to make sure that the attributes selected line up to the location on the render pipeline.</p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/normal_map.md">normal_map</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/materials_overview.md">Material</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/materials/shaders.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/collider.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Component</code> <code>Physics</code></p>
+<p>(NOTE) A collider controls how collision detection is performed for an object. A collider also gives mass properties to a RigidBody(via the material and volume). If there is no RigidBody associated with this collider then it is considered static. Note: colliders without RigidBodies should not be moved at run-time!</p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#computevolume-zilch-engin">ComputeVolume</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#activebody-zilch-engine-d">ActiveBody</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/component.md">component</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">boxcollider</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#getpointvelocity-zilch-en">GetPointVelocity</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#collisiongroup-zilch-engi">CollisionGroup</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/capsulecollider.md">capsulecollider</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#contactcount-zilch-engine">ContactCount</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/convexmeshcollider.md">convexmeshcollider</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#contacts-zilch-engine-doc">Contacts</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cylindercollider.md">cylindercollider</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#ghost-zilch-engine-docume">Ghost</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/ellipsoidcollider.md">ellipsoidcollider</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#jointcount-zilch-engine-d">JointCount</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/heightmapcollider.md">heightmapcollider</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#joints-zilch-engine-docum">Joints</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/meshcollider.md">meshcollider</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#material-zilch-engine-doc">Material</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/multiconvexmeshcollider.md">multiconvexmeshcollider</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#offset-zilch-engine-docum">Offset</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spherecollider.md">spherecollider</a></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#sendsevents-zilch-engine">SendsEvents</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#worldaabb-zilch-engine-do">WorldAabb</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md#worldboundingsphere-zero">WorldBoundingSphere</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="activebody--rigidbody">ActiveBody : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">rigidbody</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>The rigid body that &quot;owns&quot; this collider. This is the body that forces/impulses/etc... should be applied to.</p>
+<pre><code class="lang-lang=cpp,">var ActiveBody : RigidBody
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="collisiongroup--collisiongroup">CollisionGroup : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiongroup.md">collisiongroup</a></h1>
+<blockquote>
+<p>The collision group is a tag used to alter collision behavior based upon the space's CollisionTable.</p>
+<pre><code class="lang-lang=cpp,">var CollisionGroup : CollisionGroup
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="contactcount--integer">ContactCount : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>The current number of contacts/collisions with this collider.</p>
+<pre><code class="lang-lang=cpp,">var ContactCount : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="contacts--contactrange">Contacts : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/contactrange.md">contactrange</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>A range of all contacts for this collider.</p>
+<pre><code class="lang-lang=cpp,">var Contacts : ContactRange
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="ghost--boolean">Ghost : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Ghosted colliders do not resolve collision. They do still detect collisions and send events. Ghosted colliders are typically used for trigger regions.</p>
+<pre><code class="lang-lang=cpp,">var Ghost : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="jointcount--integer">JointCount : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>The number of joints attached to this collider.</p>
+<pre><code class="lang-lang=cpp,">var JointCount : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="joints--jointrange">Joints : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/jointrange.md">jointrange</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>A range of all joints attached to this collider.</p>
+<pre><code class="lang-lang=cpp,">var Joints : JointRange
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="material--physicsmaterial">Material : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md">physicsmaterial</a></h1>
+<blockquote>
+<p>The material used to determine the density, restitution, and friction of this collider.</p>
+<pre><code class="lang-lang=cpp,">var Material : PhysicsMaterial
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="offset--real3">Offset : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a></h1>
+<blockquote>
+<p>Moves the physics defined center of the object away from the transform's translation. Used to move physics to match a model.</p>
+<pre><code class="lang-lang=cpp,">var Offset : Real3
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="sendsevents--boolean">SendsEvents : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Determines if this object will send collision events. Used mainly for increasing performance by not sending unnecessary collision events.</p>
+<pre><code class="lang-lang=cpp,">var SendsEvents : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldaabb--aabb">WorldAabb : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/aabb.md">aabb</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns the world-space axis aligned bounding box (Aabb) of this collider.</p>
+<pre><code class="lang-lang=cpp,">var WorldAabb : Aabb
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="worldboundingsphere--sphere">WorldBoundingSphere : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sphere.md">sphere</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns the world-space bounding sphere of this collider.</p>
+<pre><code class="lang-lang=cpp,">var WorldBoundingSphere : Sphere
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="computevolume--real">ComputeVolume : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<p>Compute the world-space volume of this collider.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function ComputeVolume() : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getpointvelocity--real3">GetPointVelocity : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a></h1>
+<blockquote>
+<p>Returns the point velocity of a world-space point with respect to the current rigid body's linear and angular velocity. If there is no rigid body this returns zero.
+|Name|Type|Description|
+|---|---|---|
+|worldPoint|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a>| |</p>
+<pre><code class="lang-lang=cpp,">function GetPointVelocity(worldPoint : Real3) : Real3
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/collider.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

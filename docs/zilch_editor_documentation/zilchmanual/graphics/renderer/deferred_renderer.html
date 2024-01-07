@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Deferred Renderer | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Deferred Renderer | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/renderer/deferred_renderer.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="deferred-renderer">Deferred Renderer</h1>
+
+<p>The Deferred Renderer is the default, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/physically_based_rendering.md">pbr</a>-based renderer that most users will use.  This renderer uses the attributes of pbr found on <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/materials_overview.md">materials</a> to create the final scene we see in the game.  The renderer can be found as a component of the default object named &quot;Renderer&quot; in the Objects window.  It also utilizes <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer/bloom.md">bloom.md</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer/ssao.md">Screen Space Ambient Occlusion</a> if the two components, <code>name=bloom</code> and <code>name=SSAO</code>, are found on the same object.  The DeferredRenderer has the {nav name=[RunInEditor]} attribute on its class, so the renderer can be used in the level editor.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46567.png" alt="image"> <em>DeferredRenderer component</em></p>
+<h2 id="deferred-renderer-ui-overview">Deferred Renderer UI Overview</h2>
+<p>GeometryDebug drop-down menu:  Draw one of the properties used in the final target instead of the final target itself.  Depending on the given property, it's value at each fragment is used as the color.</p>
+<ul>
+<li><strong>None:</strong> Draw the final target.</li>
+<li><strong>Normal:</strong> The surface normal in world space.</li>
+<li><strong>Depth:</strong> The distance to the camera.</li>
+<li><strong>Roughness:</strong> The roughness value from the texture.</li>
+<li><strong>Albedo:</strong> The albedo value from the model's texture.</li>
+<li><strong>Metallic:</strong> The metallic value from the model's texture.</li>
+<li><strong>Specular:</strong> The specular value of the model.
+EditorDebugDraw checkBox: Toggle adding debug drawn content to the final render in the editor.
+GameDebugDraw checkBox: Toggle adding debug drawn content to the final render in the game session.
+RenderDiffuse checkBox: Toggle the diffuse light on a fragment.
+RenderSpecular checkBox: Use the specular light on a fragment.
+RenderSkybox checkBox: Toggle drawing the skybox.
+Skybox texture: A texture used as the skybox for that renderer.
+ClearColor : The color to draw before the skybox.
+DirectLighting checkBox: Toggle applying lighting from light components.
+IndirectLighting checkBox: Toggle applying image based lighting from the Skybox.
+IndirectIntensity : A multiplier for the ammount of indirect lighting to apply.  In general, this value should remain in the range <code>[0,1]</code>, where <code>0</code> means to use no indirect lighting, and <code>1</code> means to apply all of it.
+ToneMap checkBox: Toggle applying tone mapping.</li>
+</ul>
+<h1 id="forward-renderer">Forward Renderer</h1>
+<p>The <code>ForwardRenderer</code> is similar to the <code>DeferredRenderer</code>, except the forward renderer only supports a maximum of one <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/lighting/direct_lighting/directional_light.md">directional light</a>.  There's a performance gain when switching from deferred to forward rendering, and it comes from reducing the number of render passes.  Not only will one light be taken into consideration when rendering, but lighting is computed in the same render pass that a {icon university}[[zilch_engine_documentation/zilch_editor_documentation/zilchmanual/graphics/models/model_component/|model's]] geometry is computed.  In addition, there is no GeometryDebug drop-down menu on the <code>ForwardRenderer</code> since there's no geometry pass.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46570.png" alt="image"> <em>ForwardRenderer Component</em></p>
+<h2 id="forward-renderer-ui-differences">Forward Renderer UI Differences</h2>
+<p>DirectionalLight cogPath: A cogpath to the one directional light that the <code>ForwardRenderer</code> will use.</p>
+<h1 id="debug-drawing">Debug Drawing</h1>
+<p>Every render task that shares the <code>DebugRenderGroup</code> is associated with some debug drawing feature of the editor, such as the grid or translation arrows.  These are the types of features that are toggled with DebugDraw checkBox.</p>
+<h2 id="normal">Normal</h2>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/3030.png" alt="pasted_file"></p>
+<p>Geometry Debugging allows the user to view certain values in the deferred renderer pipeline.  When troubleshooting issues relating to lighting, one may wonder if the vertex normals of a model are applied in the way they intended, or if the normal map was applied correctly.  In this case, one would want to set GeometryDebug drop-down menu to <strong>Normal</strong>, which associates the world normal of a point on a surface with a color, and so green is upwards, red is in the positive x direction and blue is in the positive z direction.  Each of the three colors are also found on the view cube in the same directions.</p>
+<h2 id="depth">Depth</h2>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/3032.png" alt="pasted_file"></p>
+<p>The <code>Depth</code> option uses the z value in view space as the red, green, and blue components.  This means the resultant color will be a grey scale value, where brighter fragments are further from the camera.  This can be useful when looking for changes in depth and whether the transition is smooth or instant.</p>
+<h2 id="other-texture-maps">Other Texture Maps</h2>
+<p>Each fragment on a surface samples from a texture to get Albedo, Roughness, or Metallic values.  Each of these properties can be debug drawn using GeometryDebug drop-down menu.</p>
+<h1 id="diffuse-and-specular-light">Diffuse and Specular Light</h1>
+<p>When analyzing how light bounces off a surface, we can categorize the light as either diffuse or specular.  Each photon on it's own follows one behavior or the other, but when many photons hit a surface, we view the surface as a weighted distribution of specular and diffuse.  These properties aren't directly edited, but are a result of the other PBR material inputs.  Specular light refers to photons that reflect off a surface.  Diffuse light is scattered off a surface in every direction, a result of subsurface scattering.  Both of these elements can be enabled and disabled with ShowDiffuse checkBox and ShowSpecular checkBox</p>
+<h1 id="direct-and-indirect-light">Direct and Indirect Light</h1>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/lighting/indirect_lighting.md">Indirect Lighting</a> comes from using Image Based Lighting on the skybox in the scene.  The skybox is a background texture, defined by Skybox texture, that wraps around the world.  It represents things that are so far away, that they are only effected by rotation of the camera, and not translation.  For example, if you see a mountain in the distance, looking downwards causes the mountain to move up with respect to you.  If you sidestep to the right, the mountain remains static.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/28453.gif" alt="TranslateCamera_RotateCamera"></p>
+<p>Direct lighting is the light that comes from every other light in the scene.</p>
+<p>Both direct and indirect lighting can be enabled and disabled using DirectLighting checkBox and IndirectLighting checkBox.  Disabling DrawSkybox checkBox will remove the skybox from the final render, but won't remove the effects of indirect lighting.  IndirectIntensity  defines the amount of indirect lighting summed into the final render.</p>
+<h1 id="tone-mapping">Tone Mapping</h1>
+<p>Tone mapping uses a function to take a color value and remap it to a new value.  It's a technique that's often used to emphasize the brightness of a fragment.  Light is added together linearly, so if two lights each give a color value of <code>0.5</code> to a fragment, the resultant fragment will have a color value of <code>1</code>.  The problem with linear lighting, or lighting without tone mapping, is that the resultant color is clamped.  The same two lights might give a different fragment a color value of <code>0.75</code> each, and yet the resultant fragment will still have a color value of <code>1</code>.</p>
+<p>Using tone mapping, we convert our linear light into a gamma range.  Small color values remain about the same, while large color values approach <code>1</code> without ever reaching it.  This is realistic, as no light is 100% bright.  Tone Mapping can be enabled and disabled using ToneMap checkBox.</p>
+<h1 id="related-material">Related Material</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/lighting/direct_lighting.md">Direct Lighting</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/lighting/indirect_lighting.md">Indirect Lighting</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/models/model_component.md">model_component</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/physically_based_rendering.md">physically_based_rendering</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/renderer/deferred_renderer.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

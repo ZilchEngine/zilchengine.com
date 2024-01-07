@@ -1,0 +1,751 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/nada_base_types/array_t.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Core</code></p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[ Add](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#add-void)</td>
+<td>[ All](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#all-zilch-engine-document)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ Constructor](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#array-t-void)</td>
+<td>[ Capacity](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#capacity-zilch-engine-doc)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ Clear](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#clear-void)</td>
+<td>[ Count](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#count-zilch-engine-docume)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ Copy](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#copy-zilch-engine-documen)</td>
+<td>[ LastIndex](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#lastindex-zilch-engine-do)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ FindFirstIndex](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#findfirstindex-zilch-engi)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ Get](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#get-zilch-engine-document)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ Insert](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#insert-void)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ Pop](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#pop-zilch-engine-document)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ Push](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#push-void)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ Range](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#range-zilch-engine-docume)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ RemoveAll](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#removeall-zilch-engine-do)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ RemoveAt](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#removeat-void)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ RemoveFirst](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#removefirst-zilch-engine)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ RemoveSwap](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#removeswap-void)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ Reserve](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#reserve-void)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ Resize](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#resize-void)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ Set](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#set-void)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ Sort](<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t">https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t</a> .md#sort-void)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="all--arrayranget">All : ArrayRange[T]</h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var All : ArrayRange[T]
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="capacity--integer">Capacity : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var Capacity : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="count--integer">Count : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var Count : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="lastindex--integer">LastIndex : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LastIndex : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="add--void">Add : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td>T</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function Add(p0 : T)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="arrayt--void">Array[T] : Void</h1>
+<p><code>constructor</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function Array[T]()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="arrayt--void-1">Array[T] : Void</h1>
+<p><code>constructor</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function Array[T](size : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="arrayt--void-2">Array[T] : Void</h1>
+<p><code>constructor</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
+<td></td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>T</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function Array[T](size : Integer, defaultValue : T)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="clear--void">Clear : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function Clear()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="copy--arrayt">Copy : Array[T]</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function Copy() : Array[T]
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="findfirstindex--integer">FindFirstIndex : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>T</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function FindFirstIndex(value : T) : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="get--t">Get : T</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function Get(index : Integer) : T
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="insert--void">Insert : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td>T</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function Insert(index : Integer, value : T)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="pop--t">Pop : T</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function Pop() : T
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="push--void">Push : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p0</td>
+<td>T</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function Push(p0 : T)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="range--arrayranget">Range : ArrayRange[T]</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
+<td></td>
+</tr>
+<tr>
+<td>count</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function Range(start : Integer, count : Integer) : ArrayRange[T]
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="removeall--integer">RemoveAll : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>T</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function RemoveAll(value : T) : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="removeat--void">RemoveAt : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function RemoveAt(index : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="removefirst--boolean">RemoveFirst : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>T</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function RemoveFirst(value : T) : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="removeswap--void">RemoveSwap : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function RemoveSwap(index : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="reserve--void">Reserve : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>capacity</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function Reserve(capacity : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="resize--void">Resize : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function Resize(size : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="resize--void-1">Resize : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
+<td></td>
+</tr>
+<tr>
+<td>defaultValue</td>
+<td>T</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function Resize(size : Integer, defaultValue : T)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="set--void">Set : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>index</td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td>T</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function Set(index : Integer, value : T)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="sort--void">Sort : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compare</td>
+<td>delegate(left:any,right:any):<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function Sort(compare : delegate(left:any,right:any):Boolean)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="sort--void-1">Sort : Void</h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compare</td>
+<td>delegate(left:any,right:any):<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-lang=cpp,">function Sort(compare : delegate(left:any,right:any):Integer)
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/nada_base_types/array_t.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

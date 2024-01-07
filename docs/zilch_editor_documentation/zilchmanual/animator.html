@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Why it exists | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Why it exists | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/animator.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>The Animator allows one to change the value of properties on components over time.</p>
+<h1 id="why-it-exists">Why it exists</h1>
+<p>Animator allows one to custom build complex animations through the Zilch Editor using a graphical representation. Using the Animator, one can create multiple Keyframes (explained below) of a component's properties on a timeline to achieve complex animation.</p>
+<p>These are some examples of the type of animation the Animator can do:</p>
+<ul>
+<li>Moving Platforms</li>
+<li>Day/Night cycles</li>
+<li>Flickering lights</li>
+<li>Opening doors</li>
+<li>Cinematic Events</li>
+<li>UI animations</li>
+<li>and more...</li>
+</ul>
+<h1 id="opening-the-animator">Opening the Animator</h1>
+<p>The Animator can be accessed by pressing the following button at the top of the Zilch Editor window:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47602.png" alt="AnimatorToolButton"></p>
+<p>Alternatively, it can also be opened through the <code>Zilch Search</code> window:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47604.png" alt="AnimatorSearchWindow"></p>
+<p>Once it has been opened, a window will appear at the bottom of the Editor :</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47606.png" alt="AnimatorGraph"></p>
+<h1 id="animationgraph-component">AnimationGraph Component</h1>
+<p>Before animating an object's properties using the Animator, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/animationgraph.md">AnimationGraph</a> component must first be added to that object. This tells Zilch that this object's properties are now able to be animated as well as how fast it should be played. The <code>AnimationGraph</code> component is added to an object the same as any other component or by clicking on the highlighted text at the bottom of the screen:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47608.png" alt="AddAnimationGraph"></p>
+<p>NOTE: <strong>&quot;No Object Selected.&quot;</strong>  If the Animator shows <code>No Object Selected</code> instead of <code>Click to add Animation Graph</code>, click on the object to be animated to proceed.</p>
+<h1 id="adding-an-animation">Adding an Animation</h1>
+<p>The last setup step is to create an Animation with the RichAnimation template. This can be done, through Zilch's <code>Add a Resource</code> window:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47610.png" alt="AddAnimationResource"></p>
+<p>This can also be done by clicking on the highlighted text at the bottom of the screen:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47612.png" alt="CreateNewAnimation"></p>
+<p>The object should now have a new <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/simpleanimation.md">SimpleAnimation</a> component.</p>
+<h1 id="simpleanimation-component">SimpleAnimation Component</h1>
+<p>This component indicates which animation to associate with the object. From this component, the animation to play as well as the play mode of the animation can be chosen.</p>
+<p>NOTE: <strong>Using Animation</strong>  Since animation to play can be chosen through the SimpleAnimation Component, one can easily create an animation that works with multiple objects. Just add an AnimationGraph component and a SimpleAnimation component to the other object and select the animation to use.</p>
+<p>Now everything is ready to start animating.</p>
+<h1 id="keyframes">Keyframes</h1>
+<p>To begin animating, keyframes must be created. Keyframes tell the animation that, at a given point in time, a property should be set to a certain value. Between each keyframe, the Animator will create a curve that will interpolate the chosen property values between each keyframe.</p>
+<p>To choose the property to keyframe, click on the <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/1129.png" alt="key"> icon next to the property that should be animated. This will create a keyframe of that property, with its current value, at the time indicated by the <strong>Play Head</strong> (the vertical blue bar in the animation graph):</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47615.png" alt="PlayHead"></p>
+<p>The Animator creates a curve interpolating between the two values. By repeating this, you can create multiple keyframe with the chosen time and value:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47617.png" alt="AnimationCurve"></p>
+<p>Next, the animation controls on the lower left corner will be used to play and see the animation in action.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47619.png" alt="AnimationControls"></p>
+<h1 id="animation-list">Animation List</h1>
+<p>On the left-hand side of the Animator window window, the name of the animation that has been created can be seen. This location shows the current animation that is being edited along with the values being manipulated. It also allows one to switch to different animations, allowing easy editing of more than one animation.</p>
+<h1 id="animation-controls">Animation Controls</h1>
+<p>By default, the animation plays at <strong>30 frames per second</strong>, meaning that if a second keyframe was at frame 30, the animation will take exactly one second to complete.</p>
+<p>The animation control panel allows one to play, play in reverse, step frames and move to the beginning or end of an animation, providing different methods to preview and fine tune the value changes over time.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47621.png" alt="AnimationStepControls"></p>
+<p>At the bottom of the animation controls the animation preview playmode may be set:</p>
+<ul>
+<li><code>Play Once</code> plays the animation and stops when the animation is over</li>
+<li><code>Loop</code> plays the animation again after it's over and repeats it indefinitely</li>
+<li><code>Pingpong</code> plays the animation forward and then backward after it's over and repeats it indefinitely</li>
+</ul>
+<p>Take note that these changes do not take effect in-game. The in-game playmode may be changed through the object's SimpleAnimation component.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47623.png" alt="PlaymodePreview"></p>
+<ul>
+<li><code>Preview Time Scale</code> determines how fast the animation is played when previewed. This does not affect the in-game speed. The in-game timescale can be adjusted through the object's AnimationGraph Component.</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/1134.png" alt="timescale"></p>
+<h1 id="animator-settings">Animator Settings</h1>
+<p>Here is a list of the other settings and functionalities of the Animator:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47625.png" alt="AnimatorFunctionality"></p>
+<p>From left to right:</p>
+<ul>
+<li>X  A field that displays the position of a key with respect to time (Horizontal Axis)</li>
+<li>Y  A field that displays the position of a key with respect to its value (Vertical Axis)</li>
+<li>AutoKey button Allows for dynamically creating keys whenever the property of the object is altered.</li>
+<li>AutoFocus button Frames the selected curve or collection of keys on the animator screen when the curve changes (also accessible by pressing F)</li>
+<li><code>Snapping X</code> When toggled, the playhead will snap to the nearest X value.</li>
+<li><code>Onion Skinning</code> When toggled displays ghost versions of the object with property values equivalent to frames close to the <strong>Play Head</strong></li>
+<li>{nav icon=square-o, name=Frames/Timecodes} Swaps between frames and timecode display at the bottom of the Playhead</li>
+<li><code>Linear Tangents</code> Toggles whether to use linear tangents to edit the curve</li>
+<li><code>Split Tangents</code> Toggle between splitting and joining the tangent between the left and right side of the point</li>
+<li><code>Weighted Tangents</code> Toggle between weighted and non-weighted tangents</li>
+</ul>
+<h1 id="examples">Examples</h1>
+<h2 id="moving-platform">Moving Platform</h2>
+<p>It is very easy to create a moving platform by using the Animator.</p>
+<p>First, add an AnimationGraph and SimpleAnimation component to the platform. Next create a new animation to edit.</p>
+<p>Keyframe the initial position of the platform. Next move the playhead to sometime in the future (this will determine how fast the platform will move ) and have a keyframe of the platform at the end location.</p>
+<p>Finally, the platform will move back and forth by selecting the <code>Pingpong</code> playmode on the platform's SimpleAnimation component.</p>
+<h2 id="day-night-cycle">Day-night Cycle</h2>
+<p>It is also very easy to create a day-night cycle by using the animator.</p>
+<p>Here, a Sun object is centered at the center of the level. Parented to the Sun object, there is a directional light object that lights the level from a distance away. The goal is to simulate a day-night cycle by rotating the light around the level with the light always facing the center of the level.</p>
+<p>This can be done by adding the AnimationGraph and SimpleAnimation component to the Sun object. Then a new animation must be created.</p>
+<p>Next, keyframe the starting position of the Sun object rotation property. Move the playhead forward and create another keyframe. Click on the appropriate rotation property in the Animator and change the Y value of the Animator settings to the value <code>360</code>.</p>
+<p>Finally, set the playmode to loop.</p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="code-reference">Code Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/animationgraph.md">AnimationGraph</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/simpleanimation.md">SimpleAnimation</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/animator.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Learning Objectives | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Learning Objectives | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/scripting/debugdrawing.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="learning-objectives">Learning Objectives</h1>
+
+<ul>
+<li>Drawing debug primitives</li>
+</ul>
+<p>Often when developing a game we may we run into data that is hard to interpret from just printing to the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/console.md">console</a>. Values such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md#velocity-zilch-engine-doc">Velocity</a> or the direction a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md"> Cog </a> is facing are better represented visually than by numerical values. DebugDraw objects are a useful debuging technique that allows us to draw simple primitives to visually represent data in the game itself.</p>
+<h1 id="level-setup">Level Setup</h1>
+<ul>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createcube"> CreateCube</a></p>
+</li>
+<li><p>In the <code>Properties Window</code></p>
+</li>
+<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></p>
+</li>
+<li><p>Set Translation  to <code>[0, -2, 0]</code></p>
+</li>
+<li><p>Set Scale  to <code>[20, 1, 1]</code></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></p>
+</li>
+<li><p>Create a NadaScript resource using the Component template template and name it <code>DebugLauncher</code></p>
+</li>
+<li><p>Update the <code>DebugLauncher</code> class to the following:</p>
+</li>
+</ul>
+<pre><code class="lang-name=DebugLauncher,">class DebugLauncher : NadaComponent
+{
+  [Dependency] var RigidBody : RigidBody;
+  [Dependency] var Transform : Transform;
+  
+  [Property]
+  var Camera : CogPath = CogPath();
+  
+  var Drawing : Boolean = false;
+  
+  var Target : Real3;
+  
+  var TargetLine : DebugLine = DebugLine();
+  
+  function Initialize(init : CogInitializer)
+  {
+    this.TargetLine.Color = Colors.Red;
+    Zilch.Connect(this.Space, Events.MouseDown, this.OnMouseDown);
+    Zilch.Connect(this.Space, Events.MouseUp, this.OnMouseUp);
+    Zilch.Connect(this.Space, Events.FrameUpdate, this.OnFrameUpdate);
+  }
+
+  function OnMouseDown(event : ViewportMouseEvent)
+  {
+    Console.WriteLine(&quot;Drawing&quot;);
+    this.Drawing = true;
+  }
+
+  function OnMouseUp(event : ViewportMouseEvent)
+  {
+    Console.WriteLine(&quot;Not Drawing&quot;);
+    this.Drawing = false;
+    this.RigidBody.Velocity = this.Target - this.Transform.Translation;
+  }
+
+  function OnFrameUpdate(event : UpdateEvent)
+  {
+    if(!this.Drawing)
+      return;
+    
+    var mouseScreenPos = Zilch.Mouse.ClientPosition;
+    var mouseWorldPos = this.Camera.CameraViewport.ScreenToWorldZPlane(mouseScreenPos, 0.0);
+    this.Target = mouseWorldPos;
+  }
+}
+</code></pre>
+<p>Notice we use <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#frameupdate">FrameUpdate</a> as opposed to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate">LogicUpdate</a>. Generally, debug drawing should still occur when a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/timespace.md">TimeSpace</a> is paused, and FrameUpdate is sent every frame, whether a space is paused or not.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsphere"> CreateSphere</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>DebugLauncher</code></li>
+<li>In the <code>Properties Window</code></li>
+<li>Under <code>DebugLauncher</code></li>
+<li>Set Camera  to GameCamera object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><code>Click + Hold</code> and <code>Release</code> around on the screen above the platform</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98966.gif" alt="DebugLauncher"></p>
+<p>NOTE: The yellow circle overlaying the cursor is added to the image by the screen-capture program after it is captured to indicate when the mouse button is down.</p>
+<p>We can see when the mouse button is released that the velocity of the ball is set and the ball launches towards the cursor position. This is a prime example of a physics-based behavior that can be hard to debug or tune without further visual assistance.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h1 id="debugline">DebugLine</h1>
+<p>One of the most common debug draw type is <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugline.md">DebugLine</a>, which is actually a line segment as it has start and end points.</p>
+<ul>
+<li>Add the following to the <code>DebugLauncher</code> class:</li>
+</ul>
+<pre><code class="lang-name=DrawDebug">function DrawDebug()
+{
+  this.TargetLine.Start = this.Transform.Translation;
+  this.TargetLine.End = this.Target;
+  DebugDraw.Add(this.TargetLine);
+}
+</code></pre>
+<p>Here we configure the debug line for the current frame by setting a start and end point for the segment. The final line of code <code>DebugDraw.Add(this.TargetLine);</code> adds <code>this.TargetLine</code> to a list of debug objects which should be drawn that frame. This means that debug object must be passed to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugdraw.md#add-void-k">DebugDraw.Add</a> each frame they should be drawn.</p>
+<ul>
+<li>Add the following to the <code>OnFrameUpdate</code> function in the <code>DebugLauncher</code> class:</li>
+</ul>
+<pre><code class="lang-name=Adding">this.DrawDebug();
+</code></pre>
+<p>Calling our <code>DrawDebug</code> function every frame that the mouse is down allows our drawing of the line segment to be reactive to when we want to communicate the information about the launch velocity. Integrating debug drawing into functionality you are implementing is a fairly common task.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><code>Click + Hold</code> and <code>Release</code> around on the screen above the platform</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98968.gif" alt="DebugLauncherDraw"></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h1 id="debugcircle">DebugCircle</h1>
+<p>There are many types that can be debug drawn, as can be seen in the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/debugdrawing/.md#related_materials">Related Materials</a><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugcircle.md">DebugCircle</a>, which will be used to make a clock.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li>Create a NadaScript resource using the Component template template and name it <code>DebugClock</code></li>
+<li>Update the <code>DebugClock</code> class to the following:</li>
+</ul>
+<pre><code class="lang-name=DebugClock,">class DebugClock : NadaComponent
+{
+  [Dependency] var Transform : Transform;
+  
+  [Property]
+  var ClockRadius : Real = 5.0;
+  
+  var Circle : DebugCircle = DebugCircle();
+  
+  function Initialize(init : CogInitializer)
+  {
+    this.Circle.Position = this.Transform.Translation;
+    this.Circle.Radius = this.ClockRadius;
+    this.Circle.Color = Colors.Blue;
+    
+    Zilch.Connect(this.Space, Events.FrameUpdate, this.OnFrameUpdate);
+  }
+
+  function OnFrameUpdate(event : UpdateEvent)
+  {
+    this.DrawClockFrame();
+  }
+  
+  function DrawClockFrame()
+  {
+    DebugDraw.Add(this.Circle);
+  }
+}
+</code></pre>
+<ul>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createtransform"> CreateTransform</a></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>DebugClock</code></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98979.png" alt="image"></p>
+<p>We can see the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugcircle.md">DebugCircle</a> being drawn in the background now. Just like we set the color of the line we can set the color of the circle.</p>
+<ul>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></p>
+</li>
+<li><p>Add the following to the <code>DebugClock</code> class:</p>
+</li>
+</ul>
+<pre><code class="lang-name=New">[Property]
+var SecondHandRadius : Real = 3.0;
+
+[Property]
+var MinuteHandRadius : Real = 4.0;
+
+[Property]
+var StartAngleOffset : Real = 90.0;
+
+[Property]
+var CounterClockWise : Boolean = false;
+
+var MinuteHand : DebugLine = DebugLine();
+var SecondHand : DebugLine = DebugLine();
+
+var Timer : Real = 0.0;
+var Minutes : Real = 0;
+var Seconds : Real = 0;
+</code></pre>
+<p>Here we define the data necessary to draw the hands of the clock.</p>
+<ul>
+<li>Replace the <code>Initialize</code> function in the <code>DebugClock</code> class with the following:</li>
+</ul>
+<pre><code class="lang-name=DebugClock.Initialize,">function Initialize(init : CogInitializer)
+{
+  this.SecondHand.Start = this.Transform.Translation;
+  this.SecondHand.Color = Colors.Red;
+  this.MinuteHand.Start = this.Transform.Translation;
+  this.MinuteHand.Color = Colors.Green;
+  this.Circle.Position = this.Transform.Translation;
+  this.Circle.Radius = this.ClockRadius;
+  this.Circle.Color = Colors.Blue;
+  
+  Zilch.Connect(this.Space, Events.FrameUpdate, this.OnFrameUpdate);
+}
+</code></pre>
+<p>Unlike the <code>DebugLauncher</code> the start position of the lines are not changing so we can set up the start position of all the debug elements in <code>Initialize</code>. Now that the initial data has been defined let's implement the calculations for the rest or the line data.</p>
+<ul>
+<li>Add the following to the functions in the <code>DebugClock</code> class:</li>
+</ul>
+<pre><code class="lang-name=DebugDraw">function DrawSecondHand()
+{
+  //Calculate what percentage of the current minute has passed
+  this.Seconds = this.Timer % 60.0;
+  var percCurrentMin = this.Seconds / 60.0;
+  
+  //Calculate the angle of the seconds hand
+  var angle = (2*Math.Pi) * percCurrentMin;
+  if(!this.CounterClockWise)
+    angle *= -1.0;
+  
+  //Offset the starting angle so the hand starts at the top of the clock
+  angle += Math.ToRadians(this.StartAngleOffset);
+  var dir = Real3(Math.Cos(angle), Math.Sin(angle), 0.0);
+  
+  //Calculate the endpoint of the seconds hand line segment based off the calculated angle
+  this.SecondHand.End = this.Transform.Translation + (dir * this.SecondHandRadius);
+  DebugDraw.Add(this.SecondHand);
+}
+
+function DrawMinuteHand()
+{
+  //Calculate what percentage of the current hour has passed
+  this.Minutes = this.Timer / 60.0;
+  var perc = this.Minutes / 60.0;
+  
+  //Calculate the angle of the minutes hand
+  var angle = (2*Math.Pi) * perc;
+  if(!this.CounterClockWise)
+    angle *= -1.0;
+  
+  //Offset the starting angle so the hand starts at the top of the clock
+  angle += Math.ToRadians(this.StartAngleOffset);
+  var dir = Real3(Math.Cos(angle), Math.Sin(angle), 0.0);
+  
+  //Calculate the endpoint of the minute hand line segment based off the calculated angle
+  this.MinuteHand.End = this.Transform.Translation + (dir * this.MinuteHandRadius);
+  DebugDraw.Add(this.MinuteHand);
+}
+</code></pre>
+<p>Every frame we need to call the function we just wrote to draw each part of the clock as well as increment the timer.</p>
+<ul>
+<li>Replace the <code>OnFrameUpdate</code> function in the <code>DebugClock</code> class with the following:</li>
+</ul>
+<pre><code class="lang-name=DebugClock.OnFrameUpdate,">function OnFrameUpdate(event : UpdateEvent)
+{
+  this.DrawSecondHand();
+  this.DrawMinuteHand();
+  this.DrawClockFrame();
+  this.Timer += event.Dt;
+}
+</code></pre>
+<ul>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+</li>
+<li><p>Watch the clock</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98981.gif" alt="Clock1"></p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98983.gif" alt="Clock2"></p>
+<p><em>Here we see the clock in motion at different point in it's cycle</em></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>Now we know how to debug draw simple objects. Let's look at a more complicated built-in example.</p>
+<h1 id="vortexeffect">VortexEffect</h1>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createtransform"> CreateTransform</a></li>
+<li>In the <code>Properties Window</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vortexeffect.md">VortexEffect</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
+<li>Set Translation  to <code>[0,5,0]</code></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vortexeffect.md">VortexEffect</a></li>
+<li>Set VortexAxis  to <code>[0,0,1]</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101956.gif" alt="VortexEffect"></p>
+<p>Here is an example of a built-in debug draw effect in action. You actually see debug drawing everytime you use and editor tool; PhysicsEffect components just offer a more complex example. In the case of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vortexeffect.md">VortexEffect</a> multiple <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugarc.md">DebugArc</a> objects are drawn indicating the direction and speed of the vortex, while <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugline.md">DebugLine</a> objects are used to show that the component is pulling objects into the vortex as opposed to throwing them out.</p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a></li>
+</ul>
+<h2 id="tutorial">Tutorial</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/physics/physicseffects.md">PhysicsEffects</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<h3 id="classes">Classes</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md"> Cog </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/console.md">Console</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugarc.md">DebugArc</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugbox.md">DebugBox</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugcapsule.md">DebugCapsule</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugcircle.md">DebugCircle</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugcone.md">DebugCone</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugcylinder.md">DebugCylinder</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugfrustum.md">DebugFrustum</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugline.md">DebugLine</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debuglinecross.md">DebugLineCross</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugobb.md">DebugObb</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugsphere.md">DebugSphere</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugtext.md">DebugText</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/debugtriangle.md">DebugTriangle</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vortexeffect.md">VortexEffect</a></li>
+</ul>
+<h3 id="commands">Commands</h3>
+<ul>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createtransform"> CreateTransform</a></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createcube"> CreateCube</a></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+</li>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></p>
+</li>
+</ul>
+<h2 id="development-task">Development Task</h2>
+<ul>
+<li>T1343</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/scripting/debugdrawing.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

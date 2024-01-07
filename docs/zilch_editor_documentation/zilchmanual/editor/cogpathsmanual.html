@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>The CogPath Property | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="The CogPath Property | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/editor/cogpathsmanual.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>CogPaths provide a good way to get a reference to any <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/cogs.md">Cog</a> anywhere within a game session. It points directly to the object as identified in the editor (or through a written file path) instead of wasting valuable computation time searching for it in code.  As such, it is usually best to instantiate any CogPath variables before run-time</p>
+<h1 id="the-cogpath-property">The CogPath Property</h1>
+<p>To use a CogPath cogPath property in a component, a <code>CogPath</code> variable with the <code>[Property]</code> attribute is necessary:</p>
+<pre><code>[Property] var ObjectCogPath : CogPath = CogPath();
+</code></pre>
+<p>When viewed in the Properties window, a CogPath property will appear:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47288.png" alt="CogPathProperty"></p>
+<p>Selecting the object the CogPath refers to may be done in one of three ways: from the Level Editor window, the Objects window, or by typing it in directly</p>
+<ul>
+<li>To select from the Level Editor:</li>
+<li>Hold Left-Click over the Orange reticle icon and Drag over to the object in the Level Editor window:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47290.gif" alt="SelectByEditor"></p>
+<ul>
+<li>To select from the Objects window:</li>
+<li>Hold Left-Click over the Orange reticle icon and Drag over the object name in the Objects window:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47292.gif" alt="SelectByObjects"></p>
+<ul>
+<li>To select by typing the name in directly:</li>
+<li>The syntax is very similar to a file system hierarchy. The space that the object is in acts as the &quot;Drive Name&quot; (<code>this.Space:/</code>), which allows a CogPath to reference a Cog in a different Space than the one the object with the component exists in. If the object is in the space that the component is in, you do not need to type in the space (i.e. just <code>:/</code>):</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47294.gif" alt="SelectByInput"></p>
+<p>To access the Cog that the CogPath points to, simply use the dot operator after the name of the CogPath variable:</p>
+<pre><code>var myObject = this.ObjectCogPath.Cog;
+</code></pre>
+<h1 id="in-editor-properties-of-cogpath">In-Editor Properties of CogPath</h1>
+<p>Once an object has been selected, a number of different options become available. These may be accessed in the Properties window by clicking on the arrow icon next to the orange reticle, like so:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47296.gif" alt="PropertiesOfACogPath"></p>
+<table>
+<thead>
+<tr>
+<th>Editor Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DirectCog drop-down menu</td>
+<td>If the current cog is null, and it is accessed through <code>CogPath.Cog</code>, it will try to resolve the path. DirectCog never tries to resolve the path. It's a pointer to the object</td>
+</tr>
+<tr>
+<td>ErrorOnResolveToNull checkBox</td>
+<td>Is an exception thrown if a Cog is accessed when it's invalid or not found?</td>
+</tr>
+<tr>
+<td>ErrorOnPathCantCompute checkBox</td>
+<td>Throw an exception/notification if the path to an object cannot be computed?</td>
+</tr>
+<tr>
+<td>ErrorOnDirectLinkFail checkBox</td>
+<td>Throw an exception/notification if a direct link to the object cannot be resolved?</td>
+</tr>
+<tr>
+<td>UpdateCogOnPathChange checkBox</td>
+<td>When cog path is set, should object be resolved? (this also detects parse errors)</td>
+</tr>
+<tr>
+<td>UpdateCogOnInitialize checkBox</td>
+<td>Whether the cog path attempts to resolve an object when the object is fully initialized</td>
+</tr>
+<tr>
+<td>UpdatePathOnCogChange checkBox</td>
+<td>When the cog is set, should the path to the object be recomputed?</td>
+</tr>
+<tr>
+<td><code>CogRelative</code> (Path Preference)</td>
+<td>First attempt to represent the path as a relative path. This is only valid if the objects are on the same hierarchy (such as <code>..</code> for parent, <code>../OtherObject</code> for a sibling, or <code>Child1/Child2</code> for children)</td>
+</tr>
+<tr>
+<td><code>SpaceRelative</code> (Path Preference)</td>
+<td>Assumes the objects are not on the same hierarchy, but exist within the same space. This means all paths begin with <code>:/</code>, which means look within the same space.</td>
+</tr>
+<tr>
+<td><code>Absolute</code> (Path Preference)</td>
+<td>Always require a named space (such as Hud or Main) and then a full path to the object such as <code>Hud:/HealthText</code>. Note that Absolute can only be used in the editor with the orange reticle target picker if the space is given a name.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="related-materials">Related Materials</h2>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/cogs/gameobjectsconcept.md">Game Objects (Cogs)</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cogpath.md">cogpath</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">cog</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/editor/cogpathsmanual.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>The base Keyword | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="The base Keyword | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Inheritance allows a <em>child// <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">class</a> to automatically receive all of the data and functionality defined within the //base</em> class.</p>
+<pre><code class="lang-name=Feline,">class Feline
+{
+  constructor() { }
+}
+</code></pre>
+<pre><code class="lang-name=Lion,">// A colon designates an identifier for a base class follows.
+class Lion : Feline
+{
+  // a constructor is not necessary when one is inherited from the base class.  
+}
+</code></pre>
+<pre><code class="lang-name=Using">var cat = new Feline();
+var simba = new Lion(); // Instantiated from the inherited constructor
+</code></pre>
+<p>In the above example the variable <code>simba</code> can be instantiated as a <code>Lion</code> using the constructor from <code>Feline</code>.</p>
+<h1 id="the-base-keyword">The <strong>base</strong> Keyword</h1>
+<p>The <strong>base</strong> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">keyword</a> is for use when defining an inherited class; it allows you to call the constructor of the base class being inherited from before running an explicitly defined constructor.</p>
+<pre><code class="lang-name=Animal,">class Animal
+{
+  var Legs : Integer = 4;
+  
+  constructor() { }
+  constructor(legs : Integer)
+  {
+      this.Legs = legs;
+  }
+
+  function ToString() : String
+  {
+    var builder = new StringBuilder();
+    builder.Write(&quot;Legs: &quot;);
+    builder.Write(this.Legs);
+    return builder.ToString();
+  }
+}
+</code></pre>
+<p>The class animal defines a <strong>non-default</strong> constructor which takes a number of legs for the animal as a parameter.</p>
+<pre><code class="lang-name=Human,">class Human : Animal
+{
+  constructor() : base(2) { }
+}
+</code></pre>
+<p>The class <code>Human</code> which inherits from <code>Animal</code> can use <code>Animal</code>'s constructor by using the <code>base</code> keyword. In this situation either the default or non-default constructor from <code>Animal</code> could be called using based. Which constructor is called is determined by the parameters passed to the <code>()</code> after the<code>base</code> keyword. Because <code>2</code> is passed to the <code>base</code> keyword the <strong>non-default</strong> constructor of <code>Animal</code> is called before any implementation within the defined <strong>default</strong> constructor of <code>Human</code>.</p>
+<pre><code class="lang-name=Using">var animal : Animal = new Animal();
+Console.WriteLine(animal.ToString()); // Legs: 4
+
+var jerry = new Human();
+Console.WriteLine(jerry.ToString());  // Legs: 2
+</code></pre>
+<p>In this runtime example both <code>Animal</code> and <code>Human</code> are instantiated using their default constructor.</p>
+<pre><code class="lang-name=Console">---------------- Begin Game ---------------
+Legs: 4
+Legs: 2
+</code></pre>
+<p>As can be seen in the console output the <code>Human</code> <strong>default</strong> constructor calls the <strong>non-default</strong> constructor of <code>Animal</code> and passes it <code>2</code>.</p>
+<h1 id="classes--structs">Classes &amp; Structs</h1>
+<p>Although Nada currently does not throw an error, erratic and unexpected behavior will result from having a class inherit from a struct and vice versa. <strong>i.e.</strong></p>
+<pre><code class="lang-name=Incompatible">// Mismatching the struct/class between parent and child
+struct MyBaseStruct
+{
+  constructor()
+  {
+  }
+}
+class MyClass : MyBaseStruct
+{
+  constructor() : base()
+  {
+  }
+}
+</code></pre>
+<pre><code class="lang-name=Console">// Leads to issues such as the inability to cast to the base class type. 
+var incompatible: MyClass = new MyClass();
+Console.WriteLine(typeid(incompatible).Name);                 // MyClass
+Console.WriteLine(typeid(incompatible as MyBaseStruct).Name); // This won't compile.
+</code></pre>
+<h1 id="the-virtual-keyword">The Virtual Keyword</h1>
+<p>Virtual is used to give Base classes the ability to determine some functions as being able to be <em>overridden</em> by its derived classes. The new <code>Speak</code> function defined in <code>Animal</code> will serve as an example:</p>
+<pre><code class="lang-name=Applying">class Animal
+{
+  var Legs:Integer = 4;
+
+  constructor() { }
+  
+  constructor(legs : Integer)
+  {
+    this.Legs = legs;
+  }
+  
+  function ToString() : String
+  {
+    var builder = new StringBuilder();
+    builder.Write(&quot;Legs: &quot;);
+    builder.Write(this.Legs);
+    return builder.ToString();
+  }
+  
+  [Virtual]
+  function Speak() : String
+  {
+    return &quot;...&quot;;
+  }
+}
+</code></pre>
+<p>By default, animals don't say anything, so a string that says <code>...</code> is returned. It is known that there are animals that do speak, so the <code>[Virtual]</code> attribute is added to the function to let other developers know that if a class is is <strong>derived</strong> from <code>Animal</code>, the functionality of <code>Speak</code> may be overridden.</p>
+<pre><code class="lang-name=Animal,">class Human : Animal
+{
+  constructor() : base(2) { }
+  
+  [Override]
+  function Speak() : String
+  {
+    return &quot;Hello&quot;;
+  }
+}
+</code></pre>
+<p>Humans do speak, so changeing the funcitonality of <code>Human.Speak</code> to say something other than <code>...</code> makes perfect sense. The <code>[Override]</code> attribute applied to <code>Speak</code> marks this implementation of the <code>Speak</code> function to replace <code>Animal.Speak</code> which is marked as <code>[Virtual]</code>.</p>
+<p>This can also be extended to other classes like a Cat:</p>
+<pre><code class="lang-name=Cat,">class Cat : Animal
+{
+  // Cats have 4 legs, so let's update the constructor
+  constructor() : base(4) { }
+  
+  [Override]
+  function Speak() : String
+  {
+    return &quot;Meow&quot;;
+  }
+}
+</code></pre>
+<p>Now, this is great in the fact that we can now do something like the following:</p>
+<pre><code class="lang-name=Using">var animal = Animal();
+Console.WriteLine(animal.Speak());
+
+var human = Human();
+Console.WriteLine(human.Speak());
+
+var cat = Cat();
+Console.WriteLine(cat.Speak());
+</code></pre>
+<pre><code class="lang-name=Console">...
+Hello
+Meow
+</code></pre>
+<p>The real magic of inheritance comes in the idea that a class of a <strong>derived</strong> class can be stored in a variable that matches the type of the <strong>base</strong> class.</p>
+<pre><code class="lang-lang=csharp">var humanIsAnAnimal : Animal = Human();
+Console.WriteLine(humanIsAnAnimal.Speak());
+</code></pre>
+<p>Even though the variable is of type Animal, the Human version of the function is called:</p>
+<pre><code class="lang-name=Console">Hello
+</code></pre>
+<p>This is because whenever a virtual method is called, the run-time type of the object is checked for an <strong>overriding member</strong>. The overriding member in the most derived class will then be called, which might be the original function if the derived class(es) have not overridden it.</p>
+<p>This can be quite useful with an array of Animals.</p>
+<pre><code class="lang-name=Array">var a : Animal = Animal();
+var b : Human = Human();
+var c : Animal = Human();
+var d : Cat = Cat();
+
+var array : Array[Animal] = Array[Animal](){a,b,c,d};
+
+foreach (var animal in array)
+{
+  Console.WriteLine(animal.Speak());
+}
+</code></pre>
+<pre><code class="lang-name=Console">...
+Hello
+Hello
+Meow
+</code></pre>
+<h1 id="calling-parent-functions">Calling Parent Functions</h1>
+<p>It's also possible to call the parent version of a function from a child class. In order to do this, the object must be cast to the base type and then use the non-virtual operator (~&gt;) to call the base version:</p>
+<pre><code class="lang-name=Calling">var d : Cat = Cat();
+(d as Animal)~&gt;Speak();
+</code></pre>
+<pre><code class="lang-name=Console">...
+</code></pre>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">attributes</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

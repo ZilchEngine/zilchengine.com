@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Property Delegates as Function Parameters | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Property Delegates as Function Parameters | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/property_delegates.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Property Delegates can be generated from any field using the <code>@</code> symbol. Fields are variables, but not all variables are fields. Local variables do not have the ability to be accessed via a property and they cannot be used in conjunction with the property delegate operator like fields can.</p>
+<pre><code class="lang-name=Cat,">class Cat
+{
+  var Lives: Integer = 9;
+
+  function Example()
+  {
+    // @, the property delegate operator, takes this.Lives
+    // and creates a property delegate from it.
+    var prop = @this.Lives;
+
+    Console.WriteLine(typeid(prop).Name); // Property[Integer]
+    Console.WriteLine(prop.Get());        // 9
+
+    prop.Set(7);
+    Console.WriteLine(prop.Get());        // 7
+    Console.WriteLine(this.Lives);        // 7
+  }
+}
+</code></pre>
+<pre><code class="lang-name=Console">Property[Integer]
+9
+7
+7
+</code></pre>
+<h1 id="property-delegates-as-function-parameters">Property Delegates as Function Parameters</h1>
+<p>Choosing to take a property delegate as a parameter allows the user to propagate side-effects to the parameters that would otherwise be lost on copies passed in by-value.</p>
+<pre><code class="lang-name=PropertyDelegateTest,">class PropertyDelegateTest : NadaComponent
+{
+  [Property]
+  var MyProperty : Real = 5.0;
+
+  function Initialize(init : CogInitializer)
+  {
+    Console.WriteLine(&quot;Before Drivers: `this.MyProperty`&quot;) //
+    this.DriverControl(this.MyProperty);
+    Console.WriteLine(&quot;Between Drivers: `this.MyProperty`&quot;)
+    this.Driver(@this.MyProperty);
+    Console.WriteLine(&quot;After Drivers: `this.MyProperty`&quot;)
+  }
+
+  function Driver(prop : Property[Integer])
+  {
+    prop.Set(15);
+    Console.WriteLine(&quot;Inside Driver: `prop.Get()`);
+  }
+
+  function DriverControl(prop : Integer)
+  {
+    prop = 2;
+    Console.WriteLine(&quot;Inside DriverControl: `prop`);
+  }
+}
+</code></pre>
+<pre><code class="lang-name=Console">Before Drivers: 5.0
+Inside Driver: 15.0
+Between Drivers: 15.0
+Inside DriverControl: 2.0
+After Drivers: 15.0
+</code></pre>
+<p>In this example it can be seen that when the property delegate of <code>MyProperty</code> is passed into the function <code>Driver()</code> it can be used to set the value of the member variable. This is because desprite the delegate itself being passed by value into the function it still contains a reference to <code>MyProperty</code>. However, when <code>MyProperty</code> is passed directly into the function <code>DriverControl()</code> it is also passed by value. The assignment of <code>prop</code> in <code>DriverControl()</code> is actually setting the value of the a local copy of <code>MyProperty</code>. When the function completes and reaches the end of its scope <code>prop</code> will cease to exist.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/property_delegates.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/vertexbuffer.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Graphics</code></p>
+<p>(NOTE) Vertex data and attribute semantics for defining data that can be uploaded to the gpu.</p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vertexbuffer.md#addattribute-void">AddAttribute</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vertexbuffer.md#vertexcount-zilch-engine">VertexCount</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/safeid32.md">safeid32</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vertexbuffer.md#addbyte-void">AddByte</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vertexbuffer.md#addreal-void">AddReal</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vertexbuffer.md#addshort-void">AddShort</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vertexbuffer.md#clearattributes-void">ClearAttributes</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vertexbuffer.md#cleardata-void">ClearData</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vertexbuffer.md#getattributes-zilch-engin">GetAttributes</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vertexbuffer.md#getelementcount-zilch-eng">GetElementCount</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vertexbuffer.md#getelementtype-zilch-engi">GetElementType</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vertexbuffer.md#getvertexdata-zilch-engin">GetVertexData</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vertexbuffer.md#isvalidvertexdata-zilch-e">IsValidVertexData</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="vertexcount--integer">VertexCount : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns the number of vertices that have a complete set of data stored.</p>
+<pre><code class="lang-lang=cpp,">var VertexCount : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="addattribute--void">AddAttribute : Void</h1>
+<blockquote>
+<p>Adds an attribute to the definition of the vertices that are to be stored. Add the attributes in the order that they should be stored in memory on a vertex.
+|Name|Type|Description|
+|---|---|---|
+|semantic|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#vertexsemantic">VertexSemantic</a>| |
+|elementType|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#vertexelementtype">VertexElementType</a>| |
+|elementCount|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddAttribute(semantic : VertexSemantic, elementType : VertexElementType, elementCount : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addbyte--void">AddByte : Void</h1>
+<blockquote>
+<p>Adds data as bytes to the buffer, data is expected in the order of the attributes, one vertex after another.
+|Name|Type|Description|
+|---|---|---|
+|value|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddByte(value : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addbyte--void-1">AddByte : Void</h1>
+<blockquote>
+<p>Adds data as bytes to the buffer, data is expected in the order of the attributes, one vertex after another.
+|Name|Type|Description|
+|---|---|---|
+||<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer2.md">integer2</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddByte( : Integer2)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addbyte--void-2">AddByte : Void</h1>
+<blockquote>
+<p>Adds data as bytes to the buffer, data is expected in the order of the attributes, one vertex after another.
+|Name|Type|Description|
+|---|---|---|
+||<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer3.md">integer3</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddByte( : Integer3)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addbyte--void-3">AddByte : Void</h1>
+<blockquote>
+<p>Adds data as bytes to the buffer, data is expected in the order of the attributes, one vertex after another.
+|Name|Type|Description|
+|---|---|---|
+||<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer4.md">integer4</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddByte( : Integer4)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addreal--void">AddReal : Void</h1>
+<blockquote>
+<p>Adds data as floats to the buffer, data is expected in the order of the attributes, one vertex after another.
+|Name|Type|Description|
+|---|---|---|
+|value|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddReal(value : Real)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addreal--void-1">AddReal : Void</h1>
+<blockquote>
+<p>Adds data as floats to the buffer, data is expected in the order of the attributes, one vertex after another.
+|Name|Type|Description|
+|---|---|---|
+|value|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddReal(value : Real2)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addreal--void-2">AddReal : Void</h1>
+<blockquote>
+<p>Adds data as floats to the buffer, data is expected in the order of the attributes, one vertex after another.
+|Name|Type|Description|
+|---|---|---|
+|value|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddReal(value : Real3)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addreal--void-3">AddReal : Void</h1>
+<blockquote>
+<p>Adds data as floats to the buffer, data is expected in the order of the attributes, one vertex after another.
+|Name|Type|Description|
+|---|---|---|
+|value|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddReal(value : Real4)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addshort--void">AddShort : Void</h1>
+<blockquote>
+<p>Adds data as shorts to the buffer, data is expected in the order of the attributes, one vertex after another.
+|Name|Type|Description|
+|---|---|---|
+|value|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddShort(value : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addshort--void-1">AddShort : Void</h1>
+<blockquote>
+<p>Adds data as shorts to the buffer, data is expected in the order of the attributes, one vertex after another.
+|Name|Type|Description|
+|---|---|---|
+||<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer2.md">integer2</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddShort( : Integer2)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addshort--void-2">AddShort : Void</h1>
+<blockquote>
+<p>Adds data as shorts to the buffer, data is expected in the order of the attributes, one vertex after another.
+|Name|Type|Description|
+|---|---|---|
+||<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer3.md">integer3</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddShort( : Integer3)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addshort--void-3">AddShort : Void</h1>
+<blockquote>
+<p>Adds data as shorts to the buffer, data is expected in the order of the attributes, one vertex after another.
+|Name|Type|Description|
+|---|---|---|
+||<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer4.md">integer4</a>| |</p>
+<pre><code class="lang-lang=cpp,">function AddShort( : Integer4)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="clearattributes--void">ClearAttributes : Void</h1>
+<blockquote>
+<p>Clears all added attributes from the vertex definition so they can be redefined.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function ClearAttributes()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="cleardata--void">ClearData : Void</h1>
+<blockquote>
+<p>Clears all added vertex data so new data can be added.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function ClearData()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getattributes--vertexsemanticrange">GetAttributes : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/vertexsemanticrange.md">vertexsemanticrange</a></h1>
+<blockquote>
+<p>Returns a range of attribute semantics in the order that they were added.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function GetAttributes() : VertexSemanticRange
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getelementcount--integer">GetElementCount : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<blockquote>
+<p>Returns the number of elements stored for the given attribute, throws exception if the attribute is not in the vertex definition.
+|Name|Type|Description|
+|---|---|---|
+|semantic|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#vertexsemantic">VertexSemantic</a>| |</p>
+<pre><code class="lang-lang=cpp,">function GetElementCount(semantic : VertexSemantic) : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getelementtype--vertexelementtype">GetElementType : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#vertexelementtype">VertexElementType</a></h1>
+<blockquote>
+<p>Returns the type that is used to store the given attribute, throws exception if the attribute is not in the vertex definition.
+|Name|Type|Description|
+|---|---|---|
+|semantic|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#vertexsemantic">VertexSemantic</a>| |</p>
+<pre><code class="lang-lang=cpp,">function GetElementType(semantic : VertexSemantic) : VertexElementType
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getvertexdata--real4">GetVertexData : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a></h1>
+<blockquote>
+<p>Gets the data of an attribute of a vertex, returns values of 0 if read is invalid.
+|Name|Type|Description|
+|---|---|---|
+|vertexIndex|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |
+|semantic|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#vertexsemantic">VertexSemantic</a>| |</p>
+<pre><code class="lang-lang=cpp,">function GetVertexData(vertexIndex : Integer, semantic : VertexSemantic) : Real4
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getvertexdata--real4-1">GetVertexData : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a></h1>
+<blockquote>
+<p>Gets the data of an attribute of a vertex, throws exception if attribute info doesn't match or read is invalid.
+|Name|Type|Description|
+|---|---|---|
+|vertexIndex|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |
+|semantic|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#vertexsemantic">VertexSemantic</a>| |
+|type|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#vertexelementtype">VertexElementType</a>| |
+|count|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function GetVertexData(vertexIndex : Integer, semantic : VertexSemantic, type : VertexElementType, count : Integer) : Real4
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isvalidvertexdata--boolean">IsValidVertexData : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Returns false if GetVertexData() would throw an exception with the same arguments.
+|Name|Type|Description|
+|---|---|---|
+|vertexIndex|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |
+|semantic|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#vertexsemantic">VertexSemantic</a>| |
+|type|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#vertexelementtype">VertexElementType</a>| |
+|count|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function IsValidVertexData(vertexIndex : Integer, semantic : VertexSemantic, type : VertexElementType, count : Integer) : Boolean
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/vertexbuffer.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

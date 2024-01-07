@@ -1,0 +1,716 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/audio.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Sound</code></p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#additivesynthnode-zilch-e">AdditiveSynthNode</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#dispatchmicrophonecompre">DispatchMicrophoneCompressedByteData</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/system.md">system</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#addnoisenode-zilch-engine">AddNoiseNode</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#dispatchmicrophoneuncomp">DispatchMicrophoneUncompressedFloatData</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#bandpassnode-zilch-engine">BandPassNode</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#latencysetting-zilch-engi">LatencySetting</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#chorusnode-zilch-engine-d">ChorusNode</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#muteallaudio-zilch-engine">MuteAllAudio</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#compressornode-zilch-engi">CompressorNode</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#outputchannels-zilch-engi">OutputChannels</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#customaudionode-zilch-eng">CustomAudioNode</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#peakinputlevel-zilch-engi">PeakInputLevel</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#delaynode-zilch-engine-do">DelayNode</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#peakoutputlevel-zilch-eng">PeakOutputLevel</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#equalizernode-zilch-engin">EqualizerNode</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#rmsoutputlevel-zilch-engi">RMSOutputLevel</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#expandernode-zilch-engine">ExpanderNode</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#systemvolume-zilch-engine">SystemVolume</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#flangernode-zilch-engine">FlangerNode</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#generatedwavenode-zilch-e">GeneratedWaveNode</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#getnodegraphinfo-zilch-en">GetNodeGraphInfo</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#granularsynthnode-zilch-e">GranularSynthNode</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#highpassnode-zilch-engine">HighPassNode</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#lowpassnode-zilch-engine">LowPassNode</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#microphoneinputnode-zero">MicrophoneInputNode</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#modulationnode-zilch-engi">ModulationNode</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#panningnode-zilch-engine">PanningNode</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#pitchnode-zilch-engine-do">PitchNode</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#recordingnode-zilch-engin">RecordingNode</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#reverbnode-zilch-engine-d">ReverbNode</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#saveaudionode-zilch-engin">SaveAudioNode</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#soundbuffer-zilch-engine">SoundBuffer</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/audio.md#volumenode-zilch-engine-d">VolumeNode</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="dispatchmicrophonecompressedbytedata--boolean">DispatchMicrophoneCompressedByteData : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var DispatchMicrophoneCompressedByteData : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="dispatchmicrophoneuncompressedfloatdata--boolean">DispatchMicrophoneUncompressedFloatData : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var DispatchMicrophoneUncompressedFloatData : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="latencysetting--audiolatency">LatencySetting : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#audiolatency">AudioLatency</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var LatencySetting : AudioLatency
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="muteallaudio--boolean">MuteAllAudio : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var MuteAllAudio : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="outputchannels--integer">OutputChannels : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var OutputChannels : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="peakinputlevel--real">PeakInputLevel : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var PeakInputLevel : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="peakoutputlevel--real">PeakOutputLevel : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var PeakOutputLevel : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="rmsoutputlevel--real">RMSOutputLevel : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var RMSOutputLevel : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="systemvolume--real">SystemVolume : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<blockquote>
+<pre><code class="lang-lang=cpp,">var SystemVolume : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="additivesynthnode--additivesynthnode">AdditiveSynthNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/additivesynthnode.md">additivesynthnode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function AdditiveSynthNode() : AdditiveSynthNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="addnoisenode--addnoisenode">AddNoiseNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/addnoisenode.md">addnoisenode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function AddNoiseNode() : AddNoiseNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="bandpassnode--bandpassnode">BandPassNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/bandpassnode.md">bandpassnode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function BandPassNode() : BandPassNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="chorusnode--chorusnode">ChorusNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/chorusnode.md">chorusnode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function ChorusNode() : ChorusNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="compressornode--compressornode">CompressorNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/compressornode.md">compressornode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function CompressorNode() : CompressorNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="customaudionode--customaudionode">CustomAudioNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customaudionode.md">customaudionode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function CustomAudioNode() : CustomAudioNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="delaynode--delaynode">DelayNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/delaynode.md">delaynode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function DelayNode() : DelayNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="equalizernode--equalizernode">EqualizerNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/equalizernode.md">equalizernode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function EqualizerNode() : EqualizerNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="expandernode--expandernode">ExpanderNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/expandernode.md">expandernode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function ExpanderNode() : ExpanderNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="flangernode--flangernode">FlangerNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/flangernode.md">flangernode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function FlangerNode() : FlangerNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="generatedwavenode--generatedwavenode">GeneratedWaveNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/generatedwavenode.md">generatedwavenode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function GeneratedWaveNode() : GeneratedWaveNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getnodegraphinfo--nodeinfolistrange">GetNodeGraphInfo : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/nodeinfolistrange.md">nodeinfolistrange</a></h1>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function GetNodeGraphInfo() : NodeInfoListRange
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="granularsynthnode--granularsynthnode">GranularSynthNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/granularsynthnode.md">granularsynthnode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function GranularSynthNode() : GranularSynthNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="highpassnode--highpassnode">HighPassNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/highpassnode.md">highpassnode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function HighPassNode() : HighPassNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="lowpassnode--lowpassnode">LowPassNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/lowpassnode.md">lowpassnode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function LowPassNode() : LowPassNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="microphoneinputnode--microphoneinputnode">MicrophoneInputNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/microphoneinputnode.md">microphoneinputnode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function MicrophoneInputNode() : MicrophoneInputNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="modulationnode--modulationnode">ModulationNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/modulationnode.md">modulationnode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function ModulationNode() : ModulationNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="panningnode--panningnode">PanningNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/panningnode.md">panningnode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function PanningNode() : PanningNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="pitchnode--pitchnode">PitchNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/pitchnode.md">pitchnode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function PitchNode() : PitchNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="recordingnode--recordingnode">RecordingNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/recordingnode.md">recordingnode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function RecordingNode() : RecordingNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="reverbnode--reverbnode">ReverbNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/reverbnode.md">reverbnode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function ReverbNode() : ReverbNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="saveaudionode--saveaudionode">SaveAudioNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/saveaudionode.md">saveaudionode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function SaveAudioNode() : SaveAudioNode
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="soundbuffer--soundbuffer">SoundBuffer : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundbuffer.md">soundbuffer</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function SoundBuffer() : SoundBuffer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="volumenode--volumenode">VolumeNode : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/volumenode.md">volumenode</a></h1>
+<p><code>static</code></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+</table>
+<pre><code class="lang-lang=cpp,">function VolumeNode() : VolumeNode
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/audio.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | ZilchEngine ">
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_source_documentation/crashes.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Before doing anything with crash dumps you should do 2 things:
+1. Checkout the DevTools repo
+2. Checkout a special depo of zero (or you could re-use one but it's best to make another) and add the environmental variable <code>ZERO_SOURCE</code> to point at the root of that depo.</p>
+<p>The majority of what you care about is in the Readme.txt file under the SourceIndexer folder. Follow these steps to setup source indexing on your local machine. Currently the symbol server is only available on the local Engineering network.</p>
+<p>Now to briefly describe how these things work (part of this is how the build server works). There are 3 things needed to debug crash dumps:	Symbols (pdb), Source, and the exe. These are handled by 2 separate processes: Symbol Server and Source Indexing.</p>
+<h2 id="symbol-server">Symbol Server</h2>
+<p>The symbol server caches copies of dlls, exes, pdbs and so on by a hashset to be looked up later. When opening a crash dump, if you set up the symbol server stuff as mentioned in the Readme.txt, visual studio will contact the symbol server and grab the correct copies of exes, dlls, and pdbs and cache them locally in some temp directory. This happens on the build server by running symstore.exe and giving it the path to the editor's output and the name to group it under (the name is just to make it easier to find stuff in the symbol store) as well as where the symbol server is. If you want to run this on a random machine you must first create the symbol server; look up documentation for symstore.exe.</p>
+<h2 id="source-indexing">Source Indexing</h2>
+<p>Even with the symbol server setup, we still don't get source for a file at that revision. This is handled via another step called source indexing. The pdb is actually a file format that can store various files under stream names. There is a special stream named &quot;SRC_SRV&quot; that stores information about how to get a copy of a file from source control. For source indexing, you write to this stream a file that contains something along the lines of: FileName at %Revision% comes from the mercurial repository at %ZERO_SOURCE% with the command hg checkout FileName at %Revision% &gt; %OutLocation%. This is currently done via the SourceIndexer program in the DevTools repository. This program takes in a source tree location and a collection of repository locations to pull from and embeds them in the pdb. Note that the source indexing needs to be embedded into the pdb before the symbol server is run. Also note that at the moment there are hard-coded repository names in the SourceIndexer program that should ideally be removed later.</p>
+<p>Crash dumps for zero are currently downloadable from <a href="http://zerocrash.digipen.edu">http://zerocrash.digipen.edu</a>. This website needs a large update though as it's really slow...</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_source_documentation/crashes.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,292 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Learning Objectives | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Learning Objectives | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/editor/tile_editor.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>This lesson covers the basics of Zilch Engine's Tile Editor tool. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/editor/tile_editor_ii.md"> next lesson</a> covers some of its more advanced features.</p>
+<h1 id="learning-objectives">Learning Objectives</h1>
+<ul>
+<li>Tile sheet importing</li>
+<li>The Tile Editor's features</li>
+</ul>
+<h1 id="level-setup">Level Setup</h1>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
+</ul>
+<p>The Tile Editor tool allows a designer to quickly make a 2D level by painting a tilemap with tiles that consist of graphics, colliders, custom logic, and more.</p>
+<h1 id="importing-tile-sprites">Importing Tile Sprites</h1>
+<p>The Tile Editor tool is typically (though not exclusively) used with sprites prepared with the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spriteimporter.md"> Sprite Importer</a>.</p>
+<ul>
+<li>Download the following tile sheet:
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/107599.png" alt="PlatformerTiles"></li>
+<li><code>Drag and drop</code> the file into the <code>Level Window</code></li>
+<li>In the <code>Group Import Options Window</code></li>
+<li>Set ImportImages enum to <code>Sprites</code></li>
+<li>Press the <code>Import All</code> button</li>
+</ul>
+<p>Like in the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/graphics/sprite_animations.md"> tutorial on sprite animations</a>, we will use the Sprite Importer to take this large tile sheet and extract smaller SpriteSource resource resources from it.</p>
+<ul>
+<li>In the <code>Library Window</code></li>
+<li>Under the SpriteSource  tag</li>
+<li>Double-click  <code>PlatformerTiles</code>
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/107617.png" alt="image"></li>
+<li>In the <code>Sprite Source Editor Window</code></li>
+<li>Press the <code>Convert To Animation</code> button</li>
+</ul>
+<p>The tile sheet consists of 32-pixel square tiles.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/107673.png" alt="image"></p>
+<p><em>Each tile is 32 pixels wide and high</em></p>
+<p>To divide the tiles properly, we should set the FrameWidth  and FrameHeight  each to <code>32</code>. This will split the sheet into equally sized tiles, each of which is 32 pixels wide and high.</p>
+<ul>
+<li>In the <code>Sprite Importer Window</code></li>
+<li>Set Name  to <code>Tiles</code></li>
+<li>Set FrameWidth  to <code>32</code></li>
+<li>Set FrameHeight  to <code>32</code></li>
+<li>Set PixelsPerUnit  to <code>32</code></li>
+</ul>
+<p>Our goal here is to select every square region of the sheet that we want to use as a tile for the Tile Editor. By default, the ImportFrames enum property is set to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#importframes"> AllFrames</a>, so if we just clicked the <code>Add Frames as Sprites</code> button, it would add every 32-pixel tile in the sheet as a separate SpriteSource, and we'd be done. However, the sheet has some &quot;holes&quot; in it and a lot of empty space at the bottom, which would result in many tiles that are totally blank. These virtually useless SpriteSources would clutter up our library and act as a general nuisance. Instead, we can use the mouse to manually select all and only the tiles we want.</p>
+<ul>
+<li>In the <code>Sprite Importer Window</code></li>
+<li>Set ImportFrames enum to <code>SelectedFrames</code></li>
+<li>Left-click  every tile that you want to add</li>
+<li>If you accidentally select a tile you don't want, right-click  it to deselect it</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/109080.gif" alt="Adding Grass Tile Frames"></p>
+<p><em>The left mouse button selects tiles, and the right mouse button deselects them</em></p>
+<p>When you've got all the tiles you want, it's time to import them. Since we want each of these tiles to be a separate individual SpriteSource in the project, the <code>Add Frames as Sprites</code> button is the way to go.</p>
+<ul>
+<li>In the <code>Sprite Importer Window</code></li>
+<li>Press the <code>Add Frames as Sprites</code> button</li>
+</ul>
+<p>The four lava surface tiles are designed as an animation strip, so we can import them together as a single animated SpriteSource.</p>
+<ul>
+<li>In the <code>Sprite Importer Window</code></li>
+<li>Press the <code>Clear Frames</code> button</li>
+<li>Feel free to set FrameRate  to any desired value</li>
+<li>Select the four lava surface tiles in order from left to right</li>
+<li>Press the <code>Add and Close</code> button</li>
+</ul>
+<p>(NOTE) <strong>FrameRate:</strong> The FrameRate  property defines the number of animation frames per second for an animated sprite source. (In other words, 1 divided by FrameRate  equals the delay in seconds for each frame.) The lava animation with a FrameRate  of <code>12</code> looks like this: <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/109076.gif" alt="Animated Lava Surface at 83 ms Delay"> ; the same animation with a FrameRate  of 4 looks like this: <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108754.gif" alt="Animated Lava Surface at 250 ms Delay"> .</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/109083.gif" alt="Adding Lava Surface"></p>
+<p>Now that we have all the sprites we want, we're ready to start using the Tile Editor.</p>
+<h1 id="the-tileeditor2d-tool">The TileEditor2D Tool</h1>
+<p>The TileEditor2D tool is used to create and modify a <strong>tile map</strong> object, which consists of sprites, collision information, and archetype definitions. This can be used to create 2D levels in a game.</p>
+<ul>
+<li>In the <code>Tool Bar</code>
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108716.png" alt="image"></li>
+<li>Press the <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/107930.png" alt="image"> {nav icon=square-o, name=TileEditor2D} button</li>
+</ul>
+<p>(NOTE) <strong>Tool Control Info:</strong> For quick reminders about the controls of the TileEditor2D tool, just hover  over the <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108711.png" alt="Circled Info Icon"> icon in the upper-left corner of the <code>Tools Window</code>.</p>
+<p>Selecting the TileEditor2D tool for the first time will show this:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/107932.png" alt="image"></p>
+<p><em>The TileEditor2D tool requires a tilemap object to work</em></p>
+<ul>
+<li>In the <code>Level Window</code></li>
+<li>Click  the <strong>No TileMap Object</strong> message
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/107934.gif" alt="Adding a TileMap Object"></li>
+</ul>
+<p>(NOTE) <strong>TileMap Objects:</strong> The TileEditor2D tool needs a tilemap object to work with. If there isn't one in the level, then you'll need to make one before you use it. Of course, you can have multiple tilemaps in the same level (say, for backgrounds and foregrounds). When you select the TileEditor2D tool, if no tilemap object is already selected, it will automatically select the one that was most recently edited.</p>
+<h2 id="placing-tiles">Placing Tiles</h2>
+<p>Tiles can be added to the tilemap by using the TileEditor2D tool's <strong>Draw sub-tool</strong> and <strong>Selection sub-tool</strong>.</p>
+<h3 id="the-draw-sub-tool">The Draw Sub-Tool</h3>
+<p>The Draw sub-tool allows you to paint tiles into a tilemap. All of your project's SpriteSources can be found in the list under the Sprite enum property.</p>
+<ul>
+<li>In the <code>Tools Window</code></li>
+<li>Set Sprite enum to the SpriteSource of your choice
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108232.png" alt="image"></li>
+<li>In the <code>Level Window</code></li>
+<li><code>Left-click and drag</code> to <strong>place tiles</strong>
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108230.gif" alt="First Steps - Drawing"></li>
+<li><code>Right-click and drag</code> to <strong>erase tiles</strong>
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108234.gif" alt="First Steps - Erasing"></li>
+</ul>
+<h3 id="the-selection-sub-tool">The Selection Sub-Tool</h3>
+<p>The Selection sub-tool allows you to select one or more tiles to use as a &quot;brush&quot;, which can then be used to paint using the Draw sub-tool.</p>
+<ul>
+<li>In the <code>Tools Window</code></li>
+<li>Set ToolType enum to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#tileeditor2dsubtooltype"> SelectionTool</a>
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108285.png" alt="image"></li>
+</ul>
+<p>(NOTE) <strong>TileEditor2D Tool Hotkeys:</strong> You can quickly select the TileEditor2D tool by pressing key the <code>6</code> key. With the TileEditor2D tool active, you can select the Draw sub-tool and the Selection sub-tool by pressing key <code>Shift + 1</code> and <code>Shift + 2</code>, respectively.</p>
+<ul>
+<li>In the <code>Level Window</code></li>
+<li><code>Left-click and drag</code> to <strong>select tiles</strong></li>
+<li>After making a selection, right-click  the selected tiles to <strong>commit the selection</strong> to be used as a brush</li>
+<li>If you don't want to use the selected tiles as a brush, right-click  somewhere else in the <code>Level Window</code> to <strong>clear the selection</strong>
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108316.gif" alt="First Steps - Selecting"></li>
+</ul>
+<p>After committing a selection with the Selection sub-tool, the Draw sub-tool is automatically selected, and you can draw and erase with the new brush.</p>
+<ul>
+<li>In the <code>Tools Window</code></li>
+<li>Confirm that the ToolType enum property is set to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#tileeditor2dsubtooltype"> SelectionTool</a></li>
+<li>In the <code>Level Window</code></li>
+<li><code>Left-click and drag</code> to make a selection and right-click  it to commit it as a brush</li>
+<li><code>Left-click and drag</code> to <strong>place tiles with the new brush</strong></li>
+<li><code>Right-click and drag</code> to <strong>erase tiles with the new brush</strong>
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108320.gif" alt="First Steps - Brush Painting"></li>
+<li>Press key the <code>Esc</code> (Escape) key to <strong>revert the brush</strong> to the tile specified in the <code>Tools Window</code></li>
+</ul>
+<h2 id="a-quick-test-run">A Quick Test Run</h2>
+<p>Let's use what we've covered so far to throw together a very basic level (but really not much more than a couple of platforms) that we can play in using the swept character archetype that can be downloaded from the Zilch Market, as covered in <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/external_zilch_engine_tools/the_market.md"> tutorial on the Zilch Market</a>.</p>
+<ul>
+<li>Use the TileEditor2D tool to create a set of simple platforms:
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108816.png" alt="image"></li>
+<li>Press the <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108714.png" alt="image"> Market button button in the top-right corner of the editor</li>
+<li>Click  the <code>Sample Character Controller</code> package</li>
+<li>Click  the download link for the <code>SAMPLECHARACTERCONTROLLERS[1.0].ZEROPACK</code> package</li>
+<li>In the <code>Import Content Package Window</code></li>
+<li>Press the Import button button</li>
+<li>Close the <code>Market Browser</code></li>
+<li>In the <code>Library Window</code></li>
+<li>Under Archetype</li>
+<li><code>Left-click and drag</code> <code>SweptPlayer2D</code> into the <code>Level Window</code>
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108718.gif" alt="Adding a Swept Character"></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108720.gif" alt="This Swept Character Cannot Jump High Enough"></p>
+<p><em>By default, the tiles placed with the TileEditor2D tool have collision</em></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>(NOTE) <strong>Can't Jump High Enough?</strong> Depending on how you constructed your level, you may want to adjust your player character's properties, such as the <code>SweptController</code>'s Gravity  and JumpSpeed .</p>
+<p>The test run was a success: the swept character collides with the tiles as expected. In the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/editor/tile_editor_ii.md"> next tutorial</a>, we'll begin by learning about tile archetypes.</p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="tutorials">Tutorials</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/graphics/sprite_animations.md">sprite_animations</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/external_zilch_engine_tools/the_market.md">the_market</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/gameplay/swept_character.md">swept_character</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/editor/tile_editor_ii.md">tile_editor_ii</a></li>
+</ul>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spriteimporter.md">spriteimporter</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritesourceeditor.md">spritesourceeditor</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<h3 id="commands">Commands</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> NewProject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h3 id="enums">Enums</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#importframes"> ImportFrames</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#tileeditor2dsubtooltype"> TileEditor2DSubToolType</a></li>
+</ul>
+<h2 id="development-task">Development Task</h2>
+<ul>
+<li>T2174</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/editor/tile_editor.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

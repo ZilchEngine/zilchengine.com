@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Common Uses | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Common Uses | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/rightclicksubmenu.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>The Right-Click Submenu is a simple-to-use tool that gives different functionality depending on if it is used in the Library, Object, or Properties Window, or even inside a NadaScript. It can be used to rename Objects, remove Components from them, make duplicates of them, and other actions as well.</p>
+<h1 id="common-uses">Common Uses</h1>
+<ul>
+<li>Edit the Name and Tags of an Object</li>
+<li>Removing a Component from an Object, or Resource from the Project</li>
+<li>Viewing more detailed information on a Component, or Variable in a NadaScript</li>
+</ul>
+<h1 id="in-the-library-window">In the Library Window</h1>
+<p>The Right-Click Submenu will be slightly different in the Library Window depending on if either a Tag or a Resource is right-clicked.</p>
+<h1 id="tags">Tags</h1>
+<p>Right-clicking on a Tag in the Library window will only give a single option, <code>Add Tag to Search</code>.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47149.png" alt="image"></p>
+<p>Left-clicking on this option will act the same as if that <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/tags.md">Tag</a> was typed into the Search function, or if the Tag was double left-clicked: the Library Window will show any Resources with the selected Tag.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47153.png" alt="image"></p>
+<h1 id="resources">Resources</h1>
+<p>Right-clicking on a Resource will bring up a different list with four options available to all Resources: <code>Edit</code>, <code>Rename</code>, <code>EditTags</code> and <code>Remove</code>, and if the Resource is not a NadaScript, <code>Duplicate</code>.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47155.png" alt="image"></p>
+<ul>
+<li><code>Edit</code> will open the selected Resource to have changes made to it. If need be it will open a new editor window, such as if there is a visual aspect to be edited or to edit a text entry.</li>
+<li><code>Rename</code> will highlight the current name of the Resource and allow the user to type in a new one.</li>
+<li><code>EditContentMeta</code> will open the ContentComponents for a Resource (i.e., a Resource's meta data) in the <code>Properties Window</code></li>
+<li><code>EditTags</code> allows custom tags to be added to and removed from the Resource. Note that the default tag that marks what type of Resource the object is cannot be removed.</li>
+<li><code>Remove</code> will remove the Resource from the Project completely. Note that this cannot be undone and the Resource will have to be recreated if it was done in error.</li>
+<li><code>Duplicate</code> will create a copy of the selected Resource. In order to differentiate between the new copies, the names of the copies will be appended with <code>Copy(CopyNumber)</code>.</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47157.png" alt="image"></p>
+<h1 id="in-the-objects-window">In the Objects Window</h1>
+<p>When an Object in the Objects Window is right-clicked, it gives only two options: <code>Rename</code> and <code>Delete</code>.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47158.png" alt="image"></p>
+<ul>
+<li><strong>Rename</strong>: Just like in the Library Window, the <code>Rename</code> option allows the user to change the name of the selected object.</li>
+<li><strong>Delete</strong>: Rather than being removed from the project, the <code>Delete</code> option simply removes the selected Object from the current Level.</li>
+</ul>
+<h1 id="in-the-properties-window">In the Properties Window</h1>
+<p>When a Component is right-clicked in the Properties Window, it is given three options: <code>Remove</code>, <code>View Docs</code>, and <code>Search Online Docs</code>.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47160.png" alt="image"></p>
+<ul>
+<li><strong>Remove</strong>: The <code>Remove</code> option will remove the selected Component from the Object. If another Component is dependent on the Component attempting to be removed, the Engine will not allow the removal to take place and will show an error message.</li>
+<li><strong>View Docs</strong>: <code>View Docs</code> will open a new Editor Window that will give a Class Description of the Component, as well as the various Properties and Methods that Component has.</li>
+</ul>
+<p>NOTE: Only Components supplied by the Engine will have documentation, and the documentation is the same that will appear in Nada's code-completion and the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference.md">Code Reference</a> Section. As it is generated automatically from meta data, not all components will have docs available for viewing.</p>
+<ul>
+<li><strong>Search Online Docs</strong>: Using <code>Search Online Docs</code> will open a new page in the user's web browser, navigate to &quot;zero.digipen.edu&quot; and perform a search using the name of the Component as the query.</li>
+</ul>
+<h1 id="inside-a-nadascript">Inside a NadaScript</h1>
+<p>Right-clicking on any word written in a NadaScript will give the user the <code>Go To Definition</code> option.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47162.png" alt="image"></p>
+<h2 id="on-a-tab-in-an-editor-window">On a Tab in an Editor Window</h2>
+<p>When right-clicking on an open tab in the Editor Window, three options are given: <code>Close</code>, <code>Close All But This</code>, and <code>Move to New Window</code>.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47168.png" alt="image"></p>
+<ul>
+<li><strong>Close</strong>: This option will close the selected tab in the Editor Window.</li>
+<li><strong>Close All But This</strong>: This will leave the selected tab open, but will close any other tabs in the same window.</li>
+</ul>
+<hr>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/tags.md">Tags</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference.md">code_reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/rightclicksubmenu.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

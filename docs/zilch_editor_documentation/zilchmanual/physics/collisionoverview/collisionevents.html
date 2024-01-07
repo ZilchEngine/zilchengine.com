@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Collision Event Types | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Collision Event Types | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisionevents.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionevent.md"> CollisionEvents</a> are the primary way that physics sends collision information to users. Three main event types are sent out for collisions: starting, persisting, and ending.</p>
+<p>Collision events are often used in gameplay, such as applying damage if an impact was large enough. Sometimes it is necessary to alter information about the two objects involved in a collision, such as their velocity. Other common examples include creating audio effects or graphics effects in response to a collision, such as a scraping sound and sparks of a sliding metal object.</p>
+<h1 id="collision-event-types">Collision Event Types</h1>
+<p>There are three primary collision events sent out. These events are typically sent to both objects involved and to the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/physicsspace.md">PhysicsSpace</a>. If you're having trouble receiving events then see <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/physicstroubleshooting/whyaretheynotcolliding.md">WhyAreTheyNotColliding</a>.</p>
+<ul>
+<li><strong>CollisionStarted</strong> is sent out on the first frame two objects come into contact.</li>
+<li><strong>CollisionPersisted</strong> is sent every frame two objects are in contact. This event is not sent on the first frame of collision.</li>
+<li><strong>CollisionEnded</strong> is sent the frame that contact is broken. At this point the two objects are no longer in contact. This event is also sent if an object is destroyed.</li>
+</ul>
+<h1 id="collisionevents-order">CollisionEvents Order</h1>
+<p>The physics system will send out all CollisionEvents after resolving all collisions in the space. This means that some of the information in the event is //old//. This is most obvious when inspecting an object's position and velocity as both will reflect the post-collision resolution information. This is necessary to give final collision information like the final applied impulse. If pre-collision resolution information is desired, see <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/presolveevent.md">PreSolveEvent</a> of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisiongroupsandtables.md">CollisionTables</a>.</p>
+<h1 id="properties">Properties</h1>
+<p>There's a few properties worth discussing in detail on CollisionEvents.</p>
+<h2 id="object-vs-otherobject">Object vs. OtherObject</h2>
+<p>A collision event is sent with one object as the focus; that is to say that most information will have a primary object and a secondary object. This is necessary to know what direction other properties, such as the collision normal, face. If the event is received from the physics space then this ordering is not defined.</p>
+<h2 id="contactpoints">ContactPoints</h2>
+<p>A CollisionEvent exposes a range of contact points. For physics to solve a collision, several points of contact may be necessary. Often in game logic, one contact point is sufficient; for convenience, the FirstPoint  property is exposed. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/contactpoint.md"> ContactPoints</a> expose information about what happened in a collision:</p>
+<p><strong>Local and World Points:</strong> Contact points expose both a local and world space point on each object.</p>
+<p><strong>Contact Normal:</strong> The normal of a collision describes the primary direction that collision is resolved in. ContactPoint exposes WorldNormalTowardsOther  which is the normal from the WorldPoint on <em>this// object towards the //other// object. This can be useful for pushing the //other// object away from //this//. To get the world normal towards //this</em> object just negate this property.</p>
+<p><strong>Impulses:</strong> The physics system solves collisions with impulses, i.e. an instantaneous force. To properly solve a collision there are three values: the normal impulse and two friction impulses.</p>
+<p>The normal impulse is the scalar impulse value that is applied in the direction of the contact normal to resolve the collision. This can be used to measure the strength of an impact between the two objects. Keep in mind that an impulse contains the inverse mass sum of the two objects involved.</p>
+<p>The two friction impulses are applied in tangential directions to the normal impulse to slow down an object. ContactPoint exposes FrictionImpulse , which is the total friction magnitude that was applied. Additionally, ComplexImpulse  is exposed, which contains the normal, friction1, and friction2 values in the x, y, and z components of the vector respectively.</p>
+<hr>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/physicstroubleshooting/whyaretheynotcolliding.md">whyaretheynotcolliding.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/physicsspace.md">physicsspace.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisiongroupsandtables.md">collisiongroupsandtables.md</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionevent.md">CollisionEvent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/contactpoint.md">ContactPoint</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/presolveevent.md">PreSolveEvent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsspace.md">PhysicsSpace</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisionevents.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Using the Albedo Fragment | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Using the Albedo Fragment | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/materials/albedo.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>In Zilch, albedo refers to the color of a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials.md">Material</a> as defined by the reflected light an object should realistically reflect. In the case of non-metals, or dielectrics, the vast majority reflect almost all light as diffuse. In the case of metals, or conductors, almost all light is reflected, rendering a reflection of its surroundings if the metal is polished or smooth. The rougher the surface is, however, the more blurred the reflection will become. Metals also tint the light they reflect leading to the different colors of metals such as gold, copper, and silver.</p>
+<p>The albedo fragments in Zilch handle both of these cases depending on the values of other fragments, such as metallic, roughness, and specular. Other frameworks and engines may refer to this as the base color or diffuse map. When setting this property by map or by value, there are other considerations to take into account when visualizing how the final material will appear.</p>
+<p>For a quick example of this difference, compare the following three screenshots. They all have the same albedo value of <code>R:255 G:226 R:155</code>, which should appear as gold when seen as a metal. The first image shows a sphere with only the AlbedoValue fragment on it. The second also has a SpecularValue fragment set to <code>1.0</code>. The third has a MetallicValue fragment set to <code>1.0</code> instead of specular.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2941.png" alt="JustAlbedoSphere"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2943.png" alt="MetalSphere"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2945.png" alt="SpecSphere"></p>
+<p>The following page will first cover the differences between the AlbedoValue fragment and AlbedoMap fragment, with demonstrations designed to show different albedo settings in conjunction with other material shader fragments as well as in different environments that have notably different indirect and direct lighting schemes.</p>
+<h1 id="using-the-albedo-fragment">Using the Albedo Fragment</h1>
+<p>The albedo of a material may be set using either a map or by value. Setting albedo by value will apply a particular color uniformly across the material, while using an artist-produced albedo texture map allows the user to have precise control over the color at every point on the material. If there is no albedo map or value fragment on a material, the material will appear red by default.</p>
+<h2 id="albedovalue">AlbedoValue</h2>
+<p>When an AlbedoValue fragment is added to a material, the user may set a color value to be uniformly applied to the material.  To add an AlbedoValue fragment to a material, click on the <code>Add NadaFragment</code> button in the Properties window:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47689.png" alt="AddAlbedoVal"></p>
+<p>Before getting into how albedo is affected by material fragments, let's look at how a material appears with only an AlbedoValue fragment on it. The following screenshots show a range of albedo values applied to spheres with no other fragments applied to the material:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2947.png" alt="AlbedoRange"></p>
+<p>Using the [ShaderInput] attribute to access the AlbedoValue fragment within a NadaScript, one may change the albedo value during runtime. The following gif shows this effect in engine (all other shader inputs are at default values):</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2949.gif" alt="ChangeAlbedoValueVer2"></p>
+<p>The following script used to achieve the above effect must be placed on an object that is using a material with <em>at least</em> an AlbedoValue NadaFragment.</p>
+<pre><code>class ChangeAlbedo : NadaComponent
+{
+  // The shader input for Albedo value (necessary to change value at run-time)
+  [ShaderInput] var AlbedoValue : Real4 = Real4(0,0,0,0);
+  
+  // User-defined albedo values
+  [Property] var AlbedoValue1 : Real4 = Real4();
+  [Property] var AlbedoValue2 : Real4 = Real4();
+  [Property] var AlbedoValue3 : Real4 = Real4();
+  [Property] var AlbedoValue4 : Real4 = Real4();
+  [Property] var AlbedoValue5 : Real4 = Real4();
+  
+  // Time and Ease properties for Actions
+  [Property] var Time : Real = 1.0;
+  [Property] var Ease : Ease = Ease.QuadInOut;
+
+  function Initialize(init : CogInitializer)
+  {
+    // Call the function that contains the action loop
+    this.AlbedoOne();
+  }
+  
+  function AlbedoOne()
+  {
+    // Action sequence changing albedo value from one 
+    // user-defined value to the next
+    var seq = Action.Sequence(this.Owner.Actions);
+    Action.Property(seq, @this.AlbedoValue, this.AlbedoValue1, this.Time, this.Ease);
+    Action.Property(seq, @this.AlbedoValue, this.AlbedoValue2, this.Time, this.Ease);
+    Action.Property(seq, @this.AlbedoValue, this.AlbedoValue3, this.Time, this.Ease);
+    Action.Property(seq, @this.AlbedoValue, this.AlbedoValue4, this.Time, this.Ease);
+    Action.Property(seq, @this.AlbedoValue, this.AlbedoValue5, this.Time, this.Ease);
+    // Action call back to this function, creating an infinite loop
+    Action.Call(seq, this.AlbedoOne);
+  }
+}
+</code></pre>
+<p>Note that in the previous two examples there were no other fragments on the material other than AlbedoValue, leaving the default values for roughness, specular, and metallic intact. Changing the values of the other default fragments can significantly alter how the albedo appears. To see some of these effects, the next set of screenshots will show one line of spheres that has roughness values increasing from <code>0</code> to <code>1</code> and another line that has metallic values increasing from <code>0</code> to <code>1</code>. Specular will remain constant at the default value of <code>0.5</code>. The albedo value will remain constant at <code>R:244 G:162 B:137</code>, or Copper, so as to focus on the change brought by the roughness and metallic fragments:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2930.png" alt="AlbedoMetalLine3"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2935.png" alt="AlbedoMetalLine"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2934.png" alt="AlbedoMetalLine2"></p>
+<h1 id="albedomap">AlbedoMap</h1>
+<p>An albedo map is a texture provided by an artist for use on a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/models/model_component.md">Model</a>. While most of these textures will be unique to the model for which they were made, others, such as tileable textures, may be applied to the materials on a number of geometric primitives and look completely natural. To apply an AlbedoMap fragment to a material, click on the <code>Add NadaFragment</code> button in the Properties window:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47687.png" alt="AddAlbedoValue"></p>
+<h2 id="tileable-texture">Tileable Texture</h2>
+<p>Before moving on to unique, artist-crafted models, let's take a look at how professionally-made tileable textures, complete with Normal, Metallic, Roughness, and Specular maps, appear when applied to some primitive shapes. The following screenshot shows the Properties window window of a material using a tileable, metal box texture:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47710.png" alt="MetalBoxMat"></p>
+<p>Using all of the maps made available by the artist, a simple cube becomes a PBR-ready object to use in a level environment:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2978.png" alt="MetalBox3"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2980.png" alt="MetalBox1"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2982.png" alt="MetalBox2"></p>
+<p>By changing the scale of the object slightly (e.g. <code>[4, 1, 4]</code>), it's a quick jump to creating the floor for a level using only this object:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2984.png" alt="MetalBoxLevel"></p>
+<p>As this particular material has maps for all of the default fragments included in a new Material, it presents an ideal case to see how the Material's appearance, specifically the albedo, changes when one or more of these maps is removed.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2986.png" alt="MetalBoxLevelNoAlbedo"></p>
+<h2 id="model-specific-textures">Model-Specific Textures</h2>
+<p>In a game with many artist-crafted, unique models, these will make up the majority of the texture maps. Just as was shown with the tileable textures directly above, even though it does provide the color of the object, it is only one part of a whole that is significantly altered when one or more of the other texture maps is removed.</p>
+<p>Let's take a look at how model-specific textures are applied to unique models.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2988.png" alt="SpaceFighterAlbedo"> <em>The albedo map that will be applied to the material before being imported into Zilch</em></p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2990.png" alt="SpaceFighterAlbedoGammaCorrected"> <em>The albedo map after being imported into Zilch and gamma corrected</em></p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47704.png" alt="SpaceshipAlbedoA"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47706.png" alt="SpaceshipAlbedoB"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47708.png" alt="SpaceshipAlbedoC"></p>
+<p><em>The AlbedoMap fragment has been added to a Material and applied to the Model</em></p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47698.png" alt="SpaceshipFinalA"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47700.png" alt="SpaceshipFinalB"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47702.png" alt="SpaceshipFinalC"></p>
+<p><em>The finished object with all texture maps applied to the Material</em></p>
+<h3 id="lighting-and-albedo">Lighting and Albedo</h3>
+<p>As may have been obvious from the screenshots above, lighting has a direct effect on the Albedo of a Material. In all of the examples above, it is indirect lighting that bears the most influence on the apparent color of the Material.</p>
+<h4 id="indirect-lighting">Indirect Lighting</h4>
+<p>Indirect lighting, or image-based lighting, refers primarily to the skybox that encircles the scene. The following screenshots will show different angles of gold spheres that have a constant Metallic value of <code>1.0</code> and an increasing Roughness value in the range <code>0.0</code> - <code>0.6</code>:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/3012.png" alt="GoldSkybox1A"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/3015.png" alt="GoldSkybox1B"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/3017.png" alt="GoldSkybox1C"></p>
+<p>If you change the skybox, however, the overall color will change as a result of the indirect lighting the skybox provides. To demonstrate this, the following screenshots are of the exact same spheres but with a significantly brighter skybox:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/3019.png" alt="GoldSkybox2A"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/3021.png" alt="GoldSkybox2B"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/3023.png" alt="GoldSkybox2C"></p>
+<p>The difference may be subtle or pronounced depending on the degree of change between skyboxes. It should be apparent, however, how much of an influence indirect lighting, through the influence of the skybox, has on a PBR material.</p>
+<h2 id="reference-pages">Reference Pages</h2>
+<h3 id="manual">Manual</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/models/model_component.md">model_component</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials.md">materials</a></li>
+</ul>
+<h3 id="code-reference">Code Reference</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/model.md">model</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/material.md">material</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/materials/albedo.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Intro | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Intro | ZilchEngine ">
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_for_educators.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>NOTE: This page is intended as a workshop for a trained instructor to teach potential Zilch Engine Educators.</p>
+<h1 id="intro">Intro</h1>
+<p>This section outlines a workshop on entry level game development education through the Zilch Engine.</p>
+<ul>
+<li>Welcome</li>
+<li>Instructor background</li>
+<li>Trainee background</li>
+<li>Goals</li>
+<li>Basic Zilch Engine comprehension</li>
+<li>Basic intructional knowledge of curriculum.</li>
+<li>Feed back</li>
+<li>Identify educator goals</li>
+<li>Identify requirements and constraints of the educational context</li>
+</ul>
+<h2 id="zilch-engine">Zilch Engine</h2>
+<p>The Zilch Engine is a professional grade 3D game engine developed in DigiPen's R&amp;D department. Let's start with with an overview of some highlevel</p>
+<ul>
+<li>Launcher</li>
+<li>Builds</li>
+<li>Editor</li>
+<li>UI</li>
+<li>Text Editor</li>
+<li>Customization</li>
+<li>Tags</li>
+<li>Commands</li>
+<li>Architecture</li>
+<li>Components</li>
+<li>Objects</li>
+<li>Resources</li>
+<li>Tools</li>
+<li>Graphics</li>
+<li>Physically Based Rendering</li>
+<li>Physics</li>
+<li>Kinematic</li>
+<li>Dynamic</li>
+<li>Audio</li>
+<li>3D</li>
+<li>Scripting (Nada)</li>
+<li>Simple</li>
+<li>Advanced</li>
+</ul>
+<h3 id="demos">Demos</h3>
+<ul>
+<li>Physics Demo rFRIC</li>
+</ul>
+<h4 id="rube-goldbergs">Rube Goldbergs</h4>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93695.exe" alt="RubdGoldberg_Dominos"></p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93700.exe" alt="RubeGoldberg_FullAdder"></p>
+<h4 id="vapor">Vapor</h4>
+<p><video width="500" height="281" controls=""><source type="video/mp4" src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93368.mp4"></video></p>
+<h4 id="aquarius">Aquarius</h4>
+<p><video width="500" height="281" controls=""><source type="video/mp4" src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93389.mp4"></video></p>
+<h4 id="frozen-masquerade">Frozen Masquerade</h4>
+<p><video width="500" height="281" controls=""><source type="video/mp4" src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93390.mp4"></video></p>
+<h4 id="orpheus">Orpheus</h4>
+<p><video width="500" height="281" controls=""><source type="video/mp4" src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93426.mp4"></video></p>
+<h4 id="super-space-blank">Super Space Blank</h4>
+<p><video width="500" height="281" controls=""><source type="video/mp4" src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93427.mp4"></video></p>
+<h4 id="the-lift">The Lift</h4>
+<p><video width="500" height="281" controls=""><source type="video/mp4" src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93447.mp4"></video></p>
+<h2 id="zilchhub">ZilchHub</h2>
+<p>ZilchHub is the open source platform/site for Zilch Engine developement and education.</p>
+<ul>
+<li>Open source platform</li>
+<li>Tasks</li>
+<li>Projects</li>
+<li>Documentation</li>
+<li>Source</li>
+<li>Support</li>
+<li>Bug Reporting</li>
+<li>Feature Requests</li>
+<li>Demos</li>
+<li>Open Source Contribution</li>
+<li>Editor</li>
+<li>Documentation</li>
+<li>Website/Platform (Phabricator)</li>
+</ul>
+<h1 id="tutorials">Tutorials</h1>
+<p>The tutorial section is the bulk of the content intended for new students. Much of the workshop</p>
+<h2 id="tutorial-sequence"><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/tutorial_sequences.md">Tutorial Sequence</a></h2>
+<h3 id="beginner-i"><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/tutorial_sequences.md#beginner-i">Beginner I</a></h3>
+<h3 id="beginner-ii"><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/tutorial_sequences.md#beginner-ii">Beginner II</a></h3>
+<h1 id="manual"><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual.md">Manual</a></h1>
+<h1 id="projects">Projects</h1>
+<p>The following are suggested projects to be implemented after completing each set of the #basic_tutorials.</p>
+<h2 id="rube-goldberg-machine">Rube Goldberg Machine</h2>
+<p>After completing the #beginner_i tutorials students should be able to implement a simple version of a Rube Goldberg machine. Unlike the following projects the Rube Goldberg machine in not modelled after any paticular game and has many degrees of freedom. It is suggested that you require students to utilize the instances of each of the following features taught in the #beginner_i tutorials.</p>
+<ul>
+<li>Physics Effects</li>
+<li>Applied to LevelSettings object</li>
+<li>Applied to a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/region.md">Region</a></li>
+<li>Physics Materials</li>
+<li>Restitution</li>
+<li>Friction</li>
+<li>High Priority</li>
+<li>Hierarchies</li>
+</ul>
+<h2 id="pong">Pong</h2>
+<p>After completing the #beginner_ii tutorials students should be able to implement a simple version of Pong.</p>
+<ul>
+<li>Paddles</li>
+<li>Basic Input</li>
+<li>Object Movement</li>
+<li>Collision Detection</li>
+<li>Physics Materials</li>
+<li>Ball</li>
+<li>Physics Materials</li>
+<li>Random Direction</li>
+<li>Score</li>
+<li>SpriteText</li>
+</ul>
+<h2 id="asteroids">Asteroids</h2>
+<p>After completing the #beginner_iii  tutorials students should be able to implement a simple version of Asteroids.</p>
+<ul>
+<li>Player Ship</li>
+<li>Input</li>
+<li>Movement</li>
+<li>Firing</li>
+<li>Screen Wrapping</li>
+<li>2D Rotation</li>
+<li>Asteroids</li>
+<li>Archetypes</li>
+<li>Construction</li>
+<li>Runtime Spawning</li>
+<li>Timers</li>
+<li>Position</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94408.zip" alt="Asteroids"></p>
+<h2 id="2d-platformer">2D Platformer</h2>
+<p>After completing the #beginner_iv tutorials students should be able to implement a simple 2D platformer.</p>
+<ul>
+<li>Player</li>
+<li>Input</li>
+<li>Movement (use the swept controller)</li>
+<li>Health</li>
+<li>Jumping</li>
+<li>Checkpoints</li>
+<li>Respawning</li>
+<li>Simple Enemies</li>
+<li>Patrol</li>
+<li>Destroy/Respawn on Collision</li>
+</ul>
+<h1 id="external-materials-and-resources">External Materials and Resources</h1>
+<h2 id="audio">Audio</h2>
+<ul>
+<li><a href="http://www.audacityteam.org/">Audacity</a></li>
+</ul>
+<h2 id="art">Art</h2>
+<ul>
+<li><a href="https://opengameart.org/">Open Game Art</a></li>
+<li><a href="https://opengameart.org/">Kenney Sprite Assets</a></li>
+</ul>
+<h2 id="acceptable-asset-licenses">Acceptable Asset Licenses</h2>
+<ul>
+<li><a href="https://creativecommons.org/share-your-work/public-domain/cc0/">CC0 </a> (Creative Commons V0)</li>
+<li><a href="https://en.wikipedia.org/wiki/MIT_License">MIT </a></li>
+</ul>
+<h2 id="editor-reference">Editor Reference</h2>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/texteditor/texteditorhotkeys.md">Text Editor Hotkeys</a></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_for_educators.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

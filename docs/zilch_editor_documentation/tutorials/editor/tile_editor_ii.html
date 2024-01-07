@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Learning Objectives | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Learning Objectives | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/editor/tile_editor_ii.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>This lesson covers some of the more advanced features of Zilch Engine's Tile Editor tool. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/editor/tile_editor.md"> previous lesson</a> covers the basics.</p>
+<h1 id="learning-objectives">Learning Objectives</h1>
+<ul>
+<li>Tile colliders</li>
+<li>Tile palettes</li>
+</ul>
+<h1 id="level-setup">Level Setup</h1>
+<ul>
+<li>Reopen the TileEditor zero project project from the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/editor/tile_editor.md"> previous tutorial</a></li>
+</ul>
+<h1 id="tile-archetypes">Tile Archetypes</h1>
+<p>When you place tiles with the TileEditor2D tool, they are not created as individual game objects. Instead, they are placed into a tilemap, which allows multiple tiles to be merged into a single cog, saving memory and processing time. As a result, tile archetypes are used a bit differently than conventional archetypes.</p>
+<p>When the engine creates a merged tilemap object, it is always given a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/multisprite.md"> MultiSprite</a> component, so you don't necessarily need to put one on your tile archetype. If you do, though, the resultant merged tilemap will use the settings specified by your archetype's MultiSprite. Similarly, a merged tilemap object optionally has a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/meshcollider.md"> MeshCollider</a> component, so you only need to give a tile archetype that component if you want the merged tilemap to use the settings from the MeshCollider for your archetype.</p>
+<p>Let's create a tile archetype with some custom game logic and add it to our level.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li>Create a NadaScript resource using the Component template template and name it <code>ReloadLevelOnCollisionStarted</code></li>
+<li>Update the <code>ReloadLevelOnCollisionStarted</code> script to the following:</li>
+</ul>
+<pre><code class="lang-lang=csharp,">class ReloadLevelOnCollisionStarted : NadaComponent
+{
+  function Initialize(init : CogInitializer)
+  {
+    Zilch.Connect(this.Owner, Events.CollisionStarted, this.OnCollisionStarted);
+  }
+  
+  function OnCollisionStarted(event : CollisionEvent)
+  {
+    this.Space.ReloadLevel();
+  }
+}
+</code></pre>
+<p>This component will cause the level to be reloaded if the player character (or, really, anything at all) comes in contact with it. We can use it to create &quot;deadly&quot; tiles.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createtransform"> CreateTransform</a></li>
+<li>In the <code>Properties Window</code></li>
+<li>Rename Transform object to <code>DeadlyTile</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/meshcollider.md"> MeshCollider</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/meshcollider.md"> MeshCollider</a></li>
+<li>Set Ghost checkBox to <code>true</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>ReloadLevelOnCollisionStarted</code></li>
+<li>Set Archetype  to <code>DeadlyTile</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#delete"> Delete</a> the DeadlyTile object</li>
+</ul>
+<p>This new archetype can now be used with the TileEditor2D tool with any sprite source in the project.</p>
+<ul>
+<li>Select the {nav icon=pencil, name=TileEditor2D} tool</li>
+<li>In the <code>Tools Window</code></li>
+<li>Set Archetype enum to <code>DeadlyTile</code>
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108811.png" alt="image"></li>
+<li>In the <code>Level Window</code></li>
+<li>Using the {nav icon=pencil, name=TileEditor2D} tool, create a lava pit in the level with both the plain lava sprite source <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108750.png" alt="image"> and the animated LavaSurface texture sprite source <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108754.gif" alt="Animated Lava Surface at 250 ms Delay">
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108818.png" alt="image"></li>
+</ul>
+<p>While you're painting tiles into a level, it can sometimes be easy to lose track of which tiles have what archetypes. Fortunately, the TileEditor2D tool has a feature to help with that.</p>
+<ul>
+<li>In the <code>Tools Window</code></li>
+<li>Set ShowArchetype checkBox to <code>true</code></li>
+</ul>
+<p>With ShowArchetype checkBox enabled, the editor will show the name of the archetype that was used for each tile in the level.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108820.png" alt="image"></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108831.gif" alt="Playing with Lava"></p>
+<p>The lava seems to be working as intended. Now let's get a closer look at some of what's going on here. Pressing <code>F9</code> while the game is running begins <strong>Edit In Game</strong> mode, which makes the editor open the game session and all of its spaces for editing while it's still running. This is a very powerful and useful feature in any situation, but it is great for showing off some of the details of how the TileEditor2D tool merges groups of tiles.</p>
+<ul>
+<li>While the game is running, press key the <code>F9</code> key</li>
+<li>In the <code>Objects Window</code></li>
+<li>Under TileMap object</li>
+<li>Observe the objects that are there</li>
+</ul>
+<p>When the game starts, before the first frame, the engine prepares level by merging the tilemaps into their logical pieces. Note how each separate platform is its own object, and the lava is separate from the ground.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108925.png" alt="image"></p>
+<p>Observe how the colliders on each object use meshes that are dynamically generated to perfectly fit the pieces they're placed on.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108927.png" alt="image"></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<p>Let's move on.</p>
+<h1 id="tile-collision">Tile Collision</h1>
+<p>So far, every tile we've placed has used a simple box-shaped collider. The TileEditor2D tool isn't limited to just boxes, though. It can use any <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmesh.md"> PhysicsMesh</a> as its collision shape. Zilch Engine comes with a set of common ramps and boxes to be used with tilemaps.</p>
+<ul>
+<li>Download the following tile sheet:
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108937.png" alt="SimpleTriangleTiles"></li>
+<li><code>Drag and drop</code> the file into the <code>Level Window</code></li>
+<li>In the <code>Group Import Options Window</code></li>
+<li>Set ImportImages enum to <code>Sprites</code></li>
+<li>Press the <code>Import All</code> button</li>
+<li>In the <code>Library Window</code></li>
+<li>Under the SpriteSource  tag</li>
+<li>Double-click  <code>SimpleTriangleTiles</code></li>
+<li>In the <code>Sprite Source Editor Window</code></li>
+<li>Press the <code>Convert To Animation</code> button</li>
+</ul>
+<p>This sheet's tiles are 64-pixel squares.</p>
+<ul>
+<li>In the <code>Sprite Importer Window</code></li>
+<li>Set FrameWidth  to <code>64</code></li>
+<li>Press the <code>Add Frames as Sprites</code> button</li>
+<li>Press the Close button button</li>
+</ul>
+<p>Now let's add some sloped surfaces to the level. Each of the new triangular tile sprites will pair perfectly with one of the sloped collider options:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108941.png" alt="image"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108943.png" alt="image"></p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108945.png" alt="image"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108947.png" alt="image"></p>
+<p>(NOTE) <strong>No Collision:</strong> To remove the collider from a tile, click the little {icon times} button on the Collision enum property: <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108961.png" alt="image"> Similarly, you can remove the sprite from a tile by clicking the corresponding button on the Sprite enum property.</p>
+<ul>
+<li>Select the {nav icon=pencil, name=TileEditor2D} tool</li>
+<li>In the <code>Tools Window</code></li>
+<li>Set Archetype enum to <code>DefaultTile</code></li>
+<li>Set Sprite enum to <code>SimpleTriangleTiles000</code></li>
+<li>Set Collision enum to <code>SlopeLeft</code></li>
+<li>In the <code>Level Window</code></li>
+<li>Use the Draw sub-tool to paint a slope
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108933.gif" alt="Painting a Slope"></li>
+</ul>
+<p>It's wise to fill in the underside of the slope to alleviate potential collider-catching problems.</p>
+<ul>
+<li>In the <code>Tools Window</code></li>
+<li>Set Sprite enum to <code>SquareBordered</code></li>
+<li>Set Collision enum to <code>Box</code></li>
+<li>In the <code>Level Window</code></li>
+<li>Use the Draw sub-tool to fill in the underside of the slope
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108935.gif" alt="Filling in the Slope"></li>
+<li>Using the new sloped sprite sources and the sloped colliders, paint additional slopes as desired
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108949.png" alt="image"></li>
+</ul>
+<p>By this point, you might be getting tired of having to set the Archetype enum, Sprite enum, and Collision enum properties every time you want to change tiles. That's where tile palettes come in!</p>
+<h1 id="tile-palettes">Tile Palettes</h1>
+<p>A <strong>tile palette</strong> is like a shelf that stores tile definitions, making it easy to switch between tiles with a single click. It occupies the bottom portion of the TileEditor2D tool's property grid, and expands as necessary. Creating a tile palette is simple.</p>
+<ul>
+<li>Select the {nav icon=pencil, name=TileEditor2D} tool</li>
+<li>In the <code>Tools Window</code></li>
+<li>Press the Add button button to the right of the TilePalette enum property
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108951.png" alt="image"></li>
+<li>In the <code>Add TilePaletteSource Resource Window</code></li>
+<li>Set Name  to <code>Grass</code></li>
+<li>Press the Create button button</li>
+<li>Select the {nav icon=pencil, name=TileEditor2D} tool</li>
+<li>In the <code>Tools Window</code></li>
+<li>Set TilePalette enum to <code>Grass</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108953.png" alt="image"></p>
+<p>The new palette is mostly empty, but it's easy to add to it. Just set up a tile the way you want it, and then click in any empty space in the palette view to place it there.</p>
+<ul>
+<li>In the <code>Tools Window</code></li>
+<li>Set Archetype enum to <code>DeadlyTile</code></li>
+<li>Set Sprite enum to <code>LavaSurface</code></li>
+<li>Set Collision enum to <code>HalfBoxBottom</code></li>
+</ul>
+<p>Notice how the palette already reflects the changes you have made to its <strong>selected tile</strong>, which is outlined in blue:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108957.png" alt="image"></p>
+<p>To add a new tile to the palette, <strong>first click in an empty spot</strong> in the palette view and then set its properties. To modify an existing tile in the palette, <strong>select the tile you want to modify</strong>, and then set its properties. To remove a tile from the palette, <strong>right-click the tile</strong> you want to remove. In this manner, you can make things very convenient for yourself while you're editing a level.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/109087.gif" alt="Adding Tiles to a Palette"></p>
+<p><em>The left mouse button adds tiles, and the right mouse button removes them</em></p>
+<ul>
+<li>In the <code>Tools Window</code></li>
+<li>Create a full tile palette with archetypes, sprites, and colliders
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108963.png" alt="image"></li>
+</ul>
+<p>(NOTE) <strong>Zooming the Palette View:</strong> To make more room for yourself, you can hold key the <code>Ctrl</code> key and scroll  the <strong>mouse wheel</strong> to zoom the palette view in and out.</p>
+<p>You can make multiple tile palettes to make it easy to facilitate making levels that are set in different locations, or use different art styles, and so on.</p>
+<ul>
+<li>In the <code>Tools Window</code></li>
+<li>Press the Add button button to the right of the TilePalette enum property
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/109089.png" alt="image"></li>
+<li>In the <code>Add TilePaletteSource Resource Window</code></li>
+<li>Set Name  to <code>Slopes</code></li>
+<li>Press the Create button button</li>
+<li>Select the {nav icon=pencil, name=TileEditor2D} tool</li>
+<li>In the <code>Tools Window</code></li>
+<li>Set TilePalette enum to <code>Slopes</code></li>
+<li>Fill in the tile palette with the triangular sprite sources and the SquareBordered texture sprite source, with appropriate collisions set for each tile
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108967.png" alt="image"></li>
+</ul>
+<p>Let's use both palettes to create a new level.</p>
+<p>(NOTE) <strong>TiledDrawing:</strong> Watch what happens when you <code>left-click and drag</code> in the tile palette view to select multiple tiles, and then paint with them. Then, set the TileEditor2D tool's TiledDrawing checkBox property to <code>true</code> and then paint again. See the difference? TiledDrawing checkBox is great for preserving a specific configuration of tiles that you have laid out in the palette, but it also works with a brush committed with the Selection sub-tool! <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108992.gif" alt="TiledDrawing Demonstration"></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li>Create a Level resource using the {nav icon=clone, name=2D Level} template and name it <code>OtherLevel</code></li>
+<li>Select the {nav icon=pencil, name=TileEditor2D} tool</li>
+<li>In the <code>Level Window</code></li>
+<li>Click  the <strong>No TileMap Object</strong> message</li>
+<li>In the <code>Tools Window</code></li>
+<li>Set TilePalette enum to <code>Grass</code></li>
+<li>Using the <code>Grass</code> palette, create the main pieces of a level
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108996.png" alt="image"></li>
+<li>In the <code>Tools Window</code></li>
+<li>Set TilePalette enum to <code>Slopes</code></li>
+<li>Using the <code>Slopes</code> palette, add slopes to the level
+<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/109006.png" alt="image"></li>
+<li>In the <code>Library Window</code></li>
+<li>Under Archetype</li>
+<li><code>Left-click and drag</code> <code>SweptPlayer2D</code> into the <code>Level Window</code></li>
+<li>In the <code>Properties Window</code></li>
+<li>Configure the <code>SweptController</code> component's properties as desired</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/109010.gif" alt="Final Tiled Game"></p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+</ul>
+<h1 id="on-your-own">On Your Own</h1>
+<p>Background tilemaps can really make a level feel alive. To create one, just press the CreateTileMap button button in the {nav icon=pencil, name=TileEditor2D} tool's property grid.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/109022.png" alt="image"></p>
+<p>It is often useful to organize your tilemaps by giving them descriptive names:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/109026.png" alt="image"></p>
+<p>To make a tilemap into a proper background tilemap, just push it back a bit along the Z axis. You may also wish to alter some of the properties of the MultiSprite component to give it a moodier look:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/109018.png" alt="image"></p>
+<p>Experiment with placing multiple layered tilemaps to help add visual flair to your levels.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/109024.png" alt="image"></p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="tutorials">Tutorials</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/graphics/sprite_animations.md">sprite_animations</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/external_zilch_engine_tools/the_market.md">the_market</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/gameplay/swept_character.md">swept_character</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/editor/tile_editor_ii.md">tile_editor_ii</a></li>
+</ul>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spriteimporter.md">spriteimporter</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritesourceeditor.md">spritesourceeditor</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">resourceadding</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/archetypes/archetype_basics.md">archetype_basics</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<h3 id="commands">Commands</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createtransform"> CreateTransform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#delete"> Delete</a></li>
+</ul>
+<h3 id="classes">Classes</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/multisprite.md">multisprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmesh.md">physicsmesh</a></li>
+</ul>
+<h3 id="events">Events</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionstarted"> CollisionStarted</a></li>
+</ul>
+<h2 id="development-task">Development Task</h2>
+<ul>
+<li>T2174</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/editor/tile_editor_ii.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

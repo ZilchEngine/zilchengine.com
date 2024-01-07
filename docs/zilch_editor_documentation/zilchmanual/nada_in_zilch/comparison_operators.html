@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>== &amp; != Operators | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="== &amp; != Operators | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/comparison_operators.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>Comparison operators take two operands and evaluate to a boolean value which describes a relationship between the given values. Comparison operators are frequently used with <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/conditionals.md">conditionals</a>.</p>
+<h1 id="---operators"><code>==</code> &amp; <code>!=</code> Operators</h1>
+<p>The <code>==</code> (equality) operator compares two operands and returns <code>true</code> if they are the same and <code>false</code> if they are not. The <code>!=</code> (inequality) operator performs the inverse operation, returning <code>false</code> if they are the same and <code>true</code> if they are not.</p>
+<table>
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Operator</th>
+<th>Right Operand</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>true</code></td>
+<td><code>==</code></td>
+<td><code>false</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>!=</code></td>
+<td><code>true</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>!=</code></td>
+<td><code>false</code></td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+<p>The equality operator is very useful when trying to identify unknown data, or verifying existing data.</p>
+<pre><code class="lang-name=&quot;==">if(unknownObject == this.TargetObject)
+{
+  Console.WriteLine(&quot;Found Target&quot;);
+}
+</code></pre>
+<pre><code class="lang-name=&quot;==">if(this.Owner.Player.TeamId == hitObject.Player.TeamId)
+  Console.WriteLine(&quot;Friendly Fire!&quot;);
+</code></pre>
+<p>Keep in mind that the values of the operands must be exactly equal. When comparing decimal values, the differences may be very small but still exist, i.e. <code>3.14159 == 3.141591</code> will evaluate to <code>false</code>. Similarly <code>2.236068 == 2.23607</code> will evaluate to <code>false</code>, as the values differ by <code>0.0000002</code>. It is common to use an <em>epsilon</em> value (i.e. <code>0.0000001</code>) when comparing values that are more precise then the comparison needs to be.</p>
+<p>The <code>!=</code> operator is commonly used to verify data exists before attempting to use it.</p>
+<pre><code class="lang-name=&quot;!=">if(unknownObject != null)
+{
+  Console.WriteLine(`unkownObject` is valid);
+  if(unknownObject.Transform != null)
+    Console.WriteLine(unkownObject.Transform.Translation);
+  else
+    Console.WriteLine(&quot;`unkownObject` does not have a Tranform component&quot;);
+}
+</code></pre>
+<h1 id="object-comparison">Object Comparison</h1>
+<p>As seen in the first code block, object comparison is fairly common. However, there are a few details to be aware of when comparing objects by value vs. by reference.</p>
+<p>NOTE: To read about the details about by-value and by-reference objects, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/constructbyvaluevsbyref.md"> read the manual page</a>.</p>
+<h2 id="object-comparison-by-value">Object Comparison by Value</h2>
+<p>Take the following struct as a by-value example:</p>
+<pre><code class="lang-name=&quot;ValueObj&quot;,">struct ValueObj
+{
+  var ValueOne : Boolean;
+  var ValueTwo : Integer;
+  var ValueThree : Boolean;
+}
+</code></pre>
+<p>In Nada, structs are value types, so when they're compared using the <code>==</code> or <code>!=</code> operators, the value(s) within the type are what is compared. This means that the <code>==</code> and <code>!=</code> operators <strong>cannot</strong> be used with references to structs to determine if the operands are the same struct instance.</p>
+<pre><code class="lang-name=&quot;Comparing">var a = ValueObj();
+var b = a;
+var c = ValueObj();
+Console.WriteLine(&quot;a &amp; b are equal: `a == b`&quot;);
+
+b.ValueOne = true;
+Console.WriteLine(&quot;a &amp; b are equal: `a == b`&quot;);
+
+Console.WriteLine(&quot;a &amp; c are equal: `a == c`&quot;);
+Console.WriteLine(&quot;b &amp; c are equal: `b == c`&quot;);
+</code></pre>
+<pre><code class="lang-name=Console">a &amp; b are equal: true
+a &amp; b are equal: false
+a &amp; c are equal: true
+b &amp; c are equal: false
+</code></pre>
+<p>In this case, the <code>ValueObj</code> instances are constructed and compared by value. So despite <code>b</code> being a copy of <code>a</code>, when <code>b.ValueOne</code> is set to false, the value of <code>a.ValueOne</code> does not change, and the values of the two objects are no longer equal. Furthermore, it can be seen that even when <code>ValueObj</code> instance <code>c</code>, a new value type instance, is constructed, the <code>ValueObj</code> is only copied and compared by value.</p>
+<h2 id="object-comparison-by-reference">Object Comparison by Reference</h2>
+<p>Take the following class as a by-reference example:</p>
+<pre><code class="lang-name=&quot;ReferenceObj&quot;,">class ReferenceObj
+{
+  var ValueOne : Boolean;
+  var ValueTwo : Integer;
+  var ValueThree : Boolean;
+}
+</code></pre>
+<p>In Nada, classes are reference types, so when they're compared using the <code>==</code> or <code>!=</code> operators, what are actually compared are the addresses of the objects in memory. This means that the <code>==</code> and <code>!=</code> operators <strong>cannot</strong> be used with class references to determine if the operands contain the same values; instead, they reveal whether the two objects are the same class instance.</p>
+<pre><code class="lang-name=&quot;Comparing">var a = ReferenceObj();
+var b = a;
+var c = ReferenceObj();
+Console.WriteLine(&quot;a &amp; b are equal: `a == b`&quot;);
+
+b.ValueOne = false;
+Console.WriteLine(&quot;a &amp; b are equal: `a == b`&quot;);
+
+Console.WriteLine(&quot;a &amp; c are equal: `a == c`&quot;);
+Console.WriteLine(&quot;b &amp; c are equal: `b == c`&quot;);
+</code></pre>
+<pre><code class="lang-name=Console">a &amp; b are equal: true
+a &amp; b are equal: true
+a &amp; c are equal: false
+b &amp; c are equal: false
+</code></pre>
+<p>In this case, the <code>ReferenceObj</code> instances are constructed and compared by reference, so <code>b</code> is actually a copy of the reference <code>a</code> to the constructed <code>ReferenceObj</code>. This means that when <code>b.ValueOne</code> is set to <code>true</code>, the <code>ReferenceObj</code> instance that <code>a</code> references is modified, as <code>a</code> and <code>b</code> are in fact referencing the same <code>ReferenceObj</code> instance.  Furthermore, looking at <code>c</code>, one can see that when a new reference type instance is constructed, it is only copied and compared by reference, so even when two instances contain the same value(s), they will not be considered equal.</p>
+<h1 id="floating-point-comparison">Floating-Point Comparison</h1>
+<p>Due to floating-point error, it is best to avoid comparing two extremely precise or large values of floating-point types (such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md"> Real</a>) with the <code>==</code> and <code>!=</code> operators. Consider:</p>
+<pre><code class="lang-lang=csharp,">Console.WriteLine(2000000000.0 == 2000000042.0);
+</code></pre>
+<pre><code class="lang-name=Console">true
+</code></pre>
+<p>This is not a quirk of the engine, it's a quirk of modern computing. Instead of using these operators, it is best to use a function like <code>Math.ApproximatelyEqual</code> (which can then be negated using the <code>!</code> operator to check for inequality) for floating-point types. For example, instead of something like this:</p>
+<pre><code class="lang-lang=csharp,">if (this.Transform.WorldTranslation.Y == this.JumpHeight)
+{
+  //
+}
+</code></pre>
+<p>... try something like this:</p>
+<pre><code class="lang-lang=csharp,">if (Math.ApproximatelyEqual(this.Transform.WorldTranslation.Y, this.JumpHeight, 0.01))
+{
+  //
+}
+</code></pre>
+<h1 id="---operators-1"><code>&gt;</code> &amp; <code>&lt;</code> Operators</h1>
+<p>The <code>&gt;</code> (greater than) operator returns true if the left operand is <em>greater than// the right operand. The <code>&lt;</code> (less than) operator returns true if the left operand is //less than</em> the right operand.</p>
+<table>
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Operator</th>
+<th>Right Operand</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1</code></td>
+<td><code>&gt;</code></td>
+<td><code>1</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>&gt;</code></td>
+<td><code>1</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td><code>&lt;</code></td>
+<td><code>1</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>&lt;</code></td>
+<td><code>1</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>&lt;</code></td>
+<td><code>1</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>&lt;</code> is often used to compare simulation values to detemine if a threshold has failed to be reached.</p>
+<pre><code class="lang-name=&quot;&lt;">if(height &lt; 5)
+  Console.WriteLine(&quot;You must be at least 5ft tall to ride this attraction&quot;);
+</code></pre>
+<p><code>&gt;</code> is often used to compare simulation values to detemine if a threshold has been exceeded.</p>
+<pre><code class="lang-name=&quot;&gt;">if(cost &gt; 10)
+  Console.WriteLine(&quot;That restaurant is not within my dinner budget&quot;);
+</code></pre>
+<h1 id="---operators-2"><code>&gt;=</code> &amp; <code>&lt;=</code> Operators</h1>
+<p>The <code>&gt;=</code> (greater than or equal to) operator returns true if the left operand is <em>greater than <strong>or</strong> equal to// the right operand. The <code>&lt;=</code> (less than or equal to) operator returns true if the left operand is //less than <strong>or</strong> equal to</em> the right operand.</p>
+<table>
+<thead>
+<tr>
+<th>Left Operand</th>
+<th>Operator</th>
+<th>Right Operand</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1</code></td>
+<td><code>&gt;=</code></td>
+<td><code>1</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>&gt;=</code></td>
+<td><code>1</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>0</code></td>
+<td><code>&lt;=</code></td>
+<td><code>1</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>&lt;=</code></td>
+<td><code>1</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>&lt;=</code></td>
+<td><code>1</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>&lt;=</code> is often used to compare simulation values to detemine if a threshold has failed to be exceeded.</p>
+<pre><code class="lang-name=&quot;&lt;">if(cost &lt;= 10)
+  Console.WriteLine(&quot;That restaurant is within my dinner budget&quot;);
+</code></pre>
+<p><code>&gt;</code> is often used to compare simulation values to detemine if a threshold has been exceeded.</p>
+<pre><code class="lang-name=&quot;&gt;">if(height &gt;= 5)
+  Console.WriteLine(&quot;You are at least 5ft tall, you may ride this attraction&quot;);
+</code></pre>
+<h1 id="related-materials">Related Materials</h1>
+<h1 id="manual">Manual</h1>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md">operators_precedence_chart</a></li>
+</ul>
+<h1 id="tasks">Tasks</h1>
+<ul>
+<li>{T556}</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/comparison_operators.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

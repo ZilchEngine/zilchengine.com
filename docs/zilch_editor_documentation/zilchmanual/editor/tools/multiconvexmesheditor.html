@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Using the MultiConvexMesh Editor | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Using the MultiConvexMesh Editor | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/editor/tools/multiconvexmesheditor.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>The MultiConvexMesh Editor is a tool that allows the user to create a MultiConvexMesh Resource to use as the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mesh.md">Mesh</a> in a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collision/multiconvexmeshcollider.md">MultiConvexMeshCollilder</a>. The Editor provides a number of different methods for creating the Mesh allowing the user a great of customizability.</p>
+<h1 id="using-the-multiconvexmesh-editor">Using the MultiConvexMesh Editor</h1>
+<p>The following section will be split up into two main sections: the In-Editor properties and methods of the MultiConvexMesh Editor and creating a MultiConvexMesh using the Editor.</p>
+<h1 id="in-editor-properties-and-methods">In-Editor Properties and Methods</h1>
+<h2 id="properties-and-methods-to-the-left-of-the-editor-view">Properties and Methods to the Left of the Editor View</h2>
+<ul>
+<li><p>MeshThickness  - Determines the length the Mesh is extended in the z-axis.</p>
+</li>
+<li><p>SpriteSource drop-down menu - Sets the base SpriteSource that the Mesh is being created for. It is used for reference and Auto-Computing.</p>
+</li>
+<li><p>ClearColor  - The color of the Editor window's background.</p>
+</li>
+<li><p>OuterContourColor  - The color of the outer edges (the contour line) of the current shape of the MultiConvexMesh being created.</p>
+</li>
+<li><p>DrawMode enum - Sets the DrawMode for the MultiConvexMesh currently being created. Options include:</p>
+<ul>
+<li><code>None</code> - Removes all internal coloring</li>
+<li><code>Edges</code> - Only shows the internal edges of the polygons of the MultiConvexMesh</li>
+<li><code>Filled</code> - Shows the combined area of the polygons of the MultiConvexMesh</li>
+</ul>
+</li>
+<li><p>AutoComputeMode enum - Sets the mode for auto-computing the MultiConvexMesh. Options include:</p>
+<ul>
+<li><code>Alpha</code> - Uses alpha values of the SpriteSource to compute where the vertices for the MultiConvexMesh should be.</li>
+<li><code>Intensity</code> - Uses the color intensity values (derived from a comparison of RGB values) of the SpriteSource to compute where the vertices for the MultiConvexMesh should be.</li>
+</ul>
+</li>
+<li><p>SurfaceLevelThreshold  - Sets the value that defines how much the Alpha/Intensity affects the Auto-Compute process. Value ranges from <code>0.0</code> - <code>1.0</code>.</p>
+</li>
+<li><p>AutoComputeMethod enum - Sets the method for auto-computing the MultiConvexMesh. Options include:</p>
+<ul>
+<li><code>Pixels</code> - Uses pixel position to the perform the auto-computing process.</li>
+<li><code>MarchingSquares</code> - Uses the Marching Squares algorithm to perform the auto-computing process.</li>
+</ul>
+</li>
+<li><p>SimplificationThreshold  - Determines how close any vertex can be from another</p>
+</li>
+<li><p><code>AutoCompute()</code> - Computes the calculations to generate a MultiConvexMesh based on the parameters defined above.</p>
+</li>
+</ul>
+<h2 id="properties-and-methods-above-the-editor-view">Properties and Methods Above the Editor View</h2>
+<ul>
+<li><p>X  - Sets the X position of the currently selected vertex.</p>
+</li>
+<li><p>Y  - Sets the Y position of the currently selected vertex.</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/1044.png" alt="multiconvexmeshgrid"></p>
+<ul>
+<li><p>This property toggles the grid and determines the size of each grid square</p>
+</li>
+<li><p><code>SetGridSizeToPixels()</code></p>
+</li>
+<li><p>This method sets the grid size to be the same as the pixels of the current SpriteSource</p>
+</li>
+<li><p><code>Snapping</code></p>
+</li>
+<li><p>This property defines whether or not a selected vertex will snap to the closest grid vertex. Options include:</p>
+</li>
+<li><p>None - The selected vertex will not snap to a grid vertex</p>
+</li>
+<li><p>IfClose - The selected vertex will only snap to a grid vertex if it is close enough to that the grid vertex</p>
+</li>
+<li><p>Always - The selected vertex will always snap to the closest grid vertex</p>
+</li>
+</ul>
+<h1 id="using-the-multiconvexmesh-editor-1">Using the MultiConvexMesh Editor</h1>
+<h2 id="adding-a-multiconvexmesh-resource">Adding a MultiConvexMesh Resource</h2>
+<p>To add a new MultiConvexMesh Resource, use the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">Add Resource</a> window.</p>
+<p>When the Resource is created, the MultiConvexMesh Editor window will automatically open, like so:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47418.gif" alt="6b6e70c5-0565-4d99-a6c6-f46ea880f349"></p>
+<h2 id="editing-the-multiconvexmesh-resource">Editing the MultiConvexMesh Resource</h2>
+<p>The first thing one needs when making a new MultiConvexMesh is select a SpriteSource to use as the base onto which the Mesh is created. Once a SpriteSource is selected the grid size will often need to be adjusted and <code>AutoCompute</code> can be run.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47425.gif" alt="05f2026e-62a3-416e-b4fc-6ee64be2cc7c"></p>
+<p>As can be seen, the entire sprite is covered, but there is extra space covered by the mesh. Because this sprite has no transparent parts all pixels are above the alpha threshhold of <code>0.5</code>. If the AutoComputeMode enum option is set to <code>Intensity</code> instead the SurfaceLevelThreshold  option now has an affect on the <code>AutoCompute</code> process.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47429.gif" alt="b3752a37-cb7f-4cf3-8b0f-75b3b2af3951"></p>
+<p>Notice the warning popping up in the bottom right which says <code>Invalid Mesh</code>. This is means that no <em>convex</em> mesh could be constructed at the current SurfaceThreshold .</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47431.gif" alt="fb88f004-49c6-42a7-8eaa-8b9436991b49"></p>
+<p>As the value of SurfaceThreshold  is lowered, and <code>Intensity</code> is selected as the AutoComputeMode enum, other parts of the SpriteSource that have a lower average color value will be included, as seen above. However, notice the new mesh generated fits better then before. If we need it to fit even closer <code>name=Simplification Threshold, icon=pencil-square-o</code> can be lowered to generate a higher definition mesh.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47433.gif" alt="c0012127-4258-4655-af7a-875f0eaec5d8"></p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collision/multiconvexmeshcollider.md">MultiConvexMeshCollilder</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">Add Resource</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/multiconvexmesh.md">MultiConvexMesh</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mesh.md">Mesh</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/editor/tools/multiconvexmesheditor.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

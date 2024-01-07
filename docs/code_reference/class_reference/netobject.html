@@ -1,0 +1,827 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Properties | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Properties | ZilchEngine ">
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/netobject.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><code>Component</code> <code>Networking</code></p>
+<p>(NOTE) Network Object. Manages the replication of a single object on the network.</p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Properties</th>
+<th>Base Classes</th>
+<th>Derived Classes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#dispatchbroadcast-void">DispatchBroadcast</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#acceptincomingchanges-ze">AcceptIncomingChanges</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/component.md">component</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netpeer.md">netpeer</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#dispatchlocal-void">DispatchLocal</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#accuratetimestamponchang">AccurateTimestampOnChange</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netspace.md">netspace</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#dispatchlocalandbroadcas">DispatchLocalAndBroadcast</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#accuratetimestamponoffli">AccurateTimestampOnOffline</a></td>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netuser.md">netuser</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#dispatchlocalandremote-v">DispatchLocalAndRemote</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#accuratetimestampononlin">AccurateTimestampOnOnline</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#dispatchremote-void">DispatchRemote</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#allownapping-zilch-engine">AllowNapping</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#forget-zilch-engine-docum">Forget</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#automaticchannel-zilch-en">AutomaticChannel</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#getnetchannel-zilch-engin">GetNetChannel</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#detectoutgoingchanges-ze">DetectOutgoingChanges</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#hasnetchannel-zilch-engin">HasNetChannel</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isclient-zilch-engine-doc">IsClient</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isownedbypeer-zilch-engin">IsOwnedByPeer</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isclientandmine-zilch-eng">IsClientAndMine</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isownedbyuser-zilch-engin">IsOwnedByUser</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isclientbutnotmine-zero">IsClientButNotMine</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#netobject-void">Constructor</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isclientoroffline-zilch-e">IsClientOrOffline</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#replicatenow-zilch-engine">ReplicateNow</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isclientorserver-zilch-en">IsClientOrServer</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#selectremote-zilch-engine">SelectRemote</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#ismine-zilch-engine-docum">IsMine</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#setnetuserownerdown-void">SetNetUserOwnerDown</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isnapping-zilch-engine-do">IsNapping</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#setnetuserownerup-void">SetNetUserOwnerUp</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isnotmine-zilch-engine-do">IsNotMine</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#takenap-void">TakeNap</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isnotownedbyauser-zilch-e">IsNotOwnedByAUser</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#wakeup-void">WakeUp</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isoffline-zilch-engine-do">IsOffline</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isofflineandmine-zilch-en">IsOfflineAndMine</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isofflinebutnotmine-zero">IsOfflineButNotMine</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isonline-zilch-engine-doc">IsOnline</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isownedbyauser-zilch-engi">IsOwnedByAUser</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isserver-zilch-engine-doc">IsServer</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isserverandmine-zilch-eng">IsServerAndMine</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isserverbutnotmine-zero">IsServerButNotMine</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#isserveroroffline-zilch-e">IsServerOrOffline</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#lastchangetimepassed-zer">LastChangeTimePassed</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#lastchangetimestamp-zero">LastChangeTimestamp</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#netobjectid-zilch-engine">NetObjectId</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#netpropertyinfos-zilch-en">NetPropertyInfos</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#netuserowner-zilch-engine">NetUserOwner</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#netuserownerpath-zilch-en">NetUserOwnerPath</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#netuserownerpeerid-zero">NetUserOwnerPeerId</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#netuserowneruserid-zero">NetUserOwnerUserId</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#offlinetimepassed-zilch-e">OfflineTimePassed</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#offlinetimestamp-zilch-en">OfflineTimestamp</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#onlinetimepassed-zilch-en">OnlineTimePassed</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#onlinetimestamp-zilch-eng">OnlineTimestamp</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netobject.md#role-zilch-engine-documen">Role</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="properties">Properties</h1>
+<hr>
+<h1 id="acceptincomingchanges--boolean">AcceptIncomingChanges : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Controls whether or not net channels on this net object may accept incoming changes.</p>
+<pre><code class="lang-lang=cpp,">var AcceptIncomingChanges : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="accuratetimestamponchange--boolean">AccurateTimestampOnChange : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Controls whether or not the net object will serialize an accurate timestamp value when changed (on any net channel), or will instead accept an estimated timestamp value. (Enabling this will override the corresponding net channel type setting for all net channels added to this net object)</p>
+<pre><code class="lang-lang=cpp,">var AccurateTimestampOnChange : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="accuratetimestamponoffline--boolean">AccurateTimestampOnOffline : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Controls whether or not the net object will serialize an accurate timestamp value when taken offline, or will instead accept an estimated timestamp value.</p>
+<pre><code class="lang-lang=cpp,">var AccurateTimestampOnOffline : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="accuratetimestampononline--boolean">AccurateTimestampOnOnline : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Controls whether or not the net object will serialize an accurate timestamp value when brought online, or will instead accept an estimated timestamp value.</p>
+<pre><code class="lang-lang=cpp,">var AccurateTimestampOnOnline : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="allownapping--boolean">AllowNapping : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Controls whether or not net channels on this net object may nap (perform change detection on longer intervals) if they haven't changed in a while.</p>
+<pre><code class="lang-lang=cpp,">var AllowNapping : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="automaticchannel--netchannelconfig">AutomaticChannel : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannelconfig.md">netchannelconfig</a></h1>
+<blockquote>
+<p>Returns the automatic net channel configuration resource (assigned to net properties unless another channel is specified).</p>
+<pre><code class="lang-lang=cpp,">var AutomaticChannel : NetChannelConfig
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="detectoutgoingchanges--boolean">DetectOutgoingChanges : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Controls whether or not net channels on this net object may detect outgoing changes.</p>
+<pre><code class="lang-lang=cpp,">var DetectOutgoingChanges : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isclient--boolean">IsClient : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if our open peer's network role is client, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsClient : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isclientandmine--boolean">IsClientAndMine : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if our open peer's network role is client and the net object is conceptually owned by a user added by our local peer, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsClientAndMine : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isclientbutnotmine--boolean">IsClientButNotMine : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if our open peer's network role is client and the net object is not conceptually owned by a user added by our local peer, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsClientButNotMine : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isclientoroffline--boolean">IsClientOrOffline : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if our open peer's network role is client or offline, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsClientOrOffline : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isclientorserver--boolean">IsClientOrServer : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if our open peer's network role is client or server, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsClientOrServer : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="ismine--boolean">IsMine : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if the net object is conceptually owned by a user added by our local peer, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsMine : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isnapping--boolean">IsNapping : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if all net channels on this net object are napping (performing change detection on longer intervals), else false.</p>
+<pre><code class="lang-lang=cpp,">var IsNapping : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isnotmine--boolean">IsNotMine : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if the net object is not conceptually owned by a user added by our local peer, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsNotMine : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isnotownedbyauser--boolean">IsNotOwnedByAUser : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if the net object is not conceptually owned by a user, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsNotOwnedByAUser : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isoffline--boolean">IsOffline : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if our open peer's network role is offline, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsOffline : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isofflineandmine--boolean">IsOfflineAndMine : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if our open peer's network role is offline and the net object is conceptually owned by a user added by our local peer, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsOfflineAndMine : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isofflinebutnotmine--boolean">IsOfflineButNotMine : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if our open peer's network role is offline and the net object is not conceptually owned by a user added by our local peer, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsOfflineButNotMine : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isonline--boolean">IsOnline : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if the net object is online, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsOnline : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isownedbyauser--boolean">IsOwnedByAUser : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if the net object is conceptually owned by a user, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsOwnedByAUser : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isserver--boolean">IsServer : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if our open peer's network role is server, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsServer : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isserverandmine--boolean">IsServerAndMine : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if our open peer's network role is server and the net object is conceptually owned by a user added by our local peer, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsServerAndMine : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isserverbutnotmine--boolean">IsServerButNotMine : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if our open peer's network role is server and the net object is not conceptually owned by a user added by our local peer, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsServerButNotMine : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isserveroroffline--boolean">IsServerOrOffline : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns true if our open peer's network role is server or offline, else false.</p>
+<pre><code class="lang-lang=cpp,">var IsServerOrOffline : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="lastchangetimepassed--real">LastChangeTimePassed : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Elapsed time passed since this net object was last changed, else 0.</p>
+<pre><code class="lang-lang=cpp,">var LastChangeTimePassed : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="lastchangetimestamp--real">LastChangeTimestamp : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Timestamp indicating when this net object was last changed, else 0.</p>
+<pre><code class="lang-lang=cpp,">var LastChangeTimestamp : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="netobjectid--integer">NetObjectId : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns the net object ID (set if the net object is live), else 0.</p>
+<pre><code class="lang-lang=cpp,">var NetObjectId : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="netpropertyinfos--netpropertyinfos">NetPropertyInfos : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netpropertyinfos.md">netpropertyinfos</a></h1>
+<blockquote>
+<p>Net property infos added through the property grid.</p>
+<pre><code class="lang-lang=cpp,">var NetPropertyInfos : NetPropertyInfos
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="netuserowner--cog">NetUserOwner : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">cog</a></h1>
+<blockquote>
+<p>Returns the network user this object conceptually belongs to, else nullptr.</p>
+<pre><code class="lang-lang=cpp,">var NetUserOwner : Cog
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="netuserownerpath--cogpath">NetUserOwnerPath : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cogpath.md">cogpath</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Path to the network user this object conceptually belongs to, else empty cog path.</p>
+<pre><code class="lang-lang=cpp,">var NetUserOwnerPath : CogPath
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="netuserownerpeerid--integer">NetUserOwnerPeerId : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns the network peer identifier of the peer who added the user this object conceptually belongs to, else 0.</p>
+<pre><code class="lang-lang=cpp,">var NetUserOwnerPeerId : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="netuserowneruserid--integer">NetUserOwnerUserId : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns the network user identifier of the user this object conceptually belongs to, else 0.</p>
+<pre><code class="lang-lang=cpp,">var NetUserOwnerUserId : Integer
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="offlinetimepassed--real">OfflineTimePassed : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Elapsed time passed since this net object was taken offline, else 0.</p>
+<pre><code class="lang-lang=cpp,">var OfflineTimePassed : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="offlinetimestamp--real">OfflineTimestamp : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Timestamp indicating when this net object was taken offline, else 0.</p>
+<pre><code class="lang-lang=cpp,">var OfflineTimestamp : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="onlinetimepassed--real">OnlineTimePassed : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Elapsed time passed since this net object was brought online, else 0.</p>
+<pre><code class="lang-lang=cpp,">var OnlineTimePassed : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="onlinetimestamp--real">OnlineTimestamp : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Timestamp indicating when this net object was brought online, else 0.</p>
+<pre><code class="lang-lang=cpp,">var OnlineTimestamp : Real
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="role--netrole">Role : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#netrole">NetRole</a></h1>
+<p><code>read-only</code></p>
+<blockquote>
+<p>Returns our open peer's network role (client, server, offline), else Role::Unspecified.</p>
+<pre><code class="lang-lang=cpp,">var Role : NetRole
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="methods">Methods</h1>
+<hr>
+<h1 id="dispatchbroadcast--void">DispatchBroadcast : Void</h1>
+<blockquote>
+<p>Dispatches the net event on the net object for all remote peers. In Offline mode, this calls DispatchLocal only.
+|Name|Type|Description|
+|---|---|---|
+|eventId|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a>| |
+|event|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/event.md">event</a>| |</p>
+<pre><code class="lang-lang=cpp,">function DispatchBroadcast(eventId : String, event : Event)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="dispatchlocal--void">DispatchLocal : Void</h1>
+<blockquote>
+<p>Dispatches the net event on the net object for the local peer.
+|Name|Type|Description|
+|---|---|---|
+|eventId|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a>| |
+|event|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/event.md">event</a>| |</p>
+<pre><code class="lang-lang=cpp,">function DispatchLocal(eventId : String, event : Event)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="dispatchlocalandbroadcast--void">DispatchLocalAndBroadcast : Void</h1>
+<blockquote>
+<p>Dispatches the net event on the net object for the local peer and for all remote peers. In Offline mode, this calls DispatchLocal only.
+|Name|Type|Description|
+|---|---|---|
+|eventId|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a>| |
+|event|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/event.md">event</a>| |</p>
+<pre><code class="lang-lang=cpp,">function DispatchLocalAndBroadcast(eventId : String, event : Event)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="dispatchlocalandremote--void">DispatchLocalAndRemote : Void</h1>
+<blockquote>
+<p>Dispatches the net event on the net object for the local peer and for the remote peer. In Offline mode, this calls DispatchLocal only.
+|Name|Type|Description|
+|---|---|---|
+|eventId|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a>| |
+|event|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/event.md">event</a>| |
+|netPeerId|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function DispatchLocalAndRemote(eventId : String, event : Event, netPeerId : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="dispatchremote--void">DispatchRemote : Void</h1>
+<blockquote>
+<p>Dispatches the net event on the net object for the remote peer. In Offline mode, this calls DispatchLocal only.
+|Name|Type|Description|
+|---|---|---|
+|eventId|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a>| |
+|event|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/event.md">event</a>| |
+|netPeerId|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function DispatchRemote(eventId : String, event : Event, netPeerId : Integer)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="forget--boolean">Forget : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>[Client] Forgets the online net object locally. [Server] Forgets the online net object locally and remotely for all relevant peers. Effectively removes the net object from the network system without destroying it. Returns true if successful, else false.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function Forget() : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="getnetchannel--netchannel">GetNetChannel : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md">netchannel</a></h1>
+<blockquote>
+<p>[Client/Server] Returns the specified net channel, else nullptr.
+|Name|Type|Description|
+|---|---|---|
+|netChannelName|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a>| |</p>
+<pre><code class="lang-lang=cpp,">function GetNetChannel(netChannelName : String) : NetChannel
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="hasnetchannel--boolean">HasNetChannel : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>[Client/Server] Returns true if the net object has the specified net channel, else false.
+|Name|Type|Description|
+|---|---|---|
+|netChannelName|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a>| |</p>
+<pre><code class="lang-lang=cpp,">function HasNetChannel(netChannelName : String) : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isownedbypeer--boolean">IsOwnedByPeer : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Returns true if the net object is conceptually owned by a user added by the specified peer, else false.
+|Name|Type|Description|
+|---|---|---|
+|netPeerId|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+<pre><code class="lang-lang=cpp,">function IsOwnedByPeer(netPeerId : Integer) : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="isownedbyuser--boolean">IsOwnedByUser : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>Returns true if the net object is conceptually owned by the specified user, else false.
+|Name|Type|Description|
+|---|---|---|
+|cog|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">cog</a>| |</p>
+<pre><code class="lang-lang=cpp,">function IsOwnedByUser(cog : Cog) : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="netobject--void">NetObject : Void</h1>
+<p><code>constructor</code></p>
+<blockquote>
+<p>Constructor.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function NetObject()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="replicatenow--boolean">ReplicateNow : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>[Client/Server] Replicates all net channels' property changes immediately (only where changes are detected). Will also update nap state as configured. Returns true if changes were replicated, else false.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function ReplicateNow() : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="selectremote--boolean">SelectRemote : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<blockquote>
+<p>[Client/Server] Selects the remote net object on the first opposite-role peer found running in another game session instance on the engine. Will fail if the net object is not online, or not found remotely. Returns true if successful, else false.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function SelectRemote() : Boolean
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="setnetuserownerdown--void">SetNetUserOwnerDown : Void</h1>
+<blockquote>
+<p>[Server/Offline] Sets the owning network user on this object and down the tree on all children recursively (pre-order traversal).
+|Name|Type|Description|
+|---|---|---|
+|cog|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">cog</a>| |</p>
+<pre><code class="lang-lang=cpp,">function SetNetUserOwnerDown(cog : Cog)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="setnetuserownerup--void">SetNetUserOwnerUp : Void</h1>
+<blockquote>
+<p>[Server/Offline] Sets the owning network user on this object and up the tree on each parent recursively (pre-order traversal).
+|Name|Type|Description|
+|---|---|---|
+|cog|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">cog</a>| |</p>
+<pre><code class="lang-lang=cpp,">function SetNetUserOwnerUp(cog : Cog)
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="takenap--void">TakeNap : Void</h1>
+<blockquote>
+<p>Forces all net channels on this net object to start napping immediately.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function TakeNap()
+</code></pre>
+</blockquote>
+<hr>
+<h1 id="wakeup--void">WakeUp : Void</h1>
+<blockquote>
+<p>Forces all net channels on this net object to stop napping immediately.
+|Name|Type|Description|
+|---|---|---|</p>
+<pre><code class="lang-lang=cpp,">function WakeUp()
+</code></pre>
+</blockquote>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/code_reference/class_reference/netobject.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

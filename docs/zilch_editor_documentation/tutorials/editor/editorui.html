@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Learning Objectives | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Learning Objectives | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/editor/editorui.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>This lesson introduces the Zilch Engine editor and user interface. It covers editor windows such as the <code>Objects Window</code>, <code>Properties Window</code>, <code>Library Window</code>, <code>Level Window</code>, and <code>Search Window</code>.</p>
+<h1 id="learning-objectives">Learning Objectives</h1>
+<ul>
+<li>Elements and features of the #zilch_editor</li>
+<li>Basic #zilch_tutorials style</li>
+</ul>
+<h1 id="tutorial-structure">Tutorial Structure</h1>
+<p>In Tutorials, instructions are laid out in a specific way to make them easier to understand.
+For example:</p>
+<blockquote>
+<ul>
+<li>In the <code>Object Window</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> the Player object object</li>
+<li>In the <code>Properties Window</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a>:
+<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li>Set AllowSleep button to <code>false</code></li>
+</ul>
+</blockquote>
+<p>Each level of indentation represents a subsection of the window you are already in, where the base is the Editor itself. This makes it easier for you to know where to look in the editor for the information you seek. As the lessons progress some common steps will be cut for brevity, for instance:</p>
+<blockquote>
+<ul>
+<li>In the <code>Level Window</code></li>
+<li>Press <code>Space</code></li>
+<li>In the <code>Search Window</code></li>
+<li>Type <code>CreateSprite</code></li>
+<li>Press <code>Enter</code></li>
+</ul>
+</blockquote>
+<p>will be shortened to:
+- <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a>: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></p>
+<p>This significantly reduces the amount of reading, and while still providing a reference to the full process should you need a refresher.</p>
+<h1 id="create-a-new-project">Create a New Project</h1>
+<p>It is recommended that you create a new project. If this is the first time you have run the Zilch Engine you will already be in the Projects screen and can simply type in a name for your project. If you are not on the new Projects screen, you can access it using the Project menu.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/106519.png" alt="image"></p>
+<ul>
+<li>Open the Zilch Launcher</li>
+<li>In the <code>Project Window</code></li>
+<li>Select <code>EMPTY 2D Project</code> template</li>
+<li>Enter a name for the project in the Name field</li>
+<li>Enter a Project Folder directory (if the default is not sufficient) by either typing or left clicking the browse button on the right of the field.</li>
+<li>Left Click the <code>Create Project</code> button</li>
+</ul>
+<p>Alternatively, you can create a new project from within the editor by using <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject">New Project</a></p>
+<p>NOTE:<br>
+<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Commands</a> represent all actions you can perform as a user in the Zilch Editor. Page numbers are listed throughout the lesson for refreshing your knowledge on how to do common essential tasks. View how to enter Commands in Zilch by going to the page number provided in the tutorial!</p>
+<h1 id="windows-overview">Windows Overview</h1>
+<p>After creating a new project, the editor should look something like this:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/106521.png" alt="image"></p>
+<h1 id="level-window">Level Window</h1>
+<p>The <code>Level Window</code> (located in the center of the editor as seen in the Window Overview section above) is where you will manipulate objects to build levels. The visible grid is a customizable visual to help place objects, but doesn't show in actual gameplay.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47166.png" alt="image"></p>
+<table>
+<thead>
+<tr>
+<th>Buttons To Alter Level View</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47184.png" alt="image">  <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47186.png" alt="image"></td>
+<td>Toggles between 2D &amp; 3D camera controls</td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47188.png" alt="image">  <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47190.png" alt="image"></td>
+<td>Toggles editor camera's render mode between Orthographic and Perspective</td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47182.png" alt="Camera"></td>
+<td>With the camera options you can either reset the editor camera to its default settings, or align a selected camera with the editor's camera</td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47192.png" alt="image">  <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47194.png" alt="image"></td>
+<td>Toggles the grid line visuals in the editor</td>
+</tr>
+</tbody>
+</table>
+<h1 id="objects-window">Objects Window</h1>
+<p>Every level contains objects. An object can represent the floor, a wall, enemies, the player, and many other things. There are a few different buttons in the <code>Objects Window</code> that you should know about:</p>
+<ul>
+<li><strong>Eyeball:</strong> Toggles visibility of an object <em>only while in the editor.</em> Objects with the eye button disabled will be invisible in the editor, but still visible when the level is played.</li>
+<li><strong>Selection Lock:</strong> The small lock button can be turned on and off to toggle the ability to select an object from within the editor.</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47198.png" alt="image"></p>
+<p>The objects in the <code>Objects Window</code> can be searched by name using the search bar. Each level has four objects by default:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47201.png" alt="image"></p>
+<ul>
+<li>Click on the LevelSettings object object to select it</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47205.gif" alt="Select"></p>
+<h1 id="properties-window">Properties Window</h1>
+<p>When an object is selected, the properties of that object are accessible from the <code>Properties Window</code>.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47207.png" alt="image"></p>
+<p>The <code>Properties Window</code> is the primary means for editing or building objects. An object being comprised of multiple <strong>components</strong>.</p>
+<p>NOTE: <strong>Component</strong> is a chunk of functionality or small bucket of data. An object's behavior and purpose depends upon what components it contains. Game objects are made up of different components. More details about components will be covered in future lessons.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47209.png" alt="image"></p>
+<table>
+<thead>
+<tr>
+<th>Properties Navigation Buttons</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47211.png" alt="image">  <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47213.png" alt="image"></td>
+<td>These arrows allow you to navigate back and forth between recently selected items that have show in the <code>Properties Window</code></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47217.png" alt="image"></td>
+<td>The Show Selection button, on first click, pans the camera to the object and on second click, zooms the camera in to frame the object in the <code>Level Window</code></td>
+</tr>
+<tr>
+<td><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47219.png" alt="image"></td>
+<td>The Recent button pulls up a drop down list of the recently accessed items for selection</td>
+</tr>
+</tbody>
+</table>
+<h1 id="library-window">Library Window</h1>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47221.png" alt="image"></p>
+<p>Anything you add to the game using <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">Add</a> or through drag-and-drop importing is stored as a resource. All resources added to your project can be found in the <code>Library Window</code>. You'll learn more details about resources in future lessons.</p>
+<h1 id="search-window">Search Window</h1>
+<p>This powerful tool allows you to search nearly anything within the editor. Perhaps its most important use is executing <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Commands</a>.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47223.png" alt="image"></p>
+<p>(NOTE) <strong>&quot;Do This + That&quot;:</strong>
+The <code>+</code> symbol can be read as &quot;and&quot; when used to describe button combinations. It means you should do all the actions &quot;added&quot; together simultaneously.
+Press <code>Ctrl + C</code> to copy, would mean hold down <code>Ctrl</code> on your keyboard then press <code>C</code> to perform the copy action.</p>
+<p>There are three ways to bring up the Zilch <code>Search Window</code>:</p>
+<h1 id="click-anywhere-in-the-level-window-and-press-space">Click anywhere in the <code>Level Window</code> and press <code>Space</code></h1>
+<h1 id="from-any-window-press-ctrl--shift--space">From <strong>any</strong> window press <code>Ctrl + Shift + Space</code></h1>
+<h1 id="click-the-zilch-search-button-in-the-upper-left-hand-corner">Click the Zilch Search Button in the upper left-hand corner</h1>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/88506.png" alt="SearchButton"></p>
+<h2 id="reopening-windows--docking">Reopening Windows &amp; Docking</h2>
+<p>With its numerous commands the <code>Search Window</code> provides many crucial functions such as those that reopen closed windows and tabs.</p>
+<ul>
+<li>Click the x on the Library tab to close the <code>Library Window</code>:</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47227.gif" alt="CloseWindow"></p>
+<ul>
+<li>Press <code>Ctrl + Shift + Space</code> to open the <code>Search Window</code>
+Search for the Library command by typing <code>Library</code>, then hit enter (or click on the Library command directly) to open the <code>Library Window</code></li>
+</ul>
+<p>This same process can be used to reopen many of these key windows. Once reopened, you can use the drag and drop technique on the tab at the top of the window to &quot;dock&quot; it back into the same starting configuration. Docking locations are indicated by the editor with light blue regions as you hover over them. When you find the one you want to dock to, release the left mouse button:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47233.gif" alt="DockWindow"></p>
+<h1 id="console-window">Console Window</h1>
+<ul>
+<li>Press the Tilde <code>~</code> key to open the <code>Console Window</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/1444.png" alt="consolewindow"></p>
+<p>NOTE: To be &quot;in&quot; a window requires that the window has &quot;focus&quot;. To gain focus you need to click on the window itself. This ensures that all your keyboard input works as intended.</p>
+<ul>
+<li>In the <code>Console Window</code>
+<ul>
+<li>Press <code>Ctrl + Delete</code> to clear the console</li>
+</ul>
+</li>
+<li>In the <code>Level Window</code>
+<ul>
+<li>Press <code>Space</code></li>
+</ul>
+</li>
+<li>Type the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#saveproject">SaveProject</a></li>
+<li>Press <code>Enter</code>
+A message telling you the project was saved is displayed in the <code>Console Window</code>.
+When console output is referenced in future lessons it will be shown like this:</li>
+</ul>
+<pre><code class="lang-name=Console">Saved level file 'Level'.
+Uploaded to archetype MyProject.Game.
+Saved : Project and all scripts saved.
+</code></pre>
+<h1 id="game-window">Game Window</h1>
+<p>The <code>Game Window</code> is where your game actually runs inside the Zilch Engine editor. You can test or play your game (or specific levels) here without having to create an executable.</p>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a>: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+</ul>
+<p>There are multiple ways to run the game in the editor.</p>
+<ul>
+<li>Press key <code>F5</code> on the keyboard</li>
+<li>Press the Play button button in the <code>Tool Bar</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><code>Project Menu  &gt; Play Game</code></li>
+</ul>
+<p>The <code>Game Window</code> tab should appear in a tab next to the Level Window tab:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/1427.png" alt="gamewindowtabweb"></p>
+<p>The <code>Game Window</code> should not show anything but a blank screen right now because we haven't added any visible objects to our level yet:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/1442.png" alt="emptywindowweb"></p>
+<ul>
+<li>Close the <code>Game Window</code> by pressing the <code>X</code> button on the Game tab</li>
+<li>You can also press <code>Esc</code> or use <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a>: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a>
+It is a good practice to close your game window promptly. Editing levels while the <code>Game Window</code> is open can cause erratic behavior, undefined behavior, or errors.</li>
+<li>Click on the Level tab to return to the <code>Level Window</code></li>
+</ul>
+<h1 id="tools-window">Tools Window</h1>
+<p>This window contains several useful tools for using the Zilch Editor. These tools are for managing various objects within the level. Settings for the current tool being used are also available here. You can switch tools from the drop-down selection or by using hotkeys.</p>
+<ul>
+<li>Click anywhere in the <code>Level Window</code> then press <code>1</code> on your keyboard. This is a hotkey for switching to the SelectTool.</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/1445.png" alt="selecttool"></p>
+<p>Click on the drop-down selection in the <code>Tools Window</code> to display a list of tools you can use:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/1439.png" alt="toolsselection_png"></p>
+<h1 id="tool-bar">Tool Bar</h1>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47235.png" alt="image"></p>
+<p>| The Tool Bar|
+|<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47237.png" alt="image">|Saves the project and all the resources in your Library|
+|<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47239.png" alt="image">|These buttons line up with hotkeys 1-5 and they represent some of the most commonly used tools for editing objects in the <code>Level Window</code>|
+|<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47241.png" alt="image">|These correspond to other, less common tools that are available|
+|<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47243.png" alt="image">|These open windows in the Editor, such as the <code>Library Window</code> and the Add Window|
+|<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47245.png" alt="image">|These buttons allow you to run your game from the current level <code>F5</code>, pause <code>F6</code>, step through frame by frame <code>F7</code>, or stop executing the game <code>F8</code>|
+|<img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47247.png" alt="image">|These link to outside resources to get content, give bug reports, and request support.|</p>
+<p>In order to find out more about the function of each button, you can hover over them to get a pop-up tool tip.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/1447.png" alt="tbsavetip"></p>
+<p>You can reach all the same functionality by searching in the <code>Search Window</code>.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/1448.png" alt="tbsavesearch"></p>
+<p>You may have noticed that you can play, pause, step through, and stop your game with the <code>F5</code> - <code>F8</code> function keys. <code>F9</code>, <code>F10</code>, and <code>F11</code> are also engine specific hotkeys. <code>F9</code> will open the edit in game window for the first space, allowing you to edit objects in the scene while the game is running. <code>F10</code> will toggle whether the cursor is trapped, meaning it is made invisible and locked to the center of the screen. <code>F11</code> toggles fullscreen mode for the currently focused window.</p>
+<h1 id="menu-bar">Menu Bar</h1>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/1436.png" alt="menubar"></p>
+<p>The menu bar includes commands for project manipulation and exporting your game under <code>File</code>, quick create options for getting things on the screen fast under <code>Create</code>, and the ability to reopen closed windows via <code>Windows</code>.
+See <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Executing Commands</a> for information.</p>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/components.md">Components</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md"> Nada User Documentation</a></li>
+</ul>
+<h2 id="tutorials">Tutorials</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/basiccomponents.md">BasicComponents</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/customcomponents.md">CustomComponents</a></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<h3 id="classes">Classes</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/nadascript.md">NadaScript</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/console.md"> Console</a></li>
+</ul>
+<h3 id="commands">Commands</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject">New Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#saveproject">SaveProject</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/tutorials/editor/editorui.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

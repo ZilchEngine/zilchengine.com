@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Array Interface | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Array Interface | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/architecture/resources/resourcetable.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/resourcetable.md">ResourceTable</a> is a resource that stores a collection of entries of a certain resource type for sampling during run-time. Sampling can be performed through three different interfaces: array, hashmap, and a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master.md#weightedtable-interface"> weighted table</a>.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47118.PNG" alt="ResourceTable1"></p>
+<p>ResourceTables store a homogeneous collection of entries. Pictured above is a table of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/archetypes.md"> Archetypes </a>. This can be switched to any other resource type or to strings.</p>
+<p>ResourceTable entries are composed of three items:</p>
+<ul>
+<li><strong>Name</strong>: A name used for hashmap queries. This is sometimes used as a display name for the entry. Note: This name does not have to Value.</li>
+<li><strong>Value</strong>: The actual resource/string of the entry.</li>
+<li><strong>Weight</strong>: The weight to use when randomly sampling the table. See the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master.md#weightedtable-interface"> WeightedTable Interface</a> section below for details.</li>
+</ul>
+<p>All sampling functions for a ResourceTable return a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/resourcetableentry.md">ResourceTableEntry</a>. In addition to the above listed properties, the stored resource can also be looked up via the <code>Resource</code> property. Note: This must be casted to the correct resource type.</p>
+<h1 id="array-interface">Array Interface</h1>
+<p>ResourceTables can be accessed as an array at run-time. This is useful for a list of objects where order is important (e.g. generating UI). Given below is a simple example of using the array interface to spawn archetypes:</p>
+<pre><code class="lang-lang=csharp">  // Spawn each archtype one below another
+  for(var i = 0; i &lt; this.Table.Count; ++i)
+  {
+    var entry = this.Table[i];
+    // The table can only return Resources. We have to cast to Archetype
+    var archetype = entry.Resource as Archetype;
+    // Arbitrary spawn position
+    var pos = Real3(0, i * -10, 0);
+    this.Space.CreateAtPosition(archetype, pos);
+  }
+</code></pre>
+<h1 id="hashmap-interface">HashMap Interface</h1>
+<p>ResourceTable can also be used as a hashmap where the entry's name is the key.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47120.PNG" alt="ResourceTable4"></p>
+<p>One such example is mapping button names to a resource. Pictured above is a table of Levels. A menu in a game could use the <code>Name</code> properties to populate the text on buttons. When a button is clicked, the easiest way to get the Level to load is to use the HashMap interface to look up the entry by name.</p>
+<pre><code class="lang-lang=csharp">  function GetLevelByName(name : String) : Level
+  {
+    var entry = this.Table.GetOrNull(name);
+    if(entry == null)
+      throw new Exception(&quot;Level '`name`' didn't exist&quot;);
+    return entry.Resource as Level;
+  }
+</code></pre>
+<h1 id="weightedtable-interface">WeightedTable Interface</h1>
+<p>The more interesting use of a ResourceTable is as a weighted probability table. A weighted probability table is used to sample items with a non-uniform distribution which can be thought of as rolling loaded dice.</p>
+<p>The weighted table view should be used to more easily edit and visualize the weights. This can be done by pressing the &quot;Swap View&quot; button in the UI.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47122.PNG" alt="ResourceTable2"></p>
+<h2 id="weight-vs-probability">Weight vs. Probability</h2>
+<p>Each entry in a table has a weight used to determine how likely it is to be randomly sampled. The weight is not to be confused with the actual probability of rolling an item though. An entry's probability is computed as its weight divided by the sum of all the weights in the table. In the above picture the &quot;Can&quot; has a weight of 0.66. The total weights in the table sum to 2.18. This means the &quot;Can&quot; has a probability of 0.66 / 2.18 = 0.30275 or approximately 31%.</p>
+<h2 id="sampling-the-table">Sampling the Table</h2>
+<p>ResourceTable can be sampled at run-time through the <code>Sample</code> function:</p>
+<pre><code class="lang-lang=csharp">  function SpawnDropAt(pos : Real3)
+  {
+    // Sampling the weighted table requires two random numbers in the range of [0, 1)
+    var entry = this.Table.Sample(this.RandomContext.Real(), this.RandomContext.Real());
+    var archetype = entry.Resource as Archetype;
+    this.Space.CreateAtPosition(archetype, pos);
+  }
+</code></pre>
+<p>One of the most common uses of the weighted table is for a drop table. In the above example the table is randomly sampled to Spawn an Archetype at a given position. Note that the sample function requires two random numbers in the range of 0 to 1.</p>
+<p>Additionally, ResourceTable exposes the <code>SampleIndex</code> function which returns the index into the table instead of the entry itself.</p>
+<hr>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="reference">Reference</h2>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/resourcetable.md">ResourceTable</a>
+<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/resourcetableentry.md">ResourceTableEntry</a>
+<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/archetype.md">Archetype</a>
+<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md">RandomContext</a></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/architecture/resources/resourcetable.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

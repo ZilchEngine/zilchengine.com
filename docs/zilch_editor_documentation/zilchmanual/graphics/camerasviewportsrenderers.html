@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>CameraViewport | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="CameraViewport | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/camerasviewportsrenderers.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>A <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md">cameraviewport</a> draws to an on-screen or off-screen texture. Whether it is visible to in the editor or game depends on whether RenderToViewport checkBox is set to <code>true</code>.  It references both a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/camera.md">camera</a> component and a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer/deferred_renderer.md">Renderer</a> component from their respective cogs to render that scene from the perspective of the camera.  As long as there are single instances of these components, it doesn't matter what cog they're on.  If a game has a HUD, two renderers may be necessary and therefore two seperate renderer cogs.  If a game supports splitscreen, both the <code>CameraViewport</code> and <code>Camera</code> should be duplicated onto another cog. A single CameraViewport can be used to reference multiple Camera objects at different times. A Camera, however, cannot generally be referenced by multiple CameraViewports. For example, if a script sets a CameraViewport's Camera reference to a Camera that is already being referenced by a CameraViewport, the one in the script will &quot;steal&quot; the reference, removing it from the CameraViewport that originally had it.</p>
+<p>By default the Camera and CameraViewport components are on the object called &quot;GameCamera&quot; where the DeferredRenderer is found on the Renderer object. This is useful for game scripting as a reference to the camera can be obtained through <code>CameraViewport.Camera</code> in order to change it.</p>
+<h1 id="cameraviewport">CameraViewport</h1>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46327.png" alt="image"> <em>CameraViewport Component</em></p>
+<p>(NOTE)<strong>Where does the CameraViewport render to?</strong>
+The camera can draw onto both the editor window and the game session window.  By default, the <code>EditorCamera</code> has RenderInEditor checkBox set to <code>true</code> and RenderInGame checkBox set to <code>false</code>. As long as RenderToViewport checkBox is also set to <code>true</code>, it will render in the editor window and not the game session window.</p>
+<h2 id="viewport-placement">Viewport Placement</h2>
+<p>The position and scale of each viewport is controlled with NormalizedSize , NormalizedOffset , ResolutionOrAspect , and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#viewportscaling">ViewportScaling</a>.  When placing viewports, the dimentions of the game session window are in the normalized range <code>[0,1]</code> on both the x and y axes.  <code>(0,0)</code> is then the top left corner and <code>(1,1)</code> is the bottom right corner.  Below is an example of a camera viewport taking up the whole screen:</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47642.png" alt="CameraViewport"> <em>Default Single CameraViewport</em></p>
+<h3 id="viewport-scaling">Viewport Scaling</h3>
+<p>ViewportScaling drop-down menu sets the method of fitting the viewport to the region defined by the viewport placement.  Below is a brief description of what each mode does.</p>
+<table>
+<thead>
+<tr>
+<th>Viewport Fitting Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Fill</code></td>
+<td>The viewport fills the entire window size</td>
+</tr>
+<tr>
+<td><code>LetterBox</code></td>
+<td>Viewport aspect ratio is always preserved and gaps are filled in with margins.</td>
+</tr>
+<tr>
+<td><code>Exact</code></td>
+<td>The viewport is not scaled</td>
+</tr>
+<tr>
+<td><code>LargestMultiple</code></td>
+<td>The viewport is the largest multiple of the resolution that fits in the window</td>
+</tr>
+</tbody>
+</table>
+<h3 id="render-order">Render Order</h3>
+<p>Render order sets the value by which the CameraViewport should be rendered relative to other CameraViewports (such as the one on a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/lighting/direct_lighting/directional_light.md">directional_light</a>), where the viewport with the lowest value is rendered first and the one with the highest value is rendered last.</p>
+<h4 id="viewport-layering">Viewport Layering</h4>
+<p>The viewports exist in 2D, so there's no Z-axis to sort our viewports on.  Instead, viewports are layered in the order they're drawn.  The draw order is determined first by the integer value RenderOrder , where a high value is drawn later.  If two viewports are on the same layer, the viewport with the cog earlier in the Objects window window draws first.</p>
+<p>When a mouse event is sent to the window, it's forwarded to the topmost viewport containing the cursor.  If ForwardViewportEvents checkBox is on, the cursor will then be sent to viewports on underlying layers.  For example, a first person shooter might have a hud map on a separate viewport, but the mouse tracking should work even when the mouse is over the hud.  Mouse events should be sent through the hud viewport, and therefore its CameraViewport should have ForwardViewportEvents checkBox on.</p>
+<h2 id="camera">Camera</h2>
+<p>The cog considered to be the <code>Camera</code> is whatever the <code>CameraViewport</code> references with CameraPath cogPath.  The <code>Camera</code> cog should also have a <code>Camera</code> component, or else the viewport wont be rendered.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47645.png" alt="Camera"> <em>Camera Component</em></p>
+<h3 id="perspective-vs-orthographic">Perspective vs. Orthographic</h3>
+<p>Changing the shape of the view frustum has a significant impact on how objects are viewed in the world.  Usually in a 2D setting, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#perspectivemode">PerspectiveMode</a> is set to <code>Orthographic</code> while with 3D applications PerspectiveMode drop-down menu is set to <code>Perspective</code>.  Objects in a <code>Perspective</code> view and the distances between them will appear smaller as they move away from the camera.  2D games often work with the assumption that everything is approximately the same distance from the camera, and so objects that move away from an <code>Orthographic</code> camera will appear the same.</p>
+<p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46825.png" alt="image"> <em><code>Perspective</code> camera(left) vs. <code>Orthographic</code> camera(right)</em></p>
+<p>(NOTE)<strong>Parallaxing</strong> Even if the camera has an orthographic perspective, the illusion of depth is still possible.  Instead of just one universal depth, the new assumption is that there are a set number of layers for an object, often refered to as foregrounds and backgrounds.  For an example, try the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/graphics/parallaxbackground.md">Parallaxing Background</a> tutorial.</p>
+<p>NOTE: The method of controlling the viewport size changes with different viewing frustums.  When PerspectiveMode drop-down menu is set to <code>Perspective</code>, the FieldOfView  parameter represents the vertical angle that the frustum makes from the camera eye outward.  When PerspectiveMode drop-down menu is set to <code>Orthographic</code>, the Size  parameter represents the height that the camera sees in world space.</p>
+<h2 id="related-materials">Related Materials</h2>
+<h3 id="manual">Manual</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer.md">Renderer</a></li>
+</ul>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md">cameraviewport</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/camera.md">camera</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/graphics/camerasviewportsrenderers.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Common Uses | ZilchEngine </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Common Uses | ZilchEngine ">
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/audio/soundnode/panningnode.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../images/ZilchLogo.svg" alt="ZilchEngine">
+            ZilchEngine
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/panningnode.md"> PanningNode </a> collects audio data from all of its inputs and applies a volume modification to the left and right channels separately.</p>
+<h1 id="common-uses">Common Uses</h1>
+<ul>
+<li>Moving sounds from left to right and right to left (such as an ambient wind sound)</li>
+<li>Positioning sounds without using a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode/soundemitter.md">SoundEmitter </a></li>
+</ul>
+<h1 id="using-the-panningnode">Using the PanningNode</h1>
+<p>PanningNodes will always process audio in two channels regardless of how many channels are used by their inputs or outputs. If the audio input has more than two channels it will be translated into only two before being processed.</p>
+<h2 id="sumtomono">SumToMono</h2>
+<p>If the <code>SumToMono</code> property is set to <code>true</code>, all channels of audio input will be combined before being spread to the left and right channels with the appropriate volume modification. This can be useful if you want the entire sound to be heard as if it is coming from a single position (this is how audio is handled by SoundEmitters). If it is <code>false</code>, the volume modifications will be applied to the existing channels.</p>
+<h2 id="events">Events</h2>
+<p>The <code>AudioInterpolationDone</code> event will be sent when a volume interpolation has finished.</p>
+<h2 id="example">Example</h2>
+<p>The following code block illustrates how to make white noise sound like it's moving back and forth.</p>
+<pre><code class="lang-lang=csharp">class MovingNoise : NadaComponent
+{
+  // Create and store the PanningNode to change its properties later
+  var Panning : PanningNode = Audio.PanningNode();
+  
+  // Create and store the GeneratedWaveNode
+  var Noise : GeneratedWaveNode = Audio.GeneratedWaveNode();
+  
+  function Initialize(init : CogInitializer)
+  {
+    // Set the GeneratedWaveNode properties
+    this.Noise.WaveType = SynthWaveType.Noise;
+    this.Noise.Volume = 0.2;
+    
+    // Start playing the generated sound wave
+    this.Noise.Play();
+    
+    // Reduce the PanningNode's left volume
+    this.Panning.LeftVolume = 0.3;
+    
+    // Add the GeneratedWaveNode to the inputs of the PanningNode
+    this.Panning.AddInputNode(this.Noise);
+    
+    // Attach the PanningNode to the output node of the SoundSpace
+    this.Space.SoundSpace.SoundNode.AddInputNode(this.Panning);
+    
+    // Start panning
+    this.ChangePanning();
+  }
+  
+  function ChangePanning()
+  {
+    var time = 3.0;
+    
+    // Are we now panning from left to right?
+    if (this.Panning.LeftVolume &lt; this.Panning.RightVolume)
+    {
+      // Interpolate the left volume back to 1.0 and the right volume to 0.2
+      this.Panning.InterpolateVolumes(1.0, 0.2, time);
+    }
+    // If not, we are panning from right to left
+    else
+    {
+      // Interpolate the right volume back to 1.0 and the left volume to 0.2
+      this.Panning.InterpolateVolumes(0.2, 1.0, time);
+    }
+    
+    // Delay the next call of this function by the time
+    var sequence = Actions.Sequence(this.Owner.Actions);
+    Actions.Delay(sequence, time);
+    Actions.Call(sequence, this.ChangePanning);
+  }
+}
+</code></pre>
+<hr>
+<h1 id="related-materials">Related Materials</h1>
+<h2 id="manual">Manual</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode/soudnode_overview.md">soudnode_overview</a></li>
+</ul>
+<h2 id="code-reference">Code Reference</h2>
+<ul>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/panningnode.md"> PanningNode </a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/ZilchEngine/ZilchEngineWebsite/blob/master/docs/zilch_editor_documentation/zilchmanual/audio/soundnode/panningnode.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          ZilchEngine 2024
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
