@@ -89,7 +89,7 @@
 <p>Bound types are created through the [ | LibraryBuilder]. This article will cover particular areas of interest on a bound type.</p>
 <h1 id="enumerating-members">Enumerating Members</h1>
 <p>To loop through all properties on a type, you can use the <code>AllProperties</code> array. The array stores both Property objects and Fields (which inherit from Property). The order of <code>AllProperties</code> is the order it was defined in, making it ideal for displaying properties on a property-grid or serialization (turns out users really hate it when the properties are in the wrong order). The containers we use in Nada are range based containers, so the typical way you iterate through them is not the same as the STL. The method <code>all()</code> on Array will return a range (basically a struct that stores the STL equivalent of the <code>begin()</code> and <code>end()</code>. To walk the range, first check if its <code>empty()</code> then call <code>front()</code> to get the current value. At the end of the loop, call <code>popFront()</code> to iterate to the next item.</p>
-<pre><code>PropertyArrayRange range = boundType-&gt;AllProperties.all();
+<pre><code class="lang-C++">PropertyArrayRange range = boundType-&gt;AllProperties.all();
 
 while (range.empty() == false)
 {
@@ -106,7 +106,7 @@ while (range.empty() == false)
 }
 </code></pre>
 <p>You can also use a built in 'for each' helper macro that wraps this behavior:</p>
-<pre><code>NadaForEach(Property* property, boundType-&gt;AllProperties.all())
+<pre><code class="lang-C++">NadaForEach(Property* property, boundType-&gt;AllProperties.all())
 {
   // Do something with 'property'
 }
