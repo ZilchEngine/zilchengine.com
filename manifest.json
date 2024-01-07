@@ -1,5 +1,5 @@
 {
-  "source_base_path": "D:/Dev/CPP/ZilchEngine/ZilchEngineWebsite",
+  "source_base_path": "/home/runner/work/ZilchEngineWebsite/ZilchEngineWebsite",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -34,11 +34,11 @@
       "type": "Toc",
       "source_relative_path": "docs/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "docs/toc.html"
-        },
         ".json": {
           "relative_path": "docs/toc.json"
+        },
+        ".html": {
+          "relative_path": "docs/toc.html"
         }
       },
       "version": ""
@@ -74,14 +74,47 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "samples/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "samples/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "samples/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "samples/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "samples/toc.yml",
+      "output": {
+        ".json": {
+          "relative_path": "samples/toc.json"
+        },
+        ".html": {
+          "relative_path": "samples/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""
