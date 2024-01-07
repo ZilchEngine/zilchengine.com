@@ -1,13 +1,63 @@
 {
+  "docs/features.html": {
+    "href": "docs/features.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
+  },
   "docs/getting-started.html": {
     "href": "docs/getting-started.html",
-    "title": "Getting Started | ZilchEngine",
-    "keywords": "Getting Started"
+    "title": "Zilch Engine Features | ZilchEngine",
+    "keywords": "Welcome to the ZilchEngine documentation. Zilch Engine is a powerful simulation engine custom built in C++. Zilch Engine Features The Zilch Engine can be used to make simulations of any kind. Projects range from simple prototypes to professional 2D and 3D games, simple physics or graphics demonstrations to robust, realistic simulations. Versatility of the engine is made possible by the features in the following sections:"
   },
-  "docs/introduction.html": {
-    "href": "docs/introduction.html",
-    "title": "Introduction | ZilchEngine",
-    "keywords": "Introduction"
+  "docs/manual/architecture/index.html": {
+    "href": "docs/manual/architecture/index.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
+  },
+  "docs/manual/audio/index.html": {
+    "href": "docs/manual/audio/index.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
+  },
+  "docs/manual/editor/index.html": {
+    "href": "docs/manual/editor/index.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
+  },
+  "docs/manual/gameplay/index.html": {
+    "href": "docs/manual/gameplay/index.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
+  },
+  "docs/manual/graphics/index.html": {
+    "href": "docs/manual/graphics/index.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
+  },
+  "docs/manual/index.html": {
+    "href": "docs/manual/index.html",
+    "title": "| ZilchEngine",
+    "keywords": "The Zilch Engine Manual is designed to be a comprehensive reference guide for all engine functionality. It offers descriptions of engine systems and components for those who are already developing their own projects in the engine. If you feel you need more guidance or practice check out our tutorial section."
+  },
+  "docs/manual/physics/index.html": {
+    "href": "docs/manual/physics/index.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
+  },
+  "docs/manual/scripting/index.html": {
+    "href": "docs/manual/scripting/index.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
+  },
+  "docs/manual/ui/index.html": {
+    "href": "docs/manual/ui/index.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
+  },
+  "docs/tutorials/index.html": {
+    "href": "docs/tutorials/index.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
   },
   "index.html": {
     "href": "index.html",

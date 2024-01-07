@@ -12,6 +12,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "docs/features.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/features.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "docs/getting-started.md",
       "output": {
         ".html": {
@@ -22,23 +32,126 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "docs/introduction.md",
+      "source_relative_path": "docs/manual/architecture/index.md",
       "output": {
         ".html": {
-          "relative_path": "docs/introduction.html"
+          "relative_path": "docs/manual/architecture/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/manual/audio/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/manual/audio/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/manual/editor/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/manual/editor/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/manual/gameplay/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/manual/gameplay/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/manual/graphics/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/manual/graphics/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/manual/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/manual/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/manual/physics/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/manual/physics/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/manual/scripting/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/manual/scripting/index.html"
         }
       },
       "version": ""
     },
     {
       "type": "Toc",
-      "source_relative_path": "docs/toc.yml",
+      "source_relative_path": "docs/manual/toc.md",
+      "output": {
+        ".json": {
+          "relative_path": "docs/manual/toc.json"
+        },
+        ".html": {
+          "relative_path": "docs/manual/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/manual/ui/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/manual/ui/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.md",
       "output": {
         ".json": {
           "relative_path": "docs/toc.json"
         },
         ".html": {
           "relative_path": "docs/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/tutorials/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/tutorials/index.html"
         }
       },
       "version": ""
