@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundcue.md"> SoundCues </a> are a fundamental part of playing audio in the Zilch Engine. However the user chooses to play a sound, they will need to use a SoundCue to play it. SoundCues allow the user to modify various properties without affecting the original <a href="sound.html">Sound </a> resource: the same Sound can be applied to different SoundCues, have different property values on the SoundCue, and end up sounding completely different.</p>
+<p><a href="../../../code_reference/class_reference/soundcue.html"> SoundCues </a> are a fundamental part of playing audio in the Zilch Engine. However the user chooses to play a sound, they will need to use a SoundCue to play it. SoundCues allow the user to modify various properties without affecting the original <a href="sound.html">Sound </a> resource: the same Sound can be applied to different SoundCues, have different property values on the SoundCue, and end up sounding completely different.</p>
 <h1 id="common-uses">Common Uses</h1>
 <ul>
 <li>Playing sounds with a <a href="simplesound.html">SimpleSound </a> component</li>
@@ -111,12 +111,12 @@
 <p>If all three of the fields are set to values other than zero, whenever the SoundCue is played the resulting SoundInstance will send Nada events for every bar, beat, whole note, half note, quarter note, and eighth note (see the <a href="soundinstance.html">SoundInstance </a> page for more details).</p>
 <h2 id="soundentries">SoundEntries</h2>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47922.png" alt="SoundEntry"></p>
-<p>Each <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundentry.md"> SoundEntry </a> holds a Sound which can be played by the SoundCue. SoundEntries have properties to control when the audio file starts and stops, when it starts looping and stops looping, and whether it should cross-fade audio after it loops.</p>
+<p>Each <a href="../../../code_reference/class_reference/soundentry.html"> SoundEntry </a> holds a Sound which can be played by the SoundCue. SoundEntries have properties to control when the audio file starts and stops, when it starts looping and stops looping, and whether it should cross-fade audio after it loops.</p>
 <h2 id="soundtagentries">SoundTagEntries</h2>
 <p>Every <a href="soundtag.html"> SoundTag</a> in the list of SoundTagEntries will be applied to the resulting SoundInstance whenever a SoundCue is played. SoundTags allow the user to control SoundInstances as a group. See the <a href="soundtag.html">SoundTag</a> page for more information.</p>
 <h2 id="nada-events">Nada Events</h2>
 <ul>
-<li>The <code>SoundCuePrePlay</code> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundinstanceevent.md"> SoundInstanceEvent  </a> is sent just before a SoundInstance is played.</li>
+<li>The <code>SoundCuePrePlay</code> <a href="../../../code_reference/class_reference/soundinstanceevent.html"> SoundInstanceEvent  </a> is sent just before a SoundInstance is played.</li>
 <li>The <code>SoundCuePostPlay</code> SoundInstanceEvent is sent immediately afterward.</li>
 </ul>
 <p>The following code block shows how to connect to the <code>SoundCuePrePlay</code> event and change the SoundInstance's volume before it plays.</p>
@@ -148,10 +148,10 @@ function OnCuePlay(event : SoundInstanceEvent)
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundcue.md"> SoundCue </a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundentry.md"> SoundEntry </a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundtag.md"> SoundTag </a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundinstanceevent.md"> SoundInstanceEvent </a></li>
+<li><a href="../../../code_reference/class_reference/soundcue.html"> SoundCue </a></li>
+<li><a href="../../../code_reference/class_reference/soundentry.html"> SoundEntry </a></li>
+<li><a href="../../../code_reference/class_reference/soundtag.html"> SoundTag </a></li>
+<li><a href="../../../code_reference/class_reference/soundinstanceevent.html"> SoundInstanceEvent </a></li>
 </ul>
 
 </article>
