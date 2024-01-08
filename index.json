@@ -5577,7 +5577,7 @@
   "docs/getting_started/min_specs.html": {
     "href": "docs/getting_started/min_specs.html",
     "title": "Zilch Launcher & Editor | ZilchEngine",
-    "keywords": "Zilch Launcher & Editor Operating System: Windows 7 64-bit or later Processor: Quad-core 2.5 GHz or faster Graphics Card: NVIDIA GeForce 470 GTX or better Memory: 4 GB RAM or more Hard Disk: At least 2 GB available C++ Plugin Development Plugin development has the same requirements as the launcher and editor with the addition of: IDE: Visual Studio 2015"
+    "keywords": "Zilch Launcher & Editor Operating System: Windows 7 64-bit or later Processor: Quad-core 2.5 GHz or faster Graphics Card: NVIDIA GeForce 470 GTX or better Memory: 4 GB RAM or more Hard Disk: At least 2 GB available C++ Plugin Development Plugin development has the same requirements as the launcher and editor with the addition of: IDE: Visual Studio 2022"
   },
   "docs/nada_documentation.html": {
     "href": "docs/nada_documentation.html",
@@ -7046,8 +7046,8 @@
   },
   "index.html": {
     "href": "index.html",
-    "title": "This is the HOMEPAGE. | ZilchEngine",
-    "keywords": "This is the HOMEPAGE. Refer to Markdown for how to write markdown files. Quick Start Notes: Add images to the images folder if the file is referencing an image."
+    "title": "Zilch Engine | ZilchEngine",
+    "keywords": "Zilch Engine The Zilch Engine is a cross platform game engine that can be used to make simulations of any kind. Projects range from simple prototypes to professional 2D and 3D games, simple physics or graphics demonstrations to robust, realistic simulations. New to the Zilch community? Get started here! Get a quick glance at the engine's features here. Download the Engine Minimum System Requirements The Docs Zilch Engine Documentation The Zilch Engine Manual, Tutorials, and Code Reference Zilch Editor Documentation Zilch Manual Nada In Zilch Tutorials Tutorial Sequences Code Reference"
   },
   "samples/getting-started.html": {
     "href": "samples/getting-started.html",
