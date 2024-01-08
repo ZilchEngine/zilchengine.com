@@ -1,4 +1,9 @@
 {
+  "community.html": {
+    "href": "community.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
+  },
   "docs/README.html": {
     "href": "docs/README.html",
     "title": "New to the Zilch community? Get started here! | ZilchEngine",
@@ -7048,6 +7053,11 @@
     "href": "index.html",
     "title": "Zilch Engine | ZilchEngine",
     "keywords": "Zilch Engine The Zilch Engine is a cross platform game engine that can be used to make simulations of any kind. Projects range from simple prototypes to professional 2D and 3D games, simple physics or graphics demonstrations to robust, realistic simulations. New to the Zilch community? Get started here! Get a quick glance at the engine's features here. Download the Engine Minimum System Requirements The Docs Zilch Engine Documentation The Zilch Engine Manual, Tutorials, and Code Reference Zilch Editor Documentation Zilch Manual Nada In Zilch Tutorials Tutorial Sequences Code Reference"
+  },
+  "news.html": {
+    "href": "news.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
   },
   "samples/getting-started.html": {
     "href": "samples/getting-started.html",
