@@ -11275,6 +11275,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "docs/zilch_editor_documentation/tutorials/ai.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/zilch_editor_documentation/tutorials/ai.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "docs/zilch_editor_documentation/tutorials/architecture.md",
       "output": {
         ".html": {
@@ -11819,16 +11829,6 @@
       "output": {
         ".html": {
           "relative_path": "docs/zilch_editor_documentation/zilchmanual.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "docs/zilch_editor_documentation/zilchmanual/ai.md",
-      "output": {
-        ".html": {
-          "relative_path": "docs/zilch_editor_documentation/zilchmanual/ai.html"
         }
       },
       "version": ""
