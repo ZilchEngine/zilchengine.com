@@ -87,7 +87,7 @@
 
 <h2 id="custom-event-names">Custom Event Names</h2>
 <p>We start by making a externed string in our header file:</p>
-<pre><code>namespace Zilch
+<pre><code class="lang-C++">namespace Zilch
 {
   namespace Events
   {
@@ -96,7 +96,7 @@
 }
 </code></pre>
 <p>And within the cpp file we must define the string:</p>
-<pre><code>namespace Zilch
+<pre><code class="lang-C++">namespace Zilch
 {
   namespace Events
   {
@@ -107,7 +107,7 @@
 <p>By placing the event within the <code>Events</code> namespace, we can conveniently access any events name via <code>Events::FlagCaptured</code>.</p>
 <h2 id="custom-event-types">Custom Event Types</h2>
 <p>To create an event type that we can send (<em>this is not required</em>) we can make a new class that inherits from <code>Event</code>:</p>
-<pre><code>class FlagEvent : public Event
+<pre><code class="lang-C++">class FlagEvent : public Event
 {
 public:
   ZilchDeclareType(FlagEvent);
@@ -115,8 +115,8 @@ public:
   // Any data you wish to put here
 };
 </code></pre>
-<p>Notice that this class uses the <code>ZilchDeclareType</code> macro. This means that it is important that we use the counterpart <code>ZilchDefineType</code> within the cpp, and that we must absolutely be sure to call <code>BindBase</code> on Event as well as <code>InitializeMetaOfType(FlagEvent)</code> elsewhere in the initialization portion of our code. See <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_source_documentation/meta_binding.md">meta_binding</a> for more details.</p>
-<pre><code>ZilchDefineType(FlagEvent);
+<p>Notice that this class uses the <code>ZilchDeclareType</code> macro. This means that it is important that we use the counterpart <code>ZilchDefineType</code> within the cpp, and that we must absolutely be sure to call <code>BindBase</code> on Event as well as <code>InitializeMetaOfType(FlagEvent)</code> elsewhere in the initialization portion of our code. See <a href="meta_binding.html">meta_binding</a> for more details.</p>
+<pre><code class="lang-C++">ZilchDefineType(FlagEvent);
 
 void FlagEvent::InitializeMeta(MetaType* meta)
 {
@@ -126,20 +126,20 @@ void FlagEvent::InitializeMeta(MetaType* meta)
 </code></pre>
 <h2 id="sending--receiving-events">Sending / Receiving Events</h2>
 <p>Sending an event is generally:</p>
-<pre><code>FlagEvent toSend;
+<pre><code class="lang-C++">FlagEvent toSend;
   target-&gt;GetDispatcher()-&gt;Dispatch(Events::FlagCaptured, &amp;toSend);
 </code></pre>
 <p>The <code>target</code> in this case is whoever we want to send the event on.</p>
 <p>In some places we have helper functions like <code>DispatchEvent</code> to make this more convenient (such as on component):</p>
-<pre><code>FlagEvent toSend;
+<pre><code class="lang-C++">FlagEvent toSend;
 DispatchEvent(Events::FlagCaptured, &amp;toSend);
 </code></pre>
 <p>When making an event <em>connection</em> so we can receive an event you may use:</p>
-<pre><code>Zilch::Connect(target, Events::FlagCaptured, this, &amp;self_type::OnFlagCaptured);
+<pre><code class="lang-C++">Zilch::Connect(target, Events::FlagCaptured, this, &amp;self_type::OnFlagCaptured);
 </code></pre>
 <p>The <code>target</code> in this case is an object that is going to have that event sent to it. We pass in <code>this</code> because we want to listen for the event. The type <code>self_type</code> is automatically declared on our class by <code>ZilchDeclareType</code>. The <code>&amp;self_type::OnFlagCaptured</code> is C++ syntax for getting a member function pointer.</p>
 <p>Technically <code>Zilch::Connect</code> can connect any two objects (it doesn't even have to be yourself), however since your own object is most common, we have a macro to simplify this:</p>
-<pre><code>ConnectThisTo(target, Events::FlagCaptured, OnFlagCaptured);
+<pre><code class="lang-C++">ConnectThisTo(target, Events::FlagCaptured, OnFlagCaptured);
 </code></pre>
 <h2 id="event-dispatcherreceiver">Event Dispatcher/Receiver</h2>
 <p>In order to send events we must have an <code>EventDispatcher</code>, and in order to receive events we must have an <code>EventReceiver</code>. To make life simple, most classes can just inherit from <code>EventObject</code> which contains both of these and has all the basic functions on it. Note that <code>Cog</code> itself is actually an <code>EventObject</code> as are many other classes in the engine.</p>
@@ -152,7 +152,7 @@ DispatchEvent(Events::FlagCaptured, &amp;toSend);
 <li>Our HashMap is specifically optimized to make String lookup efficient</li>
 </ul>
 <p>Many event systems will pass multiple arguments and invoke functions directly:</p>
-<pre><code>void MyCallback(float frameTime, int frameNumber, World* world);
+<pre><code class="lang-C++">void MyCallback(float frameTime, int frameNumber, World* world);
 </code></pre>
 <p>We chose not to do this pattern because it breaks user's code easily if we need to add/remove/change the parameters in any ways. To mitigate this we chose to use a base class <code>Event</code> for the event data. All events sent must publicly inherit from <code>Event</code>. Note that you are not required to create a new derived class in order to send an event.</p>
 <p>Events are automatically disconnected if either the sender or receiver is destructed.</p>

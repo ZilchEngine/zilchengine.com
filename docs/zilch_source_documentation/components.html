@@ -96,7 +96,7 @@
 <li>Our macros currently expect the component to be within the Zilch namespace</li>
 </ul>
 <p>Within the <code>CustomComponent.hpp</code> header file:</p>
-<pre><code>
+<pre><code class="lang-C++">
 # pragma once
 
 
@@ -112,7 +112,7 @@ namespace Zilch
 </code></pre>
 <p>It is our coding style to not tab in the namespace. We also generally rely upon all compilers supporing #pragma once (though you can use include guards if you wish).</p>
 <p>Within the <code>CustomComponent.cpp</code> file:</p>
-<pre><code>
+<pre><code class="lang-C++">
 # include &quot;Precompiled.hpp&quot;
 
 #include &quot;CustomComponent.hpp&quot;
@@ -156,7 +156,7 @@ namespace Zilch
 </li>
 </ul>
 <p>Add the following code to <code>CustomComponent.hpp</code> right after <code>InitializeMeta</code>:</p>
-<pre><code>// These functions are in the order they will be invoked:
+<pre><code class="lang-C++">// These functions are in the order they will be invoked:
 void Serialize(Serializer&amp; stream) override;
 void Initialize(CogInitializer&amp; initializer) override;
 void OnAllObjectsCreated(CogInitializer&amp; initializer) override;
@@ -165,7 +165,7 @@ void OnDestroy(uint flags) override;
 </code></pre>
 <p>You may implement these functions as you see fit. Empty implementations are OK, and they do NOT need to invoke the base class version of the function.</p>
 <p>The following includes some common example implementations of the above functions:</p>
-<pre><code>void CustomComponent::InitializeMeta(MetaType* meta)
+<pre><code class="lang-C++">void CustomComponent::InitializeMeta(MetaType* meta)
 {
   BindBase(Component);
   BindSetup(SetupMode::DefaultSerialization);
@@ -189,7 +189,7 @@ void OnDestroy(uint flags) override;
   BindMethod(Speak);
 }
 </code></pre>
-<pre><code>void CustomComponent::Serialize(Serializer&amp; stream)
+<pre><code class="lang-C++">void CustomComponent::Serialize(Serializer&amp; stream)
 {
   // Our serialization handles both directions (saving and loading)
   SerializeNameDefault(mLives, 9);
@@ -197,7 +197,7 @@ void OnDestroy(uint flags) override;
   SerializeResourceName(mFace, MaterialManager);
 }
 </code></pre>
-<pre><code>void CustomComponent::Initialize(CogInitializer&amp; initializer)
+<pre><code class="lang-C++">void CustomComponent::Initialize(CogInitializer&amp; initializer)
 {
   // You might grab another component on your object
   // Remember that component could not have Initialize called on it
@@ -205,25 +205,25 @@ void OnDestroy(uint flags) override;
   mTransform = GetOwner()-&gt;has(Transform);
 }
 </code></pre>
-<pre><code>void CustomComponent::OnAllObjectsCreated(CogInitializer&amp; initializer)
+<pre><code class="lang-C++">void CustomComponent::OnAllObjectsCreated(CogInitializer&amp; initializer)
 {
   // Find another object within the space (everything should be created by here)
   Cog* player = GetSpace()-&gt;FindObjectByName(&quot;Player&quot;);
 }
 </code></pre>
-<pre><code>void CustomComponent::DebugDraw()
+<pre><code class="lang-C++">void CustomComponent::DebugDraw()
 {
   // Draw a red sphere at our position
   gDrawer-&gt;Add(Debug::Sphere(mTransform-&gt;GetWorldTranslation(), 0.5f).Color(Color::Red));
 }
 </code></pre>
-<pre><code>void CustomComponent::OnDestroy(uint flags)
+<pre><code class="lang-C++">void CustomComponent::OnDestroy(uint flags)
 {
   // Disconnect ourselves from any lists we've been added to
 }
 </code></pre>
 <p>Last but not least, if you would like your component to be automatically documented by doxygen, you must use tripple slashes <code>///</code> for comments above any classes, functions, properties, or members you want to be documented. The file header that doxygen requires should look something like:</p>
-<pre><code>*///////////////////////////////////////////////////////////////////////////*
+<pre><code class="lang-C++">*///////////////////////////////////////////////////////////////////////////*
 ///
 /// \file CustomComponent.hpp
 /// 
