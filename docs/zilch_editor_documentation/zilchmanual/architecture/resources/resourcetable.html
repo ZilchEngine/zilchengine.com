@@ -97,7 +97,7 @@
 <p>All sampling functions for a ResourceTable return a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/resourcetableentry.md">ResourceTableEntry</a>. In addition to the above listed properties, the stored resource can also be looked up via the <code>Resource</code> property. Note: This must be casted to the correct resource type.</p>
 <h1 id="array-interface">Array Interface</h1>
 <p>ResourceTables can be accessed as an array at run-time. This is useful for a list of objects where order is important (e.g. generating UI). Given below is a simple example of using the array interface to spawn archetypes:</p>
-<pre><code class="lang-lang=csharp">  // Spawn each archtype one below another
+<pre><code class="lang-TS">  // Spawn each archtype one below another
   for(var i = 0; i &lt; this.Table.Count; ++i)
   {
     var entry = this.Table[i];
@@ -112,7 +112,7 @@
 <p>ResourceTable can also be used as a hashmap where the entry's name is the key.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47120.PNG" alt="ResourceTable4"></p>
 <p>One such example is mapping button names to a resource. Pictured above is a table of Levels. A menu in a game could use the <code>Name</code> properties to populate the text on buttons. When a button is clicked, the easiest way to get the Level to load is to use the HashMap interface to look up the entry by name.</p>
-<pre><code class="lang-lang=csharp">  function GetLevelByName(name : String) : Level
+<pre><code class="lang-TS">  function GetLevelByName(name : String) : Level
   {
     var entry = this.Table.GetOrNull(name);
     if(entry == null)
@@ -128,7 +128,7 @@
 <p>Each entry in a table has a weight used to determine how likely it is to be randomly sampled. The weight is not to be confused with the actual probability of rolling an item though. An entry's probability is computed as its weight divided by the sum of all the weights in the table. In the above picture the &quot;Can&quot; has a weight of 0.66. The total weights in the table sum to 2.18. This means the &quot;Can&quot; has a probability of 0.66 / 2.18 = 0.30275 or approximately 31%.</p>
 <h2 id="sampling-the-table">Sampling the Table</h2>
 <p>ResourceTable can be sampled at run-time through the <code>Sample</code> function:</p>
-<pre><code class="lang-lang=csharp">  function SpawnDropAt(pos : Real3)
+<pre><code class="lang-TS">  function SpawnDropAt(pos : Real3)
   {
     // Sampling the weighted table requires two random numbers in the range of [0, 1)
     var entry = this.Table.Sample(this.RandomContext.Real(), this.RandomContext.Real());
