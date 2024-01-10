@@ -86,10 +86,10 @@
         <article data-uid="">
 
 <p>One problem in C++ is that there is no way to get a stringified name for each value within an enum. This makes it difficult to display enumeration options in a property grid or bind them to script. To solve this problem, we use a <code>DeclareEnum#</code> macro that we generate (where # is how many values the enum has):</p>
-<pre><code class="lang-C++">DeclareEnum3(State, Idle, Patrol, Dead);
+<pre><code>DeclareEnum3(State, Idle, Patrol, Dead);
 </code></pre>
 <p>In the above example, we have created an enum with the name <code>State</code> and 3 values: <code>Idle</code>, <code>Patrol</code>, and <code>Dead</code>. In C++ this is roughly equivalent to:</p>
-<pre><code class="lang-C++">namespace State
+<pre><code>namespace State
 {
   enum Enum
   {
@@ -100,7 +100,7 @@
 }
 </code></pre>
 <p><code>Enum</code> and is wrapped within a namespace. This is because we thought it was beneficial to always refer to an enum via its name, eg <code>State::Idle</code> instead of creating a global constant <code>Idle</code>. This also means that if you wish to use the type of the enum you must do <code>State::Enum</code>. We also have another type which is <code>State::Type</code> that is simply just an unsigned integer which is convenient for accepting flags in C++.</p>
-<p>If you wish to bind a data member on a class that is an enum, you can use <code>BindMemberEnumProperty</code>. There are other variations that may require getters/setters, such as <code>BindGetSetEnumProperty</code>, <code>BindGetEnumProperty</code>, and <code>BindCustomGetSetEnumProperty</code>. Internally, these macros are mostly the same as their normal bind data member or property counterparts, however each of them invokes the macro <code>BindEnum</code> at the beginning. <code>BindEnum</code> creates the reflection <code>MetaType</code> for that enum (once only). For more information see <a href="meta_binding.html">meta_binding</a>.</p>
+<p>If you wish to bind a data member on a class that is an enum, you can use <code>BindMemberEnumProperty</code>. There are other variations that may require getters/setters, such as <code>BindGetSetEnumProperty</code>, <code>BindGetEnumProperty</code>, and <code>BindCustomGetSetEnumProperty</code>. Internally, these macros are mostly the same as their normal bind data member or property counterparts, however each of them invokes the macro <code>BindEnum</code> at the beginning. <code>BindEnum</code> creates the reflection <code>MetaType</code> for that enum (once only). For more information see <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_source_documentation/meta_binding.md">meta_binding</a>.</p>
 
 </article>
 

@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<h2 id="general-principles">General Principles</h2>
+<p>##General Principles</p>
 <ul>
 <li>Simplify</li>
 <li>Organized by what it does</li>
@@ -207,7 +207,7 @@ Each higher level layer only depends on more fundamental layers.</p>
 <li>When the game object composition is destroyed, it destroys all of its components.</li>
 </ul>
 <h3 id="creating-a-cog">Creating A Cog</h3>
-<pre><code class="lang-C++">  Archetype* shipArchetype = ArchetypeManager::Find(&quot;Ship&quot;);
+<pre><code>  Archetype* shipArchetype = ArchetypeManager::Find(&quot;Ship&quot;);
   Cog* cog = space-&gt;Create(shipArchetype)
 </code></pre>
 <h3 id="has-operator">'has' Operator</h3>
@@ -215,7 +215,7 @@ Each higher level layer only depends on more fundamental layers.</p>
 <li>Used to get components from compositions by type name.</li>
 <li>It is type safe and will return NULL or a valid component.</li>
 </ul>
-<pre><code class="lang-C++">Model* model = cog-&gt;has(Model);
+<pre><code>Model* model = cog-&gt;has(Model);
 if(model)
 {
   model-&gt;SetColor(Vec4(0,1,0,1));
@@ -228,7 +228,7 @@ if(model)
 <li>CogIds must be checked for NULL.</li>
 <li>Once a CogId is checked it is safe to use that object for the rest of the frame.</li>
 </ul>
-<pre><code class="lang-C++">void SomeFunction(CogId target)
+<pre><code>void SomeFunction(CogId target)
 {
   if(Cog* cog = target)
   {
@@ -240,7 +240,7 @@ if(model)
 }
 </code></pre>
 <p>also works on CogIds</p>
-<pre><code class="lang-C++">void SomeFunction(CogId target)
+<pre><code>void SomeFunction(CogId target)
 {
   if(Transform* transform = target.has(Transform))
   {
@@ -298,7 +298,7 @@ if(model)
 <li>Examples: Collider, Joints, etc</li>
 <li>Editor enforces only one component that has a particular interface. For example only one collider component (like BoxColllider) can be present.</li>
 </ul>
-<pre><code class="lang-C++">void ComponentExample::InitializeMeta(MetaClass* meta)
+<pre><code>void ComponentExample::InitializeMeta(MetaClass* meta)
 {
   // Must have transform
   BindDependency(Transform); 
@@ -357,7 +357,7 @@ if(model)
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/3044.png" alt="Serialization"></p>
 <h2 id="example-serialization-code">Example Serialization Code</h2>
-<pre><code class="lang-C++">class ComponentExample
+<pre><code>class ComponentExample
 {
 public:
   float mHitPoints;
@@ -373,7 +373,7 @@ void ComponentExample::Serialize(Serializer&amp; stream)
 }
 </code></pre>
 <h2 id="example-serialization-result">Example Serialization Result</h2>
-<pre><code class="lang-TS">ComponentExample = 
+<pre><code>ComponentExample = 
 {
   float HitPoints = 20,
   vec3 Direction = [1,0,0]
@@ -434,7 +434,7 @@ void ComponentExample::Serialize(Serializer&amp; stream)
 <li>Watch out for order of initialization Dependant components are initialized first.</li>
 </ul>
 <h3 id="example-initialization-code">Example Initialization Code</h3>
-<pre><code class="lang-C++">void GraphicsComponent::Initialize(CogInitializer&amp; init)
+<pre><code>void GraphicsComponent::Initialize(CogInitializer&amp; init)
 {
   // Getting other components
   mTransform = GetOwner()-&gt;has(Transform);
@@ -455,7 +455,7 @@ void ComponentExample::Serialize(Serializer&amp; stream)
 </li>
 </ul>
 <h3 id="connect">Connect</h3>
-<pre><code class="lang-C++">  Connect(targetObject, Events::EventName, receivingObject, &amp;ObjectType::FuncName);
+<pre><code>  Connect(targetObject, Events::EventName, receivingObject, &amp;ObjectType::FuncName);
 </code></pre>
 <ul>
 <li><p>For example, the object that is involved in a collision event will have a function called when the event occurs and are constant strings.</p>
@@ -465,7 +465,7 @@ void ComponentExample::Serialize(Serializer&amp; stream)
 </li>
 </ul>
 <h3 id="connecting-example-code">Connecting Example Code</h3>
-<pre><code class="lang-C++">void GraphicsComponent::Initialize(CogInitializer&amp; init)
+<pre><code>void GraphicsComponent::Initialize(CogInitializer&amp; init)
 {
   // ConnectToThis expands to Connect(target, event, this, &amp;classname::function)
   
@@ -498,7 +498,7 @@ void ComponentExample::Serialize(Serializer&amp; stream)
 <li>Connections are cleaned up automatically when either object destroyed.</li>
 </ul>
 <h3 id="example-event-connections">Example Event Connections</h3>
-<pre><code class="lang-C++">void ComponentExample::Initialize(CogInitializer&amp; init)
+<pre><code>void ComponentExample::Initialize(CogInitializer&amp; init)
 {
   ConnectToSelf(GetOwner(), Events::CollisionStarted, OnCollisionStarted);
 }
@@ -534,7 +534,7 @@ void ComponentExample::OnCollisionStarted(CollsionEvent* event)
 <li>Containers use ranges in place of iterators for most moving in a container.</li>
 <li>Ranges are more secure and easier to work with than iterators.</li>
 </ul>
-<pre><code class="lang-C++">int Sum(Array&lt;int&gt;&amp; values)
+<pre><code>int Sum(Array&lt;int&gt;&amp; values)
 {
   int total = 0;
   for(Array&lt;int&gt;::range r = values.all(); !r.empty(); r.popFront())
@@ -544,7 +544,7 @@ void ComponentExample::OnCollisionStarted(CollsionEvent* event)
   return total;
 }
 </code></pre>
-<pre><code class="lang-C++">int Sum(Array&lt;int&gt;&amp; values)
+<pre><code>int Sum(Array&lt;int&gt;&amp; values)
 {
   int total = 0;
   forRange(int a, values.all())

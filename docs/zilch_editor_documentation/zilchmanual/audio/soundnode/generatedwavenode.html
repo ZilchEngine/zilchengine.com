@@ -94,7 +94,7 @@
 <h1 id="using-the-generatedwavenode">Using the GeneratedWaveNode</h1>
 <p>GeneratedWaveNodes create audio using either a sine wave, square wave, saw wave, triangle wave, or white noise. The <code>WaveFrequency</code> property controls the pitch of the audio, and can be smoothly changed over time using the <code>InterpolateWaveFrequency</code> method. Like other objects, its volume can be controlled using either the <code>Volume</code> or the <code>Decibels</code> property, and interpolated with the <code>InterpolateVolume</code> and <code>InterpolateDecibels</code> methods.</p>
 <p>The following code block illustrates how to use a GeneratedWaveNode to make a simple alarm-siren noise.</p>
-<pre><code class="lang-TS">class SimpleSiren : NadaComponent
+<pre><code class="lang-lang=csharp">class SimpleSiren : NadaComponent
 {
   // Make sure this object has a SoundEmitter component
   [Dependency] var Emitter : SoundEmitter;

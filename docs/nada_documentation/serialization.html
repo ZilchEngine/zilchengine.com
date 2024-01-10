@@ -89,7 +89,7 @@
 <p>At the end of the day, serialization always comes down to writing out primitives such as integers, floats, strings, and characters, as well as representing larger data structures such as arrays, maps and objects.</p>
 <p>Every Nada class or struct creates a BoundType which defines all the members (fields, properties, and methods) on that type (binding a C++ type also creates this). A Property is a member that has a get or set function, and a Field is a typical member variable. In Nada, a Field is implicitly a Property and automatically implements a get and set function. This means we can always just generically use Property instead of having to distinguish from Field and Property, because Field is-a Property.</p>
 <p>If your serialization format reads in names of members, then you can find a data-field or property via:</p>
-<pre><code class="lang-C++">void SerializeMember(const String&amp; name, BoundType* type)
+<pre><code>void SerializeMember(const String&amp; name, BoundType* type)
 {
   // This will find an instance member that we can call 'get' or 'set' on
   Property* member = boundType-&gt;FindPropertyOrField(name, FindMemberOptions::None);
