@@ -94,31 +94,31 @@
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
 </ul>
 <h1 id="what-is-a-level">What is a Level?</h1>
 <p>A Level resource is a resource that stores a list of objects. These objects are created when the level is <strong>loaded</strong>.</p>
 <h1 id="creating-a-new-level">Creating a New Level</h1>
-<p>Levels are added to the project in basically the same way as any other resource: by <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> adding a resource</a> using one of the pre-defined resource templates.</p>
+<p>Levels are added to the project in basically the same way as any other resource: by <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> adding a resource</a> using one of the pre-defined resource templates.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96086.png" alt="image"></p>
 <p><em>Zilch's Level templates</em></p>
 <p>Zilch's built-in Level templates are like shortcuts for creating levels of different kinds: they've already got the important cogs, like renderers and cameras, and they're pre-configured to be suitable for the chosen type of level. The {nav icon=clone, name=&quot;2D Level&quot;} template provides a <strong>forward renderer</strong> and an <strong>orthographic camera</strong>, perfect for a simple 2D game.</p>
 <ul>
 <li>Create a Level resource using the {nav icon=clone, name=&quot;2D Level&quot;} template and name it <code>Level1</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Renderer object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Renderer object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Under <code>ForwardRenderer</code></li>
 <li>Set ClearColor  to <code>[R:16, G:78, B:32, A:1.00]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createspritetext"> CreateSpriteText</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createspritetext"> CreateSpriteText</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename SpriteText object to <code>LevelNameText</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/transform.md"> Transform</a></li>
 <li>Set Translation  to <code>[0, 5, 0]</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set Text  to <code>- Level 1 -</code></li>
 <li>Set PixelsPerUnit  to <code>32</code></li>
 </ul>
@@ -131,7 +131,7 @@ This is the list of objects in this level. In a sense, this list <em>is</em> thi
 <h2 id="creating-a-player">Creating a Player</h2>
 <p>There's no sense in having a level if there's no player, eh?</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>KeyboardMovement</code></li>
 <li>Update the <code>KeyboardMovement</code> script to the following:</li>
 </ul>
@@ -178,44 +178,44 @@ This is the list of objects in this level. In a sense, this list <em>is</em> thi
 }
 </code></pre>
 <ul>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createsprite"> CreateSprite</a></p>
 </li>
 <li><p>In the <code>Properties Window</code></p>
 </li>
 <li><p>Rename Sprite object to <code>Player</code></p>
 </li>
-<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></p>
+<li><p>Under <a href="/docs/code_reference/class_reference/transform.md"> Transform</a></p>
 </li>
 <li><p>Set Translation  to <code>[0, 0, 0.5]</code></p>
 </li>
-<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></p>
+<li><p>Under <a href="/docs/code_reference/class_reference/sprite.md"> Sprite</a></p>
 </li>
 <li><p>Set VertexColor  to <code>[R:64, G:255, B:160, A:1.00]</code></p>
 </li>
 <li><p>Set SpriteSource  to <code>CircleBordered</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>SphereCollider</code></p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>SphereCollider</code></p>
 </li>
-<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spherecollider.md"> SphereCollider</a></p>
+<li><p>Under <a href="/docs/code_reference/class_reference/spherecollider.md"> SphereCollider</a></p>
 </li>
 <li><p>Set Ghost checkBox to <code>true</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>RigidBody</code></p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>RigidBody</code></p>
 </li>
-<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a></p>
+<li><p>Under <a href="/docs/code_reference/class_reference/rigidbody.md"> RigidBody</a></p>
 </li>
 <li><p>Set DynamicState enum to <code>Kinematic</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>KeyboardMovement</code></p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>KeyboardMovement</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96103.gif" alt="Player movement in Level 1"></p>
 <p><em>Player moving around in Level 1</em></p>
 <p>You can move the player with the arrow keys.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>Now let's make a Level 2 to go to from Level 1.</p>
 <h2 id="creating-another-level">Creating Another Level</h2>
@@ -229,11 +229,11 @@ This is the list of objects in this level. In a sense, this list <em>is</em> thi
 </ul>
 <p>Level 2 should be visually distinct from Level 1.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : LevelNameText object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : LevelNameText object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Under <code>SpriteText</code></li>
 <li>Set Text  to <code>- Level 2 -</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Renderer object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Renderer object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Under <code>ForwardRenderer</code></li>
 <li>Set ClearColor  to <code>[R:48, G:59, B:84, A:1.00]</code></li>
@@ -242,9 +242,9 @@ This is the list of objects in this level. In a sense, this list <em>is</em> thi
 <p><em>Level 2</em></p>
 <p>Now let's make some way of going between Level 1 and Level 2.</p>
 <h1 id="loading-a-level-in-the-game">Loading a Level in the Game</h1>
-<p>Going from one level to another is as simple as calling the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/space.md"> space</a>'s LoadLevel function. Let's make a door: an object that calls that function when the player touches it.</p>
+<p>Going from one level to another is as simple as calling the <a href="/docs/code_reference/class_reference/space.md"> space</a>'s LoadLevel function. Let's make a door: an object that calls that function when the player touches it.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>LoadLevelOnCollisionStarted</code></li>
 <li>Update the <code>LoadLevelOnCollisionStarted</code> script to the following:</li>
 </ul>
@@ -268,29 +268,29 @@ This is the list of objects in this level. In a sense, this list <em>is</em> thi
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>Door</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/transform.md"> Transform</a></li>
 <li>Set Translation  to <code>[-5, 3, 0]</code></li>
 <li>Set Scale  to <code>[2, 3, 1]</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/sprite.md"> Sprite</a></li>
 <li>Set VertexColor  to <code>[R:230, G:23, B:57, A:1.00]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>BoxCollider</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md"> BoxCollider</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>BoxCollider</code></li>
+<li>Under <a href="/docs/code_reference/class_reference/boxcollider.md"> BoxCollider</a></li>
 <li>Set Ghost checkBox to <code>true</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>LoadLevelOnCollisionStarted</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>LoadLevelOnCollisionStarted</code></li>
 <li>Under <code>LoadLevelOnCollisionStarted</code></li>
 <li>Set LevelToLoad resource to <code>Level1</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96108.png" alt="image"></p>
 <p><em>Level 2 now has a door</em></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#copy"> Copy</a> the Door object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#copy"> Copy</a> the Door object</li>
 <li>Open the Level resource named <code>Level1</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#paste"> Paste</a> the Door object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#paste"> Paste</a> the Door object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/transform.md"> Transform</a></li>
 <li>Set Translation  to <code>[5, -4, 0]</code></li>
 <li>Under <code>LoadLevelOnCollisionStarted</code></li>
 <li>Set LevelToLoad resource to <code>Level2</code></li>
@@ -298,19 +298,19 @@ This is the list of objects in this level. In a sense, this list <em>is</em> thi
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96106.png" alt="image"></p>
 <p><em>Level 1 now has a door</em></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96112.gif" alt="Level switching"></p>
 <p>If you move the player to the door, the other level is loaded.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>(NOTE) <strong>A Closer Look:</strong>
 When the player touches the door in Level 1, Level 2 is loaded. So what happens to Level 1? When a space's LoadLevel function is called, first, all the objects in that space are destroyed: the player, the door, the camera, the renderer, all of them. Then, all the objects in Level 2 are created. This happens every time a space changes levels.</p>
 <h1 id="reloading-a-level">Reloading a Level</h1>
 <p>Just as the space has a function to load a level, it also has a function to reload the current level.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>ReloadLevelOnKeyDown</code></li>
 <li>Update the <code>ReloadLevelOnKeyDown</code> script to the following:</li>
 </ul>
@@ -330,74 +330,74 @@ When the player touches the door in Level 1, Level 2 is loaded. So what happens 
 </code></pre>
 <p>Calling the ReloadLevel function does the same thing as calling the LoadLevel function and passing in the current level.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#selectspace"> Select the Space</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#selectspace"> Select the Space</a></li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>ReloadLevelOnKeyDown</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>ReloadLevelOnKeyDown</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96114.gif" alt="Level reloading"></p>
 <p>You can now reload the level by pressing key <code>Ctrl + R</code>.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>(NOTE)<strong>A Closer Look:</strong>
 Reloading a level is just the same as loading it again, so it goes through the same process. First, everything present is destroyed. Then, everything in the level is created anew. This means that all of its objects, and all of their components, are reinitialized. However, this does <em>not</em> destroy the space that contains the level, which is only initialized when it is created, and destroyed when the user explicitly destroys it in script (or when the game ends).</p>
 <h1 id="setting-a-games-starting-level">Setting a Game's Starting Level</h1>
-<p>When a Zilch game is <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> played in the editor</a>, the default game setup loads the level that is currently being edited. When the game is exported, however, this isn't necessarily the first level to be loaded. As a matter of fact, there is a component on the GameSession aptly named <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/defaultgamesetup.md"> DefaultGameSetup</a>, which manages this.</p>
+<p>When a Zilch game is <a href="/docs/code_reference/command_reference.md#playgame"> played in the editor</a>, the default game setup loads the level that is currently being edited. When the game is exported, however, this isn't necessarily the first level to be loaded. As a matter of fact, there is a component on the GameSession aptly named <a href="/docs/code_reference/class_reference/defaultgamesetup.md"> DefaultGameSetup</a>, which manages this.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#selectgame"> Select the Game</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#selectgame"> Select the Game</a></li>
 <li>In the <code>Properties Window</code></li>
-<li>Expand <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/defaultgamesetup.md"> DefaultGameSetup</a></li>
+<li>Expand <a href="/docs/code_reference/class_reference/defaultgamesetup.md"> DefaultGameSetup</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96116.png" alt="image"></p>
 <p>Here, we can see some useful properties: StartingSpace enum specifies the archetype to use for creating the game's default space. StartingLevel enum determines which level is loaded into that space after it's created. LoadEditingLevel checkBox tells the engine whether it should override the starting level when the game is being run in the editor, and instead load the level that's being edited.</p>
 <p>Let's make a new level, a title screen, and set it as the starting level.</p>
 <h2 id="creating-a-title-screen">Creating a Title Screen</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a Level resource using the {nav icon=clone, name=&quot;2D Level&quot;} template and name it <code>TitleScreen</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createspritetext"> CreateSpriteText</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createspritetext"> CreateSpriteText</a></li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/transform.md"> Transform</a></li>
 <li>Set Translation  to <code>[0, 3, 0]</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set Text  to <code>Azomarith's Revenge 2: Shadows of the Fallen</code></li>
 <li>Set PixelsPerUnit  to <code>32</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createspritetext"> CreateSpriteText</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createspritetext"> CreateSpriteText</a></li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/transform.md"> Transform</a></li>
 <li>Set Translation  to <code>[0, 2, 0]</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set Text  to <code>Game of the Year Edition</code></li>
 <li>Set FontSize  to <code>24</code></li>
 <li>Set PixelsPerUnit  to <code>32</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createspritetext"> CreateSpriteText</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createspritetext"> CreateSpriteText</a></li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/transform.md"> Transform</a></li>
 <li>Set Translation  to <code>[0, -3, 0]</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set Text  to <code>Press Enter</code></li>
 <li>Set FontSize  to <code>18</code></li>
 <li>Set PixelsPerUnit  to <code>32</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96118.png" alt="image"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#selectgame"> Select the Game</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#selectgame"> Select the Game</a></li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/defaultgamesetup.md"> DefaultGameSetup</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/defaultgamesetup.md"> DefaultGameSetup</a></li>
 <li>Set StartingLevel enum to <code>TitleScreen</code></li>
 <li>Set LoadEditingLevel checkBox to <code>false</code></li>
 <li>Open the Level resource named <code>Level1</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p>Even though we're editing Level 1, the editor loads the title screen, thanks to how the DefaultGameSetup has been configured.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>Next, we need a component to load Level 1 from the title screen.</p>
 <ul>
 <li>Open the Level resource named <code>TitleScreen</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>LoadLevelOnKeyDown</code></li>
 <li>Update the <code>LoadLevelOnKeyDown</code> script to the following:</li>
 </ul>
@@ -421,11 +421,11 @@ Reloading a level is just the same as loading it again, so it goes through the s
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : LevelSettings object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : LevelSettings object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>LoadLevelOnKeyDown</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>LoadLevelOnKeyDown</code></li>
 <li>Open the Level resource named <code>Level1</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96125.gif" alt="Level sequence"></p>
 <p><em>The game starts with the title screen, then goes to Level 1</em></p>
@@ -433,33 +433,33 @@ Reloading a level is just the same as loading it again, so it goes through the s
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">launchernewproject</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">resourceadding</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">launchernewproject</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">resourceadding</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md">spritetext</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">sprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spherecollider.md">spherecollider</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">boxcollider</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/space.md">space</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/defaultgamesetup.md">defaultgamesetup</a></li>
+<li><a href="/docs/code_reference/class_reference/transform.md">transform</a></li>
+<li><a href="/docs/code_reference/class_reference/spritetext.md">spritetext</a></li>
+<li><a href="/docs/code_reference/class_reference/sprite.md">sprite</a></li>
+<li><a href="/docs/code_reference/class_reference/spherecollider.md">spherecollider</a></li>
+<li><a href="/docs/code_reference/class_reference/boxcollider.md">boxcollider</a></li>
+<li><a href="/docs/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
+<li><a href="/docs/code_reference/class_reference/space.md">space</a></li>
+<li><a href="/docs/code_reference/class_reference/defaultgamesetup.md">defaultgamesetup</a></li>
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createspritetext"> CreateSpriteText</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#paste"> Paste</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#selectspace"> SelectSpace</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#selectgame"> SelectGame</a></li>
+<li><a href="/docs/code_reference/command_reference.md#createspritetext"> CreateSpriteText</a></li>
+<li><a href="/docs/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
+<li><a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/code_reference/command_reference.md#paste"> Paste</a></li>
+<li><a href="/docs/code_reference/command_reference.md#selectspace"> SelectSpace</a></li>
+<li><a href="/docs/code_reference/command_reference.md#selectgame"> SelectGame</a></li>
 </ul>
 <h2 id="development-task">Development Task</h2>
 <ul>

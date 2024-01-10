@@ -93,35 +93,35 @@
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
 </ul>
 <p>Making a menu, HUD, or simple title screen in Zilch is easy when you start with the built-in UI level template. Let's make a simple game with a title screen, a main menu, and a basic gameplay level.</p>
-<p>(NOTE) <strong>What's a Widget?</strong> In this tutorial, you'll encounter the word <strong>widget</strong>. In short, a widget object is a UI element. Zilch widgets object include //points of interaction//, like buttons and sliders, as well as static elements, like text labels and layouts containing other widgets object. What all widgets object have in common is the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a> component, which each one has. All graphical user interfaces (or <strong>GUIs</strong>) created with Zilch's UI system, whether they're title screens, main menus, or anything else, are composed of widgets object.</p>
+<p>(NOTE) <strong>What's a Widget?</strong> In this tutorial, you'll encounter the word <strong>widget</strong>. In short, a widget object is a UI element. Zilch widgets object include //points of interaction//, like buttons and sliders, as well as static elements, like text labels and layouts containing other widgets object. What all widgets object have in common is the <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a> component, which each one has. All graphical user interfaces (or <strong>GUIs</strong>) created with Zilch's UI system, whether they're title screens, main menus, or anything else, are composed of widgets object.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98287.png" alt="Level Flow"></p>
 <p>We'll start with the title screen.</p>
 <h1 id="creating-a-title-screen">Creating a Title Screen</h1>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a Level resource using the {nav icon=clone, name=&quot;Ui Level&quot;} template and name it <code>TitleScreen</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98291.png" alt="image"></p>
-<p>The UI level template includes a RootWidget object object, complete with all the special components that make it tick, such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uirootwidget.md"> UiRootWidget</a> and <code>UiRenderer</code>. It also comes with a few placeholder sprites that we won't be using.</p>
+<p>The UI level template includes a RootWidget object object, complete with all the special components that make it tick, such as <a href="/docs/code_reference/class_reference/uirootwidget.md"> UiRootWidget</a> and <code>UiRenderer</code>. It also comes with a few placeholder sprites that we won't be using.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98305.png" alt="image"></p>
 <ul>
 <li>In the <code>Objects Window</code></li>
 <li>Under RootWidget object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : the three Sprite object objects</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#delete"> Delete</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : the three Sprite object objects</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#delete"> Delete</a></li>
 </ul>
 <p>Our title screen will consist of white text against a dark background. The background color can be changed through the RootWidget:</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RootWidget object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RootWidget object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uirootwidget.md"> UiRootWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uirootwidget.md"> UiRootWidget</a></li>
 <li>Set LocalColor  to <code>[R:36, G:36, B:36, A:1.00]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uifilllayout.md"> UiFillLayout</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <a href="/docs/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="/docs/code_reference/class_reference/uifilllayout.md"> UiFillLayout</a></li>
 </ul>
 <p>It's time to make our first widget object: a text label. The best way to make widgets object is to instantiate them from archetypes, and Zilch comes with some archetypes that are just for use in UI creation. These can be found in the <code>Library Window</code>, but you'll have to <strong>change libraries</strong> to find them.</p>
 <ul>
@@ -141,21 +141,21 @@
 <ul>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the UiSpriteText object to <code>Title</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Under the <strong>Layout</strong> group</li>
 <li>Set HorizontalAlignment enum to <code>Center</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set TextAlign enum to <code>Center</code></li>
 </ul>
 <p>NOTE: The <code>UiWidget</code> component's <code>VerticalAlignment</code> and <code>HorizontalAlignment</code> properties determine where the text widget object's area is positioned within its parent layout (in this case, the RootWidget object). The <code>SpriteText</code> component's <code>TextAlign</code> property, on the other hand, determines where the text itself is positioned within its own area.</p>
 <ul>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Set the <strong>Y</strong> part of Size  to <code>50</code></li>
 <li>Under the <strong>Layout</strong> group</li>
 <li>Set SizePolicyX enum to <code>Flex</code></li>
 <li>Set MarginTop  to <code>180</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set Font enum to <code>NotoSans-Bold</code></li>
 <li>Set FontSize  to <code>36</code></li>
 <li>Set Text  to something pretentious</li>
@@ -164,40 +164,40 @@
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98714.png" alt="image"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101906.png" alt="image"></p>
 <p><em>Title screen so far, with hierarchy for reference</em></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Title object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : the new copy of Title object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Title object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="/docs/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : the new copy of Title object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the copy of Title object to <code>Subtitle</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Set LocalColor  to <code>[R:255, G:255, B:255, A:0.50]</code></li>
 <li>Under the <strong>Layout</strong> group</li>
 <li>Set MarginTop  to <code>215</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set Font enum to <code>NotoSans-Regular</code></li>
 <li>Set FontSize  to <code>24</code></li>
 <li>Set Text  to something longer and perhaps more pretentious</li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Set the <strong>Y</strong> part of Size  to <code>33</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98716.png" alt="image"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101908.png" alt="image"></p>
 <p><em>Title screen, continued, with hierarchy for reference</em></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Subtitle object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Subtitle object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="/docs/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the copy of Subtitle object to <code>StartText</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Set LocalColor  to <code>[R:255, G:255, B:255, A:1.00]</code></li>
 <li>Under the <strong>Layout</strong> group</li>
 <li>Set VerticalAlignment enum to <code>Bottom</code></li>
 <li>Set MarginTop  to <code>0</code></li>
 <li>Set MarginBottom  to <code>180</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set Font enum to <code>NotoSans-Bold</code></li>
 <li>Set FontSize  to <code>16</code></li>
 <li>Set Text  to <code>Click to Start</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Set the <strong>Y</strong> part of Size  to <code>22</code></li>
 </ul>
 <p>The StartText object says //Click to Start//, but of course clicking won't do anything yet. We'll add that functionality soon, but for now, there's just one more finishing touch to apply to the appearance of the title screen.</p>
@@ -209,7 +209,7 @@
 <li><code>Drag and drop</code> the <code>UiSprite</code> instance on top of RootWidget object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the UiSprite object to <code>HorizontalLine</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Set the <strong>Y</strong> part of Size  to <code>2</code></li>
 <li>Set LocalColor  to <code>[R:255, G:0, B:0, A:1.00]</code></li>
 <li>Under the <strong>Layout</strong> group</li>
@@ -218,7 +218,7 @@
 <li>Set MarginTop  to <code>218</code></li>
 <li>Set MarginRight  to <code>20</code></li>
 </ul>
-<p>(NOTE) <strong>Hierarchy Render Order:</strong> If your game's title contains a letter that has a descender (such as a lowercase //y//), the red horizontal line will be rendered on top of it. To correct this, just move the HorizontalLine object object to the top of its hierarchy in the <code>Objects Window</code>: <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98719.gif" alt="Reordering Widgets in a Hierarchy"> This works because, while hierarchy order doesn't affect the way that widgets object are laid out in a <code>UiFillLayout</code>, it does still determine the order in which <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprites</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteTexts</a> are rendered by a <code>UiRenderer</code>.</p>
+<p>(NOTE) <strong>Hierarchy Render Order:</strong> If your game's title contains a letter that has a descender (such as a lowercase //y//), the red horizontal line will be rendered on top of it. To correct this, just move the HorizontalLine object object to the top of its hierarchy in the <code>Objects Window</code>: <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98719.gif" alt="Reordering Widgets in a Hierarchy"> This works because, while hierarchy order doesn't affect the way that widgets object are laid out in a <code>UiFillLayout</code>, it does still determine the order in which <a href="/docs/code_reference/class_reference/sprite.md"> Sprites</a> and <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteTexts</a> are rendered by a <code>UiRenderer</code>.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98721.png" alt="image"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101910.png" alt="image"></p>
 <p><em>The complete layout of the title screen, with hierarchy for reference</em></p>
 <p>Now for the main menu.</p>
@@ -233,17 +233,17 @@
 <h1 id="quit-game-which-exits-the-game"><strong>Quit Game</strong>, which exits the game</h1>
 <p>Let's get started.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a Level resource using the {nav icon=clone, name=&quot;Ui Level&quot;} template and name it <code>MainMenu</code></li>
 <li>In the <code>Objects Window</code></li>
 <li>Under RootWidget object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#delete"> Delete</a> : the three Sprite object objects</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RootWidget object</li>
+<li><a href="/docs/code_reference/command_reference.md#delete"> Delete</a> : the three Sprite object objects</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RootWidget object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uirootwidget.md"> UiRootWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uirootwidget.md"> UiRootWidget</a></li>
 <li>Set LocalColor  to <code>[R:64, G:25, B:25, A:1.00]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uifilllayout.md"> UiFillLayout</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <a href="/docs/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="/docs/code_reference/class_reference/uifilllayout.md"> UiFillLayout</a></li>
 <li>In the <code>Library Window</code></li>
 <li>Under Archetype</li>
 <li><code>Left drag</code> <code>UiSprite</code> into the <code>Objects Window</code></li>
@@ -251,14 +251,14 @@
 <li><code>Drag and drop</code> the <code>UiSprite</code> instance on top of RootWidget object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the UiSprite object to <code>MenuWindow</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Set Size  to <code>[200, 250]</code></li>
 <li>Set LocalColor  to <code>[R:255, G:255, B:255, A:0.10]</code></li>
 <li>Under the <strong>Layout</strong> group</li>
 <li>Set VerticalAlignment enum to <code>Center</code></li>
 <li>Set HorizontalAlignment enum to <code>Center</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="/docs/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
 <li>Set PaddingLeft  to <code>4</code></li>
 <li>Set PaddingTop  to <code>4</code></li>
 <li>Set PaddingRight  to <code>4</code></li>
@@ -275,11 +275,11 @@
 <li><code>Drag and drop</code> the <code>UiSpriteText</code> instance on top of MenuWindow object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the UiSpriteText object to <code>MenuTitle</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Set the <strong>Y</strong> part of Size  to <code>41</code></li>
 <li>Under the <strong>Layout</strong> group</li>
 <li>Set SizePolicyX enum to <code>Flex</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set Text  to <code>Main Menu</code></li>
 <li>Set FontSize  to <code>30</code></li>
 <li>Set TextAlign enum to <code>Center</code></li>
@@ -297,24 +297,24 @@
 <li><code>Drag and drop</code> the <code>UiSprite</code> instance on top of MenuWindow object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the UiSprite object to <code>StartGameButton</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Set LocalColor  to <code>[R:255, G:255, B:255, A:0.10]</code></li>
 <li>Under the <strong>Layout</strong> group</li>
 <li>Set SizePolicyX enum to <code>Flex</code></li>
 <li>Set SizePolicyY enum to <code>Flex</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uifilllayout.md"> UiFillLayout</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="/docs/code_reference/class_reference/uifilllayout.md"> UiFillLayout</a></li>
 <li>In the <code>Library Window</code></li>
 <li>Under Archetype</li>
 <li><code>Left drag</code> <code>UiSpriteText</code> into the <code>Objects Window</code></li>
 <li>In the <code>Objects Window</code></li>
 <li><code>Drag and drop</code> the <code>UiSpriteText</code> instance on top of StartGameButton object</li>
 <li>Rename the UiSpriteText object to <code>ButtonText</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Set the <strong>Y</strong> part of Size  to <code>33</code></li>
 <li>Under the <strong>Layout</strong> group</li>
 <li>Set SizePolicyX enum to <code>Flex</code></li>
 <li>Set VerticalAlignment enum to <code>Center</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set Text  to <code>Start Game</code></li>
 <li>Set Font enum to <code>NotoSans-Bold</code></li>
 <li>Set FontSize  to <code>24</code></li>
@@ -325,7 +325,7 @@
 <p>(NOTE) <strong>Why's Everything Orange?</strong> You may notice that some of the objects in the Objects Window are shown in orange text. Zilch uses this coloring scheme to denote an object that is //an instance of an archetype, but whose property values differ from the archetype it was created from//. Every object we've created so far has been instantiated from archetypes, which we then proceeded to modify. If you want an object's name to be printed in the same manner as the rest of the objects, just select it and clear its Archetype  field in the <code>Properties Window</code>. Then it won't be considered an archetype instance anymore.</p>
 <p>The button's outward appearance is mostly complete, but we need to give it a Nada component that gives it its functionality.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>LoadLevelOnClick</code></li>
 <li>Update the <code>LoadLevelOnClick</code> script to the following:</li>
 </ul>
@@ -345,13 +345,13 @@
   }
 }
 </code></pre>
-<p>Zilch's UI system sends the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#leftclick"> LeftClick</a> event to every <strong>interactive</strong> widget object (that is, every game object whose <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a> component's <code>Interactive</code> property is set to <code>true</code>) when it is left-clicked. This component uses that event to load a level of our choice, making it perfect for our menu buttons (and more). But in addition to the functionality offered by this component, we can also add some helpful feedback to the button with a couple more core Nada components: <code>UiHighlight</code>, which changes a button's color when it is hovered over or clicked on, and <code>UiChangeCursor</code>, which makes a button change the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#cursor"> mouse cursor</a> when it is hovered over.</p>
+<p>Zilch's UI system sends the <a href="/docs/code_reference/event_reference.md#leftclick"> LeftClick</a> event to every <strong>interactive</strong> widget object (that is, every game object whose <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a> component's <code>Interactive</code> property is set to <code>true</code>) when it is left-clicked. This component uses that event to load a level of our choice, making it perfect for our menu buttons (and more). But in addition to the functionality offered by this component, we can also add some helpful feedback to the button with a couple more core Nada components: <code>UiHighlight</code>, which changes a button's color when it is hovered over or clicked on, and <code>UiChangeCursor</code>, which makes a button change the <a href="/docs/code_reference/enum_reference.md#cursor"> mouse cursor</a> when it is hovered over.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : StartGameButton object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : StartGameButton object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>UiHighlight</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>UiChangeCursor</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>LoadLevelOnClick</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>UiHighlight</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>UiChangeCursor</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>LoadLevelOnClick</code></li>
 <li>Under <code>UiHighlight</code></li>
 <li>Set MouseHoverColor  to <code>[R:255, G:255, B:255, A:0.20]</code></li>
 <li>Set MouseDownColor  to <code>[R:0, G:0, B:0, A:0.10]</code></li>
@@ -362,21 +362,21 @@
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99972.gif" alt="Start Game Button Test"></p>
 <p>Now we'll just duplicate this button a few times.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#duplicate"> Duplicate</a> : StartGameButton object three times</li>
+<li><a href="/docs/code_reference/command_reference.md#duplicate"> Duplicate</a> : StartGameButton object three times</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99009.png" alt="image"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101918.png" alt="image"></p>
 <p><em>The menu with four copies of the Start Game button, with hierarchy for reference</em></p>
 <ul>
-<li>Set the Text  properties of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a> components of the ButtonText object objects to match the following: <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99022.png" alt="image"></li>
+<li>Set the Text  properties of the <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a> components of the ButtonText object objects to match the following: <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99022.png" alt="image"></li>
 <li>Rename the StartGameButton object objects to match the following: <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99032.png" alt="image"></li>
 </ul>
 <p>The menu is nearly complete; pretty much all that's left to do is to create the levels that the buttons will link to, and then hook them up.</p>
 <h1 id="creating-a-gameplay-level">Creating a Gameplay Level</h1>
 <p>We'll just throw something together real quick to make a gameplay level. It won't be anything to write home about, but it will be adequate for our needs.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a Level resource using the {nav icon=clone, name=&quot;2D Level&quot;} template and name it <code>GameplayLevel</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>KeyboardMovement</code></li>
 <li>Update the <code>KeyboardMovement</code> script to the following:</li>
 </ul>
@@ -410,29 +410,29 @@
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Renderer object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Renderer object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Under <code>ForwardRenderer</code></li>
 <li>Set ClearColor  to <code>[R:51, G:89, B:128, A:1.00]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the Sprite object to <code>Player</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>KeyboardMovement</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>KeyboardMovement</code></li>
+<li>Under <a href="/docs/code_reference/class_reference/sprite.md"> Sprite</a></li>
 <li>Set VertexColor  to <code>[R:204, G:82, B:82, A:1.00]</code></li>
 <li>Set SpriteSource enum to <code>CircleBordered</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Use the <code>Arrow</code> keys to move the Player object</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99686.gif" alt="Player Movement in Gameplay Level"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>In a moment, we'll make it possible to go to the gameplay level from the main menu, but while we're here, let's make it possible to exit to the menu from gameplay.</p>
 <h2 id="going-from-gameplay-to-the-main-menu">Going from Gameplay to the Main Menu</h2>
 <p>Let's make it so that the <code>Escape</code> (Escape) key takes us back to the main menu. Of course, by default, this key quits a Zilch game altogether. We'll use a combination of two new components to circumvent this functionality and replace it with our own.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>QuitHandler</code></li>
 <li>Update the <code>QuitHandler</code> script to the following:</li>
 </ul>
@@ -449,9 +449,9 @@
   }
 }
 </code></pre>
-<p>When <code>Escape</code> is pressed, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#gamerequestquit"> GameRequestQuit</a> event is dispatched to the GameSession object. If this event is not <strong>handled</strong>, the game exits. This component allows us to prevent this.</p>
+<p>When <code>Escape</code> is pressed, the <a href="/docs/code_reference/event_reference.md#gamerequestquit"> GameRequestQuit</a> event is dispatched to the GameSession object. If this event is not <strong>handled</strong>, the game exits. This component allows us to prevent this.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>LoadLevelOnKeystroke</code></li>
 <li>Update the <code>LoadLevelOnKeystroke</code> script to the following:</li>
 </ul>
@@ -476,11 +476,11 @@
 </code></pre>
 <p>This component loads the specified level when the chosen key is pressed. With these two components, we can go from the gameplay level back to the main menu.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</li>
 <li>In the Properties Window</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>QuitHandler</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>LoadLevelOnKeystroke</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>QuitHandler</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>LoadLevelOnKeystroke</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Press <code>Escape</code> while playing the <code>GameplayLevel</code> Level resource</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99705.gif" alt="Gameplay Into Menu"></p>
@@ -488,7 +488,7 @@
 <p>Pressing <code>Escape</code> while in the gameplay level now takes you to the main menu; pressing it again from there will quit the game.</p>
 <p>NOTE: We've placed the <code>QuitHandler</code> component on the LevelSettings object object in the gameplay level, so that's the only level where the <code>Escape</code> key won't quit the game. To suppress Zilch's default Escape-to-quit behavior in other levels, add a <code>QuitHandler</code> to their LevelSettings object (or another object in the level). To prevent it on a broader scale still, add it to the Space object or even the GameSession object.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>Now to hook up the main menu to go into the gameplay level.</p>
 <h1 id="going-from-the-main-menu-to-gameplay">Going from the Main Menu to Gameplay</h1>
@@ -498,16 +498,16 @@
 <li>Select your project's library</li>
 <li>Under the Level  tag</li>
 <li>Open the <code>MainMenu</code> Level resource</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : StartGameButton object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : StartGameButton object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Under <code>LoadLevelOnClick</code></li>
 <li>Set LevelToLoad enum to <code>GameplayLevel</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99708.gif" alt="Menu Into Gameplay"></p>
 <p>Clicking the <strong>Start Game</strong> button now loads the gameplay level, from where the <code>Escape</code> key can be used to return to the main menu.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>We're almost done. Next up: a credits screen.</p>
 <h1 id="creating-a-credits-screen">Creating a Credits Screen</h1>
@@ -522,41 +522,41 @@
 </ul>
 <p>The credits will be displayed in a window like the main menu's menu window, but with only one button at the bottom that will go back to the main menu.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RootWidget object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RootWidget object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uirootwidget.md"> UiRootWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uirootwidget.md"> UiRootWidget</a></li>
 <li>Set LocalColor  to <code>[R:64, G:25, B:51, A:1.00]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#delete"> Delete</a> : CreditsButton object, ReturnToTitleButton object, and QuitGameButton object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : MenuTitle object</li>
+<li><a href="/docs/code_reference/command_reference.md#delete"> Delete</a> : CreditsButton object, ReturnToTitleButton object, and QuitGameButton object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : MenuTitle object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set Text  to <code>Credits</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : StartGameButton object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : StartGameButton object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the StartGameButton object to <code>MenuButton</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Under the <strong>Layout</strong> group</li>
 <li>Set SizePolicyY enum to <code>Fixed</code></li>
 <li>Set the <strong>Y</strong> part of Size  to <code>40</code></li>
 <li>Under <code>LoadLevelOnClick</code></li>
 <li>Set LevelToLoad enum to <code>MainMenu</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : ButtonText object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : ButtonText object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set Text  to <code>Return to Main Menu</code></li>
 <li>Set FontSize  to <code>16</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Set the <strong>Y</strong> part of Size  to <code>22</code></li>
 </ul>
 <p>Now we're going to explore a concept we haven't touched yet: giving a widget object a <strong>size policy</strong> of <code>Auto</code>.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : MenuWindow object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : MenuWindow object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Under the <strong>Layout</strong> group</li>
 <li>Set SizePolicyY enum to <code>Auto</code></li>
 </ul>
-<p>A widget object with a <strong>layout</strong> component, like <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a>, can resize itself when laying out its children. The <code>Auto</code> size policy causes such a layout to make itself as small as necessary to accommodate all of its fixed-sized contents, including its padding and spacing, the margins of its child widgets object, and any of those children that use the <code>Fixed</code> size policy. In the case of the credits window, it contains only two direct children, each of which is <code>Fixed</code> on the Y axis. Their Y size plus the padding and spacing of the window's layout determines the Y size of the window:</p>
+<p>A widget object with a <strong>layout</strong> component, like <a href="/docs/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a>, can resize itself when laying out its children. The <code>Auto</code> size policy causes such a layout to make itself as small as necessary to accommodate all of its fixed-sized contents, including its padding and spacing, the margins of its child widgets object, and any of those children that use the <code>Fixed</code> size policy. In the case of the credits window, it contains only two direct children, each of which is <code>Fixed</code> on the Y axis. Their Y size plus the padding and spacing of the window's layout determines the Y size of the window:</p>
 <h1 id="menutitle-object-has-a-fixed-y-size--of-41">MenuTitle object has a <code>Fixed</code> Y Size  of <code>41</code></h1>
 <h1 id="menubutton-object-has-a-fixed-y-size--of-40">MenuButton object has a <code>Fixed</code> Y Size  of <code>40</code></h1>
 <h1 id="menuwindow-object-has-a-paddingtop--of-4">MenuWindow object has a PaddingTop  of <code>4</code></h1>
@@ -565,7 +565,7 @@
 <p>These all add up to <code>93</code>, which is exactly the height of the window.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99801.png" alt="image"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101940.png" alt="image"></p>
 <p><em>The credits window, with its SizePolicyY enum set to <code>Auto</code>, with hierarchy for reference</em></p>
-<p>The credits will be displayed between the menu title and the button. We'll place them in a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a> that we can make by starting with the <code>UiSprite</code> archetype. We'll remove its <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a> component, though, so that it's just an invisible layout area. We'll set its SizePolicyY enum to <code>Auto</code>, so that it can grow to fit every credit we add.</p>
+<p>The credits will be displayed between the menu title and the button. We'll place them in a <a href="/docs/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a> that we can make by starting with the <code>UiSprite</code> archetype. We'll remove its <a href="/docs/code_reference/class_reference/sprite.md"> Sprite</a> component, though, so that it's just an invisible layout area. We'll set its SizePolicyY enum to <code>Auto</code>, so that it can grow to fit every credit we add.</p>
 <ul>
 <li>In the <code>Library Window</code></li>
 <li>Open the Library enum list menu</li>
@@ -576,43 +576,43 @@
 <li><code>Drag and drop</code> the <code>UiSprite</code> instance between MenuTitle object and MenuButton object <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99793.gif" alt="Creating a UiSprite Between Things"></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the UiSprite object to <code>CreditsBlock</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <a href="/docs/code_reference/class_reference/sprite.md"> Sprite</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Under the <strong>Layout</strong> group</li>
 <li>Set SizePolicyX enum to <code>Flex</code></li>
 <li>Set SizePolicyY enum to <code>Auto</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="/docs/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
 </ul>
-<p>The credits block should be a vertically stacked list, so we're using a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a>. Each element of the list is a pair of two things: a <strong>role</strong> (to be shown on the left) and the <strong>people</strong> who held that role on your game (to be shown on the right). Thus, each credit is itself a stack layout. (As we'll soon see, the list of people will also be yet another stack layout.)</p>
+<p>The credits block should be a vertically stacked list, so we're using a <a href="/docs/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a>. Each element of the list is a pair of two things: a <strong>role</strong> (to be shown on the left) and the <strong>people</strong> who held that role on your game (to be shown on the right). Thus, each credit is itself a stack layout. (As we'll soon see, the list of people will also be yet another stack layout.)</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditsBlock object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditsBlock object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the copy of CreditsBlock object to <code>CreditListing</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/hierarchies.md"> Attach</a> CreditListing object to CreditsBlock object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditListing object</li>
+<li><a href="/docs/zilch_editor_documentation/tutorials/architecture/hierarchies.md"> Attach</a> CreditListing object to CreditsBlock object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditListing object</li>
 </ul>
 <p>The credits should be stacked vertically, but within each listing, the role should be listed to the left of the names of the people, so the stack direction of this new widget object needs to change.</p>
 <ul>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
 <li>Set StackDirection enum to <code>LeftToRight</code></li>
 </ul>
 <p>Each credit listing will contain a role, which will be a simple text widget object, and a list of people, which will be another stack layout, like the listing itself. Before we add the role text widget object, let's duplicate the credit listing widget object and modify it to become the list of people. Afterward, we can add the role text.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditListing object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditListing object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the copy of CreditListing object to <code>ListOfPeople</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/hierarchies.md"> Attach</a> ListOfPeople object to CreditListing object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : ListOfPeople object</li>
+<li><a href="/docs/zilch_editor_documentation/tutorials/architecture/hierarchies.md"> Attach</a> ListOfPeople object to CreditListing object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : ListOfPeople object</li>
 </ul>
 <p>The names of the people should be stacked vertically, and they should be centered vertically as well, just in case the name of the role takes up more vertical space than the list of people.</p>
 <ul>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
 <li>Set StackDirection enum to <code>TopToBottom</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Under the <strong>Layout</strong> group</li>
 <li>Set VerticalAlignment enum to <code>Center</code></li>
 </ul>
@@ -626,24 +626,24 @@
 <li>Reorder the children of CreditListing object so that UiSpriteText object is before ListOfPeople object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the UiSpriteText object to <code>Role</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a></li>
 <li>Set the <strong>Y</strong> part of Size  to <code>16</code></li>
 <li>Under the <strong>Layout</strong> group</li>
 <li>Set SizePolicyX enum to <code>Flex</code></li>
 <li>Set VerticalAlignment enum to <code>Center</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set Text  to <code>Role</code></li>
 <li>Set TextAlign enum to <code>Right</code></li>
 </ul>
 <p>We'll fill in the actual name of the role later. First, let's put some placeholder names in the corresponding list of people. Each name will be displayed on the right side of the credit listing, but it will be aligned to the left.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Role object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Role object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the copy of Role object to <code>Person</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/hierarchies.md"> Attach</a> Person object to ListOfPeople object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Person object</li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li><a href="/docs/zilch_editor_documentation/tutorials/architecture/hierarchies.md"> Attach</a> Person object to ListOfPeople object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Person object</li>
+<li>Under <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
 <li>Set Text  to <code>Name</code></li>
 <li>Set TextAlign enum to <code>Left</code></li>
 </ul>
@@ -651,43 +651,43 @@
 <p><em>A credit listing, with placeholder text, with hierarchy for reference</em></p>
 <p>The role and the person's name don't have any room between them. This can be corrected with the Spacing  property of the layout they're in.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditListing object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditListing object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
 <li>Set the <strong>X</strong> part of Spacing  to <code>16</code></li>
 </ul>
 <p>That looks better. Let's also duplicate the placeholder name, to see how it will look when more than one person is credited for the same role.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Person object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Person object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
 </ul>
-<p>NOTE: Both of the above <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#duplicate"> Duplicate</a> commands should be executed.</p>
+<p>NOTE: Both of the above <a href="/docs/code_reference/command_reference.md#duplicate"> Duplicate</a> commands should be executed.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99807.png" alt="image"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101948.png" alt="image"></p>
 <p><em>A credit listing, with multiple names for the same role, with hierarchy for reference</em></p>
 <p>That looks pretty good. Now let's duplicate the credit listing.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditListing object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditListing object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#duplicate"> Duplicate</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99809.png" alt="image"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101944.png" alt="image"></p>
 <p><em>Two credit listings, with bad spacing, with hierarchy for reference</em></p>
 <p>The names run on together so that they look like they're one big list. Again, this problem can be solved by the Spacing  property.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditsBlock object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditsBlock object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/uistacklayout.md"> UiStackLayout</a></li>
 <li>Set the <strong>Y</strong> part of Spacing  to <code>12</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99811.png" alt="image"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101944.png" alt="image"></p>
 <p><em>Two credit listings, with good spacing, with hierarchy for reference</em></p>
 <p>That looks much better. Now we can replace all the placeholder text.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#duplicate"> Duplicate</a> the CreditListing object cogs so that there are enough of them for the credits for your game</li>
-<li>Set the Text  properties of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a> components of the Role object objects to the names of the roles for your game</li>
-<li>Set the Text  properties of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a> components of the Person object objects to the names of the people in the corresponding roles</li>
+<li><a href="/docs/code_reference/command_reference.md#duplicate"> Duplicate</a> the CreditListing object cogs so that there are enough of them for the credits for your game</li>
+<li>Set the Text  properties of the <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a> components of the Role object objects to the names of the roles for your game</li>
+<li>Set the Text  properties of the <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a> components of the Person object objects to the names of the people in the corresponding roles</li>
 </ul>
-<p>If any of the names of the roles or team members in your credits extend onto multiple lines, just increase the <strong>Y</strong> part of the Size  property of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a> component of that name's widget object (say, by doubling it). Alternatively, you could also widen the whole window by increasing the <strong>X</strong> part of the Size  property of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md"> UiWidget</a> component of the MenuWindow object object.</p>
+<p>If any of the names of the roles or team members in your credits extend onto multiple lines, just increase the <strong>Y</strong> part of the Size  property of the <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a> component of that name's widget object (say, by doubling it). Alternatively, you could also widen the whole window by increasing the <strong>X</strong> part of the Size  property of the <a href="/docs/code_reference/class_reference/uiwidget.md"> UiWidget</a> component of the MenuWindow object object.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99814.png" alt="image"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/101946.png" alt="image"></p>
 <p><em>A complete credits screen, with hierarchy for reference</em></p>
 <h1 id="final-connections">Final Connections</h1>
@@ -698,18 +698,18 @@
 <li>Select your project's library</li>
 <li>Under the Level  tag</li>
 <li>Open the <code>MainMenu</code> Level resource</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditsButton object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : CreditsButton object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Under <code>LoadLevelOnClick</code></li>
 <li>Set LevelToLoad enum to <code>Credits</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : ReturnToTitleButton object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : ReturnToTitleButton object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Under <code>LoadLevelOnClick</code></li>
 <li>Set LevelToLoad enum to <code>TitleScreen</code></li>
 </ul>
 <p>The quit button still has its old <code>LoadLevelOnClick</code> component from its days as a start button clone. We can remove that, and also add a new component that quits the game on click:</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>RequestQuitOnClick</code></li>
 <li>Update the <code>RequestQuitOnClick</code> script to the following:</li>
 </ul>
@@ -727,70 +727,70 @@
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : QuitGameButton object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : QuitGameButton object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <code>LoadLevelOnClick</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>RequestQuitOnClick</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <code>LoadLevelOnClick</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>RequestQuitOnClick</code></li>
 </ul>
 <p>There's just one more thing to do: make the title screen go to the main menu.</p>
 <ul>
 <li>In the <code>Library Window</code></li>
 <li>Under the Level  tag</li>
 <li>Open the <code>TitleScreen</code> Level resource</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RootWidget object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RootWidget object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>LoadLevelOnClick</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>LoadLevelOnClick</code></li>
 <li>Under <code>LoadLevelOnClick</code></li>
 <li>Set LevelToLoad enum to <code>MainMenu</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/99846.gif" alt="Full Game"></p>
 <p><em>All of the game's levels and screens are now connected</em></p>
 <p>The game is now complete. Clicking on the title screen leads to the main menu; the main menu's Start Game button leads to the gameplay level; pressing <code>Escape</code> from gameplay leads back to the main menu; clicking the main menu's Credits button leads to the credits screen; clicking the credits screen's Return to Main Menu button leads back to the main menu; clicking the main menu's Return to Title button leads back to the title screen; and finally, clicking the main menu's Quit Game button quits the game.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="tutorials">Tutorials</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/hierarchies.md">hierarchies</a></li>
+<li><a href="/docs/zilch_editor_documentation/tutorials/architecture/hierarchies.md">hierarchies</a></li>
 </ul>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">LauncherNewProject</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">resourceadding</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">LauncherNewProject</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">resourceadding</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#add"> Add</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#delete"> Delete</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
+<li><a href="/docs/code_reference/command_reference.md#add"> Add</a></li>
+<li><a href="/docs/code_reference/command_reference.md#delete"> Delete</a></li>
+<li><a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
 </ul>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uiwidget.md">uiwidget</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uirootwidget.md">uirootwidget</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uifilllayout.md">uifilllayout</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/uistacklayout.md">uistacklayout</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md">spritetext</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">sprite</a></li>
+<li><a href="/docs/code_reference/class_reference/uiwidget.md">uiwidget</a></li>
+<li><a href="/docs/code_reference/class_reference/uirootwidget.md">uirootwidget</a></li>
+<li><a href="/docs/code_reference/class_reference/uifilllayout.md">uifilllayout</a></li>
+<li><a href="/docs/code_reference/class_reference/uistacklayout.md">uistacklayout</a></li>
+<li><a href="/docs/code_reference/class_reference/spritetext.md">spritetext</a></li>
+<li><a href="/docs/code_reference/class_reference/sprite.md">sprite</a></li>
 </ul>
 <h3 id="events">Events</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#leftclick"> LeftClick</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate"> LogicUpdate</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#gamerequestquit"> GameRequestQuit</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#keydown"> KeyDown</a></li>
+<li><a href="/docs/code_reference/event_reference.md#leftclick"> LeftClick</a></li>
+<li><a href="/docs/code_reference/event_reference.md#logicupdate"> LogicUpdate</a></li>
+<li><a href="/docs/code_reference/event_reference.md#gamerequestquit"> GameRequestQuit</a></li>
+<li><a href="/docs/code_reference/event_reference.md#keydown"> KeyDown</a></li>
 </ul>
 <h3 id="enums">Enums</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#cursor"> Cursor</a></li>
+<li><a href="/docs/code_reference/enum_reference.md#cursor"> Cursor</a></li>
 </ul>
 <h2 id="development-task">Development Task</h2>
 <ul>

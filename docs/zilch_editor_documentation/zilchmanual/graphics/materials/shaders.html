@@ -167,18 +167,18 @@
 </table>
 <h1 id="shader-translation-debug-helper">Shader Translation Debug Helper</h1>
 <p>This tool translates Materials�rather, thNadachFragments that make up the Material�into different versions of the shader language GLSL.</p>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#debugshadertranslation"> DebugShaderTranslation</a> will open the tool</p>
+<p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="/docs/code_reference/command_reference.md#debugshadertranslation"> DebugShaderTranslation</a> will open the tool</p>
 <p>On the left hand side of the window are properties that set the parameters that define the shaders to be be translated: CoreVertex enum, Material enum, and RenderPass enum. <code>Translation Language</code> set the version of GLSL to translate to.  These options set what exactly will be translated. Material enum, for example, sets the Material to be translated as its name would suggest.</p>
 <p>Here's a screenshot of a dragon material made for PBR:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/88445.png" alt="Gold Dragon Material"> <strong>Figure 1</strong>: A material to apply to a dragon material made with PBR in mind.</p>
-<p>Figure 1 shows that the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/materials_overview.md">Material</a> has Material Blocks for the four inputs expected by the physically-based renderer as well as a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/normal_map.md">NormalMap</a>. When setting the Material enum to the Golden Dragon material and and set LightPass enum the shader outputs are:</p>
+<p>Figure 1 shows that the <a href="/docs/zilch_editor_documentation/zilchmanual/graphics/materials/materials_overview.md">Material</a> has Material Blocks for the four inputs expected by the physically-based renderer as well as a <a href="/docs/zilch_editor_documentation/zilchmanual/graphics/materials/normal_map.md">NormalMap</a>. When setting the Material enum to the Golden Dragon material and and set LightPass enum the shader outputs are:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/88447.png" alt="Gold Dragon Light Pass"></p>
 <p>If not familiar with GLSL, these will become overwhelmingly complex very quickly. With at least an intermediate amount of experience in GLSL, however, this translator provides a valuable tool for debugging your NadaFragment shaders. Changing the other attributes to different settings will result in different outputs, so try to make sure that the attributes selected line up to the location on the render pipeline.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/normal_map.md">normal_map</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/materials_overview.md">Material</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/graphics/materials/normal_map.md">normal_map</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/graphics/materials/materials_overview.md">Material</a></li>
 </ul>
 
 </article>

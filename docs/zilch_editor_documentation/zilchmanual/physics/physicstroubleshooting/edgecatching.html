@@ -86,7 +86,7 @@
         <article data-uid="">
 
 <p>Sometimes a physics object will seem to get stuck on a smooth surface. This is often caused by an issue known as edge-catching. This issue is most common when creating a player.</p>
-<p>In a game, the ground is often piece-wise, i.e. made of a collection of individual pieces. In this example, assume that the ground is a collection of boxes. Now a rotation locked player is implemented with a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/colliders/boxcollider.md">BoxCollider</a> to move via simple velocity changes (velocity is the drawn arrow).</p>
+<p>In a game, the ground is often piece-wise, i.e. made of a collection of individual pieces. In this example, assume that the ground is a collection of boxes. Now a rotation locked player is implemented with a <a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/colliders/boxcollider.md">BoxCollider</a> to move via simple velocity changes (velocity is the drawn arrow).</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46367.gif" alt="EdgeCatchingGif"></p>
 <p>Sometimes the player will stop moving even though input is setting a velocity. This behavior is caused by the seams on the ground. For an explanation of why this happens a quick physics primer is necessary.</p>
 <h1 id="physics-primer-discrete-collision-detection">Physics Primer: Discrete Collision Detection</h1>
@@ -110,33 +110,33 @@
 <p>Now physics resolves collisions and puts the red box right back where it started. Given the same forces, the red box will repeat this cycle and be stuck on this seam in the ground.</p>
 <h1 id="fixing-edge-catching">Fixing Edge Catching</h1>
 <p>Unfortunately there is no perfect generic solution to the edge catching problem. There are two main approaches to work around the problem:</p>
-<p><strong>Change your collision:</strong> The root issue here is that a seam does exist. One way to fix this is to remove the seam by merging the surface's collision. It's near impossible to remove all seams in a game though, and it is often more practical to change the player's collision shape. Commonly, a player uses a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/colliders/capsulecollider.md">CapsuleCollider</a> instead of a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/colliders/boxcollider.md">BoxCollider</a> to avoid seams.</p>
+<p><strong>Change your collision:</strong> The root issue here is that a seam does exist. One way to fix this is to remove the seam by merging the surface's collision. It's near impossible to remove all seams in a game though, and it is often more practical to change the player's collision shape. Commonly, a player uses a <a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/colliders/capsulecollider.md">CapsuleCollider</a> instead of a <a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/colliders/boxcollider.md">BoxCollider</a> to avoid seams.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46382.png" alt="image"></p>
 <p>In the above illustration, the box on the left has a minimum translational distance that will push it to the left. The capsule however, has a minimum translational distance that is up and to the left. This will allow the capsule to move to the right a bit and escape the cycle of edge catching after a few frames.</p>
 <p>While this method mostly fixes edge catching, it tends to produce small bumps when crossing edges. This is because of the portion of the minimum translational distance that still points against the player's velocity.</p>
 <p><strong>Use the SweptController:</strong> Zilch provides a character controller that uses //swept collision//. Swept collision is different than discrete collision because it detects exactly when a collision happens. This prevents a player from ever colliding with an internal edge because it must first collide with the surface.</p>
 <p>There's two issues with the swept controller.</p>
 <h1 id="its-more-computationally-expensive-this-isnt-an-issue-for-a-few-number-of-objects-such-as-the-player-but-wouldnt-be-practical-for-every-object">It's more computationally expensive. This isn't an issue for a few number of objects, such as the player, but wouldn't be practical for every object.</h1>
-<h1 id="it-only-works-with-kinematic-objects-using-the-swept-controller-means-manually-translating-the-player-and-not-working-through-velocity-and-forces-this-swept-object-will-no-longer-react-to-physicseffects-collision-resolution-wont-do-anything-and-joints-wont-affect-it-for-some-games-this-may-make-the-sweptcontroller-impractical">It only works with Kinematic objects. Using the swept controller means manually translating the player and not working through velocity and forces. This swept object will no longer react to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/physicseffectsandregions.md">PhysicsEffects</a>, collision resolution won't do anything, and Joints won't affect it. For some games this may make the SweptController impractical.</h1>
+<h1 id="it-only-works-with-kinematic-objects-using-the-swept-controller-means-manually-translating-the-player-and-not-working-through-velocity-and-forces-this-swept-object-will-no-longer-react-to-physicseffects-collision-resolution-wont-do-anything-and-joints-wont-affect-it-for-some-games-this-may-make-the-sweptcontroller-impractical">It only works with Kinematic objects. Using the swept controller means manually translating the player and not working through velocity and forces. This swept object will no longer react to <a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/physicseffectsandregions.md">PhysicsEffects</a>, collision resolution won't do anything, and Joints won't affect it. For some games this may make the SweptController impractical.</h1>
 <hr>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting.md">physicstroubleshooting.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/physicsspace.md">physicsspace.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/colliders.md">colliders.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/colliders/boxcollider.md">boxcollider.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/colliders/capsulecollider.md">capsulecollider.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/physicseffectsandregions.md">physicseffectsandregions.md</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting.md">physicstroubleshooting.md</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/physicsspace.md">physicsspace.md</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/colliders.md">colliders.md</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/colliders/boxcollider.md">boxcollider.md</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/colliders/capsulecollider.md">capsulecollider.md</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/physicseffectsandregions.md">physicseffectsandregions.md</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsspace.md">PhysicsSpace</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md">Collider</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/capsulecollider.md">CapsuleCollider</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicseffect.md">PhysicsEffect</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/region.md">Region</a></li>
+<li><a href="/docs/code_reference/class_reference/physicsspace.md">PhysicsSpace</a></li>
+<li><a href="/docs/code_reference/class_reference/collider.md">Collider</a></li>
+<li><a href="/docs/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
+<li><a href="/docs/code_reference/class_reference/capsulecollider.md">CapsuleCollider</a></li>
+<li><a href="/docs/code_reference/class_reference/physicseffect.md">PhysicsEffect</a></li>
+<li><a href="/docs/code_reference/class_reference/region.md">Region</a></li>
 </ul>
 
 </article>

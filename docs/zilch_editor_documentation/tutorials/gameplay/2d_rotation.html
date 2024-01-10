@@ -95,26 +95,26 @@
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">Create a New 2D Project</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : GameCamera object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">Create a New 2D Project</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : GameCamera object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/camera.md">Camera</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/camera.md">Camera</a></li>
 <li>Set Size  to <code>5</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>Rotate2D</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>Parent</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/transform.md">Transform</a></li>
 <li>Set Translation  to <code>[0, 0, 0]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>Rotate2D</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
-<li>Hover the cursor over the name of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md#rotation-zilch-engine-doc">Transform.Rotation</a> property.</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>Rotate2D</code></li>
+<li>Under <a href="/docs/code_reference/class_reference/transform.md">Transform</a></li>
+<li>Hover the cursor over the name of the <a href="/docs/code_reference/class_reference/transform.md#rotation-zilch-engine-doc">Transform.Rotation</a> property.</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94052.png" alt="image"></p>
-<p><em>Hovering over <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md#rotation-zilch-engine-doc">Transform.Rotation</a></em></p>
-<p>As you can see, rotational data is saved as a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/quaternion.md">Quaternion</a>. As a high-level developer, you do not need to know how Quaternions work, but you will need to know how to use them. In the <code>Properties Window</code>, Quaternions are represented by three angles that are the rotation of the object around the corresponding three axes; these are called Euler (pronounced �oil-er�) angles. In this lesson, we will be working with a 2D game, so we only need to worry about the Z-axis rotation.</p>
-<p>Rotation  can be changed either through the <code>Properties Window</code> or via accessing the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a> component in script.</p>
+<p><em>Hovering over <a href="/docs/code_reference/class_reference/transform.md#rotation-zilch-engine-doc">Transform.Rotation</a></em></p>
+<p>As you can see, rotational data is saved as a <a href="/docs/code_reference/nada_base_types/quaternion.md">Quaternion</a>. As a high-level developer, you do not need to know how Quaternions work, but you will need to know how to use them. In the <code>Properties Window</code>, Quaternions are represented by three angles that are the rotation of the object around the corresponding three axes; these are called Euler (pronounced �oil-er�) angles. In this lesson, we will be working with a 2D game, so we only need to worry about the Z-axis rotation.</p>
+<p>Rotation  can be changed either through the <code>Properties Window</code> or via accessing the <a href="/docs/code_reference/class_reference/transform.md">Transform</a> component in script.</p>
 <h1 id="simple-rotating-on-update">Simple Rotating on Update</h1>
 <ul>
 <li>In <code>Rotate2D</code></li>
@@ -159,60 +159,60 @@
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94054.gif" alt="RotateOnUpdate"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="local-vs-world-rotation">Local vs World Rotation</h1>
-<p>You may have noticed the name of the function <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md#rotateanglesworld-void">RotateAnglesWorld</a>, and wondered why there is also a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md#rotateangleslocal-void">RotateAnglesLocal</a> function. Let's take a closer look at these functions.</p>
+<p>You may have noticed the name of the function <a href="/docs/code_reference/class_reference/transform.md#rotateanglesworld-void">RotateAnglesWorld</a>, and wondered why there is also a <a href="/docs/code_reference/class_reference/transform.md#rotateangleslocal-void">RotateAnglesLocal</a> function. Let's take a closer look at these functions.</p>
 <h2 id="parent-rotateworld">Parent RotateWorld</h2>
 <ul>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createsprite">CreateSprite</a></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</p>
 </li>
 <li><p>In the <code>Properties Window</code></p>
 </li>
 <li><p>Rename Sprite object to <code>Child</code></p>
 </li>
-<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></p>
+<li><p>Under <a href="/docs/code_reference/class_reference/transform.md">Transform</a></p>
 </li>
 <li><p>Set Translation  to <code>[0, 1, 0]</code></p>
 </li>
-<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></p>
+<li><p>Under <a href="/docs/code_reference/class_reference/sprite.md">Sprite</a></p>
 </li>
 <li><p>Set VertexColor  to <code>[R:255, G:0, B:0, A:1.0]</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/hierarchies.md">Attach</a> Child object to Parent object</p>
+<li><p><a href="/docs/zilch_editor_documentation/tutorials/architecture/hierarchies.md">Attach</a> Child object to Parent object</p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94069.gif" alt="RotateWorldParent"></p>
 <p>Now we can see that a child object rotates with its parent. You may have seen similar behavior when using the rotation tool with hierarchies in the past. It is important to note that the Child object maintains it's translation relative to the parent object as the parent object rotates.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h2 id="child-rotateworld">Child RotateWorld</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Child object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Child object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>Rotate2D</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Parent object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>Rotate2D</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Parent object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Remove Component</a> : <code>Rotate2D</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Remove Component</a> : <code>Rotate2D</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94071.gif" alt="RotateWorldChild"></p>
 <p>Here we can see that rotating the Child object has no affect on the Parent object.</p>
-<p>(NOTE)<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md#rotateworld-void">Transform.RotateWorld</a> vs <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md#rotatelocal-void">Transform.RotateLocal</a>: You may have noticed the RotateLocal function on Transform. <code>Local</code> and <code>World</code> refer to to the axes that the rotation will be applied to. RotateWorld rotates an object around its world axes, while RotateLocal rotates it around the axes of its parent object (if any). This is done by applying the rotation of the parent object to the child after the child applies its own rotation.</p>
+<p>(NOTE)<a href="/docs/code_reference/class_reference/transform.md#rotateworld-void">Transform.RotateWorld</a> vs <a href="/docs/code_reference/class_reference/transform.md#rotatelocal-void">Transform.RotateLocal</a>: You may have noticed the RotateLocal function on Transform. <code>Local</code> and <code>World</code> refer to to the axes that the rotation will be applied to. RotateWorld rotates an object around its world axes, while RotateLocal rotates it around the axes of its parent object (if any). This is done by applying the rotation of the parent object to the child after the child applies its own rotation.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="rotating-with-actions">Rotating with Actions</h1>
-<p>Rotating on update is useful when trying to rotate in a specific direction, continuously, or more than 360 degrees. However, we often want an object to make quick small rotations to a specific target rotation. This is where rotating with <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/actions.md">Actions</a> is very convenient.</p>
+<p>Rotating on update is useful when trying to rotate in a specific direction, continuously, or more than 360 degrees. However, we often want an object to make quick small rotations to a specific target rotation. This is where rotating with <a href="/docs/zilch_editor_documentation/tutorials/scripting/actions.md">Actions</a> is very convenient.</p>
 <ul>
 <li>In <code>Rotate2D</code></li>
 <li>Update the <code>Rotate2D</code> class to look like the following code block</li>
@@ -239,14 +239,14 @@
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94073.gif" alt="ActionRotate"></p>
 <p><em>Rotating the child object to 45 degrees on the Z-axis using an Action</em></p>
 <ul>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Child object</p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Child object</p>
 </li>
 <li><p>In the <code>Properties Window</code></p>
 </li>
@@ -254,40 +254,40 @@
 </li>
 <li><p>Set <code>TargetRotation</code> to <code>[0,0,405]</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94073.gif" alt="ActionRotate"></p>
 <p><em>Rotating the child object to 405 degrees on the Z-axis using an Action</em></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
-<p>Notice how both rotations appear the same. Now one may expect the object to make a full 405 degree rotation. However, in the constructor of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/quaternion.md">Quaternion</a> the angle is normalized to the range of <code>[0, 360]</code> degrees. Since 405 degrees is equivalent to 45 degrees, that is the rotation of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/quaternion.md">Quaternion</a> that is passed to the action constructor.</p>
+<p>Notice how both rotations appear the same. Now one may expect the object to make a full 405 degree rotation. However, in the constructor of <a href="/docs/code_reference/nada_base_types/quaternion.md">Quaternion</a> the angle is normalized to the range of <code>[0, 360]</code> degrees. Since 405 degrees is equivalent to 45 degrees, that is the rotation of the <a href="/docs/code_reference/nada_base_types/quaternion.md">Quaternion</a> that is passed to the action constructor.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">Create a New 2D Project</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">Create a New 2D Project</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>{icon university}[[zilch_engine_documentation/zilch_editor_documentation/zilchmanual/editor/addremovecomponent/|Add/Remove Component]]</li>
 </ul>
 <h2 id="tutorials">Tutorials</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/actions.md">Actions</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/hierarchies.md">Attach</a></li>
+<li><a href="/docs/zilch_editor_documentation/tutorials/scripting/actions.md">Actions</a></li>
+<li><a href="/docs/zilch_editor_documentation/tutorials/architecture/hierarchies.md">Attach</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/quaternion.md">Quaternion</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/camera.md">Camera</a></li>
+<li><a href="/docs/code_reference/class_reference/transform.md">Transform</a></li>
+<li><a href="/docs/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="/docs/code_reference/nada_base_types/quaternion.md">Quaternion</a></li>
+<li><a href="/docs/code_reference/class_reference/camera.md">Camera</a></li>
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 </ul>
 <h2 id="tasks">Tasks</h2>
 <ul>

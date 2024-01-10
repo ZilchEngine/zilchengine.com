@@ -85,10 +85,10 @@
 
         <article data-uid="">
 
-<p>This section covers the basics of memory management in Nada. Specifically, the topics covered include: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md#types-of-memory-storage">Types of Memory Storage</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md#allocating-memory">#allocating-memory</a>, and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md#freeing-memory">#freeing-memory</a></p>
+<p>This section covers the basics of memory management in Nada. Specifically, the topics covered include: <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md#types-of-memory-storage">Types of Memory Storage</a>, <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md#allocating-memory">#allocating-memory</a>, and <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md#freeing-memory">#freeing-memory</a></p>
 <h1 id="types-of-memory-storage">Types of Memory Storage</h1>
 <h2 id="by-value">By-Value</h2>
-<p>There are two main types of storage, <code>by-value</code> and <code>by-reference</code> (or <code>by-ref</code> for short). <code>By-value</code> is stored on the local stack and the storage is cleaned up once it goes out of scope. When passed into a function it copies data <code>by-value</code>. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/structs.md">Structs</a> and primitives are <code>by-value</code>.</p>
+<p>There are two main types of storage, <code>by-value</code> and <code>by-reference</code> (or <code>by-ref</code> for short). <code>By-value</code> is stored on the local stack and the storage is cleaned up once it goes out of scope. When passed into a function it copies data <code>by-value</code>. <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/structs.md">Structs</a> and primitives are <code>by-value</code>.</p>
 <pre><code class="lang-lang=csharp,">struct ByValue
 {
     var ID: Integer = 0;
@@ -127,7 +127,7 @@ byValA
 ID: 1111111
 </code></pre>
 <h2 id="by-reference">By-Reference</h2>
-<p><code>By-reference</code> is stored on the heap and the storage is cleaned up once there are no longer references to it, or the handle is explicitly deleted in code. When passed into a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">function</a> it copies it <code>by-reference</code>. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">Classes</a> and structs promoted with the <code>ref</code> keyword are <code>by-reference</code>.</p>
+<p><code>By-reference</code> is stored on the heap and the storage is cleaned up once there are no longer references to it, or the handle is explicitly deleted in code. When passed into a <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">function</a> it copies it <code>by-reference</code>. <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">Classes</a> and structs promoted with the <code>ref</code> keyword are <code>by-reference</code>.</p>
 <h3 id="by-ref-storage-in-a-struct-and-a-class">By-Ref Storage in a Struct and a Class</h3>
 <pre><code class="lang-lang=csharp,">struct ByValue
 {
@@ -211,7 +211,7 @@ ID: 5555556
 <p>NOTE: A <code>by-ref</code> type can be set to null, but a <code>by-value</code> type cannot.</p>
 <h2 id="creating-variables-by-value-and-by-ref">Creating variables <code>by-value</code> and <code>by-ref</code></h2>
 <h3 id="local">Local</h3>
-<p>When working with by-value types that have constructors, such as structs or more complex stack primitive data types, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">keyword</a> <strong>local</strong> may be used:</p>
+<p>When working with by-value types that have constructors, such as structs or more complex stack primitive data types, the <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">keyword</a> <strong>local</strong> may be used:</p>
 <pre><code class="lang-lang=csharp">var up: Real3 = local Real3(0.0, 1.0, 0.0);
 var stackStructInstance: CustomStruct = local CustomStruct();
 </code></pre>
@@ -252,7 +252,7 @@ var stackObject: CustomStruct = heapObject;
   }
 }
 </code></pre>
-<p>A class or struct may possess one or more constructors. Like <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">functions</a> they can be overloaded via their <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/named_parameters.md">named_parameters</a>. Special syntax is also used when constructing a derived class, see <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inheritance</a> for more.</p>
+<p>A class or struct may possess one or more constructors. Like <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">functions</a> they can be overloaded via their <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/named_parameters.md">named_parameters</a>. Special syntax is also used when constructing a derived class, see <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inheritance</a> for more.</p>
 <h1 id="freeing-memory">Freeing Memory</h1>
 <p>Nada does not have a full-fledged garbage collector, but it does have ref-counted handles. When you use local to make things on the stack they are cleaned up upon leaving the scope. When you use new to construct objects on the heap they are cleaned up when:</p>
 <ul>
@@ -322,7 +322,7 @@ var stackObject: CustomStruct = heapObject;
   // abc, bca, and cab will leak.
 </code></pre>
 <ol start="2">
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/delegates.md">delegates</a> containing an instance member function hold the <code>this</code> handle to the object, and thus will keep ref-counted objects alive.</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/delegates.md">delegates</a> containing an instance member function hold the <code>this</code> handle to the object, and thus will keep ref-counted objects alive.</li>
 </ol>
 <pre><code class="lang-lang=csharp,">class Utility
 {
@@ -502,13 +502,13 @@ Utility.SafeToString(byRefK, &quot;byRefK&quot;);  // byRefK is null
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">Classes</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/structs.md">Structs</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">Functions</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">Keywords</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/named_parameters.md">named_parameters</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inheritance</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/delegates.md">delegates</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">Classes</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/structs.md">Structs</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">Functions</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">Keywords</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/named_parameters.md">named_parameters</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inheritance</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/delegates.md">delegates</a></li>
 </ul>
 
 </article>

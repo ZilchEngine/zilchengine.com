@@ -85,9 +85,9 @@
 
         <article data-uid="">
 
-<p>The particle animator uses <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/resources/colorgradient.md">ColorGradients</a> to color each particle uniquely based on its current state.  The final color of any given particle is calculated from an element-wise multiplication of three color vectors:
+<p>The particle animator uses <a href="/docs/zilch_editor_documentation/zilchmanual/architecture/resources/colorgradient.md">ColorGradients</a> to color each particle uniquely based on its current state.  The final color of any given particle is calculated from an element-wise multiplication of three color vectors:
 <code>Color = VertexColor * TimeGradientColor * VelocityGradientColor</code>
-where <code>VertexColor</code> comes from VectexColor  on the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/spriteparticlesystem.md">SpriteParticleSystem</a> component.  <code>TimeGradientColor</code> is then found from sampling the TimeGradient resource, while <code>VelocityGradientColor</code> is found from sampling the VelocityGradient resource.</p>
+where <code>VertexColor</code> comes from VectexColor  on the <a href="/docs/zilch_editor_documentation/code_reference/class_reference/spriteparticlesystem.md">SpriteParticleSystem</a> component.  <code>TimeGradientColor</code> is then found from sampling the TimeGradient resource, while <code>VelocityGradientColor</code> is found from sampling the VelocityGradient resource.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46668.gif" alt="ParticleSystems_ColorGradients"> <em>The TimeGradient resource is interpolated from black to white to black such that the color fades in and out.  The VelocityGradient resource is interpolated from blue to red, such that slow particles are blue and fast particles are red.</em></p>
 <h1 id="time-and-velocity-gradients">Time and Velocity Gradients</h1>
 <p>In order to use the gradients on the <code>ParticleColorAnimator</code>, one must understand how each gradient is sampled. The TimeGradient resource defines colors in the range of <code>t[0,1]</code>.  When <code>t=0</code>, the particle is created, and when <code>t=1</code>, the particle dies.  The range is important because we need to map time that the particle has lived to <code>[0,1]</code>.  When sampling from TimeGradient resource, the <code>ParticleColorAnimator</code> uses the particle lifetime as the range.</p>
@@ -95,12 +95,12 @@ where <code>VertexColor</code> comes from VectexColor  on the <a href="https://g
 <h1 id="related-material">Related Material</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/resources/colorgradient.md">Color Gradient</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/graphics/particles/sprite_particle_system.md">Sprite Particle System</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/architecture/resources/colorgradient.md">Color Gradient</a></li>
+<li><a href="/docs/zilch_editor_documentation/tutorials/graphics/particles/sprite_particle_system.md">Sprite Particle System</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/spriteparticlesystem.md">SpriteParticleSystem</a></li>
+<li><a href="/docs/zilch_editor_documentation/code_reference/class_reference/spriteparticlesystem.md">SpriteParticleSystem</a></li>
 </ul>
 
 </article>

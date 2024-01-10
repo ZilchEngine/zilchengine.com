@@ -310,14 +310,14 @@ class CreateArchetype : NadaComponent
 
 </code></pre>
 <h2 id="componentinterface">[ComponentInterface]</h2>
-<p>The ComponentInterface attribute allows the user to define a class as a generic interface for its derived types. One common example of this is <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md">collider</a>, which acts as a component interface for all collider types, such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">boxcollider</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/capsulecollider.md">capsulecollider</a>, and more. Defining an interface using this attribute allows the user to access the members of a derived class using the component name of the base class.</p>
+<p>The ComponentInterface attribute allows the user to define a class as a generic interface for its derived types. One common example of this is <a href="/docs/code_reference/class_reference/collider.md">collider</a>, which acts as a component interface for all collider types, such as <a href="/docs/code_reference/class_reference/boxcollider.md">boxcollider</a>, <a href="/docs/code_reference/class_reference/capsulecollider.md">capsulecollider</a>, and more. Defining an interface using this attribute allows the user to access the members of a derived class using the component name of the base class.</p>
 <pre><code class="lang-name=Component">var collisionGroup = this.Owner.BoxCollider.CollisionGroup;
 var collisionGroupAccessedByInterface = this.Owner.Collider.CollisionGroup;
 
 if(collisionGroup == collisionGroupAccessedByInterface)
   Console.WriteLine(&quot;These variables reference the same component&quot;);
 </code></pre>
-<p>Using a component interface does not mean that the property and methods of a derived class need to be exactly the same as the base class. What would be the point? Using the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/sandbox/arend_danielek/attributes.md#virtual"> Virtual</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/sandbox/arend_danielek/attributes.md#override"> Override </a> attributes, we can modify the interface of derived classes.</p>
+<p>Using a component interface does not mean that the property and methods of a derived class need to be exactly the same as the base class. What would be the point? Using the <a href="/docs/sandbox/arend_danielek/attributes.md#virtual"> Virtual</a> and <a href="/docs/sandbox/arend_danielek/attributes.md#override"> Override </a> attributes, we can modify the interface of derived classes.</p>
 <pre><code class="lang-name=Component">[ComponentInterface]
 class AnimationDebugNode : NadaComponent
 {
@@ -375,9 +375,9 @@ class MyNewCommand : NadaComponent
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inheritance</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">variables_and_data_types</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/scripting/wysiwyg.md">wysiwyg</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inheritance</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">variables_and_data_types</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/scripting/wysiwyg.md">wysiwyg</a></li>
 </ul>
 
 </article>

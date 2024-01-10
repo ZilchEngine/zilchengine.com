@@ -89,20 +89,20 @@
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
 <li>Custom events</li>
-<li>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">sends</a> keyword</li>
+<li>The <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">sends</a> keyword</li>
 <li>Event dispatching</li>
 <li>Custom event data</li>
 </ul>
-<p>While the most common events are built in, there are times when you will need to create your own events based on things that happen within your own game logic. They are especially useful if multiple components connect to the same event, causing multiple unique responses. This tutorial continues with the project started in the previous <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/events.md"> Events</a> tutorial.</p>
+<p>While the most common events are built in, there are times when you will need to create your own events based on things that happen within your own game logic. They are especially useful if multiple components connect to the same event, causing multiple unique responses. This tutorial continues with the project started in the previous <a href="/docs/zilch_editor_documentation/tutorials/scripting/events.md"> Events</a> tutorial.</p>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li>Reopen the Events zero project project from the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/events.md"> previous tutorial</a></li>
+<li>Reopen the Events zero project project from the <a href="/docs/zilch_editor_documentation/tutorials/scripting/events.md"> previous tutorial</a></li>
 </ul>
 <h1 id="declaring-custom-events">Declaring Custom Events</h1>
-<p>Just as instances of the class <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionevent.md">CollisionEvent</a> are dispatched with multiple event IDs (<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionstarted">CollisionStarted</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionpersisted">CollisionPersisted</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionended">CollisionEnded</a>), you may register an event class as multiple custom events. Data may be sent along with a custom event (using a custom event class, discussed below), but this isn't always necessary; if no data is needed, the event can just use the type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/nadaevent.md"> NadaEvent</a>.</p>
+<p>Just as instances of the class <a href="/docs/code_reference/class_reference/collisionevent.md">CollisionEvent</a> are dispatched with multiple event IDs (<a href="/docs/code_reference/event_reference.md#collisionstarted">CollisionStarted</a>, <a href="/docs/code_reference/event_reference.md#collisionpersisted">CollisionPersisted</a>, <a href="/docs/code_reference/event_reference.md#collisionended">CollisionEnded</a>), you may register an event class as multiple custom events. Data may be sent along with a custom event (using a custom event class, discussed below), but this isn't always necessary; if no data is needed, the event can just use the type <a href="/docs/code_reference/class_reference/nadaevent.md"> NadaEvent</a>.</p>
 <h2 id="the-sends-keyword">The <code>sends</code> Keyword</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>CreateObjectOnInput</code></li>
 <li>Update the <code>CreateObjectOnInput</code> script to the following:</li>
 </ul>
@@ -140,23 +140,23 @@
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Player object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Player object</li>
 <li>In the <code>Properties Window</code>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>CreateObjectOnInput</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>CreateObjectOnInput</code></li>
 </ul>
 </li>
 </ul>
-<p>The first part of this script that should be new is the line with the <code>sends</code> keyword. If you recall from the previous <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/events.md">events</a> tutorial, the second parameter in the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/zero.md#connect-void"> Zilch.Connect</a> function is a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md"> String</a> ID that identifies the event. The <code>sends</code> keyword defines this ID, and also declares the event type the custom event will use:</p>
+<p>The first part of this script that should be new is the line with the <code>sends</code> keyword. If you recall from the previous <a href="/docs/zilch_editor_documentation/tutorials/scripting/events.md">events</a> tutorial, the second parameter in the <a href="/docs/code_reference/class_reference/zero.md#connect-void"> Zilch.Connect</a> function is a <a href="/docs/code_reference/nada_base_types/string.md"> String</a> ID that identifies the event. The <code>sends</code> keyword defines this ID, and also declares the event type the custom event will use:</p>
 <p><code>sends EventId : EventType;</code></p>
-<p>...where <code>EventId</code> is a string value that is added to the Events namespace, where it can be found under the same name, and <code>EventType</code> is the event class type that is registered with the new event ID. In our case, <code>Events.CreateObject</code> equals the string <code>&quot;CreateObject&quot;</code>, which is registered with the event type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/nadaevent.md"> NadaEvent</a>.</p>
+<p>...where <code>EventId</code> is a string value that is added to the Events namespace, where it can be found under the same name, and <code>EventType</code> is the event class type that is registered with the new event ID. In our case, <code>Events.CreateObject</code> equals the string <code>&quot;CreateObject&quot;</code>, which is registered with the event type <a href="/docs/code_reference/class_reference/nadaevent.md"> NadaEvent</a>.</p>
 <p>(NOTE) <strong>Why Use <code>sends</code>?</strong> It's not strictly necessary to register custom events with <code>sends</code>. So why bother? There are two main benefits. The first is that they will show up in code completion, saving you from time-consuming typos. The second is that it allows you to use event connection auto-complete functionality just like any other event. That is, if you type <code>Zilch.Connect(this.Owner, Events.MyEvent,</code> in a function and press the Tab key following the comma after the second argument, the event connection code will complete itself, and a callback function will automatically be generated directly beneath the function scope the connection is made in.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/106913.png" alt="image"></p>
 <h1 id="dispatching-custom-events">Dispatching Custom Events</h1>
 <p>The next relevant line is where the <code>CreateObject</code> event is dispatched:</p>
 <pre><code class="lang-lang=csharp,">this.Owner.DispatchEvent(Events.CreateObject, NadaEvent());
 </code></pre>
-<p>Let's look at the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md#dispatchevent-void"> DispatchEvent</a> function's parameters.</p>
+<p>Let's look at the <a href="/docs/code_reference/class_reference/cog.md#dispatchevent-void"> DispatchEvent</a> function's parameters.</p>
 <table>
 <thead>
 <tr>
@@ -168,12 +168,12 @@
 <tbody>
 <tr>
 <td><code>Events.CreateObject</code></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
+<td><a href="/docs/code_reference/nada_base_types/string.md">string</a></td>
 <td>The event identifier</td>
 </tr>
 <tr>
 <td><code>NadaEvent()</code></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/nadaevent.md"> NadaEvent</a></td>
+<td><a href="/docs/code_reference/class_reference/nadaevent.md"> NadaEvent</a></td>
 <td>The event to be dispatched</td>
 </tr>
 </tbody>
@@ -181,31 +181,31 @@
 <p>This function dispatches an event to <code>this.Owner</code>. Dispatching events to <code>this.Owner</code> is a common way for one component to communicate with other components on the same object. In this case, we're dispatching a NadaEvent with the ID <code>Events.CreateObject</code>.</p>
 <p>Before creating the component that will connect to this event, we need to create a projectile archetype that can be spawned as long as the key to create an object is down.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>Projectile</code></li>
 <li>Set Archetype  to <code>Projectile</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a>
+<li>Under <a href="/docs/code_reference/class_reference/transform.md">transform</a>
 <ul>
 <li>Set Scale  to <code>[0.35, 0.35, 0.35]</code></li>
 </ul>
 </li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li>Under <a href="/docs/code_reference/class_reference/sprite.md">Sprite</a></li>
 <li>Set VertexColor  to <code>[R:0, G:255, B:0, A:1.00]</code></li>
 <li>Set SpriteSource enum to <code>Circle</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spherecollider.md">SphereCollider</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/archetypes/archetype_basics.md#upload-to-archetype">Upload to Archetype</a>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="/docs/code_reference/class_reference/spherecollider.md">SphereCollider</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="/docs/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/architecture/archetypes/archetype_basics.md#upload-to-archetype">Upload to Archetype</a>
 <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/106942.png" alt="image"></li>
 </ul>
 <p><em>The completed Projectile object</em></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#delete"> Delete</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#delete"> Delete</a></li>
 </ul>
 <p>Now we can create the component that will spawn and set the velocity of the object from the player when it &quot;hears&quot; the SpawnObject event.</p>
 <h1 id="responding-to-custom-events">Responding to Custom Events</h1>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>SpawnObjectWithVelocity</code></li>
 <li>Update the <code>SpawnObjectWithVelocity</code> script to the following:</li>
 </ul>
@@ -235,27 +235,27 @@
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Player object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Player object</li>
 <li>In the <code>Properties Window</code>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>SpawnObjectWithVelocity</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>SpawnObjectWithVelocity</code></li>
 </ul>
 </li>
 </ul>
 <p>In the Initialize function, we connect to the <code>CreateObject</code> event just like any of the built-in events we've connected to previously.</p>
 <p>We also need to add our <code>DestroyOnCollide</code> component to the enemy so that the projectiles will destroy it.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Enemy object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Enemy object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>DestroyOnCollide</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>DestroyOnCollide</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Hold key the <code>Space</code> bar to fire</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/107041.gif" alt="Projectile Destroying Player and Foe"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
-<p>Well, that didn't behave how we wanted it to. Here's what happened: first, the projectile was spawned at the player's position. Then, since both player and projectile have colliders, they collided. In response to the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionstarted">CollisionStarted</a> event, the player's <code>DestroyOnCollide</code> component caused the player to destroy itself. To fix this, we can make a simple change to our DestroyOnCollide component that will make use of Archetype checking within the OnCollisionStarted callback function. (We'll also make it so that the projectile is destroyed in the process.)</p>
+<p>Well, that didn't behave how we wanted it to. Here's what happened: first, the projectile was spawned at the player's position. Then, since both player and projectile have colliders, they collided. In response to the <a href="/docs/code_reference/event_reference.md#collisionstarted">CollisionStarted</a> event, the player's <code>DestroyOnCollide</code> component caused the player to destroy itself. To fix this, we can make a simple change to our DestroyOnCollide component that will make use of Archetype checking within the OnCollisionStarted callback function. (We'll also make it so that the projectile is destroyed in the process.)</p>
 <ul>
 <li>Update the <code>DestroyOnCollide</code> script to the following:</li>
 </ul>
@@ -281,13 +281,13 @@
 </code></pre>
 <p>Now we can check to see what we're colliding with, and whether it's the correct object. If it is, we destroy not only the object with this component, but also the one it collided with.</p>
 <ul>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Enemy object</p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Enemy object</p>
 </li>
 <li><p>In the <code>Properties Window</code></p>
 </li>
 <li><p>Set Archetype  to <code>Enemy</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Player object</p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Player object</p>
 </li>
 <li><p>In the <code>Properties Window</code></p>
 </li>
@@ -295,14 +295,14 @@
 </li>
 <li><p>Set CollisionArchetype enum to <code>Enemy</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 <li><p>Hold key the <code>Space</code> bar to fire</p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/107050.gif" alt="Projectile Destroying Only Foe"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>Now we can move on to defining your own custom event class, which will allow you to specify and set the data to be sent with the event.</p>
 <h1 id="custom-event-classes">Custom Event Classes</h1>
@@ -318,7 +318,7 @@
   var ObjectShouldBeFast : Boolean;
 }
 </code></pre>
-<p>Note that this custom event class uses the <code>sends</code> keyword, registering <code>CreateObject</code> as the event name for a custom event. Previously, this appeared in the <code>CreateObjectOnInput</code> class, where it registered that same event ID with the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/nadaevent.md"> NadaEvent</a> class. (Now that we're changing <code>CreateObject</code> to use this new <code>ObjectCreationEvent</code> class, we should remove the <code>sends</code> declaration from <code>CreateObjectOnInput</code>.) Now let's update the <code>CreateObjectOnInput</code> component to use the new event type.</p>
+<p>Note that this custom event class uses the <code>sends</code> keyword, registering <code>CreateObject</code> as the event name for a custom event. Previously, this appeared in the <code>CreateObjectOnInput</code> class, where it registered that same event ID with the <a href="/docs/code_reference/class_reference/nadaevent.md"> NadaEvent</a> class. (Now that we're changing <code>CreateObject</code> to use this new <code>ObjectCreationEvent</code> class, we should remove the <code>sends</code> declaration from <code>CreateObjectOnInput</code>.) Now let's update the <code>CreateObjectOnInput</code> component to use the new event type.</p>
 <ul>
 <li>In the <code>CreateObjectOnInput</code> script</li>
 <li>Update the <code>CreateObjectOnInput</code> class to the following:</li>
@@ -394,60 +394,60 @@
   }
 }
 </code></pre>
-<p>Notice that the parameter for <code>OnCreateObject</code> is now of type <code>ObjectCreationEvent</code> instead of <code>NadaEvent</code>. The parameter for an event callback function must always match the type of event it is responding to. The <code>event</code> argument is then used to access the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md"> Boolean</a> data member, which determines the speed of the object that is spawned.</p>
+<p>Notice that the parameter for <code>OnCreateObject</code> is now of type <code>ObjectCreationEvent</code> instead of <code>NadaEvent</code>. The parameter for an event callback function must always match the type of event it is responding to. The <code>event</code> argument is then used to access the <a href="/docs/code_reference/nada_base_types/boolean.md"> Boolean</a> data member, which determines the speed of the object that is spawned.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Hold key the <code>Space</code> bar to fire</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/107064.gif" alt="Destroying Foe with Slow and Fast Projectiles"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="tutorial">Tutorial</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/gameobjects.md">gameobjects</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/basiccomponents.md">basiccomponents</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/events.md">events</a></li>
+<li><a href="/docs/zilch_editor_documentation/tutorials/architecture/gameobjects.md">gameobjects</a></li>
+<li><a href="/docs/zilch_editor_documentation/tutorials/architecture/basiccomponents.md">basiccomponents</a></li>
+<li><a href="/docs/zilch_editor_documentation/tutorials/scripting/events.md">events</a></li>
 </ul>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">launchernewproject</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">resourceadding</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">keywords</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/archetypes/archetype_basics.md#upload-to-archetype"> Upload to Archetype</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">launchernewproject</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">resourceadding</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">keywords</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/architecture/archetypes/archetype_basics.md#upload-to-archetype"> Upload to Archetype</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionevent.md">collisionevent</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/nadaevent.md">NadaEvent</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">cog</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">sprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spherecollider.md">spherecollider</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
+<li><a href="/docs/code_reference/class_reference/collisionevent.md">collisionevent</a></li>
+<li><a href="/docs/code_reference/class_reference/nadaevent.md">NadaEvent</a></li>
+<li><a href="/docs/code_reference/class_reference/cog.md">cog</a></li>
+<li><a href="/docs/code_reference/class_reference/transform.md">transform</a></li>
+<li><a href="/docs/code_reference/class_reference/sprite.md">sprite</a></li>
+<li><a href="/docs/code_reference/class_reference/spherecollider.md">spherecollider</a></li>
+<li><a href="/docs/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#delete"> Delete</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
+<li><a href="/docs/code_reference/command_reference.md#delete"> Delete</a></li>
+<li><a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h3 id="events">Events</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionstarted"> CollisionStarted</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionpersisted"> CollisionPersisted</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionended"> CollisionEnded</a></li>
+<li><a href="/docs/code_reference/event_reference.md#collisionstarted"> CollisionStarted</a></li>
+<li><a href="/docs/code_reference/event_reference.md#collisionpersisted"> CollisionPersisted</a></li>
+<li><a href="/docs/code_reference/event_reference.md#collisionended"> CollisionEnded</a></li>
 </ul>
 <h3 id="nada-base-types">Nada Base Types</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></li>
+<li><a href="/docs/code_reference/nada_base_types/string.md">string</a></li>
+<li><a href="/docs/code_reference/nada_base_types/boolean.md">boolean</a></li>
 </ul>
 <h2 id="development-task">Development Task</h2>
 <ul>

@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepad.md">Gamepads</a> are very useful tools for any game project. They often offer a more comfortable method of controlling a game, especially if two or more players are intended to play at the same time. As well as being an alternate method of control, Gamepads can also make use of vibration as a method of feedback.</p>
+<p><a href="/docs/code_reference/class_reference/gamepad.md">Gamepads</a> are very useful tools for any game project. They often offer a more comfortable method of controlling a game, especially if two or more players are intended to play at the same time. As well as being an alternate method of control, Gamepads can also make use of vibration as a method of feedback.</p>
 <h1 id="common-uses">Common Uses</h1>
 <ul>
 <li>Provides a alternative method of control to Keyboard and Mouse inputs</li>
@@ -132,7 +132,7 @@
 </code></pre>
 <p>Since the thumbsticks return a Real2 at a range from <code>-1</code> to <code>1</code>, this can easily be translated into creating movement on a 2D plane. Keep in mind this example does not use the <code>RightStick</code>, only the <code>LeftStick</code>.</p>
 <h2 id="button-input">Button Input</h2>
-<p>Similar to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/gameplay/input/mouseinput.md">Mouse Input</a>, assigning logic to the various buttons on the Gamepad can be Frame Based or Event Based. Both have their strengths and weaknesses; determining which approach is better for a specific project should be decided on a case by case basis.</p>
+<p>Similar to <a href="/docs/zilch_editor_documentation/zilchmanual/gameplay/input/mouseinput.md">Mouse Input</a>, assigning logic to the various buttons on the Gamepad can be Frame Based or Event Based. Both have their strengths and weaknesses; determining which approach is better for a specific project should be decided on a case by case basis.</p>
 <h2 id="frame-based-button-input">Frame Based Button Input</h2>
 <p>The example given above is Frame Based, and the reason for that is simple: Frame Based Input from a Gamepad works best when there will be sustained action, such as when a thumbstick is held down to move a player character. This same logic applies to buttons as well.</p>
 <pre><code>    function OnLogicUpdate(event : UpdateEvent)
@@ -230,7 +230,7 @@ function Initialize(init : CogInitializer)
 </code></pre>
 <p>Simply change the PlayerIndex of an object to assign it to Gamepad One, Gamepad Two, etc. Keep in mind, however, that the GamePad index starts at <code>0</code>, so the index for GamePad One would be <code>0</code>, GamePad Two would be <code>1</code>, Three <code>2</code>, and so on.</p>
 <h1 id="properties-of-gamepad-and-object-events">Properties of Gamepad and Object Events</h1>
-<p>All of the events associated with the Gamepad are <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepadevent.md">GamepadEvents</a>, with the exception of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepadevent.md">GamepadUpdated</a>, which is an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/objectevent.md">ObjectEvent</a>. As all the others are the same type of event, they all share the same properties that can be accessed when the event is dispatched. <code>ObjectEvents</code> themselves can access the Gamepad that dispatched the event by using  <code>ObjectEvent</code>, which <code>GamepadEvents</code> likewise has access to with <code>GamepadEvent.Gamepad</code>.</p>
+<p>All of the events associated with the Gamepad are <a href="/docs/code_reference/class_reference/gamepadevent.md">GamepadEvents</a>, with the exception of <a href="/docs/code_reference/class_reference/gamepadevent.md">GamepadUpdated</a>, which is an <a href="/docs/code_reference/class_reference/objectevent.md">ObjectEvent</a>. As all the others are the same type of event, they all share the same properties that can be accessed when the event is dispatched. <code>ObjectEvents</code> themselves can access the Gamepad that dispatched the event by using  <code>ObjectEvent</code>, which <code>GamepadEvents</code> likewise has access to with <code>GamepadEvent.Gamepad</code>.</p>
 <p>IMPORTANT: As of the time of the creation of this page, <code>ObjectEvent.Source</code> returns a null pointer rather than the Gamepad that dispatched the event.</p>
 <p>Both of these can be used to trigger the same functions, the main difference being <code>GamepadEvent.Gamepad</code> would need to be triggered by the specific Gamepad, while <code>ObjectEvent.Source</code> could be used for a general script that runs the logic for multiple Gamepads during a GameSession.</p>
 <p><code>GamepadEvents</code> can also reference the button used to dispatch the event with <code>GamepadEvent.Button</code>, which returns an int referring to the triggering button. The last two references all <code>GamepadEvents</code> have can only be used by the <code>GamepadStickFlicked</code> event: <code>FlickDirection</code>, which returns a Real2 of the direction the thumbstick moved in; and <code>FlickedStick</code>, which returns a reference to the thumbstick that dispatched the event. These can be used together to create movement mechanics very easily.</p>
@@ -267,15 +267,15 @@ function Initialize(init : CogInitializer)
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/gameplay/input/mouseinput.md">Mouse Input</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/gameplay/input/mouseinput.md">Mouse Input</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepad.md">Gamepad</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepads.md">Gamepads</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">Real2</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/objectevent.md">ObjectEvent</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepadevent.md">GamepadEvent</a></li>
+<li><a href="/docs/code_reference/class_reference/gamepad.md">Gamepad</a></li>
+<li><a href="/docs/code_reference/class_reference/gamepads.md">Gamepads</a></li>
+<li><a href="/docs/code_reference/nada_base_types/real2.md">Real2</a></li>
+<li><a href="/docs/code_reference/class_reference/objectevent.md">ObjectEvent</a></li>
+<li><a href="/docs/code_reference/class_reference/gamepadevent.md">GamepadEvent</a></li>
 </ul>
 
 </article>

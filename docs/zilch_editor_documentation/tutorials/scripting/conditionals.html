@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/conditionals.md"> Conditionals</a> allow a developer to make decisions in code based off of <code>true</code> &amp; <code>false</code> values.</p>
+<p><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/conditionals.md"> Conditionals</a> allow a developer to make decisions in code based off of <code>true</code> &amp; <code>false</code> values.</p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
 <li>Evaluating Expressions</li>
@@ -94,23 +94,23 @@
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createtransform">CreateTransform</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createtransform">CreateTransform</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a>
 <ul>
 <li>Create a NadaScript resource using the Component template template and name it <code>ConditionalsLogic</code></li>
 </ul>
 </li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Transform object</li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Transform object</li>
 <li>In the <code>Properties Window</code>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>icon=square-o, name = ConditionalsLogic</code></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>icon=square-o, name = ConditionalsLogic</code></li>
 </ul>
 </li>
 </ul>
 <h1 id="if-statements"><code>if</code> Statements</h1>
-<p>An <code>if</code> statement evaluates an expression to a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">Boolean</a> value of <code>true</code> or <code>false</code>. If the expression is true, code within the scope of the <code>if</code> statement will be executed, otherwise the application focus will skip over its scope.</p>
+<p>An <code>if</code> statement evaluates an expression to a <a href="/docs/code_reference/nada_base_types/boolean.md">Boolean</a> value of <code>true</code> or <code>false</code>. If the expression is true, code within the scope of the <code>if</code> statement will be executed, otherwise the application focus will skip over its scope.</p>
 <ul>
 <li>Update the <code>icon=square-o, name =ConditionalsLogic</code> script:</li>
 </ul>
@@ -131,7 +131,7 @@
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=Console">---------------- Begin Game ----------------
 This will print to console.
@@ -140,14 +140,14 @@ Loaded level 0.00s
 </code></pre>
 <p>Notice how the output displays only text within the <code>if(true)</code> conditional.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="boolean-operators">Boolean Operators</h1>
-<p><code>if</code> statements are primarily used to determine whether an entire sequence results in <code>true</code> or <code>false</code>. By using <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md"> Boolean Operators </a> an entire sequence can be evaluated rather than a single variable.</p>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md#equality"> Equality Operator </a> <code>==</code> is used to determine if two values are the same. This is different than the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md"> Assignment Operator</a> <code>=</code> that is used to assign a new value to a variable.</p>
+<p><code>if</code> statements are primarily used to determine whether an entire sequence results in <code>true</code> or <code>false</code>. By using <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md"> Boolean Operators </a> an entire sequence can be evaluated rather than a single variable.</p>
+<p>The <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md#equality"> Equality Operator </a> <code>==</code> is used to determine if two values are the same. This is different than the <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md"> Assignment Operator</a> <code>=</code> that is used to assign a new value to a variable.</p>
 <p>NOTE: The Equality Operator is a type of comparison operator that returns a boolean operator.</p>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md#inequality"> Inequality Operator</a> <code>!=</code> is used to determine if two values are not the same. As long as the two values are not exactly the same, the <code>if</code> statement will be evaluated as <code>true</code>.</p>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md"> Negation Operator</a> <code>!</code> is used to reverse some values when possible. In the example below, the <code>!</code> operator is used to reverse the value of a boolean.</p>
+<p>The <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md#inequality"> Inequality Operator</a> <code>!=</code> is used to determine if two values are not the same. As long as the two values are not exactly the same, the <code>if</code> statement will be evaluated as <code>true</code>.</p>
+<p>The <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md"> Negation Operator</a> <code>!</code> is used to reverse some values when possible. In the example below, the <code>!</code> operator is used to reverse the value of a boolean.</p>
 <ul>
 <li>Update the <code>icon=square-o, name =ConditionalsLogic</code> script:</li>
 </ul>
@@ -180,7 +180,7 @@ Loaded level 0.00s
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=Console">---------------- Begin Game ----------------
 false and false are the same thing.
@@ -189,7 +189,7 @@ Loaded level 0.00s
 </code></pre>
 <p>Notice how <code>false</code> and <code>false</code> are the same, resulting in a <code>true</code> conditional.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="else-if-statements"><code>else if</code> Statements</h1>
 <p>Where <code>if</code> statements determine if a situation is <code>true</code>, <code>else if</code> statements can determine if alternative situations are <code>true</code> as long as previous conditionals are <code>false</code>. <code>else</code> statements catch all remaining conditions.</p>
@@ -214,7 +214,7 @@ Loaded level 0.00s
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=Console">---------------- Begin Game ----------------
 Grade: B
@@ -223,7 +223,7 @@ Loaded level 0.00s
 </code></pre>
 <p>Notice how the lines checking if <code>grade &lt; 70</code> and <code>grade &lt; 80</code> each ran first. They were skipped over since they evaluated to a <code>false</code> condition, but the <code>grade &lt; 90</code> conditional was true. The remaining line containing an <code>else</code> conditional was not considered.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p><code>if</code> statements also can be used to evaluate the current state of a variable, such as time passed. This can be useful when evaluating variables.</p>
 <ul>
@@ -244,7 +244,7 @@ Loaded level 0.00s
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name">---------------- Begin Game ----------------
 Time Passed: 0.01 seconds
@@ -253,7 +253,7 @@ Loaded level 0.00s
 </code></pre>
 <p>Notice that the <code>if</code> statement is run and the <code>timePassed</code> variable was used.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="non-bracketed-scopes">Non-Bracketed Scopes</h1>
 <p>Once an <code>if</code> statement is found to be <code>true</code>, any code nested within is run. There are different ways to write these lines of code, based on what is easy to read and understand.</p>
@@ -275,7 +275,7 @@ Loaded level 0.00s
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name">---------------- Begin Game ----------------
 1
@@ -286,7 +286,7 @@ Loaded level 0.00s
 </code></pre>
 <p>Notice that all three lines of code were run. All actions within brackets immediately following a <code>true</code> <code>if</code> statement will be performed.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>Alternatively, if only one line of code needs to be performed, it can be common practice to not use braces, as long as code it positioned properly.</p>
 <ul>
@@ -302,7 +302,7 @@ Loaded level 0.00s
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name">---------------- Begin Game ----------------
 1
@@ -310,7 +310,7 @@ Level 'Level' was loaded.
 Loaded level 0.00s
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>The line of code was run due being indented and following a <code>true</code> <code>if</code> statement. Indention matters as some code can be skipped over or even unintentionally run if not written correctly.</p>
 <ul>
@@ -328,7 +328,7 @@ Loaded level 0.00s
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name">---------------- Begin Game ----------------
 2
@@ -338,7 +338,7 @@ Loaded level 0.00s
 </code></pre>
 <p>Notice how <code>1</code> was never printed due to the <code>false</code> <code>if</code> statement, but <code>2</code> and <code>3</code> were.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>Only the first indented line following a <code>true</code> <code>if</code> statement is performed. This is why it is important to use brackets for more than one line, for readability purposes. The following code is exactly the same as the previous example except that the second and third lines printed to Console are indented as well.</p>
 <ul>
@@ -356,7 +356,7 @@ Loaded level 0.00s
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name">---------------- Begin Game ----------------
 2
@@ -366,7 +366,7 @@ Loaded level 0.00s
 </code></pre>
 <p>Notice how <code>2</code> and <code>3</code> were still printed to console, even though they match the indention of the line above it.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="nested-if-else-statements">Nested <code>If Else</code> Statements</h1>
 <p>It is important to realize that <code>if</code> statements can be nested within one another. Further, <code>else</code> statements take advantage of scenarios where a statement returns false.</p>
@@ -424,7 +424,7 @@ Loaded level 0.00s
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=">---------------- Begin Game ----------------
 Elvis Sandwich with Bacon
@@ -433,35 +433,35 @@ Loaded level 0.00s
 </code></pre>
 <p>Notice how the output tells the user what kind of sandwich they have based on the ingredients selected. The nested If Statements make it possible to follow through based on the Boolean variables</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md">Boolean Operators</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/conditionals.md">Conditionals</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">Variables and Data Types</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">Keywords</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md">Operators Precedence Chart</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md"> Boolean Operators </a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md"> Operator Precedence</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md">Boolean Operators</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/conditionals.md">Conditionals</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">Variables and Data Types</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">Keywords</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md">Operators Precedence Chart</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/boolean_operators.md"> Boolean Operators </a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md"> Operator Precedence</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/nadascript.md">NadaScript</a></li>
+<li><a href="/docs/code_reference/class_reference/nadascript.md">NadaScript</a></li>
 </ul>
 <h3 id="nada-base-types">Nada Base Types</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types.md">Nada Base Types</a></li>
+<li><a href="/docs/code_reference/nada_base_types.md">Nada Base Types</a></li>
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createtransform">CreateTransform</a></li>
+<li><a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="/docs/code_reference/command_reference.md#createtransform">CreateTransform</a></li>
 </ul>
 
 </article>

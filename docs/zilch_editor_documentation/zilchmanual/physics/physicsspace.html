@@ -85,47 +85,47 @@
 
         <article data-uid="">
 
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsspace.md">physicsspace</a> is a component that manages all physics objects within a space.</p>
+<p><a href="/docs/code_reference/class_reference/physicsspace.md">physicsspace</a> is a component that manages all physics objects within a space.</p>
 <h2 id="queries-castingevents">Queries: Casting/Events</h2>
-<p>Most commonly, a user will be working with the PhysicsSpace at run-time through function calls. The most common example of this is to query some collision information about the scene through what is called a cast function. A cast function lets a user query what collision shapes are in a certain region. The most common of these casts is a RayCast which is often used for line-of-sight testing, bullets, and so on. Additional information on casting can be found on <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicscasting.md">this</a> manual page.</p>
+<p>Most commonly, a user will be working with the PhysicsSpace at run-time through function calls. The most common example of this is to query some collision information about the scene through what is called a cast function. A cast function lets a user query what collision shapes are in a certain region. The most common of these casts is a RayCast which is often used for line-of-sight testing, bullets, and so on. Additional information on casting can be found on <a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicscasting.md">this</a> manual page.</p>
 <p>In addition to casting, PhysicsSpace supports a limited set of &quot;event casting&quot;; that is, sending a user defined event to all objects with a certain volume. This can be achieved with the &quot;DispatchWithin&quot; functions.</p>
 <h2 id="collision-filtering">Collision Filtering</h2>
-<p>Another important run-time feature of the PhysicsSpace is allowing object pairs to be filtered out of collision through the use of the AddPairFilter and AddHierarchyPairFilter functions. These functions allow per object ignoring of collision (no events will be received) when <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisiongroupsandtables.md">CollisionTables</a> are not sufficient, such as ignoring collision with a player and their projectiles.</p>
+<p>Another important run-time feature of the PhysicsSpace is allowing object pairs to be filtered out of collision through the use of the AddPairFilter and AddHierarchyPairFilter functions. These functions allow per object ignoring of collision (no events will be received) when <a href="/docs/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisiongroupsandtables.md">CollisionTables</a> are not sufficient, such as ignoring collision with a player and their projectiles.</p>
 <h2 id="important-properties">Important Properties</h2>
 <p>There are two important properties to help control behavior of the physics system:</p>
 <ul>
 <li>{nav icon=check-square-o, name=&quot;Mode2d&quot;} sets a global state that determines if objects behave in 2d, i.e. they cannot move along the z-axis and they can only rotate about the z-axis. Individual {icon university}[[../RigidBody | RigidBody's]] can override this if desired.</li>
-<li>{nav icon=pencil-square-o, name=&quot;CollisionTable&quot;} lets the user specify CollisionGroup pairs and how <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders.md</a> with these groups should interact with collision. This is the most efficient way to setup collision filtering so as to not resolve collisions or receive events.</li>
+<li>{nav icon=pencil-square-o, name=&quot;CollisionTable&quot;} lets the user specify CollisionGroup pairs and how <a href="/docs/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders.md</a> with these groups should interact with collision. This is the most efficient way to setup collision filtering so as to not resolve collisions or receive events.</li>
 </ul>
 <h2 id="advanced-properties">Advanced Properties</h2>
 <p>Additionaly, there are several other properties on the physics space that are for more advanced users.</p>
 <ul>
 <li>{nav icon=pencil-square-o, name=&quot;SubStepCount} lets the physics space run multiple iterations for every timestep to increase simulation fidelity.</li>
-<li>{nav icon=pencil-square-o, name=&quot;PhysicsSolverConfig&quot;} allows defining various properties about how collisions are solved with the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicssolverconfig.md">PhysicsSolverConfig</a> resource (e.g. baumgarte constants).</li>
+<li>{nav icon=pencil-square-o, name=&quot;PhysicsSolverConfig&quot;} allows defining various properties about how collisions are solved with the <a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicssolverconfig.md">PhysicsSolverConfig</a> resource (e.g. baumgarte constants).</li>
 <li>The static and dynamic broadphase type can be configured for run-time. This is most commonly done to switch the static broadphase to something that allows cheaper dynamic addition/removal of objects at the cost of slightly slower queries.</li>
 <li>{nav icon=check-square-o, name=&quot;Deterministic&quot;} tells the PhysicsSpace to do extra work to produce the same result from the same inputs every time. This is slightly more expensive and can be disabled if needed.</li>
 <li>{nav icon=check-square-o, name=&quot;AllowSleep} should almost always be on, except when trying to debug if there is a logical sleeping bug.</li>
 </ul>
 <h2 id="debugging">Debugging</h2>
-<p>A common issue during development is to have two objects not collide when the user thinks they should. To help aid debugging this, physics exposes the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/whyaretheynotcolliding.md">WhyAreTheyNotColliding</a> function. This function returns a text string as to why the physics system currently thinks these two objects are not colliding.</p>
+<p>A common issue during development is to have two objects not collide when the user thinks they should. To help aid debugging this, physics exposes the <a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/whyaretheynotcolliding.md">WhyAreTheyNotColliding</a> function. This function returns a text string as to why the physics system currently thinks these two objects are not colliding.</p>
 <hr>
 <h2 id="related-materials">Related Materials</h2>
 <h3 id="manual">Manual</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicscasting.md">physicscasting.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/rigidbody.md">rigidbody.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisiongroupsandtables.md">collisiongroupsandtables.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/whyaretheynotcolliding.md">whyaretheynotcolliding.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicssolverconfig.md">physicssolverconfig.md</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicscasting.md">physicscasting.md</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/rigidbody.md">rigidbody.md</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders.md</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisiongroupsandtables.md">collisiongroupsandtables.md</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/whyaretheynotcolliding.md">whyaretheynotcolliding.md</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicssolverconfig.md">physicssolverconfig.md</a></li>
 </ul>
 <h3 id="reference">Reference</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md">Collider</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsspace.md">PhysicsSpace</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiontable.md">CollisionTable</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiongroup.md">CollisionGroup</a></li>
+<li><a href="/docs/code_reference/class_reference/collider.md">Collider</a></li>
+<li><a href="/docs/code_reference/class_reference/physicsspace.md">PhysicsSpace</a></li>
+<li><a href="/docs/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li><a href="/docs/code_reference/class_reference/collisiontable.md">CollisionTable</a></li>
+<li><a href="/docs/code_reference/class_reference/collisiongroup.md">CollisionGroup</a></li>
 </ul>
 
 </article>

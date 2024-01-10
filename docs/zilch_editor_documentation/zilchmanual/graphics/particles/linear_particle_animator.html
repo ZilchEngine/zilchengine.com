@@ -85,8 +85,8 @@
 
         <article data-uid="">
 
-<p>The linear particle animator give particles the ability to move.  It adds an integration step which allows particles to have some physically based motion.  The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/linearparticleanimator.md">LinearParticleAnimator</a> component is required to generate particles and and to move them.</p>
-<p>(NOTE)<strong>Where to set particle velocity?</strong> Properties relating to velocity are not found on the <code>LinearParticleAnimator</code>, but are instead on the emitter component.  The reason for this property placement is that all properties on the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/particles/emitters.md">emitter</a> component are applied when a particle is created, whereas the properties from <code>LinearParticleAnimator</code> are applied every frame.</p>
+<p>The linear particle animator give particles the ability to move.  It adds an integration step which allows particles to have some physically based motion.  The <a href="/docs/code_reference/class_reference/linearparticleanimator.md">LinearParticleAnimator</a> component is required to generate particles and and to move them.</p>
+<p>(NOTE)<strong>Where to set particle velocity?</strong> Properties relating to velocity are not found on the <code>LinearParticleAnimator</code>, but are instead on the emitter component.  The reason for this property placement is that all properties on the <a href="/docs/zilch_editor_documentation/zilchmanual/graphics/particles/emitters.md">emitter</a> component are applied when a particle is created, whereas the properties from <code>LinearParticleAnimator</code> are applied every frame.</p>
 <h1 id="forces">Forces</h1>
 <p>Both Force  and RandomForce  are used to apply forces to a particle.  The force will effect the velocity, which in turn effects the position of each particle.  If the RandomForce  defines the half-vector for a bounding box, then the random component of this frames Force is confined to this box.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46934.gif" alt="ParticleSystems_RandomForceDiagram"> <em>Debug Drawing the SpriteParticleSystem's bounding box(orange), the LinearParticleAnimator's RandomForce  halfvector(white), and the bounding box for the values RandomForce  can generate(blue)</em></p>
@@ -97,12 +97,12 @@
 <h1 id="related-material">Related Material</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions.md">Physics Effects and Regions</a></li>
+<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions.md">Physics Effects and Regions</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/spriteparticlesystem.md">SpriteParticleSystem</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/linearparticleanimator.md">LinearParticleAnimator</a></li>
+<li><a href="/docs/zilch_editor_documentation/code_reference/class_reference/spriteparticlesystem.md">SpriteParticleSystem</a></li>
+<li><a href="/docs/code_reference/class_reference/linearparticleanimator.md">LinearParticleAnimator</a></li>
 </ul>
 
 </article>
