@@ -169,7 +169,7 @@
 </ul>
 <p><code>LogicUpdate</code> is the event and <code>this.OnLogicUpdate</code> is the event callback function. A callback function is a function passed as an argument into another function, with the expectation that it will be called in response to something.  An event callback function (in this case, this.OnLogicUpdate) is the function that is called every time a component (in this case, PlayerMovement) that is connected to some event (in this case, LogicUpdate) hears that the event has occurred (which is every frame in this instance). As <code>OnLogicUpdate</code> is called every frame, seamless movement can be achieved by updating the movement vector of the Cog within that function.</p>
 <h2 id="event-connections">Event Connections</h2>
-<p>Connecting to an event involves both calling the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/zero.md#connect-void-key-static">Zilch.Connect</a> function and creating the appropriate callback function. Let's look at the call to the Connect function first, parameter by parameter:</p>
+<p>Connecting to an event involves both calling the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/zilch.md#connect-void-key-static">Zilch.Connect</a> function and creating the appropriate callback function. Let's look at the call to the Connect function first, parameter by parameter:</p>
 <pre><code class="lang-lang=csharp,">Zilch.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
 </code></pre>
 <table>
@@ -325,7 +325,7 @@
 <li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
 <li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
 <li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/updateevent.md">updateevent</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/zero.md">zero</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/zilch.md">zilch</a></li>
 <li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mouseevent.md">mouseevent</a></li>
 <li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboardevent.md">keyboardevent</a></li>
 <li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundevent.md">soundevent</a></li>
