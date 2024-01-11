@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p>The <a href="/docs/code_reference/class_reference/orientation.md">orientation</a> component is a utility component that helps makes the manipulation of the transform of an object easier. It can be particularly useful when an object has its own sense of forward (for example where a person or a spaceship is facing).</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md">orientation</a> component is a utility component that helps makes the manipulation of the transform of an object easier. It can be particularly useful when an object has its own sense of forward (for example where a person or a spaceship is facing).</p>
 <h1 id="configuring-orientation">Configuring Orientation</h1>
 <p>The first step after attaching an Orientation component to an object is to configure the orientation basis. By redefining forward, up, and right for an object, many calculations of finding those values at runtime can be avoided later. In the image below a cube can be seen with the default orientation values. The blue arrow is the <code>WorldForward</code>, the green arrow is the <code>WorldUp</code>, and the red arrow is the <code>WorldRight</code> of the cube.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47526.png" alt="image"></p>
@@ -101,8 +101,8 @@
 <p>Oriented directions are helpful in and of themselves. Attaching <code>Orientation</code> to a character is an easy way to determine which direction the character is looking at any given moment with out having to calculate it in script. This can come in useful for vision checks, aligning two objects, etc.</p>
 <h2 id="look-at-functions">Look At Functions</h2>
 <ul>
-<li><a href="/docs/code_reference/class_reference/orientation.md#lookatpoint-void">Orientation.LookAtPoint()</a></li>
-<li><a href="/docs/code_reference/class_reference/orientation.md#lookatdirection-void">Orientation.LookAtDirection()</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#lookatpoint-void">Orientation.LookAtPoint()</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#lookatdirection-void">Orientation.LookAtDirection()</a></li>
 </ul>
 <p>The most common use of <code>Orientation</code> is to make the object face a given point or direction. There are multiple ways to do this in the script below uses the <code>LookAtPoint</code> function to make the cube face the mouse position on the world Z-Plane.</p>
 <pre><code>class LookAtMouse : NadaComponent
@@ -157,11 +157,11 @@
 }
 
 </code></pre>
-<p>Notice that when the <code>WorldForward</code> of the cube rotates past the <code>Y</code> axis, its <code>WorldUp</code>, the <code>WorldRight</code> flips to the other side of the object. This is because typically the <code>WorldRight</code> is derived from the cross product of the object's <code>WorldForward</code> and <code>WorldUp</code>. The orientation component does not care about any previous rotation of the object and <code>LookAt</code> functions will always result in a normalized rotation, meaning all Euler Angles will fall in the range [-180.0, 180.0] when <code>LookAt</code> functions are used to set an object's <code>Rotation</code>. This issue can be fixed by properly setting <a href="/docs/code_reference/class_reference/orientation.md#worldup-zilch-engine-docu">Orientation.WorldUp</a> to <code>[0,0,1]</code> to match the <a href="/docs/code_reference/class_reference/orientation.md#defaultorientationbases">DefaultOrientationBases</a> of the object.</p>
+<p>Notice that when the <code>WorldForward</code> of the cube rotates past the <code>Y</code> axis, its <code>WorldUp</code>, the <code>WorldRight</code> flips to the other side of the object. This is because typically the <code>WorldRight</code> is derived from the cross product of the object's <code>WorldForward</code> and <code>WorldUp</code>. The orientation component does not care about any previous rotation of the object and <code>LookAt</code> functions will always result in a normalized rotation, meaning all Euler Angles will fall in the range [-180.0, 180.0] when <code>LookAt</code> functions are used to set an object's <code>Rotation</code>. This issue can be fixed by properly setting <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#worldup-zilch-engine-docu">Orientation.WorldUp</a> to <code>[0,0,1]</code> to match the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#defaultorientationbases">DefaultOrientationBases</a> of the object.</p>
 <h2 id="withup-functions"><code>WithUp...</code> Functions</h2>
 <ul>
-<li><a href="/docs/code_reference/class_reference/orientation.md#lookatpointwithup-void">Orientation.LookAtPointWithUp()</a></li>
-<li><a href="/docs/code_reference/class_reference/orientation.md#lookatdirectionwithup-void">Orientation.LookAtDirectionWithUp()</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#lookatpointwithup-void">Orientation.LookAtPointWithUp()</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md#lookatdirectionwithup-void">Orientation.LookAtDirectionWithUp()</a></li>
 </ul>
 <p>The <code>LookAt</code> functions on <code>Orientation</code> each have a corresponding version with <code>WithUp</code> appended. These functions let the user define the <code>WorldUp</code> to rotate around instead of the objects <code>WorldUp</code> defined on the <code>Orientation</code> component.</p>
 <pre><code>class LookAtMouse : NadaComponent
@@ -247,7 +247,7 @@
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="/docs/code_reference/class_reference/orientation.md">orientation</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/orientation.md">orientation</a></li>
 </ul>
 
 </article>

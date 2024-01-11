@@ -85,8 +85,8 @@
 
         <article data-uid="">
 
-<p>Custom Cursors are a great way to add a level of professionalism and polish to any project. A Cursor created specifically for a project can be used for player feedback and fits into the project universe better than the normal  <a href="/docs/zilch_editor_documentation/code_reference/class_reference/mouse.md">Mouse</a>  icon in most situations. There are several methods that can be used to add this functionality, all of which come with their own strengths and weaknesses.</p>
-<p>NOTE: <strong>Recommended Reading</strong> This section covers topics that may not have been encountered yet. To learn or review those topics, please see: <a href="/docs/zilch_editor_documentation/zilchmanual/gameplay/input/mouseinput.md">Mouse Input</a> and  {icon university}[[zilch_engine_documentation/zilch_editor_documentation/ZilchManual/Graphics/CamerasViewportsRenderers/|Cameras, Viewports and Renderers]]</p>
+<p>Custom Cursors are a great way to add a level of professionalism and polish to any project. A Cursor created specifically for a project can be used for player feedback and fits into the project universe better than the normal  <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/mouse.md">Mouse</a>  icon in most situations. There are several methods that can be used to add this functionality, all of which come with their own strengths and weaknesses.</p>
+<p>NOTE: <strong>Recommended Reading</strong> This section covers topics that may not have been encountered yet. To learn or review those topics, please see: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/gameplay/input/mouseinput.md">Mouse Input</a> and  {icon university}[[zilch_engine_documentation/zilch_editor_documentation/ZilchManual/Graphics/CamerasViewportsRenderers/|Cameras, Viewports and Renderers]]</p>
 <h1 id="using-a-custom-cursor">Using a Custom Cursor</h1>
 <h2 id="hiding-the-mouse">Hiding the Mouse</h2>
 <table>
@@ -121,7 +121,7 @@
     }
 // Code continued below
 </code></pre>
-<p>This would be the start of a component attached to the object that will act as the Custom Cursor. After making sure the object has a <a href="/docs/zilch_editor_documentation/code_reference/class_reference/transform.md">transform</a> Component using the Dependency <a href="/docs/zilch_editor_documentation/zilchmanual/codereference/reference/transform.md">-</a> Component using the Dependency <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">attributes</a>, it then sets the Mouse Cursor to be invisible. The final part of the code-block connects to the MouseMove event, which is fleshed out in the following code-block:</p>
+<p>This would be the start of a component attached to the object that will act as the Custom Cursor. After making sure the object has a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/transform.md">transform</a> Component using the Dependency <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/codereference/reference/transform.md">-</a> Component using the Dependency <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">attributes</a>, it then sets the Mouse Cursor to be invisible. The final part of the code-block connects to the MouseMove event, which is fleshed out in the following code-block:</p>
 <pre><code>    // continued from above
         function OnMouseMove(event : ViewportMouseEvent)
         {
@@ -133,8 +133,8 @@
     }
 
 </code></pre>
-<p>The <a href="/docs/zilch_editor_documentation/code_reference/class_reference/mouseevent.md">OnMouseMove</a> function will fire every time the Mouse is moved, keeping the custom cursor in the same location as the invisible Mouse. It could also connect to other Mouse Events, such as MouseDown or MouseUp, in order to interact with these events visually (e.g., by changing the <a href="/docs/zilch_editor_documentation/code_reference/class_reference/spritesource.md">SpriteSource</a> of the object). All other working functionality can then be given to the Mouse itself, so that it can react with objects that have the <a href="/docs/zilch_editor_documentation/code_reference/class_reference/reactive.md">Reactive</a> Component attached the them.</p>
-<p>A large drawback to using this method is the fact that it allows the Mouse icon to leave the boundaries of the Game window, which will make the Mouse visible and not hide it again even if the Game is brought back into focus. Below is an example of how a <a href="/docs/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a> with this script attached would act:</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/mouseevent.md">OnMouseMove</a> function will fire every time the Mouse is moved, keeping the custom cursor in the same location as the invisible Mouse. It could also connect to other Mouse Events, such as MouseDown or MouseUp, in order to interact with these events visually (e.g., by changing the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/spritesource.md">SpriteSource</a> of the object). All other working functionality can then be given to the Mouse itself, so that it can react with objects that have the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/reactive.md">Reactive</a> Component attached the them.</p>
+<p>A large drawback to using this method is the fact that it allows the Mouse icon to leave the boundaries of the Game window, which will make the Mouse visible and not hide it again even if the Game is brought back into focus. Below is an example of how a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a> with this script attached would act:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47511.gif" alt="MouseCursorMove"></p>
 <p>It would also be possible to set the Mouse invisible from the LogicUpdate event, keeping the cursor invisible in within the editor even when leaving the game window.</p>
 <h2 id="locking-the-mouse">Locking the Mouse</h2>
@@ -200,8 +200,8 @@
 // Code continued below
 </code></pre>
 <p>Just from the initial setup it becomes obvious that this method is much more complex than simply making the Mouse invisible and having an Object follow it, but it also offers benefits.</p>
-<p>NOTE: <strong>Get-Sets</strong> In order to reduce the amount of repetitive typing, a number of <code>getters</code> have been used to hold references to other functions. For further explanation of get-sets, see <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/properties.md">Get-Sets</a>.</p>
-<p>When this component is attached to the current level's <a href="/docs/zilch_editor_documentation/zilchmanual/architecture/objects/levelsettings.md">LevelSettings</a>  object, it will create an Object in a new  <a href="/docs/zilch_editor_documentation/code_reference/class_reference/space.md">Space</a>  that is built on top of the GameSpace. This object allows it to function properly in a 3D game. As the getters have defined most of the variables, much of the script is ready to be used.</p>
+<p>NOTE: <strong>Get-Sets</strong> In order to reduce the amount of repetitive typing, a number of <code>getters</code> have been used to hold references to other functions. For further explanation of get-sets, see <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/properties.md">Get-Sets</a>.</p>
+<p>When this component is attached to the current level's <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/objects/levelsettings.md">LevelSettings</a>  object, it will create an Object in a new  <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/space.md">Space</a>  that is built on top of the GameSpace. This object allows it to function properly in a 3D game. As the getters have defined most of the variables, much of the script is ready to be used.</p>
 <pre><code>...
     function Initialize(init : CogInitializer)
     {
@@ -250,17 +250,17 @@
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation.md">Mouse Input</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/properties.md">Getters and Setters</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation.md">Mouse Input</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/properties.md">Getters and Setters</a></li>
 <li>{icon university}[[zilch_engine_documentation/zilch_editor_documentation/ZilchManual/Graphics/CamerasViewportsRenderers/|Cameras, Viewports and Renderers]]</li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/code_reference/class_reference/mouse.md">Mouse</a></li>
-<li><a href="/docs/zilch_editor_documentation/code_reference/class_reference/transform.md">Transform</a></li>
-<li><a href="/docs/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a></li>
-<li><a href="/docs/zilch_editor_documentation/code_reference/class_reference/reactive.md">Reactive</a></li>
-<li><a href="/docs/zilch_editor_documentation/code_reference/class_reference/space.md">Space</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/mouse.md">Mouse</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/transform.md">Transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/reactive.md">Reactive</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/space.md">Space</a></li>
 </ul>
 
 </article>

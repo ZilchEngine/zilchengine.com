@@ -104,7 +104,7 @@
 }
 
 </code></pre>
-<p>The <code>DelegateHolder</code> class contains a delegate member variable <code>Greeting</code> that is set in the <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md#constructors-and-destruc">constructor</a> to the member function <code>Introduce()</code>.</p>
+<p>The <code>DelegateHolder</code> class contains a delegate member variable <code>Greeting</code> that is set in the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md#constructors-and-destruc">constructor</a> to the member function <code>Introduce()</code>.</p>
 <pre><code>class MyMathLib
 {
   [Static]
@@ -120,7 +120,7 @@
   }
 }
 </code></pre>
-<p>The <code>MyMathLib</code> class contains just a single <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md#static">static</a> <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">function</a> that returns the product of exponentiation. This function will be used to demonstrate how to use a delegate in the next and final class.</p>
+<p>The <code>MyMathLib</code> class contains just a single <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md#static">static</a> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">function</a> that returns the product of exponentiation. This function will be used to demonstrate how to use a delegate in the next and final class.</p>
 <pre><code>class DelegateDriver : NadaComponent
 {
   function Initialize(init : CogInitializer)
@@ -299,7 +299,7 @@ we expected to find ')'.
 256
 </code></pre>
 <h1 id="member-function-delegates">Member Function Delegates</h1>
-<p>IMPORTANT: Delegates that point at member functions can create memory leaks if they make cycles. See <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md">memory_management</a> for more.</p>
+<p>IMPORTANT: Delegates that point at member functions can create memory leaks if they make cycles. See <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md">memory_management</a> for more.</p>
 <p>IMPORTANT: Delegates pointing to member functions will throw runtime errors if the instance it was bound with was destroyed:</p>
 <pre><code class="lang-lang=csharp,">  // Here are three Objects with the ability to hold delegates:
   var ab = new DelegateHolder(&quot;ab&quot;);
@@ -324,9 +324,9 @@ ab(3, 6);// This throws a runtime error
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md">memory_management</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">classes</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">attributes</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md">memory_management</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md">classes</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">attributes</a></li>
 </ul>
 
 </article>

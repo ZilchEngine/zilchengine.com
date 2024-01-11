@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p>This lesson covers the basics of using the Console Window and Debugging in <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a>.</p>
+<p>This lesson covers the basics of using the Console Window and Debugging in <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a>.</p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
 <li>Reading and Writing to the <code>Console Window</code></li>
@@ -94,15 +94,15 @@
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/createobject.md">CreateSprite</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/createobject.md">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>MyBehavior</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename it to <code>Square</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>MyBehavior</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>MyBehavior</code></li>
 </ul>
 <h1 id="console-window">Console Window</h1>
 <p>The <code>Console Window</code> is where the engine and your game may print messages to help you keep track of the logic being performed. It serves as a very helpful tool in identifying when and where the game performs differently than intended. Let's examine it:</p>
@@ -111,7 +111,7 @@
 <li>Press  : ```</li>
 </ul>
 <p>NOTE: ``` is right under <code>Esc</code></p>
-<p>By default, you'll notice the <code>Console Window</code> sliding up from the bottom; it will display information provided by the engine regarding loading of the project, <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/runthegame.md">running the game</a> and more.</p>
+<p>By default, you'll notice the <code>Console Window</code> sliding up from the bottom; it will display information provided by the engine regarding loading of the project, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/runthegame.md">running the game</a> and more.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/81527.png" alt="image"></p>
 <h1 id="printing-to-console">Printing to Console</h1>
 <p>Displaying messages on the <code>Console Window</code> is not exclusive to the editor; users are also able to print messages to aid in keeping track of the logic performed by the game and verify that it is following intended behavior.</p>
@@ -120,19 +120,19 @@
 </ul>
 <pre><code class="lang-lang=csharp,">Console.WriteLine(&quot;Hello World!&quot;);
 </code></pre>
-<p><code>Console.</code> - Accessing a globally visible <a href="/docs/code_reference/nada_base_types/console.md"> Console</a> class.
+<p><code>Console.</code> - Accessing a globally visible <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/console.md"> Console</a> class.
 <code>WriteLine()</code> - Invoking a function that lets us print to the console on a new line.
 <code>&quot;Hello World!&quot;</code> - Literal string of characters that will be printed to the console.
 <code>;</code> - Indicates that we're done with instructions on this line of code.</p>
-<p>By adding this line of code we can see our message printed to the console when we <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/runthegame.md">play the game</a>.</p>
+<p>By adding this line of code we can see our message printed to the console when we <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/runthegame.md">play the game</a>.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/81552.png" alt="image"></p>
 <p>NOTE: Within Console, you'll also find the function <code>Write()</code> which behaves similarly but does not display the following message on a new line.</p>
 <p>In addition to literals, we can also print variable values or even convert those values into string form to create more complex messages.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="printing-literals">Printing Literals</h1>
 <ul>
@@ -143,11 +143,11 @@
 <pre><code class="lang-lang=csharp,">Console.WriteLine(3);
 </code></pre>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/88674.png" alt="image"></p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="printing-variables">Printing Variables</h1>
 <ul>
@@ -160,11 +160,11 @@
 Console.WriteLine(lives);
 </code></pre>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/88676.png" alt="image"></p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>In this case, Zilch will convert the variable into a string and then print it to the console.</p>
 <h1 id="printing-compound-statements">Printing Compound Statements</h1>
@@ -178,11 +178,11 @@ Console.Write(&quot;Current value of lives: &quot;);
 Console.WriteLine(lives);
 </code></pre>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/88678.png" alt="image"></p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="string-interpolation">String Interpolation</h1>
 <p>We can simplify the code from the previous example by using String Interpolation:</p>
@@ -194,11 +194,11 @@ Console.WriteLine(lives);
 Console.WriteLine(&quot;Current value of lives: `lives`&quot;);
 </code></pre>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/88678.png" alt="image"></p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>By putting a variable within grates ``` we indicate that we want to convert the variable's value to a string and print it at the specified location.</p>
 <h1 id="debugging">Debugging</h1>
@@ -213,31 +213,31 @@ Console.WriteLine(&quot;Current value of lives: `lives`&quot;);
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/architecture/components.md">Components</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch.md"> Nada User Documentation</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md"> Functions</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/strings.md"> Strings</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/runthegame.md">running the game</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/components.md">Components</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md"> Nada User Documentation</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md"> Functions</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/strings.md"> Strings</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/runthegame.md">running the game</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="/docs/code_reference/class_reference/transform.md">Transform</a></li>
-<li><a href="/docs/code_reference/class_reference/sprite.md">Sprite</a></li>
-<li><a href="/docs/code_reference/class_reference/nadascript.md">NadaScript</a></li>
-<li><a href="/docs/code_reference/nada_base_types/console.md"> Console</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/nadascript.md">NadaScript</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/console.md"> Console</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h2 id="tutorials">Tutorials</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/tutorials/scripting/customcomponents.md">CustomComponents</a></li>
-<li><a href="/docs/zilch_editor_documentation/tutorials/scripting/variables.md">Variables</a></li>
-<li><a href="/docs/zilch_editor_documentation/tutorials/scripting/functions.md">Functions</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/customcomponents.md">CustomComponents</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/variables.md">Variables</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/functions.md">Functions</a></li>
 </ul>
 
 </article>

@@ -85,33 +85,33 @@
 
         <article data-uid="">
 
-<p>Events are the main way that <a href="/docs/zilch_editor_documentation/tutorials/architecture/gameobjects.md">Cogs</a> and <a href="/docs/zilch_editor_documentation/tutorials/architecture/basiccomponents.md">components</a> communicate to each other in the Zilch Engine. Often a component has information it needs to communicate to other components, one of the most flexible ways to do so is to package the information into an Event and then dispatch the event on an object. Then, any components that need the information can �listen� for the event to be dispatched, accessing that information in a special callback function.</p>
+<p>Events are the main way that <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/gameobjects.md">Cogs</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/basiccomponents.md">components</a> communicate to each other in the Zilch Engine. Often a component has information it needs to communicate to other components, one of the most flexible ways to do so is to package the information into an Event and then dispatch the event on an object. Then, any components that need the information can �listen� for the event to be dispatched, accessing that information in a special callback function.</p>
 <p>There are two types of events in the Zilch Engine: built-in events and custom events. This lesson will cover built-in events while the next lesson will go over custom events.</p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
-<li>The <a href="/docs/code_reference/event_reference.md#logicupdate">LogicUpdate</a> Event</li>
-<li><a href="/docs/code_reference/class_reference/collisionevent.md"> CollisionEvents</a></li>
+<li>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate">LogicUpdate</a> Event</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionevent.md"> CollisionEvents</a></li>
 <li>Destruction events</li>
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : LevelSettings object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : LevelSettings object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> :  <a href="/docs/code_reference/class_reference/gravityeffect.md">gravityeffect</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> :  <a href="/docs/code_reference/class_reference/drageffect.md">drageffect</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> :  <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">gravityeffect</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> :  <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/drageffect.md">drageffect</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>Player</code></li>
-<li>Under <a href="/docs/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></li>
 <li>Set VertexColor  to <code>[R:0, G:170, B:255, A:1.00]</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="/docs/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="/docs/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>PlayerMovement</code></li>
 </ul>
-<p>To get our player moving around we'll be using <a href="/docs/code_reference/event_reference.md#logicupdate">LogicUpdate</a>, an <a href="/docs/code_reference/class_reference/updateevent.md">updateevent</a> that is dispatched on the space object every frame. Movement can be easily added by polling which <a href="/docs/code_reference/enum_reference.md#keys">Keys</a> are currently being pressed, if any, and updating the velocity of the object based on the keypress.</p>
+<p>To get our player moving around we'll be using <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate">LogicUpdate</a>, an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/updateevent.md">updateevent</a> that is dispatched on the space object every frame. Movement can be easily added by polling which <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#keys">Keys</a> are currently being pressed, if any, and updating the velocity of the object based on the keypress.</p>
 <ul>
 <li>Update the <code>PlayerMovement</code> script to the following:</li>
 </ul>
@@ -160,16 +160,16 @@
 }
 </code></pre>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>PlayerMovement</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>PlayerMovement</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94456.gif" alt="KeyPolling"></p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p><code>LogicUpdate</code> is the event and <code>this.OnLogicUpdate</code> is the event callback function. A callback function is a function passed as an argument into another function, with the expectation that it will be called in response to something.  An event callback function (in this case, this.OnLogicUpdate) is the function that is called every time a component (in this case, PlayerMovement) that is connected to some event (in this case, LogicUpdate) hears that the event has occurred (which is every frame in this instance). As <code>OnLogicUpdate</code> is called every frame, seamless movement can be achieved by updating the movement vector of the Cog within that function.</p>
 <h2 id="event-connections">Event Connections</h2>
-<p>Connecting to an event involves both calling the <a href="/docs/code_reference/class_reference/zero.md#connect-void-key-static">Zilch.Connect</a> function and creating the appropriate callback function. Let's look at the call to the Connect function first, parameter by parameter:</p>
+<p>Connecting to an event involves both calling the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/zero.md#connect-void-key-static">Zilch.Connect</a> function and creating the appropriate callback function. Let's look at the call to the Connect function first, parameter by parameter:</p>
 <pre><code class="lang-lang=csharp,">Zilch.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
 </code></pre>
 <table>
@@ -183,17 +183,17 @@
 <tbody>
 <tr>
 <td><code>this.Space</code></td>
-<td><a href="/docs/code_reference/class_reference/object.md"> Object</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/object.md"> Object</a></td>
 <td>The object onto which the event will be dispatched.</td>
 </tr>
 <tr>
 <td><code>Events.LogicUpdate</code></td>
-<td><a href="/docs/code_reference/nada_base_types/string.md">string</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
 <td>The name of the event.</td>
 </tr>
 <tr>
 <td><code>this.OnLogicUpdate</code></td>
-<td><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/delegates.md"> Delegate</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/delegates.md"> Delegate</a></td>
 <td>The callback function for the event.</td>
 </tr>
 </tbody>
@@ -212,33 +212,33 @@
 <tbody>
 <tr>
 <td><code>event</code></td>
-<td><a href="/docs/code_reference/class_reference/updateevent.md">updateevent</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/updateevent.md">updateevent</a></td>
 <td>An event whose type matches the type included with the declaration of the event name.</td>
 </tr>
 </tbody>
 </table>
 <p>Note that LogicUpdate is already declared to use an UpdateEvent; however, we can also declare our own events in Nada. When we do declare our own, we then specify the the types of events they will use (whether it's a pre-existing event or a custom event we make ourselves, as will be seen in the next lesson). As we will see, there are many types of events that may be connected to, starting with built-in events that are engine-constructed.</p>
 <h2 id="built-in-events">Built-In Events</h2>
-<p>Built-in events are provided for you ready to connect. They are always dispatched by the engine under a consistent and specific context. Examples of built-in events include <a href="/docs/code_reference/class_reference/mouseevent.md">mouseevent</a>, <a href="/docs/code_reference/class_reference/keyboardevent.md">keyboardevent</a>, and <a href="/docs/code_reference/class_reference/soundevent.md">soundevent</a>. We've already seen the <a href="/docs/code_reference/event_reference.md#logicupdate">LogicUpdate</a> event; now let's check out how some other built-in events can be used.</p>
+<p>Built-in events are provided for you ready to connect. They are always dispatched by the engine under a consistent and specific context. Examples of built-in events include <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mouseevent.md">mouseevent</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboardevent.md">keyboardevent</a>, and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundevent.md">soundevent</a>. We've already seen the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate">LogicUpdate</a> event; now let's check out how some other built-in events can be used.</p>
 <h3 id="collision-events">Collision Events</h3>
-<p>There are three main <a href="/docs/code_reference/class_reference/collisionevent.md">Collision events</a>: <a href="/docs/code_reference/event_reference.md#collisionstarted">CollisionStarted</a>, <a href="/docs/code_reference/event_reference.md#collisionpersisted">CollisionPersisted</a>, and <a href="/docs/code_reference/event_reference.md#collisionended">CollisionEnded</a>. When an object with a collider comes into contact with another collider, a CollisionStarted event is created by the physics engine and is dispatched that frame on both objects involved in the collision. In the following frames, if the object's colliders are still in contact, the CollisionPersisted event is dispatched on the objects. The first frame the colliders are no longer in contact the CollisionEnded event is dispatched on both objects. To demonstrate a Collision event, let's make a simple enemy sprite:</p>
+<p>There are three main <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionevent.md">Collision events</a>: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionstarted">CollisionStarted</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionpersisted">CollisionPersisted</a>, and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionended">CollisionEnded</a>. When an object with a collider comes into contact with another collider, a CollisionStarted event is created by the physics engine and is dispatched that frame on both objects involved in the collision. In the following frames, if the object's colliders are still in contact, the CollisionPersisted event is dispatched on the objects. The first frame the colliders are no longer in contact the CollisionEnded event is dispatched on both objects. To demonstrate a Collision event, let's make a simple enemy sprite:</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>Enemy</code></li>
-<li>Under <a href="/docs/code_reference/class_reference/transform.md">transform</a>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a>
 <ul>
 <li>Set Translation  to <code>[4, 0, 0]</code></li>
 </ul>
 </li>
-<li>Under <a href="/docs/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></li>
 <li>Set VertexColor  to <code>[R: 255, G: 0, B: 0, A;1.00]</code></li>
 <li>Set SpriteSource enum to <code>Circle</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="/docs/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
 </ul>
 <p>Now we need to create another component that will destroy the player cog in response to the collision event.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>DestroyOnCollide</code></li>
 <li>Update the <code>DestroyOnCollide</code> script to the following:</li>
 </ul>
@@ -256,18 +256,18 @@
 }
 </code></pre>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Player object</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>DestroyOnCollide</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Player object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>DestroyOnCollide</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94458.gif" alt="CircleAndSquare"> <em>Player cog being destroyed upon collision with an enemy cog.</em></p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h3 id="destruction-events">Destruction Events</h3>
-<p>Another useful built-in event is the <a href="/docs/code_reference/event_reference.md#cogdestroy">CogDestroy</a> event which is dispatched on a cog the frame its Destroy function is called. These can be used to add effects or to update the UI when the player or enemies have been destroyed. Let's create a component that will create a particle effect on the destruction of our player.</p>
+<p>Another useful built-in event is the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#cogdestroy">CogDestroy</a> event which is dispatched on a cog the frame its Destroy function is called. These can be used to add effects or to update the UI when the player or enemies have been destroyed. Let's create a component that will create a particle effect on the destruction of our player.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>SpawnObjectOnDestroy</code></li>
 <li>Update the <code>SpawnObjectOnDestroy</code> script to the following:</li>
 </ul>
@@ -293,66 +293,66 @@
 }
 </code></pre>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>SpawnObjectOnDestroy</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>SpawnObjectOnDestroy</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94459.gif" alt="DestructionEffect"></p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
-<p>Now we can see the particle system object being created in our event response function. In the <a href="/docs/zilch_editor_documentation/tutorials/scripting/events_ii.md"> next tutorial</a>, we will cover custom events, which are events you define and dispatch.</p>
+<p>Now we can see the particle system object being created in our event response function. In the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/events_ii.md"> next tutorial</a>, we will cover custom events, which are events you define and dispatch.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="tutorial">Tutorial</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/tutorials/architecture/gameobjects.md">gameobjects</a></li>
-<li><a href="/docs/zilch_editor_documentation/tutorials/architecture/basiccomponents.md">basiccomponents</a></li>
-<li><a href="/docs/zilch_editor_documentation/tutorials/scripting/events_ii.md">events_ii</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/gameobjects.md">gameobjects</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/basiccomponents.md">basiccomponents</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/events_ii.md">events_ii</a></li>
 </ul>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">resourceadding</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">resourceadding</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="class">Class</h3>
 <ul>
-<li><a href="/docs/code_reference/class_reference/collisionevent.md">collisionevent</a></li>
-<li><a href="/docs/code_reference/class_reference/gravityeffect.md">gravityeffect</a></li>
-<li><a href="/docs/code_reference/class_reference/drageffect.md">drageffect</a></li>
-<li><a href="/docs/code_reference/class_reference/sprite.md">sprite</a></li>
-<li><a href="/docs/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
-<li><a href="/docs/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
-<li><a href="/docs/code_reference/class_reference/updateevent.md">updateevent</a></li>
-<li><a href="/docs/code_reference/class_reference/zero.md">zero</a></li>
-<li><a href="/docs/code_reference/class_reference/mouseevent.md">mouseevent</a></li>
-<li><a href="/docs/code_reference/class_reference/keyboardevent.md">keyboardevent</a></li>
-<li><a href="/docs/code_reference/class_reference/soundevent.md">soundevent</a></li>
-<li><a href="/docs/code_reference/class_reference/objectevent.md">objectevent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionevent.md">collisionevent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">gravityeffect</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/drageffect.md">drageffect</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/updateevent.md">updateevent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/zero.md">zero</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mouseevent.md">mouseevent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboardevent.md">keyboardevent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundevent.md">soundevent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/objectevent.md">objectevent</a></li>
 </ul>
 <h3 id="command">Command</h3>
 <ul>
-<li><a href="/docs/code_reference/command_reference.md#newproject"> NewProject</a></li>
-<li><a href="/docs/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
-<li><a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> NewProject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h3 id="event">Event</h3>
 <ul>
-<li><a href="/docs/code_reference/event_reference.md#logicupdate"> LogicUpdate</a></li>
-<li><a href="/docs/code_reference/event_reference.md#collisionstarted"> CollisionStarted</a></li>
-<li><a href="/docs/code_reference/event_reference.md#collisionpersisted"> CollisionPersisted</a></li>
-<li><a href="/docs/code_reference/event_reference.md#collisionended"> CollisionEnded</a></li>
-<li><a href="/docs/code_reference/event_reference.md#cogdestroy"> CogDestroy</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate"> LogicUpdate</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionstarted"> CollisionStarted</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionpersisted"> CollisionPersisted</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionended"> CollisionEnded</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#cogdestroy"> CogDestroy</a></li>
 </ul>
 <h3 id="enums">Enums</h3>
 <ul>
-<li><a href="/docs/code_reference/enum_reference.md#keys"> Keys</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#keys"> Keys</a></li>
 </ul>
 <h3 id="nada-base-types">Nada Base Types</h3>
 <ul>
-<li><a href="/docs/code_reference/nada_base_types/string.md">string</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></li>
 </ul>
 <h2 id="development-task">Development Task</h2>
 <ul>

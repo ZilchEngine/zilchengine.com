@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p>Developers often find themselves needing to make lists of data within their application. The most common way to keep a list of elements is via an <a href="/docs/code_reference/nada_base_types/array_t.md">Array</a>.</p>
+<p>Developers often find themselves needing to make lists of data within their application. The most common way to keep a list of elements is via an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md">Array</a>.</p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
 <li>Arrays</li>
@@ -94,13 +94,13 @@
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>ArrayExample</code></li>
 </ul>
 <h1 id="declaration">Declaration</h1>
-<p><a href="/docs/code_reference/nada_base_types/array_t.md">Array</a> is a <a href="/docs/code_reference/nada_base_types.md">Nada Base Type</a> that acts a container for other variables.</p>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md">Array</a> is a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types.md">Nada Base Type</a> that acts a container for other variables.</p>
 <ul>
 <li>Update the <code>ArrayExample</code> class to the following:</li>
 </ul>
@@ -114,13 +114,13 @@
   }
 }
 </code></pre>
-<p>Notice how we pass the type <a href="/docs/code_reference/nada_base_types/integer.md">Integer</a> to both the array type declaration and the array constructor. When declaring or constructing an array, you put the type that the array will hold in square brackets (<code>[]</code>).</p>
+<p>Notice how we pass the type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">Integer</a> to both the array type declaration and the array constructor. When declaring or constructing an array, you put the type that the array will hold in square brackets (<code>[]</code>).</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>ArrayExample</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#console">Console</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>ArrayExample</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#console">Console</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=Console">---------------- Begin Game ----------------
 {}
@@ -129,13 +129,13 @@ Loaded level 0.00s
 </code></pre>
 <p>Here we can see the empty array print out as <code>{}</code>.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>Let's look at how to initialize an array on construction so it is not immediately empty.</p>
 <h1 id="initialization">Initialization</h1>
 <p>Array initialization is most often done using constructors.</p>
 <h2 id="constructors">Constructors</h2>
-<p>We have already used the default constructor in the example above. It creates an empty array that can be filled with instances of the defined type. It is important to remember that an array variable must be declared and initialized before it can be used. Unlike a <a href="/docs/code_reference/nada_base_types/real.md">Real</a> or <a href="/docs/code_reference/nada_base_types/integer.md">Integer</a>, arrays will not be implicitly initialized by their default constructor.</p>
+<p>We have already used the default constructor in the example above. It creates an empty array that can be filled with instances of the defined type. It is important to remember that an array variable must be declared and initialized before it can be used. Unlike a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">Real</a> or <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">Integer</a>, arrays will not be implicitly initialized by their default constructor.</p>
 <h2 id="initializer-list">Initializer List</h2>
 <p>Another way to initialize an array is to use an initializer list that allows the user to manually determine the value of each element in the array individually.</p>
 <ul>
@@ -149,7 +149,7 @@ Loaded level 0.00s
 <pre><code class="lang-name=Printing">Console.WriteLine(this.InitializarListExample);
 </code></pre>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=Console">---------------- Begin Game ----------------
 {}
@@ -158,7 +158,7 @@ Level 'Level' was loaded.
 Loaded level 0.00s
 </code></pre>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>We can see the array we constructed using an initializer list printed out with the exact values we passed to the initializer list.</p>
 <h1 id="-subscript-operator"><code>[]</code> (Subscript) Operator</h1>
@@ -170,7 +170,7 @@ Loaded level 0.00s
 <pre><code class="lang-name=Printing">Console.WriteLine(this.InitializarListExample[2]);
 </code></pre>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=Console">---------------- Begin Game ----------------
 {}
@@ -182,7 +182,7 @@ Loaded level 0.00s
 <p>We can see that <code>8</code> is printed out to the <code>Console Window</code> which is the value of indexed by <code>2</code> in our example usage of the <code>[]</code> operator. We will see more usage of the <code>[]</code> operator further on.</p>
 <p>(NOTE)<strong>Counting from <code>0</code></strong>: You may have figured this out already but in most programming languagwe always start counting at <code>0</code>. This means that the first index in any array is <code>0</code>. So by using the index <code>2</code> above we are accessing the third element in the array.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h2 id="writing">Writing</h2>
 <p>The <code>[]</code> operator can also be used to overwrite the value of an element which already exists in the Array.</p>
@@ -193,7 +193,7 @@ Loaded level 0.00s
 Console.WriteLine(this.InitializarListExample);
 </code></pre>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=Console">---------------- Begin Game ----------------
 {}
@@ -205,12 +205,12 @@ Loaded level 0.00s
 </code></pre>
 <p>We can see the element with an index of <code>2</code> is set to a value of <code>0</code>.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="adding-elements">Adding Elements</h1>
 <p>We have looked at how to declare and initialize arrays using a rather basic example so far. Let's learn about adding to arrays using an example that is more applicable.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>SpawnOnInput</code></li>
 <li>In the <code>SpawnOnInput</code> script</li>
 <li>Update the <code>SpawnOnInput</code> script to the following:</li>
@@ -256,19 +256,19 @@ class ObjectSpawnedEvent : NadaEvent
   var Obj : Cog;
 }
 </code></pre>
-<p>This is just a utility component similar to some we have seen in <a href="/docs/zilch_editor_documentation/tutorials/architecture/archetypes2.md">previous tutorials</a>. We will be using this component to spawn object that we will track using an array in another component.</p>
+<p>This is just a utility component similar to some we have seen in <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/archetypes2.md">previous tutorials</a>. We will be using this component to spawn object that we will track using an array in another component.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createcube">CreateCube</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <a href="/docs/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createcube">CreateCube</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="/docs/code_reference/class_reference/transform.md">Transform</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
 <li>Set Translation  to <code>[0, -5, 0]</code></li>
 <li>Set Scale  to <code>[15, 1, 1]</code></li>
 </ul>
 <h2 id="add">Add</h2>
-<p><a href="/docs/code_reference/nada_base_types/array_t.md#add-void">Array.Add</a> is a function that lets the user add elements to the end of the array. Let's look at how we can use this to add the <em>enemy spheres</em> we are going to spawn.</p>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#add-void">Array.Add</a> is a function that lets the user add elements to the end of the array. Let's look at how we can use this to add the <em>enemy spheres</em> we are going to spawn.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>EnemyManager</code></li>
 <li>In the <code>EnemyManager</code> script</li>
 <li>Update the <code>EnemyManager</code> class to the following:</li>
@@ -296,17 +296,17 @@ class ObjectSpawnedEvent : NadaEvent
 }
 </code></pre>
 <ul>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</p>
 </li>
 <li><p>In the <code>Properties Window</code></p>
 </li>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <code>ArrayExample</code></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <code>ArrayExample</code></p>
 </li>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>SpawnOnInput</code></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>SpawnOnInput</code></p>
 </li>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>EnemyManager</code></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>EnemyManager</code></p>
 </li>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 <li><p>Press <code>Space</code> a few times</p>
 </li>
@@ -314,7 +314,7 @@ class ObjectSpawnedEvent : NadaEvent
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98010.gif" alt="Add"></p>
 <p>We can see a new enemy spawned each time we pressed <code>space</code>. We can also see that each spawned object was added to the <code>Enemies</code> array in <code>EnemyManager</code> as we print it to the console following spawning the object.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="accessing-elements">Accessing Elements</h1>
 <p>So far we have looked at how to create and add to arrays. What use is building a list of items if we can't use it to access those items though?</p>
@@ -341,21 +341,21 @@ class ObjectSpawnedEvent : NadaEvent
 }
 </code></pre>
 <ul>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 <li><p>Press <code>D</code></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/102458.png" alt="image"></p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>In this case, we had not created an enemy so there was nothing in the array to access and the index was &quot;out of bounds&quot;. We need to always ensure that whatever index we use to access an array element is always less than the number of elements and greater than or equal <code>0</code>. We should also make sure the array is not empty before trying to access its elements.</p>
 <h1 id="removing-elements">Removing Elements</h1>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="/docs/code_reference/class_reference/randomcontext.md">RandomContext</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md">RandomContext</a></li>
 <li>In the <code>EnemyManager</code> script</li>
 <li>Add the following to the <code>EnemyManager</code> class:</li>
 </ul>
@@ -379,7 +379,7 @@ class ObjectSpawnedEvent : NadaEvent
 }
 </code></pre>
 <ul>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 <li><p>Press <code>Space</code> multiple times</p>
 </li>
@@ -393,7 +393,7 @@ class ObjectSpawnedEvent : NadaEvent
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98016.png" alt="nullaccess"></p>
 <p>Notice how each time <code>D</code> is pressed and an enemy is destroyed, the length of <code>EnemyManager.Enemies</code> does not change. Just because we destroyed the enemy objects does not mean that the references to them we put in the array are removed. The exception is thrown when we attempt to access a member of one of the <code>null</code> references to one of the destroyed cogs. We need to remove these references when we destroy the cogs in order to prevent <code>null</code> references from existing in the array.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h2 id="removeat">RemoveAt</h2>
 <ul>
@@ -414,7 +414,7 @@ class ObjectSpawnedEvent : NadaEvent
 }
 </code></pre>
 <ul>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 <li><p>Press <code>Space</code> multiple times</p>
 </li>
@@ -422,14 +422,14 @@ class ObjectSpawnedEvent : NadaEvent
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98018.gif" alt="RemoveAt"></p>
-<p>By calling <a href="/docs/code_reference/nada_base_types/array_t.md#removeat-void">RemoveAt</a> we removing an element at a paticular index. By removing the element before deleting the object we prevent there from ever being a <code>null</code> reference in the array to mistakenly access later.</p>
+<p>By calling <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#removeat-void">RemoveAt</a> we removing an element at a paticular index. By removing the element before deleting the object we prevent there from ever being a <code>null</code> reference in the array to mistakenly access later.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="iterating">Iterating</h1>
 <p>Now, what if we wanted to perform a group operation on all the enemies in the array on the same frame. With our current implementation, we can only destroy one cog at a time. We need a way to walk the array and perform the same operation on each element.</p>
 <h2 id="indexing">Indexing</h2>
-<p>Performing the same operation multiple times should remind you of <a href="/docs/zilch_editor_documentation/tutorials/scripting/loops.md">loops</a>. As it turns out <a href="/docs/zilch_editor_documentation/tutorials/scripting/loops.md#for-loops">for</a> loops are great for iterating over the elements of an array.</p>
+<p>Performing the same operation multiple times should remind you of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/loops.md">loops</a>. As it turns out <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/loops.md#for-loops">for</a> loops are great for iterating over the elements of an array.</p>
 <ul>
 <li>Replace the <code>OnKeyDown</code> function in the <code>EnemyManager</code> class with the following:</li>
 </ul>
@@ -447,9 +447,9 @@ class ObjectSpawnedEvent : NadaEvent
   }
 }
 </code></pre>
-<p>Here we are using the <code>for</code> loop to increment the index variable <code>i</code> each iteration of the loop. We are also using <a href="/docs/code_reference/nada_base_types/array_t.md#count-zilch-engine-docume">Array.Count</a> to determine the number of iterations. An array has indexes corresponding to each of its element. The indexes range from <code>0</code> to <code>Array.Count - 1</code>. This means that by initializing <code>i</code> to <code>0</code> and stopping the loop when <code>i</code> is no longer less than <code>this.Enemies.Count</code>, the index <code>i</code> will iterate over the entire array.</p>
+<p>Here we are using the <code>for</code> loop to increment the index variable <code>i</code> each iteration of the loop. We are also using <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#count-zilch-engine-docume">Array.Count</a> to determine the number of iterations. An array has indexes corresponding to each of its element. The indexes range from <code>0</code> to <code>Array.Count - 1</code>. This means that by initializing <code>i</code> to <code>0</code> and stopping the loop when <code>i</code> is no longer less than <code>this.Enemies.Count</code>, the index <code>i</code> will iterate over the entire array.</p>
 <ul>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 <li><p>Press <code>Space</code> multiple times</p>
 </li>
@@ -469,7 +469,7 @@ Current Enemy Objects:
 </code></pre>
 <p>Now that we are accessing and destroying each cog in the array all at once we needed a way to do the same for removing the references from the array. <code>Array.Clear</code> removes all elements from the array, which is perfect considering we just destroyed all the cogs referenced in the array elements.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h2 id="using-foreach">Using foreach</h2>
 <p>There is a slightly simpler way of iterating over an array.</p>
@@ -489,7 +489,7 @@ Current Enemy Objects:
 }
 </code></pre>
 <ul>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 <li><p>Press <code>Space</code> multiple times</p>
 </li>
@@ -507,36 +507,36 @@ Current Enemy Objects:
 {&lt;Cog (Sphere) [745]&gt;, &lt;Cog (Sphere) [746]&gt;, &lt;Cog (Sphere) [747]&gt;}
 {}
 </code></pre>
-<p>The <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">foreach</a> loop handles the accessing for you. Essentially, each iteration of the loop <code>enemy</code> will be a reference to the next element in the array. This means you do not have to do any indexing. This means that you also have little control over the indexing. While <code>foreach</code> is more commonly used for full iterations over an array, <code>for</code> loops may be more desirable for operations which require a non-linear indexing order.</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">foreach</a> loop handles the accessing for you. Essentially, each iteration of the loop <code>enemy</code> will be a reference to the next element in the array. This means you do not have to do any indexing. This means that you also have little control over the indexing. While <code>foreach</code> is more commonly used for full iterations over an array, <code>for</code> loops may be more desirable for operations which require a non-linear indexing order.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">foreach</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">foreach</a></li>
 </ul>
 <h2 id="tutorial">Tutorial</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/tutorials/scripting/loops.md">loops</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/loops.md">loops</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="/docs/code_reference/class_reference/transform.md">Transform</a></li>
-<li><a href="/docs/code_reference/nada_base_types/integer.md">Integer</a></li>
-<li><a href="/docs/code_reference/nada_base_types/real.md">Real</a></li>
-<li><a href="/docs/code_reference/nada_base_types/array_t.md">Array</a></li>
-<li><a href="/docs/code_reference/class_reference/randomcontext.md">RandomContext</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">Integer</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">Real</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md">Array</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md">RandomContext</a></li>
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="/docs/code_reference/command_reference.md#newproject"> New Project</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
-<li><a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
-<li><a href="/docs/code_reference/command_reference.md#console">Console</a></li>
-<li><a href="/docs/code_reference/command_reference.md#createcube">CreateCube</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#console">Console</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createcube">CreateCube</a></li>
 </ul>
 <h2 id="development-task">Development Task</h2>
 <ul>

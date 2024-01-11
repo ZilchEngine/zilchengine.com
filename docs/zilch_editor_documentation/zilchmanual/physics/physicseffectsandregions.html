@@ -86,34 +86,34 @@
         <article data-uid="">
 <h1 id="overview">Overview</h1>
 
-<p><a href="/docs/code_reference/class_reference/physicseffect.md"> PhysicsEffects</a> apply common types of forces to objects. How an effect is applied varies depending on what kind of object it's attached to. Not all attachment modes make logical sense for all effect types. In order, an effect will check for these conditions:</p>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicseffect.md"> PhysicsEffects</a> apply common types of forces to objects. How an effect is applied varies depending on what kind of object it's attached to. Not all attachment modes make logical sense for all effect types. In order, an effect will check for these conditions:</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/architecture/objects/levelsettings.md">levelsettings</a>: All objects in the level have this effect applied to them. See <a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions.md#ignorespaceeffects"> IgnoreSpaceEffects</a> for exceptions.</li>
-<li><a href="/docs/code_reference/class_reference/region.md"> Region </a>: All objects in contact with this collision volume (Collider assumed) will have the effect applied to them. Typically, the relevant Collider should be set to Ghost.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/rigidbody.md">RigidBody</a>: If a RigidBody exists without a Region, the effect will apply to the RigidBody's center of mass.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/colliders.md">Collider</a>: If a Collider exists then it is assumed that the effect should apply to the nearest parent RigidBody in the hierarchy. If relevant, the effect will also apply the force at the Collider's position (such as <a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/thrusteffect.md">ThrustEffect</a>).</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicsspace.md"> PhysicsSpace </a>: When a physics effect is attached to a space it'll apply to all objects in that space. This option is less preferred to LevelSettings.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/hierarchies.md"> Hierarchy </a>: If an effect does fall into one of the above criteria, it is assumed to apply to the nearest parent RigidBody in the hierarchy.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/objects/levelsettings.md">levelsettings</a>: All objects in the level have this effect applied to them. See <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions.md#ignorespaceeffects"> IgnoreSpaceEffects</a> for exceptions.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/region.md"> Region </a>: All objects in contact with this collision volume (Collider assumed) will have the effect applied to them. Typically, the relevant Collider should be set to Ghost.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/rigidbody.md">RigidBody</a>: If a RigidBody exists without a Region, the effect will apply to the RigidBody's center of mass.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md">Collider</a>: If a Collider exists then it is assumed that the effect should apply to the nearest parent RigidBody in the hierarchy. If relevant, the effect will also apply the force at the Collider's position (such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/thrusteffect.md">ThrustEffect</a>).</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsspace.md"> PhysicsSpace </a>: When a physics effect is attached to a space it'll apply to all objects in that space. This option is less preferred to LevelSettings.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/hierarchies.md"> Hierarchy </a>: If an effect does fall into one of the above criteria, it is assumed to apply to the nearest parent RigidBody in the hierarchy.</li>
 </ul>
-<p>In the remainder of this page, the wording &quot;global effect&quot; will be used to refer to both LevelSettings and <a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicsspace.md">PhysicsSpace</a> effect mode types.</p>
+<p>In the remainder of this page, the wording &quot;global effect&quot; will be used to refer to both LevelSettings and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsspace.md">PhysicsSpace</a> effect mode types.</p>
 <h1 id="physicseffects">PhysicsEffects</h1>
 <p>The currently available PhysicsEffects are:</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/forceeffect.md">GravityEffect</a>: Applies an acceleration to an object in a direction.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/forceeffect.md">ForceEffect</a>: Applies a force to an object in a direction.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/pointforceeffect.md">PointGravityEffect</a>: Applies an acceleration towards the center of the effect.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/pointforceeffect.md">PointForceEffect</a>: Applies a force away from the center of the effect.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/thrusteffect.md">ThrustEffect</a>: Applies a point force on an object based upon the position of the effect.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/drageffect.md">DragEffect</a>: Applies linear/angular drag/damping to slow down object movement.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/floweffect.md">FlowEffect</a>: Applies force to make an object move at a constant speed in a direction. Commonly used to make &quot;tractor beam&quot; like movement.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/torqueeffect.md">TorqueEffect</a>: Applies a torque (angular force) to an object.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/vortexeffect.md">VortexEffect</a>: Applies a force to make an object circle around a vortex center.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/windeffect.md">WindEffect</a>: Applies a directional force proportional to the approximate surface area of the object in the wind direction.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/buoyancyeffect.md">BuoyancyEffect</a>: Applies a buoyancy force to all objects in collision with this shape.</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/customphysicseffect.md">CustomPhysicsEffect </a>: Allows user defined effects via script events.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/forceeffect.md">GravityEffect</a>: Applies an acceleration to an object in a direction.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/forceeffect.md">ForceEffect</a>: Applies a force to an object in a direction.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/pointforceeffect.md">PointGravityEffect</a>: Applies an acceleration towards the center of the effect.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/pointforceeffect.md">PointForceEffect</a>: Applies a force away from the center of the effect.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/thrusteffect.md">ThrustEffect</a>: Applies a point force on an object based upon the position of the effect.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/drageffect.md">DragEffect</a>: Applies linear/angular drag/damping to slow down object movement.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/floweffect.md">FlowEffect</a>: Applies force to make an object move at a constant speed in a direction. Commonly used to make &quot;tractor beam&quot; like movement.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/torqueeffect.md">TorqueEffect</a>: Applies a torque (angular force) to an object.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/vortexeffect.md">VortexEffect</a>: Applies a force to make an object circle around a vortex center.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/windeffect.md">WindEffect</a>: Applies a directional force proportional to the approximate surface area of the object in the wind direction.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/buoyancyeffect.md">BuoyancyEffect</a>: Applies a buoyancy force to all objects in collision with this shape.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions/customphysicseffect.md">CustomPhysicsEffect </a>: Allows user defined effects via script events.</li>
 </ul>
 <h1 id="ignorespaceeffects">IgnoreSpaceEffects</h1>
-<p>Occasionally some objects should not have certain global effects applied to them, such as gravity or drag. One solution to this is to remove the relevant effects from LevelSettings/Space and add the effect to every RigidBody instead. This quickly becomes impractical as the number of objects increases. Instead the problem can be approached from the opposite direction: telling certain objects to ignore global effects. The <a href="/docs/code_reference/class_reference/ignorespaceeffects.md">IgnoreSpaceEffects</a> component tells an object to not apply global forces of certain types.</p>
+<p>Occasionally some objects should not have certain global effects applied to them, such as gravity or drag. One solution to this is to remove the relevant effects from LevelSettings/Space and add the effect to every RigidBody instead. This quickly becomes impractical as the number of objects increases. Instead the problem can be approached from the opposite direction: telling certain objects to ignore global effects. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/ignorespaceeffects.md">IgnoreSpaceEffects</a> component tells an object to not apply global forces of certain types.</p>
 <h1 id="troubleshooting">Troubleshooting</h1>
 <p>Sometimes a PhysicsEffect will not behave as desired. When trying to troubleshoot what is going wrong there are a few key considerations:</p>
 <ul>
@@ -126,21 +126,21 @@
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/rigidbody.md">rigidbody.md</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders.md</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicsspace.md">physicsspace.md</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/architecture/objects/levelsettings.md">levelsettings</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/hierarchies.md"> Hierarchy </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/rigidbody.md">rigidbody.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsspace.md">physicsspace.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/objects/levelsettings.md">levelsettings</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/hierarchies.md"> Hierarchy </a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="/docs/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
-<li><a href="/docs/code_reference/class_reference/collider.md">Collider</a></li>
-<li><a href="/docs/code_reference/class_reference/physicsspace.md">PhysicsSpace</a></li>
-<li><a href="/docs/code_reference/class_reference/region.md">Region</a></li>
-<li><a href="/docs/code_reference/class_reference/ignorespaceeffects.md">IgnoreSpaceEffects</a></li>
-<li><a href="/docs/code_reference/class_reference/physicseffect.md">PhysicsEffect</a></li>
-<li><a href="/docs/code_reference/class_reference/transform.md">Transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md">Collider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsspace.md">PhysicsSpace</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/region.md">Region</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/ignorespaceeffects.md">IgnoreSpaceEffects</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicseffect.md">PhysicsEffect</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
 </ul>
 
 </article>

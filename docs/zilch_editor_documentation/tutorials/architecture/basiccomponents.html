@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p>This lesson covers the basics of <a href="/docs/zilch_editor_documentation/zilchmanual/architecture/components/components.md"> Components </a> and demonstrates basic usage of the <a href="/docs/zilch_editor_documentation/zilchmanual/physics/colliders.md"> Collider </a>, <a href="/docs/zilch_editor_documentation/zilchmanual/physics/rigidbody.md"> RigidBody </a>, <a href="/docs/zilch_editor_documentation/zilchmanual/graphics/sprites/sprite.md"> Sprite </a>, and <a href="/docs/zilch_editor_documentation/zilchmanual/graphics/sprites/spritetext.md"> SpriteText </a> components.</p>
+<p>This lesson covers the basics of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/components/components.md"> Components </a> and demonstrates basic usage of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md"> Collider </a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/rigidbody.md"> RigidBody </a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/sprite.md"> Sprite </a>, and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritetext.md"> SpriteText </a> components.</p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
 <li>Component basics</li>
@@ -95,34 +95,34 @@
 <p>Each component will typically have its own set of properties that can be modified to customize that component's behavior. In this tutorial we're going to show you some of the most commonly used components.</p>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
 </ul>
 <h2 id="create-a-transform-object">Create a Transform Object</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createtransform"> CreateTransform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createtransform"> CreateTransform</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/113.png" alt="micreatetransform"></p>
 <p><em>Creating a Transform object via the <code>Create Menu</code></em></p>
 <p>Notice that the Trasnform object object can be found in the <code>Objects Window</code>:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46956.png" alt="image"></p>
 <p><em>The Transform object listed in the <code>Objects Window</code></em></p>
-<p>This provides a very basic object that has a defined position, scale and rotation. Let's go ahead and make our object more interesting by adding a <a href="/docs/code_reference/class_reference/sprite.md">Sprite</a> component.</p>
+<p>This provides a very basic object that has a defined position, scale and rotation. Let's go ahead and make our object more interesting by adding a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a> component.</p>
 <h1 id="adding-a-component">Adding a Component</h1>
 <ul>
 <li>In the <code>Properties Window</code></li>
 <li>Click  the <code>Add Component</code> button</li>
 <li>Type key : <code>Sprite</code></li>
-<li>Click  on Sprite button to add a <a href="/docs/code_reference/class_reference/sprite.md">Sprite</a> component.</li>
+<li>Click  on Sprite button to add a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a> component.</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46957.gif" alt="AddSprite"></p>
-<p><em>Adding the <a href="/docs/code_reference/class_reference/sprite.md">Sprite</a> component to the Transform object</em></p>
+<p><em>Adding the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a> component to the Transform object</em></p>
 <p>You can also add components to a selected object by using the hotkey <code>Ctrl + M</code>.</p>
 <p>NOTE:
-Some components may require another component to be present on an object before they can be added: this is called a <strong>dependency</strong>. Many of the components in Zilch (Including Sprite, for example) depend on the <a href="/docs/code_reference/class_reference/transform.md">Transform</a> component. If one or more dependencies aren't satisfied, Zilch will notify you when you attempt to add that component.
+Some components may require another component to be present on an object before they can be added: this is called a <strong>dependency</strong>. Many of the components in Zilch (Including Sprite, for example) depend on the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a> component. If one or more dependencies aren't satisfied, Zilch will notify you when you attempt to add that component.
 <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46145.png" alt="image"></p>
 <h1 id="sprite-component">Sprite Component</h1>
-<p>The <a href="/docs/code_reference/class_reference/sprite.md">Sprite</a> component provides a 2D visual representation of an object. Let's take a look at some of its most commonly used properties:</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a> component provides a 2D visual representation of an object. Let's take a look at some of its most commonly used properties:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46960.png" alt="image"></p>
 <p><em>The <code>Properties Window</code> showing the Sprite component</em></p>
 <table>
@@ -149,7 +149,7 @@ Some components may require another component to be present on an object before 
 </table>
 <h1 id="making-a-copy-of-an-object">Making a Copy of an Object</h1>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Transform object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Transform object</li>
 <li>Press key <code>Ctrl + C</code> to copy it</li>
 <li>Press key <code>Ctrl + V</code> to paste a new copy</li>
 </ul>
@@ -158,10 +158,10 @@ Some components may require another component to be present on an object before 
 <ul>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Transform object to <code>RedBall</code></li>
-<li>Under <a href="/docs/code_reference/class_reference/transform.md">Transform</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
 <li>Set Translation  to <code>[0, 5, 0]</code>
 <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46961.gif" alt="Move"></li>
-<li>Under <a href="/docs/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></li>
 <li>Set SpriteSource enum to <code>CircleBordered</code>
 <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46962.gif" alt="SpriteSourceChange"></li>
 <li>Set VertexColor  to <code>[R:255, G:0, B:0, A:1.00]</code>
@@ -241,18 +241,18 @@ Color is defined by four values; Red, Green, Blue, and Alpha, in that order: RGB
 </tbody>
 </table>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : the other Transform object object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : the other Transform object object</li>
 <li>Rename it to <code>Ground</code></li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="/docs/code_reference/class_reference/transform.md">Transform</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
 <li>Set Scale  to <code>[5, 0, 0]</code></li>
-<li>Under <a href="/docs/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></li>
 <li>Set VertexColor  to <code>[R:0, G:255, B:0, A:1.00]</code></li>
 </ul>
 <p>Your level should look like this:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46281.png" alt="image"></p>
 <h1 id="rigidbody-component">RigidBody Component</h1>
-<p>The <a href="/docs/code_reference/class_reference/rigidbody.md">RigidBody</a> component gives an object physics properties, like mass and velocity. Let's take a look at it:</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a> component gives an object physics properties, like mass and velocity. Let's take a look at it:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46964.png" alt="image"></p>
 <p><em>The <code>Properties Window</code> showing the RigidBody component</em></p>
 <table>
@@ -278,21 +278,21 @@ Color is defined by four values; Red, Green, Blue, and Alpha, in that order: RGB
 </tbody>
 </table>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : RedBall object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : RedBall object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="/docs/code_reference/class_reference/rigidbody.md"> RigidBody</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#saveproject"> Save Project</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#saveproject"> Save Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p>The RedBall object  is now affected by gravity.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46284.gif" alt="FallingBall"></p>
 <p><em>The RedBall object object falling due to gravity</em></p>
-<p>Notice that it didn't collide with the Ground object object, though. To have the RedBall object  hit the ground, we'll need to add <a href="/docs/zilch_editor_documentation/zilchmanual/physics/colliders.md"> colliders</a> to our objects.</p>
+<p>Notice that it didn't collide with the Ground object object, though. To have the RedBall object  hit the ground, we'll need to add <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md"> colliders</a> to our objects.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="collider-components">Collider Components</h1>
-<p>Colliders are used to detect when two objects occupy the same physical space, and, if so desired, prevent that. Zilch Engine offers several different types of colliders, including <a href="/docs/code_reference/class_reference/boxcollider.md"> BoxCollider</a>, <a href="/docs/code_reference/class_reference/spherecollider.md"> SphereCollider</a>, <a href="/docs/code_reference/class_reference/cylindercollider.md"> CylinderCollider</a>, and <a href="/docs/code_reference/class_reference/capsulecollider.md"> CapsuleCollider</a>; in this section, we'll demonstrate a couple of these.</p>
+<p>Colliders are used to detect when two objects occupy the same physical space, and, if so desired, prevent that. Zilch Engine offers several different types of colliders, including <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md"> BoxCollider</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spherecollider.md"> SphereCollider</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cylindercollider.md"> CylinderCollider</a>, and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/capsulecollider.md"> CapsuleCollider</a>; in this section, we'll demonstrate a couple of these.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46965.png" alt="image"></p>
 <p><em>The <code>Properties Window</code> showing the BoxCollider component</em></p>
 <table>
@@ -322,31 +322,31 @@ Color is defined by four values; Red, Green, Blue, and Alpha, in that order: RGB
 </tbody>
 </table>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : RedBall object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : RedBall object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="/docs/code_reference/class_reference/spherecollider.md"> SphereCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spherecollider.md"> SphereCollider</a></li>
 </ul>
 <p>Let's also add a collider to our Ground object object.</p>
 <ul>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Ground object</p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Ground object</p>
 </li>
 <li><p>In the <code>Properties Window</code></p>
 </li>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="/docs/code_reference/class_reference/boxcollider.md"> BoxCollider</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md"> BoxCollider</a></p>
 </li>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#saveproject"> Save Project</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#saveproject"> Save Project</a></p>
 </li>
-<li><p><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46288.gif" alt="FallingBallHit"></p>
 <p><em>The RedBall object object landing on the Ground object object</em></p>
 <p>Now our RedBall object is colliding with the Ground object as intended.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="spritetext-component">SpriteText Component</h1>
-<p>Similar to <a href="/docs/code_reference/class_reference/sprite.md">Sprite</a>, the <a href="/docs/code_reference/class_reference/spritetext.md">SpriteText</a>  component allows us to draw 2D text onto the screen. Let's take a look at its properties:</p>
+<p>Similar to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a>, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md">SpriteText</a>  component allows us to draw 2D text onto the screen. Let's take a look at its properties:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46966.png" alt="image"></p>
 <p><em>The <code>Properties Window</code> showing the SpriteText component</em></p>
 <table>
@@ -381,59 +381,59 @@ Color is defined by four values; Red, Green, Blue, and Alpha, in that order: RGB
 </table>
 <p>To finish up, the project let's add a Title object.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createspritetext">CreateSpriteText</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createspritetext">CreateSpriteText</a></li>
 <li>Rename SpriteText object to <code>Title</code></li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="/docs/code_reference/class_reference/transform.md">Transform</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
 <li>Set Translation  to <code>[0, 7, 0]</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="/docs/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
-<li>Under <a href="/docs/code_reference/class_reference/spritetext.md">SpriteText</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md"> SpriteText</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md">SpriteText</a></li>
 <li>Set FontSize  to <code>100</code></li>
 <li>Set Text  to <code>Hello World!</code>, or your preferred title</li>
 </ul>
 <p>Let's take a look at our final result:</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46291.gif" alt="FallingBallFinal"></p>
 <p><em>The RedBall object falls and lands on the Ground object while the Title object says hello</em></p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/architecture/components/components.md">components</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/rigidbody.md">rigidbody</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/graphics/sprites.md">sprites</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/graphics/sprites/spritetext.md">spritetext</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands.md">editorcommands</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/architecture/cogs/gameobjectsconcept.md">gameobjectsconcept</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/components/components.md">components</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/rigidbody.md">rigidbody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites.md">sprites</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritetext.md">spritetext</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands.md">editorcommands</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/cogs/gameobjectsconcept.md">gameobjectsconcept</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="/docs/code_reference/command_reference.md#newproject"> NewProject</a></li>
-<li><a href="/docs/code_reference/command_reference.md#createtransform"> CreateTransform</a></li>
-<li><a href="/docs/code_reference/command_reference.md#saveproject"> SaveProject</a></li>
-<li><a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
-<li><a href="/docs/code_reference/command_reference.md#createspritetext"> CreateSpriteText</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> NewProject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createtransform"> CreateTransform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#saveproject"> SaveProject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createspritetext"> CreateSpriteText</a></li>
 </ul>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="/docs/code_reference/class_reference/sprite.md">Sprite</a></li>
-<li><a href="/docs/code_reference/class_reference/transform.md">transform</a></li>
-<li><a href="/docs/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
-<li><a href="/docs/code_reference/class_reference/collider.md">collider</a></li>
-<li><a href="/docs/code_reference/class_reference/boxcollider.md">boxcollider</a></li>
-<li><a href="/docs/code_reference/class_reference/spherecollider.md">spherecollider</a></li>
-<li><a href="/docs/code_reference/class_reference/cylindercollider.md">cylindercollider</a></li>
-<li><a href="/docs/code_reference/class_reference/capsulecollider.md">capsulecollider</a></li>
-<li><a href="/docs/code_reference/class_reference/spritetext.md">SpriteText</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md">collider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">boxcollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spherecollider.md">spherecollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cylindercollider.md">cylindercollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/capsulecollider.md">capsulecollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritetext.md">SpriteText</a></li>
 </ul>
 
 </article>

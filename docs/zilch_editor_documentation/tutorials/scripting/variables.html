@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p>This lesson covers the basics of using Variables in <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a>.</p>
+<p>This lesson covers the basics of using Variables in <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a>.</p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
 <li>Learn how to declare variables</li>
@@ -94,19 +94,19 @@
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>MyBehavior</code></li>
 <li>In the <code>Level Window</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>Square</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/addremovecomponent/">Add Component</a> : <code>MyBehavior</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent/">Add Component</a> : <code>MyBehavior</code></li>
 </ul>
 <h1 id="class-variables">Class Variables</h1>
-<p>A variable is a stored value of a given type. In order to manipulate a variable you must know its type and what values it can hold. Below is a table of the most common variable types in <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a>.</p>
+<p>A variable is a stored value of a given type. In order to manipulate a variable you must know its type and what values it can hold. Below is a table of the most common variable types in <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a>.</p>
 <table>
 <thead>
 <tr>
@@ -117,37 +117,37 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="/docs/code_reference/nada_base_types/boolean.md">boolean</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></td>
 <td><code>true</code> <code>false</code></td>
 <td><code>=</code></td>
 </tr>
 <tr>
-<td><a href="/docs/code_reference/nada_base_types/integer.md">integer</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></td>
 <td><code>1</code> <code>-2</code> <code>100</code> etc</td>
 <td><code>=</code> <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>++</code> <code>--</code></td>
 </tr>
 <tr>
-<td><a href="/docs/code_reference/nada_base_types/real.md">real</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></td>
 <td><code>0.1</code> <code>-1.2</code> <code>3.1415926</code>, etc</td>
 <td><code>=</code> <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>++</code> <code>--</code></td>
 </tr>
 <tr>
-<td><a href="/docs/code_reference/nada_base_types/real2.md">real2</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></td>
 <td><code>Real2(0.1, -2.5)</code> etc</td>
 <td><code>=</code> <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code></td>
 </tr>
 <tr>
-<td><a href="/docs/code_reference/nada_base_types/real3.md">real3</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a></td>
 <td><code>Real3(0.1, -2.5, 19.0)</code> etc</td>
 <td><code>=</code> <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code></td>
 </tr>
 <tr>
-<td><a href="/docs/code_reference/nada_base_types/real4.md">real4</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a></td>
 <td><code>Real4(0.1, -2.5, 19.0, 0.0)</code> etc</td>
 <td><code>=</code> <code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code></td>
 </tr>
 <tr>
-<td><a href="/docs/code_reference/nada_base_types/string.md">string</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></td>
 <td><code>Hello World!</code> etc</td>
 <td><code>=</code></td>
 </tr>
@@ -204,14 +204,14 @@ this.Speed += 2.3;
 </code></pre>
 <p>NOTE: Using these operators is logically equivalent to preforming the corresponding operation using the variable itself on the right of the assignment operator. For example, <code>this.Speed += 5.0;</code> is the same as <code>this.Speed = this.Speed + 5.0;</code>.</p>
 <h2 id="increment-and-decrement-operators----">Increment and Decrement Operators <code>++</code> <code>--</code></h2>
-<p>These are used in combination with Integer and Real types to either add or subtract <code>1</code> to the current value of the variable. In <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a>, these are always used before the variable you want to increment.</p>
+<p>These are used in combination with Integer and Real types to either add or subtract <code>1</code> to the current value of the variable. In <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a>, these are always used before the variable you want to increment.</p>
 <p>Example:</p>
 <pre><code class="lang-lang=csharp,">++this.Speed;
 </code></pre>
 <p>NOTE: Using <code>++this.Speed;</code> is logically equivalent to <code>this.Speed += 1.0;</code> and only exists for convenience.</p>
 <h1 id="accessing-properties">Accessing Properties</h1>
 <p>Up until now we have modified properties on various components through the <code>Properties Window</code>, but internally, those properties are just variables we can manipulate in code at runtime (while the game is running).</p>
-<p>Let's try and modify our Square object to move to the right based on our speed. So the value we're looking to modify is the Translation  property in the <a href="/docs/code_reference/class_reference/transform.md">Transform</a> component and we want to do that on Logic Update so that it happens every frame.</p>
+<p>Let's try and modify our Square object to move to the right based on our speed. So the value we're looking to modify is the Translation  property in the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a> component and we want to do that on Logic Update so that it happens every frame.</p>
 <ul>
 <li>Add the following line of code inside LogicUpdate:</li>
 </ul>
@@ -221,7 +221,7 @@ this.Speed += 2.3;
 |<code>Owner.</code> | The object that owns this component. |
 |<code>Transform.</code> | The component we're trying to access. |
 |<code>Translation</code> | The property (or variable) we want to modify. |</p>
-<p>NOTE: <code>this.Owner.Transform.Translation</code> can be interpreted as &quot;The Translation  property of the <a href="/docs/code_reference/class_reference/transform.md">Transform</a> of the object that owns this component&quot;</p>
+<p>NOTE: <code>this.Owner.Transform.Translation</code> can be interpreted as &quot;The Translation  property of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a> of the object that owns this component&quot;</p>
 <p>|<code>+=</code> | Add and assign operator to add a value to the current translation. |
 |<code>Real3(X, Y, Z)</code> | Here we create a Real3 since that's the type of the Translation  property we're looking to modify. Real3s are composed of three Real values which are referred to X, Y and Z in order. |
 |<code>this.Speed, 0, 0</code> | Here we're accessing the <code>Speed</code> variable created earlier and using it as the X value. We'll just use 0 for Y and Z. |
@@ -229,28 +229,28 @@ this.Speed += 2.3;
 <p>Here's what your code should look like:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/66927.png" alt="image"></p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/66929.gif" alt="Game2"></p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="dependencies">Dependencies</h1>
 <p>Previously, we demonstrated how to access a property of another component. However, we have made the assumption that our owner object had that component; if it didn't Zilch would give us an error:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/66931.png" alt="image"></p>
-<p>To prevent this, we can declare a dependency on the <a href="/docs/code_reference/class_reference/transform.md">Transform</a> component.</p>
+<p>To prevent this, we can declare a dependency on the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a> component.</p>
 <ul>
 <li>Add the following line at the beginning of the class scope:</li>
 </ul>
 <pre><code class="lang-lang=csharp,">[Dependency]  
 var Transform : Transform;
 </code></pre>
-<p>By adding this we prevent the addition of the <code>MyBehavior</code> component to objects without a <a href="/docs/code_reference/class_reference/transform.md">Transform</a> component. The <code>[Dependency]</code> part is an <strong>attribute</strong> that modifies the following variable; you can find more information about them in the <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">Attribute Manual Page</a>.</p>
+<p>By adding this we prevent the addition of the <code>MyBehavior</code> component to objects without a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a> component. The <code>[Dependency]</code> part is an <strong>attribute</strong> that modifies the following variable; you can find more information about them in the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">Attribute Manual Page</a>.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/66933.png" alt="image"></p>
 <p>NOTE: This also allows us to shorten part our previous line of code <code>this.Owner.Transform.Translation</code> to just <code>this.Transform.Translation</code> since we're already referencing the dependency.</p>
 <p>Once the dependency is declared, dependent components can't be removed unless no dependent components are removed first.</p>
 <ul>
-<li>Attempt to remove the <a href="/docs/code_reference/class_reference/transform.md">Transform</a> component from Square object.</li>
+<li>Attempt to remove the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a> component from Square object.</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/89070.png" alt="image"></p>
 <h2 id="properties">Properties</h2>
@@ -263,15 +263,15 @@ var Transform : Transform;
 <p>We can then find the <code>Speed</code> property and edit it in the <code>Properties Window</code>.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/66983.png" alt="image"></p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Under <code>MyBehavior</code></li>
 <li>Set Speed  to 0.02</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p>Notice that the object moves a lot slower now, in accordance with the <code>0.02</code> value we set on the <code>Properties Window</code> and <strong>NOT</strong> the initial value of <code>0.1</code> given when the function was declared. Once a variable is given a Property attribute; its values are <em>serialized</em> and will match the one listed in the <code>Properties Window</code>.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="local-variables">Local Variables</h1>
 <p>Local Variables are defined within the scope of a function or nested scope are called local variables; they must begin with lower case letter and will cease to exist at the end of the scope in which they were created in. Local variables are useful when calculating value that do not need to persist outside a scope.</p>
@@ -299,45 +299,45 @@ var Direction : Real2 = Real2(1.0, 1.0);
 </code></pre>
 <p>Here we create a local variable that is the normalized value given by the Direction property; that is, a vector that points in the same direction but of length <code>1.0</code>. We then used that normalized direction to construct a Real3 (out of a Real2 and a Real), multiplying the direction by our <code>Speed</code> property and assign it to the Square object's translation.</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/89074.gif" alt="SquareMoveInDirection"></p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/architecture/components.md">Components</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch.md"> Nada User Documentation</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md"> Variables</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">Attributes</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/components.md">Components</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md"> Nada User Documentation</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md"> Variables</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">Attributes</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="/docs/code_reference/class_reference/transform.md">Transform</a></li>
-<li><a href="/docs/code_reference/class_reference/sprite.md">Sprite</a></li>
-<li><a href="/docs/code_reference/class_reference/nadascript.md">NadaScript</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/nadascript.md">NadaScript</a></li>
 </ul>
 <h3 id="nada-base-types">Nada Base Types</h3>
 <ul>
-<li><a href="/docs/code_reference/nada_base_types/boolean.md">boolean</a></li>
-<li><a href="/docs/code_reference/nada_base_types/integer.md">integer</a></li>
-<li><a href="/docs/code_reference/nada_base_types/real.md">real</a></li>
-<li><a href="/docs/code_reference/nada_base_types/real2.md">real2</a></li>
-<li><a href="/docs/code_reference/nada_base_types/real3.md">real3</a></li>
-<li><a href="/docs/code_reference/nada_base_types/real4.md">real4</a></li>
-<li><a href="/docs/code_reference/nada_base_types/string.md">string</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">real2</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real4.md">real4</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></li>
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="/docs/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 </ul>
 <h2 id="tutorials">Tutorials</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/tutorials/scripting/customcomponents.md">CustomComponents</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/customcomponents.md">CustomComponents</a></li>
 </ul>
 
 </article>

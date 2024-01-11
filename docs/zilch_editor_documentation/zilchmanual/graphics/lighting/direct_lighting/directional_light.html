@@ -88,7 +88,7 @@
 <p>A directional light is a light that, as its name suggests, emits light from a specific direction. While the light has a direction, it has no single point from which it emits. Instead, it lights everything within a level from that particular direction. LightIntensity  is an arbitrary scalar applied to the final lighting calculations that includes all lights. One very common use of a directional light is to simulate the sun (and/or moon).</p>
 <h1 id="casting-shadows">Casting Shadows</h1>
 <p>NOTE: As of now, DirectionalLight is the only type of light that can cast shadows. In the near future, PointLight and the soon-to-be-implemented SpotLight will also have the ability to cast shadows similarly to the way DirectionalLight does.</p>
-<p>Directional lights may be created either with or without the ability to cast shadows using either the <code>CreateDirectionalLightShadows</code> or <code>CreateDirectionalLight</code> commands, respectively.  When created with the ability to cast shadows, the DirectionalLight object will have <a href="/docs/zilch_editor_documentation/zilchmanual/graphics/camerasviewportsrenderers.md#camera">Camera</a>, <a href="/docs/zilch_editor_documentation/zilchmanual/graphics/camerasviewportsrenderers.md#cameraviewport">CameraViewport</a>, and ShadowRenderer components on it. Changing the translation or rotation of the DirectionalLight object will cause the shadows of objects in the scene to change:</p>
+<p>Directional lights may be created either with or without the ability to cast shadows using either the <code>CreateDirectionalLightShadows</code> or <code>CreateDirectionalLight</code> commands, respectively.  When created with the ability to cast shadows, the DirectionalLight object will have <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/camerasviewportsrenderers.md#camera">Camera</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/camerasviewportsrenderers.md#cameraviewport">CameraViewport</a>, and ShadowRenderer components on it. Changing the translation or rotation of the DirectionalLight object will cause the shadows of objects in the scene to change:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46415.gif" alt="Shadow"> <em>DirectionalLight rotating around an object</em></p>
 <p>Shadows cast from a directional light are rendered separately than the other objects on a scene. Therefore, a different renderer, camera, and camera viewport are needed.</p>
 <h2 id="cameraviewport">CameraViewport</h2>
@@ -96,7 +96,7 @@
 <h2 id="camera-and-shadowrenderer">Camera and ShadowRenderer</h2>
 <p>This component defines the blue, debug-drawn bounding box visible in the editor. This box, in turn, defines the the volume in which shadows are cast. That is, for an object to cast shadows some part of that object's bounding box must fall within the volume defined by the Camera component. The Size  property's of <code>64</code> (which means that the width and height have a value of <code>64</code>) is a default of the DirectionalLight archetype, which means that the volume in which shadows will appear within 64 world units defined by the camera.</p>
 <h3 id="shadow-acne">Shadow Acne</h3>
-<p>Be wary when increasing the size of the camera as <a href="/docs/code_reference/enum_reference.md#shadowresolution">Resolution</a> on the ShadowRenderer component is set to <code>Low</code>. In fact, at default values, setting Resolution enum to <code>Low</code> will cause shadow acne:</p>
+<p>Be wary when increasing the size of the camera as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#shadowresolution">Resolution</a> on the ShadowRenderer component is set to <code>Low</code>. In fact, at default values, setting Resolution enum to <code>Low</code> will cause shadow acne:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46546.png" alt="image"></p>
 <p>This problem may be addressed by increasing the value of the  NormalOffsetBias  property on the DirectionalLight component. The default value is <code>0.1</code>, but when changed to <code>0.2</code> the shadow acne seen in the previous screenshot is gone:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46548.png" alt="image"></p>
@@ -113,10 +113,10 @@
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/graphics/camerasviewportsrenderers.md"> Camera and CameraViewport</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/camerasviewportsrenderers.md"> Camera and CameraViewport</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
-<p><a href="/docs/code_reference/enum_reference.md#shadowresolution">ShadowResolution</a></p>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#shadowresolution">ShadowResolution</a></p>
 
 </article>
 

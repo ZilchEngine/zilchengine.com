@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p>Quit Messages are sent by the engine to quit out of a game by closing Game window. This happens by default when the <code>esc</code> (escape) key is pressed in game. Using the <a href="/docs/code_reference/event_reference.md#gamerequestquit"> GameRequestQuit  </a> event, however, gives the user control over the <code>esc</code> key press (which is otherwise inaccessible by Keyboard events). When connecting to the <code>GameRequestQuit</code> event, the user may assign any activity to the <code>esc</code> key that they wish.</p>
+<p>Quit Messages are sent by the engine to quit out of a game by closing Game window. This happens by default when the <code>esc</code> (escape) key is pressed in game. Using the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#gamerequestquit"> GameRequestQuit  </a> event, however, gives the user control over the <code>esc</code> key press (which is otherwise inaccessible by Keyboard events). When connecting to the <code>GameRequestQuit</code> event, the user may assign any activity to the <code>esc</code> key that they wish.</p>
 <h1 id="common-uses">Common Uses</h1>
 <ul>
 <li>Using the <code>esc</code> key to pause the game</li>
@@ -100,7 +100,7 @@
 Zilch.Connect(this.GameSession, Events.GameRequestQuit, this.OnGameRequestQuit);
 </code></pre>
 <h2 id="the-gamerequestquit-response-function">The GameRequestQuit Response Function</h2>
-<p>The <code>GameRequestQuit</code> event is of type <a href="/docs/zilch_editor_documentation/code_reference/class_reference/gameevent.md">GameEvent</a>  that includes a few properties that can be used inside the response function. The most notable of these, for the purposes of removing the game-exiting functionality, is <code>event.Handled</code>. <code>Handled</code> is a boolean that if set to <code>true</code>, tells the engine that the behavior for the <code>esc</code> key will now <strong>be handled</strong> by the code inside the response function. If <code>event.Handled</code> is left <code>false</code>, the event would persist to be handled by the engine (once again performing the default behavior of closing the <code>Game Window</code> <em>after</em> your response function completed).
+<p>The <code>GameRequestQuit</code> event is of type <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/gameevent.md">GameEvent</a>  that includes a few properties that can be used inside the response function. The most notable of these, for the purposes of removing the game-exiting functionality, is <code>event.Handled</code>. <code>Handled</code> is a boolean that if set to <code>true</code>, tells the engine that the behavior for the <code>esc</code> key will now <strong>be handled</strong> by the code inside the response function. If <code>event.Handled</code> is left <code>false</code>, the event would persist to be handled by the engine (once again performing the default behavior of closing the <code>Game Window</code> <em>after</em> your response function completed).
 The following will code-block will show how the response function can create alternate behavior for the <code>esc</code> key while still allowing for game-quitting functionality:</p>
 <pre><code>class GameQuitTest : NadaComponent
 {
@@ -139,12 +139,12 @@ The following will code-block will show how the response function can create alt
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual-pages">Manual Pages</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/scripting/eventsandconnections.md">Events and Connections</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/scripting/eventsandconnections.md">Events and Connections</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/code_reference/class_reference/gameevent.md">GameEvent</a></li>
-<li><a href="/docs/code_reference/event_reference.md#gamerequestquit"> GameRequestQuit  </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/gameevent.md">GameEvent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#gamerequestquit"> GameRequestQuit  </a></li>
 </ul>
 
 </article>

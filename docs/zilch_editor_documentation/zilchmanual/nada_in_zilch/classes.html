@@ -85,9 +85,9 @@
 
         <article data-uid="">
 
-<p>Classes and structs define the type of certain objects in Nada, and the <code>class</code> keyword can create user-defined data types.  The <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">Variables</a> and <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">Functions</a> defined in a class or struct are all stored and referenced from instantiations.  In contrast with how Structs handle <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md">Memory Management</a>, classes are copied <code>by-reference</code>.</p>
+<p>Classes and structs define the type of certain objects in Nada, and the <code>class</code> keyword can create user-defined data types.  The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">Variables</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">Functions</a> defined in a class or struct are all stored and referenced from instantiations.  In contrast with how Structs handle <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md">Memory Management</a>, classes are copied <code>by-reference</code>.</p>
 <h1 id="class-contents">Class Contents</h1>
-<p>Classes in Nada must be defined in <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md#global-scope">global scope</a>.  The format for classes and structs are as shown below:</p>
+<p>Classes in Nada must be defined in <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md#global-scope">global scope</a>.  The format for classes and structs are as shown below:</p>
 <pre><code class="lang-lang=csharp,">struct SimpleStruct {}
 class SimpleClass {}
 </code></pre>
@@ -101,7 +101,7 @@ class ClassInClass { var MyClass : SimpleClass; }
 </code></pre>
 <p>The class <code>MyClass</code> is a member of <code>ClassInStruct</code>, which is a struct.  Having a class in a struct will cause Nada to throw a compile-time exception.</p>
 <h2 id="static-vs-non-static-members">Static vs Non-Static Members</h2>
-<p>Variables and functions inside a class or struct are known as members. Most member variables must be accessed through instantiations of the object.  The one exception are member variables with the <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md#static">Static</a> <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">Attribute</a>.</p>
+<p>Variables and functions inside a class or struct are known as members. Most member variables must be accessed through instantiations of the object.  The one exception are member variables with the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md#static">Static</a> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">Attribute</a>.</p>
 <pre><code class="lang-lang=csharp,">class MyClass
 {
   // standard variable instantiation and initialization
@@ -189,7 +189,7 @@ class Driver
   }
 }
 </code></pre>
-<p>The class <code>ExplicitCustom</code> defines a single constructor that takes a single <a href="/docs/code_reference/nada_base_types/real.md">real</a>.  This means that <code>ExplicitCustom</code> cannot be default constructed, therefore the statement <code>ExplicitCustom();</code> fails to compile.  The default constructor can still be readded by explicitly defining it alongside other constructors, as shown in the class <code>ExplicitCustomAndDefault</code>.</p>
+<p>The class <code>ExplicitCustom</code> defines a single constructor that takes a single <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>.  This means that <code>ExplicitCustom</code> cannot be default constructed, therefore the statement <code>ExplicitCustom();</code> fails to compile.  The default constructor can still be readded by explicitly defining it alongside other constructors, as shown in the class <code>ExplicitCustomAndDefault</code>.</p>
 <p>NOTE: Explcitly defining a constructor is <strong>not required</strong> in Nada as long as every data member of the class has a default constructor.</p>
 <p>Destructors are called when all handles to an object are destroyed.  The exception is when an object is not a copy by reference type, in which case the destructor isn't called.</p>
 <pre><code class="lang-lang=csharp,">struct MyStruct
@@ -224,20 +224,20 @@ class Driver2
 4
 5
 </code></pre>
-<p>In the example above, <code>MyClass</code> <a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inherits</a> from <code>MyStruct</code>.  <code>MyClass</code> has the same members as <code>MyStruct</code>, and the only difference between the two is that <code>MyClass</code> is a <code>class</code>.  Observe how <code>3</code>, <code>4</code>, and <code>5</code> are printed, which means that the destructor got called on <code>v3</code>, <code>v4</code>, and <code>v5</code>.  All struct destructors were ignored, while all class destructors were called.  The one exception is <code>v3</code>, which is of the type <code>ref MyStruct</code> and has the copy <code>by-reference</code> quality.</p>
+<p>In the example above, <code>MyClass</code> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inherits</a> from <code>MyStruct</code>.  <code>MyClass</code> has the same members as <code>MyStruct</code>, and the only difference between the two is that <code>MyClass</code> is a <code>class</code>.  Observe how <code>3</code>, <code>4</code>, and <code>5</code> are printed, which means that the destructor got called on <code>v3</code>, <code>v4</code>, and <code>v5</code>.  All struct destructors were ignored, while all class destructors were called.  The one exception is <code>v3</code>, which is of the type <code>ref MyStruct</code> and has the copy <code>by-reference</code> quality.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">Variables</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">Functions</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md">memory_management</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">attributes</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inheritance</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md#static">Static</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">Variables</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">Functions</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/memory_management.md">memory_management</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md">attributes</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inheritance</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md#static">Static</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="/docs/code_reference/nada_base_types/real.md">real</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></li>
 </ul>
 
 </article>

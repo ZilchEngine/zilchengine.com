@@ -99,20 +99,20 @@
 <p>In the above picture the ball does end up hitting the wall; however, it hits on the opposite side. In this way the collision will be detected but in the wrong direction.</p>
 <h1 id="fixing-tunneling">Fixing Tunneling</h1>
 <p>The easiest way to fix tunneling is to limit the size and speed of an object. If an object can't move faster than its &quot;radius&quot; each frame then it won't tunnel.</p>
-<p>Another way to avoid tunneling is to increase the framerate of the simulation. <a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/physicsspace.md">PhysicsSpace</a> exposes SubStepCount  which allows the user to run physics at a higher framerate.</p>
+<p>Another way to avoid tunneling is to increase the framerate of the simulation. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/physicsspace.md">PhysicsSpace</a> exposes SubStepCount  which allows the user to run physics at a higher framerate.</p>
 <p>The final way to avoid tunneling is to use continuous collision detection. Currently, continuous collision detection is only available through PhysicsSpace's <code>SweepCollider</code> function  which is meant for character controllers. See the SweptController script for an example. Future plans include making this an option on rigid bodies.</p>
 <p>NOTE: Continuous collision detection is significantly more computationally expensive than discrete.</p>
 <hr>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting.md">physicstroubleshooting.md</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/collisionoverview.md">collisionoverview.md</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/physicsspace.md">physicsspace.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting.md">physicstroubleshooting.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/collisionoverview.md">collisionoverview.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/physicsspace.md">physicsspace.md</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="/docs/code_reference/class_reference/physicsspace.md">PhysicsSpace</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsspace.md">PhysicsSpace</a></li>
 </ul>
 
 </article>

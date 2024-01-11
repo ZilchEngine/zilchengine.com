@@ -85,9 +85,9 @@
 
         <article data-uid="">
 
-<p>While Zilch provides a number of pre-defined Eases (e.g., <code>QuadIn</code>, <code>QuadOut</code>, <code>SinIn</code>, <code>SinOut</code>), these may not cover all situations that may arise. In those cases, a custom ease may be created by adding a <a href="/docs/zilch_editor_documentation/zilchmanual/architecture/resources/samplecurve.md">samplecurve</a>.</p>
+<p>While Zilch provides a number of pre-defined Eases (e.g., <code>QuadIn</code>, <code>QuadOut</code>, <code>SinIn</code>, <code>SinOut</code>), these may not cover all situations that may arise. In those cases, a custom ease may be created by adding a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/resources/samplecurve.md">samplecurve</a>.</p>
 <h1 id="a-closer-look-at-easing-functions">A Closer Look at Easing Functions</h1>
-<p>Eases are used primarily in what is called &quot;tweening&quot;, short for <em>in-betweening</em> (and <a href="/docs/code_reference/class_reference/action.md">Actions</a> are Zilch Engine's form of tweening). Tweening is a procedure for interpolation between two values that can provide animation through the use of mathematical functions without the user having to adjust any frames. Eases are functions that control the rate of acceleration of the change in value. Usually, eases are used to make animations look more natural or &quot;life-like&quot;, though the most basic of eases--<code>Linear</code>--is decidedly sterile-looking or robotic, as can be seen in this example of a simple moving platform:</p>
+<p>Eases are used primarily in what is called &quot;tweening&quot;, short for <em>in-betweening</em> (and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/action.md">Actions</a> are Zilch Engine's form of tweening). Tweening is a procedure for interpolation between two values that can provide animation through the use of mathematical functions without the user having to adjust any frames. Eases are functions that control the rate of acceleration of the change in value. Usually, eases are used to make animations look more natural or &quot;life-like&quot;, though the most basic of eases--<code>Linear</code>--is decidedly sterile-looking or robotic, as can be seen in this example of a simple moving platform:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2083.gif" alt="LinearPlatform"></p>
 <p>The platform moves side to side at a steady, constant rate of motion. In other words, its rate of movement is linear. For the sake of comparison, let's look at another, nicer-looking, more &quot;life-like&quot; ease; specifically, the <code>QuadInOut</code> ease (which uses the quadratic function to derive acceleration):</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2088.gif" alt="QuadInOutPlatform"></p>
@@ -164,7 +164,7 @@ function EaseIn(beginningVal, changeToVal, currentTime, totalTime)
     }
 }
 </code></pre>
-<p>All of these eases can be visualized on a graph. In Zilch, graphs like this may be plotted on a <a href="/docs/zilch_editor_documentation/zilchmanual/architecture/resources/samplecurve.md">SampleCurve</a>, allowing their use as the ease parameter in Actions.</p>
+<p>All of these eases can be visualized on a graph. In Zilch, graphs like this may be plotted on a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/resources/samplecurve.md">SampleCurve</a>, allowing their use as the ease parameter in Actions.</p>
 <h1 id="applying-a-custom-ease">Applying a Custom Ease</h1>
 <p>After creating a SampleCurve, it can be directly applied to an Action. The following NadaScript illustrates how to apply a SampleCurve to an Action that translates an object back and forth.</p>
 <pre><code>class EasedMovement : NadaComponent
@@ -212,12 +212,12 @@ function EaseIn(beginningVal, changeToVal, currentTime, totalTime)
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">ResourceAdding</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/architecture/resources/samplecurve.md">samplecurve</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">ResourceAdding</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/resources/samplecurve.md">samplecurve</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="/docs/code_reference/class_reference/action.md">action</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/action.md">action</a></li>
 </ul>
 
 </article>

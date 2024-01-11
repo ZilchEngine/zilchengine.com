@@ -95,19 +95,19 @@
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>ParentSquare</code></li>
-<li>Under <a href="/docs/code_reference/class_reference/sprite.md"> Sprite</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
 <li>Set VertexColor  to <code>[R:255, G:0, B:0, A:1.00]</code></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="/docs/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>ChildSquare</code></li>
-<li>Under <a href="/docs/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
 <li>Set Translation  to <code>[1, -1, 0]</code></li>
-<li>Under <a href="/docs/code_reference/class_reference/sprite.md"> Sprite</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
 <li>Set VertexColor  to <code>[R:0, G:0, B:255, A:1.00]</code></li>
 <li>In the <code>Objects Window</code></li>
 <li><code>Drag and drop</code> ChildSquare object on top of ParentSquare object
@@ -116,7 +116,7 @@
 <h1 id="parenting">Parenting</h1>
 <p>As you have probably noticed, by dragging and dropping an object onto another, we've <strong>attached</strong> the former to the latter in a process called <strong>parenting</strong>. We then refer to this group of objects as a <strong>hierarchy</strong>, and it adopts new behaviors, most notably with respect to transformations. Let's take a look:</p>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : ParentSquare object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : ParentSquare object</li>
 <li>Experiment with Translation , Rotation and Scale</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46733.gif" alt="Translation2"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46735.gif" alt="Rotation"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46737.gif" alt="Scale"></p>
@@ -124,33 +124,33 @@
 <p>Notice that, when we apply a transformation to the <strong>parent object</strong>, it is propagated to the <strong>child object</strong>. However, if we apply transformations to the child, it won't affect the parent.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46744.gif" alt="ChildTranslation"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46746.gif" alt="ChildRotation"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46748.gif" alt="ChildScale"></p>
 <p><em>Transforming the ChildSquare object</em></p>
-<p>If we look at the <a href="/docs/code_reference/class_reference/transform.md"> Transform</a> component (in the <code>Properties Window</code>) of both objects while applying transformations to the ParentSquare object, we notice that while its transform values are modified, the ChildSquare object's values remain the same. In Zilch Engine, the <a href="/docs/code_reference/class_reference/transform.md"> Transform</a> values displayed on a <strong>root object</strong> (top parent of a hierarchy) correspond to their <strong>world values</strong>; that is, the transform values relative to the space's origin at <code>[0, 0, 0]</code>. Meanwhile, transform values for <strong>child objects</strong> are displayed as <strong>local values</strong>; that is, the offset modifications relative to the <strong>parent object</strong>'s values.</p>
+<p>If we look at the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a> component (in the <code>Properties Window</code>) of both objects while applying transformations to the ParentSquare object, we notice that while its transform values are modified, the ChildSquare object's values remain the same. In Zilch Engine, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a> values displayed on a <strong>root object</strong> (top parent of a hierarchy) correspond to their <strong>world values</strong>; that is, the transform values relative to the space's origin at <code>[0, 0, 0]</code>. Meanwhile, transform values for <strong>child objects</strong> are displayed as <strong>local values</strong>; that is, the offset modifications relative to the <strong>parent object</strong>'s values.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46752.gif" alt="ParentTransform"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46754.gif" alt="ChildTransform"></p>
 <p><em>The <code>Properties Window</code> showing the ParentSquare object and ChildSquare object objects, respectively</em></p>
 <p>Notice the parent's <strong>world value</strong> is being modified, while the child's <strong>local value</strong> remains the same.</p>
 <h1 id="non-uniform-scale">Non-Uniform Scale</h1>
 <p>When dealing with object Hierarchies, one can accidentally stumble on the problem of non-uniform scale. This can be seen when, for example, a <strong>parent object</strong> is scaled non-uniformly (that is, its X, Y, and Z scale values aren't all the same) and its <strong>child object</strong> of it is rotated.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46821.gif" alt="NonUniformScale"></p>
-<p>This produces an often undesired <strong>shear</strong> effect, and is usually best avoided by making sure the <strong>parent object</strong> is always uniformly scaled. It should be noted that shearing does not affect the shape of <a href="/docs/zilch_editor_documentation/zilchmanual/physics/colliders.md"> colliders</a>.</p>
+<p>This produces an often undesired <strong>shear</strong> effect, and is usually best avoided by making sure the <strong>parent object</strong> is always uniformly scaled. It should be noted that shearing does not affect the shape of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md"> colliders</a>.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/architecture/cogs/gameobjectsconcept.md">gameobjectsconcept</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
-<li><a href="/docs/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/cogs/gameobjectsconcept.md">gameobjectsconcept</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="/docs/code_reference/command_reference.md#newproject"> NewProject</a></li>
-<li><a href="/docs/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> NewProject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
 </ul>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="/docs/code_reference/class_reference/cog.md">cog</a></li>
-<li><a href="/docs/code_reference/class_reference/sprite.md">sprite</a></li>
-<li><a href="/docs/code_reference/class_reference/transform.md">transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">cog</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a></li>
 </ul>
 
 </article>
