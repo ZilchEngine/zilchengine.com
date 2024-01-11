@@ -85,8 +85,8 @@
 
         <article data-uid="">
 
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a> component is used to add and control two-dimensional artwork on a <code>Cog</code>. A Sprite can be used for many things from a simple poster on a three-dimensional wall to all the visual elements of a 2D game. The Sprite Component can be added to any game object with a <code>Transform</code> component.</p>
-<p>(NOTE)<strong>Recommended Reading</strong> This section only covers the properties that are specific to Sprites, and doesn't cover the properties shared by the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/basesprite.md">BaseSprite</a>.</p>
+<p>The <a href="../../../code_reference/class_reference/sprite.md">Sprite</a> component is used to add and control two-dimensional artwork on a <code>Cog</code>. A Sprite can be used for many things from a simple poster on a three-dimensional wall to all the visual elements of a 2D game. The Sprite Component can be added to any game object with a <code>Transform</code> component.</p>
+<p>(NOTE)<strong>Recommended Reading</strong> This section only covers the properties that are specific to Sprites, and doesn't cover the properties shared by the <a href="../../../code_reference/class_reference/basesprite.md">BaseSprite</a>.</p>
 <h1 id="common-uses">Common Uses</h1>
 <ul>
 <li>Characters and other artwork in a two dimensional project</li>
@@ -95,13 +95,13 @@
 </ul>
 <h1 id="using-sprites">Using Sprites</h1>
 <h2 id="creating-sprites">Creating Sprites</h2>
-<p>Sprites can be made in one of two ways. Typically they will be made by using <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : CreateSprite ; however, the <code>Sprite</code> component can also be added to any game object.  The actual image is defined by the SpriteSource resource property, and all other properties control how the sprite is displayed:</p>
+<p>Sprites can be made in one of two ways. Typically they will be made by using <a href="../../editor/editorcommands/commands.html">Command</a> : CreateSprite ; however, the <code>Sprite</code> component can also be added to any game object.  The actual image is defined by the SpriteSource resource property, and all other properties control how the sprite is displayed:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47784.png" alt="SpriteProperties"> <em>Sprite Component UI</em></p>
 <h2 id="adding-a-spritesource">Adding a SpriteSource</h2>
 <p>NOTE: Zilch Engine only allows the importing of .PNG type images.</p>
-<p>It is possible to add SpriteSources of your own as well. By simply grabbing the file on your computer and dragging it into the Editor window, Zilch Engine will import the chosen asset. Alternatively, one can invoke the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : Add  and select <code>SpriteSource  &gt; IMPORT SPRITESOURCE</code>:</p>
+<p>It is possible to add SpriteSources of your own as well. By simply grabbing the file on your computer and dragging it into the Editor window, Zilch Engine will import the chosen asset. Alternatively, one can invoke the <a href="../../editor/editorcommands/commands.html">Command</a> : Add  and select <code>SpriteSource  &gt; IMPORT SPRITESOURCE</code>:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/45986.png" alt="image"> <em>Adding a <code>SpriteSource</code></em></p>
-<p>A window will open where the user may select the image or images to import, keeping the saved Resolution and Size. Once imported, these files can then be used to create single frame images or multi-frame animations using the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spriteimporter.md">Sprite Importer</a>.</p>
+<p>A window will open where the user may select the image or images to import, keeping the saved Resolution and Size. Once imported, these files can then be used to create single frame images or multi-frame animations using the <a href="spriteimporter.html">Sprite Importer</a>.</p>
 <h2 id="changing-spritesources">Changing SpriteSources</h2>
 <p>After importing one's images, the next step is to change the SpriteSource resource Property on the Sprite Component to the resource created by the imported image. This is done by clicking on the current <code>SpriteSource</code> and finding the imported image in the drop-down menu that opens.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47786.png" alt="ChangeSpriteSource"> <em>Changing <code>SpriteSources</code></em></p>
@@ -109,20 +109,20 @@
 <p>A quick and efficient way to change the sprite orientation is to use some combination of FlipX checkBox and FlipY checkBox variables.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47789.gif" alt="Flip"> <em>Flipping Sprite Orientation</em></p>
 <h2 id="sprites-as-animations">Sprites As Animations</h2>
-<p>To use Sprites as animations rather than still images, please refer to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritesourceeditor.md">Sprite Source Editor</a>.</p>
+<p>To use Sprites as animations rather than still images, please refer to <a href="spritesourceeditor.html">Sprite Source Editor</a>.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual-pages">Manual Pages</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/basesprite.md">Base Sprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritelayer.md">SpriteLayers and SpriteLayerOrder</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritesourceeditor.md">Sprite Source Editor</a></li>
+<li><a href="basesprite.html">Base Sprite</a></li>
+<li><a href="spritelayer.md">SpriteLayers and SpriteLayerOrder</a></li>
+<li><a href="spritesourceeditor.html">Sprite Source Editor</a></li>
 </ul>
 <h2 id="reference-pages">Reference Pages</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/spritesource.md">SpriteSource</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/event.md">Event</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/basesprite.md">BaseSprite</a></li>
+<li><a href="../../../code_reference/class_reference/spritesource.md">SpriteSource</a></li>
+<li><a href="../../../code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="../../../code_reference/class_reference/event.md">Event</a></li>
+<li><a href="../../../code_reference/class_reference/basesprite.md">BaseSprite</a></li>
 </ul>
 
 </article>

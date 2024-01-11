@@ -89,7 +89,7 @@
 <h1 id="polling-based-input-vs-event-based-input">Polling-Based Input vs. Event-Based Input</h1>
 <p>There are two ways of checking keyboard input in the Zilch Engine: by polling the state of the keyboard (typically in an Update function), known as <strong>polling-based</strong> input, and by connecting to keyboard events, known as <strong>event-based</strong> input. Each has its advantages.</p>
 <h2 id="polling-based-input">Polling-Based Input</h2>
-<p>Polling-based input typically occurs in a callback for an Update event such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate"> LogicUpdate</a>:</p>
+<p>Polling-based input typically occurs in a callback for an Update event such as <a href="../../../../code_reference/event_reference.html#logicupdate"> LogicUpdate</a>:</p>
 <pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
 {
   Zilch.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -97,14 +97,14 @@
 </code></pre>
 <p>The keyboard may be polled using a handful of functions on <code>Zilch.Keyboard</code>.</p>
 <h3 id="keyisdown">KeyIsDown</h3>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboard.md#keyisdown-zilch-engine-do"> KeyIsDown</a> function returns whether the given keyboard key is down on the current frame. It is often used for movement and other actions that are performed over the course of many consecutive frames:</p>
+<p>The <a href="../../../../code_reference/class_reference/keyboard.html#keyisdown-zilch-engine-do"> KeyIsDown</a> function returns whether the given keyboard key is down on the current frame. It is often used for movement and other actions that are performed over the course of many consecutive frames:</p>
 <pre><code class="lang-lang=csharp,">if (Zilch.Keyboard.KeyIsDown(Keys.Up))
 {
   this.MoveForward();
 }
 </code></pre>
 <h3 id="keyisup">KeyIsUp</h3>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboard.md#keyisup-zilch-engine-docu"> KeyIsUp</a> function returns whether the given keyboard key is <em>not</em> down on the current frame. It is sometimes used in combination with <strong>KeyIsDown</strong> in movement code:</p>
+<p>The <a href="../../../../code_reference/class_reference/keyboard.html#keyisup-zilch-engine-docu"> KeyIsUp</a> function returns whether the given keyboard key is <em>not</em> down on the current frame. It is sometimes used in combination with <strong>KeyIsDown</strong> in movement code:</p>
 <pre><code class="lang-lang=csharp,">if (Zilch.Keyboard.KeyIsDown(Keys.Right) &amp;&amp; Zilch.Keyboard.KeyIsUp(Keys.Left))
 {
   this.TurnCounterClockwise();
@@ -116,27 +116,27 @@ if (Zilch.Keyboard.KeyIsDown(Keys.Left) &amp;&amp; Zilch.Keyboard.KeyIsUp(Keys.R
 }
 </code></pre>
 <h3 id="keyispressed">KeyIsPressed</h3>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboard.md#keyispressed-zilch-engine"> KeyIsPressed</a> function returns whether the given keyboard key is down on the current frame <em>and</em> was up on the previous frame. It is often used for discrete actions, like activating character abilities and interacting with menus:</p>
+<p>The <a href="../../../../code_reference/class_reference/keyboard.html#keyispressed-zilch-engine"> KeyIsPressed</a> function returns whether the given keyboard key is down on the current frame <em>and</em> was up on the previous frame. It is often used for discrete actions, like activating character abilities and interacting with menus:</p>
 <pre><code class="lang-lang=csharp,">if (Zilch.Keyboard.KeyIsPressed(Keys.Space))
 {
   this.Jump();
 }
 </code></pre>
 <h3 id="keyisreleased">KeyIsReleased</h3>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboard.md#keyisreleased-zilch-engin"> KeyIsReleased</a> function returns whether the given keyboard key is up on the current frame, but was down on the previous frame. It is often used to end actions or processes that were started by the same key in a KeyIsPressed check:</p>
+<p>The <a href="../../../../code_reference/class_reference/keyboard.html#keyisreleased-zilch-engin"> KeyIsReleased</a> function returns whether the given keyboard key is up on the current frame, but was down on the previous frame. It is often used to end actions or processes that were started by the same key in a KeyIsPressed check:</p>
 <pre><code class="lang-lang=csharp,">if (Zilch.Keyboard.KeyIsReleased(Keys.Space))
 {
   this.EndJump();
 }
 </code></pre>
-<p>Such queries are usually performed in a function that is called every frame, once per frame, such as an Update function; polling for input in this way is also called <strong>frame-based input</strong>. However, the keyboard can be polled at any time. For instance, one might check whether a certain key is held in a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionstarted"> CollisionStarted</a> callback, to determine whether some special action should occur:</p>
+<p>Such queries are usually performed in a function that is called every frame, once per frame, such as an Update function; polling for input in this way is also called <strong>frame-based input</strong>. However, the keyboard can be polled at any time. For instance, one might check whether a certain key is held in a <a href="../../../../code_reference/event_reference.html#collisionstarted"> CollisionStarted</a> callback, to determine whether some special action should occur:</p>
 <pre><code class="lang-lang=csharp,">function OnCollisionStarted(event : CollisionEvent)
 {
   if (Zilch.Keyboard.KeyIsDown(Keys.Z))
     this.AttemptDealDamage(event.OtherObject);
 }
 </code></pre>
-<p>NOTE: Beware that the LogicUpdate event is not dispatched on a paused TimeSpace. If input polling is performed in a LogicUpdate callback, it won't happen while the game is paused. This may result in a scenario where LogicUpdate is used to pause the game, and then it becomes impossible to unpause. For this reason, it is usually best to pause the game using event-based input, or by polling the keyboard via another event, such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#frameupdate"> FrameUpdate</a>, or in the LogicUpdate of another Space.</p>
+<p>NOTE: Beware that the LogicUpdate event is not dispatched on a paused TimeSpace. If input polling is performed in a LogicUpdate callback, it won't happen while the game is paused. This may result in a scenario where LogicUpdate is used to pause the game, and then it becomes impossible to unpause. For this reason, it is usually best to pause the game using event-based input, or by polling the keyboard via another event, such as <a href="../../../../code_reference/event_reference.html#frameupdate"> FrameUpdate</a>, or in the LogicUpdate of another Space.</p>
 <h2 id="event-based-input">Event-Based Input</h2>
 <p>The keyboard dispatches a set of handy events that can be used for keyboard input:</p>
 <pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
@@ -146,9 +146,9 @@ if (Zilch.Keyboard.KeyIsDown(Keys.Left) &amp;&amp; Zilch.Keyboard.KeyIsUp(Keys.R
   Zilch.Connect(Zilch.Keyboard, Events.KeyRepeated, this.OnKeyRepeated);
 }
 </code></pre>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboardevent.md"> KeyboardEvent</a> object that gets sent with these events specifies which key triggered the event, along with other relevant information, such as whether any of various modifier keys was held when the event was dispatched, etc.</p>
+<p>The <a href="../../../../code_reference/class_reference/keyboardevent.html"> KeyboardEvent</a> object that gets sent with these events specifies which key triggered the event, along with other relevant information, such as whether any of various modifier keys was held when the event was dispatched, etc.</p>
 <h3 id="keydown">KeyDown</h3>
-<p>When any key on the keyboard is pressed, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#keydown"> KeyDown</a> event is dispatched that frame:</p>
+<p>When any key on the keyboard is pressed, the <a href="../../../../code_reference/event_reference.html#keydown"> KeyDown</a> event is dispatched that frame:</p>
 <pre><code class="lang-lang=csharp,">function OnKeyDown(event : KeyboardEvent)
 {
   if (event.Key == Keys.R &amp;&amp; event.CtrlPressed)
@@ -156,7 +156,7 @@ if (Zilch.Keyboard.KeyIsDown(Keys.Left) &amp;&amp; Zilch.Keyboard.KeyIsUp(Keys.R
 }
 </code></pre>
 <h3 id="keyup">KeyUp</h3>
-<p>When any key on the keyboard is released, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#keyup"> KeyUp</a> event is dispatched that frame:</p>
+<p>When any key on the keyboard is released, the <a href="../../../../code_reference/event_reference.html#keyup"> KeyUp</a> event is dispatched that frame:</p>
 <pre><code class="lang-lang=csharp,">function OnKeyUp(event : KeyboardEvent)
 {
   if (event.Key == Keys.Shift)
@@ -164,7 +164,7 @@ if (Zilch.Keyboard.KeyIsDown(Keys.Left) &amp;&amp; Zilch.Keyboard.KeyIsUp(Keys.R
 }
 </code></pre>
 <h3 id="keyrepeated">KeyRepeated</h3>
-<p>When any key on the keyboard is held long enough for the operating system to send its &quot;repeated&quot; event, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#keyrepeated"> KeyRepeated</a> event begins being dispatched. The delays before this begins and between dispatches are determined by the operating system:</p>
+<p>When any key on the keyboard is held long enough for the operating system to send its &quot;repeated&quot; event, the <a href="../../../../code_reference/event_reference.html#keyrepeated"> KeyRepeated</a> event begins being dispatched. The delays before this begins and between dispatches are determined by the operating system:</p>
 <pre><code class="lang-lang=csharp,">function OnKeyRepeated(event : KeyboardEvent)
 {
   if (event.Key == Keys.Back)
@@ -203,13 +203,13 @@ if (Zilch.Keyboard.KeyIsDown(Keys.Left) &amp;&amp; Zilch.Keyboard.KeyIsUp(Keys.R
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/scripting/eventsandconnections.md"> Events &amp; Connections</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/components.md"> Components</a></li>
+<li><a href="../../scripting/eventsandconnections.html"> Events &amp; Connections</a></li>
+<li><a href="../../architecture/components.html"> Components</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboard.md"> Keyboard</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboardevent.md"> KeyboardEvent</a></li>
+<li><a href="../../../../code_reference/class_reference/keyboard.html"> Keyboard</a></li>
+<li><a href="../../../../code_reference/class_reference/keyboardevent.html"> KeyboardEvent</a></li>
 </ul>
 
 </article>

@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md"> String</a> is a Nada type used to represent text as a sequence of characters.</p>
+<p><a href="../../../code_reference/nada_base_types/string.html"> String</a> is a Nada type used to represent text as a sequence of characters.</p>
 <h1 id="making-strings">Making Strings</h1>
 <p>In Nada, a string literal is made by enclosing zero or more characters in double quotation marks:</p>
 <pre><code class="lang-lang=csharp,">var greeting = &quot;hello world&quot;;
@@ -134,7 +134,7 @@ Console.WriteLine(&quot;Odd base-ten digits: `oddDigits`&quot;);
 Odd base-ten digits:  1 3 5 7 9
 </code></pre>
 <p>Note that strings in Nada are <strong>immutable</strong>, which means they cannot be altered after they have been created. Thus, strictly speaking, no true <em>appending</em> takes place. In the above code block, where it appears that <code>evenDigits</code> is being appended via string interpolation, a new string is actually created using the previous value of <code>evenDigits</code> and the value of <code>i</code>, and that new string is assigned back to the <code>evenDigits</code> variable.</p>
-<p>(NOTE) Since this means of string appending involves the creation of another new string each time it occurs, it is less efficient than using a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/stringbuilder.md"> StringBuilder</a>, which is intended for just this purpose. In certain situations, such as a deeply nested loop, this performance difference may be significant.</p>
+<p>(NOTE) Since this means of string appending involves the creation of another new string each time it occurs, it is less efficient than using a <a href="../../../code_reference/nada_base_types/stringbuilder.html"> StringBuilder</a>, which is intended for just this purpose. In certain situations, such as a deeply nested loop, this performance difference may be significant.</p>
 <h1 id="escape-sequences">Escape Sequences</h1>
 <p>Some characters are entered in a string literal via special sequences of characters called //escape sequences//. In Nada, all escape sequences consist of a backslash followed by another character.</p>
 <pre><code class="lang-lang=csharp,">// \&quot; -- double quotation marks
@@ -173,7 +173,7 @@ BEWARE
 +---+---+---+
 </code></pre>
 <h1 id="strings-and-stringranges">Strings and StringRanges</h1>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/stringrange.md"> StringRange</a> is a separate but related class to <strong>String</strong>. It is an iterable range that can be used in a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md#for-each-loop"> For Each loop</a>. A string can be <strong>implicitly cast</strong> to StringRange, so a string can be passed into any function that expects a StringRange. However, a StringRange <em>cannot</em> be implicitly cast to String:</p>
+<p><a href="../../../code_reference/nada_base_types/stringrange.html"> StringRange</a> is a separate but related class to <strong>String</strong>. It is an iterable range that can be used in a <a href="looping.html#for-each-loop"> For Each loop</a>. A string can be <strong>implicitly cast</strong> to StringRange, so a string can be passed into any function that expects a StringRange. However, a StringRange <em>cannot</em> be implicitly cast to String:</p>
 <pre><code class="lang-lang=csharp,">  var string = &quot;&quot;;
   var stringRange = StringRange();
   
@@ -184,9 +184,9 @@ BEWARE
   this.FunctionTakingStringRange(stringRange);        // okay
 </code></pre>
 <h1 id="static-string-functions">Static String Functions</h1>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/attributes.md#static"> As with all static functions</a>, the static functions of the String class are not invoked from instances of the class, but instead are found in the String namespace itself.</p>
+<p><a href="attributes.html#static"> As with all static functions</a>, the static functions of the String class are not invoked from instances of the class, but instead are found in the String namespace itself.</p>
 <h2 id="compare">Compare</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#compare-zilch-engine-docu"> Compare</a> returns an Integer indicating the <em>relative sort order</em> of the two given strings; that is, whether one string would be sorted before another when comparing the character codes of the two strings:</p>
+<p><a href="../../../code_reference/nada_base_types/string.html#compare-zilch-engine-docu"> Compare</a> returns an Integer indicating the <em>relative sort order</em> of the two given strings; that is, whether one string would be sorted before another when comparing the character codes of the two strings:</p>
 <pre><code class="lang-lang=csharp,">var str0 = &quot;abc&quot;;
 var str1 = &quot;def&quot;;
 
@@ -209,7 +209,7 @@ Console.WriteLine(String.Compare(str0, str2));
 <pre><code class="lang-name=Console">-1
 1
 </code></pre>
-<p>This method is handy for sorting arrays of strings. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#sort-void"> Sort</a> is an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md"> Array</a> method that sorts an array in place using a given comparison function:</p>
+<p>This method is handy for sorting arrays of strings. <a href="../../../code_reference/nada_base_types/array_t.html#sort-void"> Sort</a> is an <a href="../../../code_reference/nada_base_types/array_t.html"> Array</a> method that sorts an array in place using a given comparison function:</p>
 <pre><code class="lang-lang=csharp,">var strings = Array[String]();
 
 strings.Add(&quot;hi&quot;);
@@ -227,13 +227,13 @@ Console.WriteLine(strings);
 {good morning, greetings, hi, nice to see you}
 </code></pre>
 <h2 id="concatenate">Concatenate</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#concatenate-zilch-engine"> Concatenate</a> can be used to join two existing strings:</p>
+<p><a href="../../../code_reference/nada_base_types/string.html#concatenate-zilch-engine"> Concatenate</a> can be used to join two existing strings:</p>
 <pre><code class="lang-lang=csharp,">Console.WriteLine(String.Concatenate(&quot;exa&quot;, &quot;mple&quot;));
 </code></pre>
 <pre><code class="lang-name=Console">example
 </code></pre>
 <h2 id="formatc">FormatC</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#formatc-zilch-engine-docu"> FormatC</a> produces a string using C-style string formatting syntax:</p>
+<p><a href="../../../code_reference/nada_base_types/string.html#formatc-zilch-engine-docu"> FormatC</a> produces a string using C-style string formatting syntax:</p>
 <pre><code class="lang-lang=csharp,">var score = 12340;
 Console.WriteLine(String.FormatC(&quot;Score: %08d&quot;, score));
 var hull = 100.0 * 43.0 / 64.0; // actual value 67.1875
@@ -250,7 +250,7 @@ Hull integrity at 67.19 percent
 <li>the <code>.</code> precision marker must have its precision value specified</li>
 </ul>
 <h2 id="fromrune">FromRune</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#fromrune-zilch-engine-doc"> FromRune</a> returns a one-character string that consists of the given rune, which can either be passed in directly, or be specified by its code point:</p>
+<p><a href="../../../code_reference/nada_base_types/string.html#fromrune-zilch-engine-doc"> FromRune</a> returns a one-character string that consists of the given rune, which can either be passed in directly, or be specified by its code point:</p>
 <pre><code class="lang-lang=csharp,">Console.WriteLine(String.FromRune(65));
 Console.WriteLine(String.FromRune(Rune(90)));
 </code></pre>
@@ -258,13 +258,13 @@ Console.WriteLine(String.FromRune(Rune(90)));
 Z
 </code></pre>
 <h2 id="isnullorempty-and-isnullorwhitespace">IsNullOrEmpty and IsNullOrWhitespace</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#isnullorempty-zilch-engin"> IsNullOrEmpty</a> returns true if the given string is either <strong>null</strong> or the empty string, <code>&quot;&quot;</code>, and false otherwise. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#isnullorwhitespace-zero"> IsNullOrWhitespace</a> works just the same way, except that it also returns true if the given string consists only of <strong>whitespace</strong> characters:</p>
+<p><a href="../../../code_reference/nada_base_types/string.html#isnullorempty-zilch-engin"> IsNullOrEmpty</a> returns true if the given string is either <strong>null</strong> or the empty string, <code>&quot;&quot;</code>, and false otherwise. <a href="../../../code_reference/nada_base_types/string.html#isnullorwhitespace-zero"> IsNullOrWhitespace</a> works just the same way, except that it also returns true if the given string consists only of <strong>whitespace</strong> characters:</p>
 <pre><code class="lang-lang=csharp,">Console.WriteLine(String.IsNullOrWhitespace(&quot;  \n  \t  &quot;));
 </code></pre>
 <pre><code class="lang-name=Console">true
 </code></pre>
 <h2 id="join">Join</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#join-zilch-engine-documen"> Join</a> combines two, three, or four strings into one, placing a given separator string between them in the result:</p>
+<p><a href="../../../code_reference/nada_base_types/string.html#join-zilch-engine-documen"> Join</a> combines two, three, or four strings into one, placing a given separator string between them in the result:</p>
 <pre><code class="lang-lang=csharp,">var word0 = &quot;Eeny&quot;;
 var word1 = &quot;Meeny&quot;;
 var word2 = &quot;Miney&quot;;
@@ -276,7 +276,7 @@ Console.WriteLine(String.Join(separator, word0, word1, word2, word3));
 </code></pre>
 <h1 id="string-properties">String Properties</h1>
 <h2 id="all">All</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#all-zilch-engine-document"> All</a> converts the string into a StringRange. In Nada, strings can be implicitly cast to StringRanges, so it is typically not necessary to use this property:</p>
+<p><a href="../../../code_reference/nada_base_types/string.html#all-zilch-engine-document"> All</a> converts the string into a StringRange. In Nada, strings can be implicitly cast to StringRanges, so it is typically not necessary to use this property:</p>
 <pre><code class="lang-lang=csharp,">// Contains takes a StringRange
 Console.WriteLine(&quot;homeowner&quot;.Contains(&quot;meow&quot;));
 Console.WriteLine(&quot;homeowner&quot;.Contains(&quot;meow&quot;.All));
@@ -285,7 +285,7 @@ Console.WriteLine(&quot;homeowner&quot;.Contains(&quot;meow&quot;.All));
 true
 </code></pre>
 <h2 id="begin-and-end">Begin and End</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#begin-zilch-engine-docume"> Begin</a> gets the RuneIterator at the start of the string, and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#end-zilch-engine-document"> End</a> gets the RuneIterator at the end of it:</p>
+<p><a href="../../../code_reference/nada_base_types/string.html#begin-zilch-engine-docume"> Begin</a> gets the RuneIterator at the start of the string, and <a href="../../../code_reference/nada_base_types/string.html#end-zilch-engine-document"> End</a> gets the RuneIterator at the end of it:</p>
 <pre><code class="lang-lang=csharp,">var fileName = &quot;SnowLevel.Analytics.gamedata&quot;;
 var levelName = fileName.SubString(fileName.Begin, fileName.FindFirstOf(&quot;.&quot;).Begin);
 var extension = fileName.SubString(fileName.FindLastOf(&quot;.&quot;).End, fileName.End);
@@ -296,7 +296,7 @@ Console.WriteLine(extension);
 gamedata
 </code></pre>
 <h2 id="bytecount-and-count">ByteCount and Count</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#bytecount-zilch-engine-do"> ByteCount</a> gets the number of bytes in the string. For a string that contains one or more characters outside of the ASCII range, this will be different from the number of runes represented by the string (see <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/strings/.md#computerunecount">ComputeRuneCount</a> below). Consider the following code example, attached to a cog that has a SpriteText component whose Text property is set to the French word //gar�on//:</p>
+<p><a href="../../../code_reference/nada_base_types/string.html#bytecount-zilch-engine-do"> ByteCount</a> gets the number of bytes in the string. For a string that contains one or more characters outside of the ASCII range, this will be different from the number of runes represented by the string (see <a href="strings/.md#computerunecount">ComputeRuneCount</a> below). Consider the following code example, attached to a cog that has a SpriteText component whose Text property is set to the French word //gar�on//:</p>
 <pre><code class="lang-lang=csharp,">var englishString = &quot;string&quot;;
 var frenchString = this.Owner.SpriteText.Text;
 
@@ -306,9 +306,9 @@ Console.WriteLine(&quot;The French string has `frenchString.ByteCount` bytes&quo
 <pre><code class="lang-name=Console">The English string has 6 bytes
 The French string has 7 bytes
 </code></pre>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#count-zilch-engine-docume"> Count</a> property gets the same value as <strong>ByteCount</strong>, and exists for legacy purposes.</p>
+<p>The <a href="../../../code_reference/nada_base_types/string.html#count-zilch-engine-docume"> Count</a> property gets the same value as <strong>ByteCount</strong>, and exists for legacy purposes.</p>
 <h2 id="empty-and-isnotempty">Empty and IsNotEmpty</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#empty-zilch-engine-docume"> Empty</a> gets whether the string contains any characters at all:</p>
+<p><a href="../../../code_reference/nada_base_types/string.html#empty-zilch-engine-docume"> Empty</a> gets whether the string contains any characters at all:</p>
 <pre><code class="lang-lang=csharp,">var userNameInput = &quot;&quot;;
 
 if (userNameInput.Empty)
@@ -318,7 +318,7 @@ else
 </code></pre>
 <pre><code class="lang-name=Console">Please enter a name.
 </code></pre>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#isnotempty-zilch-engine-d"> IsNotEmpty</a> is always the exact opposite of <strong>Empty</strong>.</p>
+<p><a href="../../../code_reference/nada_base_types/string.html#isnotempty-zilch-engine-d"> IsNotEmpty</a> is always the exact opposite of <strong>Empty</strong>.</p>
 <h1 id="string-methods">String Methods</h1>
 <p>String methods are found on string instances, including literals:</p>
 <pre><code class="lang-lang=csharp,">Console.WriteLine(&quot;hello world&quot;.ToUpper());
@@ -326,9 +326,9 @@ else
 <pre><code class="lang-name=Console">HELLO WORLD
 </code></pre>
 <h2 id="compareto">CompareTo</h2>
-<p>A string's <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#compareto-zilch-engine-do"> CompareTo</a> method returns an Integer indicating its relative sort order when compared with a given StringRange. It works much like the static <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/strings/.md#compare">Compare</a> function seen above, except that it compares a given StringRange to the string on which this method is being invoked.</p>
+<p>A string's <a href="../../../code_reference/nada_base_types/string.html#compareto-zilch-engine-do"> CompareTo</a> method returns an Integer indicating its relative sort order when compared with a given StringRange. It works much like the static <a href="strings/.md#compare">Compare</a> function seen above, except that it compares a given StringRange to the string on which this method is being invoked.</p>
 <h2 id="computerunecount">ComputeRuneCount</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#computerunecount-zilch-en"> ComputeRuneCount</a> method calculates the number of runes represented by the string by iterating through it from its <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/strings/.md#begin-and-end">Begin iterator to its End</a>. As noted <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/strings/.md#bytecount-and-count">above</a>, a string that contains one or more characters outside of the ASCII range will have a different rune count from its byte count:</p>
+<p>The <a href="../../../code_reference/nada_base_types/string.html#computerunecount-zilch-en"> ComputeRuneCount</a> method calculates the number of runes represented by the string by iterating through it from its <a href="strings/.md#begin-and-end">Begin iterator to its End</a>. As noted <a href="strings/.md#bytecount-and-count">above</a>, a string that contains one or more characters outside of the ASCII range will have a different rune count from its byte count:</p>
 <pre><code class="lang-lang=csharp,">var englishString = &quot;string&quot;;
 var frenchString = this.Owner.SpriteText.Text;
 
@@ -339,7 +339,7 @@ Console.WriteLine(&quot;The French string has `frenchString.ComputeRuneCount()` 
 The French string has 6 runes
 </code></pre>
 <h2 id="contains">Contains</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#contains-zilch-engine-doc"> Contains</a> method checks whether a string contains a given substring:</p>
+<p>The <a href="../../../code_reference/nada_base_types/string.html#contains-zilch-engine-doc"> Contains</a> method checks whether a string contains a given substring:</p>
 <pre><code class="lang-lang=csharp,">var sentence = &quot;DR. COSMO: \&quot;I'm looking for a person named Brianna.\&quot;&quot;;
 var name0 = &quot;Brian&quot;;
 var name1 = &quot;Anna&quot;;
@@ -356,7 +356,7 @@ if (sentence.Contains(name1))
 </code></pre>
 <p>As this example shows, <strong>Contains</strong> is case-sensitive, but it does <em>not</em> match only complete words. <code>Brianna</code> contains <code>Brian</code>, and it does contain <code>anna</code>, but not <code>Anna</code>.</p>
 <h2 id="endswith-and-startswith">EndsWith and StartsWith</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#endswith-zilch-engine-doc"> EndsWith</a> method checks whether a string ends with a given substring:</p>
+<p>The <a href="../../../code_reference/nada_base_types/string.html#endswith-zilch-engine-doc"> EndsWith</a> method checks whether a string ends with a given substring:</p>
 <pre><code class="lang-lang=csharp,">var fileNameToOpen = &quot;DesertLevel.Analytics.gamedata&quot;;
 
 var validFileExtension = &quot;.gamedata&quot;;
@@ -368,9 +368,9 @@ else
 </code></pre>
 <pre><code class="lang-name=ConsoleWindow">Opening DesertLevel.Analytics.gamedata....
 </code></pre>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#startswith-zilch-engine-d"> StartsWith</a> method works the same way, except that it checks the beginning of the string instead the end.</p>
+<p>The <a href="../../../code_reference/nada_base_types/string.html#startswith-zilch-engine-d"> StartsWith</a> method works the same way, except that it checks the beginning of the string instead the end.</p>
 <h2 id="replace">Replace</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#replace-zilch-engine-docu"> Replace</a> method returns a new string, with all occurrences of a given old substring replaced with a given new substring:</p>
+<p>The <a href="../../../code_reference/nada_base_types/string.html#replace-zilch-engine-docu"> Replace</a> method returns a new string, with all occurrences of a given old substring replaced with a given new substring:</p>
 <pre><code class="lang-lang=csharp,">var dialogueFromFile = &quot;Oh, [HERO_NAME]! Your friend [VILLAIN_NAME] was looking for you.&quot;;
 
 var heroName = &quot;Brianna&quot;;
@@ -384,7 +384,7 @@ Console.WriteLine(dialogue);
 <pre><code class="lang-name=Console">Oh, Brianna! Your friend Dr. Cosmo was looking for you.
 </code></pre>
 <h2 id="split">Split</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#split-zilch-engine-docume"> Split</a> method scans a string for a given delimiter StringRange of one or more characters. The substrings that were found separated by occurrences of that delimiter, if any, are returned as an iterable range. The delimiter itself is not present in the split results:</p>
+<p>The <a href="../../../code_reference/nada_base_types/string.html#split-zilch-engine-docume"> Split</a> method scans a string for a given delimiter StringRange of one or more characters. The substrings that were found separated by occurrences of that delimiter, if any, are returned as an iterable range. The delimiter itself is not present in the split results:</p>
 <pre><code class="lang-lang=csharp,">var dataFromFile = &quot;0,0,2,0,5,4,1,1,0,0,0,1,1,3,5,1&quot;;
 var splitResults = dataFromFile.Split(&quot;,&quot;);
 
@@ -399,9 +399,9 @@ Console.WriteLine(&quot;Data Total: `total`&quot;);
 </code></pre>
 <pre><code class="lang-name=Console">Data Total: 24
 </code></pre>
-<p>NOTE: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md#parse-zilch-engine-docume"> Parse</a> is a static <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md"> Integer</a> function. It takes a StringRange and interprets it as if it were an Integer, and returns that value. Equivalent static functions exist in other classes, such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md"> Real</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doubleinteger.md"> DoubleInteger</a>, etc.</p>
+<p>NOTE: <a href="../../../code_reference/nada_base_types/integer.html#parse-zilch-engine-docume"> Parse</a> is a static <a href="../../../code_reference/nada_base_types/integer.html"> Integer</a> function. It takes a StringRange and interprets it as if it were an Integer, and returns that value. Equivalent static functions exist in other classes, such as <a href="../../../code_reference/nada_base_types/real.html"> Real</a>, <a href="../../../code_reference/nada_base_types/doubleinteger.html"> DoubleInteger</a>, etc.</p>
 <h2 id="substring-substringbytes-and-substringfromruneindices">SubString, SubStringBytes, and SubStringFromRuneIndices</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#substring-zilch-engine-do"> SubString</a> method returns the snippet of a string that is bounded by the two given RuneIterators. This may be the entire string itself, or it may be a smaller portion thereof:</p>
+<p>The <a href="../../../code_reference/nada_base_types/string.html#substring-zilch-engine-do"> SubString</a> method returns the snippet of a string that is bounded by the two given RuneIterators. This may be the entire string itself, or it may be a smaller portion thereof:</p>
 <pre><code class="lang-lang=csharp,">var name = &quot;The Evil Dr. Cosmo&quot;;
 
 var firstSpace = name.FindFirstOf(&quot; &quot;);
@@ -425,12 +425,12 @@ Console.WriteLine(revisedName);
 <pre><code class="lang-name=Console">The Handsome but Misunderstood Dr. Eugene Cosmo IV
 </code></pre>
 <ul>
-<li>See also <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/strings/.md#findfirstof">FindFirstOf</a></li>
-<li>See also <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/strings/.md#findfirstof">FindLastOf</a></li>
+<li>See also <a href="strings/.md#findfirstof">FindFirstOf</a></li>
+<li>See also <a href="strings/.md#findfirstof">FindLastOf</a></li>
 </ul>
 <p>Besides <strong>SubString</strong>, there are two other String methods that return substrings:</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#substringbytes-zilch-engi"> SubStringBytes</a> returns a string's substring that starts at the given byte index and runs for the given byte length:</li>
+<li><a href="../../../code_reference/nada_base_types/string.html#substringbytes-zilch-engi"> SubStringBytes</a> returns a string's substring that starts at the given byte index and runs for the given byte length:</li>
 </ul>
 <pre><code class="lang-lang=csharp,">var str = &quot;abcdefghij&quot;;
 //         0123456789
@@ -444,7 +444,7 @@ Console.WriteLine(sub);
 </code></pre>
 <p>IMPORTANT: A string that contains characters that are outside of the ASCII range will not have a matching rune count and byte count. Using <strong>SubStringBytes</strong> on such a string may produce undesired behavior.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#substringfromruneindices"> SubStringFromRuneIndices</a> returns a string's substring that starts at the given starting rune index and ends one past the given ending rune index:</li>
+<li><a href="../../../code_reference/nada_base_types/string.html#substringfromruneindices"> SubStringFromRuneIndices</a> returns a string's substring that starts at the given starting rune index and ends one past the given ending rune index:</li>
 </ul>
 <pre><code class="lang-lang=csharp,">var str = &quot;abcdefghij&quot;;
 //         0123456789
@@ -456,7 +456,7 @@ Console.WriteLine(sub);
 </code></pre>
 <p>NOTE: Finding a given rune by its index requires a linear search through a string. Because <strong>SubStringFromRuneIndices</strong> requires two such searches, this method can be slower than <strong>SubString</strong>. In certain situations, such as a deeply nested loop, this performance difference may be significant.</p>
 <h2 id="tolower-and-toupper">ToLower and ToUpper</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#tolower-zilch-engine-docu"> ToLower</a> method returns a copy of the original string with all of its letters converted to lowercase. Any character that is not an uppercase alphabetical character is unchanged:</p>
+<p>The <a href="../../../code_reference/nada_base_types/string.html#tolower-zilch-engine-docu"> ToLower</a> method returns a copy of the original string with all of its letters converted to lowercase. Any character that is not an uppercase alphabetical character is unchanged:</p>
 <pre><code class="lang-lang=csharp,">var sentence = &quot;gEt ReKT scRUb&quot;;
 var forbiddenWord = &quot;scrub&quot;;
 
@@ -469,7 +469,7 @@ else
 </code></pre>
 <pre><code class="lang-name=Console">You have been reported for bad manners.
 </code></pre>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#toupper-zilch-engine-docu"> ToUpper</a> method is just like ToLower, except that it converts letters to uppercase:</p>
+<p>The <a href="../../../code_reference/nada_base_types/string.html#toupper-zilch-engine-docu"> ToUpper</a> method is just like ToLower, except that it converts letters to uppercase:</p>
 <pre><code class="lang-lang=csharp,">var name = &quot;Johnny&quot;;
 var upperName = name.ToUpper();
 var dialogue = &quot;`upperName`: \&quot;This is `name`.\&quot;&quot;;
@@ -478,7 +478,7 @@ Console.WriteLine(dialogue);
 <pre><code class="lang-name=ConsoleWindow">JOHNNY: &quot;This is Johnny.&quot;
 </code></pre>
 <h2 id="trim-trimend-and-trimstart">Trim, TrimEnd, and TrimStart</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#trim-zilch-engine-documen"> Trim</a> method returns a copy of the original string with all of its whitespace characters removed from its beginning and end:</p>
+<p>The <a href="../../../code_reference/nada_base_types/string.html#trim-zilch-engine-documen"> Trim</a> method returns a copy of the original string with all of its whitespace characters removed from its beginning and end:</p>
 <pre><code class="lang-lang=csharp,">var untrimmedID = &quot;    f08b47e1            &quot;;
 Console.WriteLine(&quot;Your ID is `untrimmedID`. Write it down.&quot;);
 
@@ -488,20 +488,20 @@ Console.WriteLine(&quot;Your ID is `trimmedID`. Write it down.&quot;);
 <pre><code class="lang-name=Console">Your ID is     f08b47e1            . Write it down.
 Your ID is f08b47e1. Write it down.
 </code></pre>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#trimend-zilch-engine-docu"> TrimEnd</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md#trimstart-zilch-engine-do"> TrimStart</a> work just the same as <strong>Trim</strong>, except that <strong>TrimEnd</strong> only trims whitespace characters from the end of the string, and <strong>TrimStart</strong> only trims from the start of the string.</p>
+<p><a href="../../../code_reference/nada_base_types/string.html#trimend-zilch-engine-docu"> TrimEnd</a> and <a href="../../../code_reference/nada_base_types/string.html#trimstart-zilch-engine-do"> TrimStart</a> work just the same as <strong>Trim</strong>, except that <strong>TrimEnd</strong> only trims whitespace characters from the end of the string, and <strong>TrimStart</strong> only trims from the start of the string.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md"> Looping</a></li>
+<li><a href="looping.html"> Looping</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md"> String</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/stringrange.md"> StringRange</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/stringbuilder.md"> StringBuilder</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/stringsplitrange.md"> StringSplitRange</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/rune.md"> Rune</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/runeiterator.md"> RuneIterator</a></li>
+<li><a href="../../../code_reference/nada_base_types/string.html"> String</a></li>
+<li><a href="../../../code_reference/nada_base_types/stringrange.html"> StringRange</a></li>
+<li><a href="../../../code_reference/nada_base_types/stringbuilder.html"> StringBuilder</a></li>
+<li><a href="../../../code_reference/nada_base_types/stringsplitrange.html"> StringSplitRange</a></li>
+<li><a href="../../../code_reference/nada_base_types/rune.html"> Rune</a></li>
+<li><a href="../../../code_reference/nada_base_types/runeiterator.html"> RuneIterator</a></li>
 </ul>
 
 </article>

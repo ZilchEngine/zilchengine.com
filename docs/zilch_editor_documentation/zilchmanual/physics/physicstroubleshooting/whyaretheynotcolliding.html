@@ -85,13 +85,13 @@
 
         <article data-uid="">
 
-<p>A common issue during development is to have two objects not collide when the user thinks they should. To help aid debugging this, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/physicsspace.md">PhysicsSpace</a> exposes the <code>WhyAreTheyNotColliding</code> function. This function takes a pair of objects and returns a string signifying why the physics space doesn't think they're colliding. Here's a short list of a few common reasons:</p>
+<p>A common issue during development is to have two objects not collide when the user thinks they should. To help aid debugging this, <a href="physicsspace.md">PhysicsSpace</a> exposes the <code>WhyAreTheyNotColliding</code> function. This function takes a pair of objects and returns a string signifying why the physics space doesn't think they're colliding. Here's a short list of a few common reasons:</p>
 <ul>
 <li><strong>There isn't a collision</strong>: The objects might just not be colliding. This is often the case when making a 2D game and the objects are on different z-layers. Try to look at the property grid or change the camera angle to verify this.</li>
-<li><strong>The collider is static:</strong> See the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/collisionoverview.md">Collision Overview</a> page for what goes through collision detection and collision resolution.</li>
-<li><strong>No messages are sent:</strong> Ensure that the Collider's SendsEvent checkBox property is true and that a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/collisionoverview/collisiongroupsandtables.md">CollisionTable</a> is not interfering with these events. Additionally, if using the SweptController make sure:
+<li><strong>The collider is static:</strong> See the <a href="collisionoverview.md">Collision Overview</a> page for what goes through collision detection and collision resolution.</li>
+<li><strong>No messages are sent:</strong> Ensure that the Collider's SendsEvent checkBox property is true and that a <a href="collisionoverview/collisiongroupsandtables.md">CollisionTable</a> is not interfering with these events. Additionally, if using the SweptController make sure:
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customcollisioneventtracker.md">CustomCollisionEventTracker</a> component is attached to the same object as the SweptController</li>
+<li><a href="../../../../code_reference/class_reference/customcollisioneventtracker.html">CustomCollisionEventTracker</a> component is attached to the same object as the SweptController</li>
 <li>SweptController's ForwardEvents checkBox property is set to true</li>
 </ul>
 </li>
@@ -115,18 +115,18 @@
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting.md">physicstroubleshooting.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/colliders.md">colliders.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/collisionoverview.md">collisionoverview.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/collisionoverview/collisiongroupsandtables.md">collisiongroupsandtables.md</a></li>
+<li><a href="../physicstroubleshooting.html">physicstroubleshooting.md</a></li>
+<li><a href="colliders.md">colliders.md</a></li>
+<li><a href="collisionoverview.md">collisionoverview.md</a></li>
+<li><a href="collisionoverview/collisiongroupsandtables.md">collisiongroupsandtables.md</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md">Collider</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsspace.md">PhysicsSpace</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customcollisioneventtracker.md">CustomCollisionEventTracker</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiongroup.md">CollisionGroup</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiontable.md">CollisionTable</a></li>
+<li><a href="../../../../code_reference/class_reference/collider.html">Collider</a></li>
+<li><a href="../../../../code_reference/class_reference/physicsspace.html">PhysicsSpace</a></li>
+<li><a href="../../../../code_reference/class_reference/customcollisioneventtracker.html">CustomCollisionEventTracker</a></li>
+<li><a href="../../../../code_reference/class_reference/collisiongroup.html">CollisionGroup</a></li>
+<li><a href="../../../../code_reference/class_reference/collisiontable.html">CollisionTable</a></li>
 </ul>
 
 </article>

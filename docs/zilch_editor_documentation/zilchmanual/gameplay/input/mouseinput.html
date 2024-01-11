@@ -89,7 +89,7 @@
 <h1 id="using-the-mouse">Using the Mouse</h1>
 <p>The mouse can either be used as a cursor controller, for tracking a specific position and pointing at and clicking on objects and buttons, etc., or it can be used as a direct input device, just like a keyboard or a gamepad.</p>
 <h2 id="cursor-control">Cursor Control</h2>
-<p><strong>Cursor control</strong>, also known as <em>point-and-click</em> control, is usually what is used for mouse-driven GUIs. It is mostly focused on the use of the mouse to manipulate the position of a cursor in a 2D plane. Cursor control typically makes heavy use of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/reactive.md"> Reactive</a> component to receive mouse events sent directly to interactive objects, such as buttons.</p>
+<p><strong>Cursor control</strong>, also known as <em>point-and-click</em> control, is usually what is used for mouse-driven GUIs. It is mostly focused on the use of the mouse to manipulate the position of a cursor in a 2D plane. Cursor control typically makes heavy use of the <a href="../../../../code_reference/class_reference/reactive.html"> Reactive</a> component to receive mouse events sent directly to interactive objects, such as buttons.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/93544.gif" alt="Mouse Cursor Control Circles Example"></p>
 <p><em>The mouse controls the position of the cursor, and game actions are performed by clicking on objects themselves.</em></p>
 <h2 id="direct-mouse-control">Direct Mouse Control</h2>
@@ -99,8 +99,8 @@
 <h1 id="event-based-input-vs-polling-based-input">Event-Based Input vs. Polling-Based Input</h1>
 <p>Whether the mouse is used for cursor control or direct control, in any case, there are two ways of using mouse input in the Zilch Engine: by connecting to mouse events, known as <strong>event-based</strong> input, by polling the state of the mouse (typically in an Update function), known as <strong>polling-based</strong> input. Each has its advantages.</p>
 <h2 id="events">Events</h2>
-<p>Mouse events are dispatched as the mouse is used, and the position of the mouse cursor determines the targets of these events. When the cursor is positioned over an cog with the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/reactive.md"> Reactive</a> component, that cog receives mouse events.</p>
-<p>In addition, mouse events are also sent to viewports. When a mouse event occurs in a viewport, it is dispatched to the cog with the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/camera.md"> Camera</a> component and the cog with the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md"> CameraViewport</a> component that represent that viewport. (Events are not dispatched doubly if both components are on the same cog, as is commonly the case.)</p>
+<p>Mouse events are dispatched as the mouse is used, and the position of the mouse cursor determines the targets of these events. When the cursor is positioned over an cog with the <a href="../../../../code_reference/class_reference/reactive.html"> Reactive</a> component, that cog receives mouse events.</p>
+<p>In addition, mouse events are also sent to viewports. When a mouse event occurs in a viewport, it is dispatched to the cog with the <a href="../../../../code_reference/class_reference/camera.html"> Camera</a> component and the cog with the <a href="../../../../code_reference/class_reference/cameraviewport.html"> CameraViewport</a> component that represent that viewport. (Events are not dispatched doubly if both components are on the same cog, as is commonly the case.)</p>
 <p>NOTE: A <strong>mouse event target</strong> is anything that can receive a mouse event. Mouse event targets are spaces, cogs with the Camera component, cogs with the CameraViewport component, and cogs with the Reactive component.</p>
 <p>Here is an example of the use of mouse events, showing two different event connections, one to the space and one to the Reactive object itself:</p>
 <pre><code class="lang-lang=csharp,">class MouseEventDemonstration : NadaComponent
@@ -169,9 +169,9 @@
   Zilch.Connect(this.Owner, Events.DoubleClick,       this.OnDoubleClick);
 }
 </code></pre>
-<p>Each of these events is a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/viewportmouseevent.md"> ViewportMouseEvent</a>. This event contains various relevant mouse data, such as the position of the cursor and the states of its buttons.</p>
+<p>Each of these events is a <a href="../../../../code_reference/class_reference/viewportmouseevent.html"> ViewportMouseEvent</a>. This event contains various relevant mouse data, such as the position of the cursor and the states of its buttons.</p>
 <h4 id="mouseupdate">MouseUpdate</h4>
-<p>Every frame that the mouse is over a mouse event target, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#mouseupdate"> MouseUpdate</a> event is dispatched to that target:</p>
+<p>Every frame that the mouse is over a mouse event target, the <a href="../../../../code_reference/event_reference.html#mouseupdate"> MouseUpdate</a> event is dispatched to that target:</p>
 <pre><code class="lang-lang=csharp,">function OnMouseUpdate(event : ViewportMouseEvent)
 {
   // move this object to the mouse position
@@ -179,8 +179,8 @@
 }
 </code></pre>
 <h4 id="mouseenter-mouseexit-and-mouseenterpreview">MouseEnter, MouseExit, and MouseEnterPreview</h4>
-<p>When the mouse cursor &quot;enters&quot; a mouse event target � that is, when it goes from not being over the target to being over it from the perspective of the viewport showing it � the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#mouseenter"> MouseEnter</a> event is dispatched to that target that frame. Likewise, when the cursor &quot;exits&quot; a target � it goes from over it to not over it � the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#mouseexit"> MouseExit</a> event is dispatched to that target that frame.</p>
-<p>As the mouse cursor enters a mouse event target, if it is simultaneously exiting another one, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#mouseenterpreview"> MouseEnterPreview</a> event is dispatched that frame to the target being entered. This event is dispatched <em>immediately before</em> the <strong>MouseExit</strong> and subsequent <strong>MouseEnter</strong> events are dispatched, in the same frame.</p>
+<p>When the mouse cursor &quot;enters&quot; a mouse event target � that is, when it goes from not being over the target to being over it from the perspective of the viewport showing it � the <a href="../../../../code_reference/event_reference.html#mouseenter"> MouseEnter</a> event is dispatched to that target that frame. Likewise, when the cursor &quot;exits&quot; a target � it goes from over it to not over it � the <a href="../../../../code_reference/event_reference.html#mouseexit"> MouseExit</a> event is dispatched to that target that frame.</p>
+<p>As the mouse cursor enters a mouse event target, if it is simultaneously exiting another one, the <a href="../../../../code_reference/event_reference.html#mouseenterpreview"> MouseEnterPreview</a> event is dispatched that frame to the target being entered. This event is dispatched <em>immediately before</em> the <strong>MouseExit</strong> and subsequent <strong>MouseEnter</strong> events are dispatched, in the same frame.</p>
 <p>For example, this code snippet connects to two different cogs, <code>CogA</code> and <code>CogB</code> (declared elsewhere in the script), for these events:</p>
 <pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
 {
@@ -211,7 +211,7 @@ Entering CogB
 </code></pre>
 <p>MouseEnterPreview is useful when there is code that should be run before the MouseExit and MouseEnter callbacks are executed.</p>
 <h4 id="mousemove-and-mousescroll">MouseMove and MouseScroll</h4>
-<p>Every frame that the mouse <strong>moves</strong> while the cursor is over a mouse event target, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#mousemove"> MouseMove</a> event is dispatched to that target. When the mouse is <strong>scrolled</strong> while the cursor is over a mouse event target, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#mousescroll"> MouseScroll</a> event is dispatched to that target:</p>
+<p>Every frame that the mouse <strong>moves</strong> while the cursor is over a mouse event target, the <a href="../../../../code_reference/event_reference.html#mousemove"> MouseMove</a> event is dispatched to that target. When the mouse is <strong>scrolled</strong> while the cursor is over a mouse event target, the <a href="../../../../code_reference/event_reference.html#mousescroll"> MouseScroll</a> event is dispatched to that target:</p>
 <pre><code class="lang-lang=csharp,">function OnMouseMove(event : ViewportMouseEvent)
 {
   // move the camera an amount equal to the
@@ -227,7 +227,7 @@ function OnMouseScroll(event : ViewportMouseEvent)
 }
 </code></pre>
 <h4 id="down-and-up-events">Down and Up Events</h4>
-<p>When any mouse button is <strong>pressed</strong> while the cursor is over a mouse event target, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#mousedown"> MouseDown</a> event is dispatched to that target. Likewise, when any mouse button is <strong>released</strong> while the cursor is over a mouse event target, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#mouseup"> MouseUp</a> event is dispatched to that target.</p>
+<p>When any mouse button is <strong>pressed</strong> while the cursor is over a mouse event target, the <a href="../../../../code_reference/event_reference.html#mousedown"> MouseDown</a> event is dispatched to that target. Likewise, when any mouse button is <strong>released</strong> while the cursor is over a mouse event target, the <a href="../../../../code_reference/event_reference.html#mouseup"> MouseUp</a> event is dispatched to that target.</p>
 <p><strong>MouseDown</strong> and <strong>MouseUp</strong> are useful when writing controls that can be bound to any mouse button. To determine which mouse button was pressed or released, just check the <code>Button</code> field on the ViewportMouseEvent object that is sent with the event:</p>
 <pre><code class="lang-lang=csharp,">function OnMouseDown(event : ViewportMouseEvent)
 {
@@ -249,7 +249,7 @@ function OnMouseUp(event : ViewportMouseEvent)
     Zilch.Disconnect(this.Space, Events.MouseMove, this);
 }
 </code></pre>
-<p>Zilch also has specific events for <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#leftmousedown"> LeftMouseDown</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#leftmouseup"> LeftMouseUp</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#rightmousedown"> RightMouseDown</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#rightmouseup"> RightMouseUp</a>, and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#middlemousedown"> MiddleMouseDown</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#middlemouseup"> MiddleMouseUp</a>, which are dispatched only when the corresponding button is pressed or released:</p>
+<p>Zilch also has specific events for <a href="../../../../code_reference/event_reference.html#leftmousedown"> LeftMouseDown</a> and <a href="../../../../code_reference/event_reference.html#leftmouseup"> LeftMouseUp</a>, <a href="../../../../code_reference/event_reference.html#rightmousedown"> RightMouseDown</a> and <a href="../../../../code_reference/event_reference.html#rightmouseup"> RightMouseUp</a>, and <a href="../../../../code_reference/event_reference.html#middlemousedown"> MiddleMouseDown</a> and <a href="../../../../code_reference/event_reference.html#middlemouseup"> MiddleMouseUp</a>, which are dispatched only when the corresponding button is pressed or released:</p>
 <pre><code class="lang-lang=csharp,">function OnLeftMouseDown(event : ViewportMouseEvent)
 {
   this.BeginChargingLaser();
@@ -266,7 +266,7 @@ function OnMiddleMouseDown(event : ViewportMouseEvent)
 }
 </code></pre>
 <h4 id="click-events">Click Events</h4>
-<p>When a mouse button is both <strong>pressed</strong> and <strong>released</strong> over the same object, that object is said to have been //clicked//. Click events are commonly used for UI elements, such as buttons. Zilch dispatches <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#leftclick"> LeftClick</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#rightclick"> RightClick</a>, and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#middleclick"> MiddleClick</a> events:</p>
+<p>When a mouse button is both <strong>pressed</strong> and <strong>released</strong> over the same object, that object is said to have been //clicked//. Click events are commonly used for UI elements, such as buttons. Zilch dispatches <a href="../../../../code_reference/event_reference.html#leftclick"> LeftClick</a>, <a href="../../../../code_reference/event_reference.html#rightclick"> RightClick</a>, and <a href="../../../../code_reference/event_reference.html#middleclick"> MiddleClick</a> events:</p>
 <pre><code class="lang-lang=csharp,">function OnLeftClick(event : ViewportMouseEvent)
 {
   // perform whatever effect this button does
@@ -286,7 +286,7 @@ function OnMiddleClick(event : ViewportMouseEvent)
 }
 </code></pre>
 <h4 id="doubleclick">DoubleClick</h4>
-<p>When a mouse event target is double-clicked, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#doubleclick"> DoubleClick</a> event is dispatched to that target:</p>
+<p>When a mouse event target is double-clicked, the <a href="../../../../code_reference/event_reference.html#doubleclick"> DoubleClick</a> event is dispatched to that target:</p>
 <pre><code class="lang-lang=csharp,">function OnDoubleClick(event : ViewportMouseEvent)
 {
   if (event.Button == this.LaserButton)
@@ -298,7 +298,7 @@ function OnMiddleClick(event : ViewportMouseEvent)
 <p>NOTE: The timing of the two clicks involved in a double click is defined by the user's operating system.</p>
 <hr>
 <h2 id="polling-based-input">Polling-Based Input</h2>
-<p>Polling-based input typically occurs in a callback for an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/updateevent.md"> Update event</a> such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate"> LogicUpdate</a>:</p>
+<p>Polling-based input typically occurs in a callback for an <a href="../../../../code_reference/class_reference/updateevent.html"> Update event</a> such as <a href="../../../../code_reference/event_reference.html#logicupdate"> LogicUpdate</a>:</p>
 <pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
 {
   Zilch.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
@@ -309,11 +309,11 @@ function OnLogicUpdate(event : UpdateEvent)
   // check for mouse input here
 }
 </code></pre>
-<p>The mouse may be polled via the global <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mouse.md"> Mouse</a> object, which can be found at <code>Zilch.Mouse</code>; of interest to mouse input are its <code>CursorMovement</code>, <code>RawMovement</code>, and <code>ClientPosition</code> properties and its <code>IsButtonDown</code> function.</p>
+<p>The mouse may be polled via the global <a href="../../../../code_reference/class_reference/mouse.html"> Mouse</a> object, which can be found at <code>Zilch.Mouse</code>; of interest to mouse input are its <code>CursorMovement</code>, <code>RawMovement</code>, and <code>ClientPosition</code> properties and its <code>IsButtonDown</code> function.</p>
 <h3 id="cursormovement-rawmovement-and-clientposition">CursorMovement, RawMovement, and ClientPosition</h3>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mouse.md#rawmovement-zilch-engine"> RawMovement</a> represents the amount of movement detected this frame by the mousing device. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mouse.md#clientposition-zilch-engi"> ClientPosition</a> gives the screen-space cursor position in pixels, as computed by the OS. ClientPosition is relative to the upper left pixel of the Zilch client (application), which is (0, 0), with X and Y increasing to the right and down respectively. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mouse.md#cursormovement-zilch-engi"> CursorMovement</a> property is computed by Zilch as the difference in the ClientPosition between the current frame and the previous frame.</p>
+<p><a href="../../../../code_reference/class_reference/mouse.html#rawmovement-zilch-engine"> RawMovement</a> represents the amount of movement detected this frame by the mousing device. <a href="../../../../code_reference/class_reference/mouse.html#clientposition-zilch-engi"> ClientPosition</a> gives the screen-space cursor position in pixels, as computed by the OS. ClientPosition is relative to the upper left pixel of the Zilch client (application), which is (0, 0), with X and Y increasing to the right and down respectively. The <a href="../../../../code_reference/class_reference/mouse.html#cursormovement-zilch-engi"> CursorMovement</a> property is computed by Zilch as the difference in the ClientPosition between the current frame and the previous frame.</p>
 <p>NOTE: CursorMovement and RawMovement often differ because the final position of the cursor depends on OS settings.</p>
-<p>The ClientPosition property is given in screen space, but it may be helpful to convert it to another coordinate basis, such as world space. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md"> CameraViewport</a> component has handy functions for performing such changes of basis:</p>
+<p>The ClientPosition property is given in screen space, but it may be helpful to convert it to another coordinate basis, such as world space. The <a href="../../../../code_reference/class_reference/cameraviewport.html"> CameraViewport</a> component has handy functions for performing such changes of basis:</p>
 <pre><code class="lang-lang=csharp,">function OnLogicUpdate(event : UpdateEvent)
 {
   // mouse position in screen space
@@ -326,7 +326,7 @@ function OnLogicUpdate(event : UpdateEvent)
 }
 </code></pre>
 <h3 id="isbuttondown">IsButtonDown</h3>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mouse.md#isbuttondown-zilch-engine"> IsButtonDown</a> function returns whether the given mouse button is down on the current frame. It closely parallels the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboard.md#keyisdown-zilch-engine-do"> KeyIsDown</a> function on the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboard.md"> Keyboard</a> object:</p>
+<p>The <a href="../../../../code_reference/class_reference/mouse.html#isbuttondown-zilch-engine"> IsButtonDown</a> function returns whether the given mouse button is down on the current frame. It closely parallels the <a href="../../../../code_reference/class_reference/keyboard.html#keyisdown-zilch-engine-do"> KeyIsDown</a> function on the <a href="../../../../code_reference/class_reference/keyboard.html"> Keyboard</a> object:</p>
 <pre><code class="lang-lang=csharp,">function OnLogicUpdate(event : UpdateEvent)
 {
   // if the mouse look button is held, turn the camera with the mouse's movement
@@ -337,12 +337,12 @@ function OnLogicUpdate(event : UpdateEvent)
 }
 </code></pre>
 <h1 id="what-to-use">What to Use</h1>
-<p>Whether direct control or cursor control is used, event-based input and polling-based input may have performance differences. As is the case with <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/gameplay/input/keyboardinput.md#what-to-use"> Keyboard Input</a>, the difference will often be very small, so sometimes it is best to use whichever method is easiest for the developer, but knowing how to decide which input method to use is always important.</p>
+<p>Whether direct control or cursor control is used, event-based input and polling-based input may have performance differences. As is the case with <a href="keyboardinput.html#what-to-use"> Keyboard Input</a>, the difference will often be very small, so sometimes it is best to use whichever method is easiest for the developer, but knowing how to decide which input method to use is always important.</p>
 <p>To decide whether a component should use event-based mouse input or polling-based mouse input, begin by answering these guideline questions:</p>
 <p><strong>Is the mouse being used for cursor control or direct mouse control?</strong></p>
 <ul>
-<li><strong><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/gameplay/input/mouseinput/.md#cursor-control">Cursor control</a></strong>: mouse events are probably better</li>
-<li><strong><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/gameplay/input/mouseinput/.md#direct-mouse-control">direct mouse control</a></strong>: either may work</li>
+<li><strong><a href="mouseinput/.md#cursor-control">Cursor control</a></strong>: mouse events are probably better</li>
+<li><strong><a href="mouseinput/.md#direct-mouse-control">direct mouse control</a></strong>: either may work</li>
 </ul>
 <p>The nature of a cursor-driven interface is well-suited to being controlled by mouse events, and is often awkward and impractical to implement with polling.</p>
 <p><strong>Is this component already connected to an update event?</strong></p>
@@ -362,20 +362,20 @@ function OnLogicUpdate(event : UpdateEvent)
 <li><strong>A long time</strong>: events may be better</li>
 <li><strong>Not long</strong>: consider polling</li>
 </ul>
-<p>Because mouse events are only dispatched when the mouse is used (other than <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/.md#mouseupdate"> MouseUpdate</a>), event-based input has the potential to be more efficient than frame-based input, especially when checking for an input that is expected to occur only rarely or sporadically.</p>
+<p>Because mouse events are only dispatched when the mouse is used (other than <a href="../../../../.md#mouseupdate"> MouseUpdate</a>), event-based input has the potential to be more efficient than frame-based input, especially when checking for an input that is expected to occur only rarely or sporadically.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/gameplay/input/keyboardinput.md#what-to-use"> Keyboard Input</a></li>
+<li><a href="keyboardinput.html#what-to-use"> Keyboard Input</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mouse.md"> Mouse</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/viewportmouseevent.md"> ViewportMouseEvent</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/reactive.md"> Reactive</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md"> CameraViewport</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/camera.md"> Camera</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboard.md"> Keyboard</a></li>
+<li><a href="../../../../code_reference/class_reference/mouse.html"> Mouse</a></li>
+<li><a href="../../../../code_reference/class_reference/viewportmouseevent.html"> ViewportMouseEvent</a></li>
+<li><a href="../../../../code_reference/class_reference/reactive.html"> Reactive</a></li>
+<li><a href="../../../../code_reference/class_reference/cameraviewport.html"> CameraViewport</a></li>
+<li><a href="../../../../code_reference/class_reference/camera.html"> Camera</a></li>
+<li><a href="../../../../code_reference/class_reference/keyboard.html"> Keyboard</a></li>
 </ul>
 <h2 id="development-task">Development Task</h2>
 <ul>

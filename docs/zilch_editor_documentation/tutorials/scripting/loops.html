@@ -89,16 +89,16 @@
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
 <li>When and how to write loops</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">while</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">for</a> loops</li>
-<li>Looping keywords: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">continue</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">break</a></li>
+<li><a href="../../zilchmanual/nada_in_zilch/keywords.html">while</a> and <a href="../../zilchmanual/nada_in_zilch/keywords.html">for</a> loops</li>
+<li>Looping keywords: <a href="../../zilchmanual/nada_in_zilch/keywords.html">continue</a> and <a href="../../zilchmanual/nada_in_zilch/keywords.html">break</a></li>
 <li>Infinite loops</li>
 <li>Nested loops</li>
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>LoopExamples</code></li>
 <li>In the <code>LoopExamples</code> NadaScript</li>
 <li>Replace the script's contents with the following:</li>
@@ -113,12 +113,12 @@
 </code></pre>
 <ul>
 <li>In the <code>Objects Window</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : LevelSettings object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a> : LevelSettings object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : LoopExamples button</li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : LoopExamples button</li>
 </ul>
 <h1 id="getting-started">Getting Started</h1>
-<p>Recall the <code>Square</code> function from the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/functions.md"> Functions Tutorial</a>. It takes a Real parameter, multiplies it by itself, and returns the result:</p>
+<p>Recall the <code>Square</code> function from the <a href="functions.html"> Functions Tutorial</a>. It takes a Real parameter, multiplies it by itself, and returns the result:</p>
 <pre><code class="lang-lang=csharp,">function Square(number : Real) : Real
 {
   return number * number;
@@ -197,7 +197,7 @@
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=&quot;Console">IncompletePower: 4, x ^ y: 4
 IncompletePower: 8, x ^ y: 8
@@ -206,7 +206,7 @@ IncompletePower: 16, x ^ y: 32
 IncompletePower: 16, x ^ y: 64
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <p>The function works as intended if the desired power is small enough, but it will always return the same result for <code>exponent</code> values of 4 and above. To accommodate for larger powers, the <code>if</code>  block could be copied and pasted in additional times. That's a bad idea, though: the function would have to grow to a preposterous length for it to work with large powers. What this problem really needs is a loop.</p>
 <h1 id="what-is-a-loop">What is a Loop?</h1>
@@ -257,14 +257,14 @@ IncompletePower: 16, x ^ y: 64
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=&quot;Console">WhileLoopPower: 15625, x ^ y: 15625
 WhileLoopPower: 3020.29, x ^ y: 3020.29
 WhileLoopPower: 1e-16, x ^ y: 1e-16
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> StopGame</a></li>
 </ul>
 <p>The results match. Of course, <code>WhileLoopPower</code> still has some severe limitations when compared to Nada's exponentiation operator, perhaps the largest of which being that its exponent values must be nonnegative Integers.</p>
 <h1 id="infinite-loops">Infinite Loops</h1>
@@ -294,13 +294,13 @@ WhileLoopPower: 1e-16, x ^ y: 1e-16
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <p>The editor hangs for a few moments, and then an exception is thrown:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90198.png" alt="image"> //Figure 2: infinite loop timeout. The error message reads: //Exceeded the allowed execution time of 5 second(s). Use the <code>timeout</code> statement to increase allowed time</p>
 <p>Since the <code>++multiplications</code> statement has been commented out, the <code>while</code> loop's loop condition will always be true. Such a loop is called an <strong>infinite loop</strong>, or an <em>unconditional</em> loop. This is generally undesireable behavior.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <p>Infinite loops are dangerous if handled improperly. Zilch has timeout functionality to catch infinite loops, but at best, they will still throw an error and halt the game. (Other software might not be so forgiving.) Be aware that a simple mistake could lead to an infinite loop!</p>
 <p>Let's move on to another kind of loop.</p>
@@ -362,14 +362,14 @@ WhileLoopPower: 1e-16, x ^ y: 1e-16
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=&quot;Console">ForLoopPower: 15625, x ^ y: 15625
 ForLoopPower: 3020.29, x ^ y: 3020.29
 ForLoopPower: 1e-16, x ^ y: 1e-16
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <p>It's still the same as before. In general, <strong>any <code>for</code> loop can be rewritten as a <code>while</code> loop, and vice versa</strong>.</p>
 <p>So, what happens if a loop is written inside another loop?</p>
@@ -405,13 +405,13 @@ ForLoopPower: 1e-16, x ^ y: 1e-16
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=&quot;Console">[][][][][][][][][][]
 </code></pre>
 <p>Everything seems to be in order, but regardless of what number is passed into the function, all the boxes will always be drawn on the same line. In order to create multiple rows of boxes, the <code>DrawBoxes</code> function should employ another looping concept, called a nested loop.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <p>The <code>DrawBoxes</code> function, as it exists right now, already does a perfectly good job of drawing a single row of boxes. The only modification it needs is to make its contents run several times. And what is a good way to make code run several times? Of course, it's a loop. A <strong>nested loop</strong> is a loop written inside the body of another loop. Nested loops are often used in multi-dimensional tasks, such as drawing a 2D grid of boxes.</p>
 <ul>
@@ -473,7 +473,7 @@ ForLoopPower: 1e-16, x ^ y: 1e-16
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=&quot;Console">[][][][][][][][]
 [][][][][][][][]
@@ -483,7 +483,7 @@ Total boxes drawn: 32
 </code></pre>
 <p>Four perfect rows of eight boxes each!</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <p>Loops can be nested arbitrarily deep: a 3D array of boxes, for example, would call for a loop within a loop within a loop, and if each box is also a container that can hold objects, still another loop could be used to populate each one.</p>
 <h1 id="loop-keywords">Loop Keywords</h1>
@@ -530,7 +530,7 @@ Total boxes drawn: 32
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=&quot;Console">[][][][][][][][]
 [][][][][][][][]
@@ -540,7 +540,7 @@ Total boxes drawn: 31
 </code></pre>
 <p>The specified box is skipped, and the printed total reflects this.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <h2 id="break">Break</h2>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/89999.png" alt="image"> <em>Figure 5: program flow controlled by <code>break</code></em></p>
@@ -581,7 +581,7 @@ Total boxes drawn: 31
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=&quot;Console">[][][][][][][][][][]
 [][][][][][][][][][]
@@ -597,7 +597,7 @@ Total boxes drawn: 40
 </code></pre>
 <p>Only forty boxes are drawn (and the specified box is still skipped). There's an awful lot of blank space, though, after the last box. This is because the <code>break</code> statement only causes the inner loop to end. The outer loop keeps running, writing another newline to the console with each iteration.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <p>To modify the function to make it break out of both loops, just add a Boolean variable that keeps track of whether the max has been reached. In the inner loop, if the function has drawn enough boxes, before breaking, set that variable to be <code>true</code>. In the outer loop, just after the inner loop is complete, check it. If it's true, <code>break</code> again.</p>
 <ul>
@@ -633,7 +633,7 @@ Total boxes drawn: 40
 </code></pre>
 <p>Let's test out this final modification.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=&quot;Console">[][][][][][][][][][]
 [][][][][][][][][][]
@@ -643,32 +643,32 @@ Total boxes drawn: 40
 </code></pre>
 <p>Forty boxes were drawn, and the loop stops after they're all done.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <h3 id="breaking-an-infinite-loop">Breaking an Infinite Loop</h3>
 <p>Rarely, it's actually desirable to create a loop that is intentionally unconditional, as long as it contains at least one code path to a <code>break</code> statement. This technique is used sparingly; it generally only occurs when the loop's exit conditions are too complex or numerous to fit comfortably in its definition.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md"> Looping</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md"> Create a New 2D Project</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">while</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/keywords.md">keywords</a></li>
+<li><a href="../../zilchmanual/nada_in_zilch/looping.html"> Looping</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/launchernewproject.html"> Create a New 2D Project</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/nada_in_zilch/keywords.html">while</a></li>
+<li><a href="../../zilchmanual/nada_in_zilch/keywords.html">keywords</a></li>
 </ul>
 <h2 id="tutorials">Tutorials</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/functions.md"> Functions Tutorial</a></li>
+<li><a href="functions.html"> Functions Tutorial</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="nada-base-types">Nada Base Types</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/math.md"> Math</a></li>
+<li><a href="../../../code_reference/nada_base_types/math.html"> Math</a></li>
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 
 </article>

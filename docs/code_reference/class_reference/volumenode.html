@@ -98,14 +98,14 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/volumenode.md#interpolatedecibels-void">InterpolateDecibels</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/volumenode.md#decibels-zilch-engine-doc">Decibels</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md">soundnode</a></td>
+<td><a href="volumenode.html#interpolatedecibels-void">InterpolateDecibels</a></td>
+<td><a href="volumenode.html#decibels-zilch-engine-doc">Decibels</a></td>
+<td><a href="soundnode.html">soundnode</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/volumenode.md#interpolatevolume-void">InterpolateVolume</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/volumenode.md#volume-zilch-engine-docum">Volume</a></td>
+<td><a href="volumenode.html#interpolatevolume-void">InterpolateVolume</a></td>
+<td><a href="volumenode.html#volume-zilch-engine-docum">Volume</a></td>
 <td></td>
 <td></td>
 </tr>
@@ -113,14 +113,14 @@
 </table>
 <h1 id="properties">Properties</h1>
 <hr>
-<h1 id="decibels--real">Decibels : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<h1 id="decibels--real">Decibels : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The volume adjustment, in decibels, that will be applied to the node's input. A value of 0 does not affect the sound; 6 will double the sound's volume, -6 will halve it, and -100 is effectively the same as a Volume of 0.</p>
 <pre><code class="lang-lang=cpp,">var Decibels : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="volume--real">Volume : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<h1 id="volume--real">Volume : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The volume adjustment that will be applied to the node's input. A value of 1 does not affect the sound; 2 will double the sound's volume, 0.5 will halve it, and 0 will make the sound inaudible.</p>
 <pre><code class="lang-lang=cpp,">var Volume : Real
@@ -134,8 +134,8 @@
 <p>Interpolates the Decibels property from its current value to the value passed in as the first parameter, over the number of seconds passed in as the second parameter.
 |Name|Type|Description|
 |---|---|---|
-|volumeDB|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
-|interpolationTime|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+|volumeDB|<a href="../nada_base_types/real.html">real</a>| |
+|interpolationTime|<a href="../nada_base_types/real.html">real</a>| |</p>
 <pre><code class="lang-lang=cpp,">function InterpolateDecibels(volumeDB : Real, interpolationTime : Real)
 </code></pre>
 </blockquote>
@@ -145,8 +145,8 @@
 <p>Interpolates the Volume property from its current value to the value passed in as the first parameter, over the number of seconds passed in as the second parameter.
 |Name|Type|Description|
 |---|---|---|
-|volume|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
-|interpolationTime|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+|volume|<a href="../nada_base_types/real.html">real</a>| |
+|interpolationTime|<a href="../nada_base_types/real.html">real</a>| |</p>
 <pre><code class="lang-lang=cpp,">function InterpolateVolume(volume : Real, interpolationTime : Real)
 </code></pre>
 </blockquote>

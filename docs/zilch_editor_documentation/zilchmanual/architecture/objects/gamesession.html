@@ -85,14 +85,14 @@
 
         <article data-uid="">
 
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamesession.md">GameSession</a> manages the running of the game, both upon pressing the play button and dealing with the exported version. It is an object that represents one instance of the game. Being an object, it is possible to create more than one game session per executable.</p>
+<p><a href="../../../../code_reference/class_reference/gamesession.html">GameSession</a> manages the running of the game, both upon pressing the play button and dealing with the exported version. It is an object that represents one instance of the game. Being an object, it is possible to create more than one game session per executable.</p>
 <h1 id="common-uses">Common Uses</h1>
 <ul>
-<li>Setting the starting <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/resources/level.md">level</a></li>
+<li>Setting the starting <a href="../resources/level.html">level</a></li>
 <li>Redirecting the use of <code>Esc</code> key in game</li>
 </ul>
 <h1 id="using-the-gamesession">Using the GameSession</h1>
-<p>The GameSession object may be accessed from the scripts that are running via any <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/cogs/gameobjectsconcept.md"> Cog</a>:</p>
+<p>The GameSession object may be accessed from the scripts that are running via any <a href="../cogs/gameobjectsconcept.html"> Cog</a>:</p>
 <pre><code>    // Within a script, those ``this`` variables referring to a Cog can get the GameSession
     // Note: Even though they are not Cogs, all Components (to include derived NadaComponents)
     // are equipped with a getter to GameSession
@@ -127,47 +127,47 @@ This is primarily intended for having a project to launch a dedicated server; th
 <tbody>
 <tr>
 <td>GameSetup</td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gameevent.md">gameevent</a></td>
+<td><a href="../../../../code_reference/class_reference/gameevent.html">gameevent</a></td>
 <td>This event fires after the creation of the GameSession. Only GameSession will be to respond to this event due to the timing of the dispatch during normal circumstances.</td>
 </tr>
 <tr>
 <td>GameLoad</td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gameevent.md">gameevent</a></td>
+<td><a href="../../../../code_reference/class_reference/gameevent.html">gameevent</a></td>
 <td>This event fires after the creation of the Space Archetype. Only GameSession and spaces will be able to respond to this event due to the timing of the dispatch in normal circumstances.</td>
 </tr>
 <tr>
 <td>GameStarted</td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gameevent.md">gameevent</a></td>
+<td><a href="../../../../code_reference/class_reference/gameevent.html">gameevent</a></td>
 <td>This event fires after the starting level is fully loaded. All cogs present at the start of level are able respond to this event. Dynamically created objects may or may not respond depending on when they were created. (e.g. those created during initialize of those objects loaded with the level will still receive this event, but those created in response to the <code>LogicUpdate</code> event will not.</td>
 </tr>
 <tr>
 <td>GameFocusIn</td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gameevent.md">gameevent</a></td>
+<td><a href="../../../../code_reference/class_reference/gameevent.html">gameevent</a></td>
 <td>This event fires once the game window has regained focus (having been out of focus.) This event is not sent when testing in the editor. In order to test this logic, run the game using the <code>ExportAndPlayGame</code> command.</td>
 </tr>
 <tr>
 <td>GameFocusOut</td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gameevent.md">gameevent</a></td>
+<td><a href="../../../../code_reference/class_reference/gameevent.html">gameevent</a></td>
 <td>This event fires after the game window has lost focus, for instance when clicking on another application. This event is not sent when testing in the editor. In order to test this logic, run the game using the <code>ExportAndPlayGame</code> command.</td>
 </tr>
 <tr>
 <td>GameRequestQuit</td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gameevent.md">gameevent</a></td>
-<td>This event fires after the pressing the <code>Esc</code> key. This allows a script to hook the key in order to override this behavior. See <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/gameplay/handlingquitmessage.md">HandlingQuitMessage</a> for more on this.</td>
+<td><a href="../../../../code_reference/class_reference/gameevent.html">gameevent</a></td>
+<td>This event fires after the pressing the <code>Esc</code> key. This allows a script to hook the key in order to override this behavior. See <a href="../../gameplay/handlingquitmessage.html">HandlingQuitMessage</a> for more on this.</td>
 </tr>
 </tbody>
 </table>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/gameplay/handlingquitmessage.md">HandlingQuitMessage</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/resources/level.md">level</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/cogs/gameobjectsconcept.md"> Cog</a></li>
+<li><a href="../../gameplay/handlingquitmessage.html">HandlingQuitMessage</a></li>
+<li><a href="../resources/level.html">level</a></li>
+<li><a href="../cogs/gameobjectsconcept.html"> Cog</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamesession.md">GameSession</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/gameevent.md">gameevent</a></li>
+<li><a href="../../../../code_reference/class_reference/gamesession.html">GameSession</a></li>
+<li><a href="../../../code_reference/class_reference/gameevent.md">gameevent</a></li>
 </ul>
 
 </article>

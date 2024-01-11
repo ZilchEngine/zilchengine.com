@@ -85,16 +85,16 @@
 
         <article data-uid="">
 
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/resourcetable.md">ResourceTable</a> is a resource that stores a collection of entries of a certain resource type for sampling during run-time. Sampling can be performed through three different interfaces: array, hashmap, and a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master.md#weightedtable-interface"> weighted table</a>.</p>
+<p><a href="../../../../code_reference/class_reference/resourcetable.html">ResourceTable</a> is a resource that stores a collection of entries of a certain resource type for sampling during run-time. Sampling can be performed through three different interfaces: array, hashmap, and a <a href="../../../../../docs.md#weightedtable-interface"> weighted table</a>.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47118.PNG" alt="ResourceTable1"></p>
-<p>ResourceTables store a homogeneous collection of entries. Pictured above is a table of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/archetypes.md"> Archetypes </a>. This can be switched to any other resource type or to strings.</p>
+<p>ResourceTables store a homogeneous collection of entries. Pictured above is a table of <a href="../archetypes.html"> Archetypes </a>. This can be switched to any other resource type or to strings.</p>
 <p>ResourceTable entries are composed of three items:</p>
 <ul>
 <li><strong>Name</strong>: A name used for hashmap queries. This is sometimes used as a display name for the entry. Note: This name does not have to Value.</li>
 <li><strong>Value</strong>: The actual resource/string of the entry.</li>
-<li><strong>Weight</strong>: The weight to use when randomly sampling the table. See the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master.md#weightedtable-interface"> WeightedTable Interface</a> section below for details.</li>
+<li><strong>Weight</strong>: The weight to use when randomly sampling the table. See the <a href="../../../../../docs.md#weightedtable-interface"> WeightedTable Interface</a> section below for details.</li>
 </ul>
-<p>All sampling functions for a ResourceTable return a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/resourcetableentry.md">ResourceTableEntry</a>. In addition to the above listed properties, the stored resource can also be looked up via the <code>Resource</code> property. Note: This must be casted to the correct resource type.</p>
+<p>All sampling functions for a ResourceTable return a <a href="../../../../code_reference/class_reference/resourcetableentry.html">ResourceTableEntry</a>. In addition to the above listed properties, the stored resource can also be looked up via the <code>Resource</code> property. Note: This must be casted to the correct resource type.</p>
 <h1 id="array-interface">Array Interface</h1>
 <p>ResourceTables can be accessed as an array at run-time. This is useful for a list of objects where order is important (e.g. generating UI). Given below is a simple example of using the array interface to spawn archetypes:</p>
 <pre><code class="lang-lang=csharp">  // Spawn each archtype one below another
@@ -141,10 +141,10 @@
 <hr>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="reference">Reference</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/resourcetable.md">ResourceTable</a>
-<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/resourcetableentry.md">ResourceTableEntry</a>
-<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/archetype.md">Archetype</a>
-<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/randomcontext.md">RandomContext</a></p>
+<p><a href="../../../../code_reference/class_reference/resourcetable.html">ResourceTable</a>
+<a href="../../../../code_reference/class_reference/resourcetableentry.html">ResourceTableEntry</a>
+<a href="../../../../code_reference/class_reference/archetype.html">Archetype</a>
+<a href="../../../../code_reference/class_reference/randomcontext.html">RandomContext</a></p>
 
 </article>
 

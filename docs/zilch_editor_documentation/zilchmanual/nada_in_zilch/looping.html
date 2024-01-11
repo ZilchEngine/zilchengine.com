@@ -103,7 +103,7 @@ loop
 1
 3
 </code></pre>
-<p>The values of <code>sum</code> printed are <code>0</code>, <code>1</code>, and <code>3</code> because <code>sum += 0</code>, <code>sum += 1</code>, and <code>sum += 2</code> are all executed in sequence with a call to <code>Console.WriteLine</code> after each.  Whatever code is in the block following <code>loop</code> will be repeatedly executed until the <code>loop</code> is escaped with <code>return</code>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md#navigating-loops">break</a>, or <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md#continue">continue</a>.  <code>return</code> is a directive that leaves the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">function</a>, and therefore can be used to exit a loop.</p>
+<p>The values of <code>sum</code> printed are <code>0</code>, <code>1</code>, and <code>3</code> because <code>sum += 0</code>, <code>sum += 1</code>, and <code>sum += 2</code> are all executed in sequence with a call to <code>Console.WriteLine</code> after each.  Whatever code is in the block following <code>loop</code> will be repeatedly executed until the <code>loop</code> is escaped with <code>return</code>, <a href="looping.html#navigating-loops">break</a>, or <a href="looping.html#continue">continue</a>.  <code>return</code> is a directive that leaves the <a href="functions.html">function</a>, and therefore can be used to exit a loop.</p>
 <h1 id="while-and-do-while">While and Do While</h1>
 <p>While the <code>loop</code> keyword is sufficient in executing code an arbitrary ammount of times, there are other types of loop blocks that make for cleaner code.</p>
 <pre><code class="lang-lang=csharp,">var i = 0;
@@ -169,7 +169,7 @@ for(var i = 0; i &lt; 3; ++i)
 1
 3
 </code></pre>
-<p>Notice how the above code snippet and the <code>While</code> code snippet loops produce the same result: <code>0</code>, <code>1</code>, and <code>3</code>.  First <code>i</code> is <strong>initialized</strong> to <code>0</code>.  Then in a loop, the <code>i &lt; 3</code> <strong>condition</strong> is checked, <code>sum</code> is increased and printed, and <code>i</code> is incremented at the end of the <strong>iteration</strong>.  The <code>for</code> loop follows the format <code>for(&lt;initialization&gt;; &lt;condition&gt;; &lt;iteration&gt;)</code>.  In addition, the above code snippet uses an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md">array</a>. An array is a container with the <em>indexable</em> quality, which means the i-th element can be directly accessed.  This access is done by calling the function <code>myArray.Get</code>.</p>
+<p>Notice how the above code snippet and the <code>While</code> code snippet loops produce the same result: <code>0</code>, <code>1</code>, and <code>3</code>.  First <code>i</code> is <strong>initialized</strong> to <code>0</code>.  Then in a loop, the <code>i &lt; 3</code> <strong>condition</strong> is checked, <code>sum</code> is increased and printed, and <code>i</code> is incremented at the end of the <strong>iteration</strong>.  The <code>for</code> loop follows the format <code>for(&lt;initialization&gt;; &lt;condition&gt;; &lt;iteration&gt;)</code>.  In addition, the above code snippet uses an <a href="../../../code_reference/nada_base_types/array_t.html">array</a>. An array is a container with the <em>indexable</em> quality, which means the i-th element can be directly accessed.  This access is done by calling the function <code>myArray.Get</code>.</p>
 <h1 id="for-each-loop">For Each loop</h1>
 <p>The <code>foreach</code> loop is reserved for iterating over containers, and is shorter than its equivalent <code>for</code> loop.</p>
 <pre><code class="lang-lang=csharp,">var myArray = Array[Integer]();
@@ -226,7 +226,7 @@ Loop Finished
 (2, 0)
 (2, 1)
 </code></pre>
-<p>Notice how the <code>break</code> statement only exits the inner <code>for</code> loop.  The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/strings.md">string</a> passed into <code>Console.WriteLine</code> will evaluate to <code>(1, 0)</code>, <code>(2, 0)</code>, and <code>(2, 1)</code>.  In other words, the result is printed when <code>j &lt; i</code>.</p>
+<p>Notice how the <code>break</code> statement only exits the inner <code>for</code> loop.  The <a href="strings.html">string</a> passed into <code>Console.WriteLine</code> will evaluate to <code>(1, 0)</code>, <code>(2, 0)</code>, and <code>(2, 1)</code>.  In other words, the result is printed when <code>j &lt; i</code>.</p>
 <h2 id="continue">Continue</h2>
 <p>The <code>continue</code> keyword operates similarly to <code>break</code>.  While <code>break</code> will jump to the end of the loop's scope <strong>and</strong> exit the loop, <code>continue</code> will only jump to the end of the loop's scope.</p>
 <pre><code class="lang-lang=csharp,">for(var i = 0; i &lt; 5; ++i)
@@ -244,7 +244,7 @@ Loop Finished
 </code></pre>
 <p>Notice how <code>Console.WriteLine(i)</code> executes for each <code>i</code> in the range <code>[0, 4]</code> with the exception of <code>2</code>.  When <code>i == 2</code>, <code>continue</code> is reached and the next iteration is reached.  Also note that even when using <code>continue</code> in a for loop, the iterative statement <code>++i</code> is still executed.</p>
 <h1 id="condensed-loops">Condensed Loops</h1>
-<p>In the case that a loops only contains one statement within its scope (simliar to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/conditionals.md#condensed-conditionals"> conditionals </a>) then no <code>{}</code> brackets are needed.</p>
+<p>In the case that a loops only contains one statement within its scope (simliar to <a href="conditionals.html#condensed-conditionals"> conditionals </a>) then no <code>{}</code> brackets are needed.</p>
 <pre><code class="lang-name=Single">for(var i = 0; i &lt; 3; ++i)
   Console.WriteLine(i);
   Console.WriteLine(&quot;-&quot;);
@@ -258,12 +258,12 @@ Loop Finished
 <h1 id="related-material">Related Material</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">functions</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/strings.md">strings</a></li>
+<li><a href="functions.html">functions</a></li>
+<li><a href="strings.html">strings</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md">array_t</a></li>
+<li><a href="../../../code_reference/nada_base_types/array_t.html">array_t</a></li>
 </ul>
 
 </article>

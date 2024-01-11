@@ -88,33 +88,33 @@
 <p>This lesson focuses on teaching the basics of physics effects and components.</p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">GravityEffect</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/drageffect.md">DragEffect</a> components</li>
+<li><a href="../../../code_reference/class_reference/gravityeffect.html">GravityEffect</a> and <a href="../../../code_reference/class_reference/drageffect.html">DragEffect</a> components</li>
 <li>Apply / Ignore physics effects on objects</li>
 <li>Basic uses of <code>name=LevelSettings, icon=cog</code></li>
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite"> CreateSprite</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46396.gif" alt="FallingSquare"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="gravityeffect">GravityEffect</h1>
-<p>When running the game, we can see the square object falling. As we mentioned in previous tutorials, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a> component allows an object to be subjected by physics forces. However, it is <strong>not</strong> the one responsible for the object falling.</p>
+<p>When running the game, we can see the square object falling. As we mentioned in previous tutorials, the <a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a> component allows an object to be subjected by physics forces. However, it is <strong>not</strong> the one responsible for the object falling.</p>
 <p>Let's take a look at the LevelSettings object in our level:</p>
 <ul>
 <li>In the <code>Objects window</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : LevelSettings object</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46967.png" alt="image"></p>
 <ul>
 <li>In the <code>Properties window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">GravityEffect</a></li>
+<li>Under <a href="../../../code_reference/class_reference/gravityeffect.html">GravityEffect</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46968.png" alt="image"></p>
 <table>
@@ -145,34 +145,34 @@
 </table>
 <ul>
 <li>In the <code>Properties window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">GravityEffect</a></li>
+<li>Under <a href="../../../code_reference/class_reference/gravityeffect.html">GravityEffect</a></li>
 <li>Set Active checkBox to <code>false</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46414.png" alt="image"></p>
 <p>Notice that the Sprite object isn't being affected by gravity anymore. That's because components that produce physics effects, when attached to the LevelSettings object object, will apply that effect to all objects within the Space.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <p>Let's try and move the Sprite object in other ways:</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Sprite object object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li>Under <a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
 <li>Set Velocity  to <code>[3.0, 0.0, 0.0]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46429.gif" alt="SlowingSquare"></p>
 <p>The Sprite object appears to be moving in the desired direction and still isn't affected by gravity but it slowed down and stopped. But according to Newton's first law of motion; an object retains its movement at a constant velocity unless acted upon by an external force. So what external force caused our object to stop?</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="drageffect">DragEffect</h1>
 <p>Let's take a look again at the LevelSettings object:</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : LevelSettings object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/drageffect.md">DragEffect</a>
+<li>Under <a href="../../../code_reference/class_reference/drageffect.html">DragEffect</a>
 <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46969.png" alt="image">
 <ul>
 <li>Set Active checkBox to <code>false</code></li>
@@ -202,74 +202,74 @@
 </tbody>
 </table>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46484.gif" alt="EverMovingSquare"></p>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/drageffect.md">DragEffect</a>  exists to simulate air resistance and other forces that would prevent your object from moving indefinitely.</p>
+<p>The <a href="../../../code_reference/class_reference/drageffect.html">DragEffect</a>  exists to simulate air resistance and other forces that would prevent your object from moving indefinitely.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="adding-physics-effects-to-objects">Adding Physics Effects to Objects</h1>
 <p>These effects can also be applied to individual objects, let's take a look:</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">GravityEffect</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/drageffect.md">DragEffect</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Sprite object</li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/gravityeffect.html">GravityEffect</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/drageffect.html">DragEffect</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46396.gif" alt="FallingSquare"></p>
 <p>Now we get the same result we had initially, but we could tweak individual gravity and drag effects per object.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <p>WARNING: GravityEffect (and some other PhysicsEffects) have the LocalSpaceDirection checkBox property set to true by default. This means that, as the object rotates, the &quot;down direction&quot; will be constantly changing. Set LocalSpaceDirection checkBox to false to avoid this behavior.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46531.gif" alt="TumblingSquare"></p>
 <h1 id="ignorespaceeffects">IgnoreSpaceEffects</h1>
-<p>Lastly, let's say you wanted all objects in your level to be affected by gravity except for a few. You could turn off the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">GravityEffect</a> on LevelSettings object and add a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">GravityEffect</a> component to every object that needs it but that would be a lot of work.</p>
-<p>Alternatively, you could leave the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">GravityEffect</a> on LevelSettings object on and just add the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/ignorespaceeffects.md">IgnoreSpaceEffects</a> component to the objects that you don't want gravity on:</p>
+<p>Lastly, let's say you wanted all objects in your level to be affected by gravity except for a few. You could turn off the <a href="../../../code_reference/class_reference/gravityeffect.html">GravityEffect</a> on LevelSettings object and add a <a href="../../../code_reference/class_reference/gravityeffect.html">GravityEffect</a> component to every object that needs it but that would be a lot of work.</p>
+<p>Alternatively, you could leave the <a href="../../../code_reference/class_reference/gravityeffect.html">GravityEffect</a> on LevelSettings object on and just add the <a href="../../../code_reference/class_reference/ignorespaceeffects.html">IgnoreSpaceEffects</a> component to the objects that you don't want gravity on:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46970.png" alt="image"></p>
-<p>NOTE: The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/ignorespaceeffects.md">IgnoreSpaceEffects</a> component will only stop physics effects attached to LevelSettings object or Space to affect the object; if the object has a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">GravityEffect</a> component or any other physics effects components on itself, they will not be ignored!</p>
+<p>NOTE: The <a href="../../../code_reference/class_reference/ignorespaceeffects.html">IgnoreSpaceEffects</a> component will only stop physics effects attached to LevelSettings object or Space to affect the object; if the object has a <a href="../../../code_reference/class_reference/gravityeffect.html">GravityEffect</a> component or any other physics effects components on itself, they will not be ignored!</p>
 <h1 id="region">Region</h1>
 <p>The region component can be used to apply any physics effects (Gravity, Drag, etc) to  a specific zone. It works by using a Collider (which it has a dependency on) as a trigger volume to determine whether objects are inside it and then applies the specified force effects.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
 <li>In the <code>Property Window</code></li>
 <li>Rename Sprite object to <code>RegionEffect</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
+<li>Under <a href="../../../code_reference/class_reference/transform.html">Transform</a></li>
 <li>Set Scale  to <code>[5, 5, 5]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/boxcollider.html">BoxCollider</a></li>
+<li>Under <a href="../../../code_reference/class_reference/boxcollider.html">BoxCollider</a></li>
 <li>Set Ghost checkBox to <code>true</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/region.md">Region</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/region.html">Region</a></li>
 </ul>
-<p>NOTE: Experiment by adding the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/forceeffect.md">ForceEffect</a> , <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/buoyancyeffect.md">BuoyancyEffect</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/windeffect.md">WindEffect</a></p>
+<p>NOTE: Experiment by adding the <a href="../../../code_reference/class_reference/forceeffect.html">ForceEffect</a> , <a href="../../../code_reference/class_reference/buoyancyeffect.html">BuoyancyEffect</a> and <a href="../../../code_reference/class_reference/windeffect.html">WindEffect</a></p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions.md">Physics Effects &amp; Regions</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md"> Colliders </a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/rigidbody.md"> RigidBody </a></li>
+<li><a href="../../zilchmanual/physics/physicseffectsandregions.html">Physics Effects &amp; Regions</a></li>
+<li><a href="../../zilchmanual/physics/colliders.html"> Colliders </a></li>
+<li><a href="../../zilchmanual/physics/rigidbody.html"> RigidBody </a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/region.md">Region</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">GravityEffect</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/drageffect.md">DragEffect</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/forceeffect.md">ForceEffect</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/buoyancyeffect.md">BuoyancyEffect</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/windeffect.md">WindEffect</a></li>
+<li><a href="../../../code_reference/class_reference/transform.html">Transform</a></li>
+<li><a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
+<li><a href="../../../code_reference/class_reference/boxcollider.html">BoxCollider</a></li>
+<li><a href="../../../code_reference/class_reference/region.html">Region</a></li>
+<li><a href="../../../code_reference/class_reference/gravityeffect.html">GravityEffect</a></li>
+<li><a href="../../../code_reference/class_reference/drageffect.html">DragEffect</a></li>
+<li><a href="../../../code_reference/class_reference/forceeffect.html">ForceEffect</a></li>
+<li><a href="../../../code_reference/class_reference/buoyancyeffect.html">BuoyancyEffect</a></li>
+<li><a href="../../../code_reference/class_reference/windeffect.html">WindEffect</a></li>
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">Create a New 2D Project</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/launchernewproject.html">Create a New 2D Project</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
 </ul>
 
 </article>

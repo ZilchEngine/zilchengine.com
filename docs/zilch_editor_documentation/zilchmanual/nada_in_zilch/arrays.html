@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md"> Array</a> is a templated Nada type used to represent an ordered list. An array is a <em>container</em> class: it contains other objects. The type of object it contains is specified between square brackets when the array is declared:</p>
+<p><a href="../../../code_reference/nada_base_types/array_t.html"> Array</a> is a templated Nada type used to represent an ordered list. An array is a <em>container</em> class: it contains other objects. The type of object it contains is specified between square brackets when the array is declared:</p>
 <pre><code class="lang-lang=csharp,">var recentPositions = Array[Real3]();
 var currentTargets = Array[Cog]();
 var inputBuffer = Array[Array[Boolean]]();
@@ -130,11 +130,11 @@ Console.WriteLine(words);
 <pre><code class="lang-name=Console">quick
 {the, quick, polka-dotted, fox}
 </code></pre>
-<p>Attempting to access a negative index or an index that is greater than or equal to the array's <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/arrays/.md#array-size">Count</a> will throw a Nada exception.</p>
+<p>Attempting to access a negative index or an index that is greater than or equal to the array's <a href="arrays/.md#array-size">Count</a> will throw a Nada exception.</p>
 <h1 id="adding-to-and-removing-from-arrays">Adding to and Removing from Arrays</h1>
 <p>Nada arrays are //dynamic//: that is, the number of elements in an array is not fixed, so elements can be added or removed after the array is created.</p>
 <h2 id="adding">Adding</h2>
-<p>The most basic way to add an element to an array is with the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#add-void"> Add</a> method, which puts the element at the end of the array:</p>
+<p>The most basic way to add an element to an array is with the <a href="../../../code_reference/nada_base_types/array_t.html#add-void"> Add</a> method, which puts the element at the end of the array:</p>
 <pre><code class="lang-lang=csharp,">var greetings = Array[String]()
 {
   &quot;hello&quot;,
@@ -149,8 +149,8 @@ Console.WriteLine(greetings);
 <pre><code class="lang-name=Console">{hello, bonjour, yo}
 {hello, bonjour, yo, howdy}
 </code></pre>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#push-void"> Push</a> method is functionally identical to Add for arrays, and they may be used interchangeably.</p>
-<p>Adding to the end is generally the fastest way of adding to an array, but it is possible to insert an element at any valid position within an array via the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#insert-void"> Insert</a> method:</p>
+<p>The <a href="../../../code_reference/nada_base_types/array_t.html#push-void"> Push</a> method is functionally identical to Add for arrays, and they may be used interchangeably.</p>
+<p>Adding to the end is generally the fastest way of adding to an array, but it is possible to insert an element at any valid position within an array via the <a href="../../../code_reference/nada_base_types/array_t.html#insert-void"> Insert</a> method:</p>
 <pre><code class="lang-lang=csharp,">var digitsOfE = Array[Integer]() { 2, 7, 1, 2, 8 };
 Console.WriteLine(digitsOfE);
 
@@ -162,7 +162,7 @@ Console.WriteLine(digitsOfE);
 </code></pre>
 <p>NOTE: Insert is less efficient than Add because it requires all the elements following the given index to be shifted toward the back of the array to make room for the new element. If the proper position of a new element is at the end of the array, or if the order of the elements is irrelevant, Add should generally be used instead of Insert.</p>
 <h2 id="removing">Removing</h2>
-<p>The most basic way to remove an element from an array is with the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#pop-zilch-engine-document"> Pop</a> method, which shrinks the array by one from the end:</p>
+<p>The most basic way to remove an element from an array is with the <a href="../../../code_reference/nada_base_types/array_t.html#pop-zilch-engine-document"> Pop</a> method, which shrinks the array by one from the end:</p>
 <pre><code class="lang-lang=csharp,">var taskList = Array[String]()
 {
   &quot;make the game fun&quot;,
@@ -178,7 +178,7 @@ Console.WriteLine(taskList);
 <pre><code class="lang-name=Console">{make the game fun, UI overhaul, create placeholder SFX, vacuum the break room}
 {make the game fun, UI overhaul, create placeholder SFX}
 </code></pre>
-<p>As with adding, removing from the end is fast, but it is also possible to remove an element at an arbitrary valid index via the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#removeat-void"> RemoveAt</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#removeswap-void"> RemoveSwap</a> methods.</p>
+<p>As with adding, removing from the end is fast, but it is also possible to remove an element at an arbitrary valid index via the <a href="../../../code_reference/nada_base_types/array_t.html#removeat-void"> RemoveAt</a> and <a href="../../../code_reference/nada_base_types/array_t.html#removeswap-void"> RemoveSwap</a> methods.</p>
 <p><strong>RemoveAt</strong> removes the element that is found at the given index, and preserves the order of the remaining elements:</p>
 <pre><code class="lang-lang=csharp,">var commonLetters = Array[String]()
 {
@@ -217,7 +217,7 @@ Console.WriteLine(animals);
 {tardigrade, aardwolf, plesiosaur, sponge}
 </code></pre>
 <p>Though RemoveSwap does not preserve element order, it is essentially just as efficient as Pop.</p>
-<p>It is also possible to remove a known element with an unknown index. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#removefirst-zilch-engine"> RemoveFirst</a> finds an array's first element that matches the given value and then removes it, preserving the order of the remaining elements:</p>
+<p>It is also possible to remove a known element with an unknown index. <a href="../../../code_reference/nada_base_types/array_t.html#removefirst-zilch-engine"> RemoveFirst</a> finds an array's first element that matches the given value and then removes it, preserving the order of the remaining elements:</p>
 <pre><code class="lang-lang=csharp,">var data = Array[Integer]()
 {
   0,
@@ -234,7 +234,7 @@ Console.WriteLine(data);
 <pre><code class="lang-name=Console">{0, -1, 4, 1, 2}
 {0, 4, 1, 2}
 </code></pre>
-<p>To find and remove <em>all</em> elements that match a given value, use the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#removeall-zilch-engine-do"> RemoveAll</a> method:</p>
+<p>To find and remove <em>all</em> elements that match a given value, use the <a href="../../../code_reference/nada_base_types/array_t.html#removeall-zilch-engine-do"> RemoveAll</a> method:</p>
 <pre><code class="lang-lang=csharp,">var waterfowl = Array[String]()
 {
   &quot;duck&quot;,
@@ -252,7 +252,7 @@ Console.WriteLine(waterfowl);
 {goose}
 </code></pre>
 <p>NOTE: Both RemoveFirst and RemoveAll require searching the array and comparing each element with the given value, which makes them even slower than RemoveAt. In certain situations, such as a deeply nested loop, or when element comparison is slow, this performance difference may be significant.</p>
-<p>Finally, to remove all of the elements from an array, use the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#clear-void"> Clear</a> method:</p>
+<p>Finally, to remove all of the elements from an array, use the <a href="../../../code_reference/nada_base_types/array_t.html#clear-void"> Clear</a> method:</p>
 <pre><code class="lang-lang=csharp,">var inventory = Array[String]()
 {
   &quot;car keys&quot;,
@@ -291,7 +291,7 @@ array0 after Clear: {1, 2, 3}
 array1 after Clear: {1.61803, 2.71828, 3.14159}
 </code></pre>
 <h1 id="reference-type">Reference Type</h1>
-<p>In Nada, <strong>Array</strong> is a //reference type//. Be aware of this when making copies. When setting one array variable to equal another existing array using the assignment operator, <code>=</code>, a copy is not constructed; rather, the first just ends up pointing to the second. In such a case, modifying the array through one of the two references will appear to modify both, because they are in fact one array. To create a copy, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#copy-array-t"> Copy</a> method should be used:</p>
+<p>In Nada, <strong>Array</strong> is a //reference type//. Be aware of this when making copies. When setting one array variable to equal another existing array using the assignment operator, <code>=</code>, a copy is not constructed; rather, the first just ends up pointing to the second. In such a case, modifying the array through one of the two references will appear to modify both, because they are in fact one array. To create a copy, the <a href="../../../code_reference/nada_base_types/array_t.html#copy-array-t"> Copy</a> method should be used:</p>
 <pre><code class="lang-lang=csharp,">var firstExample = Array[Integer]() { 0, 1, 2, 3, 4, 5, 6, 7 };
 Console.WriteLine(&quot;firstExample, before copy and clear:  `firstExample`&quot;);
 
@@ -318,9 +318,9 @@ secondExample, before copy and clear: {7, 6, 5, 4, 3, 2, 1, 0}
 secondExample, after copy and clear:  {7, 6, 5, 4, 3, 2, 1, 0}
 </code></pre>
 <h1 id="looping-over-arrays">Looping Over Arrays</h1>
-<p>As arrays are ordered sequences of objects, they lend themselves naturally to use in <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md"> loops</a>: in each loop iteration, the next element of the array can be accessed, modified, copied, etc.</p>
+<p>As arrays are ordered sequences of objects, they lend themselves naturally to use in <a href="looping.html"> loops</a>: in each loop iteration, the next element of the array can be accessed, modified, copied, etc.</p>
 <h2 id="for-loops">For Loops</h2>
-<p>The most basic way to loop over an array is by using a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md#for-loop"> for loop</a>. This takes advantage of the fact that an array contains its <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#count-zilch-engine-docume"> Count</a>, or number of elements, as a property:</p>
+<p>The most basic way to loop over an array is by using a <a href="looping.html#for-loop"> for loop</a>. This takes advantage of the fact that an array contains its <a href="../../../code_reference/nada_base_types/array_t.html#count-zilch-engine-docume"> Count</a>, or number of elements, as a property:</p>
 <pre><code class="lang-lang=csharp,">var numbers = Array[Integer]() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, };
 
 Console.WriteLine(&quot;Squares:&quot;);
@@ -345,7 +345,7 @@ for (var i = 0; i &lt; numbers.Count; ++i)
 81
 </code></pre>
 <h2 id="for-each-loops">For Each Loops</h2>
-<p>Another way to iterate through an array is to use a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md#for-each-loop"> foreach loop</a>:</p>
+<p>Another way to iterate through an array is to use a <a href="looping.html#for-each-loop"> foreach loop</a>:</p>
 <pre><code class="lang-lang=csharp,">var numbers = Array[Integer]() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, };
 
 Console.WriteLine(&quot;Cubes:&quot;);
@@ -368,7 +368,7 @@ foreach (var number in numbers)
 729
 </code></pre>
 <h1 id="array-size">Array Size</h1>
-<p>A Nada array keeps track of two different size-related properties: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#count-zilch-engine-docume"> Count</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#capacity-zilch-engine-doc"> Capacity</a>. When an array is initialized, it is allotted just enough memory to store the given number of elements. If an element is added when it doesn't have enough allocated space for another one, the array is automatically expanded so that it can fit more elements. An array's <strong>Count</strong> is the number of elements that have been added to it (or were placed there on initialization); its <strong>Capacity</strong> is the number of elements that could possibly fit in it before it needs to grow again:</p>
+<p>A Nada array keeps track of two different size-related properties: <a href="../../../code_reference/nada_base_types/array_t.html#count-zilch-engine-docume"> Count</a> and <a href="../../../code_reference/nada_base_types/array_t.html#capacity-zilch-engine-doc"> Capacity</a>. When an array is initialized, it is allotted just enough memory to store the given number of elements. If an element is added when it doesn't have enough allocated space for another one, the array is automatically expanded so that it can fit more elements. An array's <strong>Count</strong> is the number of elements that have been added to it (or were placed there on initialization); its <strong>Capacity</strong> is the number of elements that could possibly fit in it before it needs to grow again:</p>
 <pre><code class="lang-lang=csharp,">var array = Array[Integer]();
 
 for (var i = 0; i &lt; 10; ++i)
@@ -391,10 +391,10 @@ Count: 8 | Capacity: 9
 Count: 9 | Capacity: 9
 Count: 10 | Capacity: 13
 </code></pre>
-<p>NOTE: If an element can be added to an array without it having to grow, it can be done very quickly, but expanding an array is potentially costly. In certain situations, such as a deeply nested loop, it may be beneficial to consider an array's Capacity before adding to it. Likewise, if the desired maximum size of an array is known ahead of time, space can be pre-allocated without adding any elements using the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#reserve-void"> Reserve</a> method.</p>
+<p>NOTE: If an element can be added to an array without it having to grow, it can be done very quickly, but expanding an array is potentially costly. In certain situations, such as a deeply nested loop, it may be beneficial to consider an array's Capacity before adding to it. Likewise, if the desired maximum size of an array is known ahead of time, space can be pre-allocated without adding any elements using the <a href="../../../code_reference/nada_base_types/array_t.html#reserve-void"> Reserve</a> method.</p>
 <h1 id="sorting-arrays">Sorting Arrays</h1>
-<p>Nada arrays may be sorted using the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#sort-void"> Sort</a> method. Sorting an array may put it in, say, increasing or decreasing order, in the case of an array of Integer or another numeric type, or in alphabetical order, in the case of a String array, or some other order via some more abstract or complex set of criteria.</p>
-<p><strong>Sort</strong> sorts an array using the given comparison function. In many cases, this is something the user creates, though some types, such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md"> String</a>, provide static functions that can be used with the Sort method:</p>
+<p>Nada arrays may be sorted using the <a href="../../../code_reference/nada_base_types/array_t.html#sort-void"> Sort</a> method. Sorting an array may put it in, say, increasing or decreasing order, in the case of an array of Integer or another numeric type, or in alphabetical order, in the case of a String array, or some other order via some more abstract or complex set of criteria.</p>
+<p><strong>Sort</strong> sorts an array using the given comparison function. In many cases, this is something the user creates, though some types, such as <a href="../../../code_reference/nada_base_types/string.html"> String</a>, provide static functions that can be used with the Sort method:</p>
 <pre><code class="lang-lang=csharp,">var strings = Array[String]();
 
 strings.Add(&quot;hi&quot;);
@@ -506,22 +506,22 @@ Name length then alpha:   { Dane, Josh, Ryan, Andrea, Joshua, Nathan, Trevor }
 <p>Note that the <code>CompareNameLengthsThenAlpha</code> function sorts Adventurers in ascending order of the lengths of their names, except where there is a tie, in which case it sorts in ascending alphabetical order instead.</p>
 <h1 id="array-properties">Array Properties</h1>
 <h2 id="all">All</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#all-arrayrange-t-key-rea"> All</a> converts the array into an ArrayRange. In Nada, Arrays can be implicitly cast to ArrayRanges, so it is typically not necessary to use this property.</p>
+<p><a href="../../../code_reference/nada_base_types/array_t.html#all-arrayrange-t-key-rea"> All</a> converts the array into an ArrayRange. In Nada, Arrays can be implicitly cast to ArrayRanges, so it is typically not necessary to use this property.</p>
 <h2 id="count-and-capacity">Count and Capacity</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#count-zilch-engine-docume"> Count</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#capacity-zilch-engine-doc"> Capacity</a> get the number of elements in the array, and its potential capacity to hold elements, respectively. They are discussed in detail <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/arrays/.md#array-size">above</a>.</p>
+<p><a href="../../../code_reference/nada_base_types/array_t.html#count-zilch-engine-docume"> Count</a> and <a href="../../../code_reference/nada_base_types/array_t.html#capacity-zilch-engine-doc"> Capacity</a> get the number of elements in the array, and its potential capacity to hold elements, respectively. They are discussed in detail <a href="arrays/.md#array-size">above</a>.</p>
 <h2 id="lastindex">LastIndex</h2>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#lastindex-zilch-engine-do"> LastIndex</a> gets the index of the last element in the array. It is always one less than Count (even when Count is 0).</p>
+<p><a href="../../../code_reference/nada_base_types/array_t.html#lastindex-zilch-engine-do"> LastIndex</a> gets the index of the last element in the array. It is always one less than Count (even when Count is 0).</p>
 <h1 id="array-methods">Array Methods</h1>
 <h2 id="add-push-and-insert">Add, Push, and Insert</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#add-void"> Add</a> method expands an array so that the given element is the last item in it. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#push-void"> Push</a> method is identical to Add, and exists only for legacy purposes. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#insert-void"> Insert</a> method expands an array so that the given element is at the given index in it.</p>
-<p>All of these methods are discussed in detail <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/arrays/.md#adding">above</a>.</p>
+<p>The <a href="../../../code_reference/nada_base_types/array_t.html#add-void"> Add</a> method expands an array so that the given element is the last item in it. The <a href="../../../code_reference/nada_base_types/array_t.html#push-void"> Push</a> method is identical to Add, and exists only for legacy purposes. The <a href="../../../code_reference/nada_base_types/array_t.html#insert-void"> Insert</a> method expands an array so that the given element is at the given index in it.</p>
+<p>All of these methods are discussed in detail <a href="arrays/.md#adding">above</a>.</p>
 <h2 id="pop-removeat-removeswap-removefirst-removeall-and-clear">Pop, RemoveAt, RemoveSwap, RemoveFirst, RemoveAll, and Clear</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#pop-any"> Pop</a> method removes the last item from an array. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#removeat-void"> RemoveAt</a> method removes from an array the element found at the given index. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#removeswap-void"> RemoveSwap</a> method removes from an array the element found at the given index and swaps the last item in the array to that newly-vacated index. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#removefirst-zilch-engine"> RemoveFirst</a> method removes from an array the first element that matches the given object. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#removeall-zilch-engine-do"> RemoveAll</a> method removes from an array every element that matches the given object. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#clear-void"> Clear</a> method removes all the elements from an array.</p>
-<p>All of these methods are discussed in detail <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/arrays/.md#removing">above</a>.</p>
+<p>The <a href="../../../code_reference/nada_base_types/array_t.html#pop-any"> Pop</a> method removes the last item from an array. The <a href="../../../code_reference/nada_base_types/array_t.html#removeat-void"> RemoveAt</a> method removes from an array the element found at the given index. The <a href="../../../code_reference/nada_base_types/array_t.html#removeswap-void"> RemoveSwap</a> method removes from an array the element found at the given index and swaps the last item in the array to that newly-vacated index. The <a href="../../../code_reference/nada_base_types/array_t.html#removefirst-zilch-engine"> RemoveFirst</a> method removes from an array the first element that matches the given object. The <a href="../../../code_reference/nada_base_types/array_t.html#removeall-zilch-engine-do"> RemoveAll</a> method removes from an array every element that matches the given object. The <a href="../../../code_reference/nada_base_types/array_t.html#clear-void"> Clear</a> method removes all the elements from an array.</p>
+<p>All of these methods are discussed in detail <a href="arrays/.md#removing">above</a>.</p>
 <h2 id="copy">Copy</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#copy-array-t"> Copy</a> method returns a new array that is a copy of the original. This method should be used to create a clone of an array that is to be modified separately without affecting the original. Because <strong>Array</strong> is a reference type, this cannot be done merely with the assignment operator, as shown <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/arrays/.md#reference-type">above</a>.</p>
+<p>The <a href="../../../code_reference/nada_base_types/array_t.html#copy-array-t"> Copy</a> method returns a new array that is a copy of the original. This method should be used to create a clone of an array that is to be modified separately without affecting the original. Because <strong>Array</strong> is a reference type, this cannot be done merely with the assignment operator, as shown <a href="arrays/.md#reference-type">above</a>.</p>
 <h2 id="findfirstindex">FindFirstIndex</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#findfirstindex-zilch-engi"> FindFirstIndex</a> method returns the index of the first occurrence in an array of a given object. This method compares value types by comparing their data, and it compares reference types by comparing their handles. If the given object is not found, it returns <code>-1</code>:</p>
+<p>The <a href="../../../code_reference/nada_base_types/array_t.html#findfirstindex-zilch-engi"> FindFirstIndex</a> method returns the index of the first occurrence in an array of a given object. This method compares value types by comparing their data, and it compares reference types by comparing their handles. If the given object is not found, it returns <code>-1</code>:</p>
 <pre><code class="lang-lang=csharp,">var valueType0 = Integer2(1, 2);
 // Integer2 is a value type
 var valueType1 = Integer2(valueType0);
@@ -542,7 +542,7 @@ Console.WriteLine(arrayOfReferenceType.FindFirstIndex(referenceType1));
 -1
 </code></pre>
 <h2 id="get-and-set">Get and Set</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#get-zilch-engine-document"> Get</a> method returns the array element at the given index. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#set-void"> Set</a> method writes the given object to the given index. These methods are called when the <strong>indexing operator</strong>, <code>[]</code>, is used:</p>
+<p>The <a href="../../../code_reference/nada_base_types/array_t.html#get-zilch-engine-document"> Get</a> method returns the array element at the given index. The <a href="../../../code_reference/nada_base_types/array_t.html#set-void"> Set</a> method writes the given object to the given index. These methods are called when the <strong>indexing operator</strong>, <code>[]</code>, is used:</p>
 <pre><code class="lang-lang=chsarp,">var aStates = Array[String]() { &quot;alabama&quot;, &quot;nebraska&quot;, &quot;arizona&quot;, &quot;kansas&quot; };
 Console.WriteLine(aStates.Get(0));
 Console.WriteLine(aStates[2]);  // this is reading, so Get is called
@@ -556,7 +556,7 @@ arizona
 {alabama, alaska, arizona, arkansas}
 </code></pre>
 <h2 id="range">Range</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#range-arrayrange-t"> Range</a> method returns an ArrayRange containing the specified range of elements, beginning with the given start index and including the given element count:</p>
+<p>The <a href="../../../code_reference/nada_base_types/array_t.html#range-arrayrange-t"> Range</a> method returns an ArrayRange containing the specified range of elements, beginning with the given start index and including the given element count:</p>
 <pre><code class="lang-lang=csharp,">var primes = Array[Integer]() { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, };  // etc.
 var primeSubset = primes.Range(4, 5);
 
@@ -572,7 +572,7 @@ foreach (var prime in primeSubset)
 23
 </code></pre>
 <h2 id="resize-and-reserve">Resize and Reserve</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#resize-void"> Resize</a> method resizes an array so that its new Count is the given value. If the given count value is greater than the array's old Count, then new elements are constructed and added to the end of the array. This method can take an optional default value parameter, which is used to set the value of these new elements; if this is not specified, then the type default for the type stored in the array will be used instead:</p>
+<p>The <a href="../../../code_reference/nada_base_types/array_t.html#resize-void"> Resize</a> method resizes an array so that its new Count is the given value. If the given count value is greater than the array's old Count, then new elements are constructed and added to the end of the array. This method can take an optional default value parameter, which is used to set the value of these new elements; if this is not specified, then the type default for the type stored in the array will be used instead:</p>
 <pre><code class="lang-lang=csharp,">var iceCreamServings = Array[String]()
 {
   &quot;cookies 'n cream&quot;,
@@ -601,22 +601,22 @@ Console.WriteLine(cubes);
 <pre><code class="lang-name=Console">{0, 1, 8, 27, 64, 125, 216, 343, 512, 729}
 {0, 1, 8, 27}
 </code></pre>
-<p>As with all cases of changing an array's size, if Resize raises an array's Count past its Capacity, more space is allocated to accommodate its new size. Since this can affect performance in certain situations, it may be beneficial to change an array's Capacity before any resizing is done. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#reserve-void"> Reserve</a> method sets an array's Capacity to the given value, allocating more space as necessary.</p>
+<p>As with all cases of changing an array's size, if Resize raises an array's Count past its Capacity, more space is allocated to accommodate its new size. Since this can affect performance in certain situations, it may be beneficial to change an array's Capacity before any resizing is done. The <a href="../../../code_reference/nada_base_types/array_t.html#reserve-void"> Reserve</a> method sets an array's Capacity to the given value, allocating more space as necessary.</p>
 <h2 id="sort">Sort</h2>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md#sort-void"> Sort</a> method sorts an array using the given comparison function. Typically, this is something the user provides, though some types, such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md"> String</a>, provide static functions that can be used with the Sort method. Array sorting is discussed in depth <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/arrays/.md#sorting-arrays">above</a>.</p>
+<p>The <a href="../../../code_reference/nada_base_types/array_t.html#sort-void"> Sort</a> method sorts an array using the given comparison function. Typically, this is something the user provides, though some types, such as <a href="../../../code_reference/nada_base_types/string.html"> String</a>, provide static functions that can be used with the Sort method. Array sorting is discussed in depth <a href="arrays/.md#sorting-arrays">above</a>.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/strings.md"> Strings</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/classes.md"> Classes and Structs</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/looping.md"> Looping</a></li>
+<li><a href="strings.html"> Strings</a></li>
+<li><a href="classes.html"> Classes and Structs</a></li>
+<li><a href="looping.html"> Looping</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md"> Array</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md"> Integer</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md"> Real</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md"> String</a></li>
+<li><a href="../../../code_reference/nada_base_types/array_t.html"> Array</a></li>
+<li><a href="../../../code_reference/nada_base_types/integer.html"> Integer</a></li>
+<li><a href="../../../code_reference/nada_base_types/real.html"> Real</a></li>
+<li><a href="../../../code_reference/nada_base_types/string.html"> String</a></li>
 </ul>
 
 </article>

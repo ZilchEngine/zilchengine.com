@@ -89,13 +89,13 @@
 <p>(NOTE) <strong>You will need speakers, headphones, or some other audio output device for this lesson.</strong></p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
-<li>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundemitter.md">soundemitter</a> interface</li>
-<li>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md">soundspace</a> interface</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundinstance.md">soundinstance</a></li>
+<li>The <a href="../../../code_reference/class_reference/soundemitter.html">soundemitter</a> interface</li>
+<li>The <a href="../../../code_reference/class_reference/soundspace.html">soundspace</a> interface</li>
+<li><a href="../../../code_reference/class_reference/soundinstance.html">soundinstance</a></li>
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
 <li>Download the following files:</li>
 </ul>
@@ -111,19 +111,19 @@
 <li>Double-click  the <code>BG_Arpeggios</code> SoundCue</li>
 <li>In the <code>Properties Window</code></li>
 <li>Set PlayMode enum to <code>Looping</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : GameCamera object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a> : GameCamera object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Under <a href="../../../code_reference/class_reference/transform.html"> Transform</a></li>
 <li>Set Translation  to <code>[0, 0, 3]</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/camera.md"> Camera</a></li>
+<li>Under <a href="../../../code_reference/class_reference/camera.html"> Camera</a></li>
 <li>Set Size  to <code>40</code></li>
 </ul>
 <h1 id="soundemitter">SoundEmitter</h1>
-<p>There are a few different ways to play sounds in the Zilch Engine. One is by using a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundemitter.md"> SoundEmitter</a>. The SoundEmitter component is used to play <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundcue.md"> SoundCues</a> //positionally//: that is, as if they were to occur in the world with the rest of the game. Using positional audio, it is possible to create, for example, an explosion effect that is louder or softer, and will sound like it occurs to the left or right of the player, depending on where it goes off.</p>
+<p>There are a few different ways to play sounds in the Zilch Engine. One is by using a <a href="../../../code_reference/class_reference/soundemitter.html"> SoundEmitter</a>. The SoundEmitter component is used to play <a href="../../../code_reference/class_reference/soundcue.html"> SoundCues</a> //positionally//: that is, as if they were to occur in the world with the rest of the game. Using positional audio, it is possible to create, for example, an explosion effect that is louder or softer, and will sound like it occurs to the left or right of the player, depending on where it goes off.</p>
 <p>Let's do that now.</p>
 <h2 id="the-playcue-function">The PlayCue Function</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>KeyboardMovement</code></li>
 <li>Update <code>KeyboardMovement</code> to the following:</li>
 </ul>
@@ -158,18 +158,18 @@
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite"> CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Set Name  to <code>Player</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
+<li>Under <a href="../../../code_reference/class_reference/sprite.html"> Sprite</a></li>
 <li>Set SpriteSource enum to <code>Circle</code></li>
 <li>Set VertexColor  to <code>[R:30, G:150, B:230, A:1.00]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>KeyboardMovement</code></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>KeyboardMovement</code></li>
 </ul>
-<p>In order for a sound played by a SoundEmitter to be heard, it needs to be picked up by a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundlistener.md"> SoundListener</a>. The GameCamera object object has a SoundListener component. To make the sound effects sound like they're coming from different sides of the player, we can parent the camera to the player so that it automatically follows the player around.</p>
+<p>In order for a sound played by a SoundEmitter to be heard, it needs to be picked up by a <a href="../../../code_reference/class_reference/soundlistener.html"> SoundListener</a>. The GameCamera object object has a SoundListener component. To make the sound effects sound like they're coming from different sides of the player, we can parent the camera to the player so that it automatically follows the player around.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/hierarchies.md"> Attach</a> GameCamera object to Player object</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="../architecture/hierarchies.html"> Attach</a> GameCamera object to Player object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>SoundController</code></li>
 <li>Update <code>SoundController</code> to the following:</li>
 </ul>
@@ -194,27 +194,27 @@
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite"> CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Set Name  to <code>Speaker</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Under <a href="../../../code_reference/class_reference/transform.html"> Transform</a></li>
 <li>Set Translation  to <code>[0, 3, 0]</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
+<li>Under <a href="../../../code_reference/class_reference/sprite.html"> Sprite</a></li>
 <li>Set VertexColor  to <code>[R:230, G:60, B:60, A:1.00]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>SoundEmitter</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundemitter.md"> SoundEmitter</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>SoundEmitter</code></li>
+<li>Under <a href="../../../code_reference/class_reference/soundemitter.html"> SoundEmitter</a></li>
 <li>Set Attentuator enum to <code>DefaultAttenuation</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>SoundController</code></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>SoundController</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96146.png" alt="image"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 <li>Hold key the <code>Arrow</code> keys to move the player around, and press key the <code>Space</code> bar to play the explosion sound</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96141.gif" alt="Player movement around speaker"></p>
 <p>If you press <code>Space</code>, the speaker plays an explosion sound. If you're on the right side of the speaker, the sound comes from your left, and if you're on the left side, it comes from your right. If you're near the speaker, the explosion sound is louder than if you're far from it.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <h2 id="the-volume-property">The Volume Property</h2>
 <p>Every sound played by a SoundEmitter is played at the volume level specified by its <code>Volume</code> property. Let's play around a bit with that.</p>
@@ -234,17 +234,17 @@ if (Zilch.Keyboard.KeyIsDown(Keys.RightBracket))
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#console"> Console</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#console"> Console</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 <li>Press key the <code>Space</code> bar to play the explosion sound, and hold key the <code>[</code> and <code>]</code> keys to decrease and increase the SoundEmitter's volume</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96161.gif" alt="Console printing showing volume changes"></p>
 <p><em>The console shows the changes to the emitter's volume level</em></p>
 <p>The volume level of the SoundEmitter can now be controlled, in addition to any attenuation that may occur when moving closer to or further from the speaker.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
-<p>What if we want to modify the volume of a SoundEmitter gradually over time, but we want it to happen automatically, without having to hold keys on the keyboard? We've already covered <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/actions.md"> Actions</a>: we <em>could</em> use an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/action.md"> Action</a> to interpolate the SoundEmitter's <code>Volume</code> property, but as it happens, SoundEmitter has a handy function for just such an occasion.</p>
+<p>What if we want to modify the volume of a SoundEmitter gradually over time, but we want it to happen automatically, without having to hold keys on the keyboard? We've already covered <a href="../scripting/actions.html"> Actions</a>: we <em>could</em> use an <a href="../../../code_reference/class_reference/action.html"> Action</a> to interpolate the SoundEmitter's <code>Volume</code> property, but as it happens, SoundEmitter has a handy function for just such an occasion.</p>
 <h2 id="the-interpolatevolume-function">The InterpolateVolume Function</h2>
 <ul>
 <li>Replace the <code>OnLogicUpdate</code> function of the <code>SoundController</code> class with the following:</li>
@@ -262,19 +262,19 @@ if (Zilch.Keyboard.KeyIsDown(Keys.RightBracket))
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 <li><code>Repeatedly press</code> the <code>Space</code> bar to play the explosion sound, and press key the <code>[</code> and <code>]</code> keys to interpolate the SoundEmitter's volume</li>
 </ul>
 <p>Now it just takes one press of the <code>[</code> and <code>]</code> keys to gradually fade the SoundEmitter's volume level down and up, respectively.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
-<p>For positional sounds, a SoundEmitter is the way to go, but sometimes audio shouldn't be played positionally. Music, for example, is usually played at a consistent volume level that is independent of the game world, and many sound effects are as well. To make a sound play non-positionally, we'll have to take a look at the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md"> SoundSpace</a>.</p>
+<p>For positional sounds, a SoundEmitter is the way to go, but sometimes audio shouldn't be played positionally. Music, for example, is usually played at a consistent volume level that is independent of the game world, and many sound effects are as well. To make a sound play non-positionally, we'll have to take a look at the <a href="../../../code_reference/class_reference/soundspace.html"> SoundSpace</a>.</p>
 <h1 id="soundspace">SoundSpace</h1>
-<p>A <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/spaces.md"> previous tutorial</a> mentioned the concept of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/space.md"> Space</a>. A space has a few unique components that subdivide its responsibility into different areas. To that end, the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md">soundspace</a> is &quot;in charge&quot; of any sound that occurs in a space. That is, a SoundListener in one space won't &quot;hear&quot; anything played by a SoundEmitter in another space, because the listener and the emitter are controlled by different SoundSpaces.</p>
+<p>A <a href="../architecture/spaces.html"> previous tutorial</a> mentioned the concept of the <a href="../../../code_reference/class_reference/space.html"> Space</a>. A space has a few unique components that subdivide its responsibility into different areas. To that end, the <a href="../../../code_reference/class_reference/soundspace.html">soundspace</a> is &quot;in charge&quot; of any sound that occurs in a space. That is, a SoundListener in one space won't &quot;hear&quot; anything played by a SoundEmitter in another space, because the listener and the emitter are controlled by different SoundSpaces.</p>
 <p>The SoundSpace manages all sounds played in a space, but it can also be used to play sounds directly. Let's use the SoundSpace to play some music.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>MusicPlayer</code></li>
 <li>Update <code>MusicPlayer</code> to the following:</li>
 </ul>
@@ -290,14 +290,14 @@ if (Zilch.Keyboard.KeyIsDown(Keys.RightBracket))
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : LevelSettings object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a> : LevelSettings object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>MusicPlayer</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>MusicPlayer</code></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <p>Notice how moving the player around has no effect on the volume level of the music, because it's playing directly through the SoundSpace, not a SoundEmitter. It might be a little bit too loud, though. That's easy to fix because the volume level of the SoundSpace can be controlled just like the volume of a SoundEmitter.</p>
 <ul>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></p>
 </li>
 <li><p>Update <code>MusicPlayer</code> to the following:</p>
 </li>
@@ -331,15 +331,15 @@ if (Zilch.Keyboard.KeyIsDown(Keys.RightBracket))
 }
 </code></pre>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 <li>Press key the <code>Space</code> bar to play the explosion sound, and hold key the <code>-</code> and <code>=</code> keys to decrease and increase the SoundSpace's volume</li>
 </ul>
 <p>Now you can control the volume level of the output of the SoundSpace, but the volume of the explosion sound is affected too. This is because the SoundSpace applies its volume to every sound that plays in its space, whether positionally or not. There are a few different ways to control just the volume of an individual music cue (or any other SoundCue played non-positionally). Let's look at one of them.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="soundinstances">SoundInstances</h1>
-<p>A <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundinstance.md"> SoundInstance</a> is a class object that represents a specific occurrence of a SoundCue being played. It can be manipulated in Nada, where its interface is very similar to those of both the SoundEmitter and SoundSpace components.</p>
+<p>A <a href="../../../code_reference/class_reference/soundinstance.html"> SoundInstance</a> is a class object that represents a specific occurrence of a SoundCue being played. It can be manipulated in Nada, where its interface is very similar to those of both the SoundEmitter and SoundSpace components.</p>
 <ul>
 <li>Update <code>MusicPlayer</code> to the following:</li>
 </ul>
@@ -375,51 +375,51 @@ if (Zilch.Keyboard.KeyIsDown(Keys.RightBracket))
 </code></pre>
 <p>Note how the <code>MusicInstance</code> member variable is used: the SoundSpace's <code>PlayCue</code> function actually returns a SoundInstance, but we didn't hang onto it before because we didn't need it. Now that we do want to use it, we can store it as a member and work with it later.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 <li>Press key the <code>Space</code> bar to play the explosion sound, and hold key the <code>-</code> and <code>=</code> keys to decrease and increase the music's volume</li>
 </ul>
 <p>These changes allow us to alter the music's volume independently from the volume of the sound effects.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="tutorials">Tutorials</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/actions.md">actions</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/spaces.md">spaces</a></li>
+<li><a href="../scripting/actions.html">actions</a></li>
+<li><a href="../architecture/spaces.html">spaces</a></li>
 </ul>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md"> Create a New 2D Project</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/launchernewproject.html"> Create a New 2D Project</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">sprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/camera.md">camera</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/action.md">action</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/space.md">space</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundspace.md">soundspace</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundemitter.md">soundemitter</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundcue.md">soundcue</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundlistener.md">soundlistener</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundinstance.md">soundinstance</a></li>
+<li><a href="../../../code_reference/class_reference/transform.html">transform</a></li>
+<li><a href="../../../code_reference/class_reference/sprite.html">sprite</a></li>
+<li><a href="../../../code_reference/class_reference/camera.html">camera</a></li>
+<li><a href="../../../code_reference/class_reference/action.html">action</a></li>
+<li><a href="../../../code_reference/class_reference/space.html">space</a></li>
+<li><a href="../../../code_reference/class_reference/soundspace.html">soundspace</a></li>
+<li><a href="../../../code_reference/class_reference/soundemitter.html">soundemitter</a></li>
+<li><a href="../../../code_reference/class_reference/soundcue.html">soundcue</a></li>
+<li><a href="../../../code_reference/class_reference/soundlistener.html">soundlistener</a></li>
+<li><a href="../../../code_reference/class_reference/soundinstance.html">soundinstance</a></li>
 </ul>
 <h3 id="events">Events</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate">#logicupdate</a></li>
+<li><a href="../../../code_reference/event_reference.html#logicupdate">#logicupdate</a></li>
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#console">Console</a></li>
+<li><a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#console">Console</a></li>
 </ul>
 <h2 id="development-task">Development Task</h2>
 <ul>

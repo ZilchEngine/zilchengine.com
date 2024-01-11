@@ -98,25 +98,25 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/subrendergrouppass.md#addsubsettings-void">AddSubSettings</a></td>
+<td><a href="subrendergrouppass.html#addsubsettings-void">AddSubSettings</a></td>
 <td></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/safeid32.md">safeid32</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/subrendergrouppass.md#excludesubrendergroup-vo">ExcludeSubRenderGroup</a></td>
-<td></td>
-<td></td>
+<td><a href="safeid32.html">safeid32</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/subrendergrouppass.md#reset-void">Reset</a></td>
+<td><a href="subrendergrouppass.html#excludesubrendergroup-vo">ExcludeSubRenderGroup</a></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/subrendergrouppass.md#setdefaultsettings-void">SetDefaultSettings</a></td>
+<td><a href="subrendergrouppass.html#reset-void">Reset</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="subrendergrouppass.html#setdefaultsettings-void">SetDefaultSettings</a></td>
 <td></td>
 <td></td>
 <td></td>
@@ -132,9 +132,9 @@
 <p>Define the settings to use for a specific RenderGroup. Given RenderGroup must be a child of the base RenderGroup, or the base itself, that this was initialized with.
 |Name|Type|Description|
 |---|---|---|
-|subSettings|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendersettings.md">rendersettings</a>| |
-|subGroup|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendergroup.md">rendergroup</a>| |
-|subPass|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/materialblock.md">materialblock</a>| |</p>
+|subSettings|<a href="rendersettings.html">rendersettings</a>| |
+|subGroup|<a href="rendergroup.html">rendergroup</a>| |
+|subPass|<a href="materialblock.html">materialblock</a>| |</p>
 <pre><code class="lang-lang=cpp,">function AddSubSettings(subSettings : RenderSettings, subGroup : RenderGroup, subPass : MaterialBlock)
 </code></pre>
 </blockquote>
@@ -144,7 +144,7 @@
 <p>Explicitely exclude a RenderGroup from rendering when there are default settings. Given RenderGroup must be a child of the base RenderGroup, or the base itself, that this was initialized with.
 |Name|Type|Description|
 |---|---|---|
-|subGroup|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendergroup.md">rendergroup</a>| |</p>
+|subGroup|<a href="rendergroup.html">rendergroup</a>| |</p>
 <pre><code class="lang-lang=cpp,">function ExcludeSubRenderGroup(subGroup : RenderGroup)
 </code></pre>
 </blockquote>
@@ -154,7 +154,7 @@
 <p>Resets interface back to the initial creation state with a given base RenderGroup.
 |Name|Type|Description|
 |---|---|---|
-|baseRenderGroup|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendergroup.md">rendergroup</a>| |</p>
+|baseRenderGroup|<a href="rendergroup.html">rendergroup</a>| |</p>
 <pre><code class="lang-lang=cpp,">function Reset(baseRenderGroup : RenderGroup)
 </code></pre>
 </blockquote>
@@ -164,8 +164,8 @@
 <p>Settings to use for the base or all sub RenderGroups that do not have specified settings. Without defaults, the base or any sub RenderGroup without settings will not render.
 |Name|Type|Description|
 |---|---|---|
-|defaultSettings|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendersettings.md">rendersettings</a>| |
-|defaultPass|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/materialblock.md">materialblock</a>| |</p>
+|defaultSettings|<a href="rendersettings.html">rendersettings</a>| |
+|defaultPass|<a href="materialblock.html">materialblock</a>| |</p>
 <pre><code class="lang-lang=cpp,">function SetDefaultSettings(defaultSettings : RenderSettings, defaultPass : MaterialBlock)
 </code></pre>
 </blockquote>
