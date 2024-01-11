@@ -85,12 +85,12 @@
 
         <article data-uid="">
 
-<p>The metallic fragment, in the form of either a map or value, describes whether a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials.md">Material</a>, or part of a material, should have the properties of a metal (or conductor) in relation to light. Metals have high specular and their color represents the visible spectrum of light that a particular metal reflects. This is in opposition for dielectrics, or non-metals, that--for the most part--have high diffuse reflectance. In fact, when authoring a new material for a PBR-based renderer, whether that material is a metal or not (or some combination of the two) is usually the first consideration one should make.</p>
+<p>The metallic fragment, in the form of either a map or value, describes whether a <a href="../materials.html">Material</a>, or part of a material, should have the properties of a metal (or conductor) in relation to light. Metals have high specular and their color represents the visible spectrum of light that a particular metal reflects. This is in opposition for dielectrics, or non-metals, that--for the most part--have high diffuse reflectance. In fact, when authoring a new material for a PBR-based renderer, whether that material is a metal or not (or some combination of the two) is usually the first consideration one should make.</p>
 <p>As metals have very high specular and very low diffuse reflectance, their color comes from a &quot;tint&quot; to reflected light. Gold and copper are two metals associated with their unique colors, instead of the grays usually found with metals. A simplified explanation of why gold and copper have the tint that they do is because they do not reflect much of the blue part of the spectrum. Compare the following three spheres, each tinted to represent gold, copper, and silver respectively.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/28444.png" alt="Metallic_Overview_Spheres"></p>
 <p>Using either a map or a value fragment, one may assign a metallic value between <code>0.0</code> and <code>1.0</code>. While there may be an impulse to assign this value somewhere in the middle, it usually far more accurate to make a material or part of a material either completely <code>1.0</code> (metal) or completely <code>0.0</code> (non-metal). If the effect desired is a brushed or aged metal, this may best be achieved by using a RoughnessMap in conjunction with a MetallicMap.</p>
 <h1 id="the-metallic-fragment">The Metallic Fragment</h1>
-<p>Metallic may be set using a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/texture.md">Texture</a> map or a value. If a value is used, it applied uniformly across the entire Material. If a map is used, the metallic value may be set to different levels across the Material.  If there is neither a metallic map or value fragment, it would be as if a metallic value of <code>0.0</code> is applied to the entire Material.</p>
+<p>Metallic may be set using a <a href="../../../../code_reference/class_reference/texture.html">Texture</a> map or a value. If a value is used, it applied uniformly across the entire Material. If a map is used, the metallic value may be set to different levels across the Material.  If there is neither a metallic map or value fragment, it would be as if a metallic value of <code>0.0</code> is applied to the entire Material.</p>
 <h2 id="metallicvalue">MetallicValue</h2>
 <p>When a MetallicValue fragment is applied to a Material, the user may set a metallic value to applied uniformly across the Material in the from <code>0.0</code> to <code>1.0</code>. To add a MetallicValue fragment, click on the <code>Add MaterialBlock</code> button and select <code>MetallicValue</code>, as seen below:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47838.gif" alt="AddValue"></p>
@@ -104,13 +104,13 @@
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials.md">materials</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/adding_assets/adding_textures_and_sprites.md">adding_textures_and_sprites</a></li>
+<li><a href="../materials.html">materials</a></li>
+<li><a href="../adding_assets/adding_textures_and_sprites.html">adding_textures_and_sprites</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/material.md">material</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/texture.md">texture</a></li>
+<li><a href="../../../../code_reference/class_reference/material.html">material</a></li>
+<li><a href="../../../../code_reference/class_reference/texture.html">texture</a></li>
 </ul>
 
 </article>

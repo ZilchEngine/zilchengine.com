@@ -85,9 +85,9 @@
 
         <article data-uid="">
 
-<p>Events are the main way that objects and components talk to each other in the Zilch Engine. When a component has information that it wants to share, the easiest way is to package the information into an Event, and then dispatch it.  Then, any component that wants to have that information can listen for it by connecting a member function to the event. In the Zilch Engine, there are two main categories of events: the pre-defined Engine events (such as as an Update event or a Collision event) that are that ready-made for you to connect to, and Custom NadaScript Events that the user creates. The Custom Events allow the user to decide when and where to send them out, what information is sent with them, and what listens for the event after it's sent. This page will briefly cover each of the two categories, but will focus specifically on Custom Events(see <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md">event_reference</a> for built-in events).</p>
+<p>Events are the main way that objects and components talk to each other in the Zilch Engine. When a component has information that it wants to share, the easiest way is to package the information into an Event, and then dispatch it.  Then, any component that wants to have that information can listen for it by connecting a member function to the event. In the Zilch Engine, there are two main categories of events: the pre-defined Engine events (such as as an Update event or a Collision event) that are that ready-made for you to connect to, and Custom NadaScript Events that the user creates. The Custom Events allow the user to decide when and where to send them out, what information is sent with them, and what listens for the event after it's sent. This page will briefly cover each of the two categories, but will focus specifically on Custom Events(see <a href="../../../code_reference/event_reference.html">event_reference</a> for built-in events).</p>
 <h1 id="pre-defined-engine-events">Pre-Defined Engine Events</h1>
-<p>At the bottom of this page is a comprehensive list of the pre-defined engine events. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate">LogicUpdate</a> Event, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionevent.md">Collision Events</a> (which comes in three variations: Started, Ended, and Persisted), <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboardevent.md">Keyboard Events</a>, and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mouseevent.md">Mouse Events</a>.</p>
+<p>At the bottom of this page is a comprehensive list of the pre-defined engine events. The <a href="../../../code_reference/event_reference.html#logicupdate">LogicUpdate</a> Event, <a href="../../../code_reference/class_reference/collisionevent.html">Collision Events</a> (which comes in three variations: Started, Ended, and Persisted), <a href="../../../code_reference/class_reference/keyboardevent.html">Keyboard Events</a>, and <a href="../../../code_reference/class_reference/mouseevent.html">Mouse Events</a>.</p>
 <h1 id="custom-nadascript-events">Custom NadaScript Events</h1>
 <p>These are the events that the user will create and dispatch themselves. A primary reason to use custom events is that they move the focus away from whatever triggers an action (such as collision or a frame update) to the object that is responding to the event occurring (i.e. the player's health and the HUD element displaying the player's health that is changed as a result of colliding with an enemy). There are a number of benefits to this approach, including:</p>
 <ul>
@@ -289,10 +289,10 @@ ere, one can gain access to the data that is sent with the event, for use in alt
 <h1 id="related-material">Related Material</h1>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md">event_reference</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionevent.md">Collision Events</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboardevent.md">Keyboard Events</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/mouseevent.md">Mouse Events</a></li>
+<li><a href="../../../code_reference/event_reference.html">event_reference</a></li>
+<li><a href="../../../code_reference/class_reference/collisionevent.html">Collision Events</a></li>
+<li><a href="../../../code_reference/class_reference/keyboardevent.html">Keyboard Events</a></li>
+<li><a href="../../../code_reference/class_reference/mouseevent.html">Mouse Events</a></li>
 </ul>
 
 </article>

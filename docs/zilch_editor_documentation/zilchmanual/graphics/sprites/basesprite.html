@@ -85,9 +85,9 @@
 
         <article data-uid="">
 
-<p>While not being a class that is directly accessed by the User, both the Sprite class and the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritetext.md">SpriteText</a> class inherit directly from the BaseSprite class, making it an important class on its own. Any of the Properties of the BaseSprite class can be directly used by either Sprites or SpriteText, changing many of the visual aspects of the Object.</p>
+<p>While not being a class that is directly accessed by the User, both the Sprite class and the <a href="spritetext.html">SpriteText</a> class inherit directly from the BaseSprite class, making it an important class on its own. Any of the Properties of the BaseSprite class can be directly used by either Sprites or SpriteText, changing many of the visual aspects of the Object.</p>
 <h1 id="using-the-color-picker">Using the Color Picker</h1>
-<p>The base color of a  <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a>  can be changed in several different methods:</p>
+<p>The base color of a  <a href="../../../code_reference/class_reference/sprite.md">Sprite</a>  can be changed in several different methods:</p>
 <ul>
 <li>Entering the Hex Code of the desired color into the Color Picker. For example, <code>FF0000</code> for Red.</li>
 <li>Click and Drag the Eye Dropper tool onto the desired color on screen.</li>
@@ -116,7 +116,7 @@
 </ul>
 <p>Using these the color can be changed to any shade needed. Alternately if either the HSV or RGB values are known, they can also simply be typed in.</p>
 <h1 id="alpha-blending">Alpha Blending</h1>
-<p>When using alpha blending, a renderpass must be performed with the appropriate blendsettings set.  The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer.md">DeferredRenderer</a> performs an linearly interpolating blend by default using the AlphaBlend resource <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/rendergroups.md">RenderGroup</a>.  Since the AlphaSprite resource <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/materials_overview.md">Material</a> is already in AlphaBlend resource, setting the alpha value of the VertexColor  is sufficient in making transparent sprites.  Additive blending is also available through the alternative AdditiveBlend resource RenderGroup.</p>
+<p>When using alpha blending, a renderpass must be performed with the appropriate blendsettings set.  The <a href="../renderer.html">DeferredRenderer</a> performs an linearly interpolating blend by default using the AlphaBlend resource <a href="../rendergroups.html">RenderGroup</a>.  Since the AlphaSprite resource <a href="../materials/materials_overview.html">Material</a> is already in AlphaBlend resource, setting the alpha value of the VertexColor  is sufficient in making transparent sprites.  Additive blending is also available through the alternative AdditiveBlend resource RenderGroup.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/28541.png" alt="image"> <em>Alpha Blending(left) vs. Additive Blending(right)</em></p>
 <h2 id="rendergroups-for-sprites">RenderGroups for Sprites</h2>
 <table>
@@ -143,16 +143,16 @@
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li>{icon university}[[<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritetext.md">spritetext</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer.md">DeferredRenderer</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/rendergroups.md">RenderGroup</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/materials_overview.md">Material</a></li>
+<li>{icon university}[[<a href="../../../code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="spritetext.html">spritetext</a></li>
+<li><a href="../renderer.html">DeferredRenderer</a></li>
+<li><a href="../rendergroups.html">RenderGroup</a></li>
+<li><a href="../materials/materials_overview.html">Material</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/sprite.md">Sprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/basesprite.md">BaseSprite Code Reference</a></li>
+<li><a href="../../../code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="../../../code_reference/class_reference/basesprite.md">BaseSprite Code Reference</a></li>
 </ul>
 
 </article>

@@ -99,49 +99,49 @@
 <tbody>
 <tr>
 <td></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundattenuator.md#falloffcurve-zilch-engine">FalloffCurve</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/dataresource.md">dataresource</a></td>
+<td><a href="soundattenuator.html#falloffcurve-zilch-engine">FalloffCurve</a></td>
+<td><a href="dataresource.html">dataresource</a></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundattenuator.md#falloffcurvetype-zilch-en">FalloffCurveType</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundattenuator.md#lowpasscutofffreq-zilch-e">LowPassCutoffFreq</a></td>
+<td><a href="soundattenuator.html#falloffcurvetype-zilch-en">FalloffCurveType</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundattenuator.md#lowpassstartdistance-zer">LowPassStartDistance</a></td>
+<td><a href="soundattenuator.html#lowpasscutofffreq-zilch-e">LowPassCutoffFreq</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundattenuator.md#minattenuatedvolume-zero">MinAttenuatedVolume</a></td>
+<td><a href="soundattenuator.html#lowpassstartdistance-zer">LowPassStartDistance</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundattenuator.md#startdistance-zilch-engin">StartDistance</a></td>
+<td><a href="soundattenuator.html#minattenuatedvolume-zero">MinAttenuatedVolume</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundattenuator.md#stopdistance-zilch-engine">StopDistance</a></td>
+<td><a href="soundattenuator.html#startdistance-zilch-engin">StartDistance</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundattenuator.md#uselowpassfilter-zilch-en">UseLowPassFilter</a></td>
+<td><a href="soundattenuator.html#stopdistance-zilch-engine">StopDistance</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="soundattenuator.html#uselowpassfilter-zilch-en">UseLowPassFilter</a></td>
 <td></td>
 <td></td>
 </tr>
@@ -149,56 +149,56 @@
 </table>
 <h1 id="properties">Properties</h1>
 <hr>
-<h1 id="falloffcurve--samplecurve">FalloffCurve : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/samplecurve.md">samplecurve</a></h1>
+<h1 id="falloffcurve--samplecurve">FalloffCurve : <a href="samplecurve.html">samplecurve</a></h1>
 <blockquote>
 <p>The SampleCurve resource to use as the attenuation's falloff curve. It will be normalized and stretched to fit between the StartDistance and StopDistance values.</p>
 <pre><code class="lang-lang=cpp,">var FalloffCurve : SampleCurve
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="falloffcurvetype--falloffcurvetype">FalloffCurveType : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#falloffcurvetype">FalloffCurveType</a></h1>
+<h1 id="falloffcurvetype--falloffcurvetype">FalloffCurveType : <a href="../enum_reference.html#falloffcurvetype">FalloffCurveType</a></h1>
 <blockquote>
 <p>The type of curve used to reduce the sound's volume over distance. The default is a logarithmic curve which mimics the real world.</p>
 <pre><code class="lang-lang=cpp,">var FalloffCurveType : FalloffCurveType
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="lowpasscutofffreq--real">LowPassCutoffFreq : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<h1 id="lowpasscutofffreq--real">LowPassCutoffFreq : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The lowest cutoff frequency of the low pass filter, reached at the StopDistance. The cutoff frequency will be interpolated logarithmically from 15000.00 (a value with very little effect on the sound) to the LowPassCutoffFreq between the LowPassStartDistance and the StopDistance.</p>
 <pre><code class="lang-lang=cpp,">var LowPassCutoffFreq : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="lowpassstartdistance--real">LowPassStartDistance : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<h1 id="lowpassstartdistance--real">LowPassStartDistance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The distance at which the low pass filter begins to take effect.</p>
 <pre><code class="lang-lang=cpp,">var LowPassStartDistance : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="minattenuatedvolume--real">MinAttenuatedVolume : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<h1 id="minattenuatedvolume--real">MinAttenuatedVolume : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The lowest volume that the attenuation will reach. If set above 0, the sound will continue to be heard at all distances.</p>
 <pre><code class="lang-lang=cpp,">var MinAttenuatedVolume : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="startdistance--real">StartDistance : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<h1 id="startdistance--real">StartDistance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The distance from a SoundListener at which the sound's volume begins attenuating. At shorter distances the volume will not be changed. Cannot be larger than the StopDistance.</p>
 <pre><code class="lang-lang=cpp,">var StartDistance : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="stopdistance--real">StopDistance : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<h1 id="stopdistance--real">StopDistance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The distance at which the attenuation reaches the minimum volume. No volume changes will happen past this distance. Cannot be smaller than the StartDistance.</p>
 <pre><code class="lang-lang=cpp,">var StopDistance : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="uselowpassfilter--boolean">UseLowPassFilter : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<h1 id="uselowpassfilter--boolean">UseLowPassFilter : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If true, a low pass filter will be applied to the sound after reaching a specified distance, mimicking the way sound is muffled with distance in real life. The filter begins at the LowPassStartDistance and interpolates its cutoff frequency logarithmically until the StopDistance. The filter will not change past the StopDistance.</p>
 <pre><code class="lang-lang=cpp,">var UseLowPassFilter : Boolean

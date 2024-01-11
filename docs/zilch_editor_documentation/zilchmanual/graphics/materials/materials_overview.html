@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/material.md">Materials</a>, and the parameters found in them, define the shader for drawing objects for any purpose, using any renderer. Their overarching, generalized purpose is to house shader code (pixel, vertex, and geometry) using individual NadaFragments. These NadaFragments added to a Material as MaterialBlocks. These <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/shaders.md"> shader fragments </a> define how the surface of the object on which it is placed will react to its environment.  <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/physically_based_rendering.md">PBR</a>, which is provided for the user as the default <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/renderer/deferred_renderer.md#deferred-renderer">DeferredRenderer</a>, is just one instance of how Materials may be used to render objects. To add a new Material, see <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">Adding a Resource</a>.</p>
+<p><a href="../../../../code_reference/class_reference/material.html">Materials</a>, and the parameters found in them, define the shader for drawing objects for any purpose, using any renderer. Their overarching, generalized purpose is to house shader code (pixel, vertex, and geometry) using individual NadaFragments. These NadaFragments added to a Material as MaterialBlocks. These <a href="shaders.html"> shader fragments </a> define how the surface of the object on which it is placed will react to its environment.  <a href="../physically_based_rendering.html">PBR</a>, which is provided for the user as the default <a href="../renderer/deferred_renderer.html#deferred-renderer">DeferredRenderer</a>, is just one instance of how Materials may be used to render objects. To add a new Material, see <a href="../../editor/editorcommands/resourceadding.html">Adding a Resource</a>.</p>
 <h1 id="material-templates">Material Templates</h1>
 <p>When creating a new material, there are six templates from which to choose:</p>
 <table>
@@ -106,7 +106,7 @@
 </tr>
 <tr>
 <td><code>EmptyMaterial</code></td>
-<td>Free of any default MaterialBlocks or references to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/rendergroups.md">RenderGroups</a></td>
+<td>Free of any default MaterialBlocks or references to <a href="../rendergroups.html">RenderGroups</a></td>
 </tr>
 <tr>
 <td><code>AdditiveSprite</code></td>
@@ -123,25 +123,25 @@
 </tbody>
 </table>
 <p>Each of these templates has MaterialBlocks and references to RenderGroups pre-added. The ZilchMaterial, for example, has <code>AlbedoMap</code>, <code>NormalMap</code>, <code>RoughnessMap</code>, <code>MetallicMap</code>, and <code>SpecularValue</code> MaterialBlocks and references <code>Opaque</code>, and <code>ShadowCasters</code> RenderGroups.</p>
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/albedo.md"> Albedo </a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/normal_map.md"> Normal </a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/metallic.md"> Metallic </a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/roughness.md"> Roughness </a>, and Specular are the parameters that define how light interacts with the material. Each of these parameters may be defined by a texture map or by a value, with the exception of the Normal parameter which may only be defined by a map.</p>
+<p><a href="albedo.html"> Albedo </a>, <a href="normal_map.html"> Normal </a>, <a href="metallic.html"> Metallic </a>, <a href="roughness.html"> Roughness </a>, and Specular are the parameters that define how light interacts with the material. Each of these parameters may be defined by a texture map or by a value, with the exception of the Normal parameter which may only be defined by a map.</p>
 <hr>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/rendergroups.md">rendergroups</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/models/model_component.md">model_component</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials.md">materials</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/albedo.md"> Albedo </a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/normal_map.md"> Normal </a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/metallic.md"> Metallic </a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/roughness.md"> Roughness </a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials/shaders.md">shaders</a></li>
+<li><a href="../rendergroups.html">rendergroups</a></li>
+<li><a href="../models/model_component.html">model_component</a></li>
+<li><a href="../materials.html">materials</a></li>
+<li><a href="albedo.html"> Albedo </a></li>
+<li><a href="normal_map.html"> Normal </a></li>
+<li><a href="metallic.html"> Metallic </a></li>
+<li><a href="roughness.html"> Roughness </a></li>
+<li><a href="shaders.html">shaders</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rendergroup.md">rendergroup</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/model.md">model</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/material.md">material</a></li>
+<li><a href="../../../../code_reference/class_reference/rendergroup.html">rendergroup</a></li>
+<li><a href="../../../../code_reference/class_reference/model.html">model</a></li>
+<li><a href="../../../../code_reference/class_reference/material.html">material</a></li>
 </ul>
 
 </article>

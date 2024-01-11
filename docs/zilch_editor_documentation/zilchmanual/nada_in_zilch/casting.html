@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p>Fundamentally, casting is converting from one type to another.  As demonstrated in the code snippet below, a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">Function</a> that takes a grade and returns pass/fail can be thought of as a conversion from a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a> to a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a>.</p>
+<p>Fundamentally, casting is converting from one type to another.  As demonstrated in the code snippet below, a <a href="functions.html">Function</a> that takes a grade and returns pass/fail can be thought of as a conversion from a <a href="../../../code_reference/nada_base_types/real.html">real</a> to a <a href="../../../code_reference/nada_base_types/boolean.html">boolean</a>.</p>
 <pre><code class="lang-lang=csharp,">function IsPassing(grade : Real) : Boolean
 {
   if(grade &gt;= 70)
@@ -96,21 +96,21 @@
 </code></pre>
 <p>The logic of that particular conversion is defined as a function and intended for a specific situation, but <em>cast operations</em> are more general-case and defined by Nada.</p>
 <h1 id="implicit-and-explicit">Implicit and Explicit</h1>
-<p>There are two types of casting, implicit and explicit.  Implicit casting occurs during the assignment of a variable of one type, with a value of a <em>different</em> type.  Implicit casting is a mechanism that Nada uses when a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">Variable</a> of one type is set to data of another type.  Explicit casting is a mechanic used by the user with the <code>as</code> keyword.  Any cast that can happen implicitly can be done explicitly.</p>
+<p>There are two types of casting, implicit and explicit.  Implicit casting occurs during the assignment of a variable of one type, with a value of a <em>different</em> type.  Implicit casting is a mechanism that Nada uses when a <a href="variables_and_data_types.html">Variable</a> of one type is set to data of another type.  Explicit casting is a mechanic used by the user with the <code>as</code> keyword.  Any cast that can happen implicitly can be done explicitly.</p>
 <p>WARNING: Even with explicit casting, there are still <em>cast operations</em> that are invalid and will trigger compile-time exceptions.</p>
 <pre><code class="lang-lang=csharp,">var myReal : Real = 1.0;
 var myDoubleReal : DoubleReal = myReal; // implicit casting
 var myInteger : Integer = myReal as Integer; // explicit casting
 </code></pre>
-<p>In the example above, <code>myDoubleReal</code> is being set to <code>myReal</code>, which invokes an implicit cast from <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a> to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doublereal.md">doublereal</a>.  When <code>myReal as Integer</code> is evaluated, explicit casting is invoked to convert a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a> to an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>.  The format for explicit casting is <code>&lt;value&gt; as &lt;new type&gt;</code>.</p>
+<p>In the example above, <code>myDoubleReal</code> is being set to <code>myReal</code>, which invokes an implicit cast from <a href="../../../code_reference/nada_base_types/real.html">real</a> to <a href="../../../code_reference/nada_base_types/doublereal.html">doublereal</a>.  When <code>myReal as Integer</code> is evaluated, explicit casting is invoked to convert a <a href="../../../code_reference/nada_base_types/real.html">real</a> to an <a href="../../../code_reference/nada_base_types/integer.html">integer</a>.  The format for explicit casting is <code>&lt;value&gt; as &lt;new type&gt;</code>.</p>
 <p>NOTE: Explicit casting should only be used when one is aware of all of the nuances of the cast.</p>
 <h1 id="casting-between-numeric-and-boolean-types">Casting Between Numeric and Boolean Types</h1>
 <p>The following base data types are considerered Numeric and Boolean:
-| <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a> |
-| <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doubleinteger.md">doubleinteger</a> |
-| <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a> |
-| <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doublereal.md">doublereal</a> |
-| <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a> |</p>
+| <a href="../../../code_reference/nada_base_types/integer.html">integer</a> |
+| <a href="../../../code_reference/nada_base_types/doubleinteger.html">doubleinteger</a> |
+| <a href="../../../code_reference/nada_base_types/real.html">real</a> |
+| <a href="../../../code_reference/nada_base_types/doublereal.html">doublereal</a> |
+| <a href="../../../code_reference/nada_base_types/boolean.html">boolean</a> |</p>
 <p>All <em>cast operations</em> using only these types are valid, meaning either explicit or implicit.  The code snippit below demonstates implicit casting between numeric types.</p>
 <pre><code class="lang-lang=csharp,">var myInteger : Integer = 1;
 
@@ -121,7 +121,7 @@ var myDoubleReal1 : DoubleReal = myInteger;
 var myDoubleReal2 : DoubleReal = myDoubleInteger;
 var myDoubleReal3 : DoubleReal = myReal;
 </code></pre>
-<p>Notice that implicit casting is allowed when converting to a numeric set, from a smaller data size to a larger one.  The value of <code>myInteger</code> can be implicitly casted to a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doubleinteger.md">doubleinteger</a>, which holds twice the number of bits as an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>.  The value of <code>myInteger</code> can also be implicitly casted to a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>.  Real values can hold whole numbers and a decimal portion, whereas integers can only be whole numbers.</p>
+<p>Notice that implicit casting is allowed when converting to a numeric set, from a smaller data size to a larger one.  The value of <code>myInteger</code> can be implicitly casted to a <a href="../../../code_reference/nada_base_types/doubleinteger.html">doubleinteger</a>, which holds twice the number of bits as an <a href="../../../code_reference/nada_base_types/integer.html">integer</a>.  The value of <code>myInteger</code> can also be implicitly casted to a <a href="../../../code_reference/nada_base_types/real.html">real</a>.  Real values can hold whole numbers and a decimal portion, whereas integers can only be whole numbers.</p>
 <p>(NOTE)<strong>From a Mathematics Perspective</strong> The integer set is a subset of the real set.  For more information on mathematical sets, visit the <a href="https://en.wikipedia.org/wiki/Set_(mathematics)">Wikipedia Set (Mathematics)</a> page.</p>
 <h2 id="truncation">Truncation</h2>
 <p>When a real value is converted to an integer value explicitly, the value will be truncated.  This means the decimal part of the real value will be lost, and without rounding.</p>
@@ -134,7 +134,7 @@ Console.WriteLine(-3.99 as Integer);
 -3
 </code></pre>
 <h1 id="upcasting-and-downcasting">Upcasting and Downcasting</h1>
-<p>When casting between classes related through <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inheritance</a>, one class must be a base class of the other.</p>
+<p>When casting between classes related through <a href="inheritance.html">inheritance</a>, one class must be a base class of the other.</p>
 <pre><code class="lang-lang=csharp,">class A {}
 class B : A {}
 class C : B {}
@@ -174,12 +174,12 @@ var a2 : A = null as A; // explicit cast (unnecessary)
 </code></pre>
 <p>NOTE: Interpreting <code>null</code> as an invalid state for object references is a common pattern in programming.</p>
 <h1 id="any-casts">Any Casts</h1>
-<p>Any type can be cast implicitly to an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/any.md">any</a>, and an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/any.md">any</a> value can be implicitly cast to any type.  The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/any.md">any</a> type is used as a generic reference to any instantiated class or struct.</p>
+<p>Any type can be cast implicitly to an <a href="../../../code_reference/nada_base_types/any.md">any</a>, and an <a href="../../../code_reference/nada_base_types/any.md">any</a> value can be implicitly cast to any type.  The <a href="../../../code_reference/nada_base_types/any.md">any</a> type is used as a generic reference to any instantiated class or struct.</p>
 <pre><code class="lang-lang=csharp,">var integerOne : any = 1;
 var myInteger : Integer = integerOne; // any cast
 var myReal : Real = integerOne; // runtime exception
 </code></pre>
-<p>Notice how the attempt to cast <code>integerOne</code>, which is an <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/any.md">any</a>, to a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a> results in a runtime exception.  An <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/any.md">any</a> must first be cast to the type of the value it holds, even before other implicit conversions.</p>
+<p>Notice how the attempt to cast <code>integerOne</code>, which is an <a href="../../../code_reference/nada_base_types/any.md">any</a>, to a <a href="../../../code_reference/nada_base_types/real.html">real</a> results in a runtime exception.  An <a href="../../../code_reference/nada_base_types/any.md">any</a> must first be cast to the type of the value it holds, even before other implicit conversions.</p>
 <h1 id="same-casts">Same Casts</h1>
 <p>Same casts are casts that convert a value of one type to the same type.  All same casts can be done implicitly and are unnecessary.</p>
 <pre><code class="lang-lang=csharp,">var myReal : Real = 1.0; // implicit same cast
@@ -188,18 +188,18 @@ var myInteger : Integer = 1 as Integer; // explicit same cast
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">Function</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/variables_and_data_types.md">Variable</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/inheritance.md">inheritance</a></li>
+<li><a href="functions.html">Function</a></li>
+<li><a href="variables_and_data_types.html">Variable</a></li>
+<li><a href="inheritance.html">inheritance</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doubleinteger.md">doubleinteger</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/doublereal.md">doublereal</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/any.md">any</a></li>
+<li><a href="../../../code_reference/nada_base_types/integer.html">integer</a></li>
+<li><a href="../../../code_reference/nada_base_types/doubleinteger.html">doubleinteger</a></li>
+<li><a href="../../../code_reference/nada_base_types/real.html">real</a></li>
+<li><a href="../../../code_reference/nada_base_types/doublereal.html">doublereal</a></li>
+<li><a href="../../../code_reference/nada_base_types/boolean.html">boolean</a></li>
+<li><a href="../../../code_reference/nada_base_types/any.md">any</a></li>
 </ul>
 
 </article>

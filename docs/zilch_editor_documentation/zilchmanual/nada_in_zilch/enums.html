@@ -88,7 +88,7 @@
 <p>An enum, or enumerated type, is a set custom identifiers that are enumerated. An enumerated type may be defined with the <strong>enum</strong> keyword:</p>
 <pre><code class="lang-lang=csharp,">enum ControllerButtons {Start, Select, Up=0, Down, Left, Right, A=0, B=1} // no semicolon
 </code></pre>
-<p>The names line up with incrementing <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">Integers</a> where the default starting value is 0. The values can be manually set in which case the following values will increment off of that manually defined value. Note that to access these Integer values, the enum must be <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/casting.md">casted</a> to an Integer:</p>
+<p>The names line up with incrementing <a href="../../../code_reference/nada_base_types/integer.html">Integers</a> where the default starting value is 0. The values can be manually set in which case the following values will increment off of that manually defined value. Note that to access these Integer values, the enum must be <a href="casting.html">casted</a> to an Integer:</p>
 <pre><code class="lang-lang=csharp,">Console.WriteLine(&quot;ControllerButtons.Start  = `ControllerButtons.Start  as Integer`  &quot; );
 Console.WriteLine(&quot;ControllerButtons.Select = `ControllerButtons.Select as Integer`  &quot; );
 Console.WriteLine(&quot;ControllerButtons.Up     = `ControllerButtons.Up     as Integer`  &quot; );
@@ -166,7 +166,7 @@ class Controller
   }
 }
 </code></pre>
-<p>We can test the calls to these <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">functions</a> to see the interplay of casting:</p>
+<p>We can test the calls to these <a href="functions.html">functions</a> to see the interplay of casting:</p>
 <pre><code class="lang-lang=csharp,">var paramInt = 3;
 var paramEnum = ControllerButtons.Right;
 
@@ -240,13 +240,13 @@ Console.WriteLine(ControllerButtons.Down + Directions.Down);
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/casting.md">casting</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/functions.md">functions</a></li>
+<li><a href="casting.html">casting</a></li>
+<li><a href="functions.html">functions</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md">enum_reference</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></li>
+<li><a href="../../../code_reference/enum_reference.html">enum_reference</a></li>
+<li><a href="../../../code_reference/nada_base_types/integer.html">integer</a></li>
 </ul>
 
 </article>

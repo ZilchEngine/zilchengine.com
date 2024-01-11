@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p>In Zilch, albedo refers to the color of a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials.md">Material</a> as defined by the reflected light an object should realistically reflect. In the case of non-metals, or dielectrics, the vast majority reflect almost all light as diffuse. In the case of metals, or conductors, almost all light is reflected, rendering a reflection of its surroundings if the metal is polished or smooth. The rougher the surface is, however, the more blurred the reflection will become. Metals also tint the light they reflect leading to the different colors of metals such as gold, copper, and silver.</p>
+<p>In Zilch, albedo refers to the color of a <a href="../materials.html">Material</a> as defined by the reflected light an object should realistically reflect. In the case of non-metals, or dielectrics, the vast majority reflect almost all light as diffuse. In the case of metals, or conductors, almost all light is reflected, rendering a reflection of its surroundings if the metal is polished or smooth. The rougher the surface is, however, the more blurred the reflection will become. Metals also tint the light they reflect leading to the different colors of metals such as gold, copper, and silver.</p>
 <p>The albedo fragments in Zilch handle both of these cases depending on the values of other fragments, such as metallic, roughness, and specular. Other frameworks and engines may refer to this as the base color or diffuse map. When setting this property by map or by value, there are other considerations to take into account when visualizing how the final material will appear.</p>
 <p>For a quick example of this difference, compare the following three screenshots. They all have the same albedo value of <code>R:255 G:226 R:155</code>, which should appear as gold when seen as a metal. The first image shows a sphere with only the AlbedoValue fragment on it. The second also has a SpecularValue fragment set to <code>1.0</code>. The third has a MetallicValue fragment set to <code>1.0</code> instead of specular.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2941.png" alt="JustAlbedoSphere"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2943.png" alt="MetalSphere"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2945.png" alt="SpecSphere"></p>
@@ -140,7 +140,7 @@
 <p>Note that in the previous two examples there were no other fragments on the material other than AlbedoValue, leaving the default values for roughness, specular, and metallic intact. Changing the values of the other default fragments can significantly alter how the albedo appears. To see some of these effects, the next set of screenshots will show one line of spheres that has roughness values increasing from <code>0</code> to <code>1</code> and another line that has metallic values increasing from <code>0</code> to <code>1</code>. Specular will remain constant at the default value of <code>0.5</code>. The albedo value will remain constant at <code>R:244 G:162 B:137</code>, or Copper, so as to focus on the change brought by the roughness and metallic fragments:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2930.png" alt="AlbedoMetalLine3"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2935.png" alt="AlbedoMetalLine"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/2934.png" alt="AlbedoMetalLine2"></p>
 <h1 id="albedomap">AlbedoMap</h1>
-<p>An albedo map is a texture provided by an artist for use on a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/models/model_component.md">Model</a>. While most of these textures will be unique to the model for which they were made, others, such as tileable textures, may be applied to the materials on a number of geometric primitives and look completely natural. To apply an AlbedoMap fragment to a material, click on the <code>Add NadaFragment</code> button in the Properties window:</p>
+<p>An albedo map is a texture provided by an artist for use on a <a href="../models/model_component.html">Model</a>. While most of these textures will be unique to the model for which they were made, others, such as tileable textures, may be applied to the materials on a number of geometric primitives and look completely natural. To apply an AlbedoMap fragment to a material, click on the <code>Add NadaFragment</code> button in the Properties window:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47687.png" alt="AddAlbedoValue"></p>
 <h2 id="tileable-texture">Tileable Texture</h2>
 <p>Before moving on to unique, artist-crafted models, let's take a look at how professionally-made tileable textures, complete with Normal, Metallic, Roughness, and Specular maps, appear when applied to some primitive shapes. The following screenshot shows the Properties window window of a material using a tileable, metal box texture:</p>
@@ -171,13 +171,13 @@
 <h2 id="reference-pages">Reference Pages</h2>
 <h3 id="manual">Manual</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/models/model_component.md">model_component</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials.md">materials</a></li>
+<li><a href="../models/model_component.html">model_component</a></li>
+<li><a href="../materials.html">materials</a></li>
 </ul>
 <h3 id="code-reference">Code Reference</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/model.md">model</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/material.md">material</a></li>
+<li><a href="../../../../code_reference/class_reference/model.html">model</a></li>
+<li><a href="../../../../code_reference/class_reference/material.html">material</a></li>
 </ul>
 
 </article>

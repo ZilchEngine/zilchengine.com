@@ -98,50 +98,50 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#getnetproperty-zilch-engi">GetNetProperty</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#authority-zilch-engine-do">Authority</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/safeid32object.md">safeid32object</a></td>
+<td><a href="netchannel.html#getnetproperty-zilch-engi">GetNetProperty</a></td>
+<td><a href="netchannel.html#authority-zilch-engine-do">Authority</a></td>
+<td><a href="safeid32object.html">safeid32object</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#hasnetproperty-zilch-engi">HasNetProperty</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#changeflag-zilch-engine-d">ChangeFlag</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#replicatenow-zilch-engine">ReplicateNow</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#isnapping-zilch-engine-do">IsNapping</a></td>
+<td><a href="netchannel.html#hasnetproperty-zilch-engi">HasNetProperty</a></td>
+<td><a href="netchannel.html#changeflag-zilch-engine-d">ChangeFlag</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#takenap-void">TakeNap</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#isscheduled-zilch-engine">IsScheduled</a></td>
+<td><a href="netchannel.html#replicatenow-zilch-engine">ReplicateNow</a></td>
+<td><a href="netchannel.html#isnapping-zilch-engine-do">IsNapping</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#wakeup-void">WakeUp</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#lastchangetimepassed-zer">LastChangeTimePassed</a></td>
+<td><a href="netchannel.html#takenap-void">TakeNap</a></td>
+<td><a href="netchannel.html#isscheduled-zilch-engine">IsScheduled</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#lastchangetimestamp-zero">LastChangeTimestamp</a></td>
+<td><a href="netchannel.html#wakeup-void">WakeUp</a></td>
+<td><a href="netchannel.html#lastchangetimepassed-zer">LastChangeTimePassed</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#name-zilch-engine-documen">Name</a></td>
+<td><a href="netchannel.html#lastchangetimestamp-zero">LastChangeTimestamp</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchannel.md#netchanneltype-zilch-engi">NetChannelType</a></td>
+<td><a href="netchannel.html#name-zilch-engine-documen">Name</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="netchannel.html#netchanneltype-zilch-engi">NetChannelType</a></td>
 <td></td>
 <td></td>
 </tr>
@@ -149,21 +149,21 @@
 </table>
 <h1 id="properties">Properties</h1>
 <hr>
-<h1 id="authority--authority">Authority : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#authority">Authority</a></h1>
+<h1 id="authority--authority">Authority : <a href="../enum_reference.html#authority">Authority</a></h1>
 <blockquote>
 <p>Controls which peer has the authority to observe and replicate property changes. (Client: Indicates both the client and server are allowed to observe and replicate property changes) (Server: Indicates only the server is allowed to observe and replicate property changes) Only a single client, specified by NetObject::NetUserOwnerPeerId, may possess client authority at any given time. The server is still responsible for relaying contained property changes to other clients, but will not replicate contained property changes back to the authority client. However, the server is also still responsible for other replication commands (such as object creation/destruction), and these WILL be replicated to the authority client.</p>
 <pre><code class="lang-lang=cpp,">var Authority : Authority
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="changeflag--boolean">ChangeFlag : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<h1 id="changeflag--boolean">ChangeFlag : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Manual change flag (checked upon manual change observation).</p>
 <pre><code class="lang-lang=cpp,">var ChangeFlag : Boolean
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="isnapping--boolean">IsNapping : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<h1 id="isnapping--boolean">IsNapping : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns true if the net channel is currently napping (performing change detection on longer intervals), else false.</p>
@@ -171,7 +171,7 @@
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="isscheduled--boolean">IsScheduled : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<h1 id="isscheduled--boolean">IsScheduled : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns true if this net channel is scheduled for change observation, else false.</p>
@@ -179,7 +179,7 @@
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="lastchangetimepassed--real">LastChangeTimePassed : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<h1 id="lastchangetimepassed--real">LastChangeTimePassed : <a href="../nada_base_types/real.html">real</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
 <p>Elapsed time passed since this net channel was last changed, else 0.</p>
@@ -187,7 +187,7 @@
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="lastchangetimestamp--real">LastChangeTimestamp : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<h1 id="lastchangetimestamp--real">LastChangeTimestamp : <a href="../nada_base_types/real.html">real</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
 <p>Timestamp indicating when this net channel was last changed, else 0.</p>
@@ -195,7 +195,7 @@
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="name--string">Name : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></h1>
+<h1 id="name--string">Name : <a href="../nada_base_types/string.html">string</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
 <p>Net channel name.</p>
@@ -203,7 +203,7 @@
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="netchanneltype--netchanneltype">NetChannelType : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netchanneltype.md">netchanneltype</a></h1>
+<h1 id="netchanneltype--netchanneltype">NetChannelType : <a href="netchanneltype.html">netchanneltype</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
 <p>Operating net channel type.</p>
@@ -213,29 +213,29 @@
 <hr>
 <h1 id="methods">Methods</h1>
 <hr>
-<h1 id="getnetproperty--netproperty">GetNetProperty : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/netproperty.md">netproperty</a></h1>
+<h1 id="getnetproperty--netproperty">GetNetProperty : <a href="netproperty.html">netproperty</a></h1>
 <blockquote>
 <p>[Client/Server] Returns the specified net property, else nullptr.
 |Name|Type|Description|
 |---|---|---|
-|component|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/component.md">component</a>| |
-|propertyName|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a>| |</p>
+|component|<a href="component.html">component</a>| |
+|propertyName|<a href="../nada_base_types/string.html">string</a>| |</p>
 <pre><code class="lang-lang=cpp,">function GetNetProperty(component : Component, propertyName : String) : NetProperty
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="hasnetproperty--boolean">HasNetProperty : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<h1 id="hasnetproperty--boolean">HasNetProperty : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>[Client/Server] Returns true if the net object has the specified net property, else false.
 |Name|Type|Description|
 |---|---|---|
-|component|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/component.md">component</a>| |
-|propertyName|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a>| |</p>
+|component|<a href="component.html">component</a>| |
+|propertyName|<a href="../nada_base_types/string.html">string</a>| |</p>
 <pre><code class="lang-lang=cpp,">function HasNetProperty(component : Component, propertyName : String) : Boolean
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="replicatenow--boolean">ReplicateNow : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
+<h1 id="replicatenow--boolean">ReplicateNow : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Replicates net property changes immediately (only if changes are detected). Will also update nap state as configured. Returns true if changes were replicated, else false.
 |Name|Type|Description|

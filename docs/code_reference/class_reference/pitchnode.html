@@ -98,14 +98,14 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/pitchnode.md#interpolatepitch-void">InterpolatePitch</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/pitchnode.md#pitch-zilch-engine-docume">Pitch</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundnode.md">soundnode</a></td>
+<td><a href="pitchnode.html#interpolatepitch-void">InterpolatePitch</a></td>
+<td><a href="pitchnode.html#pitch-zilch-engine-docume">Pitch</a></td>
+<td><a href="soundnode.html">soundnode</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/pitchnode.md#interpolatesemitones-voi">InterpolateSemitones</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/pitchnode.md#semitones-zilch-engine-do">Semitones</a></td>
+<td><a href="pitchnode.html#interpolatesemitones-voi">InterpolateSemitones</a></td>
+<td><a href="pitchnode.html#semitones-zilch-engine-do">Semitones</a></td>
 <td></td>
 <td></td>
 </tr>
@@ -113,14 +113,14 @@
 </table>
 <h1 id="properties">Properties</h1>
 <hr>
-<h1 id="pitch--real">Pitch : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<h1 id="pitch--real">Pitch : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The pitch adjustment applied to the node's input. A value of 0 will not affect the sound's pitch; 1 will raise the pitch by an octave and speed up the sound, and -1 will lower the sound by an octave and slow it down. Large pitch changes will likely affect the quality of the sound.</p>
 <pre><code class="lang-lang=cpp,">var Pitch : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="semitones--real">Semitones : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
+<h1 id="semitones--real">Semitones : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The pitch adjustment, in semitones (or half-steps), applied to the node's input. A value of 0 will not affect the sound's pitch; 12 will raise the pitch by an octave and speed up the sound, and -12 will lower the sound by an octave and slow it down. Large pitch changes will likely affect the quality of the sound.</p>
 <pre><code class="lang-lang=cpp,">var Semitones : Real
@@ -134,8 +134,8 @@
 <p>Interpolates the Pitch property from its current value to the value passed in as the first parameter, over the number of seconds passed in as the second parameter.
 |Name|Type|Description|
 |---|---|---|
-|pitchRatio|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
-|interpolationTime|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+|pitchRatio|<a href="../nada_base_types/real.html">real</a>| |
+|interpolationTime|<a href="../nada_base_types/real.html">real</a>| |</p>
 <pre><code class="lang-lang=cpp,">function InterpolatePitch(pitchRatio : Real, interpolationTime : Real)
 </code></pre>
 </blockquote>
@@ -145,8 +145,8 @@
 <p>Interpolates the Semitones property from its current value to the value passed in as the first parameter, over the number of seconds passed in as the second parameter.
 |Name|Type|Description|
 |---|---|---|
-|pitchSemitones|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |
-|interpolationTime|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a>| |</p>
+|pitchSemitones|<a href="../nada_base_types/real.html">real</a>| |
+|interpolationTime|<a href="../nada_base_types/real.html">real</a>| |</p>
 <pre><code class="lang-lang=cpp,">function InterpolateSemitones(pitchSemitones : Real, interpolationTime : Real)
 </code></pre>
 </blockquote>

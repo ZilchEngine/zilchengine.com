@@ -85,21 +85,21 @@
 
         <article data-uid="">
 
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiongroup.md"> CollisionGroups</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiontable.md"> CollisionTables</a> are intertwined resources in the physics system. A CollisionGroup defines a label for a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/colliders.md">colliders.md</a> to be used within a CollisionTable. A CollisionTable defines filters for pairs of CollisionGroups. These filters allow extra control over what collisions can take place. Additionally, filters can be configured to send extra events.</p>
+<p><a href="../../../../code_reference/class_reference/collisiongroup.html"> CollisionGroups</a> and <a href="../../../../code_reference/class_reference/collisiontable.html"> CollisionTables</a> are intertwined resources in the physics system. A CollisionGroup defines a label for a <a href="colliders.md">colliders.md</a> to be used within a CollisionTable. A CollisionTable defines filters for pairs of CollisionGroups. These filters allow extra control over what collisions can take place. Additionally, filters can be configured to send extra events.</p>
 <h1 id="collisiongroup">CollisionGroup</h1>
 <p>A CollisionGroup defines a group (or label) for a Collider to take part in. This only serves to group certain Colliders together but doesn't change any behavior unless the active CollisionTable is configured to do so.</p>
 <h1 id="collisiontable">CollisionTable</h1>
-<p>A CollisionTable is a resource property set on <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/physicsspace.md">PhysicsSpace</a> that defines pair-wise CollisionGroup relationships known as CollisionFilters. These filters control if a collision happens and if extra events are sent between group pairings.</p>
+<p>A CollisionTable is a resource property set on <a href="physicsspace.md">PhysicsSpace</a> that defines pair-wise CollisionGroup relationships known as CollisionFilters. These filters control if a collision happens and if extra events are sent between group pairings.</p>
 <h2 id="collisionfilters">CollisionFilters</h2>
-<p>A <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionfilter.md">CollisionFilter</a> can be used to control if collisions happen between pairs of CollisionGroups. There are three primary states of a CollisionFilter:</p>
+<p>A <a href="../../../../code_reference/class_reference/collisionfilter.html">CollisionFilter</a> can be used to control if collisions happen between pairs of CollisionGroups. There are three primary states of a CollisionFilter:</p>
 <ul>
 <li><strong>Resolve:</strong> The default state for a filter. Says that collision resolution should happen as normal.</li>
 <li><strong>SkipResolution:</strong> Collision detection should be run as normal but resolution should not happen. This allows configuring pairs to be ghost collisions while still getting events.</li>
 <li><strong>SkipDetection:</strong> Collision detection should be skipped. Skipping collision detection also implies skipping collision resolution. This option is typically only set for performance reasons. This can also be used to prevent collision events from being sent to make gameplay logic easier.</li>
 </ul>
-<p>Additional information can be configured on a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionfilter.md">CollisionFilter</a> to send out events through the use of CollisionFilterBlocks.</p>
+<p>Additional information can be configured on a <a href="../../../../code_reference/class_reference/collisionfilter.html">CollisionFilter</a> to send out events through the use of CollisionFilterBlocks.</p>
 <h3 id="collisionfilterblocks">CollisionFilterBlocks</h3>
-<p>A <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionfilterblock.md">CollisionFilterBlock</a> is a sub-component on CollisionFilter used to control what kinds of events are sent out between groups. The current supported block types are:</p>
+<p>A <a href="../../../../code_reference/class_reference/collisionfilterblock.html">CollisionFilterBlock</a> is a sub-component on CollisionFilter used to control what kinds of events are sent out between groups. The current supported block types are:</p>
 <ul>
 <li><strong>CollisionStartBlock:</strong> Sends out the GroupCollisionStarted event when this grouping has a CollisionStarted.</li>
 <li><strong>CollisionPersistedBlock:</strong> Sends out the GroupCollisionPersisted event when this grouping has a CollisionPersisted.</li>
@@ -108,31 +108,31 @@
 </ul>
 <p>All blocks can configure which groups in the filter to send to. The <code>SendEventsTo</code> properties control which objects in the pairing should get the event. The <code>A</code> and <code>B</code> referred to are in the same order as the GroupA  and GroupB  properties of the filter. If a filter has GroupA and GroupB as the same value, then this order is not defined.</p>
 <p>Additionally, filter blocks contain the EventOverride  property that lets the user send out a custom event name instead of the default names. Note that these names do not currently show up in the <code>Events</code> namespace and must be connected to with a string literal.</p>
-<p>The PreSolveBlock is a special block that should be used sparingly. As <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/presolveevent.md">PreSolveEvent</a> before collisions are resolved. This event does not expect any drastic changes to the scene, such as removing components. Any complex behavior other than changing property values may crash the engine.</p>
+<p>The PreSolveBlock is a special block that should be used sparingly. As <a href="../../../../code_reference/class_reference/presolveevent.html">PreSolveEvent</a> before collisions are resolved. This event does not expect any drastic changes to the scene, such as removing components. Any complex behavior other than changing property values may crash the engine.</p>
 <h1 id="troubleshooting">Troubleshooting</h1>
-<p>One of the most common issues when using CollisionGroups and CollisionTables is forgetting to set the correct CollisionTable resource on the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/physicsspace.md">PhysicsSpace</a>. Additionally, see <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/physicstroubleshooting/whyaretheynotcolliding.md">WhyAreTheyNotColliding</a> for other common collision issues.</p>
+<p>One of the most common issues when using CollisionGroups and CollisionTables is forgetting to set the correct CollisionTable resource on the <a href="physicsspace.md">PhysicsSpace</a>. Additionally, see <a href="physicstroubleshooting/whyaretheynotcolliding.md">WhyAreTheyNotColliding</a> for other common collision issues.</p>
 <hr>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisionevents.md">collisionevents.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/physicsspace.md">physicsspace.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/colliders.md">colliders.md</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/physicstroubleshooting/whyaretheynotcolliding.md">whyaretheynotcolliding.md</a></li>
+<li><a href="collisionevents.html">collisionevents.md</a></li>
+<li><a href="physicsspace.md">physicsspace.md</a></li>
+<li><a href="colliders.md">colliders.md</a></li>
+<li><a href="physicstroubleshooting/whyaretheynotcolliding.md">whyaretheynotcolliding.md</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiongroup.md">CollisionGroup</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiontable.md">CollisionTable</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionfilter.md">CollisionFilter</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionevent.md">CollisionEvent</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiongroupevent.md">CollisionGroupEvent</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/presolveevent.md">PreSolveEvent</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionfilterblock.md">CollisionFilterBlock</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionstartblock.md">CollisionStartBlock</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionpersistedblock.md">CollisionPersistedBlock</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionendblock.md">CollisionEndBlock</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/presolveblock.md">PreSolveBlock</a></li>
+<li><a href="../../../../code_reference/class_reference/collisiongroup.html">CollisionGroup</a></li>
+<li><a href="../../../../code_reference/class_reference/collisiontable.html">CollisionTable</a></li>
+<li><a href="../../../../code_reference/class_reference/collisionfilter.html">CollisionFilter</a></li>
+<li><a href="../../../../code_reference/class_reference/collisionevent.html">CollisionEvent</a></li>
+<li><a href="../../../../code_reference/class_reference/collisiongroupevent.html">CollisionGroupEvent</a></li>
+<li><a href="../../../../code_reference/class_reference/presolveevent.html">PreSolveEvent</a></li>
+<li><a href="../../../../code_reference/class_reference/collisionfilterblock.html">CollisionFilterBlock</a></li>
+<li><a href="../../../../code_reference/class_reference/collisionstartblock.html">CollisionStartBlock</a></li>
+<li><a href="../../../../code_reference/class_reference/collisionpersistedblock.html">CollisionPersistedBlock</a></li>
+<li><a href="../../../../code_reference/class_reference/collisionendblock.html">CollisionEndBlock</a></li>
+<li><a href="../../../../code_reference/class_reference/presolveblock.html">PreSolveBlock</a></li>
 </ul>
 
 </article>

@@ -85,10 +85,10 @@
 
         <article data-uid="">
 
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/additivesynthnode.md"> AdditiveSynthNodes </a> are basic synthesizers, generating notes using a combination of sound waves.</p>
+<p><a href="../../../../code_reference/class_reference/additivesynthnode.html"> AdditiveSynthNodes </a> are basic synthesizers, generating notes using a combination of sound waves.</p>
 <h2 id="common-uses">Common Uses</h2>
 <ul>
-<li>A custom synthesizer using <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode//midi.md">MIDI </a> events sent by a keyboard or other device</li>
+<li>A custom synthesizer using <a href="midi.md">MIDI </a> events sent by a keyboard or other device</li>
 <li>Creating music or sound effects with no audio files</li>
 <li>Dynamic or procedural music</li>
 </ul>
@@ -133,19 +133,19 @@ function Initialize(init : CogInitializer)
 <p>The <code>NoteOn</code> method plays a note at a specific frequency, using MIDI key numbers. The Zilch Engine uses the MIDI convention where middle C is considered to be C3 and has the number <code>60</code>. (MIDI key number charts such as <a href="http://computermusicresource.com/midikeys.html">this one </a> can be used to translate between notes at different octaves and their corresponding key numbers.)</p>
 <p>The <code>NoteOff</code> method stops any currently playing notes with the specified MIDI key number. The notes will jump to their Release phase but the release tail will not be cut off.</p>
 <h2 id="adsrenvelope">AdsrEnvelope</h2>
-<p>An ADSR envelope controls the Attack, Decay, Sustain, and Release portions of a sound's volume. The Attack period is first, where the sound goes from silence to full volume. The Decay period is next, where the sound goes from full volume to its sustain volume. The Sustain period controls how long it stays at the sustain volume, and the Release period is where it goes from the sustain volume back to silence. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/adsrenvelope.md"> AdsrEnvelope </a> object used by the Zilch Engine also has a parameter for delaying when the sound starts.</p>
+<p>An ADSR envelope controls the Attack, Decay, Sustain, and Release portions of a sound's volume. The Attack period is first, where the sound goes from silence to full volume. The Decay period is next, where the sound goes from full volume to its sustain volume. The Sustain period controls how long it stays at the sustain volume, and the Release period is where it goes from the sustain volume back to silence. The <a href="../../../../code_reference/class_reference/adsrenvelope.html"> AdsrEnvelope </a> object used by the Zilch Engine also has a parameter for delaying when the sound starts.</p>
 <p>NOTE: Setting the <code>SustainTime</code> property to <code>0</code> will make the harmonic play indefinitely until the <code>NoteOff</code> method is called.</p>
 <hr>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode/soudnode_overview.md">soudnode_overview</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode/midi.md">MIDI </a></li>
+<li><a href="soudnode_overview.html">soudnode_overview</a></li>
+<li><a href="midi.md">MIDI </a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/additivesynthnode.md"> AdditiveSynthNode </a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/adsrenvelope.md"> AdsrEnvelope </a></li>
+<li><a href="../../../../code_reference/class_reference/additivesynthnode.html"> AdditiveSynthNode </a></li>
+<li><a href="../../../../code_reference/class_reference/adsrenvelope.html"> AdsrEnvelope </a></li>
 </ul>
 
 </article>

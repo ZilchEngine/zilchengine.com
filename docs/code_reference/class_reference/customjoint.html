@@ -98,37 +98,37 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customjoint.md#addconstraint-void">AddConstraint</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customjoint.md#constraintcount-zilch-eng">ConstraintCount</a></td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/joint.md">joint</a></td>
+<td><a href="customjoint.html#addconstraint-void">AddConstraint</a></td>
+<td><a href="customjoint.html#constraintcount-zilch-eng">ConstraintCount</a></td>
+<td><a href="joint.html">joint</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customjoint.md#clearconstraints-void">ClearConstraints</a></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customjoint.md#createconstraint-zilch-en">CreateConstraint</a></td>
+<td><a href="customjoint.html#clearconstraints-void">ClearConstraints</a></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customjoint.md#customjoint-void">Constructor</a></td>
+<td><a href="customjoint.html#createconstraint-zilch-en">CreateConstraint</a></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customjoint.md#getconstraint-zilch-engin">GetConstraint</a></td>
+<td><a href="customjoint.html#customjoint-void">Constructor</a></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customjoint.md#removeconstraint-void">RemoveConstraint</a></td>
+<td><a href="customjoint.html#getconstraint-zilch-engin">GetConstraint</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="customjoint.html#removeconstraint-void">RemoveConstraint</a></td>
 <td></td>
 <td></td>
 <td></td>
@@ -137,7 +137,7 @@
 </table>
 <h1 id="properties">Properties</h1>
 <hr>
-<h1 id="constraintcount--integer">ConstraintCount : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></h1>
+<h1 id="constraintcount--integer">ConstraintCount : <a href="../nada_base_types/integer.html">integer</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns how many constraints this joint owns.</p>
@@ -152,7 +152,7 @@
 <p>Add a constraint to this joint. This will assert if a joint already owns this constraint.
 |Name|Type|Description|
 |---|---|---|
-|constraint|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customconstraintinfo.md">customconstraintinfo</a>| |</p>
+|constraint|<a href="customconstraintinfo.html">customconstraintinfo</a>| |</p>
 <pre><code class="lang-lang=cpp,">function AddConstraint(constraint : CustomConstraintInfo)
 </code></pre>
 </blockquote>
@@ -166,7 +166,7 @@
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="createconstraint--customconstraintinfo">CreateConstraint : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customconstraintinfo.md">customconstraintinfo</a></h1>
+<h1 id="createconstraint--customconstraintinfo">CreateConstraint : <a href="customconstraintinfo.html">customconstraintinfo</a></h1>
 <blockquote>
 <p>Create a constraint that is attached to this joint.
 |Name|Type|Description|
@@ -191,12 +191,12 @@
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="getconstraint--customconstraintinfo">GetConstraint : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customconstraintinfo.md">customconstraintinfo</a></h1>
+<h1 id="getconstraint--customconstraintinfo">GetConstraint : <a href="customconstraintinfo.html">customconstraintinfo</a></h1>
 <blockquote>
 <p>Returns the constraint at the given index. Will assert if the index is outside the constraint count range.
 |Name|Type|Description|
 |---|---|---|
-|index|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a>| |</p>
+|index|<a href="../nada_base_types/integer.html">integer</a>| |</p>
 <pre><code class="lang-lang=cpp,">function GetConstraint(index : Integer) : CustomConstraintInfo
 </code></pre>
 </blockquote>
@@ -206,7 +206,7 @@
 <p>If the given constraint belongs to this joint then remove it from the constraints to solve.
 |Name|Type|Description|
 |---|---|---|
-|constraint|<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/customconstraintinfo.md">customconstraintinfo</a>| |</p>
+|constraint|<a href="customconstraintinfo.html">customconstraintinfo</a>| |</p>
 <pre><code class="lang-lang=cpp,">function RemoveConstraint(constraint : CustomConstraintInfo)
 </code></pre>
 </blockquote>

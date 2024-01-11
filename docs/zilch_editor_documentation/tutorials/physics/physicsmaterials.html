@@ -85,73 +85,73 @@
 
         <article data-uid="">
 
-<p>This lecture covers the basic usage of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">PhysicsMaterials</a> and the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/massoverride.md"> MassOverride</a> component.</p>
+<p>This lecture covers the basic usage of <a href="../../zilchmanual/physics/physicsmaterial.html">PhysicsMaterials</a> and the <a href="../../../code_reference/class_reference/massoverride.html"> MassOverride</a> component.</p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
-<li>Creating and applying <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">PhysicsMaterials</a></li>
+<li>Creating and applying <a href="../../zilchmanual/physics/physicsmaterial.html">PhysicsMaterials</a></li>
 <li>Basic physics concepts (Mass, Volume, Density, Restitution and Friction)</li>
-<li>Using the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/massoverride.md"> MassOverride</a> component</li>
+<li>Using the <a href="../../../code_reference/class_reference/massoverride.html"> MassOverride</a> component</li>
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Sprite object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Sprite object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>RedSquare</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Under <a href="../../../code_reference/class_reference/transform.html"> Transform</a></li>
 <li>Set Translation  to <code>[-3, 0, 0]</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
+<li>Under <a href="../../../code_reference/class_reference/sprite.html"> Sprite</a></li>
 <li>Set VertexColor  to <code>Red: [R:255, G:0, B:0, A:1.00]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a></li>
+<li>Under <a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a></li>
 <li>Set Velocity  to <code>[4, 0, 0]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md"> BoxCollider</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/boxcollider.html"> BoxCollider</a></li>
 <li>Duplicate the RedSquare object object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename it to <code>BlueSquare</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Under <a href="../../../code_reference/class_reference/transform.html"> Transform</a></li>
 <li>Set Translation  to <code>[3, 0, 0]</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
+<li>Under <a href="../../../code_reference/class_reference/sprite.html"> Sprite</a></li>
 <li>Set VertexColor  to <code>Blue: [R:0, G:0, B:255, A:1.00]</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a></li>
+<li>Under <a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a></li>
 <li>Set Velocity  to <code>[-4, 0, 0]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : LevelSettings object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md"> GravityEffect</a></li>
+<li>Under <a href="../../../code_reference/class_reference/gravityeffect.html"> GravityEffect</a></li>
 <li>Set Active checkBox to <code>false</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/drageffect.md"> DragEffect</a></li>
+<li>Under <a href="../../../code_reference/class_reference/drageffect.html"> DragEffect</a></li>
 <li>Set Active checkBox to <code>false</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46602.gif" alt="CollidingSquares"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="mass">Mass</h1>
-<p>In Zilch Engine, any object with a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a> is automatically assigned mass. An object's mass represents its weight and is determined by its <strong>Volume</strong> and <strong>Density</strong> (<code>M = D * V</code>). <strong>Volume</strong> is calculated from a combination of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md"> Collider</a> type along with its size defining properties and the object's scale, while its <strong>Density</strong> is defined by the object's <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">PhysicsMaterial</a>. By altering these properties we can manipulate how objects interact physically with each other.</p>
-<p>NOTE: An object with <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a> but with no <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md"> Collider</a> will be assigned a mass of 1 while an object with a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md"> Collider</a> but no <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a> can be thought of as having infinite mass.</p>
-<p>In our constructed scenario so far we see two objects colliding with each other in a space with no gravity or drag. A quick look on each object's <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a> component shows the current Mass . Since both objects have the same physics properties (mass, restitution, velocity magnitude, etc) we conclude that the collision is symmetric and both objects apply an equal force to each other when they collide.</p>
+<p>In Zilch Engine, any object with a <a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a> is automatically assigned mass. An object's mass represents its weight and is determined by its <strong>Volume</strong> and <strong>Density</strong> (<code>M = D * V</code>). <strong>Volume</strong> is calculated from a combination of the <a href="../../../code_reference/class_reference/collider.html"> Collider</a> type along with its size defining properties and the object's scale, while its <strong>Density</strong> is defined by the object's <a href="../../zilchmanual/physics/physicsmaterial.html">PhysicsMaterial</a>. By altering these properties we can manipulate how objects interact physically with each other.</p>
+<p>NOTE: An object with <a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a> but with no <a href="../../../code_reference/class_reference/collider.html"> Collider</a> will be assigned a mass of 1 while an object with a <a href="../../../code_reference/class_reference/collider.html"> Collider</a> but no <a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a> can be thought of as having infinite mass.</p>
+<p>In our constructed scenario so far we see two objects colliding with each other in a space with no gravity or drag. A quick look on each object's <a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a> component shows the current Mass . Since both objects have the same physics properties (mass, restitution, velocity magnitude, etc) we conclude that the collision is symmetric and both objects apply an equal force to each other when they collide.</p>
 <h1 id="volume">Volume</h1>
 <p>Let's explore what happens when we give them different Volumes:</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RedSquare object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : RedSquare object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Under <a href="../../../code_reference/class_reference/transform.html"> Transform</a></li>
 <li>Set Scale  to <code>[2, 2, 2]</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46537.gif" alt="CollidingSquaresMass1"></p>
-<p>Since we've made the object bigger, its mass has also increased which we can verify by checking the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a> on RedSquare object. We can observe that the more massive object imparts a larger force onto the smaller object than the smaller does to it.</p>
+<p>Since we've made the object bigger, its mass has also increased which we can verify by checking the <a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a> on RedSquare object. We can observe that the more massive object imparts a larger force onto the smaller object than the smaller does to it.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <p>In the next section, we'll explore tweaking an object mass by altering its density.</p>
 <h1 id="density">Density</h1>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command </a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
-<li>Create a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">PhysicsMaterial</a> named <code>Dense</code></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command </a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li>Create a <a href="../../zilchmanual/physics/physicsmaterial.html">PhysicsMaterial</a> named <code>Dense</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46545.gif" alt="DensePhysMat"></p>
 <ul>
@@ -163,17 +163,17 @@
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/113355.png" alt="image"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RedSquare object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : RedSquare object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
+<li>Under <a href="../../../code_reference/class_reference/transform.html"> Transform</a></li>
 <li>Set Scale  back to <code>[1, 1, 1]</code></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
+<li>Under <a href="../../../code_reference/class_reference/boxcollider.html">BoxCollider</a></li>
 <li>Set Material resource to <code>Dense</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46561.gif" alt="DenseCollision"></p>
 <p>Similar to the previous case, the more massive object imparts a greater force despite both objects having the same volume. Lastly, let's look into another way of setting an object's mass.</p>
 <h1 id="massoverride">MassOverride</h1>
-<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/massoverride.md"> MassOverride</a> component allows you to set an object's mass regardless of its <strong>Volume</strong> or <strong>Density</strong>. It has a dependency on <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a>.</p>
+<p>The <a href="../../../code_reference/class_reference/massoverride.html"> MassOverride</a> component allows you to set an object's mass regardless of its <strong>Volume</strong> or <strong>Density</strong>. It has a dependency on <a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a>.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46565.png" alt="image"></p>
 <table>
 <thead>
@@ -198,22 +198,22 @@
 </tbody>
 </table>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : RedSquare object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : RedSquare object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/massoverride.md"> MassOverride</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/massoverride.html"> MassOverride</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46602.gif" alt="CollidingSquares"></p>
-<p>In adding the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/massoverride.md"> MassOverride</a> component, we just reset the RedSquare object's mass to 1 despite it still having the Dense resource <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">PhysicsMaterial</a></p>
+<p>In adding the <a href="../../../code_reference/class_reference/massoverride.html"> MassOverride</a> component, we just reset the RedSquare object's mass to 1 despite it still having the Dense resource <a href="../../zilchmanual/physics/physicsmaterial.html">PhysicsMaterial</a></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="restitution">Restitution</h1>
-<p>Another useful feature of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">PhysicsMaterial</a> is <strong>Restitution</strong>: a value that represents the object's bounciness. It is represented by a value from 0 to 1 and denotes how much of its energy is preserved after the collision (0 being no energy preserved and 1 being 100% of energy preserved). You may also set Restitution to a value greater than 1 (by right-clicking the field) to cause the object to bounce away with greater energy.</p>
+<p>Another useful feature of <a href="../../zilchmanual/physics/physicsmaterial.html">PhysicsMaterial</a> is <strong>Restitution</strong>: a value that represents the object's bounciness. It is represented by a value from 0 to 1 and denotes how much of its energy is preserved after the collision (0 being no energy preserved and 1 being 100% of energy preserved). You may also set Restitution to a value greater than 1 (by right-clicking the field) to cause the object to bounce away with greater energy.</p>
 <ul>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></p>
 </li>
-<li><p>Create a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">PhysicsMaterial</a> named <code>Bouncy</code></p>
+<li><p>Create a <a href="../../zilchmanual/physics/physicsmaterial.html">PhysicsMaterial</a> named <code>Bouncy</code></p>
 </li>
 <li><p>In the <code>Library Window</code></p>
 </li>
@@ -227,9 +227,9 @@
 </li>
 <li><p>Set RestitutionImportance  to <code>1</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></p>
 </li>
-<li><p>Create a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">PhysicsMaterial</a> named <code>NotBouncy</code></p>
+<li><p>Create a <a href="../../zilchmanual/physics/physicsmaterial.html">PhysicsMaterial</a> named <code>NotBouncy</code></p>
 </li>
 <li><p>In the <code>Library Window</code></p>
 </li>
@@ -243,38 +243,38 @@
 </li>
 <li><p>Set RestitutionImportance  to <code>1</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : BlueSquare resource</p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : BlueSquare resource</p>
 </li>
 <li><p>In the <code>Properties Window</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Remove Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a></p>
+<li><p><a href="../../zilchmanual/editor/addremovecomponent.html">Remove Component</a> : <a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a></p>
 </li>
-<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md"> BoxCollider</a></p>
+<li><p>Under <a href="../../../code_reference/class_reference/boxcollider.html"> BoxCollider</a></p>
 </li>
 <li><p>Experiment by setting PhysicsMaterial enum to <code>Bouncy</code> and <code>NotBouncy</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46611.gif" alt="Bouncy"> <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46616.gif" alt="NotBouncy"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="friction">Friction</h1>
-<p><strong>Friction</strong> is a coefficient that represents how much energy is lost when objects slide against one another. Each <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">PhysicsMaterial</a> provides a friction value and their combination will determine the friction force used for the collision between the two objects. The higher the friction value, the more energy will be lost per frame except when either object has a friction value of 0, in which case no energy will be lost.</p>
+<p><strong>Friction</strong> is a coefficient that represents how much energy is lost when objects slide against one another. Each <a href="../../zilchmanual/physics/physicsmaterial.html">PhysicsMaterial</a> provides a friction value and their combination will determine the friction force used for the collision between the two objects. The higher the friction value, the more energy will be lost per frame except when either object has a friction value of 0, in which case no energy will be lost.</p>
 <p>NOTE: Similar to the case with restitution, PhysicsMaterials have a FrictionImportance  property, which determines which object's Friction  value to use in a collision.</p>
 <ul>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : LevelSettings object</p>
 </li>
 <li><p>In the <code>Properties Window</code></p>
 </li>
-<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md"> GravityEffect</a></p>
+<li><p>Under <a href="../../../code_reference/class_reference/gravityeffect.html"> GravityEffect</a></p>
 </li>
 <li><p>Set Active to <code>true</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></p>
 </li>
-<li><p>Create a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">PhysicsMaterial</a> named <code>HighFriction</code></p>
+<li><p>Create a <a href="../../zilchmanual/physics/physicsmaterial.html">PhysicsMaterial</a> named <code>HighFriction</code></p>
 </li>
 <li><p>In the <code>Library Window</code></p>
 </li>
@@ -288,59 +288,59 @@
 </li>
 <li><p>Set FrictionImportance  to <code>1</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></p>
 </li>
 <li><p>In the <code>Properties Window</code></p>
 </li>
 <li><p>Rename Sprite object to <code>GreenSquare</code></p>
 </li>
-<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></p>
+<li><p>Under <a href="../../../code_reference/class_reference/sprite.html"> Sprite</a></p>
 </li>
 <li><p>Set Sprite  to <code>Green: [R:0, G:255, B:0, A:1.00]</code></p>
 </li>
-<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></p>
+<li><p>Under <a href="../../../code_reference/class_reference/transform.html"> Transform</a></p>
 </li>
 <li><p>Set Translation  to <code>[0, -1, 0]</code></p>
 </li>
 <li><p>Set Scale  to <code>[10, 0, 0]</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md"> BoxCollider</a> component</p>
+<li><p><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/boxcollider.html"> BoxCollider</a> component</p>
 </li>
-<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md"> BoxCollider</a></p>
+<li><p>Under <a href="../../../code_reference/class_reference/boxcollider.html"> BoxCollider</a></p>
 </li>
 <li><p>Set Material resource to <code>HighFriction</code></p>
 </li>
-<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46630.gif" alt="Friction"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">PhysicsMaterials</a></li>
+<li><a href="../../zilchmanual/physics/physicsmaterial.html">PhysicsMaterials</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md"> Transform</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/massoverride.md"> MassOverride</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md"> Sprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md"> Collider</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md"> BoxCollider</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md"> GravityEffect</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/drageffect.md"> DragEffect</a></li>
+<li><a href="../../../code_reference/class_reference/transform.html"> Transform</a></li>
+<li><a href="../../../code_reference/class_reference/massoverride.html"> MassOverride</a></li>
+<li><a href="../../../code_reference/class_reference/sprite.html"> Sprite</a></li>
+<li><a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a></li>
+<li><a href="../../../code_reference/class_reference/collider.html"> Collider</a></li>
+<li><a href="../../../code_reference/class_reference/boxcollider.html"> BoxCollider</a></li>
+<li><a href="../../../code_reference/class_reference/gravityeffect.html"> GravityEffect</a></li>
+<li><a href="../../../code_reference/class_reference/drageffect.html"> DragEffect</a></li>
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">Create a New 2D Project</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/launchernewproject.html">Create a New 2D Project</a></li>
+<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a></li>
+<li><a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
 </ul>
 <h2 id="development-tasks">Development Tasks</h2>
 <ul>

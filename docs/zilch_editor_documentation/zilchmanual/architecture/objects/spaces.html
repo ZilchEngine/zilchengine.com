@@ -85,11 +85,11 @@
 
         <article data-uid="">
 
-<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/space.md">Space</a> is the infinite three-dimensional extent in which objects and events have relative position and direction. It consists of 3 dimensional axes and time.</p>
+<p><a href="../../../../code_reference/class_reference/space.html">Space</a> is the infinite three-dimensional extent in which objects and events have relative position and direction. It consists of 3 dimensional axes and time.</p>
 <p>Spaces in the Zilch Engine are containers for game objects. When a level is loaded, all the game objects from that level are put into a space. Also, when you create a game object in code, you must put it into a space, usually the same one that the level was loaded into. In a simple game you only have one space, which is where all your game objects go. Each space has its own instances of the core systems of the engine: graphics, physics, etc. Because of this, game objects in two different spaces will not collide or otherwise physically interact. Game objects in different spaces are rendered separately, but can be layered, such as when using one space for level game objects and another for UI game objects. Creating a separate space for UI game objects is one of the most common uses of multiple spaces in a game.</p>
 <h1 id="using-the-space">Using the Space</h1>
 <h2 id="creating-a-space">Creating a Space</h2>
-<p>You can create a space through the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/objects/gamesession.md">GameSession</a> object.</p>
+<p>You can create a space through the <a href="gamesession.html">GameSession</a> object.</p>
 <pre><code>    class SpaceCreator : NadaComponent
     {
       [Property]
@@ -146,7 +146,7 @@
 n some games you may have multiple spaces in order to implement certain features such as an in game HUD. In situations such as this you must store a reference to the <code>HUDSpace</code> on creation in order to access it later.</p>
 <h1 id="space-components">Space Components</h1>
 <p>Spaces have special space components that can not be removed. These are core engine components for containing different aspects of the game objects like physics, graphics, and sound.</p>
-<p>Spaces are stored as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/archetypes.md">Archetypes</a> and can be modified to change the properties of a space.</p>
+<p>Spaces are stored as <a href="../archetypes.html">Archetypes</a> and can be modified to change the properties of a space.</p>
 <p>To access the space of the current level Press:</p>
 <ul>
 <li>In the <code>name=Level Window, icon=window-restore</code></li>
@@ -173,17 +173,17 @@ n some games you may have multiple spaces in order to implement certain features
 <tbody>
 <tr>
 <td>PhysicsUpdateFinished</td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/objectevent.md">objectevent</a></td>
+<td><a href="../../../code_reference/class_reference/objectevent.md">objectevent</a></td>
 <td>Dispatched immediately after physics has finished updating.</td>
 </tr>
 <tr>
 <td>LogicUpdate</td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/updateevent.md">updateevent</a></td>
+<td><a href="../../../code_reference/class_reference/updateevent.md">updateevent</a></td>
 <td>Dispatched after the major systems's updates (doesn't run in editor)</td>
 </tr>
 <tr>
 <td>FrameUpdate</td>
-<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/updateevent.md">updateevent</a></td>
+<td><a href="../../../code_reference/class_reference/updateevent.md">updateevent</a></td>
 <td>Dispatched after the engine update. Runs in editor.</td>
 </tr>
 </tbody>
@@ -192,17 +192,17 @@ n some games you may have multiple spaces in order to implement certain features
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/archetypes.md">Archetypes</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/objects/gamesession.md">GameSession object</a></li>
+<li><a href="../archetypes.html">Archetypes</a></li>
+<li><a href="gamesession.html">GameSession object</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/timespace.md">timespace</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/graphicsspace.md">graphicsspace</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsspace.md">physicsspace</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundspace.md">soundspace</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/objectevent.md">objectevent</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/updateevent.md">updateevent</a></li>
+<li><a href="../../../../code_reference/class_reference/timespace.html">timespace</a></li>
+<li><a href="../../../../code_reference/class_reference/graphicsspace.html">graphicsspace</a></li>
+<li><a href="../../physics/physicsspace.html">physicsspace</a></li>
+<li><a href="../../audio/soundspace.html">soundspace</a></li>
+<li><a href="../../../code_reference/class_reference/objectevent.md">objectevent</a></li>
+<li><a href="../../../code_reference/class_reference/updateevent.md">updateevent</a></li>
 </ul>
 
 </article>

@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p>This lesson covers some of the more advanced features of Zilch Engine's Tile Editor tool. The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/editor/tile_editor.md"> previous lesson</a> covers the basics.</p>
+<p>This lesson covers some of the more advanced features of Zilch Engine's Tile Editor tool. The <a href="tile_editor.html"> previous lesson</a> covers the basics.</p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
 <li>Tile colliders</li>
@@ -93,14 +93,14 @@
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li>Reopen the TileEditor zero project project from the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/editor/tile_editor.md"> previous tutorial</a></li>
+<li>Reopen the TileEditor zero project project from the <a href="tile_editor.html"> previous tutorial</a></li>
 </ul>
 <h1 id="tile-archetypes">Tile Archetypes</h1>
 <p>When you place tiles with the TileEditor2D tool, they are not created as individual game objects. Instead, they are placed into a tilemap, which allows multiple tiles to be merged into a single cog, saving memory and processing time. As a result, tile archetypes are used a bit differently than conventional archetypes.</p>
-<p>When the engine creates a merged tilemap object, it is always given a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/multisprite.md"> MultiSprite</a> component, so you don't necessarily need to put one on your tile archetype. If you do, though, the resultant merged tilemap will use the settings specified by your archetype's MultiSprite. Similarly, a merged tilemap object optionally has a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/meshcollider.md"> MeshCollider</a> component, so you only need to give a tile archetype that component if you want the merged tilemap to use the settings from the MeshCollider for your archetype.</p>
+<p>When the engine creates a merged tilemap object, it is always given a <a href="../../../code_reference/class_reference/multisprite.html"> MultiSprite</a> component, so you don't necessarily need to put one on your tile archetype. If you do, though, the resultant merged tilemap will use the settings specified by your archetype's MultiSprite. Similarly, a merged tilemap object optionally has a <a href="../../zilchmanual/physics/colliders/meshcollider.html"> MeshCollider</a> component, so you only need to give a tile archetype that component if you want the merged tilemap to use the settings from the MeshCollider for your archetype.</p>
 <p>Let's create a tile archetype with some custom game logic and add it to our level.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>ReloadLevelOnCollisionStarted</code></li>
 <li>Update the <code>ReloadLevelOnCollisionStarted</code> script to the following:</li>
 </ul>
@@ -119,15 +119,15 @@
 </code></pre>
 <p>This component will cause the level to be reloaded if the player character (or, really, anything at all) comes in contact with it. We can use it to create &quot;deadly&quot; tiles.</p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createtransform"> CreateTransform</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createtransform"> CreateTransform</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Transform object to <code>DeadlyTile</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/meshcollider.md"> MeshCollider</a></li>
-<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/meshcollider.md"> MeshCollider</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <a href="../../zilchmanual/physics/colliders/meshcollider.html"> MeshCollider</a></li>
+<li>Under <a href="../../zilchmanual/physics/colliders/meshcollider.html"> MeshCollider</a></li>
 <li>Set Ghost checkBox to <code>true</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>ReloadLevelOnCollisionStarted</code></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>ReloadLevelOnCollisionStarted</code></li>
 <li>Set Archetype  to <code>DeadlyTile</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#delete"> Delete</a> the DeadlyTile object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#delete"> Delete</a> the DeadlyTile object</li>
 </ul>
 <p>This new archetype can now be used with the TileEditor2D tool with any sprite source in the project.</p>
 <ul>
@@ -147,7 +147,7 @@
 <p>With ShowArchetype checkBox enabled, the editor will show the name of the archetype that was used for each tile in the level.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108820.png" alt="image"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108831.gif" alt="Playing with Lava"></p>
 <p>The lava seems to be working as intended. Now let's get a closer look at some of what's going on here. Pressing <code>F9</code> while the game is running begins <strong>Edit In Game</strong> mode, which makes the editor open the game session and all of its spaces for editing while it's still running. This is a very powerful and useful feature in any situation, but it is great for showing off some of the details of how the TileEditor2D tool merges groups of tiles.</p>
@@ -162,11 +162,11 @@
 <p>Observe how the colliders on each object use meshes that are dynamically generated to perfectly fit the pieces they're placed on.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108927.png" alt="image"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <p>Let's move on.</p>
 <h1 id="tile-collision">Tile Collision</h1>
-<p>So far, every tile we've placed has used a simple box-shaped collider. The TileEditor2D tool isn't limited to just boxes, though. It can use any <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmesh.md"> PhysicsMesh</a> as its collision shape. Zilch Engine comes with a set of common ramps and boxes to be used with tilemaps.</p>
+<p>So far, every tile we've placed has used a simple box-shaped collider. The TileEditor2D tool isn't limited to just boxes, though. It can use any <a href="../../../code_reference/class_reference/physicsmesh.html"> PhysicsMesh</a> as its collision shape. Zilch Engine comes with a set of common ramps and boxes to be used with tilemaps.</p>
 <ul>
 <li>Download the following tile sheet:
 <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108937.png" alt="SimpleTriangleTiles"></li>
@@ -263,7 +263,7 @@
 <p>Let's use both palettes to create a new level.</p>
 <p>(NOTE) <strong>TiledDrawing:</strong> Watch what happens when you <code>left-click and drag</code> in the tile palette view to select multiple tiles, and then paint with them. Then, set the TileEditor2D tool's TiledDrawing checkBox property to <code>true</code> and then paint again. See the difference? TiledDrawing checkBox is great for preserving a specific configuration of tiles that you have laid out in the palette, but it also works with a brush committed with the Selection sub-tool! <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/108992.gif" alt="TiledDrawing Demonstration"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
 <li>Create a Level resource using the {nav icon=clone, name=2D Level} template and name it <code>OtherLevel</code></li>
 <li>Select the {nav icon=pencil, name=TileEditor2D} tool</li>
 <li>In the <code>Level Window</code></li>
@@ -281,11 +281,11 @@
 <li><code>Left-click and drag</code> <code>SweptPlayer2D</code> into the <code>Level Window</code></li>
 <li>In the <code>Properties Window</code></li>
 <li>Configure the <code>SweptController</code> component's properties as desired</li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/109010.gif" alt="Final Tiled Game"></p>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="on-your-own">On Your Own</h1>
 <p>Background tilemaps can really make a level feel alive. To create one, just press the CreateTileMap button button in the {nav icon=pencil, name=TileEditor2D} tool's property grid.</p>
@@ -299,35 +299,35 @@
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="tutorials">Tutorials</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/graphics/sprite_animations.md">sprite_animations</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/external_zilch_engine_tools/the_market.md">the_market</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/gameplay/swept_character.md">swept_character</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/editor/tile_editor_ii.md">tile_editor_ii</a></li>
+<li><a href="../graphics/sprite_animations.html">sprite_animations</a></li>
+<li><a href="../external_zilch_engine_tools/the_market.html">the_market</a></li>
+<li><a href="../gameplay/swept_character.html">swept_character</a></li>
+<li><a href="tile_editor_ii.html">tile_editor_ii</a></li>
 </ul>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spriteimporter.md">spriteimporter</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spritesourceeditor.md">spritesourceeditor</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">resourceadding</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/archetypes/archetype_basics.md">archetype_basics</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">commands</a></li>
+<li><a href="../../zilchmanual/graphics/sprites/spriteimporter.html">spriteimporter</a></li>
+<li><a href="../../zilchmanual/graphics/sprites/spritesourceeditor.html">spritesourceeditor</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html">resourceadding</a></li>
+<li><a href="../../zilchmanual/architecture/archetypes/archetype_basics.html">archetype_basics</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createtransform"> CreateTransform</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#delete"> Delete</a></li>
+<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#createtransform"> CreateTransform</a></li>
+<li><a href="../../../code_reference/command_reference.html#delete"> Delete</a></li>
 </ul>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/multisprite.md">multisprite</a></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmesh.md">physicsmesh</a></li>
+<li><a href="../../../code_reference/class_reference/multisprite.html">multisprite</a></li>
+<li><a href="../../../code_reference/class_reference/physicsmesh.html">physicsmesh</a></li>
 </ul>
 <h3 id="events">Events</h3>
 <ul>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#collisionstarted"> CollisionStarted</a></li>
+<li><a href="../../../code_reference/event_reference.html#collisionstarted"> CollisionStarted</a></li>
 </ul>
 <h2 id="development-task">Development Task</h2>
 <ul>
