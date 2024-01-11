@@ -14125,6 +14125,26 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/ZilchEditor1.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/ZilchEditor1.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/ZilchEditor2.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/ZilchEditor2.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/ZilchLauncher.png",
       "output": {
         "resource": {
