@@ -85,9 +85,9 @@
 
         <article data-uid="">
 
-<p><a href="../../../code_reference/class_reference/soundinstance.html"> SoundInstances </a> are created at runtime whenever a <a href="soundcue.html">SoundCue</a> is played. Their properties are initially set by the SoundCue, but the user can then manipulate the SoundInstance's properties without affecting the SoundCue or any other SoundInstances created by it.</p>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundinstance.md"> SoundInstances </a> are created at runtime whenever a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundcue.md">SoundCue</a> is played. Their properties are initially set by the SoundCue, but the user can then manipulate the SoundInstance's properties without affecting the SoundCue or any other SoundInstances created by it.</p>
 <h1 id="using-soundinstances">Using SoundInstances</h1>
-<p>A SoundInstance is returned by the <code>PlayCue</code>and <code>PlayCuePaused</code> methods on <a href="soundemitter.html">SoundEmitters </a> and <a href="soundspace.html">SoundSpaces </a>, the <code>Play</code> method on <a href="simplesound.html">SimpleSounds </a>, and the <code>PlayCueOnNode</code> method on SoundCues. If a <code>PlayCuePaused</code> method is used, the SoundInstance must have its Paused checkBox property set to <code>False</code> before it will begin playing.</p>
+<p>A SoundInstance is returned by the <code>PlayCue</code>and <code>PlayCuePaused</code> methods on <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundemitter.md">SoundEmitters </a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundspace.md">SoundSpaces </a>, the <code>Play</code> method on <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/simplesound.md">SimpleSounds </a>, and the <code>PlayCueOnNode</code> method on SoundCues. If a <code>PlayCuePaused</code> method is used, the SoundInstance must have its Paused checkBox property set to <code>False</code> before it will begin playing.</p>
 <p>SoundInstance objects are reference counted: they will stay alive as long as a variable is stored with the SoundInstance assigned to it, so the SoundInstance can still be accessed even after it finishes playing. If the user does not store a variable, the SoundInstance will continue playing audio, but cannot be accessed in NadaScripts.</p>
 <h2 id="controlling-playback">Controlling Playback</h2>
 <p>When a SoundInstance is paused it stops playing all audio, then can be resumed and will continue playing where it left off, with no change to its settings or behavior. SoundInstances have a single Boolean property, Paused checkBox, which controls whether they are playing or paused. If Paused checkBox is set to <code>true</code> when the SoundInstance is already paused, or set to <code>false</code> when it is not paused, nothing will happen.</p>
@@ -97,9 +97,9 @@
 <p>The Volume  and Decibels  properties set the volume adjustment that is applied to the SoundInstance. Volume  uses floating point values, while  Decibels  uses the logarithmic decibel scale commonly used in audio. These properties are linked, so changing one will also change the value of the other.</p>
 <p>The  Pitch  and  Semitones  properties set the pitch adjustment that is applied to the SoundInstance. This adjustment affects both the pitch and speed of the sound: higher-pitched sounds will play faster, while lower-pitched sounds play slower. Large pitch changes will likely affect the quality of the sound.  Pitch  uses floating point values, while the  Semitones  uses semitones, or half-steps. These properties are also linked.</p>
 <p>The <code>InterpolateVolume</code>, <code>InterpolateDecibels</code>, <code>InterpolatePitch</code>, and <code>InterpolateSemitones</code> methods can be used at runtime to smoothly change the SoundInstance's volume or pitch over time. Using these interpolation methods is preferable to using Actions to set the properties: changing a property every frame with an Action can result in audible jumps in volume or pitch, while the interpolation method causes the volume change to be handled smoothly by the audio engine.</p>
-<p>Note that these volume changes will be combined with any other volume modifications applied by objects such as <a href="soundtag.html">SoundTags </a>, SoundEmitters, and SoundSpaces. If a SoundInstance's  Volume  is set to <code>0.5</code> and it is played on a SoundEmitter which also has a  Volume  of <code>0.5</code>, this effectively sets the SoundInstance's  Volume  to <code>0.25</code>. If it's  Semitones  is set to <code>12</code> and it is played on a SoundEmitter with a  Semitones  value of <code>-6</code>, this effectively raises the SoundInstance's pitch by half an octave.</p>
+<p>Note that these volume changes will be combined with any other volume modifications applied by objects such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundtag.md">SoundTags </a>, SoundEmitters, and SoundSpaces. If a SoundInstance's  Volume  is set to <code>0.5</code> and it is played on a SoundEmitter which also has a  Volume  of <code>0.5</code>, this effectively sets the SoundInstance's  Volume  to <code>0.25</code>. If it's  Semitones  is set to <code>12</code> and it is played on a SoundEmitter with a  Semitones  value of <code>-6</code>, this effectively raises the SoundInstance's pitch by half an octave.</p>
 <h2 id="looping">Looping</h2>
-<p>A SoundInstance's  Looping checkBox property is initially set by the corresponding property on the SoundCue. When this property is <code>true</code>, the SoundInstance will repeat indefinitely, using the  LoopStartTime  and  LoopEndTime  properties on the <a href="soundcue.html#soundentry">SoundEntry</a> that the SoundCue used to create the SoundInstance. If a SoundInstance is looping and the property is changed to <code>false</code> as it is playing it will continue playing to its  EndTime  and then stop.</p>
+<p>A SoundInstance's  Looping checkBox property is initially set by the corresponding property on the SoundCue. When this property is <code>true</code>, the SoundInstance will repeat indefinitely, using the  LoopStartTime  and  LoopEndTime  properties on the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundcue.md#soundentry">SoundEntry</a> that the SoundCue used to create the SoundInstance. If a SoundInstance is looping and the property is changed to <code>false</code> as it is playing it will continue playing to its  EndTime  and then stop.</p>
 <p>The following code block shows you how to make a SoundInstance finish naturally after it has looped three times, using the <code>SoundLooped</code> event.</p>
 <pre><code class="lang-lang=csharp">// A property to be set to the SoundCue desired
 [Property] var MySoundCue : SoundCue;
@@ -130,7 +130,7 @@ function OnSoundLoop(event : SoundInstanceEvent)
 }
 </code></pre>
 <h2 id="events">Events</h2>
-<p>The following <a href="../../../code_reference/class_reference/soundinstanceevent.html"> SoundInstanceEvents </a> will be sent out by all SoundInstance objects:</p>
+<p>The following <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundinstanceevent.md"> SoundInstanceEvents </a> will be sent out by all SoundInstance objects:</p>
 <ul>
 <li><code>SoundLooped</code> is sent by looping SoundInstances each time they reach their LoopEndTime  and jump back to their LoopStartTime .</li>
 <li><code>SoundStopped</code> is sent when a SoundInstance has completely finished playing audio.</li>
@@ -151,16 +151,16 @@ function OnSoundLoop(event : SoundInstanceEvent)
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="soundcue.html">SoundCue </a></li>
-<li><a href="soundemitter.html">SoundEmitter </a></li>
-<li><a href="soundspace.html">SoundSpace </a></li>
-<li><a href="simplesound.html">SimpleSound </a></li>
-<li><a href="soundtag.html">SoundTag </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundcue.md">SoundCue </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundemitter.md">SoundEmitter </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundspace.md">SoundSpace </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/simplesound.md">SimpleSound </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundtag.md">SoundTag </a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="../../../code_reference/class_reference/soundinstance.html"> SoundInstance </a></li>
-<li><a href="../../../code_reference/class_reference/soundinstanceevent.html"> SoundInstanceEvents </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundinstance.md"> SoundInstance </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundinstanceevent.md"> SoundInstanceEvents </a></li>
 </ul>
 
 </article>

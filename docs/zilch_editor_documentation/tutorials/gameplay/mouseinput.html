@@ -93,28 +93,28 @@
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
 </ul>
 <h1 id="mouse-events">Mouse Events</h1>
 <p>The easiest way to get mouse input in the Zilch Engine is via <strong>mouse events</strong>. Mouse events can be used to detect when the mouse is moved, when the cursor enters or exits an object, when the buttons are pressed or released, and so on. We'll begin by making an object that responds to mouse events by inflating like a balloon.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsphere"> CreateSphere</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsphere"> CreateSphere</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sphere object to <code>Balloon</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Remove Component</a> : <a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Remove Component</a> : <a href="../../../code_reference/class_reference/spherecollider.html"> SphereCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spherecollider.md"> SphereCollider</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/105388.png" alt="image"></p>
-<p>In order for the balloon to respond to mouse input, it needs the <a href="../../../code_reference/class_reference/reactive.html"> Reactive</a> component, which makes an object receive mouse events.</p>
+<p>In order for the balloon to respond to mouse input, it needs the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/reactive.md"> Reactive</a> component, which makes an object receive mouse events.</p>
 <ul>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <a href="../../../code_reference/class_reference/reactive.html"> Reactive</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/reactive.md"> Reactive</a></li>
 </ul>
 <p>Now we can add the code that will make the balloon inflate.</p>
 <h2 id="update-based-mouse-input">Update-Based Mouse Input</h2>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>ScaleWithMouseEvents</code></li>
 <li>Update the <code>ScaleWithMouseEvents</code> script to the following:</li>
 </ul>
@@ -157,15 +157,15 @@
 </code></pre>
 <p>This component will let the user set a maximum scale to grow to, and then it will cause the balloon to inflate as long as the left mouse button is held while the cursor is over it, up to that max scale.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Balloon object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Balloon object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>ScaleWithMouseEvents</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>ScaleWithMouseEvents</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li><code>Click and hold</code> the left mouse button over the sphere to cause it to grow</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/105397.gif" alt="ScaleWithMouseEvents Demonstration"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>This method of implementing mouse controls by checking what the mouse is doing in an update function is known as <strong>update-based</strong> input.</p>
 <p>Now let's add a bit more functionality to this component.</p>
@@ -237,19 +237,19 @@
 </code></pre>
 <p>Now the right mouse button can be used to deflate the balloon.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li><code>Click and hold</code> the left mouse button over the sphere to cause it to grow, and <code>right click</code> the sphere to cause it to shrink</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/105444.gif" alt="ScaleWithMouseEvents Second Demonstration"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
-<p>Now this component also connects to the <a href="../../../code_reference/event_reference.html#rightmousedown"> RightMouseDown</a> event, which is dispatched to a Reactive object when the right mouse button is pressed while the cursor is over it. In its <code>OnRightMouseDown</code> callback function, it checks to make sure the balloon isn't already shrinking, and if it isn't, it calls a function that makes it shrink.</p>
+<p>Now this component also connects to the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#rightmousedown"> RightMouseDown</a> event, which is dispatched to a Reactive object when the right mouse button is pressed while the cursor is over it. In its <code>OnRightMouseDown</code> callback function, it checks to make sure the balloon isn't already shrinking, and if it isn't, it calls a function that makes it shrink.</p>
 <p>This method of implementing mouse controls by connecting to relevant mouse events and only running code when those events are dispatched is called <strong>reaction-based</strong> input.</p>
 <h1 id="screen-space-and-world-space">Screen Space and World Space</h1>
-<p>As we've seen already, mouse events are dispatched with the <a href="../../../code_reference/class_reference/viewportmouseevent.html"> ViewportMouseEvent</a> class. Among other information, this includes the position of the mouse event, which we can see by printing it out.</p>
+<p>As we've seen already, mouse events are dispatched with the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/viewportmouseevent.md"> ViewportMouseEvent</a> class. Among other information, this includes the position of the mouse event, which we can see by printing it out.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>PrintPositionOnMouseDown</code></li>
 <li>Update the <code>PrintPositionOnMouseDown</code> script to the following:</li>
 </ul>
@@ -268,19 +268,19 @@
 }
 </code></pre>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : LevelSettings object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>PrintPositionOnMouseDown</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#console"> Console</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>PrintPositionOnMouseDown</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#console"> Console</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Click  around the screen a few times</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/106024.gif" alt="Screen Space Mouse Event Positions"></p>
 <p>When you click the mouse, positions are printed to the console. Notice that these numbers are pretty big, they're all whole numbers, and no matter where you click, they're never negative. Furthermore, they're all 2D vectors. These are what are called <strong>screen-space coordinates</strong>: they refer to the pixel on your screen where the click occurred. In this form, they're a bit hard to use in a game. What we need is a way to convert them from screen space into <strong>world space</strong>, where the objects in our game exist. Fortunately, that's easy.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
-<p>The <a href="../../../code_reference/class_reference/viewportmouseevent.html"> ViewportMouseEvent</a> contains a set of functions that can be used to convert the event's screen space position into world space: <code>ToWorldPlane</code>, <code>ToWorldViewPlane</code>, and <code>ToWorldZPlane</code>. Each of them has its purpose, but it's common in 2D games to make extensive use of that last one, <code>ToWorldZPlane</code>. This function projects a screen-space position onto a Z-aligned world plane at a given Z value. If you give it a value of, say, <code>0</code>, then it will return the world-space coordinates of the mouse event at a Z-depth of zero. In a typical 2D game, this is generally the most basic way to get the world position of the mouse.</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/viewportmouseevent.md"> ViewportMouseEvent</a> contains a set of functions that can be used to convert the event's screen space position into world space: <code>ToWorldPlane</code>, <code>ToWorldViewPlane</code>, and <code>ToWorldZPlane</code>. Each of them has its purpose, but it's common in 2D games to make extensive use of that last one, <code>ToWorldZPlane</code>. This function projects a screen-space position onto a Z-aligned world plane at a given Z value. If you give it a value of, say, <code>0</code>, then it will return the world-space coordinates of the mouse event at a Z-depth of zero. In a typical 2D game, this is generally the most basic way to get the world position of the mouse.</p>
 <ul>
 <li>Replace the <code>OnMouseDown</code> function in the <code>PrintPositionOnMouseDown</code> class with the following:</li>
 </ul>
@@ -291,23 +291,23 @@
 }
 </code></pre>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Click  around the screen a few times</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/106026.gif" alt="World Space Mouse Event Positions"></p>
 <p>The positions that are now being printed to the console are now in world units, rather than screen pixel coordinates. This is generally much more useful for programming game logic.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>Now that we know how to find the world-space position of a mouse event, we can move things to the mouse's position, like, say, our balloon. First, though �</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a> : LevelSettings object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : LevelSettings object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Remove Component</a> : <code>PrintPositionOnMouseDown</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Remove Component</a> : <code>PrintPositionOnMouseDown</code></li>
 </ul>
 <p>It's good practice to remove or comment out console print statements when you're done with them.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>MoveOnMiddleMouseDown</code></li>
 <li>Update the <code>MoveOnMiddleMouseDown</code> script to the following:</li>
 </ul>
@@ -333,45 +333,45 @@
 </code></pre>
 <p>This component will make whatever we attach it to animate its position to the world-space coordinates of the mouse whenever the middle mouse button is pressed.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Balloon object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Balloon object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>MoveOnMiddleMouseDown</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>MoveOnMiddleMouseDown</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Use the middle mouse button to move the balloon, and the left and right mouse buttons to inflate and deflate it</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/106030.gif" alt="Balloon Moving to Mouse World Position"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">commands</a></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">addremovecomponent</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">selectobject</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html">resourceadding</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">resourceadding</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="../../../code_reference/command_reference.html#newproject"> NewProject</a></li>
-<li><a href="../../../code_reference/command_reference.html#createsphere"> CreateSphere</a></li>
-<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
-<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
-<li><a href="../../../code_reference/command_reference.html#console"> Console</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> NewProject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsphere"> CreateSphere</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#console"> Console</a></li>
 </ul>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="../../../code_reference/class_reference/rigidbody.html">rigidbody</a></li>
-<li><a href="../../../code_reference/class_reference/spherecollider.html">spherecollider</a></li>
-<li><a href="../../../code_reference/class_reference/reactive.html">reactive</a></li>
-<li><a href="../../../code_reference/class_reference/viewportmouseevent.html">viewportmouseevent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spherecollider.md">spherecollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/reactive.md">reactive</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/viewportmouseevent.md">viewportmouseevent</a></li>
 </ul>
 <h3 id="events">Events</h3>
 <ul>
-<li><a href="../../../code_reference/event_reference.html#mouseupdate"> MouseUpdate</a></li>
-<li><a href="../../../code_reference/event_reference.html#rightmousedown"> RightMouseDown</a></li>
-<li><a href="../../../code_reference/event_reference.html#middlemousedown"> MiddleMouseDown</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#mouseupdate"> MouseUpdate</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#rightmousedown"> RightMouseDown</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#middlemousedown"> MiddleMouseDown</a></li>
 </ul>
 <h2 id="development-task">Development Task</h2>
 <ul>

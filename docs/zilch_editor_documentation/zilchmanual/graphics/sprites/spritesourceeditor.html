@@ -85,15 +85,15 @@
 
         <article data-uid="">
 
-<p>(NOTE)<strong>Recommended Reading</strong> This page includes topics one might not have addressed yet. To learn about or review these topics, the following list provides the links to their respective Manual or Tutorial pages: <a href="../adding_assets/adding_textures_and_sprites.html">Adding Textures and Sprites</a></p>
-<p>Frequently, when a <a href="../../../../code_reference/class_reference/spritesource.html">SpriteSource</a> has been imported into Zilch, it still needs some minor modifications; this is where the Sprite Source Editor comes into play. This can be used not only to make changes to the SpriteSource, but also to cut a SpriteSource into multiple <a href="../../../../code_reference/class_reference/sprite.html">Sprites</a> or animate a Multi-Frame Sprite.</p>
+<p>(NOTE)<strong>Recommended Reading</strong> This page includes topics one might not have addressed yet. To learn about or review these topics, the following list provides the links to their respective Manual or Tutorial pages: <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/adding_assets/adding_textures_and_sprites.md">Adding Textures and Sprites</a></p>
+<p>Frequently, when a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritesource.md">SpriteSource</a> has been imported into Zilch, it still needs some minor modifications; this is where the Sprite Source Editor comes into play. This can be used not only to make changes to the SpriteSource, but also to cut a SpriteSource into multiple <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprites</a> or animate a Multi-Frame Sprite.</p>
 <h1 id="using-the-sprite-source-editor">Using the Sprite Source Editor</h1>
 <p>Once the SpriteSource has been imported, the Sprite Source Editor can be opened by going into the Library tab and double clicking on the SpriteSource that needs to be edited. It can also be opened by clicking on the small grey arrow next to the <code>name=SpriteSource, icon=picture-o</code> Property, as seen below on the Sprite Component.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47067.png" alt="image"> <em>Edit SpriteSource Arrow</em></p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47069.png" alt="image"> <em>Sprite Source Editor window</em></p>
 <h2 id="sprite-source-editor-ui-overview">Sprite Source Editor UI Overview</h2>
 <p>SpriteName : The name of the <code>SpriteSource</code>.
-<a href="../../../../code_reference/enum_reference.html#origin">Origin</a>: The point of the given frame that is <code>(0,0,0)</code> in object space.</p>
+<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#origin">Origin</a>: The point of the given frame that is <code>(0,0,0)</code> in object space.</p>
 <ul>
 <li><strong>Custom</strong>: choose your own origin</li>
 <li><strong>Center</strong>: the middle of the frame</li>
@@ -103,14 +103,14 @@
 OriginX : The origin's x value when Origin drop-down menu is <strong>Custom</strong>, where <code>0</code> is the far left
 OriginY : The origin's y value when Origin drop-down menu is <strong>Custom</strong>, where <code>0</code> is the very top
 Looping checkBox: Toggle whether the sprite animation should loop (if it is an animation)
-<a href="../../../../code_reference/enum_reference.html#spritesampling">Sprite Sampling</a>: The method of sampling used.</li>
+<a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#spritesampling">Sprite Sampling</a>: The method of sampling used.</li>
 <li><strong>Nearest</strong>: looks more discrete, or 'pixelated'</li>
 <li><strong>Linear</strong>: pixels are blurred together
 FrameRate : Number of frames to display in one second.
 PixelsPerUnit : Number of pixels in the texture that will fit in one unit length in the GameSession's world space.</li>
 </ul>
 <ul>
-<li><a href="../../../../code_reference/enum_reference.html#spritefill">SpriteFill</a>: The method of filling the sprite into a given <a href="area.html">Area</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#spritefill">SpriteFill</a>: The method of filling the sprite into a given <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/area.md">Area</a></li>
 </ul>
 <ul>
 <li><strong>Stretch</strong>: The sprites texture is stretched to fit the area component of a cog.</li>
@@ -130,25 +130,25 @@ PreviewAnimation checkBox: Toggle viewing the animation.</li>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47075.png" alt="image"> <em>Near and Far sprites using <strong>Linear</strong> blending</em></p>
 <p>When choosing a blending method, remember that <strong>Linear</strong> blending will retain detail at far distances and small angles, but the image will look blurry.</p>
 <h2 id="setting-the-origin">Setting the Origin</h2>
-<p>The Origin drop-down menu property will place whichever point on the Sprite that is chosen at the coordinates chosen in the <a href="../../../../code_reference/class_reference/transform.html">transform</a> Component. It is also possible to use OriginX  and OriginY  to set the origin in a specific spot, as opposed to one of the four preset options. All of the Sprites below, for example, have had their Origins changed while the position of their Game Objects are represented by the white Sprites.</p>
+<p>The Origin drop-down menu property will place whichever point on the Sprite that is chosen at the coordinates chosen in the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a> Component. It is also possible to use OriginX  and OriginY  to set the origin in a specific spot, as opposed to one of the four preset options. All of the Sprites below, for example, have had their Origins changed while the position of their Game Objects are represented by the white Sprites.</p>
 <p>(NOTE)<strong>The Origin Property</strong> The origin of any SpriteSource can be changed by adjusting the OriginX  and OriginY  properties, but only if the Origin drop-down menu property is set to <strong>Custom</strong>. If it is set to any of the preset options (<strong>Center</strong>, <strong>UpperLeft</strong>, <strong>BottomLeft</strong> or <strong>BottomCenter</strong>) then the Zilch Engine will calculate the OriginX  and OriginY  to set the origin in the selected location.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="../adding_assets/adding_textures_and_sprites.html">Adding Textures and Sprites</a></li>
-<li><a href="spriteimporter.html">Sprite Importer</a></li>
-<li><a href="basesprite.html">BaseSprite</a></li>
-<li><a href="../sprites.html">Sprite</a></li>
-<li><a href="area.html">Area</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/adding_assets/adding_textures_and_sprites.md">Adding Textures and Sprites</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/spriteimporter.md">Sprite Importer</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/basesprite.md">BaseSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/sprites/area.md">Area</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="../../../../code_reference/class_reference/spritesource.html">SpriteSource</a></li>
-<li><a href="../../../../code_reference/class_reference/sprite.html">Sprite</a></li>
-<li><a href="../../../../code_reference/class_reference/transform.html">transform</a></li>
-<li><a href="../../../../code_reference/enum_reference.html#origin">Origin</a></li>
-<li><a href="../../../../code_reference/enum_reference.html#spritesampling">Sprite Sampling</a></li>
-<li><a href="../../../../code_reference/enum_reference.html#spritefill">SpriteFill</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spritesource.md">SpriteSource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#origin">Origin</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#spritesampling">Sprite Sampling</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#spritefill">SpriteFill</a></li>
 </ul>
 
 </article>

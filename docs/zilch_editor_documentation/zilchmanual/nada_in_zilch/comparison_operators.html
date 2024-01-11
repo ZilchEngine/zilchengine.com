@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p>Comparison operators take two operands and evaluate to a boolean value which describes a relationship between the given values. Comparison operators are frequently used with <a href="conditionals.html">conditionals</a>.</p>
+<p>Comparison operators take two operands and evaluate to a boolean value which describes a relationship between the given values. Comparison operators are frequently used with <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/conditionals.md">conditionals</a>.</p>
 <h1 id="---operators"><code>==</code> &amp; <code>!=</code> Operators</h1>
 <p>The <code>==</code> (equality) operator compares two operands and returns <code>true</code> if they are the same and <code>false</code> if they are not. The <code>!=</code> (inequality) operator performs the inverse operation, returning <code>false</code> if they are the same and <code>true</code> if they are not.</p>
 <table>
@@ -140,7 +140,7 @@
 </code></pre>
 <h1 id="object-comparison">Object Comparison</h1>
 <p>As seen in the first code block, object comparison is fairly common. However, there are a few details to be aware of when comparing objects by value vs. by reference.</p>
-<p>NOTE: To read about the details about by-value and by-reference objects, <a href="constructbyvaluevsbyref.html"> read the manual page</a>.</p>
+<p>NOTE: To read about the details about by-value and by-reference objects, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/constructbyvaluevsbyref.md"> read the manual page</a>.</p>
 <h2 id="object-comparison-by-value">Object Comparison by Value</h2>
 <p>Take the following struct as a by-value example:</p>
 <pre><code class="lang-name=&quot;ValueObj&quot;,">struct ValueObj
@@ -196,7 +196,7 @@ b &amp; c are equal: false
 </code></pre>
 <p>In this case, the <code>ReferenceObj</code> instances are constructed and compared by reference, so <code>b</code> is actually a copy of the reference <code>a</code> to the constructed <code>ReferenceObj</code>. This means that when <code>b.ValueOne</code> is set to <code>true</code>, the <code>ReferenceObj</code> instance that <code>a</code> references is modified, as <code>a</code> and <code>b</code> are in fact referencing the same <code>ReferenceObj</code> instance.  Furthermore, looking at <code>c</code>, one can see that when a new reference type instance is constructed, it is only copied and compared by reference, so even when two instances contain the same value(s), they will not be considered equal.</p>
 <h1 id="floating-point-comparison">Floating-Point Comparison</h1>
-<p>Due to floating-point error, it is best to avoid comparing two extremely precise or large values of floating-point types (such as <a href="../../../code_reference/nada_base_types/real.html"> Real</a>) with the <code>==</code> and <code>!=</code> operators. Consider:</p>
+<p>Due to floating-point error, it is best to avoid comparing two extremely precise or large values of floating-point types (such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md"> Real</a>) with the <code>==</code> and <code>!=</code> operators. Consider:</p>
 <pre><code class="lang-lang=csharp,">Console.WriteLine(2000000000.0 == 2000000042.0);
 </code></pre>
 <pre><code class="lang-name=Console">true
@@ -320,7 +320,7 @@ b &amp; c are equal: false
 <h1 id="related-materials">Related Materials</h1>
 <h1 id="manual">Manual</h1>
 <ul>
-<li><a href="operators_precedence_chart.html">operators_precedence_chart</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/operators_precedence_chart.md">operators_precedence_chart</a></li>
 </ul>
 <h1 id="tasks">Tasks</h1>
 <ul>

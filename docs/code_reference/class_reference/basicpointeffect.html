@@ -99,43 +99,43 @@
 <tbody>
 <tr>
 <td></td>
-<td><a href="basicpointeffect.html#endcondition-zilch-engine">EndCondition</a></td>
-<td><a href="physicseffect.html">physicseffect</a></td>
-<td><a href="pointforceeffect.html">pointforceeffect</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/basicpointeffect.md#endcondition-zilch-engine">EndCondition</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicseffect.md">physicseffect</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/pointforceeffect.md">pointforceeffect</a></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="basicpointeffect.html#interpolationtype-zilch-e">InterpolationType</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/basicpointeffect.md#interpolationtype-zilch-e">InterpolationType</a></td>
 <td></td>
-<td><a href="pointgravityeffect.html">pointgravityeffect</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/pointgravityeffect.md">pointgravityeffect</a></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="basicpointeffect.html#localpositionoffset-zero">LocalPositionOffset</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><a href="basicpointeffect.html#maxdistance-zilch-engine">MaxDistance</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/basicpointeffect.md#localpositionoffset-zero">LocalPositionOffset</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="basicpointeffect.html#mindistance-zilch-engine">MinDistance</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/basicpointeffect.md#maxdistance-zilch-engine">MaxDistance</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="basicpointeffect.html#strengthatmax-zilch-engin">StrengthAtMax</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/basicpointeffect.md#mindistance-zilch-engine">MinDistance</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="basicpointeffect.html#strengthatmin-zilch-engin">StrengthAtMin</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/basicpointeffect.md#strengthatmax-zilch-engin">StrengthAtMax</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/basicpointeffect.md#strengthatmin-zilch-engin">StrengthAtMin</a></td>
 <td></td>
 <td></td>
 </tr>
@@ -143,49 +143,49 @@
 </table>
 <h1 id="properties">Properties</h1>
 <hr>
-<h1 id="endcondition--physicseffectendcondition">EndCondition : <a href="../enum_reference.html#physicseffectendcondition">PhysicsEffectEndCondition</a></h1>
+<h1 id="endcondition--physicseffectendcondition">EndCondition : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#physicseffectendcondition">PhysicsEffectEndCondition</a></h1>
 <blockquote>
 <p>How the interpolation should be handled after max distance. ClampToMax will clamp to StrengthAtMax. NoEffect will ignore the effect. ContinueFalloff will continue the interpolation (this may go negative).</p>
 <pre><code class="lang-lang=cpp,">var EndCondition : PhysicsEffectEndCondition
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="interpolationtype--physicseffectinterpolationtype">InterpolationType : <a href="../enum_reference.html#physicseffectinterpolationtype">PhysicsEffectInterpolationType</a></h1>
+<h1 id="interpolationtype--physicseffectinterpolationtype">InterpolationType : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#physicseffectinterpolationtype">PhysicsEffectInterpolationType</a></h1>
 <blockquote>
 <p>The type of interpolation used (e.g. Linear, Quadratic) for the effect.</p>
 <pre><code class="lang-lang=cpp,">var InterpolationType : PhysicsEffectInterpolationType
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="localpositionoffset--real3">LocalPositionOffset : <a href="../nada_base_types/real3.html">real3</a></h1>
+<h1 id="localpositionoffset--real3">LocalPositionOffset : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real3.md">real3</a></h1>
 <blockquote>
 <p>The offset from the transform position (in local space) that the point effect will be applied at.</p>
 <pre><code class="lang-lang=cpp,">var LocalPositionOffset : Real3
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="maxdistance--real">MaxDistance : <a href="../nada_base_types/real.html">real</a></h1>
+<h1 id="maxdistance--real">MaxDistance : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
 <blockquote>
 <p>The max distance that attenuation will happen at. If an object is between min and max distance, the value will be attenuated. If the object is further away, the effect strength will be determined by EndCondition.</p>
 <pre><code class="lang-lang=cpp,">var MaxDistance : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="mindistance--real">MinDistance : <a href="../nada_base_types/real.html">real</a></h1>
+<h1 id="mindistance--real">MinDistance : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
 <blockquote>
 <p>The first distance at which attenuation will start. If an object is under the min distance, StrengthAtMin will be used. If an object is in between min and max, then it will attenuate.</p>
 <pre><code class="lang-lang=cpp,">var MinDistance : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="strengthatmax--real">StrengthAtMax : <a href="../nada_base_types/real.html">real</a></h1>
+<h1 id="strengthatmax--real">StrengthAtMax : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
 <blockquote>
 <p>The strength that this effect applies at the max distance.</p>
 <pre><code class="lang-lang=cpp,">var StrengthAtMax : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="strengthatmin--real">StrengthAtMin : <a href="../nada_base_types/real.html">real</a></h1>
+<h1 id="strengthatmin--real">StrengthAtMin : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
 <blockquote>
 <p>The strength that this effect applies at the min distance.</p>
 <pre><code class="lang-lang=cpp,">var StrengthAtMin : Real

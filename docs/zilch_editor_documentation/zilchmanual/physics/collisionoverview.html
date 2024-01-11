@@ -88,7 +88,7 @@
 
 <p>The physics system has a set of governing rules for how collisions are detected and resolved. It is important first to distinguish between detection and resolution. Collision detection is the act of determining if two {icon university}[[../Colliders | Collider's]] collide. Collision resolution is the act of updating velocity, position, etc... to realistically simulate an impact. If no collision is detected then no resolution can happen.</p>
 <h1 id="basic-collision-types">Basic Collision Types</h1>
-<p>The physics system has a few basic rules to determine which of these collision stages a pair of objects can reach. Collision detection is not possible without a Collider as a Collider defines a shape. A <a href="../../../code_reference/enum_reference.html#rigidbodydynamicstate">DynamicState</a> property controls how the physics system views a RigidBody. These states show a basic view of the collision detection stages in physics:
+<p>The physics system has a few basic rules to determine which of these collision stages a pair of objects can reach. Collision detection is not possible without a Collider as a Collider defines a shape. A <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#rigidbodydynamicstate">DynamicState</a> property controls how the physics system views a RigidBody. These states show a basic view of the collision detection stages in physics:
 |                          | No Rigid Body | Dynamic Rigid Body | Static Rigid Body | Kinematic Rigid Body |
 |                          |---------------- | ---------------------- | ------------------- | ----------------------- |
 | <strong>No Rigid Body</strong>        | Not Detected
@@ -97,50 +97,50 @@
 | <strong>Kinematic Rigid Body</strong> | Not Resolved    | Resolved               | Not Resolved        | Not Resolved</p>
 <p>There are more complicated rule sets that go into fully determining if objects should detect and resolve collision. The simplest examples are the Ghost checkBox and CollisionGroup resource properties on Collider.</p>
 <h1 id="collision-response-factors">Collision Response Factors</h1>
-<p>There's a few ways to alter how collisions are resolved. The primary way is through a Collider's <a href="physicsmaterial.html">Material</a> property which defines density, friction, and restitution.</p>
-<p>RigidBody also contains properties that affect collision resolution. A RigidBody's mass is auto-computed from the relevant Colliders' volume and density. To override this manually see <a href="massoverride.html">MassOverride</a>. Additionally, various mass properties can be &quot;locked&quot;. The {nav icon=list, name=Mode2d} property will restrict the object to simulate 2d movement. Additionally, the RotationLocked checkBox property locks the rotation of a body without changing linear movement restrictions. This is common on objects like a player where rotation would result in undesired game mechanics.</p>
+<p>There's a few ways to alter how collisions are resolved. The primary way is through a Collider's <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">Material</a> property which defines density, friction, and restitution.</p>
+<p>RigidBody also contains properties that affect collision resolution. A RigidBody's mass is auto-computed from the relevant Colliders' volume and density. To override this manually see <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/massoverride.md">MassOverride</a>. Additionally, various mass properties can be &quot;locked&quot;. The {nav icon=list, name=Mode2d} property will restrict the object to simulate 2d movement. Additionally, the RotationLocked checkBox property locks the rotation of a body without changing linear movement restrictions. This is common on objects like a player where rotation would result in undesired game mechanics.</p>
 <h1 id="resolution-rigidbodydynamicstate">Resolution: RigidBodyDynamicState</h1>
 <p>RigidBody defines the DynamicState enum property that changes how the dynamics, or resolution, for an object is handled. The default state of a RigidBody is dynamic (i.e. the body is free to move and resolve as normal).</p>
 <p>Commonly, a body needs to be locked in space to behave as some fixed world geometry. One way to do this is to remove the RigidBody. Additionally a RigidBody's DynamicState enum can be changed to <code>Static</code>. This object will be treated as an infinite mass object that doesn't move. The difference between these two forms of static is mostly internal performance. The general rule of thumb is: if it always exists and never moves, remove the RigidBody; otherwise, mark it static.</p>
 <p>A RigidBody can also be set to <code>Kinematic</code>. Kinematic is an infinite mass object like <code>Static</code>; however, it also gives the physics system extra information about how to resolve collisions. A static object is never expected to move, so if it is teleported by the user into contact with other objects, then the physics system doesn't know how to properly resolve the collision as no velocity was involved. A kinematic object tells the physics system to approximate the velocity in the collision based upon the last and current position of the object. This is typically used for moving platforms or other moving, infinite mass objects.</p>
 <h1 id="collision-information">Collision Information</h1>
-<p>Information about collisions can be found in two ways. The most common is to listen for <a href="collisionoverview/collisionevents.html">CollisionEvents</a>. Additionally, Collider exposes the Contacts property range.</p>
+<p>Information about collisions can be found in two ways. The most common is to listen for <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisionevents.md">CollisionEvents</a>. Additionally, Collider exposes the Contacts property range.</p>
 <h1 id="collision-groups">Collision Groups</h1>
-<p>Advanced control of collision filtering and events can be configured through the use of <a href="collisionoverview/collisiongroupsandtables.html">CollisionTables and CollisionGroups</a>.</p>
+<p>Advanced control of collision filtering and events can be configured through the use of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisiongroupsandtables.md">CollisionTables and CollisionGroups</a>.</p>
 <h1 id="advanced">Advanced</h1>
 <p>There are several advanced topics that can affect how physics deals with collision.</p>
 <ul>
-<li><a href="hierarchies.html">Hierarchies</a> can be used to make complicated physical objects from simple pieces.</li>
-<li><a href="joints.html">Joints</a> allow additional constraints on how an object is allowed to move.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/hierarchies.md">Hierarchies</a> can be used to make complicated physical objects from simple pieces.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/joints.md">Joints</a> allow additional constraints on how an object is allowed to move.</li>
 </ul>
 <h1 id="troubleshooting-collisions">Troubleshooting Collisions</h1>
 <p>Sometimes collisions don't happen or behave differently than a user would expect.</p>
 <ul>
-<li><a href="physicstroubleshooting/whyaretheynotcolliding.html">WhyAreTheyNotColliding</a> is a helper function to figure out why a collision didn't happen.</li>
-<li><a href="physicstroubleshooting/edgecatching.html">Edge Catching</a> is a common issue when trying to make a player that can cause jarring movement.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/whyaretheynotcolliding.md">WhyAreTheyNotColliding</a> is a helper function to figure out why a collision didn't happen.</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicstroubleshooting/edgecatching.md">Edge Catching</a> is a common issue when trying to make a player that can cause jarring movement.</li>
 </ul>
 <hr>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="rigidbody.html">rigidbody.md</a></li>
-<li><a href="colliders.html">colliders.md</a></li>
-<li><a href="physicsmaterial.html">physicsmaterial.md</a></li>
-<li><a href="massoverride.html">massoverride.md</a></li>
-<li><a href="collisionoverview/collisionevents.html">collisionevents.md</a></li>
-<li><a href="collisionoverview/collisiongroupsandtables.html">collisiongroupsandtables.md</a></li>
-<li><a href="joints.html">joints.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/rigidbody.md">rigidbody.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">physicsmaterial.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/massoverride.md">massoverride.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisionevents.md">collisionevents.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisiongroupsandtables.md">collisiongroupsandtables.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/joints.md">joints.md</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="../../../code_reference/class_reference/collider.html">Collider</a></li>
-<li><a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
-<li><a href="../../../code_reference/class_reference/physicsmaterial.html">PhysicsMaterial</a></li>
-<li><a href="../../../code_reference/class_reference/massoverride.html">MassOverride</a></li>
-<li><a href="../../../code_reference/class_reference/collisionevent.html">CollisionEvent</a></li>
-<li><a href="../../../code_reference/class_reference/collisiongroup.html">CollisionGroup</a></li>
-<li><a href="../../../code_reference/class_reference/collisiontable.html">CollisionTable</a></li>
-<li><a href="../../../code_reference/enum_reference.html#rigidbodydynamicstate">DynamicState</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md">Collider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md">PhysicsMaterial</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/massoverride.md">MassOverride</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionevent.md">CollisionEvent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiongroup.md">CollisionGroup</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiontable.md">CollisionTable</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#rigidbodydynamicstate">DynamicState</a></li>
 </ul>
 
 </article>

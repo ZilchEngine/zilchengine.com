@@ -85,30 +85,30 @@
 
         <article data-uid="">
 
-<p>This tutorial covers how to create custom components and the basics of scripting in <a href="../../zilchmanual/nada_in_zilch.html">Nada</a>.</p>
+<p>This tutorial covers how to create custom components and the basics of scripting in <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a>.</p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
 <li>Creating custom components</li>
-<li><a href="../../zilchmanual/nada_in_zilch.html"> Nada</a> scripting basics</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md"> Nada</a> scripting basics</li>
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48212.png" alt="image"></p>
 <h1 id="creating-custom-components">Creating Custom Components</h1>
 <p>Until now, we have explored components built into Zilch Engine. These components are essential building blocks for your games, but you'll also need to write your own components to achieve the custom behavior your game needs.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>MyComponent</code></li>
 </ul>
 <p>Once a component is created, we can add it to objects.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a> : Sprite object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md"> Select</a> : Sprite object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>MyComponent</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md"> Add Component</a> : <code>MyComponent</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48331.gif" alt="AddComponent"></p>
 <p><em>Adding the <code>MyComponent</code> component in the <code>Properties Window</code></em></p>
@@ -118,14 +118,14 @@
 <h1 id="basic-scripting-with-nada">Basic Scripting with Nada</h1>
 <p>Upon the creation of a NadaScript, Zilch Engine will open that resource in a new tab: a text editor where you can include all the necessary logic for your component. Let's take a look at what the Component template template gives us:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48227.png" alt="image"></p>
-<p>NOTE: If you are new to scripting, this series of tutorials marked with #beginner_ii  will cover the basics of scripting in <a href="../../zilchmanual/nada_in_zilch.html">Nada</a> within the Zilch Engine. That said, a lot of the concepts we'll cover are common to many other programming languages, and you may benefit from reading up on other programming resources targeted at beginners.</p>
+<p>NOTE: If you are new to scripting, this series of tutorials marked with #beginner_ii  will cover the basics of scripting in <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a> within the Zilch Engine. That said, a lot of the concepts we'll cover are common to many other programming languages, and you may benefit from reading up on other programming resources targeted at beginners.</p>
 <h2 id="classes">Classes</h2>
 <p>A class is an abstract entity that is responsible for a specific set of tasks. Notably, a class has two primary purposes: <strong>storing data</strong> and <strong>manipulating data</strong>. Let's look closely at the very first line of our script:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48231.png" alt="image"></p>
 <p><em>The <code>MyComponent</code> script, line 1</em></p>
-<p>The first keyword <code>class</code> indicates that we are providing the definition of a class. Notice that this keyword is highlighted in blue. Zilch Engine will highlight specific keywords that it recognizes as having significance in the <a href="../../zilchmanual/nada_in_zilch.html">Nada</a> language, which can be very useful for understanding how the engine is interpreting the script.</p>
+<p>The first keyword <code>class</code> indicates that we are providing the definition of a class. Notice that this keyword is highlighted in blue. Zilch Engine will highlight specific keywords that it recognizes as having significance in the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a> language, which can be very useful for understanding how the engine is interpreting the script.</p>
 <p>Next, we have <code>MyComponent</code>, which is the name we gave this script, confirming that it is the identifier we wish to assign to this class. It is worth mentioning that all classes <strong>must</strong> have a unique name, and you cannot use names already used by Zilch Engine.</p>
-<p>Next, we have <code>: Nada Component</code>. The colon <code>:</code> token is an important one within <a href="../../zilchmanual/nada_in_zilch.html">Nada</a>, and can be interpreted to mean &quot;of type&quot;. In this case, we have a <code>class</code> named <code>MyComponent</code> that is of type <code>NadaComponent</code>. NadaComponent is a very commonly used class type, and examples of it will be featured extensively here and in later tutorials.</p>
+<p>Next, we have <code>: Nada Component</code>. The colon <code>:</code> token is an important one within <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a>, and can be interpreted to mean &quot;of type&quot;. In this case, we have a <code>class</code> named <code>MyComponent</code> that is of type <code>NadaComponent</code>. NadaComponent is a very commonly used class type, and examples of it will be featured extensively here and in later tutorials.</p>
 <p>Lastly, on lines 2 and 11 we have the curly brace symbols <code>{</code> and <code>}</code>. These symbols denote that our class definition is confined to the space between them, which is called the class's <strong>scope</strong>, and all details pertaining to a class have to be described within it.</p>
 <p>NOTE: For stylistic and organizational purposes, it is common to indent (put spaces or tabs in front of) lines within a scope. This is done to improve the readability and allow the reader to more easily see what's contained within the scope.</p>
 <h2 id="initialize">Initialize</h2>
@@ -141,19 +141,19 @@
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48336.png" alt="image"></p>
 <p><em>The <code>MyComponent</code> class, updated</em></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48338.png" alt="image"></p>
 <p><em>The Sprite object has turned red</em></p>
-<p>These instructions are telling the <strong>owner</strong> of this component (the Sprite object object) to set its <a href="../../../code_reference/class_reference/sprite.html">Sprite</a> component's VertexColor  property to red. This topic will be covered in more detail in the <a href="variables.html"> Variables</a> tutorial.</p>
+<p>These instructions are telling the <strong>owner</strong> of this component (the Sprite object object) to set its <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">Sprite</a> component's VertexColor  property to red. This topic will be covered in more detail in the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/variables.md"> Variables</a> tutorial.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h2 id="code-comments">Code Comments</h2>
 <p>You may have noticed an interesting line within the scope of the <strong>Initialize</strong> function:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48319.png" alt="image"></p>
 <p><em><code>MyComponent</code>, line 5</em></p>
-<p>This line is actually a piece of functionality that has been &quot;commented out&quot;. In <a href="../../zilchmanual/nada_in_zilch.html">Nada</a>, you can write comments in code by using the <code>//</code> token. This causes that token and everything on the line after it to be considered a <strong>comment</strong> that has no effect on the program's behavior.</p>
+<p>This line is actually a piece of functionality that has been &quot;commented out&quot;. In <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">Nada</a>, you can write comments in code by using the <code>//</code> token. This causes that token and everything on the line after it to be considered a <strong>comment</strong> that has no effect on the program's behavior.</p>
 <p>While comments are very useful to write descriptions and explanations of the functionality of your code, another useful utility is to apply them to temporarily toggle functionality off by commenting lines of code out.</p>
 <p>NOTE: You can use <code>Ctrl + K</code> to quickly comment blocks of code in or out.</p>
 <p>Here we have an event connection that has been commented out. The details of events and connections are covered in a later tutorial; just know for now that line 5 is what makes the <code>OnLogicUpdate</code> function get called every frame.</p>
@@ -164,7 +164,7 @@
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48340.gif" alt="Uncomment"></p>
 <p>NOTE: Another way of defining comments is to use the <code>/*</code> and <code>*/</code> tokens. This will cause everything between the two tokens to be considered a comment, which can be used to create multi-line comments.</p>
 <h2 id="logicupdate">LogicUpdate</h2>
-<p>Once the event connection is established (typically done in <code>Initialize</code>), the component is ready to receive <a href="../../../code_reference/event_reference.html#logicupdate"> LogicUpdate</a> events from the Engine. This allows the component to execute instructions every frame for as long as the connection exists.</p>
+<p>Once the event connection is established (typically done in <code>Initialize</code>), the component is ready to receive <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate"> LogicUpdate</a> events from the Engine. This allows the component to execute instructions every frame for as long as the connection exists.</p>
 <p>LogicUpdate can be a good place to listen for input and respond accordingly, or to manage persistent behaviors, such as a character's artificial intelligence.</p>
 <ul>
 <li>In the <code>MyComponent</code> script</li>
@@ -175,43 +175,43 @@
 <p>This is what your code should look like:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48344.png" alt="image"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48346.gif" alt="Game1"></p>
 <p><em>The Sprite object now moves to the right</em></p>
 <p>The instruction we just added causes the object to move to the right just slightly, but since our code is running every frame, it causes our Sprite object object to move all the way to the right.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="tutorials">Tutorials</h2>
 <ul>
-<li><a href="variables.html">variables</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/scripting/variables.md">variables</a></li>
 </ul>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="../../zilchmanual/nada_in_zilch.html">nada_in_zilch</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">commands</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html">resourceadding</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">selectobject</a></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">addremovecomponent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch.md">nada_in_zilch</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">resourceadding</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="../../../code_reference/command_reference.html#newproject"> NewProject</a></li>
-<li><a href="../../../code_reference/command_reference.html#createsprite"> CreateSprite</a></li>
-<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
-<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> NewProject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h3 id="classes-1">Classes</h3>
 <ul>
-<li><a href="../../../code_reference/class_reference/sprite.html">sprite</a></li>
-<li><a href="../../../code_reference/class_reference/transform.html">transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">sprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a></li>
 </ul>
 <h3 id="events">Events</h3>
 <ul>
-<li><a href="../../../code_reference/event_reference.html#logicupdate"> LogicUpdate</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate"> LogicUpdate</a></li>
 </ul>
 
 </article>

@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p><a href="../../../code_reference/class_reference/cogpath.html">CogPaths</a> provide the best way to get a reference to any <a href="../../../code_reference/class_reference/cog.html">Cog</a> before running the game. Often you will find situations where a component needs to be aware of a paticular object when the game starts. While CogPaths are not limited to only working at load time this is where they are most useful.</p>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cogpath.md">CogPaths</a> provide the best way to get a reference to any <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cog.md">Cog</a> before running the game. Often you will find situations where a component needs to be aware of a paticular object when the game starts. While CogPaths are not limited to only working at load time this is where they are most useful.</p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
 <li>CogPath properties</li>
@@ -94,15 +94,15 @@
 <h1 id="level-setup">Level Setup</h1>
 <p>First we will make the ground and player objects.</p>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></p>
 </li>
 <li><p>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : LevelSettings object</p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</p>
 </li>
-<li><p><a href="../../zilchmanual/editor/addremovecomponent.html">Remove component</a> : <a href="../../../code_reference/class_reference/gravityeffect.html">gravityeffect</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Remove component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">gravityeffect</a></p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add resource</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">Add resource</a></p>
 </li>
 <li><p>Create a NadaScript resource using the Component template template and name it <code>PlayerController</code></p>
 </li>
@@ -140,22 +140,22 @@
 }
 </code></pre>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 <li>In the <code>name=Properties Window, icon=window-restore</code></li>
 <li>Rename Sprite object to <code>Player</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add component</a> : <a href="../../../code_reference/class_reference/rigidbody.html">rigidbody</a></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add component</a> : <a href="../../../code_reference/class_reference/boxcollider.html">boxcollider</a></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add component</a> : <code>PlayerController</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">boxcollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> : <code>PlayerController</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Press <code>Left</code>, <code>Right</code>, <code>Up</code> and <code>Down</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90208.gif" alt="simpleinput"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="the-follower">The Follower</h1>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">Add resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>FollowerController</code></li>
 <li>Update <code>FollowerController</code> script to the following code block:</li>
 </ul>
@@ -183,17 +183,17 @@
 <p>In the script above the position of the player and the position of the follower are used to calculate a unit vector which defines the 3D direction from the follower to the player. By multiplying it with <code>this.Speed</code> a velocity is defined which can be applyed to move the follower object.</p>
 <p>(NOTE)<strong>Initializing a CogPath Property</strong>: Notice that a CogPath constructor was acutally called in the definition of the <code>PlayerCogPath</code> property. CogPath's are one of the few types that require a manual construction where as Nada value types can have their initial value infered: i.e. <code>var MemberVariable : Real;</code> in this case <code>MemberVariable</code> will have the default type value of <code>0</code>.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 <li>In the <code>name=Properties Window, icon=window-restore</code></li>
 <li>Set <code>name=Name, icon=pencil-square-o</code> to: <code>Follower</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add component</a> : <a href="../../../code_reference/class_reference/boxcollider.html">boxcollider</a></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add component</a> : <code>FollowerController</code></li>
-<li>Under <a href="../../../code_reference/class_reference/sprite.html">sprite</a>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">boxcollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add component</a> : <code>FollowerController</code></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/sprite.md">sprite</a>
 <ul>
 <li>Set <code>name=VertexColor, icon=eyedropped</code> to: <code>[0,0,1,1]</code></li>
 </ul>
 </li>
-<li>Under <a href="../../../code_reference/class_reference/transform.html">transform</a>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a>
 <ul>
 <li>Set <code>name=Translation, icon=pencil-square-o</code> to: <code>[-5,0,0]</code></li>
 </ul>
@@ -209,55 +209,55 @@
 <ul>
 <li><p>Set <code>name=PlayerCogPath, icon=pencil-square-o</code> to reference the Player object</p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 <li><p>Press <code>Left</code>, <code>Right</code>, <code>Up</code> and <code>Down</code></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90220.gif" alt="Follower"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="cogpaths-and-hierarchies">CogPaths and Hierarchies</h1>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 <li>In the <code>name=Properties Window, icon=window-restore</code></li>
 <li>Set <code>name=Name, icon=pencil-square-o</code> to: <code>Child</code></li>
-<li>Under <a href="../../../code_reference/class_reference/transform.html">transform</a>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a>
 <ul>
 <li>Set <code>name=Translation, icon=pencil-square-o</code> to: <code>[2,0,0]</code></li>
 <li>Set <code>name=Scale, icon=pencil-square-o</code> to: <code>[0.5,0.5,0.5]</code></li>
 </ul>
 </li>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Child object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Child object</li>
 <li>Drag and drop it on the Player object object</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90222.gif" alt="ChildToPlayer"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 <li>In the <code>name=Properties Window, icon=window-restore</code></li>
 <li>Set <code>name=Name, icon=pencil-square-o</code> to: <code>Parent</code></li>
-<li>Under <a href="../../../code_reference/class_reference/transform.html">transform</a>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a>
 <ul>
 <li>Set <code>name=Translation, icon=pencil-square-o</code> to: <code>[0,2,0]</code></li>
 <li>Set <code>name=Scale, icon=pencil-square-o</code> to: <code>[0.5,0.5,0.5]</code></li>
 </ul>
 </li>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Player object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Player object</li>
 <li>Drag and drop it on the Parent object object</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90364.gif" alt="PlayerToParent"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Press <code>Left</code>, <code>Right</code>, <code>Up</code> and <code>Down</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90230.gif" alt="TestChildPlayer"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
-<p>It can be seen that the Player object moves independently of its parent object do to it having its own RigidBody. However, you may be wondering why the follower no longer goes to the same position as the Player object. If you remember from <a href="hierarchies.html">Hierarchies I</a>, Player object is now a child object meaning its <code>name=Translation, icon=pencil-square-o</code> is measured relative to it's paren object. Since the <code>FollowerController</code> was not changed to use the explicit <code>name=WorldTranslation, icon=pencil-square-o</code> of the Player object, the Follower object moves to the same offset of the Player object as it starts with its Parent object.</p>
+<p>It can be seen that the Player object moves independently of its parent object do to it having its own RigidBody. However, you may be wondering why the follower no longer goes to the same position as the Player object. If you remember from <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/hierarchies.md">Hierarchies I</a>, Player object is now a child object meaning its <code>name=Translation, icon=pencil-square-o</code> is measured relative to it's paren object. Since the <code>FollowerController</code> was not changed to use the explicit <code>name=WorldTranslation, icon=pencil-square-o</code> of the Player object, the Follower object moves to the same offset of the Player object as it starts with its Parent object.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> the Follower object object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> the Follower object object</li>
 <li>Under <code>FollowerController</code></li>
 <li>Examine the text of the <code>name=PlayerCogPath, icon=pencil-square-o</code> property</li>
 </ul>
@@ -266,7 +266,7 @@
 <li>Set <code>name=PlayerCogPath, icon=pencil-square-o</code> to reference the Player object</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90232.gif" alt="ResetCogPath"></p>
-<p>Notice that the text of <code>name=PlayerCogPath, icon=pencil-square-o</code> changes from <code>:/Player</code> to the correct path of <code>:/Parent/Player</code>. You may be wondering why it worked when the project was run last. When CogPath properties are set they capture a reference at that moment as opposed to waiting for the level to be loaded into the game. When the path to an object targeted by a CogPath changes it does not lose that direct reference to the object, but instead the Path becomes inaccurate. You should not depend on this behavior and you should always reset your CogPath properties to have the correct path when possible. If you wish to learn more about the complex behaviors of the direct cog reference visit the <a href="../../zilchmanual/editor/cogpathsmanual.html">CogPaths Manual Page</a>.</p>
+<p>Notice that the text of <code>name=PlayerCogPath, icon=pencil-square-o</code> changes from <code>:/Player</code> to the correct path of <code>:/Parent/Player</code>. You may be wondering why it worked when the project was run last. When CogPath properties are set they capture a reference at that moment as opposed to waiting for the level to be loaded into the game. When the path to an object targeted by a CogPath changes it does not lose that direct reference to the object, but instead the Path becomes inaccurate. You should not depend on this behavior and you should always reset your CogPath properties to have the correct path when possible. If you wish to learn more about the complex behaviors of the direct cog reference visit the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/cogpathsmanual.md">CogPaths Manual Page</a>.</p>
 <ul>
 <li>In the <code>FollowerController</code> script update <code>OnLogicUpdate</code> to this code block</li>
 </ul>
@@ -279,40 +279,40 @@
 }
 </code></pre>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 <li><p>Press <code>Left</code>, <code>Right</code>, <code>Up</code> and <code>Down</code></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90366.gif" alt="FollowWorldTrans"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>Now the Follower object follows the Player object <code>name=WorldTranslation, icon=pencil-square-o</code> correctly.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h1 id="manual">Manual</h1>
 <ul>
-<li><a href="../../zilchmanual/editor/cogpathsmanual.html">CogPaths</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/cogpathsmanual.md">CogPaths</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 </ul>
 <h1 id="tutorials">Tutorials</h1>
 <ul>
-<li><a href="hierarchies.html">hierarchies</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/hierarchies.md">hierarchies</a></li>
 </ul>
 <h1 id="reference">Reference</h1>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="../../../code_reference/class_reference/cogpath.html">CogPaths</a></li>
-<li><a href="../../../code_reference/class_reference/gravityeffect.html">gravityeffect</a></li>
-<li><a href="../../../code_reference/class_reference/rigidbody.html">rigidbody</a></li>
-<li><a href="../../../code_reference/class_reference/boxcollider.html">boxcollider</a></li>
-<li><a href="../../../code_reference/class_reference/transform.html">transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cogpath.md">CogPaths</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gravityeffect.md">gravityeffect</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">boxcollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a></li>
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
-<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
-<li><a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 </ul>
 <h1 id="tasks">Tasks</h1>
 <ul>

@@ -85,13 +85,13 @@
 
         <article data-uid="">
 
-<p>The <a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a> component defines the inertia (mass, velocity, etc...) of a rigid object (i.e. one that cannot be deformed by forces). RigidBody approximations are used in physics to simplify common behaviors for both performance and stability.</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md"> RigidBody</a> component defines the inertia (mass, velocity, etc...) of a rigid object (i.e. one that cannot be deformed by forces). RigidBody approximations are used in physics to simplify common behaviors for both performance and stability.</p>
 <h1 id="rigidbodydynamicstate">RigidBodyDynamicState</h1>
-<p>RigidBody defines the <a href="../../../code_reference/enum_reference.html#rigidbodydynamicstate"> DynamicState</a> property that changes how the dynamics (or resolution) for an object is handled. The default state of a RigidBody is dynamic (i.e. the body is free to move and resolve as normal).</p>
+<p>RigidBody defines the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#rigidbodydynamicstate"> DynamicState</a> property that changes how the dynamics (or resolution) for an object is handled. The default state of a RigidBody is dynamic (i.e. the body is free to move and resolve as normal).</p>
 <p>Commonly, a body needs to be locked in space to behave as some fixed world geometry. One way to do this is to remove the RigidBody. Additionally a RigidBody's DynamicState enum can be changed to <code>Static</code>. This object will be treated as an infinite mass object that doesn't move. The difference between these two forms of static is mostly internal performance. The general rule of thumb is: if it always exists and never moves, remove the RigidBody; otherwise, mark it <code>Static</code>.</p>
 <p>A RigidBody can also be set to <code>Kinematic</code>. <code>Kinematic</code> is an infinite mass object like <code>Static</code>; however, it also gives the physics system extra information about how to resolve collisions. A static object is never expected to move, so if it is teleported by the user into contact with other objects, then the physics system doesn't know how to properly resolve the collision as no velocity was involved. A kinematic object tells the physics system to approximate the velocity in the collision based upon the last and current position of the object. This is typically used for moving platforms or other moving, infinite mass objects.</p>
 <h1 id="mode2d">Mode2D</h1>
-<p>{nav icon=list, name=Mode2D} defines whether a RigidBody should behave like a 2D or 3D object. If an object is 3D, it can translate and rotate in all three dimensions. If an object is 2D then its movement is restricted to the xy-plane and can only rotate about the z-axis. By default, a RigidBody will use the {nav icon=check-square-o, name=&quot;Mode2D&quot;} state of the <a href="physicsspace.html">PhysicsSpace</a> so that an entire space can be changed at once, but an individual RigidBody can be set independently from the space.</p>
+<p>{nav icon=list, name=Mode2D} defines whether a RigidBody should behave like a 2D or 3D object. If an object is 3D, it can translate and rotate in all three dimensions. If an object is 2D then its movement is restricted to the xy-plane and can only rotate about the z-axis. By default, a RigidBody will use the {nav icon=check-square-o, name=&quot;Mode2D&quot;} state of the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsspace.md">PhysicsSpace</a> so that an entire space can be changed at once, but an individual RigidBody can be set independently from the space.</p>
 <p>It is important to note that Mode2D only affects how the physics system will treat the object. A user can still manually translate or rotate an object on any axis, but physics will be unable to move a RigidBody on the locked axes, even if forces or velocity act on them.</p>
 <h1 id="rotationlocked">RotationLocked</h1>
 <p>Sometimes, physics shouldn't be able to rotate an object. In this case, the RotationLocked checkBox property can be used to restrict rotation while still allowing all linear forces to affect the object. This can be especially useful on a player object when rotation complicates game logic.</p>
@@ -106,7 +106,7 @@
 <p>For this reason, it is not uncommon to turn off sleeping on a player controlled object. Additionally, an object can be manually woken up through the <code>ForceAwake</code> function in script.</p>
 <p>Sometimes game logic may rely on sleeping. One such example of this is waiting for all objects to fall asleep to trigger the end of a turn or level in a game. For example, an environment-destruction game where the player's turn ends when all pieces of the environment stop moving and fall asleep. This can be checked both by querying the current state of the RigidBody and by listening for events. On rare occasion, a RigidBody may need to be forced to sleep (e.g. after some global timer) through the <code>ForceAsleep</code> function.</p>
 <h1 id="movement-via-script">Movement via Script</h1>
-<p>A RigidBody is expected to be moved through the use of physics instead of manually being teleported via the <a href="../../../code_reference/class_reference/transform.html">Transform</a>. There are a few common methods to do this:</p>
+<p>A RigidBody is expected to be moved through the use of physics instead of manually being teleported via the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a>. There are a few common methods to do this:</p>
 <ul>
 <li><strong>Forces</strong>: forces allow pushing an object over time while taking into account the object's mass. The same force applied to a heavy object will cause a slower change in momentum. Forces are accumulated each frame (such as gravity and drag) and are applied once physics updates.</li>
 <li><strong>Velocity</strong>: velocity describes how many units per second this object will move. This can be manually changed in script to control how an object moves. Changing the velocity directly will not take into account the object's mass.</li>
@@ -117,14 +117,14 @@
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="physicsspace.html">physicsspace.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsspace.md">physicsspace.md</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="../../../code_reference/class_reference/physicsspace.html">PhysicsSpace</a></li>
-<li><a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
-<li><a href="../../../code_reference/class_reference/transform.html">Transform</a></li>
-<li><a href="../../../code_reference/enum_reference.html#rigidbodydynamicstate"> DynamicState  </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsspace.md">PhysicsSpace</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#rigidbodydynamicstate"> DynamicState  </a></li>
 </ul>
 
 </article>

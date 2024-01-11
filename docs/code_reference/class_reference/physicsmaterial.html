@@ -98,38 +98,38 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="physicsmaterial.html#createruntime-zilch-engin">CreateRuntime</a></td>
-<td><a href="physicsmaterial.html#density-zilch-engine-docu">Density</a></td>
-<td><a href="dataresource.html">dataresource</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md#createruntime-zilch-engin">CreateRuntime</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md#density-zilch-engine-docu">Density</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/dataresource.md">dataresource</a></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="physicsmaterial.html#physicsmaterial-void">Constructor</a></td>
-<td><a href="physicsmaterial.html#friction-zilch-engine-doc">Friction</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="physicsmaterial.html#runtimeclone-zilch-engine">RuntimeClone</a></td>
-<td><a href="physicsmaterial.html#frictionimportance-zero">FrictionImportance</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md#physicsmaterial-void">Constructor</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md#friction-zilch-engine-doc">Friction</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td><a href="physicsmaterial.html#updateandnotifyifmodifie">UpdateAndNotifyIfModified</a></td>
-<td><a href="physicsmaterial.html#highpriority-zilch-engine">HighPriority</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md#runtimeclone-zilch-engine">RuntimeClone</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md#frictionimportance-zero">FrictionImportance</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
-<td></td>
-<td><a href="physicsmaterial.html#restitution-zilch-engine">Restitution</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md#updateandnotifyifmodifie">UpdateAndNotifyIfModified</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md#highpriority-zilch-engine">HighPriority</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td></td>
-<td><a href="physicsmaterial.html#restitutionimportance-ze">RestitutionImportance</a></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md#restitution-zilch-engine">Restitution</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md#restitutionimportance-ze">RestitutionImportance</a></td>
 <td></td>
 <td></td>
 </tr>
@@ -137,42 +137,42 @@
 </table>
 <h1 id="properties">Properties</h1>
 <hr>
-<h1 id="density--real">Density : <a href="../nada_base_types/real.html">real</a></h1>
+<h1 id="density--real">Density : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
 <blockquote>
 <p>Density is used to determine the mass of an object. Mass is computed as density * volume. Density can be set to exactly 0 to produce a massless object, however this should only be done with children objects to add collision without affecting mass.</p>
 <pre><code class="lang-lang=cpp,">var Density : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="friction--real">Friction : <a href="../nada_base_types/real.html">real</a></h1>
+<h1 id="friction--real">Friction : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
 <blockquote>
 <p>How slippery or rough the object is. When friction is 0 the object will be slippery. As friction increases, sliding objects will stop quicker. The friction of two object's are combined with the formula sqrt(a * b).</p>
 <pre><code class="lang-lang=cpp,">var Friction : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="frictionimportance--real">FrictionImportance : <a href="../nada_base_types/real.html">real</a></h1>
+<h1 id="frictionimportance--real">FrictionImportance : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
 <blockquote>
 <p>Determines which object's friction should be used. If object A's friction importance value is larger than object B's then object A's friction will be used. If both importance values are the same then the default combination logic will be used (see the description of Friction for details).</p>
 <pre><code class="lang-lang=cpp,">var FrictionImportance : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="highpriority--boolean">HighPriority : <a href="../nada_base_types/boolean.html">boolean</a></h1>
+<h1 id="highpriority--boolean">HighPriority : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/boolean.md">boolean</a></h1>
 <blockquote>
 <p>Deprecated. Use RestitutionImportance instead.</p>
 <pre><code class="lang-lang=cpp,">var HighPriority : Boolean
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="restitution--real">Restitution : <a href="../nada_base_types/real.html">real</a></h1>
+<h1 id="restitution--real">Restitution : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
 <blockquote>
 <p>How much an object will bounce during a collision. Values should be in the range [0,1] where 0 is an inelastic collision and 1 is a fully elastic collision. Restitution is computed as the max of the two objects. Note: due to solving constraints with baumgarte, energy will not be perfectly conserved with a restitution 1.</p>
 <pre><code class="lang-lang=cpp,">var Restitution : Real
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="restitutionimportance--real">RestitutionImportance : <a href="../nada_base_types/real.html">real</a></h1>
+<h1 id="restitutionimportance--real">RestitutionImportance : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real.md">real</a></h1>
 <blockquote>
 <p>Determines which object's restitution should be used. If object A's restitution importance value is larger than object B's then object A's restitution will be used. If both importance values are the same then the default combination logic will be used (see the description of Restitution for details).</p>
 <pre><code class="lang-lang=cpp,">var RestitutionImportance : Real
@@ -181,7 +181,7 @@
 <hr>
 <h1 id="methods">Methods</h1>
 <hr>
-<h1 id="createruntime--physicsmaterial">CreateRuntime : <a href="physicsmaterial.html">physicsmaterial</a></h1>
+<h1 id="createruntime--physicsmaterial">CreateRuntime : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md">physicsmaterial</a></h1>
 <p><code>static</code></p>
 <blockquote>
 <p>Creates a PhysicsMaterial for run-time modifications.
@@ -207,7 +207,7 @@
 </code></pre>
 </blockquote>
 <hr>
-<h1 id="runtimeclone--physicsmaterial">RuntimeClone : <a href="physicsmaterial.html">physicsmaterial</a></h1>
+<h1 id="runtimeclone--physicsmaterial">RuntimeClone : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md">physicsmaterial</a></h1>
 <blockquote>
 <p>Creates a clone of this material for run-time modifications.
 |Name|Type|Description|

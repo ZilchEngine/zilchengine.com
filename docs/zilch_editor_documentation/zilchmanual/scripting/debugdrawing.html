@@ -87,7 +87,7 @@
 
 <p>Debug drawing is a feature in Zilch that allows you to draw lines and shapes within the editor for the purpose of debugging your game. DebugDraw objects have simple interfaces to draw simple, solid color primitives that are intended for communicating information visually to the developer. While there are many different shapes that may be debug drawn, this page limits itself to describing lines and triangles.</p>
 <h1 id="debugdraw">DebugDraw</h1>
-<p>The DebugDraw object draws all the debug objects in a level once per frame.  Each debug draw object is turned into a graphical which uses either the DebugDraw resource or  DebugDrawOnTop resource <a href="../graphics/rendergroups.html">RenderGroup</a>. The user will never make the draw call directly; instead, all debug objects to be rendered must be added to the debug draw call using the <code>DebugDraw.Add()</code> function:</p>
+<p>The DebugDraw object draws all the debug objects in a level once per frame.  Each debug draw object is turned into a graphical which uses either the DebugDraw resource or  DebugDrawOnTop resource <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/rendergroups.md">RenderGroup</a>. The user will never make the draw call directly; instead, all debug objects to be rendered must be added to the debug draw call using the <code>DebugDraw.Add()</code> function:</p>
 <pre><code class="lang-lang=csharp">// Create a DebugLine instance with a point and a radius, and add it to the DebugDraw call
 var dLine = DebugLine(Real3(0,0,0), Real3(5, 5, 0));
 dLine.HeadSize = 1.0;
@@ -279,7 +279,7 @@ DebugDraw.Add(dSphere);
 <h2 id="related-materials">Related Materials</h2>
 <h3 id="manual">Manual</h3>
 <ul>
-<li><a href="../graphics/rendergroups.html">rendergroups</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/rendergroups.md">rendergroups</a></li>
 </ul>
 
 </article>

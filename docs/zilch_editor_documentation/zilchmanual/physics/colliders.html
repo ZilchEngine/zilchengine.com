@@ -85,55 +85,55 @@
 
         <article data-uid="">
 
-<p>The <a href="../../../code_reference/class_reference/collider.html">Collider</a> component is used to define a shape for collision detection. Together with the <a href="rigidbody.html">RigidBody</a> component, this creates a game object for physics to move around. There are several pre-defined Collider types, as well as a few customizable types to choose from.</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md">Collider</a> component is used to define a shape for collision detection. Together with the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/rigidbody.md">RigidBody</a> component, this creates a game object for physics to move around. There are several pre-defined Collider types, as well as a few customizable types to choose from.</p>
 <ul>
-<li><a href="colliders/boxcollider.html">BoxCollider</a></li>
-<li><a href="colliders/spherecollider.html">SphereCollider</a></li>
-<li><a href="colliders/cylindercollider.html">CylinderCollider</a></li>
-<li><a href="colliders/ellipsoidcollider.html">EllipsoidCollider</a></li>
-<li><a href="colliders/capsulecollider.html">CapsuleCollider</a></li>
-<li><a href="colliders/meshcollider.html">MeshCollider</a></li>
-<li><a href="colliders/convexmeshcollider.html">ConvexMeshCollider</a></li>
-<li><a href="colliders/multiconvexmeshcollider.html">MultiConvexMeshCollider</a></li>
-<li><a href="colliders/heightmapcollider.html">HeightMapCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/boxcollider.md">BoxCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/spherecollider.md">SphereCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/cylindercollider.md">CylinderCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/ellipsoidcollider.md">EllipsoidCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/capsulecollider.md">CapsuleCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/meshcollider.md">MeshCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/convexmeshcollider.md">ConvexMeshCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/multiconvexmeshcollider.md">MultiConvexMeshCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/heightmapcollider.md">HeightMapCollider</a></li>
 </ul>
 <h1 id="the-collider-interface">The Collider Interface</h1>
 <p>A Collider is an interface component. This means only derived Collider types can be added to an object, not the base type. The Collider interface allows accessing common properties, such as ghost, between all Colliders without knowing the specific derived type.</p>
 <h1 id="colliders-and-rigidbodies">Colliders and RigidBodies</h1>
-<p>Colliders are used in combination with a <a href="rigidbody.html">RigidBody</a> to give an object mass. The simplest object is one that has both a Collider and a RigidBody. See <a href="hierarchies.html">Hierarchies</a> for more details. In either case, a Collider exposes the <code>ActiveBody</code> property to know what RigidBody a collider should apply forces to.</p>
+<p>Colliders are used in combination with a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/rigidbody.md">RigidBody</a> to give an object mass. The simplest object is one that has both a Collider and a RigidBody. See <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/hierarchies.md">Hierarchies</a> for more details. In either case, a Collider exposes the <code>ActiveBody</code> property to know what RigidBody a collider should apply forces to.</p>
 <h1 id="physics-material">Physics Material</h1>
-<p>The <a href="physicsmaterial.html">PhysicsMaterial</a> on a Collider is used to determine how collision resolution should be handled. Knowing:</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">PhysicsMaterial</a> on a Collider is used to determine how collision resolution should be handled. Knowing:</p>
 <p>(NOTE) mass = volume * density</p>
 <p>the density on the material is used with the Collider's volume (implicit from the shape and size) to contribute mass and inertia to a RigidBody. Additionally the material defines surface properties such as friction and restitution which describe how energy is lost in a collision.</p>
 <h1 id="ghost-colliders">Ghost Colliders</h1>
-<p>While a collider is often used to define a shape for collision resolution, it is also common to disable collision resolution through the {nav icon=check-square-o, name=&quot;Ghost&quot;} property. The ghost property only disables collision resolution while continuing to detect collision. This is useful to create trigger regions where a user can check if something enters or exits an area. Additionally, ghost Colliders are often used to apply forces in an area with the Region component and <a href="physicseffectsandregions.html">PhysicsEffects</a>.</p>
+<p>While a collider is often used to define a shape for collision resolution, it is also common to disable collision resolution through the {nav icon=check-square-o, name=&quot;Ghost&quot;} property. The ghost property only disables collision resolution while continuing to detect collision. This is useful to create trigger regions where a user can check if something enters or exits an area. Additionally, ghost Colliders are often used to apply forces in an area with the Region component and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions.md">PhysicsEffects</a>.</p>
 <h1 id="collision-groups">Collision Groups</h1>
-<p>Sometimes a Collider should only collide with some objects. In this case the ghost property is not sufficient. One of the provided alternatives is to use the {nav icon=wrench, name=&quot;CollisionGroup&quot;} property, which defines a group to be used in a CollisionTable. This allows customizing what group pairs go through collision detection and resolution. See <a href="collisionoverview/collisiongroupsandtables.html">Collision Groups and Collision Tables</a> for more details.</p>
+<p>Sometimes a Collider should only collide with some objects. In this case the ghost property is not sufficient. One of the provided alternatives is to use the {nav icon=wrench, name=&quot;CollisionGroup&quot;} property, which defines a group to be used in a CollisionTable. This allows customizing what group pairs go through collision detection and resolution. See <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisiongroupsandtables.md">Collision Groups and Collision Tables</a> for more details.</p>
 <h1 id="collision-information">Collision Information</h1>
-<p>A Collider has two main methods of providing contact information (i.e. what other Colliders are in contact with this one). The most common way to do this is through <a href="collisionoverview/collisionevents.html">Collision Events</a>, which are sent to both objects involved in the contact by default. Additionally, a Collider exposes a range of current contacts to iterate through. In the same way, <a href="joints.html">Joints</a> can also be iterated through.</p>
+<p>A Collider has two main methods of providing contact information (i.e. what other Colliders are in contact with this one). The most common way to do this is through <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisionevents.md">Collision Events</a>, which are sent to both objects involved in the contact by default. Additionally, a Collider exposes a range of current contacts to iterate through. In the same way, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/joints.md">Joints</a> can also be iterated through.</p>
 <hr>
 <h2 id="related-materials">Related Materials</h2>
 <h3 id="manual">Manual</h3>
 <ul>
-<li><a href="rigidbody.html">rigidbody.md</a></li>
-<li><a href="physicsmaterial.html">physicsmaterial.md</a></li>
-<li><a href="collisionoverview/collisiongroupsandtables.html">collisiongroupsandtables.md</a></li>
-<li><a href="collisionoverview/collisionevents.html">collisionevents.md</a></li>
-<li><a href="physicseffectsandregions.html">physicseffectsandregions.md</a></li>
-<li><a href="hierarchies.html">hierarchies.md</a></li>
-<li><a href="joints.html">joints.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/rigidbody.md">rigidbody.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicsmaterial.md">physicsmaterial.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisiongroupsandtables.md">collisiongroupsandtables.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collisionoverview/collisionevents.md">collisionevents.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/physicseffectsandregions.md">physicseffectsandregions.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/hierarchies.md">hierarchies.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/joints.md">joints.md</a></li>
 </ul>
 <h3 id="reference">Reference</h3>
 <ul>
-<li><a href="../../../code_reference/class_reference/collider.html">Collider</a></li>
-<li><a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
-<li><a href="../../../code_reference/class_reference/physicseffect.html">PhysicsEffect</a></li>
-<li><a href="../../../code_reference/class_reference/region.html">Region</a></li>
-<li><a href="../../../code_reference/class_reference/collisionevent.html">CollisionEvent</a></li>
-<li><a href="../../../code_reference/class_reference/collisiontable.html">CollisionTable</a></li>
-<li><a href="../../../code_reference/class_reference/collisiongroup.html">CollisionGroup</a></li>
-<li><a href="../../../code_reference/class_reference/physicsmaterial.html">PhysicsMaterial</a></li>
-<li><a href="../../../code_reference/class_reference/joint.html">Joint</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md">Collider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicseffect.md">PhysicsEffect</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/region.md">Region</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisionevent.md">CollisionEvent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiontable.md">CollisionTable</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collisiongroup.md">CollisionGroup</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/physicsmaterial.md">PhysicsMaterial</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/joint.md">Joint</a></li>
 </ul>
 
 </article>

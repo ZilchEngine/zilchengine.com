@@ -85,43 +85,43 @@
 
         <article data-uid="">
 
-<p>The <a href="../../../code_reference/class_reference/soundemitter.html"> SoundEmitter </a> component handles the 3D positioning of sounds in a level. For instance, if the SoundEmitter's object is to the left of a <a href="soundlistener.html">SoundListener </a>, it will reduce the amount of sound going to the right speaker, so that the player hears the sound to their left.</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundemitter.md"> SoundEmitter </a> component handles the 3D positioning of sounds in a level. For instance, if the SoundEmitter's object is to the left of a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundlistener.md">SoundListener </a>, it will reduce the amount of sound going to the right speaker, so that the player hears the sound to their left.</p>
 <h1 id="using-soundemitters">Using SoundEmitters</h1>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47924.png" alt="SoundEmitter1"></p>
 <h2 id="volume-and-pitch-settings">Volume and Pitch Settings</h2>
-<p>The Volume  and Decibels  properties set the volume adjustment that is applied to any <a href="soundinstance.html">SoundInstances</a> played through the SoundEmitter. The Volume  property uses floating point values, while the Decibels  property uses the logarithmic decibel scale commonly used in audio. These properties are linked, so changing one will also change the value of the other.</p>
+<p>The Volume  and Decibels  properties set the volume adjustment that is applied to any <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundinstance.md">SoundInstances</a> played through the SoundEmitter. The Volume  property uses floating point values, while the Decibels  property uses the logarithmic decibel scale commonly used in audio. These properties are linked, so changing one will also change the value of the other.</p>
 <p>The Pitch  and Semitones  properties set the pitch adjustment that is applied to SoundInstances. This adjustment affects both the pitch and speed of the sound: higher-pitched sounds will play faster, while lower-pitched sounds play slower. Large pitch changes will likely affect the quality of the sound. The Pitch  property uses floating point values, while the Semitones  property uses semitones, or half-steps. These properties are also linked.</p>
 <p>The <code>InterpolateVolume</code>, <code>InterpolateDecibels</code>, <code>InterpolatePitch</code>, and <code>InterpolateSemitones</code> methods can be used at runtime to smoothly change the SoundEmitter's volume or pitch over time. Using these interpolation methods is preferable to using Actions to set the properties: changing a property every frame with an Action can result in audible jumps in volume or pitch, while the interpolation method causes the volume change to be handled smoothly by the audio engine.</p>
-<p>Note that these volume and pitch changes will be combined with any other volume modifications applied by objects such as <a href="soundtag.html">SoundTags</a>, <a href="soundcue.html">SoundCues</a>, and <a href="soundspace.html">SoundSpaces</a>. If a SoundCue's volume is set to <code>0.5</code> and it is played on a SoundEmitter which also has a volume of <code>0.5</code>, this effectively sets the resulting SoundInstance's volume to <code>0.25</code>. If a SoundInstance's Semitones is set to <code>12</code> and it is played on a SoundEmitter with a Semitones value of <code>-6</code>, this effectively raises the SoundInstance's pitch by 6 semitones or half an octave.</p>
+<p>Note that these volume and pitch changes will be combined with any other volume modifications applied by objects such as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundtag.md">SoundTags</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundcue.md">SoundCues</a>, and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundspace.md">SoundSpaces</a>. If a SoundCue's volume is set to <code>0.5</code> and it is played on a SoundEmitter which also has a volume of <code>0.5</code>, this effectively sets the resulting SoundInstance's volume to <code>0.25</code>. If a SoundInstance's Semitones is set to <code>12</code> and it is played on a SoundEmitter with a Semitones value of <code>-6</code>, this effectively raises the SoundInstance's pitch by 6 semitones or half an octave.</p>
 <h2 id="directional-soundemitters">Directional SoundEmitters</h2>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47926.png" alt="SoundEmitter2"> When the Directional checkBox property is checked the audio output of the SoundEmitter will be limited by the EmitAngle  so that sound in front of the object will be louder than sound behind it. Within the EmitAngle   the sound will be at full volume. Outside the angle, the volume will interpolate using a logarithmic curve until it reaches the RearVolume  value directly behind the object. This is useful for sounds on objects such as loudspeakers or objects with a wall behind them that the sound shouldn't be heard through.</p>
 <h2 id="attenuation">Attenuation</h2>
-<p>If a <a href="soundattenuator.html">SoundAttenuator</a> resource other than DefaultNoAttenuation resource is selected, its settings will be used for any SoundCues played through the SoundEmitter that have DefaultNoAttenuation resource selected on their Attenuator resource property.</p>
+<p>If a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundattenuator.md">SoundAttenuator</a> resource other than DefaultNoAttenuation resource is selected, its settings will be used for any SoundCues played through the SoundEmitter that have DefaultNoAttenuation resource selected on their Attenuator resource property.</p>
 <h2 id="soundnodes">SoundNodes</h2>
-<p>Unlike other objects, SoundEmitters are a collection of multiple <a href="soundnode.html">SoundNodes </a>. This allows them to have settings for volume and pitch as well as handling spatialization. Because of this, instead of one SoundNode property, SoundEmitters have two separate properties for the first and last SoundNodes in their chain.</p>
+<p>Unlike other objects, SoundEmitters are a collection of multiple <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode.md">SoundNodes </a>. This allows them to have settings for volume and pitch as well as handling spatialization. Because of this, instead of one SoundNode property, SoundEmitters have two separate properties for the first and last SoundNodes in their chain.</p>
 <p>The <code>InputNode</code> property should be used for attaching other SoundNodes to the input of the SoundEmitter, while the <code>OutputNode</code> should be used for attaching to its output. Users cannot insert other SoundNodes before or after the <code>InputNode</code>, and cannot insert SoundNodes before the <code>OutputNode</code>. Neither of these nodes can be replaced or removed from the graph.</p>
 <h2 id="nada-events">Nada Events</h2>
 <ul>
-<li>The <code>SoundInstancePlayed</code> <a href="../../../code_reference/class_reference/soundinstanceevent.html"> SoundInstanceEvent  </a> will be sent when a SoundCue is played using either the <code>PlayCue</code> or <code>PlayCuePaused</code> methods.</li>
-<li>The <code>AudioInterpolationDone</code> <a href="../../../code_reference/class_reference/soundevent.html"> SoundEvent  </a> is sent whenever a volume or pitch interpolation has finished.</li>
+<li>The <code>SoundInstancePlayed</code> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundinstanceevent.md"> SoundInstanceEvent  </a> will be sent when a SoundCue is played using either the <code>PlayCue</code> or <code>PlayCuePaused</code> methods.</li>
+<li>The <code>AudioInterpolationDone</code> <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundevent.md"> SoundEvent  </a> is sent whenever a volume or pitch interpolation has finished.</li>
 </ul>
 <hr>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="soundlistener.html">SoundListener </a></li>
-<li><a href="soundinstance.html">SoundInstance </a></li>
-<li><a href="soundtag.html">SoundTag </a></li>
-<li><a href="soundcue.html">SoundCue </a></li>
-<li><a href="soundspace.html">SoundSpace </a></li>
-<li><a href="soundattenuator.html">SoundAttenuator </a></li>
-<li><a href="soundnode.html">SoundNode </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundlistener.md">SoundListener </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundinstance.md">SoundInstance </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundtag.md">SoundTag </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundcue.md">SoundCue </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundspace.md">SoundSpace </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundattenuator.md">SoundAttenuator </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/audio/soundnode.md">SoundNode </a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="../../../code_reference/class_reference/soundemitter.html"> SoundEmitter </a></li>
-<li><a href="../../../code_reference/class_reference/soundinstanceevent.html"> SoundInstanceEvent  </a></li>
-<li><a href="../../../code_reference/class_reference/soundevent.html"> SoundEvent  </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundemitter.md"> SoundEmitter </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundinstanceevent.md"> SoundInstanceEvent  </a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/soundevent.md"> SoundEvent  </a></li>
 </ul>
 
 </article>

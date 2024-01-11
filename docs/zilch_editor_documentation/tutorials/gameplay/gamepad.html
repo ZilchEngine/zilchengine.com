@@ -91,29 +91,29 @@
 <li>Gamepad input detection</li>
 <li>Detection of gamepad device connection and removal</li>
 </ul>
-<p>Gamepads such as Xbox controllers are common input devices for games on both consoles and PC. While not all gamepads are the same, many gamepads follow a common input scheme that matches the interface of the Zilch Engine <a href="../../../code_reference/class_reference/gamepad.html">Gamepad</a> class.</p>
+<p>Gamepads such as Xbox controllers are common input devices for games on both consoles and PC. While not all gamepads are the same, many gamepads follow a common input scheme that matches the interface of the Zilch Engine <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepad.md">Gamepad</a> class.</p>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
 <li>Plug in a gamepad</li>
-<li>In the <a href="../../zilchmanual/editor/using_the_market.html"> Market</a></li>
+<li>In the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/using_the_market.md"> Market</a></li>
 <li>Download the SweptCharacter  ZilchPack</li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the Sprite object to <code>Player</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/boxcollider.html">BoxCollider</a></li>
-<li>Under <a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
 <li>Set DynamicState enum to <code>Kinematic</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>SweptController</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>SweptController</code></li>
 <li>Under <code>SweptController</code></li>
 <li>Set Gravity  to <code>0</code></li>
 <li>Set WorldUp  to <code>[0,0,1]</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>GamepadHandle</code></li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>GamepadHandle</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>GamepadHandle</code></li>
 </ul>
 <p>NOTE: An interactive controller diagram with input feedback is included in many of the images on this page. The purpose of the diagram is to communicate input to the reader in sync with the behavior. The scripts and resources for the diagram will not be covered in this lesson.</p>
 <h1 id="aquiring-a-reference-to-a-gamepad">Aquiring a Reference to a Gamepad</h1>
@@ -136,8 +136,8 @@
 }
 </code></pre>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#console"> Console</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#console"> Console</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <pre><code class="lang-name=Console">---------------- Begin Game ----------------
 Gamepad: Gamepad (060A7748) Is Active: true
@@ -145,13 +145,13 @@ Level 'Level' was loaded.
 Loaded level 0.00s
 ----------------  End Game  ----------------
 </code></pre>
-<p>You should see this same console output but with a different ID for the <a href="../../../code_reference/class_reference/gamepad.html">Gamepad</a> object. Detecting may seem simple, but there's more to it than this. We'll take another look at it near the end of the lesson.</p>
+<p>You should see this same console output but with a different ID for the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepad.md">Gamepad</a> object. Detecting may seem simple, but there's more to it than this. We'll take another look at it near the end of the lesson.</p>
 <h1 id="buttons">Buttons</h1>
 <p>Now that we know how to grab a reference to a gamepad, we can start detecting input. The first type of input we will examine is button input.</p>
 <h2 id="button-events">Button Events</h2>
-<p>Button events are very similar to keyboard events. <code>ButtonDown</code> and <code>ButtonUp</code> are both dispatched on the <a href="../../../code_reference/class_reference/gamepad.html">Gamepad</a> object in reaction to the input state of a button changing.</p>
+<p>Button events are very similar to keyboard events. <code>ButtonDown</code> and <code>ButtonUp</code> are both dispatched on the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepad.md">Gamepad</a> object in reaction to the input state of a button changing.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>PauseManager</code></li>
 <li>Update <code>PauseManager</code> to the following:</li>
 </ul>
@@ -183,20 +183,20 @@ Loaded level 0.00s
 </code></pre>
 <p>Similar to how we retrieved the <code>gamepad</code> object in <code>GamepadHandle</code>, the <code>for</code> loop in the code block above retrieves all the gamepads. It then connects to the <code>ButtonDown</code> event on each gamepad. Just as we connect to the <code>Keyboard</code> for <code>KeyboardEvents</code>, we connect to the <code>gamepad</code> for <code>GamepadEvents</code>. This makes use of the fact that a <strong>gamepad object will always exist whether the gamepad is actually connected or not</strong>. This behavior allows us to never lose the connection, no matter what happens to the gamepad. In the response function we simply invert the value of <code>this.Space.TimeSpace.Paused</code> to toggle pausing the Space.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#selectspace">SelectSpace</a></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>PauseManager</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#selectspace">SelectSpace</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>PauseManager</code></li>
 </ul>
 <p>Since the player doesn't move yet, let's create an object that will allow us to test the functionality of our <code>PauseManager</code>.</p>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsphere">CreateSphere</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsphere">CreateSphere</a></p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : LevelSettings object</p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</p>
 </li>
-<li><p>Under <a href="../../../code_reference/class_reference/griddraw.html">GridDraw</a></p>
+<li><p>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/griddraw.md">GridDraw</a></p>
 </li>
 <li><p>Set DrawInGame checkBox to <code>True</code></p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 <li><p>Quickly press <code>Start</code> a few times to pause and unpause the game</p>
 </li>
@@ -205,13 +205,13 @@ Loaded level 0.00s
 <p><em>Game pausing and unpausing in reaction to <code>Start</code> being pressed</em></p>
 <p>In a real game, our pause manager might also create a pause menu, but for the purposes of our gamepad lesson, the example as is proves the point.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="sticks">Sticks</h1>
 <p>Buttons are fine for most input, but some input needs to be directional. While the directional pad buttons on a gamepad can be used to determine one of eight cardinal directions, a joystick allows for full range directional input.</p>
 <p>Let's use the left stick to get our Player object moving.</p>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></p>
 </li>
 <li><p>Create a NadaScript resource using the Component template template and name it <code>SweptGamepadInput2D</code></p>
 </li>
@@ -248,32 +248,32 @@ Loaded level 0.00s
   }
 }
 </code></pre>
-<p>In the above code block we get the <a href="../../../code_reference/nada_base_types/real2.html">Real2</a> value of <a href="../../../code_reference/class_reference/gamepad.html#leftstick-zilch-engine-do">Gamepad.LeftStick</a> and pass it to the <code>Update</code> function of the <code>SweptController</code> component. We also check the length of the stick's input vector and make sure it is longer than the <code>DeadZoneRadius</code>. This is to ensure that there is a neutral state for stick input, even if the stick is slightly loose.</p>
+<p>In the above code block we get the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/real2.md">Real2</a> value of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepad.md#leftstick-zilch-engine-do">Gamepad.LeftStick</a> and pass it to the <code>Update</code> function of the <code>SweptController</code> component. We also check the length of the stick's input vector and make sure it is longer than the <code>DeadZoneRadius</code>. This is to ensure that there is a neutral state for stick input, even if the stick is slightly loose.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Player object</li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>SweptGamepadInput2D</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : Player object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>SweptGamepadInput2D</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Use the left stick to move the player</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96110.gif" alt="LeftStickMovement"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="triggers--rumble">Triggers &amp; Rumble</h1>
-<p>The final type of input on a gamepad are the triggers. <a href="../../../code_reference/class_reference/gamepad.html#lefttrigger-zilch-engine">Left Trigger</a> and <a href="../../../code_reference/class_reference/gamepad.html#righttrigger-zilch-engine">RightTrigger</a> each contain a value between <code>0.0</code> and <code>1.0</code> which represents the amount the trigger is depressed. We are going to use triggers as input for gamepad vibration, which is a common form of game feedback.</p>
+<p>The final type of input on a gamepad are the triggers. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepad.md#lefttrigger-zilch-engine">Left Trigger</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepad.md#righttrigger-zilch-engine">RightTrigger</a> each contain a value between <code>0.0</code> and <code>1.0</code> which represents the amount the trigger is depressed. We are going to use triggers as input for gamepad vibration, which is a common form of game feedback.</p>
 <ul>
 <li>Add the following to the <code>OnLogicUpdate</code> function in the <code>SweptGamepadInput2D</code> class:</li>
 </ul>
 <pre><code class="lang-name=Vibration">this.Gamepad.Vibrate(event.Dt, this.Gamepad.LeftTrigger, this.Gamepad.RightTrigger);
 </code></pre>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Press the gamepad triggers to test the vibration code</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96129.gif" alt="Rumble"></p>
-<p>We can feel the gamepad vibrating in response to the triggers being depressed. You may have noticed that the <a href="../../../code_reference/class_reference/gamepad.html#vibrate-void">Vibrate</a> function takes two parameters called <code>leftSpeed</code> and <code>rightSpeed</code>. What you may not have realized is that most gamepads have two vibration motors inside. The left motor typically has a heavier weight than the right motor. This difference in the rotating weights creates what is commonly known as the &quot;rumble&quot; effect. You can test this by pulling the triggers one at a time.</p>
+<p>We can feel the gamepad vibrating in response to the triggers being depressed. You may have noticed that the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepad.md#vibrate-void">Vibrate</a> function takes two parameters called <code>leftSpeed</code> and <code>rightSpeed</code>. What you may not have realized is that most gamepads have two vibration motors inside. The left motor typically has a heavier weight than the right motor. This difference in the rotating weights creates what is commonly known as the &quot;rumble&quot; effect. You can test this by pulling the triggers one at a time.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="managing-the-gamepad">Managing the Gamepad</h1>
 <p>Now that we have covered detecting various kinds of input, let's talk more about managing the gamepad itself, specifically considering what to do when gamepads are connected or disconnected while the game is running. Regardless of whether a gamepad is or was physically (or wirelessly) connected to the computer, the corresponding <code>Gamepad</code> object will always exist (as we mentioned earlier. This allows <code>Gamepad.IsActive</code> to be checked while the game is running regardless of the actual controller state.</p>
@@ -319,7 +319,7 @@ Loaded level 0.00s
 }
 </code></pre>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
 <li><p>Disconnect the gamepad from the computer</p>
 </li>
@@ -329,7 +329,7 @@ Loaded level 0.00s
 </li>
 <li><p>Give the computer a moment to detect the gamepad is plugged in</p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></p>
 </li>
 <li><p>Scroll up in the ConsoleOutput</p>
 </li>
@@ -434,43 +434,43 @@ function OnGamepadDisconnected(event : GamepadConnectionEvent)
 }
 </code></pre>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Quickly disconnect and reconnect the gamepad</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/96084.gif" alt="PausingOnDC"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>Now we can see the game pausing and unpausing in reaction to the controller being disconnected and reconnected.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/launchernewproject.html">Create a New 2D Project</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">Create a New 2D Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><p><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></p>
 </li>
-<li><p><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></p>
 </li>
-<li><p><a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></p>
 </li>
-<li><p><a href="../../../code_reference/command_reference.html#createsphere">CreateSphere</a></p>
+<li><p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsphere">CreateSphere</a></p>
 </li>
 </ul>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="../../../code_reference/class_reference/boxcollider.html">BoxCollider</a></li>
-<li><a href="../../../code_reference/class_reference/cameraviewport.html">CameraViewport</a></li>
-<li><a href="../../../code_reference/class_reference/gamepad.html">Gamepad</a></li>
-<li><a href="../../../code_reference/class_reference/griddraw.html">GridDraw</a></li>
-<li><a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
-<li><a href="../../../code_reference/class_reference/transform.html">Transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/cameraviewport.md">CameraViewport</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/gamepad.md">Gamepad</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/griddraw.md">GridDraw</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
 </ul>
 
 </article>

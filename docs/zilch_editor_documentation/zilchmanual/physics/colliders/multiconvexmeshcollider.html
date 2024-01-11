@@ -85,27 +85,27 @@
 
         <article data-uid="">
 
-<p>(NOTE) <strong>Recommended Reading:</strong> The <a href="../colliders.html">Collider</a> page should be read before this page.</p>
-<p><a href="../../../../code_reference/class_reference/multiconvexmeshcollider.html">MultiConvexMeshCollider</a> defines a collection of <a href="https://en.wikipedia.org/wiki/Convex_hull">convex hulls</a> for collision detection based upon a <a href="../../../../code_reference/class_reference/multiconvexmesh.html">MultiConvexMesh</a> resource.</p>
+<p>(NOTE) <strong>Recommended Reading:</strong> The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md">Collider</a> page should be read before this page.</p>
+<p><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/multiconvexmeshcollider.md">MultiConvexMeshCollider</a> defines a collection of <a href="https://en.wikipedia.org/wiki/Convex_hull">convex hulls</a> for collision detection based upon a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/multiconvexmesh.md">MultiConvexMesh</a> resource.</p>
 <p>WARNING: A future version will likely combine all physics mesh types together.</p>
-<p>MultiConvexMeshCollider allows more complicated shapes to be represented than a <a href="convexmeshcollider.html">ConvexMeshCollider</a> while still retaining performance. Physics needs convex shapes for efficiency so this Collider represents non-convex shapes as a collection of sub convex meshes.</p>
+<p>MultiConvexMeshCollider allows more complicated shapes to be represented than a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/convexmeshcollider.md">ConvexMeshCollider</a> while still retaining performance. Physics needs convex shapes for efficiency so this Collider represents non-convex shapes as a collection of sub convex meshes.</p>
 <p>Currently, the editor for this mesh type only works for 2D shapes (sprites). 3D meshes can be made, but only through script. Future plans include implementing 3D approximate convex decomposition.</p>
 <h1 id="troubleshooting">Troubleshooting</h1>
-<p>As the MultiConvexMeshCollider contains multiple convex pieces, seams can exist between the pieces. This can cause <a href="physicstroubleshooting/edgecatching.md">edge catching</a> issues when objects slide across the surface. Additionally, an object can get sandwiched in the interior between two sub-meshes.</p>
+<p>As the MultiConvexMeshCollider contains multiple convex pieces, seams can exist between the pieces. This can cause <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/physicstroubleshooting/edgecatching.md">edge catching</a> issues when objects slide across the surface. Additionally, an object can get sandwiched in the interior between two sub-meshes.</p>
 <hr>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="../colliders.html">colliders.md</a></li>
-<li><a href="convexmeshcollider.html">convexmeshcollider.md</a></li>
-<li><a href="physicstroubleshooting/edgecatching.md">edgecatching.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders.md">colliders.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/convexmeshcollider.md">convexmeshcollider.md</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/colliders/physicstroubleshooting/edgecatching.md">edgecatching.md</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="../../../../code_reference/class_reference/multiconvexmeshcollider.html">MultiConvexMeshCollider</a></li>
-<li><a href="../../../../code_reference/class_reference/multiconvexmesh.html">MultiConvexMesh</a></li>
-<li><a href="../../../../code_reference/class_reference/convexmeshcollider.html">ConvexMeshCollider</a></li>
-<li><a href="../../../../code_reference/class_reference/collider.html">Collider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/multiconvexmeshcollider.md">MultiConvexMeshCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/multiconvexmesh.md">MultiConvexMesh</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/convexmeshcollider.md">ConvexMeshCollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/collider.md">Collider</a></li>
 </ul>
 
 </article>

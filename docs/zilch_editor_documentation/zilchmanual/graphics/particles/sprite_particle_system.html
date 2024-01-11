@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p>The <a href="../../../../code_reference/class_reference/spriteparticlesystem.html">SpriteParticleSystem</a> is a <a href="../../../../code_reference/class_reference/graphical.html">graphical</a> and a necessary component of a particle system.  Particle systems not only provide a simple interface for applying visual effects to an object, but are more efficient than spawning the equivalent <a href="../../architecture/cogs/gameobjectsconcept.html">game objects</a> under the same conditions.  When editing particle systems, it is important to note that no one particle has unqiue logic in the same system. Every particle follows the same set of universal rules within the system to transform how they are rendered.</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spriteparticlesystem.md">SpriteParticleSystem</a> is a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/graphical.md">graphical</a> and a necessary component of a particle system.  Particle systems not only provide a simple interface for applying visual effects to an object, but are more efficient than spawning the equivalent <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/architecture/cogs/gameobjectsconcept.md">game objects</a> under the same conditions.  When editing particle systems, it is important to note that no one particle has unqiue logic in the same system. Every particle follows the same set of universal rules within the system to transform how they are rendered.</p>
 <h1 id="boundingboxsize">BoundingBoxSize</h1>
 <p>Some objects have a bounding box to determine if they should be rendered or not.  Either all particles in a particle system are renderered, or none of them are.  It's up to the user to determine how far off the screen is far enough to stop rendering any given system.  The BoundingBoxSize  defines the width, length, and height of the bounding box.  Once the bounding box leaves the screen, the particle system won't render.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47864.gif" alt="ParticleSystems_BoundingBoxSize"></p>
@@ -94,10 +94,10 @@
 <p>When working with particle system hierarchies, the ChildSystem checkBox switch gives the ability to make a particle system of particle systems.  This means that a child particle system will emit particles on each particle of a parent particle system.  To force a particle system to generate particles in this way, ChildSystem checkBox should be checked.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46652.gif" alt="ParticleSystems_ChildSystem"></p>
 <h1 id="particle-spaces">Particle Spaces</h1>
-<p>The <a href="../../../../code_reference/enum_reference.html#systemspace">SystemSpace</a> is used to set the space for particles in the particle system.  If SystemSpace enum is set to <strong>WorldSpace</strong>, then particles are created in world space and position is not longer affected by the <code>Transform</code> component.  If SystemSpace enum is set to <strong>LocalSpace</strong>, then the space is the Transform, and will therefore follow the Transform.</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#systemspace">SystemSpace</a> is used to set the space for particles in the particle system.  If SystemSpace enum is set to <strong>WorldSpace</strong>, then particles are created in world space and position is not longer affected by the <code>Transform</code> component.  If SystemSpace enum is set to <strong>LocalSpace</strong>, then the space is the Transform, and will therefore follow the Transform.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47862.gif" alt="ParticleSystems_SystemSpace"></p>
 <h1 id="geometry-mode">Geometry Mode</h1>
-<p>Particles made in the Sprite Particle System are 2D, so the way that particles are placed in a 3D environment needs to be determined.  The <a href="../../../../code_reference/enum_reference.html#spriteparticlegeometrymode">GeometryMode</a> parameter has the following modes:
+<p>Particles made in the Sprite Particle System are 2D, so the way that particles are placed in a 3D environment needs to be determined.  The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#spriteparticlegeometrymode">GeometryMode</a> parameter has the following modes:
 | Mode | Description |
 | -- | -- |
 | <code>Billboarded</code> | Each particle faces the camera |
@@ -109,9 +109,9 @@
 <h1 id="related-material">Related Material</h1>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="../../../../code_reference/class_reference/spriteparticlesystem.html">SpriteParticleSystem</a></li>
-<li><a href="../../../../code_reference/class_reference/graphical.html">graphical</a></li>
-<li><a href="../../../../code_reference/class_reference/linearparticleanimator.html">LinearParticleAnimator</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/spriteparticlesystem.md">SpriteParticleSystem</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/graphical.md">graphical</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/linearparticleanimator.md">LinearParticleAnimator</a></li>
 </ul>
 
 </article>

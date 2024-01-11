@@ -115,7 +115,7 @@ public:
   // Any data you wish to put here
 };
 </code></pre>
-<p>Notice that this class uses the <code>ZilchDeclareType</code> macro. This means that it is important that we use the counterpart <code>ZilchDefineType</code> within the cpp, and that we must absolutely be sure to call <code>BindBase</code> on Event as well as <code>InitializeMetaOfType(FlagEvent)</code> elsewhere in the initialization portion of our code. See <a href="meta_binding.html">meta_binding</a> for more details.</p>
+<p>Notice that this class uses the <code>ZilchDeclareType</code> macro. This means that it is important that we use the counterpart <code>ZilchDefineType</code> within the cpp, and that we must absolutely be sure to call <code>BindBase</code> on Event as well as <code>InitializeMetaOfType(FlagEvent)</code> elsewhere in the initialization portion of our code. See <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_source_documentation/meta_binding.md">meta_binding</a> for more details.</p>
 <pre><code>ZilchDefineType(FlagEvent);
 
 void FlagEvent::InitializeMeta(MetaType* meta)

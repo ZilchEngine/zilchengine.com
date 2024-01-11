@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p>The HeightMapTool is a tool used to create a <a href="../../../code_reference/class_reference/heightmap.md">HeightMap</a> object and manipulate patches created on it. It has five sub-tools the user can use to create and destroy, raise and lower, smooth and sharpen, flatten, and paint patches on a HeightMap object.</p>
+<p>The HeightMapTool is a tool used to create a <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/heightmap.md">HeightMap</a> object and manipulate patches created on it. It has five sub-tools the user can use to create and destroy, raise and lower, smooth and sharpen, flatten, and paint patches on a HeightMap object.</p>
 <h1 id="using-the-heightmaptool">Using the HeightMapTool</h1>
 <p>There are two ways to access the HeightMapTool:</p>
 <ul>
@@ -163,26 +163,26 @@ SlopeNormal , SampleNormal</p>
 <p>To flatten an area on the height map, one must first decide whether to sample a height from a surrounding point on the height map or to set the value directly in Height . Once a method has been chosen, simply left-click (or hold the left-mouse button) on the area to be flattened.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47481.png" alt="image"> <em>A flattened &quot;valley&quot; amidst raised peaks on a height map</em></p>
 <h2 id="weightpainter">WeightPainter</h2>
-<p>The WeightPainter sub-tool is used to paint textures onto a height map. In order to use the WeightPainter sub-tool, one must first make a  <a href="../../graphics/materials.html">Material</a>  that has the  <a href="../../../code_reference/class_reference/heightmaptextureweights.md">HeightMapTextureWeights</a>  material block on it, as seen here:</p>
+<p>The WeightPainter sub-tool is used to paint textures onto a height map. In order to use the WeightPainter sub-tool, one must first make a  <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials.md">Material</a>  that has the  <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/heightmaptextureweights.md">HeightMapTextureWeights</a>  material block on it, as seen here:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47485.png" alt="image"></p>
 <p>Both the <code>HeightMapTextureWeights</code> material block and the WeightPainter sub-tool support four separate textures. The user must load each texture into the <code>HeightMapTextureWeights</code> material block.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47487.png" alt="image"></p>
-<p>Once this new <a href="../../graphics/materials.html">Material</a> has been applied to the <a href="../../../code_reference/class_reference/heightmap.md">HeightMap</a> object, one may use the WeightPainter sub-tool to select each texture separately and paint the height map with it. TextureChannel enum on the WeightPainter sub-tool gives the user access to each of the four <a href="../../graphics/adding_assets/adding_textures_and_sprites.html">Textures</a>. The following screenshots show a height map--the one created in the Material has been applied to the HeightMap object, one may use the WeightPainter sub-tool to select each texture separately and paint the height map with it. The following screenshot shows a height map, the one created above, painted with varying texture weights. The <em>road</em> is 100% of <code>Texture3</code> and <code>Texture4</code>, while the rest is all <code>Texture1</code> with splotches of the other textures painted with a low strength.</p>
+<p>Once this new <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/materials.md">Material</a> has been applied to the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/heightmap.md">HeightMap</a> object, one may use the WeightPainter sub-tool to select each texture separately and paint the height map with it. TextureChannel enum on the WeightPainter sub-tool gives the user access to each of the four <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/graphics/adding_assets/adding_textures_and_sprites.md">Textures</a>. The following screenshots show a height map--the one created in the Material has been applied to the HeightMap object, one may use the WeightPainter sub-tool to select each texture separately and paint the height map with it. The following screenshot shows a height map, the one created above, painted with varying texture weights. The <em>road</em> is 100% of <code>Texture3</code> and <code>Texture4</code>, while the rest is all <code>Texture1</code> with splotches of the other textures painted with a low strength.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47490.png" alt="image"></p>
 <p><em>All four weighted textures used with varying weights.</em></p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="../../physics/collision/heightmapcollider.md">HeightMap Collider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/physics/collision/heightmapcollider.md">HeightMap Collider</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="../../../code_reference/class_reference/heightmap.md">HeightMap</a></li>
-<li><a href="../../../code_reference/nada_base_types/integer.md">Integer</a></li>
-<li><a href="../../../code_reference/nada_base_types/real.md">Real</a></li>
-<li><a href="../../../code_reference/nada_base_types/boolean.md">Boolean</a></li>
-<li><a href="../../../code_reference/nada_base_types/real3.md">Real3</a></li>
-<li><a href="../../../code_reference/class_reference/material.md">Material</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/heightmap.md">HeightMap</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/nada_base_types/integer.md">Integer</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/nada_base_types/real.md">Real</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/nada_base_types/boolean.md">Boolean</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/nada_base_types/real3.md">Real3</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/code_reference/class_reference/material.md">Material</a></li>
 </ul>
 
 </article>

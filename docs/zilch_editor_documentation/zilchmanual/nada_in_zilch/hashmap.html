@@ -87,14 +87,14 @@
 
 <p>A HashMap is a templated data structure that can map unique keys of type A to values of type B (where A and B can be the same type).</p>
 <h1 id="declaration">Declaration</h1>
-<p>NOTE: The types <code>HashMap</code> and <code>KeyValue</code> not currently appear in the <a href="../../../code_reference/nada_base_types.html">nada_base_types</a> list and does not currently show up in code completion suggestions (T552) during initial declaration.</p>
+<p>NOTE: The types <code>HashMap</code> and <code>KeyValue</code> not currently appear in the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types.md">nada_base_types</a> list and does not currently show up in code completion suggestions (T552) during initial declaration.</p>
 <p>HashMap declaration is similiar to the declaration of any templated type in Nada. When a HashMap is created, by default, it has no elements.</p>
 <pre><code class="lang-name=HashMap">var namesToObjects = HashMap[String, Cog]();
 var idToCost = HashMap[Integer, Real]();
 var spawnerToEnemyType = HashMap[Cog, Archetype]();
 var enemyType = HashMap[Archetype, Integer]();
 </code></pre>
-<p>HashMaps have a variety of uses. One may use them to keep track of objects at runtime by an alternate name, or to keep count of how many of each enemy archetype a spawner has created at runtime. Below are some simple example of HashMap functionality which map unique <a href="../../../code_reference/nada_base_types/integer.html">integer</a> keys to non-unique <a href="../../../code_reference/nada_base_types/string.html">string</a> values.</p>
+<p>HashMaps have a variety of uses. One may use them to keep track of objects at runtime by an alternate name, or to keep count of how many of each enemy archetype a spawner has created at runtime. Below are some simple example of HashMap functionality which map unique <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a> keys to non-unique <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a> values.</p>
 <h2 id="initialization">Initialization</h2>
 <p>It is common for a HashMap to be populated at runtime, but it is also possible to define elements within an initializer list.</p>
 <pre><code class="lang-name=Initializer">var hash = HashMap[Integer, String]()
@@ -112,8 +112,8 @@ this.PrintHashMap(hash);
   {3, three}
 }
 </code></pre>
-<p>Notice that the order in which the elements are printed is not the order in which they were added to the HashMap. This is due to HashMaps having no inherent order, unlike <a href="../../../code_reference/nada_base_types/array_t.html">Arrays</a>. Instead of the pairs being printed in an indexed order they are printed in an arbitrary order based on the hash of the pair.</p>
-<p>NOTE: The HashMap templated type is currently lacking templated print functionality similiar to <a href="arrays.html">Arrays</a>. The <code>PrintHashMap</code> function used in this page is implemented below:</p>
+<p>Notice that the order in which the elements are printed is not the order in which they were added to the HashMap. This is due to HashMaps having no inherent order, unlike <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md">Arrays</a>. Instead of the pairs being printed in an indexed order they are printed in an arbitrary order based on the hash of the pair.</p>
+<p>NOTE: The HashMap templated type is currently lacking templated print functionality similiar to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/arrays.md">Arrays</a>. The <code>PrintHashMap</code> function used in this page is implemented below:</p>
 <pre><code class="lang-name=PrintHashMap,">function PrintHashMap(hash : HashMap[Integer, String])
 {
   Console.WriteLine(&quot;`hash` \n{&quot;);
@@ -162,7 +162,7 @@ two
 three
 </code></pre>
 <h3 id="hashmapgetordefault">HashMap.GetOrDefault</h3>
-<p><code>HashMap.GetOrDefault</code> behaves the same as <a href="hashmap/.md#hashmap-get">Get</a>, but instead of throwing an exception when passed an invalid key it returns a <em>default// value that is the same type as the //values</em> of the HashMap.</p>
+<p><code>HashMap.GetOrDefault</code> behaves the same as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-get">Get</a>, but instead of throwing an exception when passed an invalid key it returns a <em>default// value that is the same type as the //values</em> of the HashMap.</p>
 <pre><code class="lang-name=HashMap.GetOrDefault">var hash = HashMap[Integer, String]()
 {
   {1, &quot;one&quot;},
@@ -182,9 +182,9 @@ default
 (null) String
 </code></pre>
 <h3 id="hashmapgetorerror">HashMap.GetOrError</h3>
-<p><code>GetOrError</code> has the same functionality as <a href="hashmap/.md#hashmap-get">Get</a>, the only difference being that it is not called by the <code>[]</code> operator.</p>
+<p><code>GetOrError</code> has the same functionality as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-get">Get</a>, the only difference being that it is not called by the <code>[]</code> operator.</p>
 <h1 id="adding-to-a-hashmap">Adding to a HashMap</h1>
-<p>There are multiple ways to add <code>KeyValue</code> pairs to HashMaps. <a href="hashmap/.md#hashmap-add">Add</a>, <a href="hashmap/.md#hashmap-set">Set</a>, and the <code>[]</code> operator can all be used to add <code>KeyValue</code> pairs to the HashMap.</p>
+<p>There are multiple ways to add <code>KeyValue</code> pairs to HashMaps. <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-add">Add</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-set">Set</a>, and the <code>[]</code> operator can all be used to add <code>KeyValue</code> pairs to the HashMap.</p>
 <h2 id="hashmapadd">HashMap.Add</h2>
 <p><code>Add</code> takes a <em>key</em> and //value//, adding the pair to the HashMap. If the given key already exists then a runtime exception will be thrown.</p>
 <pre><code class="lang-name=Add,">var hash = HashMap[Integer, String]();
@@ -202,7 +202,7 @@ this.PrintHashMap(hash);
 </code></pre>
 <p>It should be noted that the <code>Add</code> function is called for each <code>KeyValue</code> pair when a HashMap is populated using an initializer list.</p>
 <h2 id="hashmapset">HashMap.Set</h2>
-<p><code>Set</code> is very similar to <a href="hashmap/.md#hashmap-add">Add</a>. <code>Set</code> takes a <em>key// and //value//, adding the pair to the HashMap if the key does not exist. If the key does exist then the //value</em> paired with the given key will be replaced with the //given value//.</p>
+<p><code>Set</code> is very similar to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-add">Add</a>. <code>Set</code> takes a <em>key// and //value//, adding the pair to the HashMap if the key does not exist. If the key does exist then the //value</em> paired with the given key will be replaced with the //given value//.</p>
 <pre><code class="lang-name=Set,">var hash = HashMap[Integer, String]();
 hash.Set(1, &quot;one&quot;);
 hash.Set(2, &quot;two&quot;);
@@ -216,7 +216,7 @@ this.PrintHashMap(hash);
 }
 </code></pre>
 <h3 id="hashmapsetoroverwrite">HashMap.SetOrOverwrite</h3>
-<p>The relationship of <a href="hashmap/.md#hashmap-set">Set</a> and <code>SetOrOverwrite</code> is simliar to that of <a href="hashmap/.md#hashmap-get">Get</a> and <a href="hashmap/.md#hashmap-getorerror">GetOrError</a> in that they have the same behavior. However, like <a href="hashmap/.md#hashmap-get">Get</a>, <a href="hashmap/.md#hashmap-set">Set</a> is called by the <code>[]</code> operator during assignment.</p>
+<p>The relationship of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-set">Set</a> and <code>SetOrOverwrite</code> is simliar to that of <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-get">Get</a> and <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-getorerror">GetOrError</a> in that they have the same behavior. However, like <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-get">Get</a>, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-set">Set</a> is called by the <code>[]</code> operator during assignment.</p>
 <pre><code class="lang-name=SetOrOverwrite,">var hash = HashMap[Integer, String]();
 hash.SetOrOverwrite(1, &quot;one&quot;);
 hash.SetOrOverwrite(2, &quot;two&quot;);
@@ -230,7 +230,7 @@ this.PrintHashMap(hash);
 }
 </code></pre>
 <h3 id="hashmapsetorignore">HashMap.SetOrIgnore</h3>
-<p><code>SetOrIgnore</code> behaves the same as <a href="hashmap/.md#hashmap-set">Set</a> except if the given <em>key</em> already exists the function returns leaving the HashMap unmodified.</p>
+<p><code>SetOrIgnore</code> behaves the same as <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-set">Set</a> except if the given <em>key</em> already exists the function returns leaving the HashMap unmodified.</p>
 <pre><code class="lang-name=SetOrIgnore,">var hash = HashMap[Integer, String]();
 hash.SetOrIgnore(1, &quot;one&quot;);
 hash.SetOrIgnore(2, &quot;two&quot;);
@@ -244,7 +244,7 @@ this.PrintHashMap(hash);
 }
 </code></pre>
 <h3 id="hashmapsetorerror">HashMap.SetOrError</h3>
-<p><code>SetOrError</code> follows a similiar behavior to <a href="hashmap/.md#hashmap-getorerror">GetOrError</a>. If the key passed to <code>SetOrError</code> already exists in the HashMap then an exception will be thrown.</p>
+<p><code>SetOrError</code> follows a similiar behavior to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/hashmap/.md#hashmap-getorerror">GetOrError</a>. If the key passed to <code>SetOrError</code> already exists in the HashMap then an exception will be thrown.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90732.png" alt="image"></p>
 <h1 id="hashmap-container-operations">HashMap Container Operations</h1>
 <h2 id="hashmapclear">HashMap.Clear</h2>
@@ -308,13 +308,13 @@ This HashMap contains the key 4: false
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="arrays.html">Arrays</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/nada_in_zilch/arrays.md">Arrays</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="../../../code_reference/nada_base_types/array_t.html">Arrays</a></li>
-<li><a href="../../../code_reference/nada_base_types/integer.html">integer</a></li>
-<li><a href="../../../code_reference/nada_base_types/string.html">string</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/array_t.md">Arrays</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/integer.md">integer</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/nada_base_types/string.md">string</a></li>
 </ul>
 <h2 id="task">Task</h2>
 <ul>

@@ -85,7 +85,7 @@
 
         <article data-uid="">
 
-<p>Having already seen <a href="../spaces.html">spaces</a> in a previous tutorial, we will now talk about a component that only appears on space objects: the <a href="../../../../code_reference/class_reference/timespace.html">TimeSpace</a>.</p>
+<p>Having already seen <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/tutorials/architecture/spaces.md">spaces</a> in a previous tutorial, we will now talk about a component that only appears on space objects: the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/timespace.md">TimeSpace</a>.</p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
 <li>TimeScale</li>
@@ -93,60 +93,60 @@
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#newproject"> New Project</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#newproject"> New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite">CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
-<li><a href="../../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../../code_reference/class_reference/boxcollider.html">BoxCollider</a></li>
-<li>Under <a href="../../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
-<li>Set <code>name=DynamicState,icon=list</code> to <a href="../../../../code_reference/enum_reference.html#rigidbodydynamicstate">Static</a></li>
-<li>Under <a href="../../../../code_reference/class_reference/transform.html">Transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">BoxCollider</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
+<li>Set <code>name=DynamicState,icon=list</code> to <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/enum_reference.md#rigidbodydynamicstate">Static</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
 <li>Set Scale  to <code>[25,1,1]</code></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#createsphere">CreateSphere</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsphere">CreateSphere</a></li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="../../../../code_reference/class_reference/transform.html">Transform</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">Transform</a></li>
 <li>Set Translation  to <code>[-10,5,0]</code></li>
-<li>Under <a href="../../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">RigidBody</a></li>
 <li>Set Velocity  to <code>[10,0,0]</code></li>
 </ul>
 <h1 id="what-is-the-timespace">What is the TimeSpace?</h1>
-<p>The <a href="../../../../code_reference/class_reference/timespace.html">TimeSpace</a> component allows for developer control over time in the space it is attached to. Time in that space can be slowed or even stopped. Let's see what the demo looks like right now to get a frame of reference.</p>
+<p>The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/timespace.md">TimeSpace</a> component allows for developer control over time in the space it is attached to. Time in that space can be slowed or even stopped. Let's see what the demo looks like right now to get a frame of reference.</p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94788.gif" alt="control"></p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>The ball falls, bounces, and rolls at a normal pace for the values it was initialized with.</p>
 <h2 id="timescale">TimeScale</h2>
-<p>A common dramatic effect is to slow down time during some in-game event. Slow motion effects are typically implemented via the <a href="../../../../code_reference/class_reference/timespace.html#timescale-zilch-engine-do">TimeScale</a> property, which is a scalar for the rate at which time passes. There are also some times where running your project at a slower speed will allow you to debug issues more easily. Let's take a look at how to change TimeScale  using the UI.</p>
+<p>A common dramatic effect is to slow down time during some in-game event. Slow motion effects are typically implemented via the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/timespace.md#timescale-zilch-engine-do">TimeScale</a> property, which is a scalar for the rate at which time passes. There are also some times where running your project at a slower speed will allow you to debug issues more easily. Let's take a look at how to change TimeScale  using the UI.</p>
 <p>(NOTE)<strong>Space Selection</strong>:
-The <a href="../../../../code_reference/class_reference/space.html">Space</a> can be selected via the <code>Select</code> menu, by clicking in the viewport and then pressing <code>Shift + S</code>, by pressing <code>Ctrl + Shift + S</code> with any window in focus, or by using the <a href="../../../../code_reference/command_reference.html#selectspace"> SelectSpace</a> command.
+The <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/space.md">Space</a> can be selected via the <code>Select</code> menu, by clicking in the viewport and then pressing <code>Shift + S</code>, by pressing <code>Ctrl + Shift + S</code> with any window in focus, or by using the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#selectspace"> SelectSpace</a> command.
 <img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94805.png" alt="image"></p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#selectspace"> SelectSpace</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#selectspace"> SelectSpace</a></li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="../../../../code_reference/class_reference/timespace.html">TimeSpace</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/timespace.md">TimeSpace</a></li>
 <li>Set TimeScale  to <code>0.5</code></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94807.gif" alt="halfspeed"></p>
 <p><em>Demo running half speed with <code>0.5</code> TimeScale</em></p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <p>Now we can see that the time scale directly affects the rate of time without affecting the framerate.</p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#selectspace"> SelectSpace</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#selectspace"> SelectSpace</a></li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="../../../../code_reference/class_reference/timespace.html">TimeSpace</a></li>
+<li>Under <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/timespace.md">TimeSpace</a></li>
 <li>Set TimeScale  to <code>1.0</code></li>
 </ul>
 <h2 id="adjusting-timescale-in-script">Adjusting TimeScale In Script</h2>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md"> Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>TimeControl</code></li>
 <li>Update the <code>TimeControl</code> script to the following:</li>
 </ul>
@@ -184,19 +184,19 @@ The <a href="../../../../code_reference/class_reference/space.html">Space</a> ca
 }
 </code></pre>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : LevelSettings object</li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">Select</a> : LevelSettings object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>TimeControl</code></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#console">Console</a></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">Add Component</a> : <code>TimeControl</code></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#console">Console</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Adjust the time scale using the <code>up</code> and <code>down</code> keys</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94790.gif" alt="controlled"></p>
 <p><em>TimeScale  being adjusted up and down</em></p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
-<p>Above we can see the demo progressing slower and then faster as the <a href="../../../../code_reference/class_reference/timespace.html#timescale-zilch-engine-do">TimeScale</a> is adjusted using the keyboard.</p>
+<p>Above we can see the demo progressing slower and then faster as the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/timespace.md#timescale-zilch-engine-do">TimeScale</a> is adjusted using the keyboard.</p>
 <h1 id="pausing">Pausing</h1>
 <ul>
 <li>Add the following property to the <code>TimeControl</code> script:</li>
@@ -228,14 +228,14 @@ The <a href="../../../../code_reference/class_reference/space.html">Space</a> ca
       this.TogglePause();
 </code></pre>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Press <code>Space</code> to pause the game and then press <code>Space</code> again to attempt to unpause the game</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94809.gif" alt="stopped"></p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
-<p>You probably noticed that the game will not unpause. This is because when the <a href="../../../../code_reference/class_reference/timespace.html">TimeSpace</a> is paused, <a href="../../../../code_reference/class_reference/keyboard.html">Keyboard</a>, listening for the <a href="../../../../code_reference/event_reference.html#keydown">KeyDown</a> event, or to poll the keyboard input on <a href="../../../../code_reference/event_reference.html#frameupdate">FrameUpdate</a>.</p>
+<p>You probably noticed that the game will not unpause. This is because when the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/timespace.md">TimeSpace</a> is paused, <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboard.md">Keyboard</a>, listening for the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#keydown">KeyDown</a> event, or to poll the keyboard input on <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#frameupdate">FrameUpdate</a>.</p>
 <ul>
 <li>Update the <code>Initialize</code> function in <code>TimeControl</code> to the following:</li>
 </ul>
@@ -260,47 +260,47 @@ The <a href="../../../../code_reference/class_reference/space.html">Space</a> ca
   }
 </code></pre>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
 <li>Press <code>Space</code> to pause the game and then press <code>Space</code> again to attempt to unpause the game</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94811.gif" alt="pausing"></p>
-<p><em>Pausing with and unpausing in reaction to the <a href="../../../../code_reference/event_reference.html#keydown">KeyDown</a> event</em></p>
+<p><em>Pausing with and unpausing in reaction to the <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#keydown">KeyDown</a> event</em></p>
 <p>Now we can see the game being paused and unpaused successfully.</p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md"> Command</a> : <a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/launchernewproject.html">LauncherNewProject</a></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">commands</a></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/selectobject.html">selectobject</a></li>
-<li><a href="../../../zilchmanual/editor/addremovecomponent.html">addremovecomponent</a></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/resourceadding.html">resourceadding</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/launchernewproject.md">LauncherNewProject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/commands.md">commands</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/selectobject.md">selectobject</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent.md">addremovecomponent</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/editorcommands/resourceadding.md">resourceadding</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="../../../../code_reference/command_reference.html#createsprite"> CreateSprite</a></li>
-<li><a href="../../../../code_reference/command_reference.html#createsphere"> CreateSphere</a></li>
-<li><a href="../../../../code_reference/command_reference.html#selectspace"> SelectSpace</a></li>
-<li><a href="../../../../code_reference/command_reference.html#console"> Console</a></li>
-<li><a href="../../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
-<li><a href="../../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsprite"> CreateSprite</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#createsphere"> CreateSphere</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#selectspace"> SelectSpace</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#console"> Console</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#playgame"> PlayGame</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/command_reference.md#stopgame"> StopGame</a></li>
 </ul>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="../../../../code_reference/class_reference/transform.html">transform</a></li>
-<li><a href="../../../../code_reference/class_reference/timespace.html">timespace</a></li>
-<li><a href="../../../../code_reference/class_reference/rigidbody.html">rigidbody</a></li>
-<li><a href="../../../../code_reference/class_reference/boxcollider.html">boxcollider</a></li>
-<li><a href="../../../../code_reference/class_reference/keyboard.html">keyboard</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/transform.md">transform</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/timespace.md">timespace</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/rigidbody.md">rigidbody</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/boxcollider.md">boxcollider</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/class_reference/keyboard.md">keyboard</a></li>
 </ul>
 <h3 id="events">Events</h3>
 <ul>
-<li><a href="../../../../code_reference/event_reference.html#logicupdate"> LogicUpdate</a></li>
-<li><a href="../../../../code_reference/event_reference.html#frameupdate"> FrameUpdate</a></li>
-<li><a href="../../../../code_reference/event_reference.html#keydown"> KeyDown</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#logicupdate"> LogicUpdate</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#frameupdate"> FrameUpdate</a></li>
+<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/code_reference/event_reference.md#keydown"> KeyDown</a></li>
 </ul>
 <h2 id="development-tasks">Development Tasks</h2>
 <ul>
