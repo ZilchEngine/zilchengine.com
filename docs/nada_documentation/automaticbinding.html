@@ -89,7 +89,7 @@
 <h1 id="internal-binding">Internal Binding</h1>
 <p>The first thing we need to do is create a class that derives from StaticLibrary. That class must be visible to all the places where we're going to be doinNadach binding (generally in a header). We can use thNadachDeclareStaticLibrary macro to declare the entire class and singleton implementation.</p>
 <p>Below we have an example of a header file that contains the static library Wallaby and two example classes that might belong to that library. Remember, the name of the library can be anything you want.</p>
-<pre><code class="lang-lang=csharp">
+<pre><code class="lang-C++">
 # pragma once
 
 #include &quot;Nada.hpp&quot;
@@ -138,7 +138,7 @@ public:
 </code></pre>
 <p>With <em>Internal Binding</em> we must use the <code>NadaDeclareBaseType</code> and <code>NadaDeclareDerivedType</code> macros in a public section of the class (typically at the beginning, but make sure to use public!). The Character class also publicly inherits from <code>INadaObject</code>, which is not required but allows the <code>character-&gt;NadaGetDerivedType()</code> function to be virtual, which will retrieve the BoundType for <code>Player</code> instead of <code>Character</code>.
 The following code should appear once within a translational unit (do not put this within a header):</p>
-<pre><code class="lang-lang=csharp">
+<pre><code class="lang-C++">
 # include &quot;Wallaby.hpp&quot;
 
 
@@ -216,7 +216,7 @@ NadaDefineType(Player, &quot;Player&quot;, Wallaby, builder, type)
 </ul>
 <h1 id="binding-enumerations-or-flags">Binding Enumerations or Flags</h1>
 <p>Since enumerations cannot be virtual or have methods declare inside of them, all enums must be bound using External Binding. At the moment, enumerations MUST be the same size as the int type, which you can generally force either be using the new C++ class enums or by making an enum value set to <code>0x7FFFFFFF</code>. Inside the <code>NadaDefineExternalType</code> macro at the beginning use the following lines:</p>
-<pre><code class="lang-lang=csharp">// You can also pass in SpecialType::Flags if all the values of the enum are bit flags
+<pre><code class="lang-C++">// You can also pass in SpecialType::Flags if all the values of the enum are bit flags
 NadaBindEnum(builder, type, SpecialType::Enumeration);
 NadaBindEnumValue(builder, type, YourEnum::ValueName, &quot;ValueName&quot;);
 </code></pre>
@@ -265,7 +265,7 @@ NadaBindEnumValue(builder, type, YourEnum::ValueName, &quot;ValueName&quot;);
 <li>[[ | ArrayClass<any>]]</any></li>
 </ul>
 <p>The following types are automatically redirected to the Nada Integer type (except unsigned long long which redirects to DoubleInteger):</p>
-<pre><code class="lang-lang=csharp">char
+<pre><code class="lang-C++">char
 signed char
 signed short
 unsigned short

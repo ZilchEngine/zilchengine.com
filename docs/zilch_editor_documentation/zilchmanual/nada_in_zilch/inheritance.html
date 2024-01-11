@@ -86,24 +86,24 @@
         <article data-uid="">
 
 <p>Inheritance allows a <em>child// <a href="classes.html">class</a> to automatically receive all of the data and functionality defined within the //base</em> class.</p>
-<pre><code class="lang-name=Feline,">class Feline
+<pre><code class="lang-TS:Feline,">class Feline
 {
   constructor() { }
 }
 </code></pre>
-<pre><code class="lang-name=Lion,">// A colon designates an identifier for a base class follows.
+<pre><code class="lang-TS:Lion,">// A colon designates an identifier for a base class follows.
 class Lion : Feline
 {
   // a constructor is not necessary when one is inherited from the base class.  
 }
 </code></pre>
-<pre><code class="lang-name=Using">var cat = new Feline();
+<pre><code class="lang-TS:Using">var cat = new Feline();
 var simba = new Lion(); // Instantiated from the inherited constructor
 </code></pre>
 <p>In the above example the variable <code>simba</code> can be instantiated as a <code>Lion</code> using the constructor from <code>Feline</code>.</p>
 <h1 id="the-base-keyword">The <strong>base</strong> Keyword</h1>
 <p>The <strong>base</strong> <a href="keywords.html">keyword</a> is for use when defining an inherited class; it allows you to call the constructor of the base class being inherited from before running an explicitly defined constructor.</p>
-<pre><code class="lang-name=Animal,">class Animal
+<pre><code class="lang-TS:Animal,">class Animal
 {
   var Legs : Integer = 4;
   
@@ -123,27 +123,27 @@ var simba = new Lion(); // Instantiated from the inherited constructor
 }
 </code></pre>
 <p>The class animal defines a <strong>non-default</strong> constructor which takes a number of legs for the animal as a parameter.</p>
-<pre><code class="lang-name=Human,">class Human : Animal
+<pre><code class="lang-TS:Human,">class Human : Animal
 {
   constructor() : base(2) { }
 }
 </code></pre>
 <p>The class <code>Human</code> which inherits from <code>Animal</code> can use <code>Animal</code>'s constructor by using the <code>base</code> keyword. In this situation either the default or non-default constructor from <code>Animal</code> could be called using based. Which constructor is called is determined by the parameters passed to the <code>()</code> after the<code>base</code> keyword. Because <code>2</code> is passed to the <code>base</code> keyword the <strong>non-default</strong> constructor of <code>Animal</code> is called before any implementation within the defined <strong>default</strong> constructor of <code>Human</code>.</p>
-<pre><code class="lang-name=Using">var animal : Animal = new Animal();
+<pre><code class="lang-TS:Using">var animal : Animal = new Animal();
 Console.WriteLine(animal.ToString()); // Legs: 4
 
 var jerry = new Human();
 Console.WriteLine(jerry.ToString());  // Legs: 2
 </code></pre>
 <p>In this runtime example both <code>Animal</code> and <code>Human</code> are instantiated using their default constructor.</p>
-<pre><code class="lang-name=Console">---------------- Begin Game ---------------
+<pre><code class="lang-TS:Console">---------------- Begin Game ---------------
 Legs: 4
 Legs: 2
 </code></pre>
 <p>As can be seen in the console output the <code>Human</code> <strong>default</strong> constructor calls the <strong>non-default</strong> constructor of <code>Animal</code> and passes it <code>2</code>.</p>
 <h1 id="classes--structs">Classes &amp; Structs</h1>
 <p>Although Nada currently does not throw an error, erratic and unexpected behavior will result from having a class inherit from a struct and vice versa. <strong>i.e.</strong></p>
-<pre><code class="lang-name=Incompatible">// Mismatching the struct/class between parent and child
+<pre><code class="lang-TS:Incompatible">// Mismatching the struct/class between parent and child
 struct MyBaseStruct
 {
   constructor()
@@ -164,7 +164,7 @@ Console.WriteLine(typeid(incompatible as MyBaseStruct).Name); // This won't comp
 </code></pre>
 <h1 id="the-virtual-keyword">The Virtual Keyword</h1>
 <p>Virtual is used to give Base classes the ability to determine some functions as being able to be <em>overridden</em> by its derived classes. The new <code>Speak</code> function defined in <code>Animal</code> will serve as an example:</p>
-<pre><code class="lang-name=Applying">class Animal
+<pre><code class="lang-TS:Applying">class Animal
 {
   var Legs:Integer = 4;
 
@@ -191,7 +191,7 @@ Console.WriteLine(typeid(incompatible as MyBaseStruct).Name); // This won't comp
 }
 </code></pre>
 <p>By default, animals don't say anything, so a string that says <code>...</code> is returned. It is known that there are animals that do speak, so the <code>[Virtual]</code> attribute is added to the function to let other developers know that if a class is is <strong>derived</strong> from <code>Animal</code>, the functionality of <code>Speak</code> may be overridden.</p>
-<pre><code class="lang-name=Animal,">class Human : Animal
+<pre><code class="lang-TS:Animal,">class Human : Animal
 {
   constructor() : base(2) { }
   
@@ -204,7 +204,7 @@ Console.WriteLine(typeid(incompatible as MyBaseStruct).Name); // This won't comp
 </code></pre>
 <p>Humans do speak, so changeing the funcitonality of <code>Human.Speak</code> to say something other than <code>...</code> makes perfect sense. The <code>[Override]</code> attribute applied to <code>Speak</code> marks this implementation of the <code>Speak</code> function to replace <code>Animal.Speak</code> which is marked as <code>[Virtual]</code>.</p>
 <p>This can also be extended to other classes like a Cat:</p>
-<pre><code class="lang-name=Cat,">class Cat : Animal
+<pre><code class="lang-TS:Cat,">class Cat : Animal
 {
   // Cats have 4 legs, so let's update the constructor
   constructor() : base(4) { }
@@ -217,7 +217,7 @@ Console.WriteLine(typeid(incompatible as MyBaseStruct).Name); // This won't comp
 }
 </code></pre>
 <p>Now, this is great in the fact that we can now do something like the following:</p>
-<pre><code class="lang-name=Using">var animal = Animal();
+<pre><code class="lang-TS:Using">var animal = Animal();
 Console.WriteLine(animal.Speak());
 
 var human = Human();
@@ -231,7 +231,7 @@ Hello
 Meow
 </code></pre>
 <p>The real magic of inheritance comes in the idea that a class of a <strong>derived</strong> class can be stored in a variable that matches the type of the <strong>base</strong> class.</p>
-<pre><code class="lang-lang=csharp">var humanIsAnAnimal : Animal = Human();
+<pre><code class="lang-TS">var humanIsAnAnimal : Animal = Human();
 Console.WriteLine(humanIsAnAnimal.Speak());
 </code></pre>
 <p>Even though the variable is of type Animal, the Human version of the function is called:</p>
@@ -239,7 +239,7 @@ Console.WriteLine(humanIsAnAnimal.Speak());
 </code></pre>
 <p>This is because whenever a virtual method is called, the run-time type of the object is checked for an <strong>overriding member</strong>. The overriding member in the most derived class will then be called, which might be the original function if the derived class(es) have not overridden it.</p>
 <p>This can be quite useful with an array of Animals.</p>
-<pre><code class="lang-name=Array">var a : Animal = Animal();
+<pre><code class="lang-TS:Array">var a : Animal = Animal();
 var b : Human = Human();
 var c : Animal = Human();
 var d : Cat = Cat();
@@ -251,17 +251,17 @@ foreach (var animal in array)
   Console.WriteLine(animal.Speak());
 }
 </code></pre>
-<pre><code class="lang-name=Console">...
+<pre><code class="lang-TS:Console">...
 Hello
 Hello
 Meow
 </code></pre>
 <h1 id="calling-parent-functions">Calling Parent Functions</h1>
 <p>It's also possible to call the parent version of a function from a child class. In order to do this, the object must be cast to the base type and then use the non-virtual operator (~&gt;) to call the base version:</p>
-<pre><code class="lang-name=Calling">var d : Cat = Cat();
+<pre><code class="lang-TS:Calling">var d : Cat = Cat();
 (d as Animal)~&gt;Speak();
 </code></pre>
-<pre><code class="lang-name=Console">...
+<pre><code class="lang-TS:Console">...
 </code></pre>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>

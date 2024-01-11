@@ -101,7 +101,7 @@
 <h2 id="looping">Looping</h2>
 <p>A SoundInstance's  Looping checkBox property is initially set by the corresponding property on the SoundCue. When this property is <code>true</code>, the SoundInstance will repeat indefinitely, using the  LoopStartTime  and  LoopEndTime  properties on the <a href="soundcue.html#soundentry">SoundEntry</a> that the SoundCue used to create the SoundInstance. If a SoundInstance is looping and the property is changed to <code>false</code> as it is playing it will continue playing to its  EndTime  and then stop.</p>
 <p>The following code block shows you how to make a SoundInstance finish naturally after it has looped three times, using the <code>SoundLooped</code> event.</p>
-<pre><code class="lang-lang=csharp">// A property to be set to the SoundCue desired
+<pre><code class="lang-TS">// A property to be set to the SoundCue desired
 [Property] var MySoundCue : SoundCue;
 
 // A variable that will later be set to an instance of MySoundCue

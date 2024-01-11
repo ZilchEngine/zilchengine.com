@@ -153,7 +153,7 @@
 <li>In the <code>MoveUpAndDown</code> script</li>
 <li>Update the <code>MoveUpAndDown</code> class to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class MoveUpAndDown : NadaComponent
+<pre><code class="lang-TS:&quot;MoveUpAndDown&quot;">class MoveUpAndDown : NadaComponent
 {
   [Dependency] var Transform : Transform;
   
@@ -255,7 +255,7 @@ It's worth noting the difference between rays, segments and lines. Rays are infi
 <li>In the <code>RayCasterLogic</code> script</li>
 <li>Update the <code>RayCasterLogic</code> class to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class RayCasterLogic : NadaComponent
+<pre><code class="lang-TS:&quot;Ray">class RayCasterLogic : NadaComponent
 {
   [Dependency] var Transform : Transform;
   
@@ -371,7 +371,7 @@ It's worth noting the difference between rays, segments and lines. Rays are infi
 <ul>
 <li>Add the following function to the <code>RayCasterLogic</code> class:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">  function FindSeveralObjects()
+<pre><code class="lang-TS:&quot;Multiple">  function FindSeveralObjects()
   {
     //Create Ray
     var ray = Ray();
@@ -408,7 +408,7 @@ It's worth noting the difference between rays, segments and lines. Rays are infi
 <ul>
 <li>Replace the <code>OnLogicUpdate</code> function in the <code>RayCasterLogic</code> class with the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">  function OnLogicUpdate(event : UpdateEvent)
+<pre><code class="lang-TS:&quot;New">  function OnLogicUpdate(event : UpdateEvent)
   {
       //this.FindFirstObject();
       this.FindSeveralObjects();
@@ -427,7 +427,7 @@ It's worth noting the difference between rays, segments and lines. Rays are infi
 <ul>
 <li>Replace the <code>FindSeveralObjects</code> function in the <code>RayCasterLogic</code> class with the following :</li>
 </ul>
-<pre><code class="lang-lang=csharp,">  function FindSeveralObjects()
+<pre><code class="lang-TS:&quot;Filter">  function FindSeveralObjects()
   {
     //Create Filter
     var filter = CastFilter();

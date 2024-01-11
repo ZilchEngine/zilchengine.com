@@ -103,7 +103,7 @@
 <li>In the <code>LoopExamples</code> NadaScript</li>
 <li>Replace the script's contents with the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class LoopExamples : NadaComponent
+<pre><code class="lang-TS:&quot;LoopExamples&quot;">class LoopExamples : NadaComponent
 {
   function Initialize(init : CogInitializer)
   {
@@ -119,13 +119,13 @@
 </ul>
 <h1 id="getting-started">Getting Started</h1>
 <p>Recall the <code>Square</code> function from the <a href="functions.html"> Functions Tutorial</a>. It takes a Real parameter, multiplies it by itself, and returns the result:</p>
-<pre><code class="lang-lang=csharp,">function Square(number : Real) : Real
+<pre><code class="lang-TS:&quot;Square&quot;">function Square(number : Real) : Real
 {
   return number * number;
 }
 </code></pre>
 <p>Thus, the returned result of <code>Square(x)</code> is equal to <code>x</code> squared. But what about <code>x</code> cubed? Here's another function:</p>
-<pre><code class="lang-lang=csharp,">function Cube(number : Real) : Real
+<pre><code class="lang-TS:&quot;Cube&quot;">function Cube(number : Real) : Real
 {
   return number * number * number;
 }
@@ -135,7 +135,7 @@
 <li>In the <code>LoopExamples</code> NadaScript resource</li>
 <li>Add the following function to the <code>LoopExamples</code> class:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function IncompletePower(number : Real, exponent : Integer) : Real
+<pre><code class="lang-TS:&quot;Incomplete">function IncompletePower(number : Real, exponent : Integer) : Real
 {
   var result = 1.0;
   var multiplications = 0;
@@ -150,7 +150,7 @@
 <ul>
 <li>Add the following code to the <code>IncompletePower</code> function:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function IncompletePower(number : Real, exponent : Integer) : Real
+<pre><code class="lang-TS:&quot;Incomplete">function IncompletePower(number : Real, exponent : Integer) : Real
 {
   var result = 1.0;
   var multiplications = 0;
@@ -187,7 +187,7 @@
 <ul>
 <li>Add the following code to the <code>Initialize</code> function:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+<pre><code class="lang-TS:&quot;IncompletePower">function Initialize(init : CogInitializer)
 {
   Console.WriteLine(&quot;IncompletePower: `this.IncompletePower(2.0, 2)`, x ^ y: `2.0 ^ 2`&quot;);
   Console.WriteLine(&quot;IncompletePower: `this.IncompletePower(2.0, 3)`, x ^ y: `2.0 ^ 3`&quot;);
@@ -231,7 +231,7 @@ IncompletePower: 16, x ^ y: 64
 <ul>
 <li>Add the following function to the <code>LoopExamples</code> class:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function WhileLoopPower(number : Real, exponent : Integer) : Real
+<pre><code class="lang-TS:&quot;WhileLoopPower">function WhileLoopPower(number : Real, exponent : Integer) : Real
 {
   var result = 1.0;
   var multiplications = 0;
@@ -249,7 +249,7 @@ IncompletePower: 16, x ^ y: 64
 <ul>
 <li>Replace the contents of the <code>Initialize</code> function with the following code:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+<pre><code class="lang-TS:&quot;WhileLoopPower">function Initialize(init : CogInitializer)
 {
   Console.WriteLine(&quot;WhileLoopPower: `this.WhileLoopPower(5.0, 6)`, x ^ y: `5.0 ^ 6`&quot;);
   Console.WriteLine(&quot;WhileLoopPower: `this.WhileLoopPower(Math.Pi, 7)`, x ^ y: `Math.Pi ^ 7`&quot;);
@@ -269,7 +269,7 @@ WhileLoopPower: 1e-16, x ^ y: 1e-16
 <p>The results match. Of course, <code>WhileLoopPower</code> still has some severe limitations when compared to Nada's exponentiation operator, perhaps the largest of which being that its exponent values must be nonnegative Integers.</p>
 <h1 id="infinite-loops">Infinite Loops</h1>
 <p>Let's look again at the loop inside the <code>WhileLoopPower</code> function:</p>
-<pre><code class="lang-lang=csharp,">while (multiplications &lt; exponent)
+<pre><code class="lang-TS:&quot;While">while (multiplications &lt; exponent)
 {
   result *= number;
   ++multiplications;
@@ -279,7 +279,7 @@ WhileLoopPower: 1e-16, x ^ y: 1e-16
 <ul>
 <li>Update the <code>WhileLoopPower</code> function with the following change:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function WhileLoopPower(number : Real, exponent : Integer) : Real
+<pre><code class="lang-TS:&quot;Infinite">function WhileLoopPower(number : Real, exponent : Integer) : Real
 {
   var result = 1.0;
   var multiplications = 0;
@@ -331,7 +331,7 @@ WhileLoopPower: 1e-16, x ^ y: 1e-16
 <ul>
 <li>Add the following function to the <code>LoopExamples</code> class:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function ForLoopPower(number : Real, exponent : Integer) : Real
+<pre><code class="lang-TS:&quot;ForLoopPower">function ForLoopPower(number : Real, exponent : Integer) : Real
 {
   var result = 1.0;
   
@@ -354,7 +354,7 @@ WhileLoopPower: 1e-16, x ^ y: 1e-16
 <ul>
 <li>Update the <code>Initialize</code> function with the following changes:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+<pre><code class="lang-TS:&quot;ForLoopPower">function Initialize(init : CogInitializer)
 {
   Console.WriteLine(&quot;ForLoopPower: `this.ForLoopPower(5.0, 6)`, x ^ y: `5.0 ^ 6`&quot;);
   Console.WriteLine(&quot;ForLoopPower: `this.ForLoopPower(Math.Pi, 7)`, x ^ y: `Math.Pi ^ 7`&quot;);
@@ -378,7 +378,7 @@ ForLoopPower: 1e-16, x ^ y: 1e-16
 <ul>
 <li>Add the following function to the <code>LoopExamples</code> class:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function DrawBoxes(count : Integer)
+<pre><code class="lang-TS:&quot;DrawBoxes">function DrawBoxes(count : Integer)
 {
   for (var i = 0; i &lt; count; ++i)
   {
@@ -399,7 +399,7 @@ ForLoopPower: 1e-16, x ^ y: 1e-16
 <ul>
 <li>Replace the contents of the <code>Initialize</code> function with the following code:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+<pre><code class="lang-TS:&quot;DrawBoxes">function Initialize(init : CogInitializer)
 {
   this.DrawBoxes(10);
 }
@@ -417,7 +417,7 @@ ForLoopPower: 1e-16, x ^ y: 1e-16
 <ul>
 <li>Add the following function to the <code>LoopExamples</code> class:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function DrawBoxesInGrid(columns : Integer, rows : Integer)
+<pre><code class="lang-TS:&quot;DrawBoxesInGrid">function DrawBoxesInGrid(columns : Integer, rows : Integer)
 {
   var totalBoxesDrawn = 0;
   
@@ -467,7 +467,7 @@ ForLoopPower: 1e-16, x ^ y: 1e-16
 <ul>
 <li>Update the <code>Initialize</code> function with the following changes:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+<pre><code class="lang-TS:&quot;DrawBoxesInGrid">function Initialize(init : CogInitializer)
 {
   this.DrawBoxesInGrid(8, 4);
 }
@@ -496,7 +496,7 @@ Total boxes drawn: 32
 <ul>
 <li>Add the following function to the <code>LoopExamples</code> class:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function DrawBoxesWithGap(columns : Integer, rows : Integer, skipX : Integer, skipY : Integer)
+<pre><code class="lang-TS:&quot;Continue">function DrawBoxesWithGap(columns : Integer, rows : Integer, skipX : Integer, skipY : Integer)
 {
   var totalBoxesDrawn = 0;
   
@@ -524,7 +524,7 @@ Total boxes drawn: 32
 <ul>
 <li>Update the <code>Initialize</code> function with the following changes:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+<pre><code class="lang-TS:&quot;Continue">function Initialize(init : CogInitializer)
 {
   this.DrawBoxesWithGap(8, 4, 6, 2);
 }
@@ -550,7 +550,7 @@ Total boxes drawn: 31
 <ul>
 <li>Add the following function to the <code>LoopExamples</code> class:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function DrawBoxesWithMax(columns : Integer, rows : Integer, max : Integer)
+<pre><code class="lang-TS:&quot;Break">function DrawBoxesWithMax(columns : Integer, rows : Integer, max : Integer)
 {
   var totalBoxesDrawn = 0;
   
@@ -575,7 +575,7 @@ Total boxes drawn: 31
 <ul>
 <li>Update the <code>Initialize</code> function with the following changes:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function Initialize(init : CogInitializer)
+<pre><code class="lang-TS:&quot;Break">function Initialize(init : CogInitializer)
 {
   this.DrawBoxesWithMax(10, 10, 40);
 }
@@ -603,7 +603,7 @@ Total boxes drawn: 40
 <ul>
 <li>Update the <code>DrawBoxesWithMax</code> function with the following changes:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function DrawBoxesWithMax(columns : Integer, rows : Integer, max : Integer)
+<pre><code class="lang-TS:&quot;Break">function DrawBoxesWithMax(columns : Integer, rows : Integer, max : Integer)
 {
   var totalBoxesDrawn = 0;
   var maxReached = false;

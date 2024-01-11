@@ -126,7 +126,7 @@
 <p>Often in games we find that we wish to smoothly transition a property from its existing value to another target value. This is often done by calculating interpolated values on logic update between an the existing value and the target value using a function such as <a href="../../../code_reference/nada_base_types/math.html#lerp-zilch-engine-documen">Math.Lerp</a>. While there are times when it is advantageous to perform these operations in an update function it is more common to want to begin an interpolation operation and have it finish on its own. Actions can do this and more and act as a generic structure to organize in game <em>actions</em> that need to occur in sequence or parrallel.</p>
 <h1 id="property-actions">Property Actions</h1>
 <p>The first and most common action type is a Property Action which allows us to interpolate a property from its current value to a target value, over a specific duration, at a rate defined by an easing function. We can break down the construction of a property action parameter by parameter.</p>
-<pre><code class="lang-name=Example">Actions.Property(this.Owner.Actions,
+<pre><code class="lang-TS:Example">Actions.Property(this.Owner.Actions,
                  @this.Area.Size,
                  this.TargetSize,
                  this.Duration,
@@ -173,7 +173,7 @@
 <ul>
 <li>Update the <code>SpriteFader</code> script:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class SpriteFader : NadaComponent
+<pre><code class="lang-TS:SpriteFader">class SpriteFader : NadaComponent
 {
   [Dependency] var Sprite : Sprite;
   [Dependency] var Area : Area;
@@ -216,13 +216,13 @@
 <ul>
 <li>Add the following property to <code>SpriteFader</code>:</li>
 </ul>
-<pre><code class="lang-name=Color,">  [Property]
+<pre><code class="lang-TS:Color,">  [Property]
   var TargetColor : Real4 = Real4(1,0,0,1);
 </code></pre>
 <ul>
 <li>Update the <code>Animate</code> function in <code>SpriteFader</code> script:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">  function Animate()
+<pre><code class="lang-TS:SpriteFader">  function Animate()
   {
     //create a sequence driven by the object
     var actionSequence = Actions.Sequence(this.Owner.Actions);
@@ -253,7 +253,7 @@
 <ul>
 <li>Update the <code>Animate</code> function in <code>SpriteFader</code> script:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">  function Animate()
+<pre><code class="lang-TS:SpriteFader">  function Animate()
   {
     //Create a group driven by the object
     var actionGroup = Actions.Group(this.Owner.Actions);
@@ -284,14 +284,14 @@
 <ul>
 <li>Add the following variables to <code>SpriteFader</code>:</li>
 </ul>
-<pre><code class="lang-name=Original">  var OriginalSize : Real2;
+<pre><code class="lang-TS:Original">  var OriginalSize : Real2;
   
   var OriginalColor : Real4;
 </code></pre>
 <ul>
 <li>Update the <code>Initialize</code> function in <code>SpriteFader</code>:</li>
 </ul>
-<pre><code class="lang-name=SpriteFader.Initialize(),">  function Initialize(init : CogInitializer)
+<pre><code class="lang-TS:SpriteFader.Initialize(),">  function Initialize(init : CogInitializer)
   {
     //Capture original values
     this.OriginalSize = this.Area.Size;
@@ -304,7 +304,7 @@
 <ul>
 <li>Update the <code>Animate</code> function in <code>SpriteFader</code>:</li>
 </ul>
-<pre><code class="lang-name=SpriteFader">  function Animate()
+<pre><code class="lang-TS:SpriteFader">  function Animate()
   {
     //Create a group driven by the object
     var actionGroup = Actions.Group(this.Owner.Actions);
@@ -350,7 +350,7 @@
 <ul>
 <li>Update the <code>Animate</code> function in <code>SpriteFader</code>:</li>
 </ul>
-<pre><code class="lang-name=SpriteFader">  function Animate()
+<pre><code class="lang-TS:SpriteFader">  function Animate()
   {
     //Create a group driven by the object
     var actionSequence = Actions.Sequence(this.Owner.Actions);
@@ -405,7 +405,7 @@
 <ul>
 <li>Update the <code>Animate</code> function in <code>SpriteFader</code>:</li>
 </ul>
-<pre><code class="lang-name=SpriteFader">  function Animate()
+<pre><code class="lang-TS:SpriteFader">  function Animate()
   {
     //Create a group driven by the object
     var actionSequence = Actions.Sequence(this.Owner.Actions);
@@ -460,12 +460,12 @@ Animation sequence complete
 <ul>
 <li>Add the following property to <code>SpriteFader</code>:</li>
 </ul>
-<pre><code class="lang-name=Action">  var LoopedSequence : ActionSet;
+<pre><code class="lang-TS:Action">  var LoopedSequence : ActionSet;
 </code></pre>
 <ul>
 <li>Update the <code>Animate</code> function in <code>SpriteFader</code>:</li>
 </ul>
-<pre><code class="lang-name=SpriteFader">  function Animate()
+<pre><code class="lang-TS:SpriteFader">  function Animate()
   {
     if(this.LoopedSequence != null)
       this.LoopedSequence.Cancel();
@@ -517,7 +517,7 @@ Animation sequence complete
 <li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
 </ul>
 <p>Now we can see the action sequence call the function that originally set it up. This create a loop in the sequence of actions which will repeat. You should also notice that we started storing the action sequence in a member variable of <code>SpriteFader</code> instead of a local variable. This does not change the behavior of the action sequence, but it does allow us to examine, pause, and cancel the sequence while it is running. This usually good practice for all action sets. We actually already introduced a small example of how one may use an <a href="../../../code_reference/class_reference/actionset.html"> ActionSet</a> member variable when we introduced these two lines at the top of <code>animate</code>.</p>
-<pre><code class="lang-name=Checking">  if(this.LoopedSequence != null)
+<pre><code class="lang-TS:Checking">  if(this.LoopedSequence != null)
       this.LoopedSequence.Cancel();
 </code></pre>
 <p>By checking if <code>this.LoopedSequence</code> is not <code>null</code> we can determine if there is already a sequence in existence intended to animate the sprite. If the <code>Animate</code> function were to be called elsewhere without this check it could result in multiple sequence performing the same scaling and color interpolation operations on the same object independently and simultainiously. This can result in so very undesirable bugs where actions overlap each other in unintended ways. By cancelling any existing <code>LoopedSequence</code> before we start another we can avoid this issue almost entirely.</p>
@@ -526,7 +526,7 @@ Animation sequence complete
 <ul>
 <li>Update the <code>Animate</code> function in <code>SpriteFader</code>:</li>
 </ul>
-<pre><code class="lang-name=SpriteFader">  function Animate()
+<pre><code class="lang-TS:SpriteFader">  function Animate()
   {
     if(this.LoopedSequence != null)
       this.LoopedSequence.Cancel();
@@ -585,12 +585,12 @@ Animation sequence complete
 <ul>
 <li>Add the following in the <code>SpriteFader</code> class within <code>SpriteFader</code>:</li>
 </ul>
-<pre><code class="lang-name=Event">  sends SpriteFaded : NadaEvent;
+<pre><code class="lang-TS:Event">  sends SpriteFaded : NadaEvent;
 </code></pre>
 <ul>
 <li>Update the <code>Initialize</code> function in <code>SpriteFader</code>:</li>
 </ul>
-<pre><code class="lang-name=SpriteFader">  function Initialize(init : CogInitializer)
+<pre><code class="lang-TS:SpriteFader">  function Initialize(init : CogInitializer)
   {
     //Capture original values
     this.OriginalSize = this.Area.Size;
@@ -605,7 +605,7 @@ Animation sequence complete
 <ul>
 <li>Add the following function to <code>SpriteFader</code>:</li>
 </ul>
-<pre><code class="lang-name=Event">  function OnSpriteFaded(event : NadaEvent)
+<pre><code class="lang-TS:Event">  function OnSpriteFaded(event : NadaEvent)
   {
     Console.WriteLine(&quot;Sprite Faded&quot;);
   }
@@ -613,7 +613,7 @@ Animation sequence complete
 <ul>
 <li>Update the <code>Initialize</code> function in <code>SpriteFader</code>:</li>
 </ul>
-<pre><code class="lang-name=Animate">  function Animate()
+<pre><code class="lang-TS:Animate">  function Animate()
   {
     if(this.LoopedSequence != null)
       this.LoopedSequence.Cancel();

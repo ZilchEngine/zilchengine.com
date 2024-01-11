@@ -119,17 +119,17 @@
 </tbody>
 </table>
 <p>The equality operator is very useful when trying to identify unknown data, or verifying existing data.</p>
-<pre><code class="lang-name=&quot;==">if(unknownObject == this.TargetObject)
+<pre><code class="lang-TS:&quot;==">if(unknownObject == this.TargetObject)
 {
   Console.WriteLine(&quot;Found Target&quot;);
 }
 </code></pre>
-<pre><code class="lang-name=&quot;==">if(this.Owner.Player.TeamId == hitObject.Player.TeamId)
+<pre><code class="lang-TS:&quot;==">if(this.Owner.Player.TeamId == hitObject.Player.TeamId)
   Console.WriteLine(&quot;Friendly Fire!&quot;);
 </code></pre>
 <p>Keep in mind that the values of the operands must be exactly equal. When comparing decimal values, the differences may be very small but still exist, i.e. <code>3.14159 == 3.141591</code> will evaluate to <code>false</code>. Similarly <code>2.236068 == 2.23607</code> will evaluate to <code>false</code>, as the values differ by <code>0.0000002</code>. It is common to use an <em>epsilon</em> value (i.e. <code>0.0000001</code>) when comparing values that are more precise then the comparison needs to be.</p>
 <p>The <code>!=</code> operator is commonly used to verify data exists before attempting to use it.</p>
-<pre><code class="lang-name=&quot;!=">if(unknownObject != null)
+<pre><code class="lang-TS:&quot;!=">if(unknownObject != null)
 {
   Console.WriteLine(`unkownObject` is valid);
   if(unknownObject.Transform != null)
@@ -143,7 +143,7 @@
 <p>NOTE: To read about the details about by-value and by-reference objects, <a href="constructbyvaluevsbyref.html"> read the manual page</a>.</p>
 <h2 id="object-comparison-by-value">Object Comparison by Value</h2>
 <p>Take the following struct as a by-value example:</p>
-<pre><code class="lang-name=&quot;ValueObj&quot;,">struct ValueObj
+<pre><code class="lang-TS:&quot;ValueObj&quot;,">struct ValueObj
 {
   var ValueOne : Boolean;
   var ValueTwo : Integer;
@@ -151,7 +151,7 @@
 }
 </code></pre>
 <p>In Nada, structs are value types, so when they're compared using the <code>==</code> or <code>!=</code> operators, the value(s) within the type are what is compared. This means that the <code>==</code> and <code>!=</code> operators <strong>cannot</strong> be used with references to structs to determine if the operands are the same struct instance.</p>
-<pre><code class="lang-name=&quot;Comparing">var a = ValueObj();
+<pre><code class="lang-TS:&quot;Comparing">var a = ValueObj();
 var b = a;
 var c = ValueObj();
 Console.WriteLine(&quot;a &amp; b are equal: `a == b`&quot;);
@@ -170,7 +170,7 @@ b &amp; c are equal: false
 <p>In this case, the <code>ValueObj</code> instances are constructed and compared by value. So despite <code>b</code> being a copy of <code>a</code>, when <code>b.ValueOne</code> is set to false, the value of <code>a.ValueOne</code> does not change, and the values of the two objects are no longer equal. Furthermore, it can be seen that even when <code>ValueObj</code> instance <code>c</code>, a new value type instance, is constructed, the <code>ValueObj</code> is only copied and compared by value.</p>
 <h2 id="object-comparison-by-reference">Object Comparison by Reference</h2>
 <p>Take the following class as a by-reference example:</p>
-<pre><code class="lang-name=&quot;ReferenceObj&quot;,">class ReferenceObj
+<pre><code class="lang-TS:&quot;ReferenceObj&quot;,">class ReferenceObj
 {
   var ValueOne : Boolean;
   var ValueTwo : Integer;
@@ -178,7 +178,7 @@ b &amp; c are equal: false
 }
 </code></pre>
 <p>In Nada, classes are reference types, so when they're compared using the <code>==</code> or <code>!=</code> operators, what are actually compared are the addresses of the objects in memory. This means that the <code>==</code> and <code>!=</code> operators <strong>cannot</strong> be used with class references to determine if the operands contain the same values; instead, they reveal whether the two objects are the same class instance.</p>
-<pre><code class="lang-name=&quot;Comparing">var a = ReferenceObj();
+<pre><code class="lang-TS:&quot;Comparing">var a = ReferenceObj();
 var b = a;
 var c = ReferenceObj();
 Console.WriteLine(&quot;a &amp; b are equal: `a == b`&quot;);
@@ -197,18 +197,18 @@ b &amp; c are equal: false
 <p>In this case, the <code>ReferenceObj</code> instances are constructed and compared by reference, so <code>b</code> is actually a copy of the reference <code>a</code> to the constructed <code>ReferenceObj</code>. This means that when <code>b.ValueOne</code> is set to <code>true</code>, the <code>ReferenceObj</code> instance that <code>a</code> references is modified, as <code>a</code> and <code>b</code> are in fact referencing the same <code>ReferenceObj</code> instance.  Furthermore, looking at <code>c</code>, one can see that when a new reference type instance is constructed, it is only copied and compared by reference, so even when two instances contain the same value(s), they will not be considered equal.</p>
 <h1 id="floating-point-comparison">Floating-Point Comparison</h1>
 <p>Due to floating-point error, it is best to avoid comparing two extremely precise or large values of floating-point types (such as <a href="../../../code_reference/nada_base_types/real.html"> Real</a>) with the <code>==</code> and <code>!=</code> operators. Consider:</p>
-<pre><code class="lang-lang=csharp,">Console.WriteLine(2000000000.0 == 2000000042.0);
+<pre><code class="lang-TS:&quot;Floating-Point">Console.WriteLine(2000000000.0 == 2000000042.0);
 </code></pre>
 <pre><code class="lang-name=Console">true
 </code></pre>
 <p>This is not a quirk of the engine, it's a quirk of modern computing. Instead of using these operators, it is best to use a function like <code>Math.ApproximatelyEqual</code> (which can then be negated using the <code>!</code> operator to check for inequality) for floating-point types. For example, instead of something like this:</p>
-<pre><code class="lang-lang=csharp,">if (this.Transform.WorldTranslation.Y == this.JumpHeight)
+<pre><code class="lang-TS:&quot;Floating-Point">if (this.Transform.WorldTranslation.Y == this.JumpHeight)
 {
   //
 }
 </code></pre>
 <p>... try something like this:</p>
-<pre><code class="lang-lang=csharp,">if (Math.ApproximatelyEqual(this.Transform.WorldTranslation.Y, this.JumpHeight, 0.01))
+<pre><code class="lang-TS:&quot;Floating-Point">if (Math.ApproximatelyEqual(this.Transform.WorldTranslation.Y, this.JumpHeight, 0.01))
 {
   //
 }
@@ -258,11 +258,11 @@ b &amp; c are equal: false
 </tbody>
 </table>
 <p><code>&lt;</code> is often used to compare simulation values to detemine if a threshold has failed to be reached.</p>
-<pre><code class="lang-name=&quot;&lt;">if(height &lt; 5)
+<pre><code class="lang-TS:&quot;&lt;">if(height &lt; 5)
   Console.WriteLine(&quot;You must be at least 5ft tall to ride this attraction&quot;);
 </code></pre>
 <p><code>&gt;</code> is often used to compare simulation values to detemine if a threshold has been exceeded.</p>
-<pre><code class="lang-name=&quot;&gt;">if(cost &gt; 10)
+<pre><code class="lang-TS:&quot;&gt;">if(cost &gt; 10)
   Console.WriteLine(&quot;That restaurant is not within my dinner budget&quot;);
 </code></pre>
 <h1 id="---operators-2"><code>&gt;=</code> &amp; <code>&lt;=</code> Operators</h1>
@@ -310,11 +310,11 @@ b &amp; c are equal: false
 </tbody>
 </table>
 <p><code>&lt;=</code> is often used to compare simulation values to detemine if a threshold has failed to be exceeded.</p>
-<pre><code class="lang-name=&quot;&lt;">if(cost &lt;= 10)
+<pre><code class="lang-TS:&quot;&lt;">if(cost &lt;= 10)
   Console.WriteLine(&quot;That restaurant is within my dinner budget&quot;);
 </code></pre>
 <p><code>&gt;</code> is often used to compare simulation values to detemine if a threshold has been exceeded.</p>
-<pre><code class="lang-name=&quot;&gt;">if(height &gt;= 5)
+<pre><code class="lang-TS:&quot;&gt;">if(height &gt;= 5)
   Console.WriteLine(&quot;You are at least 5ft tall, you may ride this attraction&quot;);
 </code></pre>
 <h1 id="related-materials">Related Materials</h1>

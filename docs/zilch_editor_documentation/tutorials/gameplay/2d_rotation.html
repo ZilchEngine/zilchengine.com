@@ -120,7 +120,7 @@
 <li>In <code>Rotate2D</code></li>
 <li>Replace the script's content with the following code block</li>
 </ul>
-<pre><code class="lang-name=Rotate2D,">class Rotate2D : NadaComponent
+<pre><code class="lang-TS:Rotate2D,">class Rotate2D : NadaComponent
 {
   [Dependency] var Transform : Transform;
   
@@ -144,7 +144,7 @@
 <li>In <code>Rotate2D</code></li>
 <li>Update the <code>OnLogicUpdate</code> function to the following</li>
 </ul>
-<pre><code class="lang-name=Continuous">function OnLogicUpdate(event : UpdateEvent)
+<pre><code class="lang-TS:Continuous">function OnLogicUpdate(event : UpdateEvent)
 {
   //convert rotation speed to radians
   var speedRadians = Math.ToRadians(this.Speed);
@@ -217,7 +217,7 @@
 <li>In <code>Rotate2D</code></li>
 <li>Update the <code>Rotate2D</code> class to look like the following code block</li>
 </ul>
-<pre><code class="lang-name=Rotate">class Rotate2D : NadaComponent
+<pre><code class="lang-TS:Rotate">class Rotate2D : NadaComponent
 {
   [Dependency] var Transform : Transform;
   

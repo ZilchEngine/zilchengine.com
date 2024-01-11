@@ -88,25 +88,25 @@
 <p>(NOTE)<strong>Advanced Users Only</strong>: The use of the <strong>new</strong> and <strong>local</strong> <a href="keywords.html">keywords</a> <strong><strong>is not something most users need to be concerned with</strong></strong>, as it is almost entirely #deprecated. Heap or stack allocation is almost always handled automatically by the engine based off whether the constructed type is a class or struct, however, <strong>new</strong> and <strong>local</strong> still remain in the language for explicit allocation practices. Users attemptting to use <strong>new</strong> or <strong>local</strong> keywords should be aware that they override the standard allocation functionality of Nada, but reference counted garbage collection will still happen for objects explicitly constructed with <strong>new</strong> and <strong>local</strong>.</p>
 <h1 id="local">Local</h1>
 <p>When working with <strong>by-value</strong> types that have constructors, such as structs or more complex stack primitive data types, the keyword <strong>local</strong> may be used:</p>
-<pre><code class="lang-lang=csharp">  var up : Real3 = local Real3(0.0, 1.0, 0.0);
+<pre><code class="lang-TS">  var up : Real3 = local Real3(0.0, 1.0, 0.0);
   var stackStructInstance : CustomStruct = local CustomStruct();
 </code></pre>
 <p>The compiler will infer the use of local for by-value types:</p>
-<pre><code class="lang-lang=csharp">  // This is also valid.
+<pre><code class="lang-TS">  // This is also valid.
   var up : Real3 = Real3(0.0, 1.0, 0.0);
   var stackStructInstance : CustomStruct = CustomStruct();
 </code></pre>
 <h1 id="new">New</h1>
 <p>When working with <a href="classes.html">classes</a>, references, or other or anything located on the heap with a constructor, use the <strong>new</strong> keyword:</p>
-<pre><code class="lang-lang=csharp">  var heapObject : CustomClass = new CustomClass();
+<pre><code class="lang-TS">  var heapObject : CustomClass = new CustomClass();
   var heapStructInstance : CustomStruct = new CustomStruct();
 </code></pre>
 <p>Once again the compiler will infer the use of new for <strong>by-ref</strong> types:</p>
-<pre><code class="lang-lang=csharp">    // This is also valid.
+<pre><code class="lang-TS">    // This is also valid.
     var heapObject : CustomClass = CustomClass();
 </code></pre>
 <p>Since structs are by-value, in order to get a reference you <strong>must</strong> specify new.</p>
-<pre><code class="lang-lang=csharp">    // This does not compile
+<pre><code class="lang-TS">    // This does not compile
     var heapStructInstance : CustomStruct = CustomStruct();
 </code></pre>
 <pre><code class="lang-name=Console">      The value being assigned to 'heapStructInstance' must be of type 'CustomStruct'. Its type is 'CustomStruct'.

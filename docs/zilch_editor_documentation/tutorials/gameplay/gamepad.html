@@ -121,7 +121,7 @@
 <ul>
 <li>Update <code>GamepadHandle</code> to the following:</li>
 </ul>
-<pre><code class="lang-name=GamepadHandle">class GamepadHandle : NadaComponent
+<pre><code class="lang-TS:GamepadHandle">class GamepadHandle : NadaComponent
 {
   [Property]
   var GamepadId : Integer = 0;
@@ -155,7 +155,7 @@ Loaded level 0.00s
 <li>Create a NadaScript resource using the Component template template and name it <code>PauseManager</code></li>
 <li>Update <code>PauseManager</code> to the following:</li>
 </ul>
-<pre><code class="lang-name=PauseManager,">class PauseManager : NadaComponent
+<pre><code class="lang-TS:PauseManager,">class PauseManager : NadaComponent
 {
   [Dependency] var TimeSpace : TimeSpace;
   
@@ -218,7 +218,7 @@ Loaded level 0.00s
 <li><p>Update <code>SweptGamepadInput2D</code> to the following:</p>
 </li>
 </ul>
-<pre><code class="lang-name=SweptGamepadInput2D,">class SweptGamepadInput2D : NadaComponent
+<pre><code class="lang-TS:SweptGamepadInput2D,">class SweptGamepadInput2D : NadaComponent
 {
   [Dependency] var SweptController : SweptController;
   
@@ -281,7 +281,7 @@ Loaded level 0.00s
 <ul>
 <li>Update <code>GamepadHandle</code> to the following:</li>
 </ul>
-<pre><code class="lang-name=GamepadHandle">class GamepadHandle : NadaComponent
+<pre><code class="lang-TS:GamepadHandle">class GamepadHandle : NadaComponent
 {
   [Property]
   var GamepadId : Integer = 0;
@@ -355,7 +355,7 @@ Connected: true, Active: true
 <ul>
 <li>Update <code>GamepadHandle</code> to the following:</li>
 </ul>
-<pre><code class="lang-name=GamepadHandle">class GamepadHandle : NadaComponent
+<pre><code class="lang-TS:GamepadHandle">class GamepadHandle : NadaComponent
 {
   [Property]
   var GamepadId : Integer = 0;
@@ -417,13 +417,13 @@ class GamepadConnectionEvent : NadaEvent
 <ul>
 <li>Add the following to the <code>Initialize</code> function of the <code>PauseManager</code> class:</li>
 </ul>
-<pre><code class="lang-name=PauseManager">Zilch.Connect(this.Space, Events.GamepadConnected, this.OnGamepadConnected);
+<pre><code class="lang-TS:PauseManager">Zilch.Connect(this.Space, Events.GamepadConnected, this.OnGamepadConnected);
 Zilch.Connect(this.Space, Events.GamepadDisconnected, this.OnGamepadDisconnected);
 </code></pre>
 <ul>
 <li>Add the following to the <code>PauseManager</code> class:</li>
 </ul>
-<pre><code class="lang-name=PauseManager">function OnGamepadConnected(event : GamepadConnectionEvent)
+<pre><code class="lang-TS:PauseManager">function OnGamepadConnected(event : GamepadConnectionEvent)
 {
   this.TimeSpace.Paused = false;
 }

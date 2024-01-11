@@ -107,7 +107,7 @@
 <ul>
 <li>Update the <code>CharacterLogic</code> script to the following code block:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class CharacterLogic : NadaComponent
+<pre><code class="lang-TS:Keyboard">class CharacterLogic : NadaComponent
 {
   function Initialize(init : CogInitializer)
   {
@@ -221,7 +221,7 @@ An enumeration (or enum) is a data type that groups items assigning each a uniqu
 <li>In the <code>CharacterLogic</code> script</li>
 <li>Replace the previous <code>LogicUpdate</code> function with the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function OnLogicUpdate(event : UpdateEvent)
+<pre><code class="lang-TS:Movement">function OnLogicUpdate(event : UpdateEvent)
 {
   var speed : Real = 5.0;
   var xDir : Real = 0.0;

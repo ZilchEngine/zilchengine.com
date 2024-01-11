@@ -86,7 +86,7 @@
         <article data-uid="">
 
 <p>Get-Sets are syntactic sugar. They define two functions that look like variable usage.</p>
-<pre><code class="lang-lang=csharp">class Example
+<pre><code class="lang-TS">class Example
 {
   // This is a field.
   var SquareSideLength: Real = 2.0;
@@ -125,7 +125,7 @@ class Driver
 0.25
 </code></pre>
 <p>This get-set could easily be replaced by functions. The following is its equivalent:</p>
-<pre><code class="lang-lang=csharp">class Example
+<pre><code class="lang-TS">class Example
 {
   var SquareSideLength: Real = 2.0;
   
@@ -167,7 +167,7 @@ class Driver
 </code></pre>
 <p>NOTE: Get-sets are not fields, and thus they have no storage of their own. If data state is needed you'll have to make another field on the class to which you may refer.  Although get-sets are not fields, fields can auto-generate the property interface using <a href="property_delegates.html">property_delegates</a>.</p>
 <h1 id="parts-of-a-propertys-definition">Parts of a Property's definition</h1>
-<pre><code class="lang-lang=csharp">// The type specified refers to BOTH the return type of the getter
+<pre><code class="lang-TS">// The type specified refers to BOTH the return type of the getter
 // and the parameter type of the setter.
 var Perimeter : Real // Despite ``var`` keyword, Properties have no storage.
 {

@@ -127,7 +127,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>KeyboardMovement</code></li>
 <li>Update <code>KeyboardMovement</code> to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class KeyboardMovement : NadaComponent
+<pre><code class="lang-TS:&quot;KeyboardMovement&quot;">class KeyboardMovement : NadaComponent
 {
   [Dependency] var Transform : Transform;
   
@@ -173,7 +173,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>SoundController</code></li>
 <li>Update <code>SoundController</code> to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class SoundController : NadaComponent
+<pre><code class="lang-TS:&quot;SoundController&quot;">class SoundController : NadaComponent
 {
   [Dependency]
   var SoundEmitter : SoundEmitter;
@@ -221,7 +221,7 @@
 <ul>
 <li>Add the following to the <code>OnLogicUpdate</code> function of the <code>SoundController</code> class:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">if (Zilch.Keyboard.KeyIsDown(Keys.LeftBracket))
+<pre><code class="lang-TS:&quot;SoundController">if (Zilch.Keyboard.KeyIsDown(Keys.LeftBracket))
 {
   this.SoundEmitter.Volume -= event.Dt;
   Console.WriteLine(&quot;Current Volume: `this.SoundEmitter.Volume`&quot;);
@@ -249,7 +249,7 @@ if (Zilch.Keyboard.KeyIsDown(Keys.RightBracket))
 <ul>
 <li>Replace the <code>OnLogicUpdate</code> function of the <code>SoundController</code> class with the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function OnLogicUpdate(event : UpdateEvent)
+<pre><code class="lang-TS:&quot;SoundController">function OnLogicUpdate(event : UpdateEvent)
 {
   if (Zilch.Keyboard.KeyIsPressed(Keys.Space))
     this.SoundEmitter.PlayCue(this.ExplosionCue);
@@ -278,7 +278,7 @@ if (Zilch.Keyboard.KeyIsDown(Keys.RightBracket))
 <li>Create a NadaScript resource using the Component template template and name it <code>MusicPlayer</code></li>
 <li>Update <code>MusicPlayer</code> to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class MusicPlayer : NadaComponent
+<pre><code class="lang-TS:&quot;MusicPlayer&quot;">class MusicPlayer : NadaComponent
 {
   [Property]
   var MusicCue : SoundCue = SoundCue.BG_Arpeggios;
@@ -302,7 +302,7 @@ if (Zilch.Keyboard.KeyIsDown(Keys.RightBracket))
 <li><p>Update <code>MusicPlayer</code> to the following:</p>
 </li>
 </ul>
-<pre><code class="lang-lang=csharp,">class MusicPlayer : NadaComponent
+<pre><code class="lang-TS:&quot;MusicPlayer">class MusicPlayer : NadaComponent
 {
   [Property]
   var MusicCue : SoundCue = SoundCue.BG_Arpeggios;
@@ -343,7 +343,7 @@ if (Zilch.Keyboard.KeyIsDown(Keys.RightBracket))
 <ul>
 <li>Update <code>MusicPlayer</code> to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class MusicPlayer : NadaComponent
+<pre><code class="lang-TS:&quot;MusicPlayer">class MusicPlayer : NadaComponent
 {
   [Property]
   var MusicCue : SoundCue = SoundCue.BG_Arpeggios;

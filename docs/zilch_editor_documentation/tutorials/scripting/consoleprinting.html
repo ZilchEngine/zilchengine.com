@@ -118,7 +118,7 @@
 <ul>
 <li>Add the following code to the Initialize scope of the MyBehavior resource NadaScript:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">Console.WriteLine(&quot;Hello World!&quot;);
+<pre><code class="lang-TS:Console">Console.WriteLine(&quot;Hello World!&quot;);
 </code></pre>
 <p><code>Console.</code> - Accessing a globally visible <a href="../../../code_reference/nada_base_types/console.html"> Console</a> class.
 <code>WriteLine()</code> - Invoking a function that lets us print to the console on a new line.
@@ -138,9 +138,9 @@
 <ul>
 <li>Add the following lines to the Initialize function in the MyBehavior resource NadaScript.</li>
 </ul>
-<pre><code class="lang-lang=csharp,">Console.WriteLine(&quot;This is a String&quot;);
+<pre><code class="lang-TS:Literal">Console.WriteLine(&quot;This is a String&quot;);
 </code></pre>
-<pre><code class="lang-lang=csharp,">Console.WriteLine(3);
+<pre><code class="lang-TS:Literal">Console.WriteLine(3);
 </code></pre>
 <ul>
 <li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
@@ -153,9 +153,9 @@
 <ul>
 <li>Replace the previous lines of code with the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">Console.WriteLine(this.Owner.Transform.Translation);
+<pre><code class="lang-TS:External">Console.WriteLine(this.Owner.Transform.Translation);
 </code></pre>
-<pre><code class="lang-lang=csharp,">var lives : Integer = 3;
+<pre><code class="lang-TS:">var lives : Integer = 3;
 
 Console.WriteLine(lives);
 </code></pre>
@@ -172,7 +172,7 @@ Console.WriteLine(lives);
 <ul>
 <li>Replace the previous lines of code with the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">var lives : Integer = 3;
+<pre><code class="lang-TS:Compound">var lives : Integer = 3;
 
 Console.Write(&quot;Current value of lives: &quot;);
 Console.WriteLine(lives);
@@ -189,7 +189,7 @@ Console.WriteLine(lives);
 <ul>
 <li>Replace the previous lines of code with the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">var lives : Integer = 3;
+<pre><code class="lang-TS:String">var lives : Integer = 3;
 
 Console.WriteLine(&quot;Current value of lives: `lives`&quot;);
 </code></pre>

@@ -87,7 +87,7 @@
 
 <p><a href="../../../../code_reference/class_reference/objectstore.html">objectstore</a> saves an object to a persistent local store.  All properties that are normally saved on the object are saved with ObjectStore.  The data is stored on the local computer and will be saved between runs of the game.  Can be used for progress, game saving, or preferences.</p>
 <p>When used with Nada, make sure you mark the data to be saved with either <code>[Serialized]</code> or <code>[Property]</code> attributes.</p>
-<pre><code class="lang-lang=csharp">class ObjectStoreTest : NadaComponent
+<pre><code class="lang-TS">class ObjectStoreTest : NadaComponent
 {
     [Property]
     var SomeArchetype : Archetype = null

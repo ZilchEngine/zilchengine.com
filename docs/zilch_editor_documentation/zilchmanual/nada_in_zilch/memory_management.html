@@ -89,7 +89,7 @@
 <h1 id="types-of-memory-storage">Types of Memory Storage</h1>
 <h2 id="by-value">By-Value</h2>
 <p>There are two main types of storage, <code>by-value</code> and <code>by-reference</code> (or <code>by-ref</code> for short). <code>By-value</code> is stored on the local stack and the storage is cleaned up once it goes out of scope. When passed into a function it copies data <code>by-value</code>. <a href="structs.md">Structs</a> and primitives are <code>by-value</code>.</p>
-<pre><code class="lang-lang=csharp,">struct ByValue
+<pre><code class="lang-TS:By-Value">struct ByValue
 {
     var ID: Integer = 0;
     constructor(guid: Integer)
@@ -109,7 +109,7 @@
     }
 }
 </code></pre>
-<pre><code class="lang-name=Usage,">// If we were to test it:
+<pre><code class="lang-TS:Usage,">// If we were to test it:
 var byValA: ByValue = local ByValue(1111111);
       
 Console.Write(&quot;byValA &quot;);
@@ -129,7 +129,7 @@ ID: 1111111
 <h2 id="by-reference">By-Reference</h2>
 <p><code>By-reference</code> is stored on the heap and the storage is cleaned up once there are no longer references to it, or the handle is explicitly deleted in code. When passed into a <a href="functions.html">function</a> it copies it <code>by-reference</code>. <a href="classes.html">Classes</a> and structs promoted with the <code>ref</code> keyword are <code>by-reference</code>.</p>
 <h3 id="by-ref-storage-in-a-struct-and-a-class">By-Ref Storage in a Struct and a Class</h3>
-<pre><code class="lang-lang=csharp,">struct ByValue
+<pre><code class="lang-TS:ByValue">struct ByValue
 {
     var ID: Integer = 0;
     constructor(guid: Integer)
@@ -169,7 +169,7 @@ ID: 1111111
     }
 }
 </code></pre>
-<pre><code class="lang-name=Usage,">// If we were to test ByValue:
+<pre><code class="lang-TS:Usage,">// If we were to test ByValue:
 var byValC: ref ByValue = new ByValue(3333333);
   
 Console.Write(&quot;byValC &quot;);
@@ -206,45 +206,45 @@ ID: 5555556
 <h1 id="allocating-memory">Allocating Memory</h1>
 <h2 id="null">Null</h2>
 <p>Null is a special type of its own:</p>
-<pre><code class="lang-name=null,">Console.Write(typeid(null).Name);  // Null
+<pre><code class="lang-TS">Console.Write(typeid(null).Name);  // Null
 </code></pre>
 <p>NOTE: A <code>by-ref</code> type can be set to null, but a <code>by-value</code> type cannot.</p>
 <h2 id="creating-variables-by-value-and-by-ref">Creating variables <code>by-value</code> and <code>by-ref</code></h2>
 <h3 id="local">Local</h3>
 <p>When working with by-value types that have constructors, such as structs or more complex stack primitive data types, the <a href="keywords.html">keyword</a> <strong>local</strong> may be used:</p>
-<pre><code class="lang-lang=csharp">var up: Real3 = local Real3(0.0, 1.0, 0.0);
+<pre><code class="lang-TS">var up: Real3 = local Real3(0.0, 1.0, 0.0);
 var stackStructInstance: CustomStruct = local CustomStruct();
 </code></pre>
 <p>The compiler will infer the use of local for by-value types:</p>
-<pre><code class="lang-lang=csharp">// This is also valid.
+<pre><code class="lang-TS">// This is also valid.
 var up: Real3 = Real3(0.0, 1.0, 0.0);
 var stackStructInstance: CustomStruct = CustomStruct();
 </code></pre>
 <h3 id="new">New</h3>
 <p>When working with classes, references, or other or anything located on the heap with a constructor, use the <strong>new</strong> keyword:</p>
-<pre><code class="lang-lang=csharp">var heapObject: CustomClass = new CustomClass();
+<pre><code class="lang-TS">var heapObject: CustomClass = new CustomClass();
 var heapStructInstance: ref CustomStruct = new CustomStruct();
 </code></pre>
 <p>Once again the compiler will infer the use of new for by-ref types:</p>
-<pre><code class="lang-lang=csharp">// This is also valid.
+<pre><code class="lang-TS">// This is also valid.
 var heapObject: CustomClass = CustomClass();
 </code></pre>
 <p>Since structs are by-value, in order to get a ref you <strong>must</strong> specify new.</p>
-<pre><code class="lang-lang=csharp">// This does not compile
+<pre><code class="lang-TS">// This does not compile
 var heapStructInstance: ref CustomStruct = CustomStruct();
 </code></pre>
 <pre><code class="lang-name=Console">The value being assigned to 'heapStructInstance' must be of type 'ref CustomStruct'. Its type is 'CustomStruct'.
 </code></pre>
 <hr>
 <p>IMPORTANT: Nada does not currently have a dereferencing operator. Although you can still use the <code>ref</code> type with the <strong>dot operator</strong> to access functionality, those typed with <code>ref</code> will not be equivalent to the <code>non-ref</code> type. <em>Anything expecting a// <code>non-ref</code> //type will not accept a// <code>ref</code> //type without dereferencing.</em> Consider the following:</p>
-<pre><code class="lang-lang=csharp,">var heapObject: ref CustomStruct = new CustomStruct();
+<pre><code class="lang-TS:Incorrect">var heapObject: ref CustomStruct = new CustomStruct();
 // The following will not compile because they are different types:
 //              CustomStruct != ref CustomStruct
 var stackObject: CustomStruct = heapObject;
 </code></pre>
 <h2 id="constructors">constructors</h2>
 <p>Constructors are required when calling local or new. The only times you wouldn't have a constructor is when your class or struct lacks instanced data, or you are using a primitive data type that can be created from a literal.</p>
-<pre><code class="lang-lang=csharp">class MyClass
+<pre><code class="lang-TS">class MyClass
 {
   constructor()
   {
@@ -265,7 +265,7 @@ var stackObject: CustomStruct = heapObject;
 <ol>
 <li>Nada <strong>cannot</strong> detect cycles. These must be deleted explicitly.</li>
 </ol>
-<pre><code class="lang-lang=csharp,">  // Cycles will not get cleaned up without explicitly deleting.
+<pre><code class="lang-TS:Deleting">  // Cycles will not get cleaned up without explicitly deleting.
   var gh: ARefHolder = new ARefHolder(&quot;gh&quot;);
   var ef: ARefHolder = new ARefHolder(&quot;ef&quot;);
   // Simply having one point at another is not
@@ -324,7 +324,7 @@ var stackObject: CustomStruct = heapObject;
 <ol start="2">
 <li><a href="delegates.html">delegates</a> containing an instance member function hold the <code>this</code> handle to the object, and thus will keep ref-counted objects alive.</li>
 </ol>
-<pre><code class="lang-lang=csharp,">class Utility
+<pre><code class="lang-TS:Examples">class Utility
 {
   [Static]
   function NullDelegate()
@@ -396,7 +396,7 @@ class Driver
 }
 </code></pre>
 <h2 id="deleting-variables">Deleting variables</h2>
-<pre><code class="lang-lang=csharp,">// Using ByValue and ByRef as defined above &amp; the Utility class:
+<pre><code class="lang-TS:Utility">// Using ByValue and ByRef as defined above &amp; the Utility class:
 class Utility
 {
   [Static]
@@ -428,7 +428,7 @@ class Utility
   }
 }
 </code></pre>
-<pre><code class="lang-name=Examples">// Examples of deleting:
+<pre><code class="lang-TS:Examples">// Examples of deleting:
 
 // 1. Delete a by-value struct instance:
 var byValA: ByValue = local ByValue(1111111);
@@ -485,7 +485,7 @@ Utility.SafeToString(byRefK, &quot;byRefK&quot;);  // byRefK is null
 </li>
 </ol>
 <h2 id="destructors">Destructors</h2>
-<pre><code class="lang-lang=csharp">class MyClass
+<pre><code class="lang-TS">class MyClass
 {
   constructor()
   {

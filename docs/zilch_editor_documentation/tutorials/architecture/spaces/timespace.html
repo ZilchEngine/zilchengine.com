@@ -150,7 +150,7 @@ The <a href="../../../../code_reference/class_reference/space.html">Space</a> ca
 <li>Create a NadaScript resource using the Component template template and name it <code>TimeControl</code></li>
 <li>Update the <code>TimeControl</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class TimeControl : NadaComponent
+<pre><code class="lang-TS:&quot;TimeControl&quot;">class TimeControl : NadaComponent
 {
   [Property]
   var IncreaseRateKey : Keys = Keys.Up;
@@ -201,13 +201,13 @@ The <a href="../../../../code_reference/class_reference/space.html">Space</a> ca
 <ul>
 <li>Add the following property to the <code>TimeControl</code> script:</li>
 </ul>
-<pre><code class="lang-name=PauseKey">  [Property]
+<pre><code class="lang-TS:PauseKey">  [Property]
   var PauseKey : Keys = Keys.Space;
 </code></pre>
 <ul>
 <li>Add the following function to the <code>TimeControl</code> script:</li>
 </ul>
-<pre><code class="lang-name=TogglePause,">  function TogglePause()
+<pre><code class="lang-TS:TogglePause">  function TogglePause()
   {
     if(this.Space.TimeSpace.Paused)
     {
@@ -224,7 +224,7 @@ The <a href="../../../../code_reference/class_reference/space.html">Space</a> ca
 <ul>
 <li>Add the following block to the end of the <code>OnLogicUpdate</code> function in the <code>TimeControl</code> script:</li>
 </ul>
-<pre><code class="lang-name=OnLogicUpdate">    if(Zilch.Keyboard.KeyIsPressed(this.PauseKey))
+<pre><code class="lang-TS:OnLogicUpdate">    if(Zilch.Keyboard.KeyIsPressed(this.PauseKey))
       this.TogglePause();
 </code></pre>
 <ul>
@@ -239,7 +239,7 @@ The <a href="../../../../code_reference/class_reference/space.html">Space</a> ca
 <ul>
 <li>Update the <code>Initialize</code> function in <code>TimeControl</code> to the following:</li>
 </ul>
-<pre><code class="lang-name=Initialize,">  function Initialize(init : CogInitializer)
+<pre><code class="lang-TS:Initialize">  function Initialize(init : CogInitializer)
   {
     Zilch.Connect(Zilch.Keyboard, Events.KeyDown, this.OnKeyDown);
   }
@@ -247,7 +247,7 @@ The <a href="../../../../code_reference/class_reference/space.html">Space</a> ca
 <ul>
 <li>Replace the <code>OnLogicUpdate</code> function in <code>TimeControl</code> with the following:</li>
 </ul>
-<pre><code class="lang-name=Initialize,">  function OnKeyDown(event : KeyboardEvent)
+<pre><code class="lang-TS:Initialize">  function OnKeyDown(event : KeyboardEvent)
   {
     if(event.Key == this.IncreaseRateKey)
       this.ScaleTime(this.TimeScaleRateOfChange);

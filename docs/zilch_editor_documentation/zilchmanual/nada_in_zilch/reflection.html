@@ -87,7 +87,7 @@
 
 <p>Reflection describes an objects ability to &quot;reflect&quot; on itself, generally this means to understand it's type and relationships to other types. Although Nada does not boast a robust reflection library it does have a basic typeid for by-value types and <a href="property_delegates.html">property_delegates</a>:</p>
 <h1 id="typeid">typeid</h1>
-<pre><code class="lang-lang=csharp">  var i = 0;
+<pre><code class="lang-TS">  var i = 0;
   var di = 0d;
   var real = 0.0;
   var double = 0.0d;
@@ -130,7 +130,7 @@
 <hr>
 <h1 id="string-interpolation">String Interpolation</h1>
 <p>Those types that are <a href="memory_management.html">memory_management</a> or <a href="delegates.html">delegates</a> types can be inspected with <a href="nada_base_types/string.md">string</a> Interpolation:</p>
-<pre><code class="lang-lang=csharp">class Utility
+<pre><code class="lang-TS">class Utility
 {
   constructor()
   {
@@ -178,7 +178,7 @@ ref Real3, (0.0, 1.0, 2.0) is of type: ref Real3
 <hr>
 <h1 id="consoledumpvalue">Console.DumpValue</h1>
 <p>Useful in understanding the current state of a Nada object, Console.DumpValue prints out the names of the variables and their type, if a <a href="classes.html">class</a>, or their value if a basic, built-in data type.</p>
-<pre><code class="lang-lang=csharp">class TopLevel
+<pre><code class="lang-TS">class TopLevel
 {
   var MyVariable: MidLevel = null;
   constructor()

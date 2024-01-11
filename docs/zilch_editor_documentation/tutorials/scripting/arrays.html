@@ -104,7 +104,7 @@
 <ul>
 <li>Update the <code>ArrayExample</code> class to the following:</li>
 </ul>
-<pre><code class="lang-name=Array">class ArrayExample : NadaComponent
+<pre><code class="lang-TS:Array">class ArrayExample : NadaComponent
 {
   var DefaultConstructorExample : Array[Integer] = Array[Integer]();
   
@@ -141,12 +141,12 @@ Loaded level 0.00s
 <ul>
 <li>Add the following to the <code>ArrayExample</code> class:</li>
 </ul>
-<pre><code class="lang-name=Array">var InitializarListExample : Array[Integer] = Array[Integer]() {6, 7, 8, 9};
+<pre><code class="lang-TS:Array">var InitializarListExample : Array[Integer] = Array[Integer]() {6, 7, 8, 9};
 </code></pre>
 <ul>
 <li>Add the following to the <code>Initialize</code> function in the <code>ArrayExample</code> class:</li>
 </ul>
-<pre><code class="lang-name=Printing">Console.WriteLine(this.InitializarListExample);
+<pre><code class="lang-TS:Printing">Console.WriteLine(this.InitializarListExample);
 </code></pre>
 <ul>
 <li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
@@ -167,7 +167,7 @@ Loaded level 0.00s
 <ul>
 <li>Add the following to the <code>Initialize</code> function in the <code>ArrayExample</code> class:</li>
 </ul>
-<pre><code class="lang-name=Printing">Console.WriteLine(this.InitializarListExample[2]);
+<pre><code class="lang-TS:Printing">Console.WriteLine(this.InitializarListExample[2]);
 </code></pre>
 <ul>
 <li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
@@ -189,7 +189,7 @@ Loaded level 0.00s
 <ul>
 <li>Add the following to the <code>Initialize</code> function in the <code>ArrayExample</code> class:</li>
 </ul>
-<pre><code class="lang-name=Printing">this.InitializarListExample[2] = 0;
+<pre><code class="lang-TS:Printing">this.InitializarListExample[2] = 0;
 Console.WriteLine(this.InitializarListExample);
 </code></pre>
 <ul>
@@ -215,7 +215,7 @@ Loaded level 0.00s
 <li>In the <code>SpawnOnInput</code> script</li>
 <li>Update the <code>SpawnOnInput</code> script to the following:</li>
 </ul>
-<pre><code class="lang-name=SpawnOnInput">class SpawnOnInput : NadaComponent
+<pre><code class="lang-TS:SpawnOnInput">class SpawnOnInput : NadaComponent
 {
   [Property]
   var SpawnLocation : Real3;
@@ -273,7 +273,7 @@ class ObjectSpawnedEvent : NadaEvent
 <li>In the <code>EnemyManager</code> script</li>
 <li>Update the <code>EnemyManager</code> class to the following:</li>
 </ul>
-<pre><code class="lang-name=EnemyManager,">class EnemyManager : NadaComponent
+<pre><code class="lang-TS:EnemyManager,">class EnemyManager : NadaComponent
 {
   var Enemies : Array[Cog] = Array[Cog]();
   
@@ -324,12 +324,12 @@ class ObjectSpawnedEvent : NadaEvent
 <li>In the <code>EnemyManager</code> script</li>
 <li>Add the following to the <code>Initialize</code> function in the <code>EnemyManager</code> class:</li>
 </ul>
-<pre><code class="lang-name=KeyDown">Zilch.Connect(Zilch.Keyboard, Events.KeyDown, this.OnKeyDown);
+<pre><code class="lang-TS:KeyDown">Zilch.Connect(Zilch.Keyboard, Events.KeyDown, this.OnKeyDown);
 </code></pre>
 <ul>
 <li>Add the following to the <code>EnemyManager</code> class:</li>
 </ul>
-<pre><code class="lang-name=OnKeyDown,">function OnKeyDown(event : KeyboardEvent)
+<pre><code class="lang-TS:OnKeyDown,">function OnKeyDown(event : KeyboardEvent)
 {
   if(event.Key == Keys.D)
   {
@@ -359,12 +359,12 @@ class ObjectSpawnedEvent : NadaEvent
 <li>In the <code>EnemyManager</code> script</li>
 <li>Add the following to the <code>EnemyManager</code> class:</li>
 </ul>
-<pre><code class="lang-name=KeyDown">[Dependency] var RandomContext : RandomContext;
+<pre><code class="lang-TS:KeyDown">[Dependency] var RandomContext : RandomContext;
 </code></pre>
 <ul>
 <li>Replace the <code>OnKeyDown</code> function in the <code>EnemyManager</code> class with the following:</li>
 </ul>
-<pre><code class="lang-name=OnKeyDown,">function OnKeyDown(event : KeyboardEvent)
+<pre><code class="lang-TS:OnKeyDown,">function OnKeyDown(event : KeyboardEvent)
 {
   //check the array is not empty before trying to access
   if(event.Key == Keys.D &amp;&amp; this.Enemies.Count &gt; 0)
@@ -399,7 +399,7 @@ class ObjectSpawnedEvent : NadaEvent
 <ul>
 <li>Replace the <code>OnKeyDown</code> function in the <code>EnemyManager</code> class with the following:</li>
 </ul>
-<pre><code class="lang-name=OnKeyDown,">function OnKeyDown(event : KeyboardEvent)
+<pre><code class="lang-TS:OnKeyDown,">function OnKeyDown(event : KeyboardEvent)
 {
   if(event.Key == Keys.D &amp;&amp; this.Enemies.Count &gt; 0)
   {
@@ -433,7 +433,7 @@ class ObjectSpawnedEvent : NadaEvent
 <ul>
 <li>Replace the <code>OnKeyDown</code> function in the <code>EnemyManager</code> class with the following:</li>
 </ul>
-<pre><code class="lang-name=OnKeyDown,">function OnKeyDown(event : KeyboardEvent)
+<pre><code class="lang-TS:OnKeyDown,">function OnKeyDown(event : KeyboardEvent)
 {
   if(event.Key == Keys.D)
   {
@@ -476,7 +476,7 @@ Current Enemy Objects:
 <ul>
 <li>Replace the <code>OnKeyDown</code> function in the <code>EnemyManager</code> class with the following:</li>
 </ul>
-<pre><code class="lang-name=OnKeyDown,">function OnKeyDown(event : KeyboardEvent)
+<pre><code class="lang-TS:OnKeyDown,">function OnKeyDown(event : KeyboardEvent)
 {
   if(event.Key == Keys.D)
   {

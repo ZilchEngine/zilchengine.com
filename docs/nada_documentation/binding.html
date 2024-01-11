@@ -89,7 +89,7 @@
 <p>WARNING: Nada uses its own containers, including Array, HashMap, String, etc. For compatibility with STL, the containers support <code>.begin()</code> and <code>.end()</code> iterators, as well as <code>.size()</code>. The String class supports <code>.c_str()</code>.</p>
 <h1 id="compiling-c">Compiling C++</h1>
 <p>Include the Nada.cpp into your compilation process, and start by having your main include the Nada.hpp</p>
-<pre><code class="lang-lang=csharp">
+<pre><code class="lang-C++">
 # include &quot;Nada.hpp&quot;
 
 
@@ -102,7 +102,7 @@ int main()
 </code></pre>
 <p>So long as Nada.cpp is built and linked in, this program should fully compile.</p>
 <h1 id="compiling-a-nada-script">Compiling a Nada script</h1>
-<pre><code class="lang-lang=csharp">
+<pre><code class="lang-C++">
 # include &quot;Nada.hpp&quot;
 
 
@@ -143,7 +143,7 @@ int main()
 <p>As a language meant to be called and run from C++, Nada has no 'main entrypoint' of its own. Instead it is up to the user to instantiate types defined witNadailch scripts and call functions on them (or invoke static methods).</p>
 <p>Create a Nada script with code that we want to test out.</p>
 <h2 id="playernada">Player.Nada</h2>
-<pre><code class="lang-lang=csharp">class Player
+<pre><code class="lang-TS">class Player
 {
   var Health : Real = 100;
 
@@ -164,7 +164,7 @@ int main()
 <p><code>project.AddCodeFromFile(&quot;Player.nada&quot;);</code></p>
 <p>WARNING: Make sure to put the <code>Player.nada</code> file side by side with the executable, or make sure that the working directory is setup correctly so that the executable can find the script file.</p>
 <p>We now need to compile the code into a Library, and finally link that library into an ExecutableState. A Library stores all the compiled types and functions. The ExecutableState has its own stack and virtual machine, and is responsible for executing Nada code.</p>
-<pre><code class="lang-lang=csharp">
+<pre><code class="lang-C++">
 # include &quot;Nada.hpp&quot;
 
 

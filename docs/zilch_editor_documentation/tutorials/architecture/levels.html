@@ -135,7 +135,7 @@ This is the list of objects in this level. In a sense, this list <em>is</em> thi
 <li>Create a NadaScript resource using the Component template template and name it <code>KeyboardMovement</code></li>
 <li>Update the <code>KeyboardMovement</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class KeyboardMovement : NadaComponent
+<pre><code class="lang-TS:&quot;KeyboardMovement&quot;">class KeyboardMovement : NadaComponent
 {
   [Dependency] var Transform : Transform;
   
@@ -248,7 +248,7 @@ This is the list of objects in this level. In a sense, this list <em>is</em> thi
 <li>Create a NadaScript resource using the Component template template and name it <code>LoadLevelOnCollisionStarted</code></li>
 <li>Update the <code>LoadLevelOnCollisionStarted</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class LoadLevelOnCollisionStarted : NadaComponent
+<pre><code class="lang-TS:&quot;LoadLevelOnCollisionStarted&quot;">class LoadLevelOnCollisionStarted : NadaComponent
 {
   [Property]
   var LevelToLoad : Level;
@@ -314,7 +314,7 @@ When the player touches the door in Level 1, Level 2 is loaded. So what happens 
 <li>Create a NadaScript resource using the Component template template and name it <code>ReloadLevelOnKeyDown</code></li>
 <li>Update the <code>ReloadLevelOnKeyDown</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class ReloadLevelOnKeyDown : NadaComponent
+<pre><code class="lang-TS:&quot;ReloadLevelOnKeyDown&quot;">class ReloadLevelOnKeyDown : NadaComponent
 {
   function Initialize(init : CogInitializer)
   {
@@ -401,7 +401,7 @@ Reloading a level is just the same as loading it again, so it goes through the s
 <li>Create a NadaScript resource using the Component template template and name it <code>LoadLevelOnKeyDown</code></li>
 <li>Update the <code>LoadLevelOnKeyDown</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class LoadLevelOnKeyDown : NadaComponent
+<pre><code class="lang-TS:&quot;LoadLevelOnKeyDown&quot;">class LoadLevelOnKeyDown : NadaComponent
 {
   [Property]
   var LevelToLoad : Level = Level.Level1;

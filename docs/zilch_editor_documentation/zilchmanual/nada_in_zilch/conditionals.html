@@ -88,7 +88,7 @@
 <p>Conditionals allow programs to ask questions and act or not act based of the results.</p>
 <h1 id="if">if</h1>
 <p>An <code>if</code> conditional evaluates a given statement that evaluates to a <a href="../../../code_reference/nada_base_types/boolean.html">boolean</a> value and executes code in a block scope defined underneath if it evaluates to <code>true</code>.</p>
-<pre><code class="lang-lang=csharp,">var boolValue = true;
+<pre><code class="lang-TS:if">var boolValue = true;
 if(boolValue)
 {
   Console.WriteLine(&quot;boolValue is true&quot;);
@@ -108,7 +108,7 @@ End of the example
 <p><code>boolValue</code>, which initially stores <code>true</code>, is checked in the first <code>if</code> block.  Since <code>if</code> is given the value <code>true</code>, the following block scope is executed and the <code>Console.WriteLine</code> function is called.  It is good practice to have a program log it's activity for debugging certain values. The 'Console window' snippet above shows that <code>&quot;boolValue is true&quot;</code> and <code>&quot;End of the example&quot;</code> are printed.  Notice that the line <code>Console.WriteLine(&quot;boolValue is still true&quot;)</code> exists as well, but <code>&quot;boolValue is still true&quot;</code> is not printed.  This is because the second <code>if</code> is given the value <code>false</code>, instructing the program to not execute any code inside that conditional's block scope.</p>
 <h2 id="unnecessary-conditionals">Unnecessary Conditionals</h2>
 <p>Because <code>if</code> conditionals take boolean values, a literal value can also be used:</p>
-<pre><code class="lang-lang=csharp,">if(true)
+<pre><code class="lang-TS:Tautology">if(true)
 {
   Console.WriteLine(&quot;This is a tautology&quot;);
 }
@@ -121,7 +121,7 @@ if(false)
 <pre><code class="lang-name=Console">This is a tautology
 </code></pre>
 <p>The first <code>if</code> conditional is known as a tautology, while the second is a contradiction.  A tautology is always true, and the code block will always execute.  A condtradiction is always false, and its code block will never be executed.  While these patterns have no practical purpose in a program, the ability to 'disable' a conditional can be a useful debugging tool, making minimal changes to the code:</p>
-<pre><code class="lang-lang=csharp,">if(true /*myVar*/)
+<pre><code class="lang-TS:Disabling">if(true /*myVar*/)
 {
   Console.WriteLine(&quot;Is this line run?&quot;);
 }
@@ -129,7 +129,7 @@ if(false)
 <p><code>myVar</code> is a variable defined somewhere, but the check to see if it has the value <code>true</code> has been commented out and replaced with the literal <code>true</code> in order to explicitlly test the code within the scope of the <code>if</code> block.</p>
 <h1 id="else">Else</h1>
 <p>An <code>if</code> conditional on its own has the power to decide between action and inaction, but often a decision is made between two different actions. The <code>else</code> conditional is used to execute code when the <code>if</code> condition fails.</p>
-<pre><code class="lang-lang=csharp,">if(false)
+<pre><code class="lang-TS:else">if(false)
 {
   Console.WriteLine(&quot;The if ran&quot;);
 }
@@ -143,7 +143,7 @@ else
 <p>Under the code block of the first <code>if</code>, there is a code block paired with the <a href="keywords.html">Keyword</a> <code>else</code>.  The value <code>false</code> if given to the <code>if</code> conditional, and so the <code>else</code> block is executed. In any <code>if</code>-<code>else</code> pair, exactly one of the two code blocks will run.</p>
 <h2 id="else-if">Else If</h2>
 <p>While often for any given conditional there are only two outcomes, sometimes there are more. The <code>else if</code> keyword combinations allows the chaining of conditional statements.</p>
-<pre><code class="lang-lang=csharp,">var valone = false;
+<pre><code class="lang-TS:else">var valone = false;
 var valtwo = false;
 
 if(valone)
@@ -164,7 +164,7 @@ else
 <p>In the example above <code>valone</code> is evaluated as <code>false</code> in the first <code>if</code> conditional. Since the first if fails the script continues to the <code>else if</code> and evaluates <code>valtwo</code> as <code>false</code> causing the script to continue to the <code>else</code> condition.</p>
 <h1 id="condensed-conditionals">Condensed Conditionals</h1>
 <p>Conditionals don't always require the use of scope operators. If the code block underneath is only one line long, the <code>{</code> and <code>}</code> become unnecessary.</p>
-<pre><code class="lang-lang=csharp,">var valone = false;
+<pre><code class="lang-TS:else">var valone = false;
 var valtwo = false;
 
 if(valone)
@@ -180,7 +180,7 @@ else
 <p>WARNING: Removing scope operators isn't always good practice, because they need to be added when a code block is more than one statement. Omitting scope operators can unintentionally change the scope of some code, and yet the script can still sucessfully compile.</p>
 <h2 id="uncondensing-else-if">Uncondensing else if</h2>
 <p>The <code>else if</code> conditional is actually an <code>else</code> conditional with an <code>if</code>-<code>else</code> pair afterwards. The fact that scope operators can be removed is the reason that <code>else if</code> is valid. Using this logic we can rewrite the last example with explcit scopes to make this clearer.</p>
-<pre><code class="lang-lang=csharp,">var valone = false;
+<pre><code class="lang-TS:else">var valone = false;
 var valtwo = false;
 
 if(valone)

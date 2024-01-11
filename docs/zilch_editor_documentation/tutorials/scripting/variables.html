@@ -103,7 +103,7 @@
 <li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Sprite object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>Square</code></li>
-<li><a href="https://github.com/ZilchEngine/ZilchDocs/blob/master/zilch_editor_documentation/zilchmanual/editor/addremovecomponent/">Add Component</a> : <code>MyBehavior</code></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>MyBehavior</code></li>
 </ul>
 <h1 id="class-variables">Class Variables</h1>
 <p>A variable is a stored value of a given type. In order to manipulate a variable you must know its type and what values it can hold. Below is a table of the most common variable types in <a href="../../zilchmanual/nada_in_zilch.html">Nada</a>.</p>
@@ -155,7 +155,7 @@
 </table>
 <p>Variables are used to represent values your game needs to perform its logic such as, Lives, Ammo, Run Speed and more. Let's create a new variable for our <code>MyBehavior</code> component class.</p>
 <p>We can declare (create) a variable by typing the following code within the class scope:</p>
-<pre><code class="lang-lang=csharp,">var Speed : Real = 0.1;
+<pre><code class="lang-TS:Class">var Speed : Real = 0.1;
 </code></pre>
 <p><code>var</code> - Indicates that we want to create a new variable
 <code>Speed</code> - The name of our variable. A class variable's name must be capitalized.
@@ -169,13 +169,13 @@
 <h2 id="assignment-">Assignment <code>=</code></h2>
 <p>The assignment operator sets the value of the variable on its left (known as the left-hand operand) to the value on its right (the right-hand operand). The left-hand operand must be a variable, while the right-hand operand may be a literal value, another variable of the same type, or an expression that combines both.</p>
 <p>Examples:</p>
-<pre><code class="lang-lang=csharp,">this.Speed = 5.0;
+<pre><code class="lang-TS:Literal">this.Speed = 5.0;
 </code></pre>
-<pre><code class="lang-lang=csharp,">var Pi : Real = 3.1415926;
+<pre><code class="lang-TS:Variable">var Pi : Real = 3.1415926;
 
 this.Speed = this.Pi;
 </code></pre>
-<pre><code class="lang-lang=csharp,">var Pi : Real = 3.1415926;
+<pre><code class="lang-TS:Expression">var Pi : Real = 3.1415926;
 
 this.Speed = this.Pi + 5.0;
 </code></pre>
@@ -188,15 +188,15 @@ this.Speed = this.Pi + 5.0;
 <li><code>*</code> - Multiply</li>
 <li><code>/</code> - Divide</li>
 </ul>
-<pre><code class="lang-lang=csharp,">this.Speed = this.Speed + 1.0;
+<pre><code class="lang-TS:Addition">this.Speed = this.Speed + 1.0;
 </code></pre>
-<pre><code class="lang-lang=csharp,">this.Speed = this.Speed * 2.0;
+<pre><code class="lang-TS:Multiplication">this.Speed = this.Speed * 2.0;
 </code></pre>
 <p>NOTE: If the value of the arithmetic operation isn't stored in a variable, then the operation has no repercussion and will be ignored.</p>
 <h2 id="arithmetic-assignment-operators-----">Arithmetic Assignment Operators <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code></h2>
 <p>These operators let you add, subtract, multiply and subtract the values on the right of the operator to the current value of the variable on the left of it. They are only available for arithmetic types.</p>
 <p>Example:</p>
-<pre><code class="lang-lang=csharp,">var Speed : Real = 1.0;
+<pre><code class="lang-TS:Arithmetic">var Speed : Real = 1.0;
 
 this.Speed += 2.3;
 
@@ -206,7 +206,7 @@ this.Speed += 2.3;
 <h2 id="increment-and-decrement-operators----">Increment and Decrement Operators <code>++</code> <code>--</code></h2>
 <p>These are used in combination with Integer and Real types to either add or subtract <code>1</code> to the current value of the variable. In <a href="../../zilchmanual/nada_in_zilch.html">Nada</a>, these are always used before the variable you want to increment.</p>
 <p>Example:</p>
-<pre><code class="lang-lang=csharp,">++this.Speed;
+<pre><code class="lang-TS:Increment">++this.Speed;
 </code></pre>
 <p>NOTE: Using <code>++this.Speed;</code> is logically equivalent to <code>this.Speed += 1.0;</code> and only exists for convenience.</p>
 <h1 id="accessing-properties">Accessing Properties</h1>
@@ -215,7 +215,7 @@ this.Speed += 2.3;
 <ul>
 <li>Add the following line of code inside LogicUpdate:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">this.Owner.Transform.Translation += Real3(this.Speed, 0, 0);
+<pre><code class="lang-TS:Accessing">this.Owner.Transform.Translation += Real3(this.Speed, 0, 0);
 </code></pre>
 <p>|<code>this.</code> | Refers to the class we're currently in (In this case the MyBehavior component) |
 |<code>Owner.</code> | The object that owns this component. |
@@ -242,7 +242,7 @@ this.Speed += 2.3;
 <ul>
 <li>Add the following line at the beginning of the class scope:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">[Dependency]  
+<pre><code class="lang-TS:Dependencies">[Dependency]  
 var Transform : Transform;
 </code></pre>
 <p>By adding this we prevent the addition of the <code>MyBehavior</code> component to objects without a <a href="../../../code_reference/class_reference/transform.html">Transform</a> component. The <code>[Dependency]</code> part is an <strong>attribute</strong> that modifies the following variable; you can find more information about them in the <a href="../../zilchmanual/nada_in_zilch/attributes.html">Attribute Manual Page</a>.</p>
@@ -276,7 +276,7 @@ var Transform : Transform;
 <h1 id="local-variables">Local Variables</h1>
 <p>Local Variables are defined within the scope of a function or nested scope are called local variables; they must begin with lower case letter and will cease to exist at the end of the scope in which they were created in. Local variables are useful when calculating value that do not need to persist outside a scope.</p>
 <p>Example:</p>
-<pre><code class="lang-lang=csharp,">var lives : Integer = 3;
+<pre><code class="lang-TS:Local">var lives : Integer = 3;
 </code></pre>
 <h1 id="putting-it-all-together">Putting it all Together</h1>
 <p>Now that we've seen the basics of using variables, let's move create a variable to determine the direction the Square object object should move.</p>
@@ -284,14 +284,14 @@ var Transform : Transform;
 <li>In the <code>MyBehavior</code> script</li>
 <li>Add the following  property:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">[Property]
+<pre><code class="lang-TS:Direction">[Property]
 var Direction : Real2 = Real2(1.0, 1.0);
 </code></pre>
 <ul>
 <li>In the <code>MyBehavior</code> script</li>
 <li>Replace the previous content of the LogicUpdate function with the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function OnLogicUpdate(event : UpdateEvent)
+<pre><code class="lang-TS:New">function OnLogicUpdate(event : UpdateEvent)
 {
   var normalized_direction : Real2 = Math.Normalize(this.Direction);
   this.Owner.Transform.Translation += Real3(normalized_direction * this.Speed, 0.0);

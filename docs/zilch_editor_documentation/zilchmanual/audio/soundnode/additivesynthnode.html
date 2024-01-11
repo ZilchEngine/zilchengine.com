@@ -98,7 +98,7 @@
 <h2 id="adding-harmonics">Adding Harmonics</h2>
 <p>The <code>AddHarmonic</code> method adds a new harmonic which will be used for all notes played. The first parameter is the base frequency multiplier to use for this sine wave's frequency (i.e. if you play a note at <code>200</code> Hz and the multiplier is <code>2</code> this sine wave will be at <code>400</code> Hz); the second is the volume adjustment applied to this harmonic (<code>1.0</code> is full volume); the third is an AdsrEnvelope object containing the envelope-related values (see the AdsrEnvelope section below); and the fourth is the type of sound wave to use. The valid <code>SynthWaveTypes</code> to use are <code>SineWave</code>, <code>SquareWave</code>, <code>SawWave</code>, and <code>TriangleWave</code>. If you do not fill out the AdsrEnvelope parameters before calling <code>AddHarmonic</code> default values will be used.</p>
 <p>The following code block shows you how to create a simple instrument with two harmonics.</p>
-<pre><code class="lang-lang=csharp">var Synth : AdditiveSynthNode = Audio.AdditiveSynthNode();
+<pre><code class="lang-TS">var Synth : AdditiveSynthNode = Audio.AdditiveSynthNode();
 
 function Initialize(init : CogInitializer)
 {

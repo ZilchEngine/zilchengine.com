@@ -89,7 +89,7 @@
 <h1 id="declaration">Declaration</h1>
 <p>NOTE: The types <code>HashMap</code> and <code>KeyValue</code> not currently appear in the <a href="../../../code_reference/nada_base_types.html">nada_base_types</a> list and does not currently show up in code completion suggestions (T552) during initial declaration.</p>
 <p>HashMap declaration is similiar to the declaration of any templated type in Nada. When a HashMap is created, by default, it has no elements.</p>
-<pre><code class="lang-name=HashMap">var namesToObjects = HashMap[String, Cog]();
+<pre><code class="lang-TS:HashMap">var namesToObjects = HashMap[String, Cog]();
 var idToCost = HashMap[Integer, Real]();
 var spawnerToEnemyType = HashMap[Cog, Archetype]();
 var enemyType = HashMap[Archetype, Integer]();
@@ -97,7 +97,7 @@ var enemyType = HashMap[Archetype, Integer]();
 <p>HashMaps have a variety of uses. One may use them to keep track of objects at runtime by an alternate name, or to keep count of how many of each enemy archetype a spawner has created at runtime. Below are some simple example of HashMap functionality which map unique <a href="../../../code_reference/nada_base_types/integer.html">integer</a> keys to non-unique <a href="../../../code_reference/nada_base_types/string.html">string</a> values.</p>
 <h2 id="initialization">Initialization</h2>
 <p>It is common for a HashMap to be populated at runtime, but it is also possible to define elements within an initializer list.</p>
-<pre><code class="lang-name=Initializer">var hash = HashMap[Integer, String]()
+<pre><code class="lang-TS:Initializer">var hash = HashMap[Integer, String]()
 {
   {1, &quot;one&quot;},
   {2, &quot;two&quot;},
@@ -114,7 +114,7 @@ this.PrintHashMap(hash);
 </code></pre>
 <p>Notice that the order in which the elements are printed is not the order in which they were added to the HashMap. This is due to HashMaps having no inherent order, unlike <a href="../../../code_reference/nada_base_types/array_t.html">Arrays</a>. Instead of the pairs being printed in an indexed order they are printed in an arbitrary order based on the hash of the pair.</p>
 <p>NOTE: The HashMap templated type is currently lacking templated print functionality similiar to <a href="arrays.html">Arrays</a>. The <code>PrintHashMap</code> function used in this page is implemented below:</p>
-<pre><code class="lang-name=PrintHashMap,">function PrintHashMap(hash : HashMap[Integer, String])
+<pre><code class="lang-TS:PrintHashMap,">function PrintHashMap(hash : HashMap[Integer, String])
 {
   Console.WriteLine(&quot;`hash` \n{&quot;);
   foreach(var pair in hash.All)
@@ -128,7 +128,7 @@ this.PrintHashMap(hash);
 <p>HashMap elements can be accessed for reading or writing in a few different ways which have different primary use cases.</p>
 <h2 id="the--operator">The <code>[]</code> Operator</h2>
 <p>The <code>[]</code> (pronounced subscript) operator is the primary way to access any <em>value// within a HashMap. When a valid //key</em> is passed to the subscript operator the corresponding value is returned from the HashMap. The <code>[]</code> operator can also be used to assign new values to keys within the HashMap.</p>
-<pre><code class="lang-name=[]">var hash = HashMap[Integer, String]()
+<pre><code class="lang-TS:[]">var hash = HashMap[Integer, String]()
 {
   {1, &quot;one&quot;},
   {2, &quot;two&quot;}
@@ -147,7 +147,7 @@ three
 <p>Another way to access the <code>KeyValue</code> pairs of a HashMap is to use the <code>get</code> functions.</p>
 <h3 id="hashmapget">HashMap.Get</h3>
 <p><code>HashMap.Get</code> behaves the same as the <code>[]</code> operator, as it is the function actually called by the <code>[]</code> operator. However, being a function, <code>Get</code> can be referenced by a delegate.</p>
-<pre><code class="lang-name=HashMap.Get">var hash = HashMap[Integer, String]()
+<pre><code class="lang-TS:HashMap.Get">var hash = HashMap[Integer, String]()
 {
   {1, &quot;one&quot;},
   {2, &quot;two&quot;},
@@ -163,7 +163,7 @@ three
 </code></pre>
 <h3 id="hashmapgetordefault">HashMap.GetOrDefault</h3>
 <p><code>HashMap.GetOrDefault</code> behaves the same as <a href="hashmap/.md#hashmap-get">Get</a>, but instead of throwing an exception when passed an invalid key it returns a <em>default// value that is the same type as the //values</em> of the HashMap.</p>
-<pre><code class="lang-name=HashMap.GetOrDefault">var hash = HashMap[Integer, String]()
+<pre><code class="lang-TS:HashMap.GetOrDefault">var hash = HashMap[Integer, String]()
 {
   {1, &quot;one&quot;},
   {2, &quot;two&quot;},
@@ -187,7 +187,7 @@ default
 <p>There are multiple ways to add <code>KeyValue</code> pairs to HashMaps. <a href="hashmap/.md#hashmap-add">Add</a>, <a href="hashmap/.md#hashmap-set">Set</a>, and the <code>[]</code> operator can all be used to add <code>KeyValue</code> pairs to the HashMap.</p>
 <h2 id="hashmapadd">HashMap.Add</h2>
 <p><code>Add</code> takes a <em>key</em> and //value//, adding the pair to the HashMap. If the given key already exists then a runtime exception will be thrown.</p>
-<pre><code class="lang-name=Add,">var hash = HashMap[Integer, String]();
+<pre><code class="lang-TS:Add,">var hash = HashMap[Integer, String]();
 hash.Add(1, &quot;one&quot;);
 hash.Add(2, &quot;two&quot;);
 hash.Add(3, &quot;three&quot;);
@@ -203,7 +203,7 @@ this.PrintHashMap(hash);
 <p>It should be noted that the <code>Add</code> function is called for each <code>KeyValue</code> pair when a HashMap is populated using an initializer list.</p>
 <h2 id="hashmapset">HashMap.Set</h2>
 <p><code>Set</code> is very similar to <a href="hashmap/.md#hashmap-add">Add</a>. <code>Set</code> takes a <em>key// and //value//, adding the pair to the HashMap if the key does not exist. If the key does exist then the //value</em> paired with the given key will be replaced with the //given value//.</p>
-<pre><code class="lang-name=Set,">var hash = HashMap[Integer, String]();
+<pre><code class="lang-TS:Set,">var hash = HashMap[Integer, String]();
 hash.Set(1, &quot;one&quot;);
 hash.Set(2, &quot;two&quot;);
 hash.Set(2, &quot;three&quot;);
@@ -217,7 +217,7 @@ this.PrintHashMap(hash);
 </code></pre>
 <h3 id="hashmapsetoroverwrite">HashMap.SetOrOverwrite</h3>
 <p>The relationship of <a href="hashmap/.md#hashmap-set">Set</a> and <code>SetOrOverwrite</code> is simliar to that of <a href="hashmap/.md#hashmap-get">Get</a> and <a href="hashmap/.md#hashmap-getorerror">GetOrError</a> in that they have the same behavior. However, like <a href="hashmap/.md#hashmap-get">Get</a>, <a href="hashmap/.md#hashmap-set">Set</a> is called by the <code>[]</code> operator during assignment.</p>
-<pre><code class="lang-name=SetOrOverwrite,">var hash = HashMap[Integer, String]();
+<pre><code class="lang-TS:SetOrOverwrite,">var hash = HashMap[Integer, String]();
 hash.SetOrOverwrite(1, &quot;one&quot;);
 hash.SetOrOverwrite(2, &quot;two&quot;);
 hash.SetOrOverwrite(2, &quot;three&quot;);
@@ -231,7 +231,7 @@ this.PrintHashMap(hash);
 </code></pre>
 <h3 id="hashmapsetorignore">HashMap.SetOrIgnore</h3>
 <p><code>SetOrIgnore</code> behaves the same as <a href="hashmap/.md#hashmap-set">Set</a> except if the given <em>key</em> already exists the function returns leaving the HashMap unmodified.</p>
-<pre><code class="lang-name=SetOrIgnore,">var hash = HashMap[Integer, String]();
+<pre><code class="lang-TS:SetOrIgnore,">var hash = HashMap[Integer, String]();
 hash.SetOrIgnore(1, &quot;one&quot;);
 hash.SetOrIgnore(2, &quot;two&quot;);
 hash.SetOrIgnore(2, &quot;three&quot;);
@@ -249,7 +249,7 @@ this.PrintHashMap(hash);
 <h1 id="hashmap-container-operations">HashMap Container Operations</h1>
 <h2 id="hashmapclear">HashMap.Clear</h2>
 <p>The <code>Clear</code> function simply removes all <code>KeyValue</code> pairs from the HashMap.</p>
-<pre><code class="lang-name=Clear">var hash = HashMap[Integer, String]();
+<pre><code class="lang-TS:Clear">var hash = HashMap[Integer, String]();
 hash[1] = &quot;one&quot;;
 hash[2] = &quot;two&quot;;
 hash[3] = &quot;three&quot;;
@@ -269,7 +269,7 @@ HashMap[Integer, String] (20712538)
 </code></pre>
 <h2 id="hashmapcontains">HashMap.Contains</h2>
 <p><code>Contains</code> takes a parameter matching the <em>key</em> type of the HashMap and returns <code>true</code> if the given key exists in the HashMap.</p>
-<pre><code class="lang-name=Contains">var hash = HashMap[Integer, String]();
+<pre><code class="lang-TS:Contains">var hash = HashMap[Integer, String]();
 hash[1] = &quot;one&quot;;
 hash[2] = &quot;two&quot;;
 hash[3] = &quot;three&quot;;
@@ -290,7 +290,7 @@ This HashMap contains the key 4: false
 <p>There are a number of HashMap properties providing iterable ranges that are particularly useful for examining each pair in a HashMap.</p>
 <h2 id="hashmapall">HashMap.All</h2>
 <p>Contains an iterable range of all <code>KeyValue</code> pairs in the HashMap.</p>
-<pre><code class="lang-name=PrintHashMap,">function PrintHashMap(hash : HashMap[Integer, String])
+<pre><code class="lang-TS:PrintHashMap,">function PrintHashMap(hash : HashMap[Integer, String])
 {
   Console.WriteLine(&quot;`hash` \n{&quot;);
   foreach(var pair in hash.All)

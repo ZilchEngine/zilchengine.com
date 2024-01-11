@@ -136,7 +136,7 @@
 <li>In <code>HUDManager</code></li>
 <li>Update the <code>HUDManager</code> script to the following:</li>
 </ul>
-<pre><code class="lang-name=HUDManager,">class HUDManager : NadaComponent
+<pre><code class="lang-TS:HUDManager">class HUDManager : NadaComponent
 {
   [Property]
   var HUDLevel : Level;
@@ -201,7 +201,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>Meter</code></li>
 <li>Update the <code>Meter</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class Meter : NadaComponent
+<pre><code class="lang-TS:&quot;Meter&quot;">class Meter : NadaComponent
 {
   [Dependency] var Transform : Transform;
   [Dependency] var Area : Area;
@@ -261,7 +261,7 @@ class MeterUpdate : NadaEvent
 <li>Create a NadaScript resource using the Component template template and name it <code>Input</code></li>
 <li>Update the <code>Input</code> script to the following:</li>
 </ul>
-<pre><code class="lang-name=Input,">class Input : NadaComponent
+<pre><code class="lang-TS:Input">class Input : NadaComponent
 {
   [Dependency] var HUDManager : HUDManager;
   

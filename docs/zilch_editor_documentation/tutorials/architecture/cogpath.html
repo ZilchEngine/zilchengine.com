@@ -109,7 +109,7 @@
 <li><p>Update <code>PlayerController</code> script to the following code block:</p>
 </li>
 </ul>
-<pre><code class="lang-name=PlayerController,">class PlayerController : NadaComponent
+<pre><code class="lang-TS:PlayerController">class PlayerController : NadaComponent
 {
   [Property]
   var Speed : Real = 5.0;
@@ -159,7 +159,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>FollowerController</code></li>
 <li>Update <code>FollowerController</code> script to the following code block:</li>
 </ul>
-<pre><code class="lang-name=FollowerController,">class FollowerController : NadaComponent
+<pre><code class="lang-TS:FollowerController">class FollowerController : NadaComponent
 {
   [Property]
   var PlayerCogPath : CogPath = CogPath();
@@ -270,7 +270,7 @@
 <ul>
 <li>In the <code>FollowerController</code> script update <code>OnLogicUpdate</code> to this code block</li>
 </ul>
-<pre><code class="lang-name=FollowerController">function OnLogicUpdate(event : UpdateEvent)
+<pre><code class="lang-TS:FollowerController">function OnLogicUpdate(event : UpdateEvent)
 {
   var targetPos = this.PlayerCogPath.Cog.Transform.WorldTranslation;
   var myPos = this.Owner.Transform.Translation;

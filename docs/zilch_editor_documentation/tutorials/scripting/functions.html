@@ -109,23 +109,23 @@
 <p>Functions are a sequence of logic statements that take a set of input variables with the goal of performing some operation. Functions are one of two main constructs within a class�the other being variables.</p>
 <h2 id="declaration">Declaration</h2>
 <p>Start declaring by typing <code>function</code> followed by a name and a pair parentheses:</p>
-<pre><code class="lang-lang=csharpp,">function Square()
+<pre><code class="lang-TS:Function">function Square()
 </code></pre>
 <h2 id="parameters">Parameters</h2>
 <p>An important feature of functions is their ability to take literals and variables as input, referred to as <strong>parameters</strong>. These parameters are passed into the function to supply the data needed to complete the intended operation. They are declared within the function's parentheses by giving each a parameter name, followed by a type (<code>ParamName</code> : <code>ParamType</code>).</p>
-<pre><code class="lang-lang=csharp,">function Square( number : Real )
+<pre><code class="lang-TS:Parameters">function Square( number : Real )
 </code></pre>
 <p>NOTE: Functions can have any number of parameters (including none), each separated by a comma. These scenarios will be covered later.</p>
 <h2 id="scope">Scope</h2>
 <p>Just like classes, functions have a defined scope within which all of its functionality is outlined. We denote the scope by adding a pair of curly braces.</p>
-<pre><code class="lang-lang=csharp,">function Square( number : Real )
+<pre><code class="lang-TS:Scope">function Square( number : Real )
 {
 
 }
 </code></pre>
 <h2 id="return-value">Return Value</h2>
 <p>Some functions may provide a final result that can be returned back to the scope where it was invoked. These are called Return Types and are declared after the function's parentheses by typing colon <code>:</code> followed by the type to be returned.</p>
-<pre><code class="lang-lang=csharp,">function Square( number : Real ) : Real
+<pre><code class="lang-TS:Return">function Square( number : Real ) : Real
 {
 
 }
@@ -133,7 +133,7 @@
 <p>NOTE: It is not necessary for a function to return anything, in such cases no return type needs to be specified.</p>
 <h2 id="body">Body</h2>
 <p>The body contains all the logic to be performed when the function is invoked. If the function has a Return Type, it is required to include a <code>return</code> statement within our function.</p>
-<pre><code class="lang-lang=csharp,">function Square( number : Real ) : Real
+<pre><code class="lang-TS:Function">function Square( number : Real ) : Real
 {
     return number * number;
 }
@@ -146,17 +146,17 @@
 <h1 id="invoking-functions">Invoking Functions</h1>
 <p>Now that we have created a function, it can be invoked elsewhere in code whenever the computations it provides are required.</p>
 <p>When invoking a function that exists within the same class you can simply type:</p>
-<pre><code class="lang-lang=csharp,">this.Square(2.0);
+<pre><code class="lang-TS:Invoking">this.Square(2.0);
 </code></pre>
 <p>Similar to accessing variables, when invoking an external function we must first reference the class to whom it belongs:</p>
-<pre><code class="lang-lang=csharp,">//Syntax used by an external code trying to invoke our function
+<pre><code class="lang-TS:Invoking">//Syntax used by an external code trying to invoke our function
 this.Owner.MyBehavior.Square(2.0);
 </code></pre>
 <p>Inside the parentheses, we must then pass either a literal, a variable or an expression which evaluates to the required type of the parameter (as outlined by the function definition). If a function takes multiple parameters, they must each be passed to the function in order, separated by a comma.</p>
 <h1 id="return-values">Return Values</h1>
 <p>Once a function is invoked, all of the instructions outlined within its scope are invoked in sequence. Once a function reaches the end of its scope or a return statement, it will return control to the scope that invoked it along with the Return Value (if one was specified).</p>
 <p>Example:</p>
-<pre><code class="lang-lang=csharp,">var pi : Real = 3.1415926;
+<pre><code class="lang-TS:Return">var pi : Real = 3.1415926;
 
 var piSquare : Real = this.Square(pi);
 

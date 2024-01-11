@@ -88,7 +88,7 @@
 <p><strong>Swizzling</strong> is accessing the values within vector types (<a href="../../../code_reference/nada_base_types/real2.html"> Real2</a>, <a href="../../../code_reference/nada_base_types/integer3.html"> Integer3</a>, etc.) in any order. The term <em>swizzling</em> originated as the name for a technique used for doing the same thing, but within shaders.</p>
 <h1 id="understanding-a-swizzle">Understanding a Swizzle</h1>
 <p>To swizzle a vector, refer to its values as if they were data members, using the letters <code>X</code>, <code>Y</code>, <code>Z</code>, and <code>W</code> for the corresponding elements. These can be combined in any permutation or combination.</p>
-<pre><code class="lang-name=Simple">var a = Real3(0,1,2);
+<pre><code class="lang-TS:Simple">var a = Real3(0,1,2);
 Console.WriteLine(&quot;Example 1: a.X: `a.X`&quot;);
 Console.WriteLine(&quot;Example 2: a.XYZ: `a.XYZ`&quot;);
 Console.WriteLine(&quot;Example 3: a.XY: `a.XY`&quot;);
@@ -114,13 +114,13 @@ Example 6: a.ZYXZ: (2, 1, 0, 2)
 </ul>
 <h1 id="assigning-with-swizzles">Assigning With Swizzles</h1>
 <p>Extracting portions of a vector as seen above is a fairly common operation even outside of shader development. An example may be centering the camera object while not affecting its zoom in a 2D game.</p>
-<pre><code class="lang-name=XY">//0 out the XY axis and maintain the Z axis values
+<pre><code class="lang-TS:XY">//0 out the XY axis and maintain the Z axis values
 var cameraOffset = this.Camera.Transform.LocalTranslation;
 cameraOffset.XY = Real2.Zero;
 this.Camera.Transform.LocalTranslation = cameraOffset;
 </code></pre>
 <p>If we tried to assign into the swizzle constructed by-value from the member variable, however, it would not work:</p>
-<pre><code class="lang-name=Direct">this.Camera.Transform.LocalTranslation.XY = Real2();
+<pre><code class="lang-TS:Direct">this.Camera.Transform.LocalTranslation.XY = Real2();
 </code></pre>
 <p>In this example <code>.XY</code> returns a by-value copy of the <code>LocalTranslation</code>'s <code>X</code> and <code>Y</code> values as a <a href="../../../code_reference/nada_base_types/real2.html">Real2</a>. So in this example when we assign the <code>Real2()</code> into it we are assigning into a copy instead of the member variable itself.</p>
 <h1 id="related-materials">Related Materials</h1>

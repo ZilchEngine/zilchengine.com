@@ -113,7 +113,7 @@
 <li><p>Update the <code>DebugLauncher</code> class to the following:</p>
 </li>
 </ul>
-<pre><code class="lang-name=DebugLauncher,">class DebugLauncher : NadaComponent
+<pre><code class="lang-TS:DebugLauncher,">class DebugLauncher : NadaComponent
 {
   [Dependency] var RigidBody : RigidBody;
   [Dependency] var Transform : Transform;
@@ -180,7 +180,7 @@
 <ul>
 <li>Add the following to the <code>DebugLauncher</code> class:</li>
 </ul>
-<pre><code class="lang-name=DrawDebug">function DrawDebug()
+<pre><code class="lang-TS:DrawDebug">function DrawDebug()
 {
   this.TargetLine.Start = this.Transform.Translation;
   this.TargetLine.End = this.Target;
@@ -191,7 +191,7 @@
 <ul>
 <li>Add the following to the <code>OnFrameUpdate</code> function in the <code>DebugLauncher</code> class:</li>
 </ul>
-<pre><code class="lang-name=Adding">this.DrawDebug();
+<pre><code class="lang-TS:Adding">this.DrawDebug();
 </code></pre>
 <p>Calling our <code>DrawDebug</code> function every frame that the mouse is down allows our drawing of the line segment to be reactive to when we want to communicate the information about the launch velocity. Integrating debug drawing into functionality you are implementing is a fairly common task.</p>
 <ul>
@@ -209,7 +209,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>DebugClock</code></li>
 <li>Update the <code>DebugClock</code> class to the following:</li>
 </ul>
-<pre><code class="lang-name=DebugClock,">class DebugClock : NadaComponent
+<pre><code class="lang-TS:DebugClock,">class DebugClock : NadaComponent
 {
   [Dependency] var Transform : Transform;
   
@@ -254,7 +254,7 @@
 <li><p>Add the following to the <code>DebugClock</code> class:</p>
 </li>
 </ul>
-<pre><code class="lang-name=New">[Property]
+<pre><code class="lang-TS:New">[Property]
 var SecondHandRadius : Real = 3.0;
 
 [Property]
@@ -277,7 +277,7 @@ var Seconds : Real = 0;
 <ul>
 <li>Replace the <code>Initialize</code> function in the <code>DebugClock</code> class with the following:</li>
 </ul>
-<pre><code class="lang-name=DebugClock.Initialize,">function Initialize(init : CogInitializer)
+<pre><code class="lang-TS:DebugClock.Initialize,">function Initialize(init : CogInitializer)
 {
   this.SecondHand.Start = this.Transform.Translation;
   this.SecondHand.Color = Colors.Red;
@@ -294,7 +294,7 @@ var Seconds : Real = 0;
 <ul>
 <li>Add the following to the functions in the <code>DebugClock</code> class:</li>
 </ul>
-<pre><code class="lang-name=DebugDraw">function DrawSecondHand()
+<pre><code class="lang-TS:DebugDraw">function DrawSecondHand()
 {
   //Calculate what percentage of the current minute has passed
   this.Seconds = this.Timer % 60.0;
@@ -338,7 +338,7 @@ function DrawMinuteHand()
 <ul>
 <li>Replace the <code>OnFrameUpdate</code> function in the <code>DebugClock</code> class with the following:</li>
 </ul>
-<pre><code class="lang-name=DebugClock.OnFrameUpdate,">function OnFrameUpdate(event : UpdateEvent)
+<pre><code class="lang-TS:DebugClock.OnFrameUpdate,">function OnFrameUpdate(event : UpdateEvent)
 {
   this.DrawSecondHand();
   this.DrawMinuteHand();

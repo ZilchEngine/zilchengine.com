@@ -329,7 +329,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>LoadLevelOnClick</code></li>
 <li>Update the <code>LoadLevelOnClick</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class LoadLevelOnClick : NadaComponent
+<pre><code class="lang-TS:LoadLevelOnClick">class LoadLevelOnClick : NadaComponent
 {
   [Property]
   var LevelToLoad : Level;
@@ -380,7 +380,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>KeyboardMovement</code></li>
 <li>Update the <code>KeyboardMovement</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class KeyboardMovement : NadaComponent
+<pre><code class="lang-TS:&quot;KeyboardMovement&quot;">class KeyboardMovement : NadaComponent
 {
   [Dependency] var Transform : Transform;
   
@@ -436,7 +436,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>QuitHandler</code></li>
 <li>Update the <code>QuitHandler</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class QuitHandler : NadaComponent
+<pre><code class="lang-TS:&quot;QuitHandler&quot;">class QuitHandler : NadaComponent
 {
   function Initialize(init : CogInitializer)
   {
@@ -455,7 +455,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>LoadLevelOnKeystroke</code></li>
 <li>Update the <code>LoadLevelOnKeystroke</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class LoadLevelOnKeystroke : NadaComponent
+<pre><code class="lang-TS:&quot;LoadLevelOnKeystroke&quot;">class LoadLevelOnKeystroke : NadaComponent
 {
   [Property]
   var Key : Keys = Keys.Escape;
@@ -713,7 +713,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>RequestQuitOnClick</code></li>
 <li>Update the <code>RequestQuitOnClick</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class RequestQuitOnClick : NadaComponent
+<pre><code class="lang-TS:&quot;RequestQuitOnClick&quot;">class RequestQuitOnClick : NadaComponent
 {
   function Initialize(init : CogInitializer)
   {

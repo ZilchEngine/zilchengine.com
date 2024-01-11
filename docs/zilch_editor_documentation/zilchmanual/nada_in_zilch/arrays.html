@@ -86,12 +86,12 @@
         <article data-uid="">
 
 <p><a href="../../../code_reference/nada_base_types/array_t.html"> Array</a> is a templated Nada type used to represent an ordered list. An array is a <em>container</em> class: it contains other objects. The type of object it contains is specified between square brackets when the array is declared:</p>
-<pre><code class="lang-lang=csharp,">var recentPositions = Array[Real3]();
+<pre><code class="lang-TS:Array">var recentPositions = Array[Real3]();
 var currentTargets = Array[Cog]();
 var inputBuffer = Array[Array[Boolean]]();
 </code></pre>
 <p>When an array is created, by default, it has no elements, but its initial size can be specified, and, optionally, the initial value of each element can be provided as well:</p>
-<pre><code class="lang-lang=csharp,">var emptyArray           = Array[Integer]();
+<pre><code class="lang-TS:Array">var emptyArray           = Array[Integer]();
 var eightDefaultIntegers = Array[Integer](8);
 var eightFives           = Array[Integer](8, 5);
 
@@ -105,7 +105,7 @@ Console.WriteLine(eightFives);
 </code></pre>
 <p>NOTE: When specifying the initial value for an array's elements in this manner, take note that one such element is constructed, and then it is duplicated as necessary to fill the array. If the type stored in the array is a value type, this will result in the construction of additional elements, but if it is a reference type, then each additional element will be a by-reference copy of the first. This may lead to unexpected behavior when modifying the array's contents later. If explicit copies of a reference type object are desired, they should be created and added after construction.</p>
 <p>Additionally, an array can be initialized with an initializer list:</p>
-<pre><code class="lang-lang=csharp,">var a = Array[String]() { &quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;, &quot;jkl&quot; };
+<pre><code class="lang-TS:Array">var a = Array[String]() { &quot;abc&quot;, &quot;def&quot;, &quot;ghi&quot;, &quot;jkl&quot; };
 
 Console.WriteLine(a);
 </code></pre>
@@ -113,7 +113,7 @@ Console.WriteLine(a);
 </code></pre>
 <h1 id="array-access">Array Access</h1>
 <p>Array elements can be accessed for reading or writing using the <strong>indexing operator</strong>, <code>[]</code>. Array indexing in Nada is <strong>zilch-based</strong> (the very first element in an array has an index of 0):</p>
-<pre><code class="lang-lang=csharp,">var words = Array[String]()
+<pre><code class="lang-TS:Access">var words = Array[String]()
 {
   &quot;the&quot;,    // element 0
   &quot;quick&quot;,  // element 1
@@ -135,7 +135,7 @@ Console.WriteLine(words);
 <p>Nada arrays are //dynamic//: that is, the number of elements in an array is not fixed, so elements can be added or removed after the array is created.</p>
 <h2 id="adding">Adding</h2>
 <p>The most basic way to add an element to an array is with the <a href="../../../code_reference/nada_base_types/array_t.html#add-void"> Add</a> method, which puts the element at the end of the array:</p>
-<pre><code class="lang-lang=csharp,">var greetings = Array[String]()
+<pre><code class="lang-TS:Add">var greetings = Array[String]()
 {
   &quot;hello&quot;,
   &quot;bonjour&quot;,
@@ -151,7 +151,7 @@ Console.WriteLine(greetings);
 </code></pre>
 <p>The <a href="../../../code_reference/nada_base_types/array_t.html#push-void"> Push</a> method is functionally identical to Add for arrays, and they may be used interchangeably.</p>
 <p>Adding to the end is generally the fastest way of adding to an array, but it is possible to insert an element at any valid position within an array via the <a href="../../../code_reference/nada_base_types/array_t.html#insert-void"> Insert</a> method:</p>
-<pre><code class="lang-lang=csharp,">var digitsOfE = Array[Integer]() { 2, 7, 1, 2, 8 };
+<pre><code class="lang-TS:Insert">var digitsOfE = Array[Integer]() { 2, 7, 1, 2, 8 };
 Console.WriteLine(digitsOfE);
 
 digitsOfE.Insert(3, 8); // adds an 8 so that its new index is 3
@@ -163,7 +163,7 @@ Console.WriteLine(digitsOfE);
 <p>NOTE: Insert is less efficient than Add because it requires all the elements following the given index to be shifted toward the back of the array to make room for the new element. If the proper position of a new element is at the end of the array, or if the order of the elements is irrelevant, Add should generally be used instead of Insert.</p>
 <h2 id="removing">Removing</h2>
 <p>The most basic way to remove an element from an array is with the <a href="../../../code_reference/nada_base_types/array_t.html#pop-zilch-engine-document"> Pop</a> method, which shrinks the array by one from the end:</p>
-<pre><code class="lang-lang=csharp,">var taskList = Array[String]()
+<pre><code class="lang-TS:Pop">var taskList = Array[String]()
 {
   &quot;make the game fun&quot;,
   &quot;UI overhaul&quot;,
@@ -180,7 +180,7 @@ Console.WriteLine(taskList);
 </code></pre>
 <p>As with adding, removing from the end is fast, but it is also possible to remove an element at an arbitrary valid index via the <a href="../../../code_reference/nada_base_types/array_t.html#removeat-void"> RemoveAt</a> and <a href="../../../code_reference/nada_base_types/array_t.html#removeswap-void"> RemoveSwap</a> methods.</p>
 <p><strong>RemoveAt</strong> removes the element that is found at the given index, and preserves the order of the remaining elements:</p>
-<pre><code class="lang-lang=csharp,">var commonLetters = Array[String]()
+<pre><code class="lang-TS:RemoveAt">var commonLetters = Array[String]()
 {
   &quot;e&quot;,  // 0
   &quot;t&quot;,  // 1
@@ -200,7 +200,7 @@ Console.WriteLine(commonLetters);
 </code></pre>
 <p>NOTE: RemoveAt is less efficient than Pop because it causes all the elements following the given index to be shifted toward the front of the array to close the gap following the removal. If the element to be removed is the last element in the array, Pop should be used instead of RemoveAt.</p>
 <p>Alternatively, there is another option if the order of elements is irrelevant. <strong>RemoveSwap</strong> first swaps the element at the given index with the last element in the array, and then Pops the element from the end. The order of the remaining elements is thus <em>not</em> preserved:</p>
-<pre><code class="lang-lang=csharp,">var animals = Array[String]()
+<pre><code class="lang-TS:RemoveSwap">var animals = Array[String]()
 {
   &quot;tardigrade&quot;,   // 0
   &quot;aardwolf&quot;,     // 1
@@ -218,7 +218,7 @@ Console.WriteLine(animals);
 </code></pre>
 <p>Though RemoveSwap does not preserve element order, it is essentially just as efficient as Pop.</p>
 <p>It is also possible to remove a known element with an unknown index. <a href="../../../code_reference/nada_base_types/array_t.html#removefirst-zilch-engine"> RemoveFirst</a> finds an array's first element that matches the given value and then removes it, preserving the order of the remaining elements:</p>
-<pre><code class="lang-lang=csharp,">var data = Array[Integer]()
+<pre><code class="lang-TS:RemoveFirst">var data = Array[Integer]()
 {
   0,
   4,
@@ -235,7 +235,7 @@ Console.WriteLine(data);
 {0, 4, 1, 2}
 </code></pre>
 <p>To find and remove <em>all</em> elements that match a given value, use the <a href="../../../code_reference/nada_base_types/array_t.html#removeall-zilch-engine-do"> RemoveAll</a> method:</p>
-<pre><code class="lang-lang=csharp,">var waterfowl = Array[String]()
+<pre><code class="lang-TS:RemoveAll">var waterfowl = Array[String]()
 {
   &quot;duck&quot;,
   &quot;duck&quot;,
@@ -253,7 +253,7 @@ Console.WriteLine(waterfowl);
 </code></pre>
 <p>NOTE: Both RemoveFirst and RemoveAll require searching the array and comparing each element with the given value, which makes them even slower than RemoveAt. In certain situations, such as a deeply nested loop, or when element comparison is slow, this performance difference may be significant.</p>
 <p>Finally, to remove all of the elements from an array, use the <a href="../../../code_reference/nada_base_types/array_t.html#clear-void"> Clear</a> method:</p>
-<pre><code class="lang-lang=csharp,">var inventory = Array[String]()
+<pre><code class="lang-TS:Clear">var inventory = Array[String]()
 {
   &quot;car keys&quot;,
   &quot;cell phone&quot;,
@@ -270,7 +270,7 @@ Console.WriteLine(inventory);
 {}
 </code></pre>
 <p>NOTE: The act of removing an item from an array does not itself delete the item. If one or more external references to an element exist, then that element will persist if it is removed from an array:</p>
-<pre><code class="lang-lang=csharp,">var arrayContainer = Array[Array[Real]]();
+<pre><code class="lang-TS:Clear">var arrayContainer = Array[Array[Real]]();
 
 var array0 = Array[Real]() { 1, 2, 3 };
 var array1 = Array[Real]() { 1.61803, 2.71828, 3.14159 };
@@ -292,7 +292,7 @@ array1 after Clear: {1.61803, 2.71828, 3.14159}
 </code></pre>
 <h1 id="reference-type">Reference Type</h1>
 <p>In Nada, <strong>Array</strong> is a //reference type//. Be aware of this when making copies. When setting one array variable to equal another existing array using the assignment operator, <code>=</code>, a copy is not constructed; rather, the first just ends up pointing to the second. In such a case, modifying the array through one of the two references will appear to modify both, because they are in fact one array. To create a copy, the <a href="../../../code_reference/nada_base_types/array_t.html#copy-array-t"> Copy</a> method should be used:</p>
-<pre><code class="lang-lang=csharp,">var firstExample = Array[Integer]() { 0, 1, 2, 3, 4, 5, 6, 7 };
+<pre><code class="lang-TS:Array">var firstExample = Array[Integer]() { 0, 1, 2, 3, 4, 5, 6, 7 };
 Console.WriteLine(&quot;firstExample, before copy and clear:  `firstExample`&quot;);
 
 var naiveCopy = firstExample;
@@ -321,7 +321,7 @@ secondExample, after copy and clear:  {7, 6, 5, 4, 3, 2, 1, 0}
 <p>As arrays are ordered sequences of objects, they lend themselves naturally to use in <a href="looping.html"> loops</a>: in each loop iteration, the next element of the array can be accessed, modified, copied, etc.</p>
 <h2 id="for-loops">For Loops</h2>
 <p>The most basic way to loop over an array is by using a <a href="looping.html#for-loop"> for loop</a>. This takes advantage of the fact that an array contains its <a href="../../../code_reference/nada_base_types/array_t.html#count-zilch-engine-docume"> Count</a>, or number of elements, as a property:</p>
-<pre><code class="lang-lang=csharp,">var numbers = Array[Integer]() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, };
+<pre><code class="lang-TS:For">var numbers = Array[Integer]() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, };
 
 Console.WriteLine(&quot;Squares:&quot;);
 
@@ -346,7 +346,7 @@ for (var i = 0; i &lt; numbers.Count; ++i)
 </code></pre>
 <h2 id="for-each-loops">For Each Loops</h2>
 <p>Another way to iterate through an array is to use a <a href="looping.html#for-each-loop"> foreach loop</a>:</p>
-<pre><code class="lang-lang=csharp,">var numbers = Array[Integer]() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, };
+<pre><code class="lang-TS:For">var numbers = Array[Integer]() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, };
 
 Console.WriteLine(&quot;Cubes:&quot;);
 
@@ -369,7 +369,7 @@ foreach (var number in numbers)
 </code></pre>
 <h1 id="array-size">Array Size</h1>
 <p>A Nada array keeps track of two different size-related properties: <a href="../../../code_reference/nada_base_types/array_t.html#count-zilch-engine-docume"> Count</a> and <a href="../../../code_reference/nada_base_types/array_t.html#capacity-zilch-engine-doc"> Capacity</a>. When an array is initialized, it is allotted just enough memory to store the given number of elements. If an element is added when it doesn't have enough allocated space for another one, the array is automatically expanded so that it can fit more elements. An array's <strong>Count</strong> is the number of elements that have been added to it (or were placed there on initialization); its <strong>Capacity</strong> is the number of elements that could possibly fit in it before it needs to grow again:</p>
-<pre><code class="lang-lang=csharp,">var array = Array[Integer]();
+<pre><code class="lang-TS:Count">var array = Array[Integer]();
 
 for (var i = 0; i &lt; 10; ++i)
 {
@@ -395,7 +395,7 @@ Count: 10 | Capacity: 13
 <h1 id="sorting-arrays">Sorting Arrays</h1>
 <p>Nada arrays may be sorted using the <a href="../../../code_reference/nada_base_types/array_t.html#sort-void"> Sort</a> method. Sorting an array may put it in, say, increasing or decreasing order, in the case of an array of Integer or another numeric type, or in alphabetical order, in the case of a String array, or some other order via some more abstract or complex set of criteria.</p>
 <p><strong>Sort</strong> sorts an array using the given comparison function. In many cases, this is something the user creates, though some types, such as <a href="../../../code_reference/nada_base_types/string.html"> String</a>, provide static functions that can be used with the Sort method:</p>
-<pre><code class="lang-lang=csharp,">var strings = Array[String]();
+<pre><code class="lang-TS:String">var strings = Array[String]();
 
 strings.Add(&quot;hi&quot;);
 strings.Add(&quot;greetings&quot;);
@@ -413,7 +413,7 @@ Console.WriteLine(strings);
 </code></pre>
 <p>A user-created array comparison function should take as arguments two objects of the type stored in the array. It should compare them in some relevant manner and return either a Boolean or an Integer that tells the Sort function what to do with the two array elements: the Boolean should be true if first item should be sorted before the second, and false otherwise; the Integer should be negative if the first item should be sorted before the second, and nonnegative otherwise.</p>
 <p>Consider these two classes: one defining some data for an adventurer and some static functions that can be used to sort an array of Adventurers, and another containing an array of Adventurers and a method that returns a string representation of that array:</p>
-<pre><code class="lang-lang=csharp,">class Adventurer
+<pre><code class="lang-TS:Sorting">class Adventurer
 {
   var Name : String;
   var HP : Integer;
@@ -473,7 +473,7 @@ class Party
 }
 </code></pre>
 <p>These classes can be used to illustrate how to sort objects of custom classes:</p>
-<pre><code class="lang-lang=csharp,">var party = Party()
+<pre><code class="lang-TS:Custom">var party = Party()
 {
   Roster = Array[Adventurer]()
   {
@@ -522,7 +522,7 @@ Name length then alpha:   { Dane, Josh, Ryan, Andrea, Joshua, Nathan, Trevor }
 <p>The <a href="../../../code_reference/nada_base_types/array_t.html#copy-array-t"> Copy</a> method returns a new array that is a copy of the original. This method should be used to create a clone of an array that is to be modified separately without affecting the original. Because <strong>Array</strong> is a reference type, this cannot be done merely with the assignment operator, as shown <a href="arrays/.md#reference-type">above</a>.</p>
 <h2 id="findfirstindex">FindFirstIndex</h2>
 <p>The <a href="../../../code_reference/nada_base_types/array_t.html#findfirstindex-zilch-engi"> FindFirstIndex</a> method returns the index of the first occurrence in an array of a given object. This method compares value types by comparing their data, and it compares reference types by comparing their handles. If the given object is not found, it returns <code>-1</code>:</p>
-<pre><code class="lang-lang=csharp,">var valueType0 = Integer2(1, 2);
+<pre><code class="lang-TS:FindFirstIndex">var valueType0 = Integer2(1, 2);
 // Integer2 is a value type
 var valueType1 = Integer2(valueType0);
 // valueType1 is a data-wise copy of valueType0
@@ -543,7 +543,7 @@ Console.WriteLine(arrayOfReferenceType.FindFirstIndex(referenceType1));
 </code></pre>
 <h2 id="get-and-set">Get and Set</h2>
 <p>The <a href="../../../code_reference/nada_base_types/array_t.html#get-zilch-engine-document"> Get</a> method returns the array element at the given index. The <a href="../../../code_reference/nada_base_types/array_t.html#set-void"> Set</a> method writes the given object to the given index. These methods are called when the <strong>indexing operator</strong>, <code>[]</code>, is used:</p>
-<pre><code class="lang-lang=chsarp,">var aStates = Array[String]() { &quot;alabama&quot;, &quot;nebraska&quot;, &quot;arizona&quot;, &quot;kansas&quot; };
+<pre><code class="lang-TS:Get">var aStates = Array[String]() { &quot;alabama&quot;, &quot;nebraska&quot;, &quot;arizona&quot;, &quot;kansas&quot; };
 Console.WriteLine(aStates.Get(0));
 Console.WriteLine(aStates[2]);  // this is reading, so Get is called
 
@@ -557,7 +557,7 @@ arizona
 </code></pre>
 <h2 id="range">Range</h2>
 <p>The <a href="../../../code_reference/nada_base_types/array_t.html#range-arrayrange-t"> Range</a> method returns an ArrayRange containing the specified range of elements, beginning with the given start index and including the given element count:</p>
-<pre><code class="lang-lang=csharp,">var primes = Array[Integer]() { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, };  // etc.
+<pre><code class="lang-TS:Range">var primes = Array[Integer]() { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, };  // etc.
 var primeSubset = primes.Range(4, 5);
 
 foreach (var prime in primeSubset)
@@ -573,7 +573,7 @@ foreach (var prime in primeSubset)
 </code></pre>
 <h2 id="resize-and-reserve">Resize and Reserve</h2>
 <p>The <a href="../../../code_reference/nada_base_types/array_t.html#resize-void"> Resize</a> method resizes an array so that its new Count is the given value. If the given count value is greater than the array's old Count, then new elements are constructed and added to the end of the array. This method can take an optional default value parameter, which is used to set the value of these new elements; if this is not specified, then the type default for the type stored in the array will be used instead:</p>
-<pre><code class="lang-lang=csharp,">var iceCreamServings = Array[String]()
+<pre><code class="lang-TS:Resize">var iceCreamServings = Array[String]()
 {
   &quot;cookies 'n cream&quot;,
   &quot;pistachio&quot;,
@@ -592,7 +592,7 @@ Console.WriteLine(iceCreamServings);
 {cookies 'n cream, pistachio, neapolitan, vanilla, vanilla, (null) String}
 </code></pre>
 <p>If the given count value is less than the array's old Count, then enough elements will be removed from the end of the array to bring its Count to the new value:</p>
-<pre><code class="lang-lang=csharp,">var cubes = Array[Integer]() { 0, 1, 8, 27, 64, 125, 216, 343, 512, 729, };
+<pre><code class="lang-TS:Resize">var cubes = Array[Integer]() { 0, 1, 8, 27, 64, 125, 216, 343, 512, 729, };
 Console.WriteLine(cubes);
 
 cubes.Resize(4);

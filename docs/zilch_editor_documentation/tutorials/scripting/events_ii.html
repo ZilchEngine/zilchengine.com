@@ -106,7 +106,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>CreateObjectOnInput</code></li>
 <li>Update the <code>CreateObjectOnInput</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class CreateObjectOnInput : NadaComponent
+<pre><code class="lang-TS:CreateObjectOnInput">class CreateObjectOnInput : NadaComponent
 {
   sends CreateObject : NadaEvent;
   
@@ -154,7 +154,7 @@
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/106913.png" alt="image"></p>
 <h1 id="dispatching-custom-events">Dispatching Custom Events</h1>
 <p>The next relevant line is where the <code>CreateObject</code> event is dispatched:</p>
-<pre><code class="lang-lang=csharp,">this.Owner.DispatchEvent(Events.CreateObject, NadaEvent());
+<pre><code class="lang-TS:Dispatching">this.Owner.DispatchEvent(Events.CreateObject, NadaEvent());
 </code></pre>
 <p>Let's look at the <a href="../../../code_reference/class_reference/cog.html#dispatchevent-void"> DispatchEvent</a> function's parameters.</p>
 <table>
@@ -209,7 +209,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>SpawnObjectWithVelocity</code></li>
 <li>Update the <code>SpawnObjectWithVelocity</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class SpawnObjectWithVelocity : NadaComponent
+<pre><code class="lang-TS:SpawnObjectWithVelocity">class SpawnObjectWithVelocity : NadaComponent
 {
   [Dependency] var Transform : Transform;
   
@@ -259,7 +259,7 @@
 <ul>
 <li>Update the <code>DestroyOnCollide</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class DestroyOnCollide : NadaComponent
+<pre><code class="lang-TS:Updated">class DestroyOnCollide : NadaComponent
 {
   [Property]
   var CollisionArchetype : Archetype = Archetype.Projectile;
@@ -311,7 +311,7 @@
 <ul>
 <li>Add the following to the top of the <code>CreateObjectOnInput</code> script:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class ObjectCreationEvent : NadaEvent
+<pre><code class="lang-TS:&quot;ObjectCreationEvent&quot;">class ObjectCreationEvent : NadaEvent
 {
   sends CreateObject : ObjectCreationEvent;
   
@@ -323,7 +323,7 @@
 <li>In the <code>CreateObjectOnInput</code> script</li>
 <li>Update the <code>CreateObjectOnInput</code> class to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class CreateObjectOnInput : NadaComponent
+<pre><code class="lang-TS:Updated">class CreateObjectOnInput : NadaComponent
 {
   [Property]
   var CreateObjectKey : Keys = Keys.Space;
@@ -363,7 +363,7 @@
 <ul>
 <li>Update the <code>SpawnObjectWithVelocity</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class SpawnObjectWithVelocity : NadaComponent
+<pre><code class="lang-TS:Updated">class SpawnObjectWithVelocity : NadaComponent
 {
   [Dependency] var Transform : Transform;
   

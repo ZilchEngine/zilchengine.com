@@ -86,7 +86,7 @@
         <article data-uid="">
 
 <p>Property Delegates can be generated from any field using the <code>@</code> symbol. Fields are variables, but not all variables are fields. Local variables do not have the ability to be accessed via a property and they cannot be used in conjunction with the property delegate operator like fields can.</p>
-<pre><code class="lang-name=Cat,">class Cat
+<pre><code class="lang-TS:Cat,">class Cat
 {
   var Lives: Integer = 9;
 
@@ -112,7 +112,7 @@
 </code></pre>
 <h1 id="property-delegates-as-function-parameters">Property Delegates as Function Parameters</h1>
 <p>Choosing to take a property delegate as a parameter allows the user to propagate side-effects to the parameters that would otherwise be lost on copies passed in by-value.</p>
-<pre><code class="lang-name=PropertyDelegateTest,">class PropertyDelegateTest : NadaComponent
+<pre><code class="lang-TS:PropertyDelegateTest,">class PropertyDelegateTest : NadaComponent
 {
   [Property]
   var MyProperty : Real = 5.0;

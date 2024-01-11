@@ -88,13 +88,13 @@
 <p>Classes and structs define the type of certain objects in Nada, and the <code>class</code> keyword can create user-defined data types.  The <a href="variables_and_data_types.html">Variables</a> and <a href="functions.html">Functions</a> defined in a class or struct are all stored and referenced from instantiations.  In contrast with how Structs handle <a href="memory_management.html">Memory Management</a>, classes are copied <code>by-reference</code>.</p>
 <h1 id="class-contents">Class Contents</h1>
 <p>Classes in Nada must be defined in <a href="variables_and_data_types.html#global-scope">global scope</a>.  The format for classes and structs are as shown below:</p>
-<pre><code class="lang-lang=csharp,">struct SimpleStruct {}
+<pre><code class="lang-TS:Simple">struct SimpleStruct {}
 class SimpleClass {}
 </code></pre>
 <p>Any members that belong to <code>SimpleStruct</code> or <code>SimpleClass</code> will be defined within their curly braces.</p>
 <h2 id="struct-members-in-classes">Struct Members in Classes</h2>
 <p>Because structs are copied <code>by-value</code>, structs cannot have class members.  As shown in the code snippet below, any other permutation of containment is valid.</p>
-<pre><code class="lang-lang=csharp,">struct StructInStruct { var MyStruct : SimpleStruct; }
+<pre><code class="lang-TS:Classes">struct StructInStruct { var MyStruct : SimpleStruct; }
 struct ClassInStruct { var MyClass : SimpleClass; } // ERROR
 class StructInClass { var MyStruct : SimpleStruct; }
 class ClassInClass { var MyClass : SimpleClass; }
@@ -102,7 +102,7 @@ class ClassInClass { var MyClass : SimpleClass; }
 <p>The class <code>MyClass</code> is a member of <code>ClassInStruct</code>, which is a struct.  Having a class in a struct will cause Nada to throw a compile-time exception.</p>
 <h2 id="static-vs-non-static-members">Static vs Non-Static Members</h2>
 <p>Variables and functions inside a class or struct are known as members. Most member variables must be accessed through instantiations of the object.  The one exception are member variables with the <a href="attributes.html#static">Static</a> <a href="attributes.html">Attribute</a>.</p>
-<pre><code class="lang-lang=csharp,">class MyClass
+<pre><code class="lang-TS:Static">class MyClass
 {
   // standard variable instantiation and initialization
   var MyReal : Real = 0;
@@ -119,7 +119,7 @@ class ClassInClass { var MyClass : SimpleClass; }
 <p>Accessing static members can be done with <code>MyVariableClass.MyStaticReal</code> or <code>MyVariableClass.MyStaticFunction</code>, while <code>MyVariableClass().MyReal</code> is a way of accessing a non-static member.</p>
 <h2 id="member-variable-declaration">Member Variable Declaration</h2>
 <p>Member variables define the data in a class.  The rules for defining member variables differ from how local variables are defined.</p>
-<pre><code class="lang-lang=csharp,">class MyClass
+<pre><code class="lang-TS:Member">class MyClass
 {
   // variable instantiation only is allowed
   var MyDoubleReal : DoubleReal;
@@ -131,7 +131,7 @@ class ClassInClass { var MyClass : SimpleClass; }
 <p>Notice how <code>MyDoubleReal</code> isn't initialized.  At the class scope, uninitialized member variables will be set to the default values of their types. Also note that member variables must be explicitly typed.  <code>MyBoolean</code> is set to <code>false</code>, but Nada will still throw a compiler error if the type is omitted.</p>
 <h2 id="member-functions">Member Functions</h2>
 <p>Member functions hold executable code, can take input parameters, and can return data.  Member functions without the <code>[Static]</code> attribute  also have access to the instantiated object that invoked them.</p>
-<pre><code class="lang-lang=csharp,">class MyClass
+<pre><code class="lang-TS:Member">class MyClass
 {
   var MyReal : Real = 1.2;
   
@@ -150,7 +150,7 @@ class ClassInClass { var MyClass : SimpleClass; }
 <p>Notice how <code>MyReal</code>, a member variable of <code>MyClass</code>, is accessed in <code>MyFunc</code> using the <code>this</code> keyword.  <code>this</code> refers to the instantiated object.  If the function is static, then <code>this</code> cannot be used as there is no instantiation of <code>MyClass</code>.  Also notice how there are two versions of <code>MyFunc</code>, one static and one not.  This is valid because static members must always be accessed through the class with the format <code>&lt;class&gt;.&lt;function&gt;</code>.</p>
 <h2 id="constructors-and-destructors">Constructors and Destructors</h2>
 <p>Structs/Classes can have constructor and destructors, which are special functions with no return type.  Constructors are called when an object is instantiated, and the destructor is called when the object is deleted.</p>
-<pre><code class="lang-lang=csharp,">class ExplicitDefault
+<pre><code class="lang-TS:Default">class ExplicitDefault
 {
   constructor() {}
 }
@@ -167,7 +167,7 @@ class Driver
 }
 </code></pre>
 <p>The class <code>ExplicitDefault</code> has a single constructor that takes no parameters.  This constructors type is known as the //default constructor//.  Notice how the constructor is called by the class name in the statement <code>ExplicitDefault();</code>  Also notice how <code>ImplicitDefault</code> is constructed with the default constructor in the statement <code>ImplicitDefault();</code>.  As long as there are no constructors defined, the default will always be defined by nada.</p>
-<pre><code class="lang-lang=csharp,">class ExplicitCustom
+<pre><code class="lang-TS:Custom">class ExplicitCustom
 {
   constructor(r : Real) {}
 }
@@ -192,7 +192,7 @@ class Driver
 <p>The class <code>ExplicitCustom</code> defines a single constructor that takes a single <a href="../../../code_reference/nada_base_types/real.html">real</a>.  This means that <code>ExplicitCustom</code> cannot be default constructed, therefore the statement <code>ExplicitCustom();</code> fails to compile.  The default constructor can still be readded by explicitly defining it alongside other constructors, as shown in the class <code>ExplicitCustomAndDefault</code>.</p>
 <p>NOTE: Explcitly defining a constructor is <strong>not required</strong> in Nada as long as every data member of the class has a default constructor.</p>
 <p>Destructors are called when all handles to an object are destroyed.  The exception is when an object is not a copy by reference type, in which case the destructor isn't called.</p>
-<pre><code class="lang-lang=csharp,">struct MyStruct
+<pre><code class="lang-TS:Destructors">struct MyStruct
 {
   var Id : Integer;
   constructor(id : Integer)

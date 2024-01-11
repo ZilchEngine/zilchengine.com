@@ -104,7 +104,7 @@
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>SquareLogic</code></li>
 <li>Update the <code>SquareLogic</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class SquareLogic : NadaComponent
+<pre><code class="lang-TS:&quot;SquareLogic&quot;">class SquareLogic : NadaComponent
 {
   [Dependency] var Transform : Transform;
   
@@ -146,7 +146,7 @@
 <ul>
 <li>Update the <code>SquareLogic</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class SquareLogic : NadaComponent
+<pre><code class="lang-TS:Square">class SquareLogic : NadaComponent
 {
   [Dependency] var Transform : Transform;
 
@@ -191,7 +191,7 @@
 <ul>
 <li>Add the following to the end of <code>OnLogicUpdate</code> function in the <code>SquareLogic</code> component:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">if(Zilch.Keyboard.KeyIsPressed(Keys.D))
+<pre><code class="lang-TS:Detaching">if(Zilch.Keyboard.KeyIsPressed(Keys.D))
 {
    this.Owner.Children.Current.Detach();
 }
@@ -212,7 +212,7 @@
 <ul>
 <li>Add the following to the <code>SquareLogic</code> class:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">[Property]
+<pre><code class="lang-TS:Growth">[Property]
 var Growth : Real = 1.1;
 </code></pre>
 <ul>
@@ -221,7 +221,7 @@ var Growth : Real = 1.1;
 <li>Below the line, <code>obj.AttachTo(this.Owner);</code></li>
 <li>Add the following code:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">obj.Parent.Transform.Scale *= this.Growth;
+<pre><code class="lang-TS:Accessing">obj.Parent.Transform.Scale *= this.Growth;
 </code></pre>
 <ul>
 <li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
@@ -236,7 +236,7 @@ var Growth : Real = 1.1;
 <ul>
 <li>Add the following to <code>OnLogicUpdate</code> function in the <code>SquareLogic</code> component:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">    if(Zilch.Keyboard.KeyIsPressed(Keys.Enter))
+<pre><code class="lang-TS:Accessing">    if(Zilch.Keyboard.KeyIsPressed(Keys.Enter))
     {
       foreach(var child in this.Owner.Children)
       {

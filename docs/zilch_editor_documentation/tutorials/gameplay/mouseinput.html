@@ -118,7 +118,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>ScaleWithMouseEvents</code></li>
 <li>Update the <code>ScaleWithMouseEvents</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class ScaleWithMouseEvents : NadaComponent
+<pre><code class="lang-TS:&quot;ScaleWithMouseEvents&quot;">class ScaleWithMouseEvents : NadaComponent
 {
   [Dependency] var Transform : Transform;
   [Dependency] var Reactive : Reactive;
@@ -173,7 +173,7 @@
 <ul>
 <li>Update the <code>ScaleWithMouseEvents</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class ScaleWithMouseEvents : NadaComponent
+<pre><code class="lang-TS:&quot;ScaleWithMouseEvents,">class ScaleWithMouseEvents : NadaComponent
 {
   [Dependency] var Transform : Transform;
   [Dependency] var Reactive : Reactive;
@@ -253,7 +253,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>PrintPositionOnMouseDown</code></li>
 <li>Update the <code>PrintPositionOnMouseDown</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class PrintPositionOnMouseDown : NadaComponent
+<pre><code class="lang-TS:&quot;PrintPositionOnMouseDown&quot;">class PrintPositionOnMouseDown : NadaComponent
 {
   function Initialize(init : CogInitializer)
   {
@@ -284,7 +284,7 @@
 <ul>
 <li>Replace the <code>OnMouseDown</code> function in the <code>PrintPositionOnMouseDown</code> class with the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">function OnMouseDown(event : ViewportMouseEvent)
+<pre><code class="lang-TS:&quot;PrintPositionOnMouseDown,">function OnMouseDown(event : ViewportMouseEvent)
 {
   var mousePosition = event.ToWorldZPlane(0);
   Console.WriteLine(mousePosition);
@@ -311,7 +311,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>MoveOnMiddleMouseDown</code></li>
 <li>Update the <code>MoveOnMiddleMouseDown</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class MoveOnMiddleMouseDown : NadaComponent
+<pre><code class="lang-TS:&quot;MoveOnMiddleMouseDown&quot;">class MoveOnMiddleMouseDown : NadaComponent
 {
   [Dependency] var Transform : Transform;
   

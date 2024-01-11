@@ -115,7 +115,7 @@
 <ul>
 <li>Update the <code>PlayerMovement</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class PlayerMovement : NadaComponent
+<pre><code class="lang-TS:PlayerMovement">class PlayerMovement : NadaComponent
 {
   [Dependency] var RigidBody : RigidBody;
 
@@ -170,7 +170,7 @@
 <p><code>LogicUpdate</code> is the event and <code>this.OnLogicUpdate</code> is the event callback function. A callback function is a function passed as an argument into another function, with the expectation that it will be called in response to something.  An event callback function (in this case, this.OnLogicUpdate) is the function that is called every time a component (in this case, PlayerMovement) that is connected to some event (in this case, LogicUpdate) hears that the event has occurred (which is every frame in this instance). As <code>OnLogicUpdate</code> is called every frame, seamless movement can be achieved by updating the movement vector of the Cog within that function.</p>
 <h2 id="event-connections">Event Connections</h2>
 <p>Connecting to an event involves both calling the <a href="../../../code_reference/class_reference/zilch.html#connect-void-key-static">Zilch.Connect</a> function and creating the appropriate callback function. Let's look at the call to the Connect function first, parameter by parameter:</p>
-<pre><code class="lang-lang=csharp,">Zilch.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
+<pre><code class="lang-TS:Example">Zilch.Connect(this.Space, Events.LogicUpdate, this.OnLogicUpdate);
 </code></pre>
 <table>
 <thead>
@@ -199,7 +199,7 @@
 </tbody>
 </table>
 <p>The callback function must take a parameter whose type matches the type of the event that you are connecting to. Now let's take a look at the callback function:</p>
-<pre><code class="lang-lang=csharp,">function OnLogicUpdate(event : UpdateEvent)
+<pre><code class="lang-TS:LogicUpdate">function OnLogicUpdate(event : UpdateEvent)
 </code></pre>
 <table>
 <thead>
@@ -242,7 +242,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>DestroyOnCollide</code></li>
 <li>Update the <code>DestroyOnCollide</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class DestroyOnCollide : NadaComponent
+<pre><code class="lang-TS:DestroyOnCollide">class DestroyOnCollide : NadaComponent
 {
   function Initialize(init : CogInitializer)
   {
@@ -271,7 +271,7 @@
 <li>Create a NadaScript resource using the Component template template and name it <code>SpawnObjectOnDestroy</code></li>
 <li>Update the <code>SpawnObjectOnDestroy</code> script to the following:</li>
 </ul>
-<pre><code class="lang-lang=csharp,">class SpawnObjectOnDestroy : NadaComponent
+<pre><code class="lang-TS:SpawnObjectOnDestroy">class SpawnObjectOnDestroy : NadaComponent
 {
   [Dependency] var Transform : Transform;
   

@@ -87,7 +87,7 @@
 
 <p>A function is a named block of code (with its own <a href="variables_and_data_types.html#scope">scope</a> that performs a task. Ideally, one function should perform just one task. A function may return a value of a specific <a href="variables_and_data_types.html">type</a> based on the operation performed in the function or it may return nothing at all. Functions can also take in values of a specific type, which are called parameters, that are used and/or changed by the operation of the function.</p>
 <p>Functions are declared using the <strong>function</strong> keyword:</p>
-<pre><code class="lang-lang=csharp,">// Note:
+<pre><code class="lang-TS:Function">// Note:
 // -function keyword is used
 // -function name is capitalized
 // -function name is followed by ()
@@ -107,7 +107,7 @@ function MyFunctionName(param1: MyParamType1, param2: MyParamType2) : MyReturnTy
 <p>There are a number of important rules that functions in Nada must follow. If these rules are not followed, an error will be thrown, as can be seen in the examples below.</p>
 <h2 id="no-global-functions">No Global Functions</h2>
 <p>Nada <strong>does not support</strong> global functions. They must be contained within the scope of either a <a href="classes.html">class</a> or <a href="structs.md">struct</a>. Thus, the above would actually be encased like this:</p>
-<pre><code class="lang-lang=csharp,">class MyClassName
+<pre><code class="lang-TS:Function">class MyClassName
 {
     function MyFunctionName(param1: MyParamType1, param2: MyParamType2) : MyReturnType
     {
@@ -117,7 +117,7 @@ function MyFunctionName(param1: MyParamType1, param2: MyParamType2) : MyReturnTy
 }
 </code></pre>
 <p>or this:</p>
-<pre><code class="lang-lang=csharp,">struct MyStructName
+<pre><code class="lang-TS:Function">struct MyStructName
 {
   function MyFunctionName(param1: MyParamType1, param2: MyParamType2) : MyReturnType
   {
@@ -131,7 +131,7 @@ function MyFunctionName(param1: MyParamType1, param2: MyParamType2) : MyReturnTy
 </code></pre>
 <h1 id="the-static-keyword">The Static Keyword</h1>
 <p>Static functions can be implemented using the <code>[Static]</code> attribute. Operations performed by functions which are static should be independent of independent of any particular data of the class. This is important as static functions can also be called with out access to an instance of the class by referencing the function through the non-instantied type:</p>
-<pre><code class="lang-lang=csharp,">class MyClass
+<pre><code class="lang-TS:Static">class MyClass
 {
   [Static] // Marking it static allows you to reference the function without creating an instance.
   function ClassName():String
@@ -149,7 +149,7 @@ function MyFunctionName(param1: MyParamType1, param2: MyParamType2) : MyReturnTy
 <p>NOTE: Unlike other languages static functions <strong>cannot</strong> be called from an instance, <strong>only</strong> from the class name.</p>
 <h1 id="function-naming">Function Naming</h1>
 <p>The first letter of a function name MUST be capitalized. While the rest of the name may remain un-capitalized, function names are traditionally written using <a href="https://en.wikipedia.org/wiki/Camel_case">upper camel case</a> (e.g. <code>MyFunctionName</code> instead of <code>Myfunctionname</code>).</p>
-<pre><code class="lang-lang=csharp,">// Lowercase function name will cause a compiler error.
+<pre><code class="lang-TS:Incorrect">// Lowercase function name will cause a compiler error.
 function myFunctionName() // This won't work..
 {
   // Perform function operations here.
@@ -159,7 +159,7 @@ function myFunctionName() // This won't work..
 </code></pre>
 <h1 id="parameter-and-variable-naming">Parameter and Variable Naming</h1>
 <p>Parameters and locally-scoped (to the function scope in this case) MUST start with a lowercase character. While the rest of the name may remain un-capitalized, parameter and local variables are traditionally written using lower camel case (e.g. <code>myParamName</code> instead of <code>myparamname</code>).</p>
-<pre><code class="lang-lang=csharp,">// Capitalized parameter identifiers will cause a compiler error.
+<pre><code class="lang-TS:Incorrect">// Capitalized parameter identifiers will cause a compiler error.
 function MyFunctionName(Param1: MyParamType) // This won't work.
 {
   // Capitalized locally-scoped variables will also cause a compiler error.
@@ -171,7 +171,7 @@ function MyFunctionName(Param1: MyParamType) // This won't work.
 <p>In this error, <code>UpperIdentifier</code> refers to the uppercase letter 'P' used in <code>Param1</code>. As this is unacceptable for a parameter name, the error states that it expects to find the closing parenthesis instead.</p>
 <h1 id="return-types">Return Types</h1>
 <p>Return types are appended to the function signature <strong>after</strong> the argument list separated by the <code>:</code> operator. When this is left off the return type is assumed to be Void. You can use the <strong>return</strong> keyword to return a value from the function; however, if the function signature has a Void return type, the return statement must be omitted.</p>
-<pre><code class="lang-lang=csharp,">// Leaving off the return value, assumes nothing is returned.
+<pre><code class="lang-TS:Using">// Leaving off the return value, assumes nothing is returned.
 function MyFunctionName()
 {
   // 8 will NOT be returned since the signature does not specify a 

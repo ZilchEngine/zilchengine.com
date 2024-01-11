@@ -89,7 +89,7 @@
 <h1 id="using-soundspaces">Using SoundSpaces</h1>
 <h2 id="playing-soundcues">Playing SoundCues</h2>
 <p><a href="soundcue.html">SoundCues  </a> can be played through SoundSpaces for non-positional audio that does not go through the SoundListeners. The <code>PlayCue</code> method will start playing the SoundCue immediately, while the <code>PlayCuePaused</code> method will create a paused <a href="soundinstance.html">SoundInstance </a>, which allows the user to change its settings before un-pausing it.</p>
-<pre><code class="lang-lang=csharp">this.MySoundInstance = this.Space.SoundSpace.PlayCuePaused(this.MySoundCue);
+<pre><code class="lang-TS">this.MySoundInstance = this.Space.SoundSpace.PlayCuePaused(this.MySoundCue);
 this.MySoundInstance.Volume = 0.5;
 this.MySoundInstance.Paused = false;
 </code></pre>

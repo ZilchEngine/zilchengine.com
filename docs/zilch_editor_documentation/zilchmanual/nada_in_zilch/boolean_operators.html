@@ -89,7 +89,7 @@
 <p>The <a href="../../../code_reference/nada_base_types/boolean.html">boolean</a> type has special operators that work with it.</p>
 <h1 id="the-negation-operator-">The Negation Operator <code>!</code></h1>
 <p>The <code>!</code> operator, called the negation operator, is typically the simplest of the boolean operators as it changes the value of its operand to <code>true</code> if it was <code>false</code>, and changes the value to <code>false</code> if it was <code>true</code>.</p>
-<pre><code class="lang-name=The">var a = true;
+<pre><code class="lang-TS:The">var a = true;
 Console.WriteLine(&quot;a starts as `a`&quot;);
 a = !a;
 Console.WriteLine(&quot;a is negated and is now `a`&quot;);
@@ -104,7 +104,7 @@ a is negated again and is now true again
 <p>All comparison operators take a left side and right side operand and evaluate to a boolean value.</p>
 <h2 id="equality-">Equality <code>==</code></h2>
 <p>Often certain code should only run under specific conditions. The <code>==</code> operator, called the Equality operator, determines if the value of two operands are equalivalent and returns <code>true</code> or <code>false</code>.</p>
-<pre><code class="lang-name=Equality">var a = true;
+<pre><code class="lang-TS:Equality">var a = true;
 var b = true;
 var c = false;
 
@@ -152,7 +152,7 @@ a, b, and c are equal: false
 </table>
 <h2 id="inequality-">Inequality <code>!=</code></h2>
 <p>The <code>!=</code> operator, called the inequality operator, is the logical inverse of the equality operator return <code>true</code> if the operands are not the equal and <code>false</code> if they are.</p>
-<pre><code class="lang-name=Inequality">
+<pre><code class="lang-TS:Inequality">
 var a = true;
 var b = true;
 var c = false;
@@ -201,7 +201,7 @@ a, b, and c are not equal: false
 </table>
 <h2 id="less-than--greater-than---">Less Than &amp; Greater Than <code>&lt;</code> &amp; <code>&gt;</code></h2>
 <p>The <code>&lt;</code> and <code>&gt;</code> operators, called the less or greater then operators respectively, evaluate if one operand has a smaller/larger value than the other.</p>
-<pre><code class="lang-name=Less/Greater">var i = 0;
+<pre><code class="lang-TS:Less/Greater">var i = 0;
 var j = 1;
 var k = 0;
 
@@ -222,7 +222,7 @@ j is greater than k: true
 <p>Notice that <code>i</code> is not less or greater than <code>k</code> as <code>0</code> is not less or greater than <code>0</code>.</p>
 <h2 id="less-than-or-equal--greater-than-or-equal---">Less Than or Equal &amp; Greater Than or Equal (<code>&lt;=</code> &amp; <code>&gt;=</code>)</h2>
 <p>The <code>&lt;=</code> and <code>&gt;=</code>, called the <code>less than or equal to</code> and <code>greater than or equal to</code> operators, determine if the value of the left operand is lesser than, greater than, or equal to the right operand.</p>
-<pre><code class="lang-name=Less/Greater">var i = 0;
+<pre><code class="lang-TS:Less/Greater">var i = 0;
 var j = 1;
 var k = 0;
 
@@ -244,7 +244,7 @@ j is greater than or equal to k: true
 <p>Logical operators take a left and a right side areguement, both of which must evaluate to boolean values, and evaluates them returning another boolean value.</p>
 <h1 id="and-">and <code>&amp;&amp;</code></h1>
 <p>The <code>&amp;&amp;</code> operator, called the <code>and</code> operator, takes two boolean values and evaluates them, returning true only if both operands evaluate to true. This can be very useful as often one may find that a condition in script may depend on two seperate factors.</p>
-<pre><code class="lang-name=Nested">var i = true;
+<pre><code class="lang-TS:Nested">var i = true;
 var j = false;
 
 if(i)
@@ -266,7 +266,7 @@ else
 <pre><code class="lang-name=Console">Inner Else: Either i or j is false
 </code></pre>
 <p>This can be simplified using the <code>&amp;&amp;</code> operator to evaluate both <code>i</code> and <code>j</code> within the same <code>if</code> statement.</p>
-<pre><code class="lang-name=&amp;&amp;,">var i = true;
+<pre><code class="lang-TS:&amp;&amp;">var i = true;
 var j = false;
 
 if(i &amp;&amp; j)
@@ -315,7 +315,7 @@ else
 <p>(NOTE)<strong>Short Circuiting the Right Side Operand</strong>: Since logical <code>and</code> is an operator which is resolved left to right is can always be assumed that the left operand will be evaluated to either <code>true</code> or <code>false</code> before the righthand operand is evaluated at all. This is important as if the first operand does not evaluate to <code>true</code> the operator will immeidiately evaluate to <code>false</code> <em>short circuiting</em> the right side an causing it to not resolve and evaluate the expression of the right side operand at all. A good usage example is when checking object validity before accessing members such as components.</p>
 <h1 id="or-">or <code>||</code></h1>
 <p>The <code>||</code> operator, called the <code>or</code> operator, takes two boolean values and evaluates them, returning true if either operands evaluates to true.</p>
-<pre><code class="lang-name=||,">var i = true;
+<pre><code class="lang-TS:||">var i = true;
 var j = false;
 
 if(i || j)
