@@ -1,4 +1,9 @@
 {
+  "community.html": {
+    "href": "community.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
+  },
   "docs/README.html": {
     "href": "docs/README.html",
     "title": "New to the Zilch community? Get started here! | ZilchEngine",
@@ -7048,6 +7053,11 @@
     "href": "index.html",
     "title": "This is the HOMEPAGE. | ZilchEngine",
     "keywords": "This is the HOMEPAGE. Refer to Markdown for how to write markdown files. Quick Start Notes: Add images to the images folder if the file is referencing an image."
+  },
+  "news.html": {
+    "href": "news.html",
+    "title": "| ZilchEngine",
+    "keywords": ""
   },
   "samples/getting-started.html": {
     "href": "samples/getting-started.html",

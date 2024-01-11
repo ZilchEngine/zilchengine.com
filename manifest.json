@@ -12,6 +12,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "community.md",
+      "output": {
+        ".html": {
+          "relative_path": "community.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "docs/README.md",
       "output": {
         ".html": {
@@ -14139,6 +14149,16 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "news.md",
+      "output": {
+        ".html": {
+          "relative_path": "news.html"
         }
       },
       "version": ""
