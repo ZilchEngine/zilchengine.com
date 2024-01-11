@@ -182,70 +182,70 @@
 <h1 id="active--boolean">Active : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Whether or not the car will run any logic at all. If this is false wheels will not work, they will not behave as springs, drive, or anything else.</p>
-<pre><code class="lang-lang=cpp,">var Active : Boolean
+<pre><code class="lang-TS:Nada">var Active : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="antilockbrakes--boolean">AntiLockBrakes : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Prevents the car from entering dynamic friction when applying brakes. If the brake would start to skid, the brake force is clamped to the max amount that will not slip.</p>
-<pre><code class="lang-lang=cpp,">var AntiLockBrakes : Boolean
+<pre><code class="lang-TS:Nada">var AntiLockBrakes : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="brake--real">Brake : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>How much the brake is being pressed [0,1] where 1 is full brake.</p>
-<pre><code class="lang-lang=cpp,">var Brake : Real
+<pre><code class="lang-TS:Nada">var Brake : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="debugdraw--boolean">DebugDraw : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Whether or not the car should debug draw.</p>
-<pre><code class="lang-lang=cpp,">var DebugDraw : Boolean
+<pre><code class="lang-TS:Nada">var DebugDraw : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="gas--real">Gas : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>How much the gas is being pressed [-1,1] where -1 is full reverse.</p>
-<pre><code class="lang-lang=cpp,">var Gas : Real
+<pre><code class="lang-TS:Nada">var Gas : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="gripscalar--real">GripScalar : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>Artificially increases the grip of the car (where 2 is twice the grip). The total grip scalar is computed as CarGripScalar * WheelGripScalar so the total car can be easily tweaked while allowing individual wheel tweaks.</p>
-<pre><code class="lang-lang=cpp,">var GripScalar : Real
+<pre><code class="lang-TS:Nada">var GripScalar : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="maxspeed--real">MaxSpeed : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The desired maximum speed of the car. Similar to a speed governor.</p>
-<pre><code class="lang-lang=cpp,">var MaxSpeed : Real
+<pre><code class="lang-TS:Nada">var MaxSpeed : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="maxtorque--real">MaxTorque : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The maximum torque the engine can apply to try to reach the max speed.</p>
-<pre><code class="lang-lang=cpp,">var MaxTorque : Real
+<pre><code class="lang-TS:Nada">var MaxTorque : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="steer--real">Steer : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>How much the wheel is being steered. This is measured in radians about this object's y-axis.</p>
-<pre><code class="lang-lang=cpp,">var Steer : Real
+<pre><code class="lang-TS:Nada">var Steer : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="torquegovernor--boolean">TorqueGovernor : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Governs the max torque that the engine can apply. This is used to keep the wheels from spinning out (slipping) when too high of a torque is applied. If the tires would slip, the engine will apply the maximum torque for the tires to not slip.</p>
-<pre><code class="lang-lang=cpp,">var TorqueGovernor : Boolean
+<pre><code class="lang-TS:Nada">var TorqueGovernor : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -253,21 +253,21 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Read-only array of wheels belonging to this car.</p>
-<pre><code class="lang-lang=cpp,">var WheelCogs : CarWheelArray
+<pre><code class="lang-TS:Nada">var WheelCogs : CarWheelArray
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="wheelfrictionfrontrollcoef--real">WheelFrictionFrontRollCoef : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>Coefficient used to apply the forward friction force closer to the car's center of mass. 1 applies the force at the wheel position, 0 applies the force at the point along the contact normal closest to the center of mass.</p>
-<pre><code class="lang-lang=cpp,">var WheelFrictionFrontRollCoef : Real
+<pre><code class="lang-TS:Nada">var WheelFrictionFrontRollCoef : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="wheelfrictionsiderollcoef--real">WheelFrictionSideRollCoef : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>Coefficient used to apply the side friction force closer to the car's center of mass. 1 applies the force at the wheel position, 0 applies the force at the point along the contact normal closest to the center of mass.</p>
-<pre><code class="lang-lang=cpp,">var WheelFrictionSideRollCoef : Real
+<pre><code class="lang-TS:Nada">var WheelFrictionSideRollCoef : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -278,7 +278,7 @@
 <p>The number of wheels currently in contact with an object.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function NumberOfWheelsInContact() : Integer
+<pre><code class="lang-TS:Nada">function NumberOfWheelsInContact() : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -294,7 +294,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function PhysicsCar()
+<pre><code class="lang-TS:Nada">function PhysicsCar()
 </code></pre>
 </blockquote>
 <hr>

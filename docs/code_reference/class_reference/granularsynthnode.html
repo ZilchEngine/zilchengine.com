@@ -193,105 +193,105 @@
 <h1 id="bufferscanrate--real">BufferScanRate : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The rate at which the synthesizer scans the buffer as it creates grains. A value of 1.0 will move through the audio data at the same rate as it would normally be played, 0.5 will move at half speed, and -1.0 will move at normal speed backward. A value of 0.0 will make the synthesizer repeat the same audio continuously.</p>
-<pre><code class="lang-lang=cpp,">var BufferScanRate : Real
+<pre><code class="lang-TS:Nada">var BufferScanRate : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="graindelay--integer">GrainDelay : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>The number of milliseconds to wait before playing another grain.</p>
-<pre><code class="lang-lang=cpp,">var GrainDelay : Integer
+<pre><code class="lang-TS:Nada">var GrainDelay : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="graindelayvariance--integer">GrainDelayVariance : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>The variance for randomizing the grain delay, in milliseconds.</p>
-<pre><code class="lang-lang=cpp,">var GrainDelayVariance : Integer
+<pre><code class="lang-TS:Nada">var GrainDelayVariance : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="grainlength--integer">GrainLength : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>The length of a grain, in milliseconds.</p>
-<pre><code class="lang-lang=cpp,">var GrainLength : Integer
+<pre><code class="lang-TS:Nada">var GrainLength : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="grainlengthvariance--integer">GrainLengthVariance : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>The variance for randomizing the grain length, in milliseconds.</p>
-<pre><code class="lang-lang=cpp,">var GrainLengthVariance : Integer
+<pre><code class="lang-TS:Nada">var GrainLengthVariance : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="grainpanningvalue--real">GrainPanningValue : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The value used to pan the grains left or right. A value of 0 will be heard equally from the left and right, 1.0 will be heard only on the right, and -1.0 will be only left.</p>
-<pre><code class="lang-lang=cpp,">var GrainPanningValue : Real
+<pre><code class="lang-TS:Nada">var GrainPanningValue : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="grainpanningvariance--real">GrainPanningVariance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The variance for randomizing the grain panning value.</p>
-<pre><code class="lang-lang=cpp,">var GrainPanningVariance : Real
+<pre><code class="lang-TS:Nada">var GrainPanningVariance : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="grainresamplerate--real">GrainResampleRate : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The rate at which grains resample their audio data. A value of 1.0 will play normally, 0.5 will play at half speed, and -1.0 will play at normal speed backward. Cannot be 0.</p>
-<pre><code class="lang-lang=cpp,">var GrainResampleRate : Real
+<pre><code class="lang-TS:Nada">var GrainResampleRate : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="grainresampleratevariance--real">GrainResampleRateVariance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The variance for randomizing the grain resample rate.</p>
-<pre><code class="lang-lang=cpp,">var GrainResampleRateVariance : Real
+<pre><code class="lang-TS:Nada">var GrainResampleRateVariance : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="grainvolume--real">GrainVolume : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The volume modifier applied to the grains.</p>
-<pre><code class="lang-lang=cpp,">var GrainVolume : Real
+<pre><code class="lang-TS:Nada">var GrainVolume : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="grainvolumevariance--real">GrainVolumeVariance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The variance for randomizing the grain volume.</p>
-<pre><code class="lang-lang=cpp,">var GrainVolumeVariance : Real
+<pre><code class="lang-TS:Nada">var GrainVolumeVariance : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="randomlocationvalue--real">RandomLocationValue : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The value for controlling how many grains have randomized starting positions in the audio. A value of 0 will be completely sequential, while 1.0 will be completely random.</p>
-<pre><code class="lang-lang=cpp,">var RandomLocationValue : Real
+<pre><code class="lang-TS:Nada">var RandomLocationValue : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="windowattack--integer">WindowAttack : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>The window attack time, in milliseconds. Does not have an effect on some windows.</p>
-<pre><code class="lang-lang=cpp,">var WindowAttack : Integer
+<pre><code class="lang-TS:Nada">var WindowAttack : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="windowrelease--integer">WindowRelease : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>The window release time, in milliseconds. Does not have an effect on some windows.</p>
-<pre><code class="lang-lang=cpp,">var WindowRelease : Integer
+<pre><code class="lang-TS:Nada">var WindowRelease : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="windowtype--granularsynthwindows">WindowType : <a href="../enum_reference.html#granularsynthwindows">GranularSynthWindows</a></h1>
 <blockquote>
 <p>The type of window, or volume envelope, used for each grain.</p>
-<pre><code class="lang-lang=cpp,">var WindowType : GranularSynthWindows
+<pre><code class="lang-TS:Nada">var WindowType : GranularSynthWindows
 </code></pre>
 </blockquote>
 <hr>
@@ -302,7 +302,7 @@
 <p>Starts playing new grains.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Play()
+<pre><code class="lang-TS:Nada">function Play()
 </code></pre>
 </blockquote>
 <hr>
@@ -314,7 +314,7 @@
 |sound|<a href="sound.html">sound</a>| |
 |startTime|<a href="../nada_base_types/real.html">real</a>| |
 |stopTime|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SetSound(sound : Sound, startTime : Real, stopTime : Real)
+<pre><code class="lang-TS:Nada">function SetSound(sound : Sound, startTime : Real, stopTime : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -323,7 +323,7 @@
 <p>Stops playing new grains but continues to play current ones.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Stop()
+<pre><code class="lang-TS:Nada">function Stop()
 </code></pre>
 </blockquote>
 <hr>

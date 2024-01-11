@@ -177,14 +177,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The rigid body that &quot;owns&quot; this collider. This is the body that forces/impulses/etc... should be applied to.</p>
-<pre><code class="lang-lang=cpp,">var ActiveBody : RigidBody
+<pre><code class="lang-TS:Nada">var ActiveBody : RigidBody
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="collisiongroup--collisiongroup">CollisionGroup : <a href="collisiongroup.html">collisiongroup</a></h1>
 <blockquote>
 <p>The collision group is a tag used to alter collision behavior based upon the space's CollisionTable.</p>
-<pre><code class="lang-lang=cpp,">var CollisionGroup : CollisionGroup
+<pre><code class="lang-TS:Nada">var CollisionGroup : CollisionGroup
 </code></pre>
 </blockquote>
 <hr>
@@ -192,7 +192,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The current number of contacts/collisions with this collider.</p>
-<pre><code class="lang-lang=cpp,">var ContactCount : Integer
+<pre><code class="lang-TS:Nada">var ContactCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -200,14 +200,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>A range of all contacts for this collider.</p>
-<pre><code class="lang-lang=cpp,">var Contacts : ContactRange
+<pre><code class="lang-TS:Nada">var Contacts : ContactRange
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="ghost--boolean">Ghost : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Ghosted colliders do not resolve collision. They do still detect collisions and send events. Ghosted colliders are typically used for trigger regions.</p>
-<pre><code class="lang-lang=cpp,">var Ghost : Boolean
+<pre><code class="lang-TS:Nada">var Ghost : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -215,7 +215,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The number of joints attached to this collider.</p>
-<pre><code class="lang-lang=cpp,">var JointCount : Integer
+<pre><code class="lang-TS:Nada">var JointCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -223,28 +223,28 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>A range of all joints attached to this collider.</p>
-<pre><code class="lang-lang=cpp,">var Joints : JointRange
+<pre><code class="lang-TS:Nada">var Joints : JointRange
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="material--physicsmaterial">Material : <a href="physicsmaterial.html">physicsmaterial</a></h1>
 <blockquote>
 <p>The material used to determine the density, restitution, and friction of this collider.</p>
-<pre><code class="lang-lang=cpp,">var Material : PhysicsMaterial
+<pre><code class="lang-TS:Nada">var Material : PhysicsMaterial
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="offset--real3">Offset : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>Moves the physics defined center of the object away from the transform's translation. Used to move physics to match a model.</p>
-<pre><code class="lang-lang=cpp,">var Offset : Real3
+<pre><code class="lang-TS:Nada">var Offset : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="sendsevents--boolean">SendsEvents : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Determines if this object will send collision events. Used mainly for increasing performance by not sending unnecessary collision events.</p>
-<pre><code class="lang-lang=cpp,">var SendsEvents : Boolean
+<pre><code class="lang-TS:Nada">var SendsEvents : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -252,7 +252,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the world-space axis aligned bounding box (Aabb) of this collider.</p>
-<pre><code class="lang-lang=cpp,">var WorldAabb : Aabb
+<pre><code class="lang-TS:Nada">var WorldAabb : Aabb
 </code></pre>
 </blockquote>
 <hr>
@@ -260,7 +260,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the world-space bounding sphere of this collider.</p>
-<pre><code class="lang-lang=cpp,">var WorldBoundingSphere : Sphere
+<pre><code class="lang-TS:Nada">var WorldBoundingSphere : Sphere
 </code></pre>
 </blockquote>
 <hr>
@@ -271,7 +271,7 @@
 <p>Compute the world-space volume of this collider.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ComputeVolume() : Real
+<pre><code class="lang-TS:Nada">function ComputeVolume() : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -281,7 +281,7 @@
 |Name|Type|Description|
 |---|---|---|
 |worldPoint|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetPointVelocity(worldPoint : Real3) : Real3
+<pre><code class="lang-TS:Nada">function GetPointVelocity(worldPoint : Real3) : Real3
 </code></pre>
 </blockquote>
 <hr>

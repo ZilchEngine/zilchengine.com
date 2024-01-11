@@ -158,21 +158,21 @@
 <h1 id="active--boolean">Active : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Is the animGraph animating?</p>
-<pre><code class="lang-lang=cpp,">var Active : Boolean
+<pre><code class="lang-TS:Nada">var Active : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="activenode--animationnode">ActiveNode : <a href="animationnode.html">animationnode</a></h1>
 <blockquote>
 <p>The current root animation node.</p>
-<pre><code class="lang-lang=cpp,">var ActiveNode : AnimationNode
+<pre><code class="lang-TS:Nada">var ActiveNode : AnimationNode
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="timescale--real">TimeScale : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>A scalar to the entire animation graph.</p>
-<pre><code class="lang-lang=cpp,">var TimeScale : Real
+<pre><code class="lang-TS:Nada">var TimeScale : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -184,7 +184,7 @@
 <p>Constructor / destructor.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function AnimationGraph()
+<pre><code class="lang-TS:Nada">function AnimationGraph()
 </code></pre>
 </blockquote>
 <hr>
@@ -195,7 +195,7 @@
 |---|---|---|
 |animation|<a href="animation.html">animation</a>| |
 |mode|<a href="../enum_reference.html#animationplaymode">AnimationPlayMode</a>| |</p>
-<pre><code class="lang-lang=cpp,">function CreateBasicNode(animation : Animation, mode : AnimationPlayMode) : BasicAnimation
+<pre><code class="lang-TS:Nada">function CreateBasicNode(animation : Animation, mode : AnimationPlayMode) : BasicAnimation
 </code></pre>
 </blockquote>
 <hr>
@@ -210,7 +210,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function CreateChainNode() : ChainNode
+<pre><code class="lang-TS:Nada">function CreateChainNode() : ChainNode
 </code></pre>
 </blockquote>
 <hr>
@@ -225,7 +225,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function CreateCrossBlendNode() : CrossBlend
+<pre><code class="lang-TS:Nada">function CreateCrossBlendNode() : CrossBlend
 </code></pre>
 </blockquote>
 <hr>
@@ -240,7 +240,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function CreateDirectBlendNode() : DirectBlend
+<pre><code class="lang-TS:Nada">function CreateDirectBlendNode() : DirectBlend
 </code></pre>
 </blockquote>
 <hr>
@@ -255,7 +255,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function CreateSelectiveNode() : SelectiveNode
+<pre><code class="lang-TS:Nada">function CreateSelectiveNode() : SelectiveNode
 </code></pre>
 </blockquote>
 <hr>
@@ -277,7 +277,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function IsPlayingInGraph(animation : Animation) : Boolean
+<pre><code class="lang-TS:Nada">function IsPlayingInGraph(animation : Animation) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -292,7 +292,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function PrintGraph()
+<pre><code class="lang-TS:Nada">function PrintGraph()
 </code></pre>
 </blockquote>
 <hr>
@@ -302,7 +302,7 @@
 |Name|Type|Description|
 |---|---|---|
 |dt|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Update(dt : Real)
+<pre><code class="lang-TS:Nada">function Update(dt : Real)
 </code></pre>
 </blockquote>
 <hr>

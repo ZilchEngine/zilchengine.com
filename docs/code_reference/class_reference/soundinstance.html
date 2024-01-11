@@ -194,21 +194,21 @@
 <h1 id="customeventtime--real">CustomEventTime : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The time (in seconds from the beginning of the file) to get a MusicCustomTime event.</p>
-<pre><code class="lang-lang=cpp,">var CustomEventTime : Real
+<pre><code class="lang-TS:Nada">var CustomEventTime : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="decibels--real">Decibels : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The volume adjustment (in decibels) of the SoundInstance, initially set by the SoundCue's Decibels property. A value of 0 does nothing, 6 will double the sound's volume, -6 will halve it. The Decibels property is linked to the Volume property (changing one will change the other).</p>
-<pre><code class="lang-lang=cpp,">var Decibels : Real
+<pre><code class="lang-TS:Nada">var Decibels : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="endtime--real">EndTime : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The time in seconds from the beginning of the file that the instance will stop.</p>
-<pre><code class="lang-lang=cpp,">var EndTime : Real
+<pre><code class="lang-TS:Nada">var EndTime : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -216,7 +216,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The length of the entire audio file, in seconds.</p>
-<pre><code class="lang-lang=cpp,">var FileLength : Real
+<pre><code class="lang-TS:Nada">var FileLength : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -224,49 +224,49 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>This Property will be true while the SoundInstance is playing, then will become false when its sound has stopped.</p>
-<pre><code class="lang-lang=cpp,">var IsPlaying : Boolean
+<pre><code class="lang-TS:Nada">var IsPlaying : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="loopendtime--real">LoopEndTime : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The time in seconds from the beginning of the file that the instance will stop and jump back when looping.</p>
-<pre><code class="lang-lang=cpp,">var LoopEndTime : Real
+<pre><code class="lang-TS:Nada">var LoopEndTime : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="looping--boolean">Looping : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>When this Property is true the SoundInstance will loop indefinitely. If changed to false while a SoundInstance is looping the SoundInstance will continue playing to its EndTime and then stop.</p>
-<pre><code class="lang-lang=cpp,">var Looping : Boolean
+<pre><code class="lang-TS:Nada">var Looping : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="loopstarttime--real">LoopStartTime : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The time in seconds from the beginning of the file that the instance will jump back to when it loops.</p>
-<pre><code class="lang-lang=cpp,">var LoopStartTime : Real
+<pre><code class="lang-TS:Nada">var LoopStartTime : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="paused--boolean">Paused : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Setting this Property to true will pause a currently playing SoundInstance. Setting it to false will resume playback.</p>
-<pre><code class="lang-lang=cpp,">var Paused : Boolean
+<pre><code class="lang-TS:Nada">var Paused : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="pitch--real">Pitch : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The pitch adjustment of the SoundInstance, initially set by the SoundCue's Pitch property. A value of 0 will do nothing, 1 will raise the pitch by an octave and speed up the sound,.</p>
-<pre><code class="lang-lang=cpp,">var Pitch : Real
+<pre><code class="lang-TS:Nada">var Pitch : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="semitones--real">Semitones : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The pitch adjustment, in semitones (or half-steps), of the SoundInstance, initially set by the SoundCue's Semitones property. A value of 0 will do nothing, 12 will raise the pitch by an octave and speed up the sound, and -12 will lower the sound by an octave and slow it down. The Semitones property is linked to the Pitch property (changing one will change the other).</p>
-<pre><code class="lang-lang=cpp,">var Semitones : Real
+<pre><code class="lang-TS:Nada">var Semitones : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -274,7 +274,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The name of the Sound being played by this SoundInstance.</p>
-<pre><code class="lang-lang=cpp,">var SoundName : String
+<pre><code class="lang-TS:Nada">var SoundName : String
 </code></pre>
 </blockquote>
 <hr>
@@ -282,21 +282,21 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The SoundNode associated with this SoundInstance.</p>
-<pre><code class="lang-lang=cpp,">var SoundNode : SoundNode
+<pre><code class="lang-TS:Nada">var SoundNode : SoundNode
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="time--real">Time : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>This property tells you to the current playback position, in seconds from the beginning of the file, and allows you to tell the instance to change its playback position to a different time. Be aware that the time will not be precisely accurate. If the Sound resource used to play the SoundInstance has Streamed selected, you cannot set the playback position.</p>
-<pre><code class="lang-lang=cpp,">var Time : Real
+<pre><code class="lang-TS:Nada">var Time : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="volume--real">Volume : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The volume adjustment of the SoundInstance, initially set by the SoundCue's Volume property. A value of 1 does nothing, 2 will double the sound's volume, 0.5 will halve it. The Volume property is linked to the Decibels property (changing one will change the other).</p>
-<pre><code class="lang-lang=cpp,">var Volume : Real
+<pre><code class="lang-TS:Nada">var Volume : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -309,7 +309,7 @@
 |---|---|---|
 |decibels|<a href="../nada_base_types/real.html">real</a>| |
 |interpolationTime|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InterpolateDecibels(decibels : Real, interpolationTime : Real)
+<pre><code class="lang-TS:Nada">function InterpolateDecibels(decibels : Real, interpolationTime : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -320,7 +320,7 @@
 |---|---|---|
 |pitch|<a href="../nada_base_types/real.html">real</a>| |
 |interpolationTime|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InterpolatePitch(pitch : Real, interpolationTime : Real)
+<pre><code class="lang-TS:Nada">function InterpolatePitch(pitch : Real, interpolationTime : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -331,7 +331,7 @@
 |---|---|---|
 |pitchSemitones|<a href="../nada_base_types/real.html">real</a>| |
 |interpolationTime|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InterpolateSemitones(pitchSemitones : Real, interpolationTime : Real)
+<pre><code class="lang-TS:Nada">function InterpolateSemitones(pitchSemitones : Real, interpolationTime : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -342,7 +342,7 @@
 |---|---|---|
 |volume|<a href="../nada_base_types/real.html">real</a>| |
 |interpolationTime|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InterpolateVolume(volume : Real, interpolationTime : Real)
+<pre><code class="lang-TS:Nada">function InterpolateVolume(volume : Real, interpolationTime : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -351,7 +351,7 @@
 <p>Stops the playback of this SoundInstance. It cannot be re-started.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Stop()
+<pre><code class="lang-TS:Nada">function Stop()
 </code></pre>
 </blockquote>
 <hr>

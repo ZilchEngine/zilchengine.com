@@ -182,35 +182,35 @@
 <h1 id="addressingx--textureaddressing">AddressingX : <a href="../enum_reference.html#textureaddressing">TextureAddressing</a></h1>
 <blockquote>
 <p>How to treat uv coordinates outside of [0, 1] along the Texture's width.</p>
-<pre><code class="lang-lang=cpp,">var AddressingX : TextureAddressing
+<pre><code class="lang-TS:Nada">var AddressingX : TextureAddressing
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="addressingy--textureaddressing">AddressingY : <a href="../enum_reference.html#textureaddressing">TextureAddressing</a></h1>
 <blockquote>
 <p>How to treat uv coordinates outside of [0, 1] along the Texture's height.</p>
-<pre><code class="lang-lang=cpp,">var AddressingY : TextureAddressing
+<pre><code class="lang-TS:Nada">var AddressingY : TextureAddressing
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="anisotropy--textureanisotropy">Anisotropy : <a href="../enum_reference.html#textureanisotropy">TextureAnisotropy</a></h1>
 <blockquote>
 <p>Max ratio of anisotropy that filtering will account for at oblique viewing angles.</p>
-<pre><code class="lang-lang=cpp,">var Anisotropy : TextureAnisotropy
+<pre><code class="lang-TS:Nada">var Anisotropy : TextureAnisotropy
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="comparefunc--texturecomparefunc">CompareFunc : <a href="../enum_reference.html#texturecomparefunc">TextureCompareFunc</a></h1>
 <blockquote>
 <p>Which method of comparison should be used if CompareMode is set to Enable.</p>
-<pre><code class="lang-lang=cpp,">var CompareFunc : TextureCompareFunc
+<pre><code class="lang-TS:Nada">var CompareFunc : TextureCompareFunc
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="comparemode--texturecomparemode">CompareMode : <a href="../enum_reference.html#texturecomparemode">TextureCompareMode</a></h1>
 <blockquote>
 <p>If sampling in hardware should perform comparison instead of fetching. Requires using SamplerShadow2d in the shader.</p>
-<pre><code class="lang-lang=cpp,">var CompareMode : TextureCompareMode
+<pre><code class="lang-TS:Nada">var CompareMode : TextureCompareMode
 </code></pre>
 </blockquote>
 <hr>
@@ -218,14 +218,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Block compression method being used. Requires pre-processing, cannot be set for runtime Textures.</p>
-<pre><code class="lang-lang=cpp,">var Compression : TextureCompression
+<pre><code class="lang-TS:Nada">var Compression : TextureCompression
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="filtering--texturefiltering">Filtering : <a href="../enum_reference.html#texturefiltering">TextureFiltering</a></h1>
 <blockquote>
 <p>How samples should be blended under minification/magnification.</p>
-<pre><code class="lang-lang=cpp,">var Filtering : TextureFiltering
+<pre><code class="lang-TS:Nada">var Filtering : TextureFiltering
 </code></pre>
 </blockquote>
 <hr>
@@ -233,7 +233,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Memory format of the stored pixel data. Set on Upload() for runtime Textures.</p>
-<pre><code class="lang-lang=cpp,">var Format : TextureFormat
+<pre><code class="lang-TS:Nada">var Format : TextureFormat
 </code></pre>
 </blockquote>
 <hr>
@@ -241,14 +241,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Height of the Texture in pixels. Set on Upload() for runtime Textures.</p>
-<pre><code class="lang-lang=cpp,">var Height : Integer
+<pre><code class="lang-TS:Nada">var Height : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="mipmapping--texturemipmapping">MipMapping : <a href="../enum_reference.html#texturemipmapping">TextureMipMapping</a></h1>
 <blockquote>
 <p>If downsampled versions of the texture (mip maps) should be generated. PreGenerated is not valid for runtime Textures.</p>
-<pre><code class="lang-lang=cpp,">var MipMapping : TextureMipMapping
+<pre><code class="lang-TS:Nada">var MipMapping : TextureMipMapping
 </code></pre>
 </blockquote>
 <hr>
@@ -256,7 +256,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Width and height (x, y) of the Texture in pixels. Set on Upload() for runtime Textures.</p>
-<pre><code class="lang-lang=cpp,">var Size : Integer2
+<pre><code class="lang-TS:Nada">var Size : Integer2
 </code></pre>
 </blockquote>
 <hr>
@@ -264,7 +264,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The type of texture data being represented.</p>
-<pre><code class="lang-lang=cpp,">var Type : TextureType
+<pre><code class="lang-TS:Nada">var Type : TextureType
 </code></pre>
 </blockquote>
 <hr>
@@ -272,7 +272,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Width of the Texture in pixels. Set on Upload() for runtime Textures.</p>
-<pre><code class="lang-lang=cpp,">var Width : Integer
+<pre><code class="lang-TS:Nada">var Width : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -284,7 +284,7 @@
 <p>Makes an anonymous Texture resource that can be defined by script and uploaded to the gpu.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function CreateRuntime() : Texture
+<pre><code class="lang-TS:Nada">function CreateRuntime() : Texture
 </code></pre>
 </blockquote>
 <hr>
@@ -296,7 +296,7 @@
 |textureData|<a href="texturedata.html">texturedata</a>| |
 |xOffset|<a href="../nada_base_types/integer.html">integer</a>| |
 |yOffset|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SubUpload(textureData : TextureData, xOffset : Integer, yOffset : Integer)
+<pre><code class="lang-TS:Nada">function SubUpload(textureData : TextureData, xOffset : Integer, yOffset : Integer)
 </code></pre>
 </blockquote>
 <hr>
@@ -306,7 +306,7 @@
 |Name|Type|Description|
 |---|---|---|
 |textureData|<a href="texturedata.html">texturedata</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Upload(textureData : TextureData)
+<pre><code class="lang-TS:Nada">function Upload(textureData : TextureData)
 </code></pre>
 </blockquote>
 <hr>

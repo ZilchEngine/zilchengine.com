@@ -219,20 +219,20 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Get the angle of the object about the up vector.</p>
-<pre><code class="lang-lang=cpp,">var AbsoluteAngle : Real
+<pre><code class="lang-TS:Nada">var AbsoluteAngle : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="defaultorientationbases--orientationbases">DefaultOrientationBases : <a href="../enum_reference.html#orientationbases">OrientationBases</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var DefaultOrientationBases : OrientationBases
+<pre><code class="lang-TS:Nada">var DefaultOrientationBases : OrientationBases
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="globalup--real3">GlobalUp : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>The world-space up vector to use for LookAt operations that don't take an up vector.</p>
-<pre><code class="lang-lang=cpp,">var GlobalUp : Real3
+<pre><code class="lang-TS:Nada">var GlobalUp : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -240,14 +240,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The orientation's forward vector after having been transformed into local space.</p>
-<pre><code class="lang-lang=cpp,">var LocalForward : Real3
+<pre><code class="lang-TS:Nada">var LocalForward : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="localorientationbasis--quaternion">LocalOrientationBasis : <a href="../nada_base_types/quaternion.html">quaternion</a></h1>
 <blockquote>
 <p>A local-space basis that represents this orientation. If you build a basis from an up of (0, 1, 0), and a forward of (0, 0, -1) then this should result in the identity rotation.</p>
-<pre><code class="lang-lang=cpp,">var LocalOrientationBasis : Quaternion
+<pre><code class="lang-TS:Nada">var LocalOrientationBasis : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -255,7 +255,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The orientation's right vector after having been transformed into local space.</p>
-<pre><code class="lang-lang=cpp,">var LocalRight : Real3
+<pre><code class="lang-TS:Nada">var LocalRight : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -263,7 +263,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The rotation that takes an local space vector into orientation space. For example, this transforms LocalRight into OrientationRight.</p>
-<pre><code class="lang-lang=cpp,">var LocalToOrientationRotation : Quaternion
+<pre><code class="lang-TS:Nada">var LocalToOrientationRotation : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -271,7 +271,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The rotation that transforms a vector from local space into world space. For example, this transforms LocalRight into WorldRight.</p>
-<pre><code class="lang-lang=cpp,">var LocalToWorldRotation : Quaternion
+<pre><code class="lang-TS:Nada">var LocalToWorldRotation : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -279,7 +279,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The orientation's up vector after having been transformed into local space.</p>
-<pre><code class="lang-lang=cpp,">var LocalUp : Real3
+<pre><code class="lang-TS:Nada">var LocalUp : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -287,7 +287,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The forward vector in orientation space. This is always the vector (0, 0, -1) but is provided for clarity with transformations.</p>
-<pre><code class="lang-lang=cpp,">var OrientationForward : Real3
+<pre><code class="lang-TS:Nada">var OrientationForward : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -295,7 +295,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The right vector in orientation space. This is always the vector (1, 0, 0) but is provided for clarity with transformations.</p>
-<pre><code class="lang-lang=cpp,">var OrientationRight : Real3
+<pre><code class="lang-TS:Nada">var OrientationRight : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -303,7 +303,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The rotation that takes an orientation space vector into local space. For example, this transforms OrientationRight into LocalRight.</p>
-<pre><code class="lang-lang=cpp,">var OrientationToLocalRotation : Quaternion
+<pre><code class="lang-TS:Nada">var OrientationToLocalRotation : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -311,7 +311,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The rotation that takes an orientation space vector into world space. For example, this transforms OrientationRight into WorldRight.</p>
-<pre><code class="lang-lang=cpp,">var OrientationToWorldRotation : Quaternion
+<pre><code class="lang-TS:Nada">var OrientationToWorldRotation : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -319,7 +319,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The up vector in orientation space. This is always the vector (0, 1, 0) but is provided for clarity with transformations.</p>
-<pre><code class="lang-lang=cpp,">var OrientationUp : Real3
+<pre><code class="lang-TS:Nada">var OrientationUp : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -327,7 +327,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The orientation's forward vector after having been transformed into world space.</p>
-<pre><code class="lang-lang=cpp,">var WorldForward : Real3
+<pre><code class="lang-TS:Nada">var WorldForward : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -335,7 +335,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The orientation's right vector after having been transformed into world space.</p>
-<pre><code class="lang-lang=cpp,">var WorldRight : Real3
+<pre><code class="lang-TS:Nada">var WorldRight : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -343,7 +343,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The rotation that transforms a vector from world space into local space. For example, this transforms WorldRight into LocalRight.</p>
-<pre><code class="lang-lang=cpp,">var WorldToLocalRotation : Quaternion
+<pre><code class="lang-TS:Nada">var WorldToLocalRotation : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -351,7 +351,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The rotation that takes an world space vector into orientation space. For example, this transforms WorldRight into OrientationRight.</p>
-<pre><code class="lang-lang=cpp,">var WorldToOrientationRotation : Quaternion
+<pre><code class="lang-TS:Nada">var WorldToOrientationRotation : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -359,7 +359,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The orientation's up vector after having been transformed into world space.</p>
-<pre><code class="lang-lang=cpp,">var WorldUp : Real3
+<pre><code class="lang-TS:Nada">var WorldUp : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -373,7 +373,7 @@
 |up|<a href="../nada_base_types/real3.html">real3</a>| |
 |forward|<a href="../nada_base_types/real3.html">real3</a>| |
 |newVector|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ComputeSignedAngle(up : Real3, forward : Real3, newVector : Real3) : Real
+<pre><code class="lang-TS:Nada">function ComputeSignedAngle(up : Real3, forward : Real3, newVector : Real3) : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -382,7 +382,7 @@
 <p>Debug draws the current orientation bases in world space.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function DebugDrawBases()
+<pre><code class="lang-TS:Nada">function DebugDrawBases()
 </code></pre>
 </blockquote>
 <hr>
@@ -392,7 +392,7 @@
 |Name|Type|Description|
 |---|---|---|
 |lookDir|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetLookAtDirectionRotation(lookDir : Real3) : Quaternion
+<pre><code class="lang-TS:Nada">function GetLookAtDirectionRotation(lookDir : Real3) : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -403,7 +403,7 @@
 |---|---|---|
 |lookDir|<a href="../nada_base_types/real3.html">real3</a>| |
 |up|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetLookAtDirectionWithUpRotation(lookDir : Real3, up : Real3) : Quaternion
+<pre><code class="lang-TS:Nada">function GetLookAtDirectionWithUpRotation(lookDir : Real3, up : Real3) : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -413,7 +413,7 @@
 |Name|Type|Description|
 |---|---|---|
 |lookPoint|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetLookAtPointRotation(lookPoint : Real3) : Quaternion
+<pre><code class="lang-TS:Nada">function GetLookAtPointRotation(lookPoint : Real3) : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -424,7 +424,7 @@
 |---|---|---|
 |lookPoint|<a href="../nada_base_types/real3.html">real3</a>| |
 |up|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetLookAtPointWithUpRotation(lookPoint : Real3, up : Real3) : Quaternion
+<pre><code class="lang-TS:Nada">function GetLookAtPointWithUpRotation(lookPoint : Real3, up : Real3) : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -434,7 +434,7 @@
 |Name|Type|Description|
 |---|---|---|
 |lookDir|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function LookAtDirection(lookDir : Real3)
+<pre><code class="lang-TS:Nada">function LookAtDirection(lookDir : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -445,7 +445,7 @@
 |---|---|---|
 |lookDir|<a href="../nada_base_types/real3.html">real3</a>| |
 |up|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function LookAtDirectionWithUp(lookDir : Real3, up : Real3)
+<pre><code class="lang-TS:Nada">function LookAtDirectionWithUp(lookDir : Real3, up : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -455,7 +455,7 @@
 |Name|Type|Description|
 |---|---|---|
 |lookPoint|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function LookAtPoint(lookPoint : Real3)
+<pre><code class="lang-TS:Nada">function LookAtPoint(lookPoint : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -466,7 +466,7 @@
 |---|---|---|
 |lookPoint|<a href="../nada_base_types/real3.html">real3</a>| |
 |up|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function LookAtPointWithUp(lookPoint : Real3, up : Real3)
+<pre><code class="lang-TS:Nada">function LookAtPointWithUp(lookPoint : Real3, up : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -482,7 +482,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function Orientation()
+<pre><code class="lang-TS:Nada">function Orientation()
 </code></pre>
 </blockquote>
 <hr>
@@ -492,7 +492,7 @@
 |Name|Type|Description|
 |---|---|---|
 |localLookAtRotation|<a href="../nada_base_types/quaternion.html">quaternion</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SetLocalLookAtRotation(localLookAtRotation : Quaternion)
+<pre><code class="lang-TS:Nada">function SetLocalLookAtRotation(localLookAtRotation : Quaternion)
 </code></pre>
 </blockquote>
 <hr>
@@ -502,7 +502,7 @@
 |Name|Type|Description|
 |---|---|---|
 |worldLookAtRotation|<a href="../nada_base_types/quaternion.html">quaternion</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SetWorldLookAtRotation(worldLookAtRotation : Quaternion)
+<pre><code class="lang-TS:Nada">function SetWorldLookAtRotation(worldLookAtRotation : Quaternion)
 </code></pre>
 </blockquote>
 <hr>

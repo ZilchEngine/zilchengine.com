@@ -302,49 +302,49 @@
 <h1 id="basichostinfotimeout--real">BasicHostInfoTimeout : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>[Client/Server] Determines the amount of time the client is willing to wait for.</p>
-<pre><code class="lang-lang=cpp,">var BasicHostInfoTimeout : Real
+<pre><code class="lang-TS:Nada">var BasicHostInfoTimeout : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="extrahostinfotimeout--real">ExtraHostInfoTimeout : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>[Client/Server] Determines the amount of time the client will wait for extra host info from a server.</p>
-<pre><code class="lang-lang=cpp,">var ExtraHostInfoTimeout : Real
+<pre><code class="lang-TS:Nada">var ExtraHostInfoTimeout : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="framefillskip--real">FrameFillSkip : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>Controls when to skip change replication for the current frame because of remaining outgoing bandwidth utilization ratio on any given link.</p>
-<pre><code class="lang-lang=cpp,">var FrameFillSkip : Real
+<pre><code class="lang-TS:Nada">var FrameFillSkip : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="framefillwarning--real">FrameFillWarning : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>Controls when the user will be warned of their current frame's outgoing bandwidth utilization ratio on any given link.</p>
-<pre><code class="lang-lang=cpp,">var FrameFillWarning : Real
+<pre><code class="lang-TS:Nada">var FrameFillWarning : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="hostpinginterval--real">HostPingInterval : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>[Client/Server] The time between (potentially) redundant pings from a net peer.</p>
-<pre><code class="lang-lang=cpp,">var HostPingInterval : Real
+<pre><code class="lang-TS:Nada">var HostPingInterval : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="hostportrangeend--integer">HostPortRangeEnd : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>Configures the inclusive range of ports used to host this game.</p>
-<pre><code class="lang-lang=cpp,">var HostPortRangeEnd : Integer
+<pre><code class="lang-TS:Nada">var HostPortRangeEnd : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="hostportrangestart--integer">HostPortRangeStart : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>Configures the inclusive range of ports used to host this game.</p>
-<pre><code class="lang-lang=cpp,">var HostPortRangeStart : Integer
+<pre><code class="lang-TS:Nada">var HostPortRangeStart : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -352,42 +352,42 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Current peer identifier information display string. Provided for logging and debugging convenience. Contains the peer's local IP address, network role, and net peer ID.</p>
-<pre><code class="lang-lang=cpp,">var Info : String
+<pre><code class="lang-TS:Nada">var Info : String
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="internetdiscoverable--boolean">InternetDiscoverable : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Configures the server peer to be discoverable on the internet.</p>
-<pre><code class="lang-lang=cpp,">var InternetDiscoverable : Boolean
+<pre><code class="lang-TS:Nada">var InternetDiscoverable : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="internethostlisttimeout--real">InternetHostListTimeout : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>[Client/Server] Determines the amount of time the client is willing to wait to get a host list from master server.</p>
-<pre><code class="lang-lang=cpp,">var InternetHostListTimeout : Real
+<pre><code class="lang-TS:Nada">var InternetHostListTimeout : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="internethostpublishinterval--real">InternetHostPublishInterval : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>Controls how often the internet discoverable peer sends a host record message to its master server subscriptions.</p>
-<pre><code class="lang-lang=cpp,">var InternetHostPublishInterval : Real
+<pre><code class="lang-TS:Nada">var InternetHostPublishInterval : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="internethostrecordlifetime--real">InternetHostRecordLifetime : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>Controls the lifetime of every host record stored on the master server.</p>
-<pre><code class="lang-lang=cpp,">var InternetHostRecordLifetime : Real
+<pre><code class="lang-TS:Nada">var InternetHostRecordLifetime : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="internetsameiphostrecordlimit--integer">InternetSameIpHostRecordLimit : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>Controls how many host records from the same IP address may be stored on the master server (used to prevent flood attacks).</p>
-<pre><code class="lang-lang=cpp,">var InternetSameIpHostRecordLimit : Integer
+<pre><code class="lang-TS:Nada">var InternetSameIpHostRecordLimit : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -395,7 +395,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the peer's local IPv4 address, else IpAddress(). Set if the peer is open with an IPv4 socket.</p>
-<pre><code class="lang-lang=cpp,">var Ipv4Address : IpAddress
+<pre><code class="lang-TS:Nada">var Ipv4Address : IpAddress
 </code></pre>
 </blockquote>
 <hr>
@@ -403,7 +403,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the peer's local IPv4 address host as a numeric address string, else String().</p>
-<pre><code class="lang-lang=cpp,">var Ipv4Host : String
+<pre><code class="lang-TS:Nada">var Ipv4Host : String
 </code></pre>
 </blockquote>
 <hr>
@@ -411,7 +411,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the peer's local IPv4 address port, else String().</p>
-<pre><code class="lang-lang=cpp,">var Ipv4Port : Integer
+<pre><code class="lang-TS:Nada">var Ipv4Port : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -419,14 +419,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns true if the peer is open, else false.</p>
-<pre><code class="lang-lang=cpp,">var IsOpen : Boolean
+<pre><code class="lang-TS:Nada">var IsOpen : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="landiscoverable--boolean">LanDiscoverable : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Configures the server peer to be discoverable on the local area network.</p>
-<pre><code class="lang-lang=cpp,">var LanDiscoverable : Boolean
+<pre><code class="lang-TS:Nada">var LanDiscoverable : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -434,7 +434,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>[Client/Server] Returns the number of connected network links managed by this peer.</p>
-<pre><code class="lang-lang=cpp,">var LinkCount : Integer
+<pre><code class="lang-TS:Nada">var LinkCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -442,7 +442,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the number of net objects in this game session (but not including the net peer itself).</p>
-<pre><code class="lang-lang=cpp,">var NetObjectCount : Integer
+<pre><code class="lang-TS:Nada">var NetObjectCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -450,7 +450,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the open peer's unique network identifier, else 0. [Server/Offline] This will always be zero. [Client] This will be non-zero once connected to a server, else zero.</p>
-<pre><code class="lang-lang=cpp,">var NetPeerId : Integer
+<pre><code class="lang-TS:Nada">var NetPeerId : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -458,7 +458,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the number of net spaces in this game session.</p>
-<pre><code class="lang-lang=cpp,">var NetSpaceCount : Integer
+<pre><code class="lang-TS:Nada">var NetSpaceCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -466,7 +466,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the number of net users in this game session.</p>
-<pre><code class="lang-lang=cpp,">var NetUserCount : Integer
+<pre><code class="lang-TS:Nada">var NetUserCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -474,7 +474,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the number of added network users.</p>
-<pre><code class="lang-lang=cpp,">var UserCount : Integer
+<pre><code class="lang-TS:Nada">var UserCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -482,7 +482,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns all added network users.</p>
-<pre><code class="lang-lang=cpp,">var Users : NetUserRange
+<pre><code class="lang-TS:Nada">var Users : NetUserRange
 </code></pre>
 </blockquote>
 <hr>
@@ -490,7 +490,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the network users added by our local peer.</p>
-<pre><code class="lang-lang=cpp,">var UsersAddedByMyPeer : NetUserRange
+<pre><code class="lang-TS:Nada">var UsersAddedByMyPeer : NetUserRange
 </code></pre>
 </blockquote>
 <hr>
@@ -501,7 +501,7 @@
 <p>Initiates a network user add request to add a new user belonging to our local peer (delayed until end of frame). Listen to the NetUser event interface to handle the results. Returns true if the request was successfully initiated, else false.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function AddUser() : Boolean
+<pre><code class="lang-TS:Nada">function AddUser() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -511,7 +511,7 @@
 |Name|Type|Description|
 |---|---|---|
 |requestEvent|<a href="event.html">event</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddUser(requestEvent : Event) : Boolean
+<pre><code class="lang-TS:Nada">function AddUser(requestEvent : Event) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -521,7 +521,7 @@
 |Name|Type|Description|
 |---|---|---|
 |requestBundle|<a href="eventbundle.html">eventbundle</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddUser(requestBundle : EventBundle) : Boolean
+<pre><code class="lang-TS:Nada">function AddUser(requestBundle : EventBundle) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -530,7 +530,7 @@
 <p>Cancels all host discovery and refresh requests currently in progress (the operations will be considered unsuccessful). Listen to the NetHost event interface to handle the results.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function CancelHostRequests()
+<pre><code class="lang-TS:Nada">function CancelHostRequests()
 </code></pre>
 </blockquote>
 <hr>
@@ -540,7 +540,7 @@
 |Name|Type|Description|
 |---|---|---|
 |network|<a href="../enum_reference.html#network">Network</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ClearHostList(network : Network)
+<pre><code class="lang-TS:Nada">function ClearHostList(network : Network)
 </code></pre>
 </blockquote>
 <hr>
@@ -555,7 +555,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function ClearHostLists()
+<pre><code class="lang-TS:Nada">function ClearHostLists()
 </code></pre>
 </blockquote>
 <hr>
@@ -564,7 +564,7 @@
 <p>Closes the peer (safe to call multiple times).
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Close()
+<pre><code class="lang-TS:Nada">function Close()
 </code></pre>
 </blockquote>
 <hr>
@@ -574,7 +574,7 @@
 |Name|Type|Description|
 |---|---|---|
 |ipAddress|<a href="ipaddress.html">ipaddress</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ConnectLink(ipAddress : IpAddress) : Boolean
+<pre><code class="lang-TS:Nada">function ConnectLink(ipAddress : IpAddress) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -585,7 +585,7 @@
 |---|---|---|
 |ipAddress|<a href="ipaddress.html">ipaddress</a>| |
 |requestEvent|<a href="event.html">event</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ConnectLink(ipAddress : IpAddress, requestEvent : Event) : Boolean
+<pre><code class="lang-TS:Nada">function ConnectLink(ipAddress : IpAddress, requestEvent : Event) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -596,7 +596,7 @@
 |---|---|---|
 |ipAddress|<a href="ipaddress.html">ipaddress</a>| |
 |requestBundle|<a href="eventbundle.html">eventbundle</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ConnectLink(ipAddress : IpAddress, requestBundle : EventBundle) : Boolean
+<pre><code class="lang-TS:Nada">function ConnectLink(ipAddress : IpAddress, requestBundle : EventBundle) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -605,7 +605,7 @@
 <p>[Client/Server] Disconnects by request from all remote peers. Listen to the NetLink event interface to handle the results. Returns the number of links disconnected.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function DisconnectAllLinks() : Integer
+<pre><code class="lang-TS:Nada">function DisconnectAllLinks() : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -615,7 +615,7 @@
 |Name|Type|Description|
 |---|---|---|
 |requestEvent|<a href="event.html">event</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DisconnectAllLinks(requestEvent : Event) : Integer
+<pre><code class="lang-TS:Nada">function DisconnectAllLinks(requestEvent : Event) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -625,7 +625,7 @@
 |Name|Type|Description|
 |---|---|---|
 |requestBundle|<a href="eventbundle.html">eventbundle</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DisconnectAllLinks(requestBundle : EventBundle) : Integer
+<pre><code class="lang-TS:Nada">function DisconnectAllLinks(requestBundle : EventBundle) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -635,7 +635,7 @@
 |Name|Type|Description|
 |---|---|---|
 |netPeerId|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DisconnectLink(netPeerId : Integer) : Boolean
+<pre><code class="lang-TS:Nada">function DisconnectLink(netPeerId : Integer) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -646,7 +646,7 @@
 |---|---|---|
 |netPeerId|<a href="../nada_base_types/integer.html">integer</a>| |
 |requestEvent|<a href="event.html">event</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DisconnectLink(netPeerId : Integer, requestEvent : Event) : Boolean
+<pre><code class="lang-TS:Nada">function DisconnectLink(netPeerId : Integer, requestEvent : Event) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -657,7 +657,7 @@
 |---|---|---|
 |netPeerId|<a href="../nada_base_types/integer.html">integer</a>| |
 |requestBundle|<a href="eventbundle.html">eventbundle</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DisconnectLink(netPeerId : Integer, requestBundle : EventBundle) : Boolean
+<pre><code class="lang-TS:Nada">function DisconnectLink(netPeerId : Integer, requestBundle : EventBundle) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -667,7 +667,7 @@
 |Name|Type|Description|
 |---|---|---|
 |ipAddress|<a href="ipaddress.html">ipaddress</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DisconnectLink(ipAddress : IpAddress) : Boolean
+<pre><code class="lang-TS:Nada">function DisconnectLink(ipAddress : IpAddress) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -678,7 +678,7 @@
 |---|---|---|
 |ipAddress|<a href="ipaddress.html">ipaddress</a>| |
 |requestEvent|<a href="event.html">event</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DisconnectLink(ipAddress : IpAddress, requestEvent : Event) : Boolean
+<pre><code class="lang-TS:Nada">function DisconnectLink(ipAddress : IpAddress, requestEvent : Event) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -689,7 +689,7 @@
 |---|---|---|
 |ipAddress|<a href="ipaddress.html">ipaddress</a>| |
 |requestBundle|<a href="eventbundle.html">eventbundle</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DisconnectLink(ipAddress : IpAddress, requestBundle : EventBundle) : Boolean
+<pre><code class="lang-TS:Nada">function DisconnectLink(ipAddress : IpAddress, requestBundle : EventBundle) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -700,7 +700,7 @@
 |---|---|---|
 |network|<a href="../enum_reference.html#network">Network</a>| |
 |removeStaleHosts|<a href="../nada_base_types/boolean.html">boolean</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DiscoverHostList(network : Network, removeStaleHosts : Boolean) : Boolean
+<pre><code class="lang-TS:Nada">function DiscoverHostList(network : Network, removeStaleHosts : Boolean) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -722,7 +722,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function GetHostByAddress(ipAddress : IpAddress) : NetHost
+<pre><code class="lang-TS:Nada">function GetHostByAddress(ipAddress : IpAddress) : NetHost
 </code></pre>
 </blockquote>
 <hr>
@@ -749,7 +749,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function GetHostByAddress(network : Network, ipAddress : IpAddress) : NetHost
+<pre><code class="lang-TS:Nada">function GetHostByAddress(network : Network, ipAddress : IpAddress) : NetHost
 </code></pre>
 </blockquote>
 <hr>
@@ -760,7 +760,7 @@
 |---|---|---|
 |network|<a href="../enum_reference.html#network">Network</a>| |
 |index|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetHostByIndex(network : Network, index : Integer) : NetHost
+<pre><code class="lang-TS:Nada">function GetHostByIndex(network : Network, index : Integer) : NetHost
 </code></pre>
 </blockquote>
 <hr>
@@ -770,7 +770,7 @@
 |Name|Type|Description|
 |---|---|---|
 |network|<a href="../enum_reference.html#network">Network</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetHostList(network : Network) : NetHostRange
+<pre><code class="lang-TS:Nada">function GetHostList(network : Network) : NetHostRange
 </code></pre>
 </blockquote>
 <hr>
@@ -780,7 +780,7 @@
 |Name|Type|Description|
 |---|---|---|
 |netPeerId|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetLinkCreationDirection(netPeerId : Integer) : TransmissionDirection
+<pre><code class="lang-TS:Nada">function GetLinkCreationDirection(netPeerId : Integer) : TransmissionDirection
 </code></pre>
 </blockquote>
 <hr>
@@ -790,7 +790,7 @@
 |Name|Type|Description|
 |---|---|---|
 |netPeerId|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetLinkInternetProtocol(netPeerId : Integer) : InternetProtocol
+<pre><code class="lang-TS:Nada">function GetLinkInternetProtocol(netPeerId : Integer) : InternetProtocol
 </code></pre>
 </blockquote>
 <hr>
@@ -800,7 +800,7 @@
 |Name|Type|Description|
 |---|---|---|
 |netPeerId|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetLinkIpAddress(netPeerId : Integer) : IpAddress
+<pre><code class="lang-TS:Nada">function GetLinkIpAddress(netPeerId : Integer) : IpAddress
 </code></pre>
 </blockquote>
 <hr>
@@ -810,7 +810,7 @@
 |Name|Type|Description|
 |---|---|---|
 |ipAddress|<a href="ipaddress.html">ipaddress</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetLinkNetPeerId(ipAddress : IpAddress) : Integer
+<pre><code class="lang-TS:Nada">function GetLinkNetPeerId(ipAddress : IpAddress) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -820,7 +820,7 @@
 |Name|Type|Description|
 |---|---|---|
 |netPeerId|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetLinkState(netPeerId : Integer) : LinkState
+<pre><code class="lang-TS:Nada">function GetLinkState(netPeerId : Integer) : LinkState
 </code></pre>
 </blockquote>
 <hr>
@@ -830,7 +830,7 @@
 |Name|Type|Description|
 |---|---|---|
 |netPeerId|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetLinkStatus(netPeerId : Integer) : LinkStatus
+<pre><code class="lang-TS:Nada">function GetLinkStatus(netPeerId : Integer) : LinkStatus
 </code></pre>
 </blockquote>
 <hr>
@@ -840,7 +840,7 @@
 |Name|Type|Description|
 |---|---|---|
 |netObjectId|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetNetObject(netObjectId : Integer) : Cog
+<pre><code class="lang-TS:Nada">function GetNetObject(netObjectId : Integer) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -850,7 +850,7 @@
 |Name|Type|Description|
 |---|---|---|
 |netObjectId|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetNetSpace(netObjectId : Integer) : Space
+<pre><code class="lang-TS:Nada">function GetNetSpace(netObjectId : Integer) : Space
 </code></pre>
 </blockquote>
 <hr>
@@ -860,7 +860,7 @@
 |Name|Type|Description|
 |---|---|---|
 |netPeerId|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetOurIpAddressFromLink(netPeerId : Integer) : IpAddress
+<pre><code class="lang-TS:Nada">function GetOurIpAddressFromLink(netPeerId : Integer) : IpAddress
 </code></pre>
 </blockquote>
 <hr>
@@ -870,7 +870,7 @@
 |Name|Type|Description|
 |---|---|---|
 |netUserId|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetUser(netUserId : Integer) : Cog
+<pre><code class="lang-TS:Nada">function GetUser(netUserId : Integer) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -880,7 +880,7 @@
 |Name|Type|Description|
 |---|---|---|
 |netPeerId|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetUsersAddedByPeer(netPeerId : Integer) : NetUserRange
+<pre><code class="lang-TS:Nada">function GetUsersAddedByPeer(netPeerId : Integer) : NetUserRange
 </code></pre>
 </blockquote>
 <hr>
@@ -890,7 +890,7 @@
 <p>Constructor.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function NetPeer()
+<pre><code class="lang-TS:Nada">function NetPeer()
 </code></pre>
 </blockquote>
 <hr>
@@ -900,7 +900,7 @@
 |Name|Type|Description|
 |---|---|---|
 |role|<a href="../enum_reference.html#netrole">NetRole</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Open(role : NetRole) : Boolean
+<pre><code class="lang-TS:Nada">function Open(role : NetRole) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -911,7 +911,7 @@
 |---|---|---|
 |role|<a href="../enum_reference.html#netrole">NetRole</a>| |
 |port|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Open(role : NetRole, port : Integer) : Boolean
+<pre><code class="lang-TS:Nada">function Open(role : NetRole, port : Integer) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -923,7 +923,7 @@
 |role|<a href="../enum_reference.html#netrole">NetRole</a>| |
 |port|<a href="../nada_base_types/integer.html">integer</a>| |
 |retries|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Open(role : NetRole, port : Integer, retries : Integer) : Boolean
+<pre><code class="lang-TS:Nada">function Open(role : NetRole, port : Integer, retries : Integer) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -932,7 +932,7 @@
 <p>Opens the peer as a client on any available port. Returns true if successful, else false.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function OpenClient() : Boolean
+<pre><code class="lang-TS:Nada">function OpenClient() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -942,7 +942,7 @@
 |Name|Type|Description|
 |---|---|---|
 |port|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function OpenClient(port : Integer) : Boolean
+<pre><code class="lang-TS:Nada">function OpenClient(port : Integer) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -953,7 +953,7 @@
 |---|---|---|
 |port|<a href="../nada_base_types/integer.html">integer</a>| |
 |retries|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function OpenClient(port : Integer, retries : Integer) : Boolean
+<pre><code class="lang-TS:Nada">function OpenClient(port : Integer, retries : Integer) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -962,7 +962,7 @@
 <p>Opens the peer in offline mode. In offline mode, the peer will act as a pass-through and simulate all applicable network events locally. Always succeeds and returns true.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function OpenOffline() : Boolean
+<pre><code class="lang-TS:Nada">function OpenOffline() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -971,7 +971,7 @@
 <p>Opens the peer as a server on any available port. Returns true if successful, else false.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function OpenServer() : Boolean
+<pre><code class="lang-TS:Nada">function OpenServer() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -981,7 +981,7 @@
 |Name|Type|Description|
 |---|---|---|
 |port|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function OpenServer(port : Integer) : Boolean
+<pre><code class="lang-TS:Nada">function OpenServer(port : Integer) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -995,7 +995,7 @@
 |getExtraHostInfo|<a href="../nada_base_types/boolean.html">boolean</a>| |
 |allowDiscovery|<a href="../nada_base_types/boolean.html">boolean</a>| |
 |removeStaleHosts|<a href="../nada_base_types/boolean.html">boolean</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RefreshHost(network : Network, ipAddress : IpAddress, getExtraHostInfo : Boolean, allowDiscovery : Boolean, removeStaleHosts : Boolean) : Boolean
+<pre><code class="lang-TS:Nada">function RefreshHost(network : Network, ipAddress : IpAddress, getExtraHostInfo : Boolean, allowDiscovery : Boolean, removeStaleHosts : Boolean) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -1008,7 +1008,7 @@
 |getExtraHostInfo|<a href="../nada_base_types/boolean.html">boolean</a>| |
 |allowDiscovery|<a href="../nada_base_types/boolean.html">boolean</a>| |
 |removeStaleHosts|<a href="../nada_base_types/boolean.html">boolean</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RefreshHostList(network : Network, getExtraHostInfo : Boolean, allowDiscovery : Boolean, removeStaleHosts : Boolean) : Boolean
+<pre><code class="lang-TS:Nada">function RefreshHostList(network : Network, getExtraHostInfo : Boolean, allowDiscovery : Boolean, removeStaleHosts : Boolean) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -1030,7 +1030,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function RemoveUser(cog : Cog) : Boolean
+<pre><code class="lang-TS:Nada">function RemoveUser(cog : Cog) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -1057,7 +1057,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function RemoveUser(cog : Cog, requestEvent : Event) : Boolean
+<pre><code class="lang-TS:Nada">function RemoveUser(cog : Cog, requestEvent : Event) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -1084,7 +1084,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function RemoveUser(cog : Cog, requestBundle : EventBundle) : Boolean
+<pre><code class="lang-TS:Nada">function RemoveUser(cog : Cog, requestBundle : EventBundle) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -1094,7 +1094,7 @@
 |Name|Type|Description|
 |---|---|---|
 |ipAddress|<a href="ipaddress.html">ipaddress</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SubscribeToMasterServer(ipAddress : IpAddress)
+<pre><code class="lang-TS:Nada">function SubscribeToMasterServer(ipAddress : IpAddress)
 </code></pre>
 </blockquote>
 <hr>
@@ -1104,7 +1104,7 @@
 |Name|Type|Description|
 |---|---|---|
 |ipAddress|<a href="ipaddress.html">ipaddress</a>| |</p>
-<pre><code class="lang-lang=cpp,">function UnsubscribeFromMasterServer(ipAddress : IpAddress)
+<pre><code class="lang-TS:Nada">function UnsubscribeFromMasterServer(ipAddress : IpAddress)
 </code></pre>
 </blockquote>
 <hr>

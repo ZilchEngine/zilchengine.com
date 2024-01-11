@@ -204,21 +204,21 @@
 <hr>
 <h1 id="activebatchname--string">ActiveBatchName : <a href="../nada_base_types/string.html">string</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var ActiveBatchName : String
+<pre><code class="lang-TS:Nada">var ActiveBatchName : String
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="commands--operationlistrange">Commands : <a href="operationlistrange.html">operationlistrange</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Commands : OperationListRange
+<pre><code class="lang-TS:Nada">var Commands : OperationListRange
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="redocommands--operationlistrange">RedoCommands : <a href="operationlistrange.html">operationlistrange</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var RedoCommands : OperationListRange
+<pre><code class="lang-TS:Nada">var RedoCommands : OperationListRange
 </code></pre>
 </blockquote>
 <hr>
@@ -235,7 +235,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function BeginBatch()
+<pre><code class="lang-TS:Nada">function BeginBatch()
 </code></pre>
 </blockquote>
 <hr>
@@ -257,7 +257,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function BeginBatch(p0 : String)
+<pre><code class="lang-TS:Nada">function BeginBatch(p0 : String)
 </code></pre>
 </blockquote>
 <hr>
@@ -272,7 +272,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function ClearAll()
+<pre><code class="lang-TS:Nada">function ClearAll()
 </code></pre>
 </blockquote>
 <hr>
@@ -287,7 +287,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function ClearRedo()
+<pre><code class="lang-TS:Nada">function ClearRedo()
 </code></pre>
 </blockquote>
 <hr>
@@ -302,7 +302,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function ClearUndo()
+<pre><code class="lang-TS:Nada">function ClearUndo()
 </code></pre>
 </blockquote>
 <hr>
@@ -324,7 +324,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function DestroyObject(p0 : Cog)
+<pre><code class="lang-TS:Nada">function DestroyObject(p0 : Cog)
 </code></pre>
 </blockquote>
 <hr>
@@ -339,7 +339,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function EndBatch()
+<pre><code class="lang-TS:Nada">function EndBatch()
 </code></pre>
 </blockquote>
 <hr>
@@ -355,7 +355,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function IsListeningForSideEffects() : Boolean
+<pre><code class="lang-TS:Nada">function IsListeningForSideEffects() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -382,7 +382,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function MarkPropertyAsModified(p0 : Component, p1 : String)
+<pre><code class="lang-TS:Nada">function MarkPropertyAsModified(p0 : Component, p1 : String)
 </code></pre>
 </blockquote>
 <hr>
@@ -404,7 +404,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function ObjectCreated(p0 : Cog)
+<pre><code class="lang-TS:Nada">function ObjectCreated(p0 : Cog)
 </code></pre>
 </blockquote>
 <hr>
@@ -420,7 +420,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function OperationQueue()
+<pre><code class="lang-TS:Nada">function OperationQueue()
 </code></pre>
 </blockquote>
 <hr>
@@ -436,7 +436,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function PopSubPropertyContext()
+<pre><code class="lang-TS:Nada">function PopSubPropertyContext()
 </code></pre>
 </blockquote>
 <hr>
@@ -451,7 +451,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function QueueRegisteredSideEffects()
+<pre><code class="lang-TS:Nada">function QueueRegisteredSideEffects()
 </code></pre>
 </blockquote>
 <hr>
@@ -466,7 +466,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function Redo()
+<pre><code class="lang-TS:Nada">function Redo()
 </code></pre>
 </blockquote>
 <hr>
@@ -488,7 +488,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function Redo(p0 : Operation) : Boolean
+<pre><code class="lang-TS:Nada">function Redo(p0 : Operation) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -521,7 +521,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function RegisterSideEffect(p0 : AnyHandle, p1 : String, p2 : T)
+<pre><code class="lang-TS:Nada">function RegisterSideEffect(p0 : AnyHandle, p1 : String, p2 : T)
 </code></pre>
 </blockquote>
 <hr>
@@ -543,7 +543,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function SaveObjectState(p0 : Cog)
+<pre><code class="lang-TS:Nada">function SaveObjectState(p0 : Cog)
 </code></pre>
 </blockquote>
 <hr>
@@ -559,7 +559,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function StartListeningForSideEffects()
+<pre><code class="lang-TS:Nada">function StartListeningForSideEffects()
 </code></pre>
 </blockquote>
 <hr>
@@ -574,7 +574,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function Undo()
+<pre><code class="lang-TS:Nada">function Undo()
 </code></pre>
 </blockquote>
 <hr>
@@ -596,7 +596,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function Undo(p0 : Operation) : Boolean
+<pre><code class="lang-TS:Nada">function Undo(p0 : Operation) : Boolean
 </code></pre>
 </blockquote>
 <hr>

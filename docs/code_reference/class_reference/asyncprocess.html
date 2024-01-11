@@ -141,13 +141,13 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The cached total results from standard error. Will be empty if StoreStandardErrorData is false.</p>
-<pre><code class="lang-lang=cpp,">var StandardError : String
+<pre><code class="lang-TS:Nada">var StandardError : String
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="standardinput--filestream">StandardInput : <a href="../nada_base_types/filestream.html">filestream</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var StandardInput : FileStream
+<pre><code class="lang-TS:Nada">var StandardInput : FileStream
 </code></pre>
 </blockquote>
 <hr>
@@ -155,21 +155,21 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The cached total results from standard output. Will be empty if StoreStandardOutputData is false.</p>
-<pre><code class="lang-lang=cpp,">var StandardOutput : String
+<pre><code class="lang-TS:Nada">var StandardOutput : String
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="storestandarderrordata--boolean">StoreStandardErrorData : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Should the results from standard error be accumulated and stored? If a lot of data is output it may be good to turn this off and use the partial data callback events instead.</p>
-<pre><code class="lang-lang=cpp,">var StoreStandardErrorData : Boolean
+<pre><code class="lang-TS:Nada">var StoreStandardErrorData : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="storestandardoutputdata--boolean">StoreStandardOutputData : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Should the results from standard output be accumulated and stored? If a lot of data is output it may be good to turn this off and use the partial data callback events instead.</p>
-<pre><code class="lang-lang=cpp,">var StoreStandardOutputData : Boolean
+<pre><code class="lang-TS:Nada">var StoreStandardOutputData : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -180,7 +180,7 @@
 <p>Closes the wrapper around the process, does not close the process launched.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Close()
+<pre><code class="lang-TS:Nada">function Close()
 </code></pre>
 </blockquote>
 <hr>
@@ -190,7 +190,7 @@
 <p>Construct a new process. This does not start the process.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Create() : AsyncProcess
+<pre><code class="lang-TS:Nada">function Create() : AsyncProcess
 </code></pre>
 </blockquote>
 <hr>
@@ -199,7 +199,7 @@
 <p>Returns true if the process is still running, false otherwise.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function IsRunning() : Boolean
+<pre><code class="lang-TS:Nada">function IsRunning() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -209,7 +209,7 @@
 |Name|Type|Description|
 |---|---|---|
 |startInfo|<a href="../nada_base_types/processstartinfo.html">processstartinfo</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Start(startInfo : ProcessStartInfo) : Boolean
+<pre><code class="lang-TS:Nada">function Start(startInfo : ProcessStartInfo) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -218,7 +218,7 @@
 <p>Attempts to manually shut down the process. This is not safe for the other process or what it's handling.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Terminate()
+<pre><code class="lang-TS:Nada">function Terminate()
 </code></pre>
 </blockquote>
 <hr>
@@ -227,7 +227,7 @@
 <p>Waits for a process to close, this will block until the process closes.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function WaitForClose() : Integer
+<pre><code class="lang-TS:Nada">function WaitForClose() : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -237,7 +237,7 @@
 |Name|Type|Description|
 |---|---|---|
 |milliseconds|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function WaitForClose(milliseconds : Integer) : Integer
+<pre><code class="lang-TS:Nada">function WaitForClose(milliseconds : Integer) : Integer
 </code></pre>
 </blockquote>
 <hr>

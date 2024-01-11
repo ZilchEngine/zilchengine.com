@@ -188,84 +188,84 @@
 <h1 id="eulerangles--real3">EulerAngles : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>The rotation of the transform as an Euler angle vector in radians.</p>
-<pre><code class="lang-lang=cpp,">var EulerAngles : Real3
+<pre><code class="lang-TS:Nada">var EulerAngles : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="localrotation--quaternion">LocalRotation : <a href="../nada_base_types/quaternion.html">quaternion</a></h1>
 <blockquote>
 <p>Local rotation relative to parent.</p>
-<pre><code class="lang-lang=cpp,">var LocalRotation : Quaternion
+<pre><code class="lang-TS:Nada">var LocalRotation : Quaternion
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="localscale--real3">LocalScale : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>Local Scale relative to parent.</p>
-<pre><code class="lang-lang=cpp,">var LocalScale : Real3
+<pre><code class="lang-TS:Nada">var LocalScale : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="localtranslation--real3">LocalTranslation : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>Local Translation relative to parent.</p>
-<pre><code class="lang-lang=cpp,">var LocalTranslation : Real3
+<pre><code class="lang-TS:Nada">var LocalTranslation : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="parent--transform">Parent : <a href="transform.html">transform</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Parent : Transform
+<pre><code class="lang-TS:Nada">var Parent : Transform
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="rotation--quaternion">Rotation : <a href="../nada_base_types/quaternion.html">quaternion</a></h1>
 <blockquote>
 <p>Local rotation relative to parent.</p>
-<pre><code class="lang-lang=cpp,">var Rotation : Quaternion
+<pre><code class="lang-TS:Nada">var Rotation : Quaternion
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="scale--real3">Scale : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>Local Scale relative to parent.</p>
-<pre><code class="lang-lang=cpp,">var Scale : Real3
+<pre><code class="lang-TS:Nada">var Scale : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="translation--real3">Translation : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>Local Translation relative to parent.</p>
-<pre><code class="lang-lang=cpp,">var Translation : Real3
+<pre><code class="lang-TS:Nada">var Translation : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="worldmatrix--real4x4">WorldMatrix : <a href="../nada_base_types/real4x4.html">real4x4</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var WorldMatrix : Real4x4
+<pre><code class="lang-TS:Nada">var WorldMatrix : Real4x4
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="worldrotation--quaternion">WorldRotation : <a href="../nada_base_types/quaternion.html">quaternion</a></h1>
 <blockquote>
 <p>Rotation in World Space.</p>
-<pre><code class="lang-lang=cpp,">var WorldRotation : Quaternion
+<pre><code class="lang-TS:Nada">var WorldRotation : Quaternion
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="worldscale--real3">WorldScale : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>Scale in World Space.</p>
-<pre><code class="lang-lang=cpp,">var WorldScale : Real3
+<pre><code class="lang-TS:Nada">var WorldScale : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="worldtranslation--real3">WorldTranslation : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>Translation in World Space.</p>
-<pre><code class="lang-lang=cpp,">var WorldTranslation : Real3
+<pre><code class="lang-TS:Nada">var WorldTranslation : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -277,7 +277,7 @@
 |Name|Type|Description|
 |---|---|---|
 |angles|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RotateAnglesLocal(angles : Real3)
+<pre><code class="lang-TS:Nada">function RotateAnglesLocal(angles : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -287,7 +287,7 @@
 |Name|Type|Description|
 |---|---|---|
 |angles|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RotateAnglesWorld(angles : Real3)
+<pre><code class="lang-TS:Nada">function RotateAnglesWorld(angles : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -298,7 +298,7 @@
 |---|---|---|
 |point|<a href="../nada_base_types/real3.html">real3</a>| |
 |rotation|<a href="../nada_base_types/quaternion.html">quaternion</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RotateAround(point : Real3, rotation : Quaternion)
+<pre><code class="lang-TS:Nada">function RotateAround(point : Real3, rotation : Quaternion)
 </code></pre>
 </blockquote>
 <hr>
@@ -308,7 +308,7 @@
 |Name|Type|Description|
 |---|---|---|
 |rotation|<a href="../nada_base_types/quaternion.html">quaternion</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RotateLocal(rotation : Quaternion)
+<pre><code class="lang-TS:Nada">function RotateLocal(rotation : Quaternion)
 </code></pre>
 </blockquote>
 <hr>
@@ -318,7 +318,7 @@
 |Name|Type|Description|
 |---|---|---|
 |rotation|<a href="../nada_base_types/quaternion.html">quaternion</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RotateWorld(rotation : Quaternion)
+<pre><code class="lang-TS:Nada">function RotateWorld(rotation : Quaternion)
 </code></pre>
 </blockquote>
 <hr>
@@ -330,7 +330,7 @@
 |xRadians|<a href="../nada_base_types/real.html">real</a>| |
 |yRadians|<a href="../nada_base_types/real.html">real</a>| |
 |zRadians|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SetEulerAnglesXYZ(xRadians : Real, yRadians : Real, zRadians : Real)
+<pre><code class="lang-TS:Nada">function SetEulerAnglesXYZ(xRadians : Real, yRadians : Real, zRadians : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -342,7 +342,7 @@
 |facing|<a href="../nada_base_types/real3.html">real3</a>| |
 |up|<a href="../nada_base_types/real3.html">real3</a>| |
 |right|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SetRotationBases(facing : Real3, up : Real3, right : Real3)
+<pre><code class="lang-TS:Nada">function SetRotationBases(facing : Real3, up : Real3, right : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -352,7 +352,7 @@
 <p>Constructor / Destructor.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Transform()
+<pre><code class="lang-TS:Nada">function Transform()
 </code></pre>
 </blockquote>
 <hr>
@@ -362,7 +362,7 @@
 |Name|Type|Description|
 |---|---|---|
 |normal|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function TransformNormal(normal : Real3) : Real3
+<pre><code class="lang-TS:Nada">function TransformNormal(normal : Real3) : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -372,7 +372,7 @@
 |Name|Type|Description|
 |---|---|---|
 |normal|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function TransformNormalInverse(normal : Real3) : Real3
+<pre><code class="lang-TS:Nada">function TransformNormalInverse(normal : Real3) : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -382,7 +382,7 @@
 |Name|Type|Description|
 |---|---|---|
 |normal|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function TransformNormalLocal(normal : Real3) : Real3
+<pre><code class="lang-TS:Nada">function TransformNormalLocal(normal : Real3) : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -392,7 +392,7 @@
 |Name|Type|Description|
 |---|---|---|
 |point|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function TransformPoint(point : Real3) : Real3
+<pre><code class="lang-TS:Nada">function TransformPoint(point : Real3) : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -402,7 +402,7 @@
 |Name|Type|Description|
 |---|---|---|
 |point|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function TransformPointInverse(point : Real3) : Real3
+<pre><code class="lang-TS:Nada">function TransformPointInverse(point : Real3) : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -412,7 +412,7 @@
 |Name|Type|Description|
 |---|---|---|
 |point|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function TransformPointLocal(point : Real3) : Real3
+<pre><code class="lang-TS:Nada">function TransformPointLocal(point : Real3) : Real3
 </code></pre>
 </blockquote>
 <hr>

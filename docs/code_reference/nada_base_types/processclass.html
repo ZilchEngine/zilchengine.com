@@ -140,7 +140,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The stream where standard error is re-directed to. Null if not re-directed</p>
-<pre><code class="lang-lang=cpp,">var StandardError : FileStream
+<pre><code class="lang-TS:Nada">var StandardError : FileStream
 </code></pre>
 </blockquote>
 <hr>
@@ -148,7 +148,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The stream where standard input is re-directed to. Null if not re-directed</p>
-<pre><code class="lang-lang=cpp,">var StandardInput : FileStream
+<pre><code class="lang-TS:Nada">var StandardInput : FileStream
 </code></pre>
 </blockquote>
 <hr>
@@ -156,7 +156,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The stream where standard output is re-directed to. Null if not re-directed</p>
-<pre><code class="lang-lang=cpp,">var StandardOutput : FileStream
+<pre><code class="lang-TS:Nada">var StandardOutput : FileStream
 </code></pre>
 </blockquote>
 <hr>
@@ -167,7 +167,7 @@
 <p>Closes the wrapper around the process, does not close the process launched.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Close()
+<pre><code class="lang-TS:Nada">function Close()
 </code></pre>
 </blockquote>
 <hr>
@@ -176,7 +176,7 @@
 <p>Returns true if the process is still running, false otherwise.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function IsRunning() : Boolean
+<pre><code class="lang-TS:Nada">function IsRunning() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -186,7 +186,7 @@
 <p>Process class used for managing external processes and redirecting their stdio. Used to launch and monitor various external programs.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ProcessClass()
+<pre><code class="lang-TS:Nada">function ProcessClass()
 </code></pre>
 </blockquote>
 <hr>
@@ -196,7 +196,7 @@
 |Name|Type|Description|
 |---|---|---|
 |startInfo|<a href="processstartinfo.html">processstartinfo</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Start(startInfo : ProcessStartInfo)
+<pre><code class="lang-TS:Nada">function Start(startInfo : ProcessStartInfo)
 </code></pre>
 </blockquote>
 <hr>
@@ -205,7 +205,7 @@
 <p>Attempts to manually shut down the process. This is not safe for the other process or what it's handling.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Terminate()
+<pre><code class="lang-TS:Nada">function Terminate()
 </code></pre>
 </blockquote>
 <hr>
@@ -214,7 +214,7 @@
 <p>Waits for a process to close, this will block until the process closes.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function WaitForClose() : Integer
+<pre><code class="lang-TS:Nada">function WaitForClose() : Integer
 </code></pre>
 </blockquote>
 <hr>

@@ -164,35 +164,35 @@
 <h1 id="allspaces--spacemapvaluerange">AllSpaces : <a href="spacemapvaluerange.html">spacemapvaluerange</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var AllSpaces : SpaceMapValueRange
+<pre><code class="lang-TS:Nada">var AllSpaces : SpaceMapValueRange
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="focused--boolean">Focused : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Focused : Boolean
+<pre><code class="lang-TS:Nada">var Focused : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="fullscreen--boolean">FullScreen : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var FullScreen : Boolean
+<pre><code class="lang-TS:Nada">var FullScreen : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="paused--boolean">Paused : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Controls if the game session is paused which prevents updates to all spaces owned by this game.</p>
-<pre><code class="lang-lang=cpp,">var Paused : Boolean
+<pre><code class="lang-TS:Nada">var Paused : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="resolution--real2">Resolution : <a href="../nada_base_types/real2.html">real2</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Resolution : Real2
+<pre><code class="lang-TS:Nada">var Resolution : Real2
 </code></pre>
 </blockquote>
 <hr>
@@ -205,7 +205,7 @@
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |
 |archetype|<a href="archetype.html">archetype</a>| |</p>
-<pre><code class="lang-lang=cpp,">function CreateNamedSpace(name : String, archetype : Archetype) : Space
+<pre><code class="lang-TS:Nada">function CreateNamedSpace(name : String, archetype : Archetype) : Space
 </code></pre>
 </blockquote>
 <hr>
@@ -215,7 +215,7 @@
 |Name|Type|Description|
 |---|---|---|
 |archetype|<a href="archetype.html">archetype</a>| |</p>
-<pre><code class="lang-lang=cpp,">function CreateSpace(archetype : Archetype) : Space
+<pre><code class="lang-TS:Nada">function CreateSpace(archetype : Archetype) : Space
 </code></pre>
 </blockquote>
 <hr>
@@ -237,7 +237,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function FindAllSpacesByName(name : String) : SpaceMapValueRange
+<pre><code class="lang-TS:Nada">function FindAllSpacesByName(name : String) : SpaceMapValueRange
 </code></pre>
 </blockquote>
 <hr>
@@ -247,7 +247,7 @@
 |Name|Type|Description|
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function FindSpaceByName(name : String) : Space
+<pre><code class="lang-TS:Nada">function FindSpaceByName(name : String) : Space
 </code></pre>
 </blockquote>
 <hr>
@@ -263,7 +263,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function GameSession()
+<pre><code class="lang-TS:Nada">function GameSession()
 </code></pre>
 </blockquote>
 <hr>
@@ -278,7 +278,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function IsEditorMode() : Boolean
+<pre><code class="lang-TS:Nada">function IsEditorMode() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -287,7 +287,7 @@
 <p>Pauses the game session which prevents updates to all spaces owned by this game.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Pause()
+<pre><code class="lang-TS:Nada">function Pause()
 </code></pre>
 </blockquote>
 <hr>
@@ -296,7 +296,7 @@
 <p>Quit the game and exit the engine if not in editor.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Quit()
+<pre><code class="lang-TS:Nada">function Quit()
 </code></pre>
 </blockquote>
 <hr>
@@ -305,7 +305,7 @@
 <p>Request to quit sending out the GameRequestQuit event.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function RequestQuit()
+<pre><code class="lang-TS:Nada">function RequestQuit()
 </code></pre>
 </blockquote>
 <hr>
@@ -314,7 +314,7 @@
 <p>Start the game.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Start()
+<pre><code class="lang-TS:Nada">function Start()
 </code></pre>
 </blockquote>
 <hr>

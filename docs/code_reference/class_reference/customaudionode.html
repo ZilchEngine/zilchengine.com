@@ -128,7 +128,7 @@
 <h1 id="channels--integer">Channels : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>The number of audio channels that will be in the buffer.</p>
-<pre><code class="lang-lang=cpp,">var Channels : Integer
+<pre><code class="lang-TS:Nada">var Channels : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -136,7 +136,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The minimum number of samples that should be sent when a NeedMoreSamples event is received.</p>
-<pre><code class="lang-lang=cpp,">var MinimumBufferSize : Integer
+<pre><code class="lang-TS:Nada">var MinimumBufferSize : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -144,7 +144,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The sample rate currently being used by the audio system.</p>
-<pre><code class="lang-lang=cpp,">var SystemSampleRate : Integer
+<pre><code class="lang-TS:Nada">var SystemSampleRate : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -156,7 +156,7 @@
 |Name|Type|Description|
 |---|---|---|
 |buffer|<a href="soundbuffer.html">soundbuffer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SendBuffer(buffer : SoundBuffer)
+<pre><code class="lang-TS:Nada">function SendBuffer(buffer : SoundBuffer)
 </code></pre>
 </blockquote>
 <hr>
@@ -178,7 +178,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function SendMicCompressedData( : Array[Byte])
+<pre><code class="lang-TS:Nada">function SendMicCompressedData( : Array[Byte])
 </code></pre>
 </blockquote>
 <hr>
@@ -200,7 +200,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function SendMicUncompressedData( : Array[Real])
+<pre><code class="lang-TS:Nada">function SendMicUncompressedData( : Array[Real])
 </code></pre>
 </blockquote>
 <hr>
@@ -212,7 +212,7 @@
 |buffer|<a href="soundbuffer.html">soundbuffer</a>| |
 |startAtIndex|<a href="../nada_base_types/integer.html">integer</a>| |
 |howManySamples|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SendPartialBuffer(buffer : SoundBuffer, startAtIndex : Integer, howManySamples : Integer)
+<pre><code class="lang-TS:Nada">function SendPartialBuffer(buffer : SoundBuffer, startAtIndex : Integer, howManySamples : Integer)
 </code></pre>
 </blockquote>
 <hr>

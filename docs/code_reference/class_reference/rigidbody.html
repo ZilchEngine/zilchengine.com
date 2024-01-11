@@ -219,42 +219,42 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>If this is a static body then the active body (the one force/velocity should be applied to or calculated from) is the nearest parent body up the hierarchy that is not static. If one isn't found then this returns the current rigid body (this).</p>
-<pre><code class="lang-lang=cpp,">var ActiveBody : RigidBody
+<pre><code class="lang-TS:Nada">var ActiveBody : RigidBody
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="allowsleep--boolean">AllowSleep : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Sleeping happens when an object has not &quot;moved&quot; (small enough linear + angular velocity) for long enough. If this happens then the physics engine stops updating this object (integration, collision detection, etc...) until an awake object hits it. Sleeping is purely an optimization. Sometimes it is not desirable for a body to ever fall asleep (such as a player).</p>
-<pre><code class="lang-lang=cpp,">var AllowSleep : Boolean
+<pre><code class="lang-TS:Nada">var AllowSleep : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="angularvelocity--real3">AngularVelocity : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>The angular velocity (radians per second) of this body in world space. Objects will rotate about this axis using the right-hand rule. Max bounds are around 1e+10, after this the angular velocity will be capped. Setting this will wake up the body if it's asleep.</p>
-<pre><code class="lang-lang=cpp,">var AngularVelocity : Real3
+<pre><code class="lang-TS:Nada">var AngularVelocity : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="asleep--boolean">Asleep : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Whether or not this object is currently asleep. Setting this to true will force the object asleep even if this causes invalid behavior (objects floating).</p>
-<pre><code class="lang-lang=cpp,">var Asleep : Boolean
+<pre><code class="lang-TS:Nada">var Asleep : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="dynamicstate--rigidbodydynamicstate">DynamicState : <a href="../enum_reference.html#rigidbodydynamicstate">RigidBodyDynamicState</a></h1>
 <blockquote>
 <p>How this rigid body handles dynamics. Is it a regular rigid body (dynamic)? Does it not move (static)? Does the user want to manually move it and have objects properly collide with it (kinematic)? Note: Static vs. static does not check for collision.</p>
-<pre><code class="lang-lang=cpp,">var DynamicState : RigidBodyDynamicState
+<pre><code class="lang-TS:Nada">var DynamicState : RigidBodyDynamicState
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="force--real3">Force : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>The total accumulated force (in world space) that is being applied to the center of mass of this rigid body this frame. Setting this will wake up the body if it's asleep.</p>
-<pre><code class="lang-lang=cpp,">var Force : Real3
+<pre><code class="lang-TS:Nada">var Force : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -262,7 +262,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The inverse inertia tensor in local space of this body. The local space inertia tensor doesn't change when the object rotates but is not typically useful for any calculations other than computing the world-space inverse inertia tensor.</p>
-<pre><code class="lang-lang=cpp,">var LocalInverseInertiaTensor : Real3x3
+<pre><code class="lang-TS:Nada">var LocalInverseInertiaTensor : Real3x3
 </code></pre>
 </blockquote>
 <hr>
@@ -270,35 +270,35 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The current mass of the rigid body. This includes all child colliders belonging to this body.</p>
-<pre><code class="lang-lang=cpp,">var Mass : Real
+<pre><code class="lang-TS:Nada">var Mass : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="mode2d--mode2dstates">Mode2D : <a href="../enum_reference.html#mode2dstates">Mode2DStates</a></h1>
 <blockquote>
 <p>Used to make an object act as if it were 2D. This is done by locking it to the current z-plane and only allowing rotation about the world's z-axis. Objects can be set to always be 2D or 3D, or this can be deferred to the PhysicsSpace's Mode2D.</p>
-<pre><code class="lang-lang=cpp,">var Mode2D : Mode2DStates
+<pre><code class="lang-TS:Nada">var Mode2D : Mode2DStates
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="rotationlocked--boolean">RotationLocked : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Makes physics unable to rotate this object. Manual rotations can still be applied.</p>
-<pre><code class="lang-lang=cpp,">var RotationLocked : Boolean
+<pre><code class="lang-TS:Nada">var RotationLocked : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="torque--real3">Torque : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>The total accumulated torque (in world space) that is being applied to the center of mass of this rigid body this frame. Setting this will wake up the body if it's asleep.</p>
-<pre><code class="lang-lang=cpp,">var Torque : Real3
+<pre><code class="lang-TS:Nada">var Torque : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="velocity--real3">Velocity : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>The velocity (units per second) of this body in world space. Max bounds are around 1e+10, after this the velocity will be capped. Setting this will wake up the body if it's asleep.</p>
-<pre><code class="lang-lang=cpp,">var Velocity : Real3
+<pre><code class="lang-TS:Nada">var Velocity : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -306,7 +306,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The position of the center of mass in world space.</p>
-<pre><code class="lang-lang=cpp,">var WorldCenterOfMass : Real3
+<pre><code class="lang-TS:Nada">var WorldCenterOfMass : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -314,7 +314,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The inverse inertia tensor in world space of this body. Describes how hard it is to rotate an object about the world-space axes. Useful to convert any torque into an angular velocity.</p>
-<pre><code class="lang-lang=cpp,">var WorldInverseInertiaTensor : Real3x3
+<pre><code class="lang-TS:Nada">var WorldInverseInertiaTensor : Real3x3
 </code></pre>
 </blockquote>
 <hr>
@@ -326,7 +326,7 @@
 |Name|Type|Description|
 |---|---|---|
 |angular|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyAngularImpulse(angular : Real3)
+<pre><code class="lang-TS:Nada">function ApplyAngularImpulse(angular : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -336,7 +336,7 @@
 |Name|Type|Description|
 |---|---|---|
 |angular|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyAngularVelocity(angular : Real3)
+<pre><code class="lang-TS:Nada">function ApplyAngularVelocity(angular : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -346,7 +346,7 @@
 |Name|Type|Description|
 |---|---|---|
 |force|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyForce(force : Real3)
+<pre><code class="lang-TS:Nada">function ApplyForce(force : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -357,7 +357,7 @@
 |---|---|---|
 |force|<a href="../nada_base_types/real3.html">real3</a>| |
 |worldOffset|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyForceAtOffsetVector(force : Real3, worldOffset : Real3)
+<pre><code class="lang-TS:Nada">function ApplyForceAtOffsetVector(force : Real3, worldOffset : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -368,7 +368,7 @@
 |---|---|---|
 |force|<a href="../nada_base_types/real3.html">real3</a>| |
 |worldOffset|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyForceAtOffsetVectorNoWakeUp(force : Real3, worldOffset : Real3)
+<pre><code class="lang-TS:Nada">function ApplyForceAtOffsetVectorNoWakeUp(force : Real3, worldOffset : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -379,7 +379,7 @@
 |---|---|---|
 |force|<a href="../nada_base_types/real3.html">real3</a>| |
 |worldPoint|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyForceAtPoint(force : Real3, worldPoint : Real3)
+<pre><code class="lang-TS:Nada">function ApplyForceAtPoint(force : Real3, worldPoint : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -390,7 +390,7 @@
 |---|---|---|
 |force|<a href="../nada_base_types/real3.html">real3</a>| |
 |worldPoint|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyForceAtPointNoWakeUp(force : Real3, worldPoint : Real3)
+<pre><code class="lang-TS:Nada">function ApplyForceAtPointNoWakeUp(force : Real3, worldPoint : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -400,7 +400,7 @@
 |Name|Type|Description|
 |---|---|---|
 |force|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyForceNoWakeUp(force : Real3)
+<pre><code class="lang-TS:Nada">function ApplyForceNoWakeUp(force : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -411,7 +411,7 @@
 |---|---|---|
 |impulse|<a href="../nada_base_types/real3.html">real3</a>| |
 |worldOffset|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyImpulseAtOffsetVector(impulse : Real3, worldOffset : Real3)
+<pre><code class="lang-TS:Nada">function ApplyImpulseAtOffsetVector(impulse : Real3, worldOffset : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -422,7 +422,7 @@
 |---|---|---|
 |impulse|<a href="../nada_base_types/real3.html">real3</a>| |
 |worldPoint|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyImpulseAtPoint(impulse : Real3, worldPoint : Real3)
+<pre><code class="lang-TS:Nada">function ApplyImpulseAtPoint(impulse : Real3, worldPoint : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -432,7 +432,7 @@
 |Name|Type|Description|
 |---|---|---|
 |linear|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyLinearImpulse(linear : Real3)
+<pre><code class="lang-TS:Nada">function ApplyLinearImpulse(linear : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -442,7 +442,7 @@
 |Name|Type|Description|
 |---|---|---|
 |linear|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyLinearVelocity(linear : Real3)
+<pre><code class="lang-TS:Nada">function ApplyLinearVelocity(linear : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -452,7 +452,7 @@
 |Name|Type|Description|
 |---|---|---|
 |torque|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyTorque(torque : Real3)
+<pre><code class="lang-TS:Nada">function ApplyTorque(torque : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -462,7 +462,7 @@
 |Name|Type|Description|
 |---|---|---|
 |torque|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyTorqueNoWakeUp(torque : Real3)
+<pre><code class="lang-TS:Nada">function ApplyTorqueNoWakeUp(torque : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -473,7 +473,7 @@
 |---|---|---|
 |velocity|<a href="../nada_base_types/real3.html">real3</a>| |
 |worldPoint|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ApplyVelocityAtPoint(velocity : Real3, worldPoint : Real3)
+<pre><code class="lang-TS:Nada">function ApplyVelocityAtPoint(velocity : Real3, worldPoint : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -482,7 +482,7 @@
 <p>Forces the object asleep. Warning: calling this function could create gameplay flaws if used incorrectly, use at your own risk (and sparingly).
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ForceAsleep()
+<pre><code class="lang-TS:Nada">function ForceAsleep()
 </code></pre>
 </blockquote>
 <hr>
@@ -491,7 +491,7 @@
 <p>Forces the object awake. Will reset the sleep timer.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ForceAwake()
+<pre><code class="lang-TS:Nada">function ForceAwake()
 </code></pre>
 </blockquote>
 <hr>
@@ -501,7 +501,7 @@
 |Name|Type|Description|
 |---|---|---|
 |worldPoint|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetPointVelocity(worldPoint : Real3) : Real3
+<pre><code class="lang-TS:Nada">function GetPointVelocity(worldPoint : Real3) : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -517,7 +517,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function RigidBody()
+<pre><code class="lang-TS:Nada">function RigidBody()
 </code></pre>
 </blockquote>
 <hr>

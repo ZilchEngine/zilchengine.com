@@ -147,7 +147,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Object with the CameraViewport component that this event is getting tasks for.</p>
-<pre><code class="lang-lang=cpp,">var CameraViewportCog : Cog
+<pre><code class="lang-TS:Nada">var CameraViewportCog : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -155,7 +155,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Size of the UI viewport, or the resolution on CameraViewport if not rendering to viewport.</p>
-<pre><code class="lang-lang=cpp,">var ViewportSize : Integer2
+<pre><code class="lang-TS:Nada">var ViewportSize : Integer2
 </code></pre>
 </blockquote>
 <hr>
@@ -168,7 +168,7 @@
 |---|---|---|
 |renderSettings|<a href="rendersettings.html">rendersettings</a>| |
 |color|<a href="../nada_base_types/real4.html">real4</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(renderSettings : RenderSettings, color : Real4)
+<pre><code class="lang-TS:Nada">function AddRenderTaskClearTarget(renderSettings : RenderSettings, color : Real4)
 </code></pre>
 </blockquote>
 <hr>
@@ -180,7 +180,7 @@
 |renderSettings|<a href="rendersettings.html">rendersettings</a>| |
 |color|<a href="../nada_base_types/real4.html">real4</a>| |
 |depth|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(renderSettings : RenderSettings, color : Real4, depth : Real)
+<pre><code class="lang-TS:Nada">function AddRenderTaskClearTarget(renderSettings : RenderSettings, color : Real4, depth : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -193,7 +193,7 @@
 |color|<a href="../nada_base_types/real4.html">real4</a>| |
 |depth|<a href="../nada_base_types/real.html">real</a>| |
 |stencil|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(renderSettings : RenderSettings, color : Real4, depth : Real, stencil : Integer)
+<pre><code class="lang-TS:Nada">function AddRenderTaskClearTarget(renderSettings : RenderSettings, color : Real4, depth : Real, stencil : Integer)
 </code></pre>
 </blockquote>
 <hr>
@@ -207,7 +207,7 @@
 |depth|<a href="../nada_base_types/real.html">real</a>| |
 |stencil|<a href="../nada_base_types/integer.html">integer</a>| |
 |stencilWriteMask|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(renderSettings : RenderSettings, color : Real4, depth : Real, stencil : Integer, stencilWriteMask : Integer)
+<pre><code class="lang-TS:Nada">function AddRenderTaskClearTarget(renderSettings : RenderSettings, color : Real4, depth : Real, stencil : Integer, stencilWriteMask : Integer)
 </code></pre>
 </blockquote>
 <hr>
@@ -218,7 +218,7 @@
 |---|---|---|
 |depthTarget|<a href="rendertarget.html">rendertarget</a>| |
 |depth|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(depthTarget : RenderTarget, depth : Real)
+<pre><code class="lang-TS:Nada">function AddRenderTaskClearTarget(depthTarget : RenderTarget, depth : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -230,7 +230,7 @@
 |depthTarget|<a href="rendertarget.html">rendertarget</a>| |
 |depth|<a href="../nada_base_types/real.html">real</a>| |
 |stencil|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(depthTarget : RenderTarget, depth : Real, stencil : Integer)
+<pre><code class="lang-TS:Nada">function AddRenderTaskClearTarget(depthTarget : RenderTarget, depth : Real, stencil : Integer)
 </code></pre>
 </blockquote>
 <hr>
@@ -243,7 +243,7 @@
 |depth|<a href="../nada_base_types/real.html">real</a>| |
 |stencil|<a href="../nada_base_types/integer.html">integer</a>| |
 |stencilWriteMask|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(depthTarget : RenderTarget, depth : Real, stencil : Integer, stencilWriteMask : Integer)
+<pre><code class="lang-TS:Nada">function AddRenderTaskClearTarget(depthTarget : RenderTarget, depth : Real, stencil : Integer, stencilWriteMask : Integer)
 </code></pre>
 </blockquote>
 <hr>
@@ -254,7 +254,7 @@
 |---|---|---|
 |colorTarget|<a href="rendertarget.html">rendertarget</a>| |
 |color|<a href="../nada_base_types/real4.html">real4</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(colorTarget : RenderTarget, color : Real4)
+<pre><code class="lang-TS:Nada">function AddRenderTaskClearTarget(colorTarget : RenderTarget, color : Real4)
 </code></pre>
 </blockquote>
 <hr>
@@ -267,7 +267,7 @@
 |depthTarget|<a href="rendertarget.html">rendertarget</a>| |
 |color|<a href="../nada_base_types/real4.html">real4</a>| |
 |depth|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(colorTarget : RenderTarget, depthTarget : RenderTarget, color : Real4, depth : Real)
+<pre><code class="lang-TS:Nada">function AddRenderTaskClearTarget(colorTarget : RenderTarget, depthTarget : RenderTarget, color : Real4, depth : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -281,7 +281,7 @@
 |color|<a href="../nada_base_types/real4.html">real4</a>| |
 |depth|<a href="../nada_base_types/real.html">real</a>| |
 |stencil|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(colorTarget : RenderTarget, depthTarget : RenderTarget, color : Real4, depth : Real, stencil : Integer)
+<pre><code class="lang-TS:Nada">function AddRenderTaskClearTarget(colorTarget : RenderTarget, depthTarget : RenderTarget, color : Real4, depth : Real, stencil : Integer)
 </code></pre>
 </blockquote>
 <hr>
@@ -296,7 +296,7 @@
 |depth|<a href="../nada_base_types/real.html">real</a>| |
 |stencil|<a href="../nada_base_types/integer.html">integer</a>| |
 |stencilWriteMask|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskClearTarget(colorTarget : RenderTarget, depthTarget : RenderTarget, color : Real4, depth : Real, stencil : Integer, stencilWriteMask : Integer)
+<pre><code class="lang-TS:Nada">function AddRenderTaskClearTarget(colorTarget : RenderTarget, depthTarget : RenderTarget, color : Real4, depth : Real, stencil : Integer, stencilWriteMask : Integer)
 </code></pre>
 </blockquote>
 <hr>
@@ -307,7 +307,7 @@
 |---|---|---|
 |renderSettings|<a href="rendersettings.html">rendersettings</a>| |
 |material|<a href="material.html">material</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskPostProcess(renderSettings : RenderSettings, material : Material)
+<pre><code class="lang-TS:Nada">function AddRenderTaskPostProcess(renderSettings : RenderSettings, material : Material)
 </code></pre>
 </blockquote>
 <hr>
@@ -318,7 +318,7 @@
 |---|---|---|
 |renderSettings|<a href="rendersettings.html">rendersettings</a>| |
 |postProcess|<a href="materialblock.html">materialblock</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskPostProcess(renderSettings : RenderSettings, postProcess : MaterialBlock)
+<pre><code class="lang-TS:Nada">function AddRenderTaskPostProcess(renderSettings : RenderSettings, postProcess : MaterialBlock)
 </code></pre>
 </blockquote>
 <hr>
@@ -329,7 +329,7 @@
 |---|---|---|
 |renderTarget|<a href="rendertarget.html">rendertarget</a>| |
 |material|<a href="material.html">material</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskPostProcess(renderTarget : RenderTarget, material : Material)
+<pre><code class="lang-TS:Nada">function AddRenderTaskPostProcess(renderTarget : RenderTarget, material : Material)
 </code></pre>
 </blockquote>
 <hr>
@@ -340,7 +340,7 @@
 |---|---|---|
 |renderTarget|<a href="rendertarget.html">rendertarget</a>| |
 |postProcess|<a href="materialblock.html">materialblock</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskPostProcess(renderTarget : RenderTarget, postProcess : MaterialBlock)
+<pre><code class="lang-TS:Nada">function AddRenderTaskPostProcess(renderTarget : RenderTarget, postProcess : MaterialBlock)
 </code></pre>
 </blockquote>
 <hr>
@@ -352,7 +352,7 @@
 |renderSettings|<a href="rendersettings.html">rendersettings</a>| |
 |graphicalRange|<a href="graphicalrangeinterface.html">graphicalrangeinterface</a>| |
 |renderPass|<a href="materialblock.html">materialblock</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskRenderPass(renderSettings : RenderSettings, graphicalRange : GraphicalRangeInterface, renderPass : MaterialBlock)
+<pre><code class="lang-TS:Nada">function AddRenderTaskRenderPass(renderSettings : RenderSettings, graphicalRange : GraphicalRangeInterface, renderPass : MaterialBlock)
 </code></pre>
 </blockquote>
 <hr>
@@ -364,7 +364,7 @@
 |renderSettings|<a href="rendersettings.html">rendersettings</a>| |
 |renderGroup|<a href="rendergroup.html">rendergroup</a>| |
 |renderPass|<a href="materialblock.html">materialblock</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskRenderPass(renderSettings : RenderSettings, renderGroup : RenderGroup, renderPass : MaterialBlock)
+<pre><code class="lang-TS:Nada">function AddRenderTaskRenderPass(renderSettings : RenderSettings, renderGroup : RenderGroup, renderPass : MaterialBlock)
 </code></pre>
 </blockquote>
 <hr>
@@ -374,7 +374,7 @@
 |Name|Type|Description|
 |---|---|---|
 |subRenderGroupPass|<a href="subrendergrouppass.html">subrendergrouppass</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddRenderTaskSubRenderGroupPass(subRenderGroupPass : SubRenderGroupPass)
+<pre><code class="lang-TS:Nada">function AddRenderTaskSubRenderGroupPass(subRenderGroupPass : SubRenderGroupPass)
 </code></pre>
 </blockquote>
 <hr>
@@ -384,7 +384,7 @@
 |Name|Type|Description|
 |---|---|---|
 |baseGroup|<a href="rendergroup.html">rendergroup</a>| |</p>
-<pre><code class="lang-lang=cpp,">function CreateSubRenderGroupPass(baseGroup : RenderGroup) : SubRenderGroupPass
+<pre><code class="lang-TS:Nada">function CreateSubRenderGroupPass(baseGroup : RenderGroup) : SubRenderGroupPass
 </code></pre>
 </blockquote>
 <hr>
@@ -411,7 +411,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function GetFinalTarget( : Integer2,  : TextureFormat) : RenderTarget
+<pre><code class="lang-TS:Nada">function GetFinalTarget( : Integer2,  : TextureFormat) : RenderTarget
 </code></pre>
 </blockquote>
 <hr>
@@ -443,7 +443,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function GetFinalTarget( : Integer2,  : TextureFormat,  : SamplerSettings) : RenderTarget
+<pre><code class="lang-TS:Nada">function GetFinalTarget( : Integer2,  : TextureFormat,  : SamplerSettings) : RenderTarget
 </code></pre>
 </blockquote>
 <hr>
@@ -454,7 +454,7 @@
 |---|---|---|
 ||<a href="../nada_base_types/integer2.html">integer2</a>| |
 ||<a href="../enum_reference.html#textureformat">TextureFormat</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetRenderTarget( : Integer2,  : TextureFormat) : RenderTarget
+<pre><code class="lang-TS:Nada">function GetRenderTarget( : Integer2,  : TextureFormat) : RenderTarget
 </code></pre>
 </blockquote>
 <hr>
@@ -466,7 +466,7 @@
 ||<a href="../nada_base_types/integer2.html">integer2</a>| |
 ||<a href="../enum_reference.html#textureformat">TextureFormat</a>| |
 ||<a href="samplersettings.html">samplersettings</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetRenderTarget( : Integer2,  : TextureFormat,  : SamplerSettings) : RenderTarget
+<pre><code class="lang-TS:Nada">function GetRenderTarget( : Integer2,  : TextureFormat,  : SamplerSettings) : RenderTarget
 </code></pre>
 </blockquote>
 <hr>
@@ -476,7 +476,7 @@
 |Name|Type|Description|
 |---|---|---|
 |texture|<a href="texture.html">texture</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetRenderTarget(texture : Texture) : RenderTarget
+<pre><code class="lang-TS:Nada">function GetRenderTarget(texture : Texture) : RenderTarget
 </code></pre>
 </blockquote>
 <hr>

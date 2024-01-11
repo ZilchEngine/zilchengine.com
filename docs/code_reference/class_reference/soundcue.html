@@ -218,131 +218,131 @@
 <h1 id="attenuator--soundattenuator">Attenuator : <a href="soundattenuator.html">soundattenuator</a></h1>
 <blockquote>
 <p>If a SoundAttenuator resource is selected, it will be applied to reduce the sound's volume with distance when played through a SoundEmitter. If DefaultNoAttenuation is selected on the SoundCue and a different SoundAttenuator is selected on the SoundEmitter, the SoundEmitter's settings will be applied. If DefaultNoAttenuation is selected on both the sound will not be attenuated.</p>
-<pre><code class="lang-lang=cpp,">var Attenuator : SoundAttenuator
+<pre><code class="lang-TS:Nada">var Attenuator : SoundAttenuator
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="beatsperminute--real">BeatsPerMinute : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The speed of the music, using beats per minute.</p>
-<pre><code class="lang-lang=cpp,">var BeatsPerMinute : Real
+<pre><code class="lang-TS:Nada">var BeatsPerMinute : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="decibels--real">Decibels : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The volume adjustment, in decibels, that will be applied to the sound when it plays. A value of 0 does nothing, 6 will double the sound's volume, -6 will halve it. The Decibels property is linked to the Volume property (changing one will change the other).</p>
-<pre><code class="lang-lang=cpp,">var Decibels : Real
+<pre><code class="lang-TS:Nada">var Decibels : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="decibelvariation--real">DecibelVariation : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>Sets how much the Decibels will be randomized every time the SoundCue plays. If Decibels is 0, and DecibelVariation is 4, the volume adjustment will be chosen randomly between -4 and 4.</p>
-<pre><code class="lang-lang=cpp,">var DecibelVariation : Real
+<pre><code class="lang-TS:Nada">var DecibelVariation : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="pitch--real">Pitch : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>This property affects both the pitch and speed of the sound played by the SoundCue. A value of 0 will do nothing, 1 will raise the pitch by an octave and speed up the sound,.</p>
-<pre><code class="lang-lang=cpp,">var Pitch : Real
+<pre><code class="lang-TS:Nada">var Pitch : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="pitchvariation--real">PitchVariation : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>Sets how much the pitch will be randomized every time the SoundCue plays. If Pitch is 0, and PitchVariation is 0.3, the pitch of the sound will be chosen randomly between -0.3 and 0.3.</p>
-<pre><code class="lang-lang=cpp,">var PitchVariation : Real
+<pre><code class="lang-TS:Nada">var PitchVariation : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="playmode--soundplaymode">PlayMode : <a href="../enum_reference.html#soundplaymode">SoundPlayMode</a></h1>
 <blockquote>
 <p>If Single is chosen the SoundInstance created by the SoundCue will be played once and will stop when it reaches its EndTime. If Looping is chosen the SoundInstance will play continuously until either it is stopped or its Looping property is set to false.</p>
-<pre><code class="lang-lang=cpp,">var PlayMode : SoundPlayMode
+<pre><code class="lang-TS:Nada">var PlayMode : SoundPlayMode
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="selectmode--soundselectmode">SelectMode : <a href="../enum_reference.html#soundselectmode">SoundSelectMode</a></h1>
 <blockquote>
 <p>If Random is chosen the SoundCue will randomly choose which SoundEntry to play. If Sequential is chosen it will play the SoundEntries in order.</p>
-<pre><code class="lang-lang=cpp,">var SelectMode : SoundSelectMode
+<pre><code class="lang-TS:Nada">var SelectMode : SoundSelectMode
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="semitones--real">Semitones : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>This property, specified in semitones (or half-steps), affects both the pitch and speed of the sound played by the SoundCue. A value of 0 will do nothing, 12 will raise the pitch by an octave and speed up the sound, and -12 will lower the sound by an octave and slow it down. The Semitones property is linked to the Pitch property (changing one will change the other).</p>
-<pre><code class="lang-lang=cpp,">var Semitones : Real
+<pre><code class="lang-TS:Nada">var Semitones : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="semitonevariation--real">SemitoneVariation : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>Sets how much the pitch will be randomized every time the SoundCue plays. If Semitones is 0, and SemitoneVariation is 5, the pitch of the sound will be chosen randomly between -5 and 5.</p>
-<pre><code class="lang-lang=cpp,">var SemitoneVariation : Real
+<pre><code class="lang-TS:Nada">var SemitoneVariation : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="showmusicoptions--boolean">ShowMusicOptions : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If true, the music options will be shown. If false, they will be hidden.</p>
-<pre><code class="lang-lang=cpp,">var ShowMusicOptions : Boolean
+<pre><code class="lang-TS:Nada">var ShowMusicOptions : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="sounds--sounds">Sounds : <a href="sounds.html">sounds</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Sounds : Sounds
+<pre><code class="lang-TS:Nada">var Sounds : Sounds
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="soundtags--soundtags">SoundTags : <a href="soundtags.html">soundtags</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var SoundTags : SoundTags
+<pre><code class="lang-TS:Nada">var SoundTags : SoundTags
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="timesigbeats--real">TimeSigBeats : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The top number of the music's time signature (beats per measure).</p>
-<pre><code class="lang-lang=cpp,">var TimeSigBeats : Real
+<pre><code class="lang-TS:Nada">var TimeSigBeats : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="timesigvalue--real">TimeSigValue : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The bottom number of the music's time signature (which type of note has the beat).</p>
-<pre><code class="lang-lang=cpp,">var TimeSigValue : Real
+<pre><code class="lang-TS:Nada">var TimeSigValue : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="usedecibelvariation--boolean">UseDecibelVariation : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If false, the VolumeVariation value will be used to randomize the volume. If true, the DecibelVariation field will be shown and will be used for randomization.</p>
-<pre><code class="lang-lang=cpp,">var UseDecibelVariation : Boolean
+<pre><code class="lang-TS:Nada">var UseDecibelVariation : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="usesemitonevariation--boolean">UseSemitoneVariation : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If false, the PitchVariation value will be used to randomize the volume. If true, the SemitoneVariation field will be shown and will be used for randomization.</p>
-<pre><code class="lang-lang=cpp,">var UseSemitoneVariation : Boolean
+<pre><code class="lang-TS:Nada">var UseSemitoneVariation : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="volume--real">Volume : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The volume adjustment that will be applied to the sound when it plays. A value of 1 does nothing, 2 will double the sound's volume, 0.5 will halve it. The Volume property is linked to the Decibels property (changing one will change the other).</p>
-<pre><code class="lang-lang=cpp,">var Volume : Real
+<pre><code class="lang-TS:Nada">var Volume : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="volumevariation--real">VolumeVariation : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>Sets how much the Volume will be randomized every time the SoundCue plays. If Volume is 1, and VolumeVariation is 0.5, the volume adjustment will be chosen randomly between 0.5 and 1.5.</p>
-<pre><code class="lang-lang=cpp,">var VolumeVariation : Real
+<pre><code class="lang-TS:Nada">var VolumeVariation : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -355,7 +355,7 @@
 |---|---|---|
 |sound|<a href="sound.html">sound</a>| |
 |weight|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddSoundEntry(sound : Sound, weight : Real)
+<pre><code class="lang-TS:Nada">function AddSoundEntry(sound : Sound, weight : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -365,7 +365,7 @@
 |Name|Type|Description|
 |---|---|---|
 |soundTag|<a href="soundtag.html">soundtag</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddSoundTagEntry(soundTag : SoundTag)
+<pre><code class="lang-TS:Nada">function AddSoundTagEntry(soundTag : SoundTag)
 </code></pre>
 </blockquote>
 <hr>
@@ -376,7 +376,7 @@
 |---|---|---|
 |outputNode|<a href="soundnode.html">soundnode</a>| |
 |startPaused|<a href="../nada_base_types/boolean.html">boolean</a>| |</p>
-<pre><code class="lang-lang=cpp,">function PlayCueOnNode(outputNode : SoundNode, startPaused : Boolean) : SoundInstance
+<pre><code class="lang-TS:Nada">function PlayCueOnNode(outputNode : SoundNode, startPaused : Boolean) : SoundInstance
 </code></pre>
 </blockquote>
 <hr>
@@ -391,7 +391,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function Preview()
+<pre><code class="lang-TS:Nada">function Preview()
 </code></pre>
 </blockquote>
 <hr>
@@ -406,7 +406,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function StopPreview()
+<pre><code class="lang-TS:Nada">function StopPreview()
 </code></pre>
 </blockquote>
 <hr>

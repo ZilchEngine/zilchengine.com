@@ -249,14 +249,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Find the Camera component from the CameraPath (or null if it doesn't exist).</p>
-<pre><code class="lang-lang=cpp,">var Camera : Camera
+<pre><code class="lang-TS:Nada">var Camera : Camera
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="camerapath--cogpath">CameraPath : <a href="cogpath.html">cogpath</a></h1>
 <blockquote>
 <p>Object with the Camera component to be used for rendering. A Camera can only be used by one CameraViewport, if already used by another usage will be stolen when assigned.</p>
-<pre><code class="lang-lang=cpp,">var CameraPath : CogPath
+<pre><code class="lang-TS:Nada">var CameraPath : CogPath
 </code></pre>
 </blockquote>
 <hr>
@@ -264,14 +264,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Texture that contains the end result of this CameraViewport's rendering. Must be explicitly written to in renderer script.</p>
-<pre><code class="lang-lang=cpp,">var FinalTexture : Texture
+<pre><code class="lang-TS:Nada">var FinalTexture : Texture
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="forwardviewportevents--boolean">ForwardViewportEvents : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Forwards mouse events to viewports underneath this viewport.</p>
-<pre><code class="lang-lang=cpp,">var ForwardViewportEvents : Boolean
+<pre><code class="lang-TS:Nada">var ForwardViewportEvents : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -279,14 +279,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Creates a frustum using the CameraViewport's settings (including aspect ratio). If the Camera is null, then this will throw an exception.</p>
-<pre><code class="lang-lang=cpp,">var Frustum : Frustum
+<pre><code class="lang-TS:Nada">var Frustum : Frustum
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="margincolor--real4">MarginColor : <a href="../nada_base_types/real4.html">real4</a></h1>
 <blockquote>
 <p>Color to used for letterbox/scaling margins.</p>
-<pre><code class="lang-lang=cpp,">var MarginColor : Real4
+<pre><code class="lang-TS:Nada">var MarginColor : Real4
 </code></pre>
 </blockquote>
 <hr>
@@ -294,62 +294,62 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Get the world ray starting from the mouse.</p>
-<pre><code class="lang-lang=cpp,">var MouseWorldRay : Ray
+<pre><code class="lang-TS:Nada">var MouseWorldRay : Ray
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="normalizedoffset--real2">NormalizedOffset : <a href="../nada_base_types/real2.html">real2</a></h1>
 <blockquote>
 <p>Offset of the viewport in normalized UI coordinates.</p>
-<pre><code class="lang-lang=cpp,">var NormalizedOffset : Real2
+<pre><code class="lang-TS:Nada">var NormalizedOffset : Real2
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="normalizedsize--real2">NormalizedSize : <a href="../nada_base_types/real2.html">real2</a></h1>
 <blockquote>
 <p>Size of viewport in normalized UI coordinates.</p>
-<pre><code class="lang-lang=cpp,">var NormalizedSize : Real2
+<pre><code class="lang-TS:Nada">var NormalizedSize : Real2
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="rendererpath--cogpath">RendererPath : <a href="cogpath.html">cogpath</a></h1>
 <blockquote>
 <p>Object with renderer script that connects to RenderTasksUpdate that determines what rendering will be done.</p>
-<pre><code class="lang-lang=cpp,">var RendererPath : CogPath
+<pre><code class="lang-TS:Nada">var RendererPath : CogPath
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="renderineditor--boolean">RenderInEditor : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If rendering will be ran in edit mode.</p>
-<pre><code class="lang-lang=cpp,">var RenderInEditor : Boolean
+<pre><code class="lang-TS:Nada">var RenderInEditor : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="renderingame--boolean">RenderInGame : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If rendering will be ran in play game mode.</p>
-<pre><code class="lang-lang=cpp,">var RenderInGame : Boolean
+<pre><code class="lang-TS:Nada">var RenderInGame : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="renderorder--integer">RenderOrder : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>The order that rendering should be done relative to other CameraViewports, lowest to highest.</p>
-<pre><code class="lang-lang=cpp,">var RenderOrder : Integer
+<pre><code class="lang-TS:Nada">var RenderOrder : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="rendertoviewport--boolean">RenderToViewport : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If the rendering result in FinalTexture should also be placed on the UI viewport.</p>
-<pre><code class="lang-lang=cpp,">var RenderToViewport : Boolean
+<pre><code class="lang-TS:Nada">var RenderToViewport : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="resolutionoraspect--integer2">ResolutionOrAspect : <a href="../nada_base_types/integer2.html">integer2</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var ResolutionOrAspect : Integer2
+<pre><code class="lang-TS:Nada">var ResolutionOrAspect : Integer2
 </code></pre>
 </blockquote>
 <hr>
@@ -357,7 +357,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>If the viewport created by this CameraViewport, if rendering to one, has focus.</p>
-<pre><code class="lang-lang=cpp,">var ViewportHasFocus : Boolean
+<pre><code class="lang-TS:Nada">var ViewportHasFocus : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -365,7 +365,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The current offset of the viewport, in pixels.</p>
-<pre><code class="lang-lang=cpp,">var ViewportOffset : Real2
+<pre><code class="lang-TS:Nada">var ViewportOffset : Real2
 </code></pre>
 </blockquote>
 <hr>
@@ -373,7 +373,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The current offset of the viewport's margin, in pixels.</p>
-<pre><code class="lang-lang=cpp,">var ViewportOffsetWithMargin : Real2
+<pre><code class="lang-TS:Nada">var ViewportOffsetWithMargin : Real2
 </code></pre>
 </blockquote>
 <hr>
@@ -381,7 +381,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The current resolution of the viewport.</p>
-<pre><code class="lang-lang=cpp,">var ViewportResolution : Real2
+<pre><code class="lang-TS:Nada">var ViewportResolution : Real2
 </code></pre>
 </blockquote>
 <hr>
@@ -389,14 +389,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The current resolution of the viewport including margin.</p>
-<pre><code class="lang-lang=cpp,">var ViewportResolutionWithMargin : Real2
+<pre><code class="lang-TS:Nada">var ViewportResolutionWithMargin : Real2
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="viewportscaling--viewportscaling">ViewportScaling : <a href="../enum_reference.html#viewportscaling">ViewportScaling</a></h1>
 <blockquote>
 <p>Method to use for sizing the viewport.</p>
-<pre><code class="lang-lang=cpp,">var ViewportScaling : ViewportScaling
+<pre><code class="lang-TS:Nada">var ViewportScaling : ViewportScaling
 </code></pre>
 </blockquote>
 <hr>
@@ -404,7 +404,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Transformation that defines how the view frustum is mapped to normalized coordinates, pre W divide.</p>
-<pre><code class="lang-lang=cpp,">var ViewToPerspective : Real4x4
+<pre><code class="lang-TS:Nada">var ViewToPerspective : Real4x4
 </code></pre>
 </blockquote>
 <hr>
@@ -412,7 +412,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Concatenation of the WorldToView and ViewToPerspective transformations.</p>
-<pre><code class="lang-lang=cpp,">var WorldToPerspective : Real4x4
+<pre><code class="lang-TS:Nada">var WorldToPerspective : Real4x4
 </code></pre>
 </blockquote>
 <hr>
@@ -420,7 +420,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Transformation that defines view space as the Camera at the origin and the view direction as -Z.</p>
-<pre><code class="lang-lang=cpp,">var WorldToView : Real4x4
+<pre><code class="lang-TS:Nada">var WorldToView : Real4x4
 </code></pre>
 </blockquote>
 <hr>
@@ -438,7 +438,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function CameraViewport()
+<pre><code class="lang-TS:Nada">function CameraViewport()
 </code></pre>
 </blockquote>
 <hr>
@@ -448,7 +448,7 @@
 |Name|Type|Description|
 |---|---|---|
 |screenPoint|<a href="../nada_base_types/real2.html">real2</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ScreenToViewport(screenPoint : Real2) : Real2
+<pre><code class="lang-TS:Nada">function ScreenToViewport(screenPoint : Real2) : Real2
 </code></pre>
 </blockquote>
 <hr>
@@ -460,7 +460,7 @@
 |screenPoint|<a href="../nada_base_types/real2.html">real2</a>| |
 |worldPlaneNormal|<a href="../nada_base_types/real3.html">real3</a>| |
 |worldPlanePosition|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ScreenToWorldPlane(screenPoint : Real2, worldPlaneNormal : Real3, worldPlanePosition : Real3) : Real3
+<pre><code class="lang-TS:Nada">function ScreenToWorldPlane(screenPoint : Real2, worldPlaneNormal : Real3, worldPlanePosition : Real3) : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -470,7 +470,7 @@
 |Name|Type|Description|
 |---|---|---|
 |screenPoint|<a href="../nada_base_types/real2.html">real2</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ScreenToWorldRay(screenPoint : Real2) : Ray
+<pre><code class="lang-TS:Nada">function ScreenToWorldRay(screenPoint : Real2) : Ray
 </code></pre>
 </blockquote>
 <hr>
@@ -481,7 +481,7 @@
 |---|---|---|
 |screenPoint|<a href="../nada_base_types/real2.html">real2</a>| |
 |viewDepth|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ScreenToWorldViewPlane(screenPoint : Real2, viewDepth : Real) : Real3
+<pre><code class="lang-TS:Nada">function ScreenToWorldViewPlane(screenPoint : Real2, viewDepth : Real) : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -492,7 +492,7 @@
 |---|---|---|
 |screenPoint|<a href="../nada_base_types/real2.html">real2</a>| |
 |worldDepth|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ScreenToWorldZPlane(screenPoint : Real2, worldDepth : Real) : Real3
+<pre><code class="lang-TS:Nada">function ScreenToWorldZPlane(screenPoint : Real2, worldDepth : Real) : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -502,7 +502,7 @@
 |Name|Type|Description|
 |---|---|---|
 |viewDepth|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ViewPlaneSize(viewDepth : Real) : Real2
+<pre><code class="lang-TS:Nada">function ViewPlaneSize(viewDepth : Real) : Real2
 </code></pre>
 </blockquote>
 <hr>
@@ -511,7 +511,7 @@
 <p>Returns whether or not it succeeded in taking focus. Will always fail if RenderToViewport is false.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ViewportTakeFocus() : Boolean
+<pre><code class="lang-TS:Nada">function ViewportTakeFocus() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -521,7 +521,7 @@
 |Name|Type|Description|
 |---|---|---|
 |viewportPoint|<a href="../nada_base_types/real2.html">real2</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ViewportToScreen(viewportPoint : Real2) : Real2
+<pre><code class="lang-TS:Nada">function ViewportToScreen(viewportPoint : Real2) : Real2
 </code></pre>
 </blockquote>
 <hr>
@@ -531,7 +531,7 @@
 |Name|Type|Description|
 |---|---|---|
 |worldPoint|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function WorldToScreen(worldPoint : Real3) : Real2
+<pre><code class="lang-TS:Nada">function WorldToScreen(worldPoint : Real3) : Real2
 </code></pre>
 </blockquote>
 <hr>

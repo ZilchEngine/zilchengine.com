@@ -140,21 +140,21 @@
 <h1 id="closed--boolean">Closed : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Does the spline loop back on itself?</p>
-<pre><code class="lang-lang=cpp,">var Closed : Boolean
+<pre><code class="lang-TS:Nada">var Closed : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="debugdrawspline--boolean">DebugDrawSpline : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Should the spline draw every frame? Mainly used for debugging purposes.</p>
-<pre><code class="lang-lang=cpp,">var DebugDrawSpline : Boolean
+<pre><code class="lang-TS:Nada">var DebugDrawSpline : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="error--real">Error : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The max number of units that a line segment is allowed to deviate from the curve.</p>
-<pre><code class="lang-lang=cpp,">var Error : Real
+<pre><code class="lang-TS:Nada">var Error : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -162,21 +162,21 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The internal spline data.</p>
-<pre><code class="lang-lang=cpp,">var Spline : Spline
+<pre><code class="lang-TS:Nada">var Spline : Spline
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="splinecolor--real4">SplineColor : <a href="../nada_base_types/real4.html">real4</a></h1>
 <blockquote>
 <p>What color should that spline be drawn with.</p>
-<pre><code class="lang-lang=cpp,">var SplineColor : Real4
+<pre><code class="lang-TS:Nada">var SplineColor : Real4
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="splinetype--splinetype">SplineType : <a href="../enum_reference.html#splinetype">SplineType</a></h1>
 <blockquote>
 <p>The kind of spline (Linear, BSpline, CatmullRom). Determines how the control points affect the curve.</p>
-<pre><code class="lang-lang=cpp,">var SplineType : SplineType
+<pre><code class="lang-TS:Nada">var SplineType : SplineType
 </code></pre>
 </blockquote>
 <hr>
@@ -187,7 +187,7 @@
 <p>Forcibly rebuilds the baked points for the spline.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ForceRebuild()
+<pre><code class="lang-TS:Nada">function ForceRebuild()
 </code></pre>
 </blockquote>
 <hr>
@@ -203,7 +203,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function HierarchySpline()
+<pre><code class="lang-TS:Nada">function HierarchySpline()
 </code></pre>
 </blockquote>
 <hr>
@@ -212,7 +212,7 @@
 <p>Rebuild the baked points if there are any changes to the spline's control points. This should never need to be manually called.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function RebuildIfModified()
+<pre><code class="lang-TS:Nada">function RebuildIfModified()
 </code></pre>
 </blockquote>
 <hr>

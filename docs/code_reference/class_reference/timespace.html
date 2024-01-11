@@ -182,89 +182,89 @@
 <h1 id="dt--real">Dt : <a href="../nada_base_types/real.html">real</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Dt : Real
+<pre><code class="lang-TS:Nada">var Dt : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="dtorzero--real">DtOrZero : <a href="../nada_base_types/real.html">real</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var DtOrZero : Real
+<pre><code class="lang-TS:Nada">var DtOrZero : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="frame--integer">Frame : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>The current frame we are on (starts at 0 and counts up for every frame that is run) This value counts up regardless of if the space is paused.</p>
-<pre><code class="lang-lang=cpp,">var Frame : Integer
+<pre><code class="lang-TS:Nada">var Frame : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="globallypaused--boolean">GloballyPaused : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var GloballyPaused : Boolean
+<pre><code class="lang-TS:Nada">var GloballyPaused : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="maxdt--real">MaxDt : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The maximum amount of time we send when running in 'ActualFrametime' mode If this value is set too high and the user does anything to pause their system or the game (example grabbing the window) then a large frame time will be sent out and physics objects will jump very far (causing tunneling and random bounces)</p>
-<pre><code class="lang-lang=cpp,">var MaxDt : Real
+<pre><code class="lang-TS:Nada">var MaxDt : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="mindt--real">MinDt : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The minimum amount of time we send when running in 'ActualFrametime' mode Ideally this is set to a very small non-zero value to prevent any division by zero errors.</p>
-<pre><code class="lang-lang=cpp,">var MinDt : Real
+<pre><code class="lang-TS:Nada">var MinDt : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="paused--boolean">Paused : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If the time space is paused then we cease sending out logic update events When paused, the Dt will remain at whatever it was (it will NOT be set to 0)</p>
-<pre><code class="lang-lang=cpp,">var Paused : Boolean
+<pre><code class="lang-TS:Nada">var Paused : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="realdt--real">RealDt : <a href="../nada_base_types/real.html">real</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var RealDt : Real
+<pre><code class="lang-TS:Nada">var RealDt : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="realtimepassed--real">RealTimePassed : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var RealTimePassed : Real
+<pre><code class="lang-TS:Nada">var RealTimePassed : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="stepcount--integer">StepCount : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>Causes the engine to update multiple times before rendering a frame.</p>
-<pre><code class="lang-lang=cpp,">var StepCount : Integer
+<pre><code class="lang-TS:Nada">var StepCount : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="timemode--timemode">TimeMode : <a href="../enum_reference.html#timemode">TimeMode</a></h1>
 <blockquote>
 <p>When set to fixed framerate the Dt/frame time will never change (it will send whatever the project frame-rate-limiter is set to) This means it is important to run with a frame-rate limiter of some kind otherwise the game will appear to run much faster/slower Note: For determinism, you should always run in FixedFrametime mode When set to actual framerate we will send out the real time that the engine is encountering (clamped by MinDt / MaxDt)</p>
-<pre><code class="lang-lang=cpp,">var TimeMode : TimeMode
+<pre><code class="lang-TS:Nada">var TimeMode : TimeMode
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="timepassed--real">TimePassed : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var TimePassed : Real
+<pre><code class="lang-TS:Nada">var TimePassed : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="timescale--real">TimeScale : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>Scale the speed of time for interesting effects like bullet time or fast paced gameplay. TimeScale is clamped to be positive.</p>
-<pre><code class="lang-lang=cpp,">var TimeScale : Real
+<pre><code class="lang-TS:Nada">var TimeScale : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -275,7 +275,7 @@
 <p>Allows the engine to be advance one frame forward. Useful for debugging one frame at a time.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Step()
+<pre><code class="lang-TS:Nada">function Step()
 </code></pre>
 </blockquote>
 <hr>
@@ -291,7 +291,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function TimeSpace()
+<pre><code class="lang-TS:Nada">function TimeSpace()
 </code></pre>
 </blockquote>
 <hr>
@@ -300,7 +300,7 @@
 <p>Toggles the state of paused.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function TogglePause()
+<pre><code class="lang-TS:Nada">function TogglePause()
 </code></pre>
 </blockquote>
 <hr>

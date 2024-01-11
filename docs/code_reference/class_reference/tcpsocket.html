@@ -159,7 +159,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Get the number of connections we have.</p>
-<pre><code class="lang-lang=cpp,">var ConnectionCount : Integer
+<pre><code class="lang-TS:Nada">var ConnectionCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -167,7 +167,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Get the number of incoming connections.</p>
-<pre><code class="lang-lang=cpp,">var IncomingConnectionCount : Integer
+<pre><code class="lang-TS:Nada">var IncomingConnectionCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -175,7 +175,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Get the number of outgoing connections.</p>
-<pre><code class="lang-lang=cpp,">var OutgoingConnectionCount : Integer
+<pre><code class="lang-TS:Nada">var OutgoingConnectionCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -186,7 +186,7 @@
 <p>Close all activity (whether listening or connected to a server).
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Close()
+<pre><code class="lang-TS:Nada">function Close()
 </code></pre>
 </blockquote>
 <hr>
@@ -208,7 +208,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function CloseConnection(index : Integer)
+<pre><code class="lang-TS:Nada">function CloseConnection(index : Integer)
 </code></pre>
 </blockquote>
 <hr>
@@ -219,7 +219,7 @@
 |---|---|---|
 |host|<a href="../nada_base_types/string.html">string</a>| |
 |port|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Connect(host : String, port : Integer)
+<pre><code class="lang-TS:Nada">function Connect(host : String, port : Integer)
 </code></pre>
 </blockquote>
 <hr>
@@ -228,7 +228,7 @@
 <p>Check if we are currently connected to anyone.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function IsConnected() : Boolean
+<pre><code class="lang-TS:Nada">function IsConnected() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -239,7 +239,7 @@
 |---|---|---|
 |port|<a href="../nada_base_types/integer.html">integer</a>| |
 |maxConnections|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Listen(port : Integer, maxConnections : Integer) : Boolean
+<pre><code class="lang-TS:Nada">function Listen(port : Integer, maxConnections : Integer) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -251,7 +251,7 @@
 |port|<a href="../nada_base_types/integer.html">integer</a>| |
 |maxConnections|<a href="../nada_base_types/integer.html">integer</a>| |
 |bindTo|<a href="../enum_reference.html#tcpsocketbind">TcpSocketBind</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Listen(port : Integer, maxConnections : Integer, bindTo : TcpSocketBind) : Boolean
+<pre><code class="lang-TS:Nada">function Listen(port : Integer, maxConnections : Integer, bindTo : TcpSocketBind) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -263,7 +263,7 @@
 |eventId|<a href="../nada_base_types/string.html">string</a>| |
 |event|<a href="sendableevent.html">sendableevent</a>| |
 |index|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SendTo(eventId : String, event : SendableEvent, index : Integer)
+<pre><code class="lang-TS:Nada">function SendTo(eventId : String, event : SendableEvent, index : Integer)
 </code></pre>
 </blockquote>
 <hr>
@@ -274,7 +274,7 @@
 |---|---|---|
 |eventId|<a href="../nada_base_types/string.html">string</a>| |
 |event|<a href="sendableevent.html">sendableevent</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SendToAll(eventId : String, event : SendableEvent)
+<pre><code class="lang-TS:Nada">function SendToAll(eventId : String, event : SendableEvent)
 </code></pre>
 </blockquote>
 <hr>
@@ -285,7 +285,7 @@
 |---|---|---|
 |eventId|<a href="../nada_base_types/string.html">string</a>| |
 |event|<a href="sendableevent.html">sendableevent</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SendToAllAndSelf(eventId : String, event : SendableEvent)
+<pre><code class="lang-TS:Nada">function SendToAllAndSelf(eventId : String, event : SendableEvent)
 </code></pre>
 </blockquote>
 <hr>
@@ -297,7 +297,7 @@
 |eventId|<a href="../nada_base_types/string.html">string</a>| |
 |event|<a href="sendableevent.html">sendableevent</a>| |
 |exceptIndex|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SendToAllExcept(eventId : String, event : SendableEvent, exceptIndex : Integer)
+<pre><code class="lang-TS:Nada">function SendToAllExcept(eventId : String, event : SendableEvent, exceptIndex : Integer)
 </code></pre>
 </blockquote>
 <hr>

@@ -116,14 +116,14 @@
 <h1 id="pitch--real">Pitch : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The pitch adjustment applied to the node's input. A value of 0 will not affect the sound's pitch; 1 will raise the pitch by an octave and speed up the sound, and -1 will lower the sound by an octave and slow it down. Large pitch changes will likely affect the quality of the sound.</p>
-<pre><code class="lang-lang=cpp,">var Pitch : Real
+<pre><code class="lang-TS:Nada">var Pitch : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="semitones--real">Semitones : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The pitch adjustment, in semitones (or half-steps), applied to the node's input. A value of 0 will not affect the sound's pitch; 12 will raise the pitch by an octave and speed up the sound, and -12 will lower the sound by an octave and slow it down. Large pitch changes will likely affect the quality of the sound.</p>
-<pre><code class="lang-lang=cpp,">var Semitones : Real
+<pre><code class="lang-TS:Nada">var Semitones : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -136,7 +136,7 @@
 |---|---|---|
 |pitchRatio|<a href="../nada_base_types/real.html">real</a>| |
 |interpolationTime|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InterpolatePitch(pitchRatio : Real, interpolationTime : Real)
+<pre><code class="lang-TS:Nada">function InterpolatePitch(pitchRatio : Real, interpolationTime : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -147,7 +147,7 @@
 |---|---|---|
 |pitchSemitones|<a href="../nada_base_types/real.html">real</a>| |
 |interpolationTime|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InterpolateSemitones(pitchSemitones : Real, interpolationTime : Real)
+<pre><code class="lang-TS:Nada">function InterpolateSemitones(pitchSemitones : Real, interpolationTime : Real)
 </code></pre>
 </blockquote>
 <hr>

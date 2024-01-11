@@ -133,7 +133,7 @@
 <hr>
 <h1 id="cue--soundcue">Cue : <a href="soundcue.html">soundcue</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Cue : SoundCue
+<pre><code class="lang-TS:Nada">var Cue : SoundCue
 </code></pre>
 </blockquote>
 <hr>
@@ -141,28 +141,28 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Will be true if the SoundCue is currently being played.</p>
-<pre><code class="lang-lang=cpp,">var IsPlaying : Boolean
+<pre><code class="lang-TS:Nada">var IsPlaying : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="paused--boolean">Paused : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Setting this Property to true will pause a currently playing SoundCue. Setting it to false will resume playback.</p>
-<pre><code class="lang-lang=cpp,">var Paused : Boolean
+<pre><code class="lang-TS:Nada">var Paused : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="positional--boolean">Positional : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If this property is true the SoundCue will be played positionally (heard at a specific location by SoundListeners) through the SoundEmitter component on the same object. If false, the SoundCue will be played through the SoundSpace, and will NOT be affected by any SoundEmitter settings.</p>
-<pre><code class="lang-lang=cpp,">var Positional : Boolean
+<pre><code class="lang-TS:Nada">var Positional : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="startplaying--boolean">StartPlaying : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If this property is true the SoundCue will begin playing as soon as the object is created.</p>
-<pre><code class="lang-lang=cpp,">var StartPlaying : Boolean
+<pre><code class="lang-TS:Nada">var StartPlaying : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -173,7 +173,7 @@
 <p>Begins playing the SoundCue chosen in the Cue property and returns the resulting SoundInstance. If already playing it will be stopped and re-started.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Play() : SoundInstance
+<pre><code class="lang-TS:Nada">function Play() : SoundInstance
 </code></pre>
 </blockquote>
 <hr>
@@ -189,7 +189,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function SimpleSound()
+<pre><code class="lang-TS:Nada">function SimpleSound()
 </code></pre>
 </blockquote>
 <hr>
@@ -198,7 +198,7 @@
 <p>Stops a currently playing SoundInstance if it exists.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Stop()
+<pre><code class="lang-TS:Nada">function Stop()
 </code></pre>
 </blockquote>
 <hr>

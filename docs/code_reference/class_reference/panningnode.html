@@ -122,21 +122,21 @@
 <h1 id="leftvolume--real">LeftVolume : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The volume multiplier applied to audio in the left channel.</p>
-<pre><code class="lang-lang=cpp,">var LeftVolume : Real
+<pre><code class="lang-TS:Nada">var LeftVolume : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="rightvolume--real">RightVolume : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The volume multiplier applied to audio in the right channel.</p>
-<pre><code class="lang-lang=cpp,">var RightVolume : Real
+<pre><code class="lang-TS:Nada">var RightVolume : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="sumtomono--boolean">SumToMono : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If this property is true, the audio will be combined into a single channel before being split between the right and left channels. If it is false and the audio has more than two channels, it will be combined into only two channels before being processed.</p>
-<pre><code class="lang-lang=cpp,">var SumToMono : Boolean
+<pre><code class="lang-TS:Nada">var SumToMono : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -149,7 +149,7 @@
 |---|---|---|
 |volume|<a href="../nada_base_types/real.html">real</a>| |
 |time|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InterpolateLeftVolume(volume : Real, time : Real)
+<pre><code class="lang-TS:Nada">function InterpolateLeftVolume(volume : Real, time : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -160,7 +160,7 @@
 |---|---|---|
 |volume|<a href="../nada_base_types/real.html">real</a>| |
 |time|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InterpolateRightVolume(volume : Real, time : Real)
+<pre><code class="lang-TS:Nada">function InterpolateRightVolume(volume : Real, time : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -172,7 +172,7 @@
 |leftVolume|<a href="../nada_base_types/real.html">real</a>| |
 |rightVolume|<a href="../nada_base_types/real.html">real</a>| |
 |time|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InterpolateVolumes(leftVolume : Real, rightVolume : Real, time : Real)
+<pre><code class="lang-TS:Nada">function InterpolateVolumes(leftVolume : Real, rightVolume : Real, time : Real)
 </code></pre>
 </blockquote>
 <hr>

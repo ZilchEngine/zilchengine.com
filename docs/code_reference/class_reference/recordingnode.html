@@ -122,21 +122,21 @@
 <h1 id="filename--string">FileName : <a href="../nada_base_types/string.html">string</a></h1>
 <blockquote>
 <p>The name of the output file that will be created, including the full path. Do not include the file extension.</p>
-<pre><code class="lang-lang=cpp,">var FileName : String
+<pre><code class="lang-TS:Nada">var FileName : String
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="paused--boolean">Paused : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>When true, recording is paused, and can be resumed by setting to false.</p>
-<pre><code class="lang-lang=cpp,">var Paused : Boolean
+<pre><code class="lang-TS:Nada">var Paused : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="streamtodisk--boolean">StreamToDisk : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>When false, audio data will be saved in a buffer and written to the file when StopRecording is called. When true, data will be written to the file constantly during every update frame, and nothing will be saved.</p>
-<pre><code class="lang-lang=cpp,">var StreamToDisk : Boolean
+<pre><code class="lang-TS:Nada">var StreamToDisk : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -147,7 +147,7 @@
 <p>Starts writing all audio input to a file.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function StartRecording()
+<pre><code class="lang-TS:Nada">function StartRecording()
 </code></pre>
 </blockquote>
 <hr>
@@ -156,7 +156,7 @@
 <p>Stops writing data and closes the file.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function StopRecording()
+<pre><code class="lang-TS:Nada">function StopRecording()
 </code></pre>
 </blockquote>
 <hr>

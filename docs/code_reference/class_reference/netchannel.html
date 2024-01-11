@@ -152,14 +152,14 @@
 <h1 id="authority--authority">Authority : <a href="../enum_reference.html#authority">Authority</a></h1>
 <blockquote>
 <p>Controls which peer has the authority to observe and replicate property changes. (Client: Indicates both the client and server are allowed to observe and replicate property changes) (Server: Indicates only the server is allowed to observe and replicate property changes) Only a single client, specified by NetObject::NetUserOwnerPeerId, may possess client authority at any given time. The server is still responsible for relaying contained property changes to other clients, but will not replicate contained property changes back to the authority client. However, the server is also still responsible for other replication commands (such as object creation/destruction), and these WILL be replicated to the authority client.</p>
-<pre><code class="lang-lang=cpp,">var Authority : Authority
+<pre><code class="lang-TS:Nada">var Authority : Authority
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="changeflag--boolean">ChangeFlag : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Manual change flag (checked upon manual change observation).</p>
-<pre><code class="lang-lang=cpp,">var ChangeFlag : Boolean
+<pre><code class="lang-TS:Nada">var ChangeFlag : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -167,7 +167,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns true if the net channel is currently napping (performing change detection on longer intervals), else false.</p>
-<pre><code class="lang-lang=cpp,">var IsNapping : Boolean
+<pre><code class="lang-TS:Nada">var IsNapping : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -175,7 +175,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns true if this net channel is scheduled for change observation, else false.</p>
-<pre><code class="lang-lang=cpp,">var IsScheduled : Boolean
+<pre><code class="lang-TS:Nada">var IsScheduled : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -183,7 +183,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Elapsed time passed since this net channel was last changed, else 0.</p>
-<pre><code class="lang-lang=cpp,">var LastChangeTimePassed : Real
+<pre><code class="lang-TS:Nada">var LastChangeTimePassed : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -191,7 +191,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Timestamp indicating when this net channel was last changed, else 0.</p>
-<pre><code class="lang-lang=cpp,">var LastChangeTimestamp : Real
+<pre><code class="lang-TS:Nada">var LastChangeTimestamp : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -199,7 +199,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Net channel name.</p>
-<pre><code class="lang-lang=cpp,">var Name : String
+<pre><code class="lang-TS:Nada">var Name : String
 </code></pre>
 </blockquote>
 <hr>
@@ -207,7 +207,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Operating net channel type.</p>
-<pre><code class="lang-lang=cpp,">var NetChannelType : NetChannelType
+<pre><code class="lang-TS:Nada">var NetChannelType : NetChannelType
 </code></pre>
 </blockquote>
 <hr>
@@ -220,7 +220,7 @@
 |---|---|---|
 |component|<a href="component.html">component</a>| |
 |propertyName|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetNetProperty(component : Component, propertyName : String) : NetProperty
+<pre><code class="lang-TS:Nada">function GetNetProperty(component : Component, propertyName : String) : NetProperty
 </code></pre>
 </blockquote>
 <hr>
@@ -231,7 +231,7 @@
 |---|---|---|
 |component|<a href="component.html">component</a>| |
 |propertyName|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function HasNetProperty(component : Component, propertyName : String) : Boolean
+<pre><code class="lang-TS:Nada">function HasNetProperty(component : Component, propertyName : String) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -240,7 +240,7 @@
 <p>Replicates net property changes immediately (only if changes are detected). Will also update nap state as configured. Returns true if changes were replicated, else false.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ReplicateNow() : Boolean
+<pre><code class="lang-TS:Nada">function ReplicateNow() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -249,7 +249,7 @@
 <p>Forces the net channel to start napping immediately.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function TakeNap()
+<pre><code class="lang-TS:Nada">function TakeNap()
 </code></pre>
 </blockquote>
 <hr>
@@ -258,7 +258,7 @@
 <p>Forces the net channel to stop napping immediately.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function WakeUp()
+<pre><code class="lang-TS:Nada">function WakeUp()
 </code></pre>
 </blockquote>
 <hr>

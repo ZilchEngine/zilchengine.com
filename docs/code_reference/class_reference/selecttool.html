@@ -127,27 +127,27 @@
 <h1 id="archetypeselect--boolean">ArchetypeSelect : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Selects the root archetype of the tree, subsequent clicks will select the nearest archetype followed by any direct children following that.</p>
-<pre><code class="lang-lang=cpp,">var ArchetypeSelect : Boolean
+<pre><code class="lang-TS:Nada">var ArchetypeSelect : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="raycaster--raycaster">Raycaster : <a href="raycaster.html">raycaster</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Raycaster : Raycaster
+<pre><code class="lang-TS:Nada">var Raycaster : Raycaster
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="rootselect--boolean">RootSelect : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Selects the root of a hierarchy first, subsequent clicks will select children objects.</p>
-<pre><code class="lang-lang=cpp,">var RootSelect : Boolean
+<pre><code class="lang-TS:Nada">var RootSelect : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="smartgroupselect--boolean">SmartGroupSelect : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If a parent of a hierarchy is already selected drag select will only select all the children of the currently selected parent.</p>
-<pre><code class="lang-lang=cpp,">var SmartGroupSelect : Boolean
+<pre><code class="lang-TS:Nada">var SmartGroupSelect : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -176,7 +176,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function RayCast(viewport : Viewport, mousePosition : Real2) : Cog
+<pre><code class="lang-TS:Nada">function RayCast(viewport : Viewport, mousePosition : Real2) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -186,7 +186,7 @@
 <p>Constructor.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function SelectTool()
+<pre><code class="lang-TS:Nada">function SelectTool()
 </code></pre>
 </blockquote>
 <hr>
@@ -224,7 +224,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function SmartSelect(selection : MetaSelection, toSelect : Cog, rootSelect : Boolean, archetypeSelect : Boolean) : Cog
+<pre><code class="lang-TS:Nada">function SmartSelect(selection : MetaSelection, toSelect : Cog, rootSelect : Boolean, archetypeSelect : Boolean) : Cog
 </code></pre>
 </blockquote>
 <hr>

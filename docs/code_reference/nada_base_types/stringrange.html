@@ -241,7 +241,7 @@
 <h1 id="all--stringrange">All : <a href="stringrange.html">stringrange</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var All : StringRange
+<pre><code class="lang-TS:Nada">var All : StringRange
 </code></pre>
 </blockquote>
 <hr>
@@ -249,21 +249,21 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the RuneIterator at the start of this range.</p>
-<pre><code class="lang-lang=cpp,">var Begin : RuneIterator
+<pre><code class="lang-TS:Nada">var Begin : RuneIterator
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="current--rune">Current : <a href="rune.html">rune</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Current : Rune
+<pre><code class="lang-TS:Nada">var Current : Rune
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="empty--boolean">Empty : <a href="boolean.html">boolean</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Empty : Boolean
+<pre><code class="lang-TS:Nada">var Empty : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -271,14 +271,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the RuneIterator at the end (one past the last Rune) of this range.</p>
-<pre><code class="lang-lang=cpp,">var End : RuneIterator
+<pre><code class="lang-TS:Nada">var End : RuneIterator
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="isnotempty--boolean">IsNotEmpty : <a href="boolean.html">boolean</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var IsNotEmpty : Boolean
+<pre><code class="lang-TS:Nada">var IsNotEmpty : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -286,7 +286,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the entire string that this range was constructed from.</p>
-<pre><code class="lang-lang=cpp,">var OriginalString : String
+<pre><code class="lang-TS:Nada">var OriginalString : String
 </code></pre>
 </blockquote>
 <hr>
@@ -300,7 +300,7 @@
 |---|---|---|
 |left|<a href="stringrange.html">stringrange</a>| |
 |right|<a href="stringrange.html">stringrange</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Compare(left : StringRange, right : StringRange) : Integer
+<pre><code class="lang-TS:Nada">function Compare(left : StringRange, right : StringRange) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -310,7 +310,7 @@
 |Name|Type|Description|
 |---|---|---|
 |p0|<a href="stringrange.html">stringrange</a>| |</p>
-<pre><code class="lang-lang=cpp,">function CompareTo(p0 : StringRange) : Integer
+<pre><code class="lang-TS:Nada">function CompareTo(p0 : StringRange) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -320,7 +320,7 @@
 |Name|Type|Description|
 |---|---|---|
 |p0|<a href="stringrange.html">stringrange</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Contains(p0 : StringRange) : Boolean
+<pre><code class="lang-TS:Nada">function Contains(p0 : StringRange) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -330,7 +330,7 @@
 |Name|Type|Description|
 |---|---|---|
 |p0|<a href="stringrange.html">stringrange</a>| |</p>
-<pre><code class="lang-lang=cpp,">function EndsWith(p0 : StringRange) : Boolean
+<pre><code class="lang-TS:Nada">function EndsWith(p0 : StringRange) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -340,7 +340,7 @@
 |Name|Type|Description|
 |---|---|---|
 |p0|<a href="stringrange.html">stringrange</a>| |</p>
-<pre><code class="lang-lang=cpp,">function FindFirstOf(p0 : StringRange) : StringRange
+<pre><code class="lang-TS:Nada">function FindFirstOf(p0 : StringRange) : StringRange
 </code></pre>
 </blockquote>
 <hr>
@@ -350,7 +350,7 @@
 |Name|Type|Description|
 |---|---|---|
 |p0|<a href="stringrange.html">stringrange</a>| |</p>
-<pre><code class="lang-lang=cpp,">function FindLastOf(p0 : StringRange) : StringRange
+<pre><code class="lang-TS:Nada">function FindLastOf(p0 : StringRange) : StringRange
 </code></pre>
 </blockquote>
 <hr>
@@ -361,7 +361,7 @@
 |---|---|---|
 |startRange|<a href="stringrange.html">stringrange</a>| |
 |endRange|<a href="stringrange.html">stringrange</a>| |</p>
-<pre><code class="lang-lang=cpp,">function FindRangeExclusive(startRange : StringRange, endRange : StringRange) : StringRange
+<pre><code class="lang-TS:Nada">function FindRangeExclusive(startRange : StringRange, endRange : StringRange) : StringRange
 </code></pre>
 </blockquote>
 <hr>
@@ -372,7 +372,7 @@
 |---|---|---|
 |startRange|<a href="stringrange.html">stringrange</a>| |
 |endRange|<a href="stringrange.html">stringrange</a>| |</p>
-<pre><code class="lang-lang=cpp,">function FindRangeInclusive(startRange : StringRange, endRange : StringRange) : StringRange
+<pre><code class="lang-TS:Nada">function FindRangeInclusive(startRange : StringRange, endRange : StringRange) : StringRange
 </code></pre>
 </blockquote>
 <hr>
@@ -387,7 +387,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function MoveNext()
+<pre><code class="lang-TS:Nada">function MoveNext()
 </code></pre>
 </blockquote>
 <hr>
@@ -398,7 +398,7 @@
 |---|---|---|
 |oldValue|<a href="stringrange.html">stringrange</a>| |
 |newValue|<a href="stringrange.html">stringrange</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Replace(oldValue : StringRange, newValue : StringRange) : String
+<pre><code class="lang-TS:Nada">function Replace(oldValue : StringRange, newValue : StringRange) : String
 </code></pre>
 </blockquote>
 <hr>
@@ -408,7 +408,7 @@
 |Name|Type|Description|
 |---|---|---|
 |byteIndex|<a href="integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RuneIteratorFromByteIndex(byteIndex : Integer) : RuneIterator
+<pre><code class="lang-TS:Nada">function RuneIteratorFromByteIndex(byteIndex : Integer) : RuneIterator
 </code></pre>
 </blockquote>
 <hr>
@@ -418,7 +418,7 @@
 |Name|Type|Description|
 |---|---|---|
 |runeIndex|<a href="integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RuneIteratorFromRuneIndex(runeIndex : Integer) : RuneIterator
+<pre><code class="lang-TS:Nada">function RuneIteratorFromRuneIndex(runeIndex : Integer) : RuneIterator
 </code></pre>
 </blockquote>
 <hr>
@@ -428,7 +428,7 @@
 |Name|Type|Description|
 |---|---|---|
 |separator|<a href="stringrange.html">stringrange</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Split(separator : StringRange) : StringSplitRange
+<pre><code class="lang-TS:Nada">function Split(separator : StringRange) : StringSplitRange
 </code></pre>
 </blockquote>
 <hr>
@@ -438,7 +438,7 @@
 |Name|Type|Description|
 |---|---|---|
 |p0|<a href="stringrange.html">stringrange</a>| |</p>
-<pre><code class="lang-lang=cpp,">function StartsWith(p0 : StringRange) : Boolean
+<pre><code class="lang-TS:Nada">function StartsWith(p0 : StringRange) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -454,7 +454,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function StringRange()
+<pre><code class="lang-TS:Nada">function StringRange()
 </code></pre>
 </blockquote>
 <hr>
@@ -465,7 +465,7 @@
 |---|---|---|
 |begin|<a href="runeiterator.html">runeiterator</a>| |
 |end|<a href="runeiterator.html">runeiterator</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SubString(begin : RuneIterator, end : RuneIterator) : StringRange
+<pre><code class="lang-TS:Nada">function SubString(begin : RuneIterator, end : RuneIterator) : StringRange
 </code></pre>
 </blockquote>
 <hr>
@@ -476,7 +476,7 @@
 |---|---|---|
 |startByteIndex|<a href="integer.html">integer</a>| |
 |lengthInBytes|<a href="integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SubStringBytes(startByteIndex : Integer, lengthInBytes : Integer) : StringRange
+<pre><code class="lang-TS:Nada">function SubStringBytes(startByteIndex : Integer, lengthInBytes : Integer) : StringRange
 </code></pre>
 </blockquote>
 <hr>
@@ -485,7 +485,7 @@
 <p>Returns a copy of the string that has been converted to lowercase.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ToLower() : String
+<pre><code class="lang-TS:Nada">function ToLower() : String
 </code></pre>
 </blockquote>
 <hr>
@@ -494,7 +494,7 @@
 <p>Returns a new string of the current range.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ToString() : String
+<pre><code class="lang-TS:Nada">function ToString() : String
 </code></pre>
 </blockquote>
 <hr>
@@ -503,7 +503,7 @@
 <p>Returns a copy of the string that has been converted to uppercase.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ToUpper() : String
+<pre><code class="lang-TS:Nada">function ToUpper() : String
 </code></pre>
 </blockquote>
 <hr>
@@ -512,7 +512,7 @@
 <p>Trims all leading and trailing whitespace.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Trim() : StringRange
+<pre><code class="lang-TS:Nada">function Trim() : StringRange
 </code></pre>
 </blockquote>
 <hr>
@@ -521,7 +521,7 @@
 <p>Trims all trailing whitespace.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function TrimEnd() : StringRange
+<pre><code class="lang-TS:Nada">function TrimEnd() : StringRange
 </code></pre>
 </blockquote>
 <hr>
@@ -530,7 +530,7 @@
 <p>Trims all leading whitespace.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function TrimStart() : StringRange
+<pre><code class="lang-TS:Nada">function TrimStart() : StringRange
 </code></pre>
 </blockquote>
 <hr>

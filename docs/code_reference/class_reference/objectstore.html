@@ -159,7 +159,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Get number of entries in the ObjectStore.</p>
-<pre><code class="lang-lang=cpp,">var EntryCount : Integer
+<pre><code class="lang-TS:Nada">var EntryCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -170,7 +170,7 @@
 <p>Clear the store.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ClearStore()
+<pre><code class="lang-TS:Nada">function ClearStore()
 </code></pre>
 </blockquote>
 <hr>
@@ -180,7 +180,7 @@
 |Name|Type|Description|
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Erase(name : String)
+<pre><code class="lang-TS:Nada">function Erase(name : String)
 </code></pre>
 </blockquote>
 <hr>
@@ -189,7 +189,7 @@
 <p>Returns the directory path to the object store.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function GetDirectoryPath() : String
+<pre><code class="lang-TS:Nada">function GetDirectoryPath() : String
 </code></pre>
 </blockquote>
 <hr>
@@ -199,7 +199,7 @@
 |Name|Type|Description|
 |---|---|---|
 |index|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetEntryAt(index : Integer) : String
+<pre><code class="lang-TS:Nada">function GetEntryAt(index : Integer) : String
 </code></pre>
 </blockquote>
 <hr>
@@ -209,7 +209,7 @@
 |Name|Type|Description|
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function IsEntryStored(name : String) : Boolean
+<pre><code class="lang-TS:Nada">function IsEntryStored(name : String) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -231,7 +231,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function IsStored( : String) : Boolean
+<pre><code class="lang-TS:Nada">function IsStored( : String) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -242,7 +242,7 @@
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |
 |space|<a href="space.html">space</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Restore(name : String, space : Space) : Cog
+<pre><code class="lang-TS:Nada">function Restore(name : String, space : Space) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -254,7 +254,7 @@
 |name|<a href="../nada_base_types/string.html">string</a>| |
 |archetype|<a href="archetype.html">archetype</a>| |
 |space|<a href="space.html">space</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RestoreOrArchetype(name : String, archetype : Archetype, space : Space) : Cog
+<pre><code class="lang-TS:Nada">function RestoreOrArchetype(name : String, archetype : Archetype, space : Space) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -265,7 +265,7 @@
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |
 |object|<a href="cog.html">cog</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Store(name : String, object : Cog) : StoreResult
+<pre><code class="lang-TS:Nada">function Store(name : String, object : Cog) : StoreResult
 </code></pre>
 </blockquote>
 <hr>

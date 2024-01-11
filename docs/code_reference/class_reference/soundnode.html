@@ -235,21 +235,21 @@
 <h1 id="autocollapse--boolean">AutoCollapse : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If true, this node will automatically remove itself from the graph when its last input node is removed.</p>
-<pre><code class="lang-lang=cpp,">var AutoCollapse : Boolean
+<pre><code class="lang-TS:Nada">var AutoCollapse : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="bypasspercent--real">BypassPercent : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>DEPRECATED The BypassValue property should be used instead.</p>
-<pre><code class="lang-lang=cpp,">var BypassPercent : Real
+<pre><code class="lang-TS:Nada">var BypassPercent : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="bypassvalue--real">BypassValue : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The percentage of output (0 to 1.0) that should skip whatever processing the node does.</p>
-<pre><code class="lang-lang=cpp,">var BypassValue : Real
+<pre><code class="lang-TS:Nada">var BypassValue : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -257,7 +257,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Will be true if this node has any input nodes.</p>
-<pre><code class="lang-lang=cpp,">var HasInputs : Boolean
+<pre><code class="lang-TS:Nada">var HasInputs : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -265,7 +265,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Will be true if this node has any output nodes.</p>
-<pre><code class="lang-lang=cpp,">var HasOutputs : Boolean
+<pre><code class="lang-TS:Nada">var HasOutputs : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -273,7 +273,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The number of input nodes that are currently attached to this node.</p>
-<pre><code class="lang-lang=cpp,">var InputCount : Integer
+<pre><code class="lang-TS:Nada">var InputCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -281,7 +281,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The number of output nodes that are currently attached to this node.</p>
-<pre><code class="lang-lang=cpp,">var OutputCount : Integer
+<pre><code class="lang-TS:Nada">var OutputCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -293,7 +293,7 @@
 |Name|Type|Description|
 |---|---|---|
 |node|<a href="soundnode.html">soundnode</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddInputNode(node : SoundNode)
+<pre><code class="lang-TS:Nada">function AddInputNode(node : SoundNode)
 </code></pre>
 </blockquote>
 <hr>
@@ -303,7 +303,7 @@
 |Name|Type|Description|
 |---|---|---|
 |node|<a href="soundnode.html">soundnode</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InsertNodeAfter(node : SoundNode)
+<pre><code class="lang-TS:Nada">function InsertNodeAfter(node : SoundNode)
 </code></pre>
 </blockquote>
 <hr>
@@ -313,7 +313,7 @@
 |Name|Type|Description|
 |---|---|---|
 |node|<a href="soundnode.html">soundnode</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InsertNodeBefore(node : SoundNode)
+<pre><code class="lang-TS:Nada">function InsertNodeBefore(node : SoundNode)
 </code></pre>
 </blockquote>
 <hr>
@@ -322,7 +322,7 @@
 <p>Removes the connections between this node and all of its input nodes.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function RemoveAllInputs()
+<pre><code class="lang-TS:Nada">function RemoveAllInputs()
 </code></pre>
 </blockquote>
 <hr>
@@ -331,7 +331,7 @@
 <p>Removes the connections between this node and all of its output nodes, disconnecting this node from the graph. If this node has no inputs it will be deleted when no longer referenced.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function RemoveAllOutputs()
+<pre><code class="lang-TS:Nada">function RemoveAllOutputs()
 </code></pre>
 </blockquote>
 <hr>
@@ -340,7 +340,7 @@
 <p>Removes this node from the graph by disconnecting it from all inputs and outputs and attaching the input nodes to the output nodes, keeping the rest of the graph intact. This node will be deleted when it is no longer referenced.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function RemoveAndAttachInputsToOutputs()
+<pre><code class="lang-TS:Nada">function RemoveAndAttachInputsToOutputs()
 </code></pre>
 </blockquote>
 <hr>
@@ -350,7 +350,7 @@
 |Name|Type|Description|
 |---|---|---|
 |node|<a href="soundnode.html">soundnode</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RemoveInputNode(node : SoundNode)
+<pre><code class="lang-TS:Nada">function RemoveInputNode(node : SoundNode)
 </code></pre>
 </blockquote>
 <hr>
@@ -360,7 +360,7 @@
 |Name|Type|Description|
 |---|---|---|
 |node|<a href="soundnode.html">soundnode</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ReplaceWith(node : SoundNode)
+<pre><code class="lang-TS:Nada">function ReplaceWith(node : SoundNode)
 </code></pre>
 </blockquote>
 <hr>

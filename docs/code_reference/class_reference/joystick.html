@@ -164,7 +164,7 @@
 <h1 id="axiscount--integer">AxisCount : <a href="../nada_base_types/integer.html">integer</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var AxisCount : Integer
+<pre><code class="lang-TS:Nada">var AxisCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -172,7 +172,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Get the number of buttons or axes.</p>
-<pre><code class="lang-lang=cpp,">var ButtonCount : Integer
+<pre><code class="lang-TS:Nada">var ButtonCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -180,7 +180,7 @@
 <p><code>read-only</code> <code>static</code></p>
 <blockquote>
 <p>A value that means a joystick axis is invalid. For example when a HAT-switch is not pressed down, it will return this value.</p>
-<pre><code class="lang-lang=cpp,">var DisabledValue : Real
+<pre><code class="lang-TS:Nada">var DisabledValue : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -188,7 +188,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Gets whether or not the joystick is active.</p>
-<pre><code class="lang-lang=cpp,">var IsActive : Boolean
+<pre><code class="lang-TS:Nada">var IsActive : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -196,7 +196,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Get the name of the Joystick.</p>
-<pre><code class="lang-lang=cpp,">var Name : String
+<pre><code class="lang-TS:Nada">var Name : String
 </code></pre>
 </blockquote>
 <hr>
@@ -213,7 +213,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function Calibrating() : Boolean
+<pre><code class="lang-TS:Nada">function Calibrating() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -228,7 +228,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function EndCalibration()
+<pre><code class="lang-TS:Nada">function EndCalibration()
 </code></pre>
 </blockquote>
 <hr>
@@ -250,7 +250,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function GetAxisIndex(name : String) : Integer
+<pre><code class="lang-TS:Nada">function GetAxisIndex(name : String) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -272,7 +272,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function GetAxisName(index : Integer) : String
+<pre><code class="lang-TS:Nada">function GetAxisName(index : Integer) : String
 </code></pre>
 </blockquote>
 <hr>
@@ -282,7 +282,7 @@
 |Name|Type|Description|
 |---|---|---|
 |index|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetAxisValue(index : Integer) : Real
+<pre><code class="lang-TS:Nada">function GetAxisValue(index : Integer) : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -304,7 +304,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function GetAxisValueByName(name : String) : Real
+<pre><code class="lang-TS:Nada">function GetAxisValueByName(name : String) : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -314,7 +314,7 @@
 |Name|Type|Description|
 |---|---|---|
 |index|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetButtonValue(index : Integer) : Boolean
+<pre><code class="lang-TS:Nada">function GetButtonValue(index : Integer) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -324,7 +324,7 @@
 |Name|Type|Description|
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function LoadInputMapping(name : String)
+<pre><code class="lang-TS:Nada">function LoadInputMapping(name : String)
 </code></pre>
 </blockquote>
 <hr>
@@ -346,7 +346,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function SaveInputMapping(name : String)
+<pre><code class="lang-TS:Nada">function SaveInputMapping(name : String)
 </code></pre>
 </blockquote>
 <hr>
@@ -361,7 +361,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function StartCalibration()
+<pre><code class="lang-TS:Nada">function StartCalibration()
 </code></pre>
 </blockquote>
 <hr>

@@ -225,14 +225,14 @@
 <p><code>read-only</code> <code>static</code></p>
 <blockquote>
 <p>Returns the max integer value that can be returned.</p>
-<pre><code class="lang-lang=cpp,">var MaxInteger : Integer
+<pre><code class="lang-TS:Nada">var MaxInteger : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="seed--integer">Seed : <a href="integer.html">integer</a></h1>
 <blockquote>
 <p>The seed controls what random numbers are generated in a sequence (determanistically) The same seed will always generate the same string of random numbers.</p>
-<pre><code class="lang-lang=cpp,">var Seed : Integer
+<pre><code class="lang-TS:Nada">var Seed : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -243,7 +243,7 @@
 <p>Samples a bell curve with standard normal distribution in the range [0,1] This is equivalent to a Gaussian distribution with standard deviation of 1.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function BellCurve() : Real
+<pre><code class="lang-TS:Nada">function BellCurve() : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -254,7 +254,7 @@
 |---|---|---|
 |center|<a href="real.html">real</a>| |
 |range|<a href="real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function BellCurve(center : Real, range : Real) : Real
+<pre><code class="lang-TS:Nada">function BellCurve(center : Real, range : Real) : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -266,7 +266,7 @@
 |center|<a href="real.html">real</a>| |
 |range|<a href="real.html">real</a>| |
 |standardDeviation|<a href="real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function BellCurve(center : Real, range : Real, standardDeviation : Real) : Real
+<pre><code class="lang-TS:Nada">function BellCurve(center : Real, range : Real, standardDeviation : Real) : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -275,7 +275,7 @@
 <p>Returns a random boolean value.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Boolean() : Boolean
+<pre><code class="lang-TS:Nada">function Boolean() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -284,7 +284,7 @@
 <p>Returns true if the coin flips heads.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function CoinFlip() : Boolean
+<pre><code class="lang-TS:Nada">function CoinFlip() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -294,7 +294,7 @@
 |Name|Type|Description|
 |---|---|---|
 |sides|<a href="integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DieRoll(sides : Integer) : Integer
+<pre><code class="lang-TS:Nada">function DieRoll(sides : Integer) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -321,7 +321,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function DoubleRange( : DoubleReal,  : DoubleReal) : DoubleReal
+<pre><code class="lang-TS:Nada">function DoubleRange( : DoubleReal,  : DoubleReal) : DoubleReal
 </code></pre>
 </blockquote>
 <hr>
@@ -330,7 +330,7 @@
 <p>Returns a random double real in the range [0,1].
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function DoubleReal() : DoubleReal
+<pre><code class="lang-TS:Nada">function DoubleReal() : DoubleReal
 </code></pre>
 </blockquote>
 <hr>
@@ -339,7 +339,7 @@
 <p>Returns a random integer in the range of [0, MaxInt].
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Integer() : Integer
+<pre><code class="lang-TS:Nada">function Integer() : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -349,7 +349,7 @@
 |Name|Type|Description|
 |---|---|---|
 |probOfTrue|<a href="real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Probability(probOfTrue : Real) : Boolean
+<pre><code class="lang-TS:Nada">function Probability(probOfTrue : Real) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -358,7 +358,7 @@
 <p>Random unit length quaternion. This is also a unit quaternion.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Quaternion() : Quaternion
+<pre><code class="lang-TS:Nada">function Quaternion() : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -368,7 +368,7 @@
 <p>Default constructor (grabs the random seed)
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Random()
+<pre><code class="lang-TS:Nada">function Random()
 </code></pre>
 </blockquote>
 <hr>
@@ -379,7 +379,7 @@
 |Name|Type|Description|
 |---|---|---|
 |seed|<a href="integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Random(seed : Integer)
+<pre><code class="lang-TS:Nada">function Random(seed : Integer)
 </code></pre>
 </blockquote>
 <hr>
@@ -390,7 +390,7 @@
 |---|---|---|
 |min|<a href="real.html">real</a>| |
 |max|<a href="real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Range(min : Real, max : Real) : Real
+<pre><code class="lang-TS:Nada">function Range(min : Real, max : Real) : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -401,7 +401,7 @@
 |---|---|---|
 |min|<a href="integer.html">integer</a>| |
 |max|<a href="integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RangeExclusiveMax(min : Integer, max : Integer) : Integer
+<pre><code class="lang-TS:Nada">function RangeExclusiveMax(min : Integer, max : Integer) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -412,7 +412,7 @@
 |---|---|---|
 |min|<a href="integer.html">integer</a>| |
 |max|<a href="integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RangeInclusiveMax(min : Integer, max : Integer) : Integer
+<pre><code class="lang-TS:Nada">function RangeInclusiveMax(min : Integer, max : Integer) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -421,7 +421,7 @@
 <p>Returns a random real in the range [0,1].
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Real() : Real
+<pre><code class="lang-TS:Nada">function Real() : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -432,7 +432,7 @@
 |---|---|---|
 |minLength|<a href="real.html">real</a>| |
 |maxLength|<a href="real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Real2(minLength : Real, maxLength : Real) : Real2
+<pre><code class="lang-TS:Nada">function Real2(minLength : Real, maxLength : Real) : Real2
 </code></pre>
 </blockquote>
 <hr>
@@ -443,7 +443,7 @@
 |---|---|---|
 |minLength|<a href="real.html">real</a>| |
 |maxLength|<a href="real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Real3(minLength : Real, maxLength : Real) : Real3
+<pre><code class="lang-TS:Nada">function Real3(minLength : Real, maxLength : Real) : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -452,7 +452,7 @@
 <p>Random rotation quaternion. This is the same as calling Quaternion()
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Rotation() : Quaternion
+<pre><code class="lang-TS:Nada">function Rotation() : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -461,7 +461,7 @@
 <p>Generates a unit length Real2.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function UnitReal2() : Real2
+<pre><code class="lang-TS:Nada">function UnitReal2() : Real2
 </code></pre>
 </blockquote>
 <hr>
@@ -470,7 +470,7 @@
 <p>Generates a unit length Real3.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function UnitReal3() : Real3
+<pre><code class="lang-TS:Nada">function UnitReal3() : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -481,7 +481,7 @@
 |---|---|---|
 ||<a href="doublereal.html">doublereal</a>| |
 ||<a href="doublereal.html">doublereal</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Variance( : DoubleReal,  : DoubleReal) : DoubleReal
+<pre><code class="lang-TS:Nada">function Variance( : DoubleReal,  : DoubleReal) : DoubleReal
 </code></pre>
 </blockquote>
 <hr>
@@ -492,7 +492,7 @@
 |---|---|---|
 |base|<a href="integer.html">integer</a>| |
 |variance|<a href="integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Variance(base : Integer, variance : Integer) : Integer
+<pre><code class="lang-TS:Nada">function Variance(base : Integer, variance : Integer) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -503,7 +503,7 @@
 |---|---|---|
 |base|<a href="real.html">real</a>| |
 |variance|<a href="real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Variance(base : Real, variance : Real) : Real
+<pre><code class="lang-TS:Nada">function Variance(base : Real, variance : Real) : Real
 </code></pre>
 </blockquote>
 <hr>

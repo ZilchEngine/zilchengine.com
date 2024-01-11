@@ -212,14 +212,14 @@
 <h1 id="allobjects--spacerange">AllObjects : <a href="spacerange.html">spacerange</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var AllObjects : SpaceRange
+<pre><code class="lang-TS:Nada">var AllObjects : SpaceRange
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="allrootobjects--hierarchylistrange">AllRootObjects : <a href="hierarchylistrange.html">hierarchylistrange</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var AllRootObjects : HierarchyListRange
+<pre><code class="lang-TS:Nada">var AllRootObjects : HierarchyListRange
 </code></pre>
 </blockquote>
 <hr>
@@ -227,14 +227,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Last level loaded.</p>
-<pre><code class="lang-lang=cpp,">var CurrentLevel : Level
+<pre><code class="lang-TS:Nada">var CurrentLevel : Level
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="iseditormode--boolean">IsEditorMode : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var IsEditorMode : Boolean
+<pre><code class="lang-TS:Nada">var IsEditorMode : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -242,7 +242,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Number of objects in the space.</p>
-<pre><code class="lang-lang=cpp,">var ObjectCount : Integer
+<pre><code class="lang-TS:Nada">var ObjectCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -254,7 +254,7 @@
 |Name|Type|Description|
 |---|---|---|
 |levelName|<a href="level.html">level</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddObjectsFromLevel(levelName : Level) : Level
+<pre><code class="lang-TS:Nada">function AddObjectsFromLevel(levelName : Level) : Level
 </code></pre>
 </blockquote>
 <hr>
@@ -264,7 +264,7 @@
 |Name|Type|Description|
 |---|---|---|
 |archetype|<a href="archetype.html">archetype</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Create(archetype : Archetype) : Cog
+<pre><code class="lang-TS:Nada">function Create(archetype : Archetype) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -275,7 +275,7 @@
 |---|---|---|
 |archetype|<a href="archetype.html">archetype</a>| |
 |position|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function CreateAtPosition(archetype : Archetype, position : Real3) : Cog
+<pre><code class="lang-TS:Nada">function CreateAtPosition(archetype : Archetype, position : Real3) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -307,7 +307,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function CreateLink(archetype : Archetype, objectA : Cog, objectB : Cog) : Cog
+<pre><code class="lang-TS:Nada">function CreateLink(archetype : Archetype, objectA : Cog, objectB : Cog) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -316,7 +316,7 @@
 <p>Destroy all objects in space.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function DestroyAll()
+<pre><code class="lang-TS:Nada">function DestroyAll()
 </code></pre>
 </blockquote>
 <hr>
@@ -325,7 +325,7 @@
 <p>Destroy all objects created from level.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function DestroyAllFromLevel()
+<pre><code class="lang-TS:Nada">function DestroyAllFromLevel()
 </code></pre>
 </blockquote>
 <hr>
@@ -335,7 +335,7 @@
 |Name|Type|Description|
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function FindAllObjectsByName(name : String) : CogNameRange
+<pre><code class="lang-TS:Nada">function FindAllObjectsByName(name : String) : CogNameRange
 </code></pre>
 </blockquote>
 <hr>
@@ -357,7 +357,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function FindFirstObjectByName(name : String) : Cog
+<pre><code class="lang-TS:Nada">function FindFirstObjectByName(name : String) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -379,7 +379,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function FindFirstRootObjectByName(name : String) : Cog
+<pre><code class="lang-TS:Nada">function FindFirstRootObjectByName(name : String) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -401,7 +401,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function FindLastObjectByName(name : String) : Cog
+<pre><code class="lang-TS:Nada">function FindLastObjectByName(name : String) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -423,7 +423,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function FindLastRootObjectByName(name : String) : Cog
+<pre><code class="lang-TS:Nada">function FindLastRootObjectByName(name : String) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -433,7 +433,7 @@
 |Name|Type|Description|
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function FindObjectByName(name : String) : Cog
+<pre><code class="lang-TS:Nada">function FindObjectByName(name : String) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -448,7 +448,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function GetModified() : Boolean
+<pre><code class="lang-TS:Nada">function GetModified() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -458,7 +458,7 @@
 |Name|Type|Description|
 |---|---|---|
 |level|<a href="level.html">level</a>| |</p>
-<pre><code class="lang-lang=cpp,">function LoadLevel(level : Level)
+<pre><code class="lang-TS:Nada">function LoadLevel(level : Level)
 </code></pre>
 </blockquote>
 <hr>
@@ -473,7 +473,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function MarkModified()
+<pre><code class="lang-TS:Nada">function MarkModified()
 </code></pre>
 </blockquote>
 <hr>
@@ -482,7 +482,7 @@
 <p>Clears all modifications on this Cog. Does not clear LocalModificationOverride properties.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function MarkNotModified()
+<pre><code class="lang-TS:Nada">function MarkNotModified()
 </code></pre>
 </blockquote>
 <hr>
@@ -491,7 +491,7 @@
 <p>Reload the current level.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ReloadLevel()
+<pre><code class="lang-TS:Nada">function ReloadLevel()
 </code></pre>
 </blockquote>
 <hr>
@@ -507,7 +507,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function Space()
+<pre><code class="lang-TS:Nada">function Space()
 </code></pre>
 </blockquote>
 <hr>

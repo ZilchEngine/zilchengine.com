@@ -142,7 +142,7 @@
 |volume|<a href="../nada_base_types/real.html">real</a>| |
 |envelope|<a href="adsrenvelope.html">adsrenvelope</a>| |
 |type|<a href="../enum_reference.html#synthwavetype">SynthWaveType</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddHarmonic(frequencyMultiplier : Real, volume : Real, envelope : AdsrEnvelope, type : SynthWaveType)
+<pre><code class="lang-TS:Nada">function AddHarmonic(frequencyMultiplier : Real, volume : Real, envelope : AdsrEnvelope, type : SynthWaveType)
 </code></pre>
 </blockquote>
 <hr>
@@ -152,7 +152,7 @@
 |Name|Type|Description|
 |---|---|---|
 |midiNote|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function NoteOff(midiNote : Real)
+<pre><code class="lang-TS:Nada">function NoteOff(midiNote : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -163,7 +163,7 @@
 |---|---|---|
 |midiNote|<a href="../nada_base_types/real.html">real</a>| |
 |volume|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function NoteOn(midiNote : Real, volume : Real)
+<pre><code class="lang-TS:Nada">function NoteOn(midiNote : Real, volume : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -172,7 +172,7 @@
 <p>Removes all current harmonics. You must add at least one harmonic before playing a note.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function RemoveAllHarmonics()
+<pre><code class="lang-TS:Nada">function RemoveAllHarmonics()
 </code></pre>
 </blockquote>
 <hr>
@@ -181,7 +181,7 @@
 <p>Stops playing all current notes.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function StopAllNotes()
+<pre><code class="lang-TS:Nada">function StopAllNotes()
 </code></pre>
 </blockquote>
 <hr>

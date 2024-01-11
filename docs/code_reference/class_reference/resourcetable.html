@@ -213,7 +213,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Range to iterate over all entries.</p>
-<pre><code class="lang-lang=cpp,">var All : ResourceTableEntryRange
+<pre><code class="lang-TS:Nada">var All : ResourceTableEntryRange
 </code></pre>
 </blockquote>
 <hr>
@@ -221,21 +221,21 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>How many items are stored in the table.</p>
-<pre><code class="lang-lang=cpp,">var Count : Integer
+<pre><code class="lang-TS:Nada">var Count : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="maxweight--real">MaxWeight : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The maximum probability weight value that can be stored in the table. Setting this will clamp all weight values.</p>
-<pre><code class="lang-lang=cpp,">var MaxWeight : Real
+<pre><code class="lang-TS:Nada">var MaxWeight : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="resourcetype--string">ResourceType : <a href="../nada_base_types/string.html">string</a></h1>
 <blockquote>
 <p>The kind of resource contained in this table. This is either a resource type or &quot;String&quot;.</p>
-<pre><code class="lang-lang=cpp,">var ResourceType : String
+<pre><code class="lang-TS:Nada">var ResourceType : String
 </code></pre>
 </blockquote>
 <hr>
@@ -247,7 +247,7 @@
 |Name|Type|Description|
 |---|---|---|
 |entry|<a href="resourcetableentry.html">resourcetableentry</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddOrError(entry : ResourceTableEntry)
+<pre><code class="lang-TS:Nada">function AddOrError(entry : ResourceTableEntry)
 </code></pre>
 </blockquote>
 <hr>
@@ -257,7 +257,7 @@
 |Name|Type|Description|
 |---|---|---|
 |entry|<a href="resourcetableentry.html">resourcetableentry</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddOrIgnore(entry : ResourceTableEntry) : Boolean
+<pre><code class="lang-TS:Nada">function AddOrIgnore(entry : ResourceTableEntry) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -267,7 +267,7 @@
 |Name|Type|Description|
 |---|---|---|
 |entry|<a href="resourcetableentry.html">resourcetableentry</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddOrOverwrite(entry : ResourceTableEntry) : Boolean
+<pre><code class="lang-TS:Nada">function AddOrOverwrite(entry : ResourceTableEntry) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -276,7 +276,7 @@
 <p>Clear all items in the table.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Clear()
+<pre><code class="lang-TS:Nada">function Clear()
 </code></pre>
 </blockquote>
 <hr>
@@ -286,7 +286,7 @@
 |Name|Type|Description|
 |---|---|---|
 |key|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Contains(key : String) : Boolean
+<pre><code class="lang-TS:Nada">function Contains(key : String) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -296,7 +296,7 @@
 <p>Creates a ResourceTable for run-time modifications.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function CreateRuntime() : ResourceTable
+<pre><code class="lang-TS:Nada">function CreateRuntime() : ResourceTable
 </code></pre>
 </blockquote>
 <hr>
@@ -305,7 +305,7 @@
 <p>Force rebuild the weighted probability table.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ForceRebuild()
+<pre><code class="lang-TS:Nada">function ForceRebuild()
 </code></pre>
 </blockquote>
 <hr>
@@ -315,7 +315,7 @@
 |Name|Type|Description|
 |---|---|---|
 |index|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Get(index : Integer) : ResourceTableEntry
+<pre><code class="lang-TS:Nada">function Get(index : Integer) : ResourceTableEntry
 </code></pre>
 </blockquote>
 <hr>
@@ -325,7 +325,7 @@
 |Name|Type|Description|
 |---|---|---|
 |entry|<a href="resourcetableentry.html">resourcetableentry</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Get(entry : ResourceTableEntry) : ResourceTableEntry
+<pre><code class="lang-TS:Nada">function Get(entry : ResourceTableEntry) : ResourceTableEntry
 </code></pre>
 </blockquote>
 <hr>
@@ -335,7 +335,7 @@
 |Name|Type|Description|
 |---|---|---|
 |key|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Get(key : String) : ResourceTableEntry
+<pre><code class="lang-TS:Nada">function Get(key : String) : ResourceTableEntry
 </code></pre>
 </blockquote>
 <hr>
@@ -346,7 +346,7 @@
 |---|---|---|
 |key|<a href="../nada_base_types/string.html">string</a>| |
 |defaultValue|<a href="resourcetableentry.html">resourcetableentry</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetOrDefault(key : String, defaultValue : ResourceTableEntry) : ResourceTableEntry
+<pre><code class="lang-TS:Nada">function GetOrDefault(key : String, defaultValue : ResourceTableEntry) : ResourceTableEntry
 </code></pre>
 </blockquote>
 <hr>
@@ -356,7 +356,7 @@
 |Name|Type|Description|
 |---|---|---|
 |key|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetOrError(key : String) : ResourceTableEntry
+<pre><code class="lang-TS:Nada">function GetOrError(key : String) : ResourceTableEntry
 </code></pre>
 </blockquote>
 <hr>
@@ -366,7 +366,7 @@
 |Name|Type|Description|
 |---|---|---|
 |key|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetOrNull(key : String) : ResourceTableEntry
+<pre><code class="lang-TS:Nada">function GetOrNull(key : String) : ResourceTableEntry
 </code></pre>
 </blockquote>
 <hr>
@@ -376,7 +376,7 @@
 |Name|Type|Description|
 |---|---|---|
 |index|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RemoveAt(index : Integer)
+<pre><code class="lang-TS:Nada">function RemoveAt(index : Integer)
 </code></pre>
 </blockquote>
 <hr>
@@ -386,7 +386,7 @@
 |Name|Type|Description|
 |---|---|---|
 |key|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RemoveOrError(key : String)
+<pre><code class="lang-TS:Nada">function RemoveOrError(key : String)
 </code></pre>
 </blockquote>
 <hr>
@@ -396,7 +396,7 @@
 |Name|Type|Description|
 |---|---|---|
 |key|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RemoveOrIgnore(key : String) : Boolean
+<pre><code class="lang-TS:Nada">function RemoveOrIgnore(key : String) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -405,7 +405,7 @@
 <p>Creates a clone of this table for run-time modifications.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function RuntimeClone() : ResourceTable
+<pre><code class="lang-TS:Nada">function RuntimeClone() : ResourceTable
 </code></pre>
 </blockquote>
 <hr>
@@ -416,7 +416,7 @@
 |---|---|---|
 |random1|<a href="../nada_base_types/real.html">real</a>| |
 |random2|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Sample(random1 : Real, random2 : Real) : ResourceTableEntry
+<pre><code class="lang-TS:Nada">function Sample(random1 : Real, random2 : Real) : ResourceTableEntry
 </code></pre>
 </blockquote>
 <hr>
@@ -427,7 +427,7 @@
 |---|---|---|
 |random1|<a href="../nada_base_types/real.html">real</a>| |
 |random2|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SampleIndex(random1 : Real, random2 : Real) : Integer
+<pre><code class="lang-TS:Nada">function SampleIndex(random1 : Real, random2 : Real) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -438,7 +438,7 @@
 |---|---|---|
 |index|<a href="../nada_base_types/integer.html">integer</a>| |
 |entry|<a href="resourcetableentry.html">resourcetableentry</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Set(index : Integer, entry : ResourceTableEntry)
+<pre><code class="lang-TS:Nada">function Set(index : Integer, entry : ResourceTableEntry)
 </code></pre>
 </blockquote>
 <hr>
@@ -448,7 +448,7 @@
 |Name|Type|Description|
 |---|---|---|
 |entry|<a href="resourcetableentry.html">resourcetableentry</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Set(entry : ResourceTableEntry)
+<pre><code class="lang-TS:Nada">function Set(entry : ResourceTableEntry)
 </code></pre>
 </blockquote>
 <hr>
@@ -459,7 +459,7 @@
 |---|---|---|
 |key|<a href="../nada_base_types/string.html">string</a>| |
 |entry|<a href="resourcetableentry.html">resourcetableentry</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Set(key : String, entry : ResourceTableEntry)
+<pre><code class="lang-TS:Nada">function Set(key : String, entry : ResourceTableEntry)
 </code></pre>
 </blockquote>
 <hr>

@@ -134,35 +134,35 @@
 <h1 id="decibels--real">Decibels : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The volume adjustment, in decibels, that will be applied to the sound when it plays. A value of 0 does not affect the sound; 6 will double the sound's volume, -6 will halve it, and -100 is effectively the same as a Volume of 0.</p>
-<pre><code class="lang-lang=cpp,">var Decibels : Real
+<pre><code class="lang-TS:Nada">var Decibels : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="squarewavepulsevalue--real">SquareWavePulseValue : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The percentage of the square wave (from 0 to 1.0) which should be up. This will have no effect if a different wave type is chosen.</p>
-<pre><code class="lang-lang=cpp,">var SquareWavePulseValue : Real
+<pre><code class="lang-TS:Nada">var SquareWavePulseValue : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="volume--real">Volume : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The volume adjustment that will be applied to the sound when it plays. A value of 1 does not affect the sound; 2 will double the sound's volume, 0.5 will halve it, and 0 will make the sound inaudible.</p>
-<pre><code class="lang-lang=cpp,">var Volume : Real
+<pre><code class="lang-TS:Nada">var Volume : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="wavefrequency--real">WaveFrequency : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The frequency of the generated sound wave. This value will have no effect if the Noise type is chosen.</p>
-<pre><code class="lang-lang=cpp,">var WaveFrequency : Real
+<pre><code class="lang-TS:Nada">var WaveFrequency : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="wavetype--synthwavetype">WaveType : <a href="../enum_reference.html#synthwavetype">SynthWaveType</a></h1>
 <blockquote>
 <p>The type of sound wave used to generate the audio. Possible types are Sine, Square, Saw, Triangle, and Noise (randomly generated white noise).</p>
-<pre><code class="lang-lang=cpp,">var WaveType : SynthWaveType
+<pre><code class="lang-TS:Nada">var WaveType : SynthWaveType
 </code></pre>
 </blockquote>
 <hr>
@@ -175,7 +175,7 @@
 |---|---|---|
 |decibels|<a href="../nada_base_types/real.html">real</a>| |
 |interpolationTime|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InterpolateDecibels(decibels : Real, interpolationTime : Real)
+<pre><code class="lang-TS:Nada">function InterpolateDecibels(decibels : Real, interpolationTime : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -186,7 +186,7 @@
 |---|---|---|
 |volume|<a href="../nada_base_types/real.html">real</a>| |
 |interpolationTime|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InterpolateVolume(volume : Real, interpolationTime : Real)
+<pre><code class="lang-TS:Nada">function InterpolateVolume(volume : Real, interpolationTime : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -197,7 +197,7 @@
 |---|---|---|
 |frequency|<a href="../nada_base_types/real.html">real</a>| |
 |time|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function InterpolateWaveFrequency(frequency : Real, time : Real)
+<pre><code class="lang-TS:Nada">function InterpolateWaveFrequency(frequency : Real, time : Real)
 </code></pre>
 </blockquote>
 <hr>
@@ -206,7 +206,7 @@
 <p>Starts playing the generated audio.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Play()
+<pre><code class="lang-TS:Nada">function Play()
 </code></pre>
 </blockquote>
 <hr>
@@ -215,7 +215,7 @@
 <p>Stops playing the generated audio.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Stop()
+<pre><code class="lang-TS:Nada">function Stop()
 </code></pre>
 </blockquote>
 <hr>

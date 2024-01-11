@@ -146,14 +146,14 @@
 <h1 id="hash--integer">Hash : <a href="../nada_base_types/integer.html">integer</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Hash : Integer
+<pre><code class="lang-TS:Nada">var Hash : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="host--string">Host : <a href="../nada_base_types/string.html">string</a></h1>
 <blockquote>
 <p>Returns the valid IP address host as a numeric string, else String()</p>
-<pre><code class="lang-lang=cpp,">var Host : String
+<pre><code class="lang-TS:Nada">var Host : String
 </code></pre>
 </blockquote>
 <hr>
@@ -161,7 +161,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the valid IP address protocol version, else InternetProtocol::Unspecified.</p>
-<pre><code class="lang-lang=cpp,">var InternetProtocol : InternetProtocol
+<pre><code class="lang-TS:Nada">var InternetProtocol : InternetProtocol
 </code></pre>
 </blockquote>
 <hr>
@@ -169,14 +169,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns true if this is a non-empty IPv4/IPv6 address, else false.</p>
-<pre><code class="lang-lang=cpp,">var IsValid : Boolean
+<pre><code class="lang-TS:Nada">var IsValid : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="port--integer">Port : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>Returns the valid IP address port, else 0.</p>
-<pre><code class="lang-lang=cpp,">var Port : Integer
+<pre><code class="lang-TS:Nada">var Port : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -184,7 +184,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the valid IP address port as a numeric string, else String()</p>
-<pre><code class="lang-lang=cpp,">var PortString : String
+<pre><code class="lang-TS:Nada">var PortString : String
 </code></pre>
 </blockquote>
 <hr>
@@ -192,7 +192,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the valid IP address as a numeric &quot;host:port&quot; string, else String()</p>
-<pre><code class="lang-lang=cpp,">var String : String
+<pre><code class="lang-TS:Nada">var String : String
 </code></pre>
 </blockquote>
 <hr>
@@ -203,7 +203,7 @@
 <p>Clears the IP address.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Clear()
+<pre><code class="lang-TS:Nada">function Clear()
 </code></pre>
 </blockquote>
 <hr>
@@ -213,7 +213,7 @@
 <p>Creates an empty IP address.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function IpAddress()
+<pre><code class="lang-TS:Nada">function IpAddress()
 </code></pre>
 </blockquote>
 <hr>
@@ -224,7 +224,7 @@
 |Name|Type|Description|
 |---|---|---|
 |rhs|<a href="ipaddress.html">ipaddress</a>| |</p>
-<pre><code class="lang-lang=cpp,">function IpAddress(rhs : IpAddress)
+<pre><code class="lang-TS:Nada">function IpAddress(rhs : IpAddress)
 </code></pre>
 </blockquote>
 <hr>
@@ -236,7 +236,7 @@
 |---|---|---|
 |host|<a href="../nada_base_types/string.html">string</a>| |
 |port|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function IpAddress(host : String, port : Integer)
+<pre><code class="lang-TS:Nada">function IpAddress(host : String, port : Integer)
 </code></pre>
 </blockquote>
 <hr>
@@ -249,7 +249,7 @@
 |host|<a href="../nada_base_types/string.html">string</a>| |
 |port|<a href="../nada_base_types/integer.html">integer</a>| |
 |internetProtocol|<a href="../enum_reference.html#internetprotocol">InternetProtocol</a>| |</p>
-<pre><code class="lang-lang=cpp,">function IpAddress(host : String, port : Integer, internetProtocol : InternetProtocol)
+<pre><code class="lang-TS:Nada">function IpAddress(host : String, port : Integer, internetProtocol : InternetProtocol)
 </code></pre>
 </blockquote>
 <hr>

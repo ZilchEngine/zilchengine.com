@@ -285,20 +285,20 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The max integer value that can be returned.</p>
-<pre><code class="lang-lang=cpp,">var MaxInt : Integer
+<pre><code class="lang-TS:Nada">var MaxInt : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="randomseed--boolean">RandomSeed : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var RandomSeed : Boolean
+<pre><code class="lang-TS:Nada">var RandomSeed : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="seed--integer">Seed : <a href="../nada_base_types/integer.html">integer</a></h1>
 <blockquote>
 <p>Seeds the random number generator.</p>
-<pre><code class="lang-lang=cpp,">var Seed : Integer
+<pre><code class="lang-TS:Nada">var Seed : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -309,7 +309,7 @@
 <p>Samples a bell curve with standard normal distribution in the range [0,1] This is equivalent to a Gaussian distribution with standard deviation of 1.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function BellCurve() : Real
+<pre><code class="lang-TS:Nada">function BellCurve() : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -321,7 +321,7 @@
 |center|<a href="../nada_base_types/real.html">real</a>| |
 |range|<a href="../nada_base_types/real.html">real</a>| |
 |standardDeviation|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function BellCurveDistribution(center : Real, range : Real, standardDeviation : Real) : Real
+<pre><code class="lang-TS:Nada">function BellCurveDistribution(center : Real, range : Real, standardDeviation : Real) : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -332,7 +332,7 @@
 |---|---|---|
 |center|<a href="../nada_base_types/real.html">real</a>| |
 |range|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function BellCurveRange(center : Real, range : Real) : Real
+<pre><code class="lang-TS:Nada">function BellCurveRange(center : Real, range : Real) : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -341,7 +341,7 @@
 <p>Returns a random bool value.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Bool() : Boolean
+<pre><code class="lang-TS:Nada">function Bool() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -350,7 +350,7 @@
 <p>Returns true if the coin flips heads.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function CoinFlip() : Boolean
+<pre><code class="lang-TS:Nada">function CoinFlip() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -360,7 +360,7 @@
 |Name|Type|Description|
 |---|---|---|
 |sides|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DieRoll(sides : Integer) : Integer
+<pre><code class="lang-TS:Nada">function DieRoll(sides : Integer) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -387,7 +387,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function DoubleRange( : DoubleReal,  : DoubleReal) : DoubleReal
+<pre><code class="lang-TS:Nada">function DoubleRange( : DoubleReal,  : DoubleReal) : DoubleReal
 </code></pre>
 </blockquote>
 <hr>
@@ -396,7 +396,7 @@
 <p>Returns a random double real in the range [0,1].
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function DoubleReal() : DoubleReal
+<pre><code class="lang-TS:Nada">function DoubleReal() : DoubleReal
 </code></pre>
 </blockquote>
 <hr>
@@ -423,7 +423,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function DoubleRealVariance( : DoubleReal,  : DoubleReal) : DoubleReal
+<pre><code class="lang-TS:Nada">function DoubleRealVariance( : DoubleReal,  : DoubleReal) : DoubleReal
 </code></pre>
 </blockquote>
 <hr>
@@ -432,7 +432,7 @@
 <p>Returns a random float in the range [0,1].
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Float() : Real
+<pre><code class="lang-TS:Nada">function Float() : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -443,7 +443,7 @@
 |---|---|---|
 |base|<a href="../nada_base_types/real.html">real</a>| |
 |variance|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function FloatVariance(base : Real, variance : Real) : Real
+<pre><code class="lang-TS:Nada">function FloatVariance(base : Real, variance : Real) : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -452,7 +452,7 @@
 <p>Returns a random int in the range of [0, MaxInt].
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Int() : Integer
+<pre><code class="lang-TS:Nada">function Int() : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -463,7 +463,7 @@
 |---|---|---|
 |base|<a href="../nada_base_types/integer.html">integer</a>| |
 |variance|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function IntVariance(base : Integer, variance : Integer) : Integer
+<pre><code class="lang-TS:Nada">function IntVariance(base : Integer, variance : Integer) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -473,7 +473,7 @@
 |Name|Type|Description|
 |---|---|---|
 |probOfTrue|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Probability(probOfTrue : Real) : Boolean
+<pre><code class="lang-TS:Nada">function Probability(probOfTrue : Real) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -482,7 +482,7 @@
 <p>Random unit length quaternion. This is also a unit quaternion.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Quaternion() : Quaternion
+<pre><code class="lang-TS:Nada">function Quaternion() : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -498,7 +498,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function RandomContext()
+<pre><code class="lang-TS:Nada">function RandomContext()
 </code></pre>
 </blockquote>
 <hr>
@@ -509,7 +509,7 @@
 |---|---|---|
 |min|<a href="../nada_base_types/real.html">real</a>| |
 |max|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Range(min : Real, max : Real) : Real
+<pre><code class="lang-TS:Nada">function Range(min : Real, max : Real) : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -520,7 +520,7 @@
 |---|---|---|
 |min|<a href="../nada_base_types/integer.html">integer</a>| |
 |max|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RangeExclusiveMax(min : Integer, max : Integer) : Integer
+<pre><code class="lang-TS:Nada">function RangeExclusiveMax(min : Integer, max : Integer) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -531,7 +531,7 @@
 |---|---|---|
 |min|<a href="../nada_base_types/integer.html">integer</a>| |
 |max|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RangeInclusiveMax(min : Integer, max : Integer) : Integer
+<pre><code class="lang-TS:Nada">function RangeInclusiveMax(min : Integer, max : Integer) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -540,7 +540,7 @@
 <p>Returns a random real in the range [0,1].
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Real() : Real
+<pre><code class="lang-TS:Nada">function Real() : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -551,7 +551,7 @@
 |---|---|---|
 |minLength|<a href="../nada_base_types/real.html">real</a>| |
 |maxLength|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Real2(minLength : Real, maxLength : Real) : Real2
+<pre><code class="lang-TS:Nada">function Real2(minLength : Real, maxLength : Real) : Real2
 </code></pre>
 </blockquote>
 <hr>
@@ -562,7 +562,7 @@
 |---|---|---|
 |minLength|<a href="../nada_base_types/real.html">real</a>| |
 |maxLength|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Real3(minLength : Real, maxLength : Real) : Real3
+<pre><code class="lang-TS:Nada">function Real3(minLength : Real, maxLength : Real) : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -573,7 +573,7 @@
 |---|---|---|
 |base|<a href="../nada_base_types/real.html">real</a>| |
 |variance|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RealVariance(base : Real, variance : Real) : Real
+<pre><code class="lang-TS:Nada">function RealVariance(base : Real, variance : Real) : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -582,7 +582,7 @@
 <p>Random rotation quaternion. This is the same as calling Quaternion()
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Rotation() : Quaternion
+<pre><code class="lang-TS:Nada">function Rotation() : Quaternion
 </code></pre>
 </blockquote>
 <hr>
@@ -591,7 +591,7 @@
 <p>Generates a unit length Real2.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function UnitReal2() : Real2
+<pre><code class="lang-TS:Nada">function UnitReal2() : Real2
 </code></pre>
 </blockquote>
 <hr>
@@ -600,7 +600,7 @@
 <p>Generates a unit length Real3.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function UnitReal3() : Real3
+<pre><code class="lang-TS:Nada">function UnitReal3() : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -609,7 +609,7 @@
 <p>Generates a unit length Vec2.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function UnitVector2() : Real2
+<pre><code class="lang-TS:Nada">function UnitVector2() : Real2
 </code></pre>
 </blockquote>
 <hr>
@@ -618,7 +618,7 @@
 <p>Generates a unit length Vec3.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function UnitVector3() : Real3
+<pre><code class="lang-TS:Nada">function UnitVector3() : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -629,7 +629,7 @@
 |---|---|---|
 |minLength|<a href="../nada_base_types/real.html">real</a>| |
 |maxLength|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Vector2(minLength : Real, maxLength : Real) : Real2
+<pre><code class="lang-TS:Nada">function Vector2(minLength : Real, maxLength : Real) : Real2
 </code></pre>
 </blockquote>
 <hr>
@@ -640,7 +640,7 @@
 |---|---|---|
 |minLength|<a href="../nada_base_types/real.html">real</a>| |
 |maxLength|<a href="../nada_base_types/real.html">real</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Vector3(minLength : Real, maxLength : Real) : Real3
+<pre><code class="lang-TS:Nada">function Vector3(minLength : Real, maxLength : Real) : Real3
 </code></pre>
 </blockquote>
 <hr>

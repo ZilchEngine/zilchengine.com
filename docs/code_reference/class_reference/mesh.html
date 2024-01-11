@@ -135,14 +135,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Indices used to define non-sequential primitive construction from vertices, such as shared vertices.</p>
-<pre><code class="lang-lang=cpp,">var Indices : IndexBuffer
+<pre><code class="lang-TS:Nada">var Indices : IndexBuffer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="primitivetype--primitivetype">PrimitiveType : <a href="../enum_reference.html#primitivetype">PrimitiveType</a></h1>
 <blockquote>
 <p>The type of primitives to be made with the vertex data.</p>
-<pre><code class="lang-lang=cpp,">var PrimitiveType : PrimitiveType
+<pre><code class="lang-TS:Nada">var PrimitiveType : PrimitiveType
 </code></pre>
 </blockquote>
 <hr>
@@ -150,7 +150,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Vertex data and attribute semantics for defining data that can be uploaded to the gpu.</p>
-<pre><code class="lang-lang=cpp,">var Vertices : VertexBuffer
+<pre><code class="lang-TS:Nada">var Vertices : VertexBuffer
 </code></pre>
 </blockquote>
 <hr>
@@ -162,7 +162,7 @@
 <p>Makes an anonymous Mesh resource that can be defined by script and uploaded to the gpu.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function CreateRuntime() : Mesh
+<pre><code class="lang-TS:Nada">function CreateRuntime() : Mesh
 </code></pre>
 </blockquote>
 <hr>
@@ -171,7 +171,7 @@
 <p>Creates a clone of this Mesh. As a clone is expected to be modified, an upload function must be called before this mesh can be used.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function RuntimeClone() : Mesh
+<pre><code class="lang-TS:Nada">function RuntimeClone() : Mesh
 </code></pre>
 </blockquote>
 <hr>
@@ -180,7 +180,7 @@
 <p>Upload vertex buffer and index buffer data to the gpu. This will also build the aabb and information needed for raycasting.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Upload()
+<pre><code class="lang-TS:Nada">function Upload()
 </code></pre>
 </blockquote>
 <hr>
@@ -189,7 +189,7 @@
 <p>Same as Upload except raycasting information will not be built. This avoids a possible spike when a custom mesh will never need to be raycasted against.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function UploadNoRayCastInfo()
+<pre><code class="lang-TS:Nada">function UploadNoRayCastInfo()
 </code></pre>
 </blockquote>
 <hr>
@@ -198,7 +198,7 @@
 <p>Same as Upload except raycasting information and the aabb will not be built. This should be used when the user is manually setting an aabb or frustum culling is disabled.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function UploadNoRayCastInfoOrAabb()
+<pre><code class="lang-TS:Nada">function UploadNoRayCastInfoOrAabb()
 </code></pre>
 </blockquote>
 <hr>

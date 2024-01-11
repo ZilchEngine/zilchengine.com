@@ -150,45 +150,45 @@
 <hr>
 <h1 id="center--real3">Center : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Center : Real3
+<pre><code class="lang-TS:Nada">var Center : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="extents--real3">Extents : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Extents : Real3
+<pre><code class="lang-TS:Nada">var Extents : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="halfextents--real3">HalfExtents : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var HalfExtents : Real3
+<pre><code class="lang-TS:Nada">var HalfExtents : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="max--real3">Max : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Max : Real3
+<pre><code class="lang-TS:Nada">var Max : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="min--real3">Min : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Min : Real3
+<pre><code class="lang-TS:Nada">var Min : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="surfacearea--real">SurfaceArea : <a href="../nada_base_types/real.html">real</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var SurfaceArea : Real
+<pre><code class="lang-TS:Nada">var SurfaceArea : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="volume--real">Volume : <a href="../nada_base_types/real.html">real</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Volume : Real
+<pre><code class="lang-TS:Nada">var Volume : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -206,7 +206,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function Aabb()
+<pre><code class="lang-TS:Nada">function Aabb()
 </code></pre>
 </blockquote>
 <hr>
@@ -229,7 +229,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function Aabb(p0 : Aabb)
+<pre><code class="lang-TS:Nada">function Aabb(p0 : Aabb)
 </code></pre>
 </blockquote>
 <hr>
@@ -257,7 +257,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function Aabb(center : Real3, halfExtents : Real3)
+<pre><code class="lang-TS:Nada">function Aabb(center : Real3, halfExtents : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -267,7 +267,7 @@
 |Name|Type|Description|
 |---|---|---|
 |p0|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ContainsPoint(p0 : Real3) : Boolean
+<pre><code class="lang-TS:Nada">function ContainsPoint(p0 : Real3) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -277,7 +277,7 @@
 |Name|Type|Description|
 |---|---|---|
 |p0|<a href="aabb.html">aabb</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Expand(p0 : Aabb)
+<pre><code class="lang-TS:Nada">function Expand(p0 : Aabb)
 </code></pre>
 </blockquote>
 <hr>
@@ -289,7 +289,7 @@
 |---|---|---|
 |p0|<a href="aabb.html">aabb</a>| |
 |p1|<a href="aabb.html">aabb</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Expand(p0 : Aabb, p1 : Aabb) : Aabb
+<pre><code class="lang-TS:Nada">function Expand(p0 : Aabb, p1 : Aabb) : Aabb
 </code></pre>
 </blockquote>
 <hr>
@@ -301,7 +301,7 @@
 |---|---|---|
 |p0|<a href="aabb.html">aabb</a>| |
 |p1|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Expand(p0 : Aabb, p1 : Real3) : Aabb
+<pre><code class="lang-TS:Nada">function Expand(p0 : Aabb, p1 : Real3) : Aabb
 </code></pre>
 </blockquote>
 <hr>
@@ -311,7 +311,7 @@
 |Name|Type|Description|
 |---|---|---|
 |p0|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Expand(p0 : Real3)
+<pre><code class="lang-TS:Nada">function Expand(p0 : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -321,7 +321,7 @@
 |Name|Type|Description|
 |---|---|---|
 |p0|<a href="aabb.html">aabb</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Overlap(p0 : Aabb) : Boolean
+<pre><code class="lang-TS:Nada">function Overlap(p0 : Aabb) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -331,7 +331,7 @@
 |Name|Type|Description|
 |---|---|---|
 |p0|<a href="aabb.html">aabb</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Overlaps(p0 : Aabb) : Boolean
+<pre><code class="lang-TS:Nada">function Overlaps(p0 : Aabb) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -353,7 +353,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function Set(point : Real3)
+<pre><code class="lang-TS:Nada">function Set(point : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -380,7 +380,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function Set(center : Real3, halfExtents : Real3)
+<pre><code class="lang-TS:Nada">function Set(center : Real3, halfExtents : Real3)
 </code></pre>
 </blockquote>
 <hr>
@@ -389,7 +389,7 @@
 <p>Sets this aabb to an invalid aabb (Real3.PositiveMax, Real3.NegativeMin)). This also makes expansion easier.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function SetInvalid()
+<pre><code class="lang-TS:Nada">function SetInvalid()
 </code></pre>
 </blockquote>
 <hr>
@@ -404,7 +404,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function ZeroOut()
+<pre><code class="lang-TS:Nada">function ZeroOut()
 </code></pre>
 </blockquote>
 <hr>

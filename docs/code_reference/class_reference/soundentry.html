@@ -152,56 +152,56 @@
 <h1 id="crossfadelooptail--boolean">CrossFadeLoopTail : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If false, the loop tail will be added to the audio and will fade out over the specified time. If true, the audio will be cross-faded, so the beginning of the loop will fade in as the tail fades out.</p>
-<pre><code class="lang-lang=cpp,">var CrossFadeLoopTail : Boolean
+<pre><code class="lang-TS:Nada">var CrossFadeLoopTail : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="endtime--real">EndTime : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The time (in seconds) at which the Sound will stop playing. Defaults to the length of the audio file. Cannot be smaller than the StartTime.</p>
-<pre><code class="lang-lang=cpp,">var EndTime : Real
+<pre><code class="lang-TS:Nada">var EndTime : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="loopendtime--real">LoopEndTime : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The time (in seconds) from the beginning of the audio file at which a looping SoundInstance jumps back to the LoopStartTime. If it stops looping while playing it will continue to the EndTime and then stop. Cannot be smaller than the LoopStartTime.</p>
-<pre><code class="lang-lang=cpp,">var LoopEndTime : Real
+<pre><code class="lang-TS:Nada">var LoopEndTime : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="loopstarttime--real">LoopStartTime : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The time (in seconds) from the beginning of the audio file that a looping SoundInstance will jump back to after it reaches the LoopEndTime. The Sound will still start at the StartTime when it is played, but after it begins looping it will start at the LoopStartTime. Cannot be larger than the LoopEndTime.</p>
-<pre><code class="lang-lang=cpp,">var LoopStartTime : Real
+<pre><code class="lang-TS:Nada">var LoopStartTime : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="looptaillength--real">LoopTailLength : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The length (in seconds) of the tail, from the LoopEndTime, which will continue to play after the Sound jumps back to the LoopStartTime. The loop tail will fade out smoothly.</p>
-<pre><code class="lang-lang=cpp,">var LoopTailLength : Real
+<pre><code class="lang-TS:Nada">var LoopTailLength : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="sound--sound">Sound : <a href="sound.html">sound</a></h1>
 <blockquote>
 <p>The Sound resource that will be played by this SoundEntry.</p>
-<pre><code class="lang-lang=cpp,">var Sound : Sound
+<pre><code class="lang-TS:Nada">var Sound : Sound
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="starttime--real">StartTime : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The time (in seconds) at which the Sound will start playing. A value of 0 will start the Sound at the beginning of the audio file. Cannot be larger than the EndTime.</p>
-<pre><code class="lang-lang=cpp,">var StartTime : Real
+<pre><code class="lang-TS:Nada">var StartTime : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="weight--real">Weight : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The weighted randomization value for this particular SoundEntry to be chosen to play. The values of all SoundEntries are considered: two SoundEntries with weights of 1 and 1 will each play 50 percent of the time, as will weights of 10 and 10.</p>
-<pre><code class="lang-lang=cpp,">var Weight : Real
+<pre><code class="lang-TS:Nada">var Weight : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -212,7 +212,7 @@
 <p>Preview this sound with no SoundCue settings.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Preview()
+<pre><code class="lang-TS:Nada">function Preview()
 </code></pre>
 </blockquote>
 <hr>
@@ -221,7 +221,7 @@
 <p>Stop previewing this sound.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function StopPreview()
+<pre><code class="lang-TS:Nada">function StopPreview()
 </code></pre>
 </blockquote>
 <hr>

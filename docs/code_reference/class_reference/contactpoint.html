@@ -159,7 +159,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The total impulse this object applied (only for more complicated logic). The impulse is a Vector3 of the values (normal, friction1, friction2).</p>
-<pre><code class="lang-lang=cpp,">var ComplexImpulse : Real3
+<pre><code class="lang-TS:Nada">var ComplexImpulse : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -167,7 +167,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The total friction impulse that this object applied.</p>
-<pre><code class="lang-lang=cpp,">var FrictionImpulse : Real
+<pre><code class="lang-TS:Nada">var FrictionImpulse : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -175,7 +175,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The point in local space of myself in this collision.</p>
-<pre><code class="lang-lang=cpp,">var LocalPoint : Real3
+<pre><code class="lang-TS:Nada">var LocalPoint : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -183,7 +183,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The total impulse that this object applied in the direction of the normal.</p>
-<pre><code class="lang-lang=cpp,">var NormalImpulse : Real
+<pre><code class="lang-TS:Nada">var NormalImpulse : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -191,7 +191,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The point in local space of the other object in this collision.</p>
-<pre><code class="lang-lang=cpp,">var OtherLocalPoint : Real3
+<pre><code class="lang-TS:Nada">var OtherLocalPoint : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -199,7 +199,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The penetration of this contact point in the direction of the normal. Note: penetration is always positive and is not flipped for object A or object B.</p>
-<pre><code class="lang-lang=cpp,">var Penetration : Real
+<pre><code class="lang-TS:Nada">var Penetration : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -207,7 +207,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The relative velocity of this point in the direction of the normal. The relative point velocity is defined as Dot(p1 - p0, n) where p1 and p0 are the velocities of the contact points in the collision of myself and the other object respectively. This value can be used to see how fast the objects are now separating. Also, in pre-collision this value can be used to approximate the impulse of the collision since the impulse values will not have been calculated yet in pre-collision.</p>
-<pre><code class="lang-lang=cpp,">var RelativeVelocity : Real
+<pre><code class="lang-TS:Nada">var RelativeVelocity : Real
 </code></pre>
 </blockquote>
 <hr>
@@ -215,7 +215,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The world space normal that points from myself towards the other object.</p>
-<pre><code class="lang-lang=cpp,">var WorldNormalTowardsOther : Real3
+<pre><code class="lang-TS:Nada">var WorldNormalTowardsOther : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -223,7 +223,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The point in world space of this contact point.</p>
-<pre><code class="lang-lang=cpp,">var WorldPoint : Real3
+<pre><code class="lang-TS:Nada">var WorldPoint : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -241,7 +241,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function ContactPoint()
+<pre><code class="lang-TS:Nada">function ContactPoint()
 </code></pre>
 </blockquote>
 <hr>
@@ -264,7 +264,7 @@
 </tr>
 </tbody>
 </table>
-<pre><code class="lang-lang=cpp,">function ContactPoint( : ContactPoint)
+<pre><code class="lang-TS:Nada">function ContactPoint( : ContactPoint)
 </code></pre>
 </blockquote>
 <hr>

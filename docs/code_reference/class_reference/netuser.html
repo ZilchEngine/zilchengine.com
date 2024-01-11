@@ -134,7 +134,7 @@
 <h1 id="addedbymypeer--boolean">AddedByMyPeer : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var AddedByMyPeer : Boolean
+<pre><code class="lang-TS:Nada">var AddedByMyPeer : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -142,7 +142,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Adding network peer identifier.</p>
-<pre><code class="lang-lang=cpp,">var NetPeerId : Integer
+<pre><code class="lang-TS:Nada">var NetPeerId : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -150,7 +150,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Network user identifier.</p>
-<pre><code class="lang-lang=cpp,">var NetUserId : Integer
+<pre><code class="lang-TS:Nada">var NetUserId : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -158,7 +158,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the number of net objects owned by this user in all spaces.</p>
-<pre><code class="lang-lang=cpp,">var OwnedNetObjectCount : Integer
+<pre><code class="lang-TS:Nada">var OwnedNetObjectCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -166,7 +166,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns all net objects owned by this user in all spaces.</p>
-<pre><code class="lang-lang=cpp,">var OwnedNetObjects : CogHashSetRange
+<pre><code class="lang-TS:Nada">var OwnedNetObjects : CogHashSetRange
 </code></pre>
 </blockquote>
 <hr>
@@ -178,7 +178,7 @@
 |Name|Type|Description|
 |---|---|---|
 |netPeerId|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddedByPeer(netPeerId : Integer) : Boolean
+<pre><code class="lang-TS:Nada">function AddedByPeer(netPeerId : Integer) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -188,7 +188,7 @@
 |Name|Type|Description|
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function FindOwnedNetObjectByName(name : String) : Cog
+<pre><code class="lang-TS:Nada">function FindOwnedNetObjectByName(name : String) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -199,7 +199,7 @@
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |
 |space|<a href="space.html">space</a>| |</p>
-<pre><code class="lang-lang=cpp,">function FindOwnedNetObjectByNameInSpace(name : String, space : Space) : Cog
+<pre><code class="lang-TS:Nada">function FindOwnedNetObjectByNameInSpace(name : String, space : Space) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -209,7 +209,7 @@
 <p>Constructor.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function NetUser()
+<pre><code class="lang-TS:Nada">function NetUser()
 </code></pre>
 </blockquote>
 <hr>
@@ -218,7 +218,7 @@
 <p>[Server/Offline] Releases ownership of all net objects owned by this user in all spaces.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ReleaseOwnedNetObjects()
+<pre><code class="lang-TS:Nada">function ReleaseOwnedNetObjects()
 </code></pre>
 </blockquote>
 <hr>

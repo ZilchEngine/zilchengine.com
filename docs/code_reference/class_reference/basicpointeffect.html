@@ -146,49 +146,49 @@
 <h1 id="endcondition--physicseffectendcondition">EndCondition : <a href="../enum_reference.html#physicseffectendcondition">PhysicsEffectEndCondition</a></h1>
 <blockquote>
 <p>How the interpolation should be handled after max distance. ClampToMax will clamp to StrengthAtMax. NoEffect will ignore the effect. ContinueFalloff will continue the interpolation (this may go negative).</p>
-<pre><code class="lang-lang=cpp,">var EndCondition : PhysicsEffectEndCondition
+<pre><code class="lang-TS:Nada">var EndCondition : PhysicsEffectEndCondition
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="interpolationtype--physicseffectinterpolationtype">InterpolationType : <a href="../enum_reference.html#physicseffectinterpolationtype">PhysicsEffectInterpolationType</a></h1>
 <blockquote>
 <p>The type of interpolation used (e.g. Linear, Quadratic) for the effect.</p>
-<pre><code class="lang-lang=cpp,">var InterpolationType : PhysicsEffectInterpolationType
+<pre><code class="lang-TS:Nada">var InterpolationType : PhysicsEffectInterpolationType
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="localpositionoffset--real3">LocalPositionOffset : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>The offset from the transform position (in local space) that the point effect will be applied at.</p>
-<pre><code class="lang-lang=cpp,">var LocalPositionOffset : Real3
+<pre><code class="lang-TS:Nada">var LocalPositionOffset : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="maxdistance--real">MaxDistance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The max distance that attenuation will happen at. If an object is between min and max distance, the value will be attenuated. If the object is further away, the effect strength will be determined by EndCondition.</p>
-<pre><code class="lang-lang=cpp,">var MaxDistance : Real
+<pre><code class="lang-TS:Nada">var MaxDistance : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="mindistance--real">MinDistance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The first distance at which attenuation will start. If an object is under the min distance, StrengthAtMin will be used. If an object is in between min and max, then it will attenuate.</p>
-<pre><code class="lang-lang=cpp,">var MinDistance : Real
+<pre><code class="lang-TS:Nada">var MinDistance : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="strengthatmax--real">StrengthAtMax : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The strength that this effect applies at the max distance.</p>
-<pre><code class="lang-lang=cpp,">var StrengthAtMax : Real
+<pre><code class="lang-TS:Nada">var StrengthAtMax : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="strengthatmin--real">StrengthAtMin : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The strength that this effect applies at the min distance.</p>
-<pre><code class="lang-lang=cpp,">var StrengthAtMin : Real
+<pre><code class="lang-TS:Nada">var StrengthAtMin : Real
 </code></pre>
 </blockquote>
 <hr>

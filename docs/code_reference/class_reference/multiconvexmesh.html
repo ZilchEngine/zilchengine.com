@@ -129,7 +129,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Is the resource currently modified?</p>
-<pre><code class="lang-lang=cpp,">var Modified : Boolean
+<pre><code class="lang-TS:Nada">var Modified : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -137,7 +137,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>A collection of sub-convex meshes.</p>
-<pre><code class="lang-lang=cpp,">var SubMeshes : MultiConvexMeshSubMeshData
+<pre><code class="lang-TS:Nada">var SubMeshes : MultiConvexMeshSubMeshData
 </code></pre>
 </blockquote>
 <hr>
@@ -145,7 +145,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Is the resource correctly setup? Typically involves a mis-match in indices and vertices.</p>
-<pre><code class="lang-lang=cpp,">var Valid : Boolean
+<pre><code class="lang-TS:Nada">var Valid : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -153,7 +153,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The vertex buffer data of this mesh.</p>
-<pre><code class="lang-lang=cpp,">var Vertices : MultiConvexMeshVertexData
+<pre><code class="lang-TS:Nada">var Vertices : MultiConvexMeshVertexData
 </code></pre>
 </blockquote>
 <hr>
@@ -165,7 +165,7 @@
 <p>Creates a MultiConvexMesh for run-time modifications.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function CreateRuntime() : MultiConvexMesh
+<pre><code class="lang-TS:Nada">function CreateRuntime() : MultiConvexMesh
 </code></pre>
 </blockquote>
 <hr>
@@ -174,7 +174,7 @@
 <p>Creates a clone of this mesh for run-time modifications.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function RuntimeClone() : MultiConvexMesh
+<pre><code class="lang-TS:Nada">function RuntimeClone() : MultiConvexMesh
 </code></pre>
 </blockquote>
 <hr>
@@ -183,7 +183,7 @@
 <p>Rebuild all extra mesh information if it is currently modified. This includes things like the center of mass, volume, aabb, edge info and more.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function UpdateAndNotifyIfModified()
+<pre><code class="lang-TS:Nada">function UpdateAndNotifyIfModified()
 </code></pre>
 </blockquote>
 <hr>
@@ -193,7 +193,7 @@
 |Name|Type|Description|
 |---|---|---|
 |throwExceptionIfInvalid|<a href="../nada_base_types/boolean.html">boolean</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Validate(throwExceptionIfInvalid : Boolean) : Boolean
+<pre><code class="lang-TS:Nada">function Validate(throwExceptionIfInvalid : Boolean) : Boolean
 </code></pre>
 </blockquote>
 <hr>

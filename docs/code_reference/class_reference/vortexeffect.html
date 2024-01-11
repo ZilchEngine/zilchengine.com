@@ -170,70 +170,70 @@
 <h1 id="endcondition--physicseffectendcondition">EndCondition : <a href="../enum_reference.html#physicseffectendcondition">PhysicsEffectEndCondition</a></h1>
 <blockquote>
 <p>How the interpolation should be handled at MaxDistance. ClampToMax will clamp to the max strength values. NoEffect will ignore the effect. ContinueFalloff will continue the interpolation (this may go negative).</p>
-<pre><code class="lang-lang=cpp,">var EndCondition : PhysicsEffectEndCondition
+<pre><code class="lang-TS:Nada">var EndCondition : PhysicsEffectEndCondition
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="interpolationtype--physicseffectinterpolationtype">InterpolationType : <a href="../enum_reference.html#physicseffectinterpolationtype">PhysicsEffectInterpolationType</a></h1>
 <blockquote>
 <p>The type of interpolation used (e.g. Linear, Quadratic) for the forces.</p>
-<pre><code class="lang-lang=cpp,">var InterpolationType : PhysicsEffectInterpolationType
+<pre><code class="lang-TS:Nada">var InterpolationType : PhysicsEffectInterpolationType
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="inwardstrengthatmaxdistance--real">InwardStrengthAtMaxDistance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The inward strength of the vortex at the max distance.</p>
-<pre><code class="lang-lang=cpp,">var InwardStrengthAtMaxDistance : Real
+<pre><code class="lang-TS:Nada">var InwardStrengthAtMaxDistance : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="inwardstrengthatmindistance--real">InwardStrengthAtMinDistance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The inward strength of the vortex at the min distance.</p>
-<pre><code class="lang-lang=cpp,">var InwardStrengthAtMinDistance : Real
+<pre><code class="lang-TS:Nada">var InwardStrengthAtMinDistance : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="localaxis--boolean">LocalAxis : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Determines if the vortex axis is in world or local space.</p>
-<pre><code class="lang-lang=cpp,">var LocalAxis : Boolean
+<pre><code class="lang-TS:Nada">var LocalAxis : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="maxdistance--real">MaxDistance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The max distance that attenuation will happen at. If an object is between min and max distance, the value will be attenuated. If the object is further away, the effect strength will be determined by EndCondition.</p>
-<pre><code class="lang-lang=cpp,">var MaxDistance : Real
+<pre><code class="lang-TS:Nada">var MaxDistance : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="mindistance--real">MinDistance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The first distance at which attenuation will start. If an object is under the min distance, the min strength values will be used. If an object is in between min and max, then it will attenuate.</p>
-<pre><code class="lang-lang=cpp,">var MinDistance : Real
+<pre><code class="lang-TS:Nada">var MinDistance : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="twiststrengthatmaxdistance--real">TwistStrengthAtMaxDistance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The perpendicular strength (twist) of the vortex at max distance.</p>
-<pre><code class="lang-lang=cpp,">var TwistStrengthAtMaxDistance : Real
+<pre><code class="lang-TS:Nada">var TwistStrengthAtMaxDistance : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="twiststrengthatmindistance--real">TwistStrengthAtMinDistance : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The perpendicular strength (twist) of the vortex at min distance.</p>
-<pre><code class="lang-lang=cpp,">var TwistStrengthAtMinDistance : Real
+<pre><code class="lang-TS:Nada">var TwistStrengthAtMinDistance : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="vortexaxis--real3">VortexAxis : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>The axis the vortex spins about.</p>
-<pre><code class="lang-lang=cpp,">var VortexAxis : Real3
+<pre><code class="lang-TS:Nada">var VortexAxis : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -241,7 +241,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>The axis the vortex spins about in world space.</p>
-<pre><code class="lang-lang=cpp,">var WorldVortexAxis : Real3
+<pre><code class="lang-TS:Nada">var WorldVortexAxis : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -259,7 +259,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function VortexEffect()
+<pre><code class="lang-TS:Nada">function VortexEffect()
 </code></pre>
 </blockquote>
 <hr>

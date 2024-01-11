@@ -332,14 +332,14 @@
 <h1 id="actions--actions">Actions : <a href="actions.html">actions</a></h1>
 <p><code>read-only</code></p>
 <blockquote>
-<pre><code class="lang-lang=cpp,">var Actions : Actions
+<pre><code class="lang-TS:Nada">var Actions : Actions
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="archetype--archetype">Archetype : <a href="archetype.html">archetype</a></h1>
 <blockquote>
 <p>Getter / setter for Archetype.</p>
-<pre><code class="lang-lang=cpp,">var Archetype : Archetype
+<pre><code class="lang-TS:Nada">var Archetype : Archetype
 </code></pre>
 </blockquote>
 <hr>
@@ -347,7 +347,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the Archetype our Archetype inherits from.</p>
-<pre><code class="lang-lang=cpp,">var BaseArchetype : Archetype
+<pre><code class="lang-TS:Nada">var BaseArchetype : Archetype
 </code></pre>
 </blockquote>
 <hr>
@@ -355,7 +355,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the amount of children on this Cog. Note that this function has to iterate over all children to calculate the count.</p>
-<pre><code class="lang-lang=cpp,">var ChildCount : Integer
+<pre><code class="lang-TS:Nada">var ChildCount : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -363,7 +363,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns a range of all direct children on this Cog.</p>
-<pre><code class="lang-lang=cpp,">var Children : HierarchyListRange
+<pre><code class="lang-TS:Nada">var Children : HierarchyListRange
 </code></pre>
 </blockquote>
 <hr>
@@ -371,14 +371,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns how many Components are on this Cog.</p>
-<pre><code class="lang-lang=cpp,">var ComponentCount : Integer
+<pre><code class="lang-TS:Nada">var ComponentCount : Integer
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="editorviewporthidden--boolean">EditorViewportHidden : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Hidden from view used for editor.</p>
-<pre><code class="lang-lang=cpp,">var EditorViewportHidden : Boolean
+<pre><code class="lang-TS:Nada">var EditorViewportHidden : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -386,7 +386,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Get the GameSession that owns us and our Space.</p>
-<pre><code class="lang-lang=cpp,">var GameSession : GameSession
+<pre><code class="lang-TS:Nada">var GameSession : GameSession
 </code></pre>
 </blockquote>
 <hr>
@@ -394,14 +394,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Get the object named 'LevelSettings', a special convenience object where we can put general functionality for our Level.</p>
-<pre><code class="lang-lang=cpp,">var LevelSettings : Cog
+<pre><code class="lang-TS:Nada">var LevelSettings : Cog
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="locked--boolean">Locked : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Not able to be modified or selected in the viewport.</p>
-<pre><code class="lang-lang=cpp,">var Locked : Boolean
+<pre><code class="lang-TS:Nada">var Locked : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -409,21 +409,21 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Has this Cog already been destroyed and is waiting for the frame to end (delayed destruction). This allows us to do custom logic when an object is still not null, but about to be destroyed (e.g. we don't want to render Cogs marked for deletion).</p>
-<pre><code class="lang-lang=cpp,">var MarkedForDestruction : Boolean
+<pre><code class="lang-TS:Nada">var MarkedForDestruction : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="name--string">Name : <a href="../nada_base_types/string.html">string</a></h1>
 <blockquote>
 <p>Name of the Object.</p>
-<pre><code class="lang-lang=cpp,">var Name : String
+<pre><code class="lang-TS:Nada">var Name : String
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="objectviewhidden--boolean">ObjectViewHidden : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>If the object needs to not show up in the object view.</p>
-<pre><code class="lang-lang=cpp,">var ObjectViewHidden : Boolean
+<pre><code class="lang-TS:Nada">var ObjectViewHidden : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -431,14 +431,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Get the parent of this object in the Hierarchy.</p>
-<pre><code class="lang-lang=cpp,">var Parent : Cog
+<pre><code class="lang-TS:Nada">var Parent : Cog
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="persistent--boolean">Persistent : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Object will not be destroyed on level load or change.</p>
-<pre><code class="lang-lang=cpp,">var Persistent : Boolean
+<pre><code class="lang-TS:Nada">var Persistent : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -446,7 +446,7 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Gets a unique integer for this object (used primarily for debugging)</p>
-<pre><code class="lang-lang=cpp,">var RuntimeId : Integer
+<pre><code class="lang-TS:Nada">var RuntimeId : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -454,14 +454,14 @@
 <p><code>read-only</code></p>
 <blockquote>
 <p>Returns the Space that this object lives in.</p>
-<pre><code class="lang-lang=cpp,">var Space : Space
+<pre><code class="lang-TS:Nada">var Space : Space
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="transient--boolean">Transient : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Object will not be saved.</p>
-<pre><code class="lang-lang=cpp,">var Transient : Boolean
+<pre><code class="lang-TS:Nada">var Transient : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -473,7 +473,7 @@
 |Name|Type|Description|
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddComponentByName(name : String) : Boolean
+<pre><code class="lang-TS:Nada">function AddComponentByName(name : String) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -483,7 +483,7 @@
 |Name|Type|Description|
 |---|---|---|
 |componentType|<a href="../nada_base_types/boundtype.html">boundtype</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddComponentByType(componentType : BoundType) : Boolean
+<pre><code class="lang-TS:Nada">function AddComponentByType(componentType : BoundType) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -493,7 +493,7 @@
 |Name|Type|Description|
 |---|---|---|
 |parent|<a href="cog.html">cog</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AttachTo(parent : Cog) : Boolean
+<pre><code class="lang-TS:Nada">function AttachTo(parent : Cog) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -503,7 +503,7 @@
 |Name|Type|Description|
 |---|---|---|
 |parent|<a href="cog.html">cog</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AttachToPreserveLocal(parent : Cog) : Boolean
+<pre><code class="lang-TS:Nada">function AttachToPreserveLocal(parent : Cog) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -512,7 +512,7 @@
 <p>Removes our association with the current Archetype.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function ClearArchetype()
+<pre><code class="lang-TS:Nada">function ClearArchetype()
 </code></pre>
 </blockquote>
 <hr>
@@ -521,7 +521,7 @@
 <p>Clones this cog. The cloned object will be parented to this objects parent (if it exists).
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Clone() : Cog
+<pre><code class="lang-TS:Nada">function Clone() : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -531,7 +531,7 @@
 <p>Constructor / destructor.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Cog()
+<pre><code class="lang-TS:Nada">function Cog()
 </code></pre>
 </blockquote>
 <hr>
@@ -540,7 +540,7 @@
 <p>Calls DebugDraw on all components in this cog.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function DebugDraw()
+<pre><code class="lang-TS:Nada">function DebugDraw()
 </code></pre>
 </blockquote>
 <hr>
@@ -549,7 +549,7 @@
 <p>Queues the cog up for delayed destruction (at the end of the frame). If the object is marked as Protected, this will do nothing.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Destroy()
+<pre><code class="lang-TS:Nada">function Destroy()
 </code></pre>
 </blockquote>
 <hr>
@@ -558,7 +558,7 @@
 <p>Detach from a parent object and compute the new transform so that the objects are relative.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function Detach()
+<pre><code class="lang-TS:Nada">function Detach()
 </code></pre>
 </blockquote>
 <hr>
@@ -567,7 +567,7 @@
 <p>Detach from a parent object.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function DetachPreserveLocal()
+<pre><code class="lang-TS:Nada">function DetachPreserveLocal()
 </code></pre>
 </blockquote>
 <hr>
@@ -578,7 +578,7 @@
 |---|---|---|
 |eventId|<a href="../nada_base_types/string.html">string</a>| |
 |event|<a href="event.html">event</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DispatchDown(eventId : String, event : Event)
+<pre><code class="lang-TS:Nada">function DispatchDown(eventId : String, event : Event)
 </code></pre>
 </blockquote>
 <hr>
@@ -589,7 +589,7 @@
 |---|---|---|
 |eventId|<a href="../nada_base_types/string.html">string</a>| |
 |event|<a href="event.html">event</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DispatchEvent(eventId : String, event : Event)
+<pre><code class="lang-TS:Nada">function DispatchEvent(eventId : String, event : Event)
 </code></pre>
 </blockquote>
 <hr>
@@ -600,7 +600,7 @@
 |---|---|---|
 |eventId|<a href="../nada_base_types/string.html">string</a>| |
 |event|<a href="event.html">event</a>| |</p>
-<pre><code class="lang-lang=cpp,">function DispatchUp(eventId : String, event : Event)
+<pre><code class="lang-TS:Nada">function DispatchUp(eventId : String, event : Event)
 </code></pre>
 </blockquote>
 <hr>
@@ -610,7 +610,7 @@
 |Name|Type|Description|
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function FindAllChildrenByName(name : String) : HierarchyNameRange
+<pre><code class="lang-TS:Nada">function FindAllChildrenByName(name : String) : HierarchyNameRange
 </code></pre>
 </blockquote>
 <hr>
@@ -620,7 +620,7 @@
 |Name|Type|Description|
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function FindChildByName(name : String) : Cog
+<pre><code class="lang-TS:Nada">function FindChildByName(name : String) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -630,7 +630,7 @@
 |Name|Type|Description|
 |---|---|---|
 |name|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function FindDirectChildByName(name : String) : Cog
+<pre><code class="lang-TS:Nada">function FindDirectChildByName(name : String) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -639,7 +639,7 @@
 <p>Same as FindNearestParentArchetype except that it includes this Cog.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function FindNearestArchetype() : Cog
+<pre><code class="lang-TS:Nada">function FindNearestArchetype() : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -648,7 +648,7 @@
 <p>Finds the next Cog in depth first post-order.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function FindNextInOrder() : Cog
+<pre><code class="lang-TS:Nada">function FindNextInOrder() : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -657,7 +657,7 @@
 <p>Returns the sibling Cog after this in the parents child list. Returns null if it's the last child. If the Cog doesn't have a parent, it will return the Cog after it in the Space.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function FindNextSibling() : Cog
+<pre><code class="lang-TS:Nada">function FindNextSibling() : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -666,7 +666,7 @@
 <p>Finds the previous Cog in reverse depth first post-order (the opposite of FindNextInOrder).
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function FindPreviousInOrder() : Cog
+<pre><code class="lang-TS:Nada">function FindPreviousInOrder() : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -675,7 +675,7 @@
 <p>Returns the sibling Cog before this in the parents child list. Returns null if it's the first child. If the Cog doesn't have a parent, it will return the Cog before it in the Space.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function FindPreviousSibling() : Cog
+<pre><code class="lang-TS:Nada">function FindPreviousSibling() : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -684,7 +684,7 @@
 <p>Searches up the hierarchy for the root Cog.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function FindRoot() : Cog
+<pre><code class="lang-TS:Nada">function FindRoot() : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -693,7 +693,7 @@
 <p>Finds the top most Archetype in the Hierarchy.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function FindRootArchetype() : Cog
+<pre><code class="lang-TS:Nada">function FindRootArchetype() : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -703,7 +703,7 @@
 |Name|Type|Description|
 |---|---|---|
 |index|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetComponentByIndex(index : Integer) : Component
+<pre><code class="lang-TS:Nada">function GetComponentByIndex(index : Integer) : Component
 </code></pre>
 </blockquote>
 <hr>
@@ -713,7 +713,7 @@
 |Name|Type|Description|
 |---|---|---|
 |componentTypeName|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetComponentByName(componentTypeName : String) : Component
+<pre><code class="lang-TS:Nada">function GetComponentByName(componentTypeName : String) : Component
 </code></pre>
 </blockquote>
 <hr>
@@ -723,7 +723,7 @@
 |Name|Type|Description|
 |---|---|---|
 |componentType|<a href="../nada_base_types/boundtype.html">boundtype</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetComponentIndex(componentType : BoundType) : Integer
+<pre><code class="lang-TS:Nada">function GetComponentIndex(componentType : BoundType) : Integer
 </code></pre>
 </blockquote>
 <hr>
@@ -733,7 +733,7 @@
 |Name|Type|Description|
 |---|---|---|
 |descendant|<a href="cog.html">cog</a>| |</p>
-<pre><code class="lang-lang=cpp,">function IsAncestorOf(descendant : Cog) : Boolean
+<pre><code class="lang-TS:Nada">function IsAncestorOf(descendant : Cog) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -743,7 +743,7 @@
 |Name|Type|Description|
 |---|---|---|
 |cog|<a href="cog.html">cog</a>| |</p>
-<pre><code class="lang-lang=cpp,">function IsDescendant(cog : Cog) : Boolean
+<pre><code class="lang-TS:Nada">function IsDescendant(cog : Cog) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -753,7 +753,7 @@
 |Name|Type|Description|
 |---|---|---|
 |ancestor|<a href="cog.html">cog</a>| |</p>
-<pre><code class="lang-lang=cpp,">function IsDescendantOf(ancestor : Cog) : Boolean
+<pre><code class="lang-TS:Nada">function IsDescendantOf(ancestor : Cog) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -762,7 +762,7 @@
 <p>Returns whether or not we have any local modifications from our Archetype. This does not account for properties with LocalModificationOverride (such as Transform modifications).
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function IsModifiedFromArchetype() : Boolean
+<pre><code class="lang-TS:Nada">function IsModifiedFromArchetype() : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -772,7 +772,7 @@
 |Name|Type|Description|
 |---|---|---|
 |sibling|<a href="cog.html">cog</a>| |</p>
-<pre><code class="lang-lang=cpp,">function PlaceAfterSibling(sibling : Cog)
+<pre><code class="lang-TS:Nada">function PlaceAfterSibling(sibling : Cog)
 </code></pre>
 </blockquote>
 <hr>
@@ -782,7 +782,7 @@
 |Name|Type|Description|
 |---|---|---|
 |sibling|<a href="cog.html">cog</a>| |</p>
-<pre><code class="lang-lang=cpp,">function PlaceBeforeSibling(sibling : Cog)
+<pre><code class="lang-TS:Nada">function PlaceBeforeSibling(sibling : Cog)
 </code></pre>
 </blockquote>
 <hr>
@@ -792,7 +792,7 @@
 |Name|Type|Description|
 |---|---|---|
 |typeName|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RemoveComponentByName(typeName : String) : Boolean
+<pre><code class="lang-TS:Nada">function RemoveComponentByName(typeName : String) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -802,7 +802,7 @@
 |Name|Type|Description|
 |---|---|---|
 |componentType|<a href="../nada_base_types/boundtype.html">boundtype</a>| |</p>
-<pre><code class="lang-lang=cpp,">function RemoveComponentByType(componentType : BoundType) : Boolean
+<pre><code class="lang-TS:Nada">function RemoveComponentByType(componentType : BoundType) : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -813,7 +813,7 @@
 |---|---|---|
 |oldChild|<a href="cog.html">cog</a>| |
 |newChild|<a href="cog.html">cog</a>| |</p>
-<pre><code class="lang-lang=cpp,">function ReplaceChild(oldChild : Cog, newChild : Cog)
+<pre><code class="lang-TS:Nada">function ReplaceChild(oldChild : Cog, newChild : Cog)
 </code></pre>
 </blockquote>
 <hr>
@@ -824,7 +824,7 @@
 |Name|Type|Description|
 |---|---|---|
 |newName|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SanitizeName(newName : String) : String
+<pre><code class="lang-TS:Nada">function SanitizeName(newName : String) : String
 </code></pre>
 </blockquote>
 <hr>
@@ -833,7 +833,7 @@
 <p>Upload this objects data to the archetype and marks this object as not modified. This function does not rebuild all other Cogs with the same Archetype. See ArchetypeRebuilder for more information about how to rebuild Archetypes.
 |Name|Type|Description|
 |---|---|---|</p>
-<pre><code class="lang-lang=cpp,">function UploadToArchetype()
+<pre><code class="lang-TS:Nada">function UploadToArchetype()
 </code></pre>
 </blockquote>
 <hr>

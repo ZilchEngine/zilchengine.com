@@ -218,35 +218,35 @@
 <h1 id="active--boolean">Active : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Determines if this joint is currently active. Used for runtime enabling/disabling of joints.</p>
-<pre><code class="lang-lang=cpp,">var Active : Boolean
+<pre><code class="lang-TS:Nada">var Active : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="autosnaps--boolean">AutoSnaps : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Determines if this joint will automatically delete itself if any of its constraints reach the max impulse value. This will still send an event if it snaps.</p>
-<pre><code class="lang-lang=cpp,">var AutoSnaps : Boolean
+<pre><code class="lang-TS:Nada">var AutoSnaps : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="collideconnected--boolean">CollideConnected : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Determines if the two objects connected by this joint can collide. If any joint between this pair does not collide, then the pair does not collide. All joints have to be set to true in order to have the objects collide.</p>
-<pre><code class="lang-lang=cpp,">var CollideConnected : Boolean
+<pre><code class="lang-TS:Nada">var CollideConnected : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="maximpulse--real">MaxImpulse : <a href="../nada_base_types/real.html">real</a></h1>
 <blockquote>
 <p>The maximum impulse (instantaneous force) that this joint can apply to correct itself.</p>
-<pre><code class="lang-lang=cpp,">var MaxImpulse : Real
+<pre><code class="lang-TS:Nada">var MaxImpulse : Real
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="sendsevents--boolean">SendsEvents : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Determines if this joint will send any events. Used for a small efficiency boost and for reducing the number of events.</p>
-<pre><code class="lang-lang=cpp,">var SendsEvents : Boolean
+<pre><code class="lang-TS:Nada">var SendsEvents : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -258,7 +258,7 @@
 |Name|Type|Description|
 |---|---|---|
 |index|<a href="../nada_base_types/integer.html">integer</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetCog(index : Integer) : Cog
+<pre><code class="lang-TS:Nada">function GetCog(index : Integer) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -268,7 +268,7 @@
 |Name|Type|Description|
 |---|---|---|
 |cog|<a href="cog.html">cog</a>| |</p>
-<pre><code class="lang-lang=cpp,">function GetOtherObject(cog : Cog) : Cog
+<pre><code class="lang-TS:Nada">function GetOtherObject(cog : Cog) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -284,7 +284,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function Joint()
+<pre><code class="lang-TS:Nada">function Joint()
 </code></pre>
 </blockquote>
 <hr>

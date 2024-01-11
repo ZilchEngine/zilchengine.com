@@ -152,56 +152,56 @@
 <h1 id="frameofreference--jointframeofreference">FrameOfReference : <a href="../enum_reference.html#jointframeofreference">JointFrameOfReference</a></h1>
 <blockquote>
 <p>Should the default basis of the constraint be object A or B? This determines which object's world axis is used when constructing the basis for the constraint. In the case of a dynamic and static object, the static object is generally the better choice. As a general rule of thumb, it should be the heavier/most important object.</p>
-<pre><code class="lang-lang=cpp,">var FrameOfReference : JointFrameOfReference
+<pre><code class="lang-TS:Nada">var FrameOfReference : JointFrameOfReference
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="localbasisa--quaternion">LocalBasisA : <a href="../nada_base_types/quaternion.html">quaternion</a></h1>
 <blockquote>
 <p>The local space reference frame of object A . This frame is transformed to world space and then aligned with object B s frame .</p>
-<pre><code class="lang-lang=cpp,">var LocalBasisA : Quaternion
+<pre><code class="lang-TS:Nada">var LocalBasisA : Quaternion
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="localbasisb--quaternion">LocalBasisB : <a href="../nada_base_types/quaternion.html">quaternion</a></h1>
 <blockquote>
 <p>The local space reference frame of object B . This frame is transformed to world space and then aligned with object A s frame .</p>
-<pre><code class="lang-lang=cpp,">var LocalBasisB : Quaternion
+<pre><code class="lang-TS:Nada">var LocalBasisB : Quaternion
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="localpointa--real3">LocalPointA : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>The local point of the anchor on object A .</p>
-<pre><code class="lang-lang=cpp,">var LocalPointA : Real3
+<pre><code class="lang-TS:Nada">var LocalPointA : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="localpointb--real3">LocalPointB : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>The local point of the anchor on object B .</p>
-<pre><code class="lang-lang=cpp,">var LocalPointB : Real3
+<pre><code class="lang-TS:Nada">var LocalPointB : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="worldbasis--quaternion">WorldBasis : <a href="../nada_base_types/quaternion.html">quaternion</a></h1>
 <blockquote>
 <p>The basis of the joint in world-space. This basis will come object specified by FrameOfReference. The basis is constructed such that the x-axis is the primary axis while the z-axis is the hinge axis.</p>
-<pre><code class="lang-lang=cpp,">var WorldBasis : Quaternion
+<pre><code class="lang-TS:Nada">var WorldBasis : Quaternion
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="worldpointa--real3">WorldPointA : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>The position of the anchor on object A given a position in world space</p>
-<pre><code class="lang-lang=cpp,">var WorldPointA : Real3
+<pre><code class="lang-TS:Nada">var WorldPointA : Real3
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="worldpointb--real3">WorldPointB : <a href="../nada_base_types/real3.html">real3</a></h1>
 <blockquote>
 <p>The position of the anchor on object B given a position in world space</p>
-<pre><code class="lang-lang=cpp,">var WorldPointB : Real3
+<pre><code class="lang-TS:Nada">var WorldPointB : Real3
 </code></pre>
 </blockquote>
 <hr>
@@ -219,7 +219,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function RevoluteJoint()
+<pre><code class="lang-TS:Nada">function RevoluteJoint()
 </code></pre>
 </blockquote>
 <hr>
@@ -229,7 +229,7 @@
 |Name|Type|Description|
 |---|---|---|
 |rot|<a href="../nada_base_types/quaternion.html">quaternion</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SetWorldFrame(rot : Quaternion)
+<pre><code class="lang-TS:Nada">function SetWorldFrame(rot : Quaternion)
 </code></pre>
 </blockquote>
 <hr>
@@ -239,7 +239,7 @@
 |Name|Type|Description|
 |---|---|---|
 |point|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function SetWorldPoints(point : Real3)
+<pre><code class="lang-TS:Nada">function SetWorldPoints(point : Real3)
 </code></pre>
 </blockquote>
 <hr>

@@ -146,35 +146,35 @@
 <h1 id="attachtocommonparent--boolean">AttachToCommonParent : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Should the cog of the joint be added as a child of the common parent of the two given cogs? Useful for putting the joint in the same hierarchy so that archetypes can be created.</p>
-<pre><code class="lang-lang=cpp,">var AttachToCommonParent : Boolean
+<pre><code class="lang-TS:Nada">var AttachToCommonParent : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="attachtoworld--boolean">AttachToWorld : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Used to create a connection to a dummy object. Instead of connecting to object B, the connection will be between object A and &quot;the world&quot;.</p>
-<pre><code class="lang-lang=cpp,">var AttachToWorld : Boolean
+<pre><code class="lang-TS:Nada">var AttachToWorld : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="autosnaps--boolean">AutoSnaps : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Should the joint auto-snap when the force limit is reached?</p>
-<pre><code class="lang-lang=cpp,">var AutoSnaps : Boolean
+<pre><code class="lang-TS:Nada">var AutoSnaps : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="overridelength--boolean">OverrideLength : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Should the length of the joint be overridden or computed from the two points? Mainly used for StickJoint.</p>
-<pre><code class="lang-lang=cpp,">var OverrideLength : Boolean
+<pre><code class="lang-TS:Nada">var OverrideLength : Boolean
 </code></pre>
 </blockquote>
 <hr>
 <h1 id="usecenter--boolean">UseCenter : <a href="../nada_base_types/boolean.html">boolean</a></h1>
 <blockquote>
 <p>Should the center of each object be used instead of the given points?</p>
-<pre><code class="lang-lang=cpp,">var UseCenter : Boolean
+<pre><code class="lang-TS:Nada">var UseCenter : Boolean
 </code></pre>
 </blockquote>
 <hr>
@@ -186,7 +186,7 @@
 |Name|Type|Description|
 |---|---|---|
 |joint|<a href="cog.html">cog</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddJointLimit(joint : Cog) : JointLimit
+<pre><code class="lang-TS:Nada">function AddJointLimit(joint : Cog) : JointLimit
 </code></pre>
 </blockquote>
 <hr>
@@ -196,7 +196,7 @@
 |Name|Type|Description|
 |---|---|---|
 |joint|<a href="cog.html">cog</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddJointMotor(joint : Cog) : JointMotor
+<pre><code class="lang-TS:Nada">function AddJointMotor(joint : Cog) : JointMotor
 </code></pre>
 </blockquote>
 <hr>
@@ -206,7 +206,7 @@
 |Name|Type|Description|
 |---|---|---|
 |joint|<a href="cog.html">cog</a>| |</p>
-<pre><code class="lang-lang=cpp,">function AddJointSpring(joint : Cog) : JointSpring
+<pre><code class="lang-TS:Nada">function AddJointSpring(joint : Cog) : JointSpring
 </code></pre>
 </blockquote>
 <hr>
@@ -218,7 +218,7 @@
 |objectA|<a href="cog.html">cog</a>| |
 |objectB|<a href="cog.html">cog</a>| |
 |jointArchetype|<a href="archetype.html">archetype</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Create(objectA : Cog, objectB : Cog, jointArchetype : Archetype) : Cog
+<pre><code class="lang-TS:Nada">function Create(objectA : Cog, objectB : Cog, jointArchetype : Archetype) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -230,7 +230,7 @@
 |objectA|<a href="cog.html">cog</a>| |
 |objectB|<a href="cog.html">cog</a>| |
 |jointName|<a href="../nada_base_types/string.html">string</a>| |</p>
-<pre><code class="lang-lang=cpp,">function Create(objectA : Cog, objectB : Cog, jointName : String) : Cog
+<pre><code class="lang-TS:Nada">function Create(objectA : Cog, objectB : Cog, jointName : String) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -244,7 +244,7 @@
 |jointArchetype|<a href="archetype.html">archetype</a>| |
 |localPointA|<a href="../nada_base_types/real3.html">real3</a>| |
 |localPointB|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function CreateLocalPoints(objectA : Cog, objectB : Cog, jointArchetype : Archetype, localPointA : Real3, localPointB : Real3) : Cog
+<pre><code class="lang-TS:Nada">function CreateLocalPoints(objectA : Cog, objectB : Cog, jointArchetype : Archetype, localPointA : Real3, localPointB : Real3) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -258,7 +258,7 @@
 |jointName|<a href="../nada_base_types/string.html">string</a>| |
 |localPointA|<a href="../nada_base_types/real3.html">real3</a>| |
 |localPointB|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function CreateLocalPoints(objectA : Cog, objectB : Cog, jointName : String, localPointA : Real3, localPointB : Real3) : Cog
+<pre><code class="lang-TS:Nada">function CreateLocalPoints(objectA : Cog, objectB : Cog, jointName : String, localPointA : Real3, localPointB : Real3) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -271,7 +271,7 @@
 |objectB|<a href="cog.html">cog</a>| |
 |jointArchetype|<a href="archetype.html">archetype</a>| |
 |bothWorldPoints|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function CreateWorldPoints(objectA : Cog, objectB : Cog, jointArchetype : Archetype, bothWorldPoints : Real3) : Cog
+<pre><code class="lang-TS:Nada">function CreateWorldPoints(objectA : Cog, objectB : Cog, jointArchetype : Archetype, bothWorldPoints : Real3) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -285,7 +285,7 @@
 |jointArchetype|<a href="archetype.html">archetype</a>| |
 |worldPointA|<a href="../nada_base_types/real3.html">real3</a>| |
 |worldPointB|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function CreateWorldPoints(objectA : Cog, objectB : Cog, jointArchetype : Archetype, worldPointA : Real3, worldPointB : Real3) : Cog
+<pre><code class="lang-TS:Nada">function CreateWorldPoints(objectA : Cog, objectB : Cog, jointArchetype : Archetype, worldPointA : Real3, worldPointB : Real3) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -298,7 +298,7 @@
 |objectB|<a href="cog.html">cog</a>| |
 |jointName|<a href="../nada_base_types/string.html">string</a>| |
 |bothWorldPoints|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function CreateWorldPoints(objectA : Cog, objectB : Cog, jointName : String, bothWorldPoints : Real3) : Cog
+<pre><code class="lang-TS:Nada">function CreateWorldPoints(objectA : Cog, objectB : Cog, jointName : String, bothWorldPoints : Real3) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -312,7 +312,7 @@
 |jointName|<a href="../nada_base_types/string.html">string</a>| |
 |worldPointA|<a href="../nada_base_types/real3.html">real3</a>| |
 |worldPointB|<a href="../nada_base_types/real3.html">real3</a>| |</p>
-<pre><code class="lang-lang=cpp,">function CreateWorldPoints(objectA : Cog, objectB : Cog, jointName : String, worldPointA : Real3, worldPointB : Real3) : Cog
+<pre><code class="lang-TS:Nada">function CreateWorldPoints(objectA : Cog, objectB : Cog, jointName : String, worldPointA : Real3, worldPointB : Real3) : Cog
 </code></pre>
 </blockquote>
 <hr>
@@ -328,7 +328,7 @@
 </tr>
 </thead>
 </table>
-<pre><code class="lang-lang=cpp,">function JointCreator()
+<pre><code class="lang-TS:Nada">function JointCreator()
 </code></pre>
 </blockquote>
 <hr>
