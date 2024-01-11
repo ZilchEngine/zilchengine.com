@@ -14125,6 +14125,26 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/ZilchLauncher.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/ZilchLauncher.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/ZilchLauncherBuilds.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/ZilchLauncherBuilds.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/ZilchLogo.png",
       "output": {
         "resource": {
@@ -14205,6 +14225,16 @@
         },
         ".html": {
           "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "zeroengine.md",
+      "output": {
+        ".html": {
+          "relative_path": "zeroengine.html"
         }
       },
       "version": ""
