@@ -6,6 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Using SoundNodes | ZilchEngine ">
       
+      
       <link rel="icon" href="../../../../../favicon.ico">
       <link rel="stylesheet" href="../../../../../public/docfx.min.css">
       <link rel="stylesheet" href="../../../../../public/main.css">
@@ -87,11 +88,11 @@
 
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46355.png" alt="Graph"></p>
 <p><a href="../../../../code_reference/class_reference/soundnode.html"> SoundNodes </a> are the building blocks behind all audio in the Zilch Engine. A SoundNode receives audio data from other SoundNodes through its input connections, modifies that data in some way (or simply collects it), then passes it along to more SoundNodes through its output connections.</p>
-<p>Some SoundNodes only generate audio data, like <a href="soundinstance.md">SoundInstances</a>. Those nodes do not collect anything from their input connections and attaching nodes to their input would have no effect.</p>
-<p>All sound objects in the Zilch Engine use some type of SoundNode. These nodes are connected together into a tree-like graph, with generating nodes as the topmost branches, and the output node of the <a href="soundspace.md">SoundSpace </a> as the root node at the bottom. The SoundNode graph processes audio by starting at the root node and requesting data from its input nodes. These nodes then request data from their inputs, and so on, until the request reaches a generating node which returns audio data that then follows the chain back down the graph.</p>
+<p>Some SoundNodes only generate audio data, like <a href="../soundinstance.html">SoundInstances</a>. Those nodes do not collect anything from their input connections and attaching nodes to their input would have no effect.</p>
+<p>All sound objects in the Zilch Engine use some type of SoundNode. These nodes are connected together into a tree-like graph, with generating nodes as the topmost branches, and the output node of the <a href="../soundspace.html">SoundSpace</a> as the root node at the bottom. The SoundNode graph processes audio by starting at the root node and requesting data from its input nodes. These nodes then request data from their inputs, and so on, until the request reaches a generating node which returns audio data that then follows the chain back down the graph.</p>
 <p>There are many types of SoundNodes that can only be created and added to the node graph in NadaScripts. These SoundNodes are reference counted: they will stay alive as long as the user stores a variable with the SoundNode assigned to it. If it is not stored, the node will be alive as long as it is connected to the graph, but users can no longer access it.</p>
 <p>The SoundNodes of built-in objects are also exposed in Nada, and users can freely edit most of the graph connections, giving them a great deal of flexibility in creating audio. When building connections it is important to remember that nodes closer to the generating node modify the audio before nodes that are further away. For example, to change the pitch of a sound before applying reverb, the PitchNode must be between the SoundInstance and the ReverbNode.</p>
-<p>The <a href="soundnode_graph.md">SoundNode Graph </a> tool can be extremely helpful when editing the graph directly.</p>
+<p>The <a href="../soundnode_graph.html">SoundNode Graph</a> tool can be extremely helpful when editing the graph directly.</p>
 <p>WARNING: SoundNodes can be connected in many complicated ways, but users must be careful not to create a loop. If loops are created, the user will receive an error, and the SoundNodes will be automatically disconnected.</p>
 <p>In most cases, nodes can be connected in any order and to any number of other nodes. The exception is the <a href="pitchnode.html">PitchNode </a>. The PitchNode changes the pitch of a sound by essentially stretching or squishing the sound waves, which means that it needs a different amount of data than other nodes. This causes a problem when a PitchNode and a node that was not pitch-shifted request data from the same SoundInstance.</p>
 <p>WARNING: When using PitchNodes, if a generating node has multiple output connections the user must make sure all of them are at the same pitch. If SoundNodes request data from the generating node at different pitch settings there will be an error and the nodes will be disconnected.</p>
@@ -138,9 +139,9 @@
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="soundinstance.md">SoundInstance </a></li>
-<li><a href="soundspace.md">SoundSpace </a></li>
-<li><a href="soundnode_graph.md">SoundNode Graph </a></li>
+<li><a href="../soundinstance.html">SoundInstance </a></li>
+<li><a href="../soundspace.html">SoundSpace </a></li>
+<li><a href="../soundnode_graph.html">SoundNode Graph </a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
