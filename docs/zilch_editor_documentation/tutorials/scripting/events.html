@@ -91,25 +91,25 @@
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
 <li>The <a href="../../../code_reference/event_reference.html#logicupdate">LogicUpdate</a> Event</li>
-<li><a href="../../../code_reference/class_reference/collisionevent.html"> CollisionEvents</a></li>
+<li><a href="../../../code_reference/class_reference/collisionevent.html">CollisionEvents</a></li>
 <li>Destruction events</li>
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#newproject">New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a> : LevelSettings object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : LevelSettings object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Remove Component</a> :  <a href="../../../code_reference/class_reference/gravityeffect.html">gravityeffect</a></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Remove Component</a> :  <a href="../../../code_reference/class_reference/drageffect.html">drageffect</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Remove Component</a> :  <a href="../../../code_reference/class_reference/gravityeffect.html">gravityeffect</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Remove Component</a> :  <a href="../../../code_reference/class_reference/drageffect.html">drageffect</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>Player</code></li>
 <li>Under <a href="../../../code_reference/class_reference/sprite.html">Sprite</a></li>
 <li>Set VertexColor  to <code>[R:0, G:170, B:255, A:1.00]</code></li>
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/boxcollider.html">BoxCollider</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>PlayerMovement</code></li>
 </ul>
 <p>To get our player moving around we'll be using <a href="../../../code_reference/event_reference.html#logicupdate">LogicUpdate</a>, an <a href="../../../code_reference/class_reference/updateevent.html">updateevent</a> that is dispatched on the space object every frame. Movement can be easily added by polling which <a href="../../../code_reference/enum_reference.html#keys">Keys</a> are currently being pressed, if any, and updating the velocity of the object based on the keypress.</p>
@@ -162,11 +162,11 @@
 </code></pre>
 <ul>
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>PlayerMovement</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94456.gif" alt="KeyPolling"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <p><code>LogicUpdate</code> is the event and <code>this.OnLogicUpdate</code> is the event callback function. A callback function is a function passed as an argument into another function, with the expectation that it will be called in response to something.  An event callback function (in this case, this.OnLogicUpdate) is the function that is called every time a component (in this case, PlayerMovement) that is connected to some event (in this case, LogicUpdate) hears that the event has occurred (which is every frame in this instance). As <code>OnLogicUpdate</code> is called every frame, seamless movement can be achieved by updating the movement vector of the Cog within that function.</p>
 <h2 id="event-connections">Event Connections</h2>
@@ -184,7 +184,7 @@
 <tbody>
 <tr>
 <td><code>this.Space</code></td>
-<td><a href="../../../code_reference/class_reference/object.md"> Object</a></td>
+<td><a href="../../../code_reference/class_reference/object.md">Object</a></td>
 <td>The object onto which the event will be dispatched.</td>
 </tr>
 <tr>
@@ -194,7 +194,7 @@
 </tr>
 <tr>
 <td><code>this.OnLogicUpdate</code></td>
-<td><a href="../../zilchmanual/nada_in_zilch/delegates.html"> Delegate</a></td>
+<td><a href="../../zilchmanual/nada_in_zilch/delegates.html">Delegate</a></td>
 <td>The callback function for the event.</td>
 </tr>
 </tbody>
@@ -224,7 +224,7 @@
 <h3 id="collision-events">Collision Events</h3>
 <p>There are three main <a href="../../../code_reference/class_reference/collisionevent.html">Collision events</a>: <a href="../../../code_reference/event_reference.html#collisionstarted">CollisionStarted</a>, <a href="../../../code_reference/event_reference.html#collisionpersisted">CollisionPersisted</a>, and <a href="../../../code_reference/event_reference.html#collisionended">CollisionEnded</a>. When an object with a collider comes into contact with another collider, a CollisionStarted event is created by the physics engine and is dispatched that frame on both objects involved in the collision. In the following frames, if the object's colliders are still in contact, the CollisionPersisted event is dispatched on the objects. The first frame the colliders are no longer in contact the CollisionEnded event is dispatched on both objects. To demonstrate a Collision event, let's make a simple enemy sprite:</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>Enemy</code></li>
 <li>Under <a href="../../../code_reference/class_reference/transform.html">transform</a>
@@ -239,7 +239,7 @@
 </ul>
 <p>Now we need to create another component that will destroy the player cog in response to the collision event.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>DestroyOnCollide</code></li>
 <li>Update the <code>DestroyOnCollide</code> script to the following:</li>
 </ul>
@@ -257,18 +257,18 @@
 }
 </code></pre>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a> : Player object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Player object</li>
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>DestroyOnCollide</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94458.gif" alt="CircleAndSquare"> <em>Player cog being destroyed upon collision with an enemy cog.</em></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h3 id="destruction-events">Destruction Events</h3>
 <p>Another useful built-in event is the <a href="../../../code_reference/event_reference.html#cogdestroy">CogDestroy</a> event which is dispatched on a cog the frame its Destroy function is called. These can be used to add effects or to update the UI when the player or enemies have been destroyed. Let's create a component that will create a particle effect on the destruction of our player.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>SpawnObjectOnDestroy</code></li>
 <li>Update the <code>SpawnObjectOnDestroy</code> script to the following:</li>
 </ul>
@@ -295,13 +295,13 @@
 </code></pre>
 <ul>
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>SpawnObjectOnDestroy</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94459.gif" alt="DestructionEffect"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
-<p>Now we can see the particle system object being created in our event response function. In the <a href="events_ii.html"> next tutorial</a>, we will cover custom events, which are events you define and dispatch.</p>
+<p>Now we can see the particle system object being created in our event response function. In the <a href="events_ii.html">next tutorial</a>, we will cover custom events, which are events you define and dispatch.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="tutorial">Tutorial</h2>
 <ul>
@@ -334,22 +334,22 @@
 </ul>
 <h3 id="command">Command</h3>
 <ul>
-<li><a href="../../../code_reference/command_reference.html#newproject"> NewProject</a></li>
-<li><a href="../../../code_reference/command_reference.html#createsprite"> CreateSprite</a></li>
-<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
-<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#newproject">NewProject</a></li>
+<li><a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h3 id="event">Event</h3>
 <ul>
-<li><a href="../../../code_reference/event_reference.html#logicupdate"> LogicUpdate</a></li>
-<li><a href="../../../code_reference/event_reference.html#collisionstarted"> CollisionStarted</a></li>
-<li><a href="../../../code_reference/event_reference.html#collisionpersisted"> CollisionPersisted</a></li>
-<li><a href="../../../code_reference/event_reference.html#collisionended"> CollisionEnded</a></li>
-<li><a href="../../../code_reference/event_reference.html#cogdestroy"> CogDestroy</a></li>
+<li><a href="../../../code_reference/event_reference.html#logicupdate">LogicUpdate</a></li>
+<li><a href="../../../code_reference/event_reference.html#collisionstarted">CollisionStarted</a></li>
+<li><a href="../../../code_reference/event_reference.html#collisionpersisted">CollisionPersisted</a></li>
+<li><a href="../../../code_reference/event_reference.html#collisionended">CollisionEnded</a></li>
+<li><a href="../../../code_reference/event_reference.html#cogdestroy">CogDestroy</a></li>
 </ul>
 <h3 id="enums">Enums</h3>
 <ul>
-<li><a href="../../../code_reference/enum_reference.html#keys"> Keys</a></li>
+<li><a href="../../../code_reference/enum_reference.html#keys">Keys</a></li>
 </ul>
 <h3 id="nada-base-types">Nada Base Types</h3>
 <ul>

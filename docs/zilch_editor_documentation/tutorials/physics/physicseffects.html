@@ -95,15 +95,15 @@
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#newproject">New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite"> CreateSprite</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46396.gif" alt="FallingSquare"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h1 id="gravityeffect">GravityEffect</h1>
 <p>When running the game, we can see the square object falling. As we mentioned in previous tutorials, the <a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a> component allows an object to be subjected by physics forces. However, it is <strong>not</strong> the one responsible for the object falling.</p>
@@ -148,12 +148,12 @@
 <li>In the <code>Properties window</code></li>
 <li>Under <a href="../../../code_reference/class_reference/gravityeffect.html">GravityEffect</a></li>
 <li>Set Active checkBox to <code>false</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46414.png" alt="image"></p>
 <p>Notice that the Sprite object isn't being affected by gravity anymore. That's because components that produce physics effects, when attached to the LevelSettings object object, will apply that effect to all objects within the Space.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <p>Let's try and move the Sprite object in other ways:</p>
 <ul>
@@ -161,12 +161,12 @@
 <li>In the <code>Properties Window</code></li>
 <li>Under <a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
 <li>Set Velocity  to <code>[3.0, 0.0, 0.0]</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46429.gif" alt="SlowingSquare"></p>
 <p>The Sprite object appears to be moving in the desired direction and still isn't affected by gravity but it slowed down and stopped. But according to Newton's first law of motion; an object retains its movement at a constant velocity unless acted upon by an external force. So what external force caused our object to stop?</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h1 id="drageffect">DragEffect</h1>
 <p>Let's take a look again at the LevelSettings object:</p>
@@ -203,12 +203,12 @@
 </tbody>
 </table>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46484.gif" alt="EverMovingSquare"></p>
 <p>The <a href="../../../code_reference/class_reference/drageffect.html">DragEffect</a>  exists to simulate air resistance and other forces that would prevent your object from moving indefinitely.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h1 id="adding-physics-effects-to-objects">Adding Physics Effects to Objects</h1>
 <p>These effects can also be applied to individual objects, let's take a look:</p>
@@ -216,12 +216,12 @@
 <li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Sprite object</li>
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/gravityeffect.html">GravityEffect</a></li>
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/drageffect.html">DragEffect</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46396.gif" alt="FallingSquare"></p>
 <p>Now we get the same result we had initially, but we could tweak individual gravity and drag effects per object.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <p>WARNING: GravityEffect (and some other PhysicsEffects) have the LocalSpaceDirection checkBox property set to true by default. This means that, as the object rotates, the &quot;down direction&quot; will be constantly changing. Set LocalSpaceDirection checkBox to false to avoid this behavior.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/46531.gif" alt="TumblingSquare"></p>
@@ -248,8 +248,8 @@
 <h2 id="manual">Manual</h2>
 <ul>
 <li><a href="../../zilchmanual/physics/physicseffectsandregions.html">Physics Effects &amp; Regions</a></li>
-<li><a href="../../zilchmanual/physics/colliders.html"> Colliders </a></li>
-<li><a href="../../zilchmanual/physics/rigidbody.html"> RigidBody </a></li>
+<li><a href="../../zilchmanual/physics/colliders.html">Colliders</a></li>
+<li><a href="../../zilchmanual/physics/rigidbody.html">RigidBody</a></li>
 </ul>
 <h2 id="code-reference">Code Reference</h2>
 <h3 id="classes">Classes</h3>
@@ -267,9 +267,9 @@
 <h3 id="commands">Commands</h3>
 <ul>
 <li><a href="../../zilchmanual/editor/editorcommands/launchernewproject.html">Create a New 2D Project</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
-<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
-<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
+<li><a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 <li><a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
 </ul>
 

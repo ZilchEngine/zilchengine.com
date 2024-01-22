@@ -141,7 +141,7 @@
 </code></pre>
 <h1 id="object-comparison">Object Comparison</h1>
 <p>As seen in the first code block, object comparison is fairly common. However, there are a few details to be aware of when comparing objects by value vs. by reference.</p>
-<p>NOTE: To read about the details about by-value and by-reference objects, <a href="constructbyvaluevsbyref.html"> read the manual page</a>.</p>
+<p>NOTE: To read about the details about by-value and by-reference objects, <a href="constructbyvaluevsbyref.html">read the manual page</a>.</p>
 <h2 id="object-comparison-by-value">Object Comparison by Value</h2>
 <p>Take the following struct as a by-value example:</p>
 <pre><code class="lang-TS:&quot;ValueObj&quot;,">struct ValueObj
@@ -197,7 +197,7 @@ b &amp; c are equal: false
 </code></pre>
 <p>In this case, the <code>ReferenceObj</code> instances are constructed and compared by reference, so <code>b</code> is actually a copy of the reference <code>a</code> to the constructed <code>ReferenceObj</code>. This means that when <code>b.ValueOne</code> is set to <code>true</code>, the <code>ReferenceObj</code> instance that <code>a</code> references is modified, as <code>a</code> and <code>b</code> are in fact referencing the same <code>ReferenceObj</code> instance.  Furthermore, looking at <code>c</code>, one can see that when a new reference type instance is constructed, it is only copied and compared by reference, so even when two instances contain the same value(s), they will not be considered equal.</p>
 <h1 id="floating-point-comparison">Floating-Point Comparison</h1>
-<p>Due to floating-point error, it is best to avoid comparing two extremely precise or large values of floating-point types (such as <a href="../../../code_reference/nada_base_types/real.html"> Real</a>) with the <code>==</code> and <code>!=</code> operators. Consider:</p>
+<p>Due to floating-point error, it is best to avoid comparing two extremely precise or large values of floating-point types (such as <a href="../../../code_reference/nada_base_types/real.html">Real</a>) with the <code>==</code> and <code>!=</code> operators. Consider:</p>
 <pre><code class="lang-TS:&quot;Floating-Point">Console.WriteLine(2000000000.0 == 2000000042.0);
 </code></pre>
 <pre><code class="lang-name=Console">true

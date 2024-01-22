@@ -101,9 +101,9 @@
 <li>In the <code>Properties Window</code></li>
 <li>Under <a href="../../../code_reference/class_reference/camera.html">Camera</a></li>
 <li>Set Size  to <code>5</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>Rotate2D</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>Parent</code></li>
 <li>Under <a href="../../../code_reference/class_reference/transform.html">Transform</a></li>
@@ -160,17 +160,17 @@
 }
 </code></pre>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94054.gif" alt="RotateOnUpdate"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h1 id="local-vs-world-rotation">Local vs World Rotation</h1>
 <p>You may have noticed the name of the function <a href="../../../code_reference/class_reference/transform.html#rotateanglesworld-void">RotateAnglesWorld</a>, and wondered why there is also a <a href="../../../code_reference/class_reference/transform.html#rotateangleslocal-void">RotateAnglesLocal</a> function. Let's take a closer look at these functions.</p>
 <h2 id="parent-rotateworld">Parent RotateWorld</h2>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></p>
 </li>
 <li><p><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Sprite object</p>
 </li>
@@ -188,13 +188,13 @@
 </li>
 <li><p><a href="../architecture/hierarchies.html">Attach</a> Child object to Parent object</p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94069.gif" alt="RotateWorldParent"></p>
 <p>Now we can see that a child object rotates with its parent. You may have seen similar behavior when using the rotation tool with hierarchies in the past. It is important to note that the Child object maintains it's translation relative to the parent object as the parent object rotates.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h2 id="child-rotateworld">Child RotateWorld</h2>
 <ul>
@@ -204,13 +204,13 @@
 <li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Parent object</li>
 <li>In the <code>Properties Window</code></li>
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Remove Component</a> : <code>Rotate2D</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94071.gif" alt="RotateWorldChild"></p>
 <p>Here we can see that rotating the Child object has no affect on the Parent object.</p>
 <p>(NOTE)<a href="../../../code_reference/class_reference/transform.html#rotateworld-void">Transform.RotateWorld</a> vs <a href="../../../code_reference/class_reference/transform.html#rotatelocal-void">Transform.RotateLocal</a>: You may have noticed the RotateLocal function on Transform. <code>Local</code> and <code>World</code> refer to to the axes that the rotation will be applied to. RotateWorld rotates an object around its world axes, while RotateLocal rotates it around the axes of its parent object (if any). This is done by applying the rotation of the parent object to the child after the child applies its own rotation.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h1 id="rotating-with-actions">Rotating with Actions</h1>
 <p>Rotating on update is useful when trying to rotate in a specific direction, continuously, or more than 360 degrees. However, we often want an object to make quick small rotations to a specific target rotation. This is where rotating with <a href="../scripting/actions.html">Actions</a> is very convenient.</p>
@@ -240,12 +240,12 @@
 }
 </code></pre>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94073.gif" alt="ActionRotate"></p>
 <p><em>Rotating the child object to 45 degrees on the Z-axis using an Action</em></p>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></p>
 </li>
 <li><p><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Child object</p>
 </li>
@@ -255,20 +255,20 @@
 </li>
 <li><p>Set <code>TargetRotation</code> to <code>[0,0,405]</code></p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94073.gif" alt="ActionRotate"></p>
 <p><em>Rotating the child object to 405 degrees on the Z-axis using an Action</em></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <p>Notice how both rotations appear the same. Now one may expect the object to make a full 405 degree rotation. However, in the constructor of <a href="../../../code_reference/nada_base_types/quaternion.html">Quaternion</a> the angle is normalized to the range of <code>[0, 360]</code> degrees. Since 405 degrees is equivalent to 45 degrees, that is the rotation of the <a href="../../../code_reference/nada_base_types/quaternion.html">Quaternion</a> that is passed to the action constructor.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
 <li><a href="../../zilchmanual/editor/editorcommands/launchernewproject.html">Create a New 2D Project</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>{icon university}[[zilch_engine_documentation/zilch_editor_documentation/zilchmanual/editor/addremovecomponent/|Add/Remove Component]]</li>
 </ul>
 <h2 id="tutorials">Tutorials</h2>
@@ -286,8 +286,8 @@
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
-<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 <li><a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
 </ul>
 <h2 id="tasks">Tasks</h2>

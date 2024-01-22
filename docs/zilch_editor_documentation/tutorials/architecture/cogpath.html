@@ -95,7 +95,7 @@
 <h1 id="level-setup">Level Setup</h1>
 <p>First we will make the ground and player objects.</p>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#newproject">New Project</a></p>
 </li>
 <li><p>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</p>
 </li>
@@ -147,12 +147,12 @@
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Add component</a> : <a href="../../../code_reference/class_reference/rigidbody.html">rigidbody</a></li>
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Add component</a> : <a href="../../../code_reference/class_reference/boxcollider.html">boxcollider</a></li>
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Add component</a> : <code>PlayerController</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 <li>Press <code>Left</code>, <code>Right</code>, <code>Up</code> and <code>Down</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90208.gif" alt="simpleinput"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h1 id="the-follower">The Follower</h1>
 <ul>
@@ -210,14 +210,14 @@
 <ul>
 <li><p>Set <code>name=PlayerCogPath, icon=pencil-square-o</code> to reference the Player object</p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></p>
 </li>
 <li><p>Press <code>Left</code>, <code>Right</code>, <code>Up</code> and <code>Down</code></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90220.gif" alt="Follower"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h1 id="cogpaths-and-hierarchies">CogPaths and Hierarchies</h1>
 <ul>
@@ -249,12 +249,12 @@
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90364.gif" alt="PlayerToParent"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 <li>Press <code>Left</code>, <code>Right</code>, <code>Up</code> and <code>Down</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90230.gif" alt="TestChildPlayer"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <p>It can be seen that the Player object moves independently of its parent object do to it having its own RigidBody. However, you may be wondering why the follower no longer goes to the same position as the Player object. If you remember from <a href="hierarchies.html">Hierarchies I</a>, Player object is now a child object meaning its <code>name=Translation, icon=pencil-square-o</code> is measured relative to it's paren object. Since the <code>FollowerController</code> was not changed to use the explicit <code>name=WorldTranslation, icon=pencil-square-o</code> of the Player object, the Follower object moves to the same offset of the Player object as it starts with its Parent object.</p>
 <ul>
@@ -280,21 +280,21 @@
 }
 </code></pre>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></p>
 </li>
 <li><p>Press <code>Left</code>, <code>Right</code>, <code>Up</code> and <code>Down</code></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/90366.gif" alt="FollowWorldTrans"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <p>Now the Follower object follows the Player object <code>name=WorldTranslation, icon=pencil-square-o</code> correctly.</p>
 <h1 id="related-materials">Related Materials</h1>
 <h1 id="manual">Manual</h1>
 <ul>
 <li><a href="../../zilchmanual/editor/cogpathsmanual.html">CogPaths</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 </ul>
 <h1 id="tutorials">Tutorials</h1>
 <ul>
@@ -311,8 +311,8 @@
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
-<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 <li><a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
 </ul>
 <h1 id="tasks">Tasks</h1>

@@ -96,25 +96,25 @@
 <h1 id="level-setup">Level Setup</h1>
 <p>Before jumping into how CollisionGroups are used, we need to set up a simulation to use them in.</p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#newproject"> New Project</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#newproject">New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sprite object to <code>Platform</code></li>
 <li>Under <a href="../../../../code_reference/class_reference/transform.html">Transform</a></li>
 <li>Set Scale  to <code>[10,1,1]</code></li>
 <li><a href="../../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../../code_reference/class_reference/boxcollider.html">BoxCollider</a></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#createsphere">CreateSphere</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#createsphere">CreateSphere</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename Sphere object to <code>DefaultSphere</code></li>
 <li>Under <a href="../../../../code_reference/class_reference/transform.html">Transform</a></li>
 <li>Set Translation  to <code>[-3,5,0]</code></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#dupliate">Duplicate</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#dupliate">Duplicate</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the duplicate DefaultSphere object to <code>SkipResolutionSphere</code></li>
 <li>Under <a href="../../../../code_reference/class_reference/transform.html">Transform</a></li>
 <li>Set Translation  to <code>[0,5,0]</code></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#dupliate">Duplicate</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#dupliate">Duplicate</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the duplicate SkipResolutionSphere object to <code>SkipDetectionSphere</code></li>
 <li>Under <a href="../../../../code_reference/class_reference/transform.html">Transform</a></li>
@@ -125,29 +125,29 @@
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94461.png" alt="image"></p>
 <p><em>CollisionGroup enum property on the <a href="../../../../code_reference/class_reference/spherecollider.html">SphereCollider</a> component</em></p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a CollisionGroup resource using the Default template template and name it <code>SkipResolution</code></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a CollisionGroup resource using the Default template template and name it <code>SkipDetection</code></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a> : SkipResolutionSphere object</li>
+<li><a href="../../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : SkipResolutionSphere object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="../../../../code_reference/class_reference/spherecollider.html"> SphereCollider</a></li>
+<li>Under <a href="../../../../code_reference/class_reference/spherecollider.html">SphereCollider</a></li>
 <li>Set CollisionGroup enum to <code>SkipResolution</code></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a> : SkipDetectionSphere object</li>
+<li><a href="../../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : SkipDetectionSphere object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="../../../../code_reference/class_reference/spherecollider.html"> SphereCollider</a></li>
+<li>Under <a href="../../../../code_reference/class_reference/spherecollider.html">SphereCollider</a></li>
 <li>Set CollisionGroup enum to <code>SkipDetection</code></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94463.gif" alt="notable"></p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <p>You will notice that the behavior of the balls has not changed as of yet. This is because in order for CollisionGroups to be used, they must be included in the space's <a href="../../../../code_reference/class_reference/collisiontable.html">CollisionTable</a>.</p>
 <h1 id="collisiontables">CollisionTables</h1>
 <p>A <a href="../../../../code_reference/class_reference/collisiontable.html">CollisionTable</a> defines the relationship between CollisionGroup pairs.</p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a>
 <ul>
 <li>Create a CollisionTable resource using the Default template template and name it <code>GameTable</code></li>
 </ul>
@@ -165,15 +165,15 @@
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94835.gif" alt="setting_Tables"></p>
 <ul>
 <li>Close the <code>CollisionTableEditor Window</code></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94463.gif" alt="notable"></p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <p>You are probably wondering why the groups still aren't working. There is still one more step to perform for the groups to take effect: we have to tell the Space to use the CollisionTable we have created instead of the default CollisionTable.</p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#selectspace"> SelectSpace</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#selectspace">SelectSpace</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Under <a href="../../../../code_reference/class_reference/physicsspace.html">PhysicsSpace</a></li>
 <li>Set CollisionTable enum to <code>GameTable</code></li>
@@ -181,15 +181,15 @@
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94469.png" alt="image"></p>
 <p><em>Setting the CollisionTable enum property for the Space</em></p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94471.gif" alt="noprint"></p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <p>Now we can see the two spheres, which are set up to skip resolution and detection respectively, fall through the platform as expected. We still need to prove to ourselves, however, that the SkipResolutionSphere object is still at least detecting the collision.</p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>PrintCollision</code></li>
 <li>Update the <code>PrintCollision</code> script to the following:</li>
 </ul>
@@ -207,19 +207,19 @@
 }
 </code></pre>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a> : SkipResolutionSphere object</li>
+<li><a href="../../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : SkipResolutionSphere object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>PrintCollision</code></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a> : SkipDetectionSphere object</li>
+<li><a href="../../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>PrintCollision</code></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : SkipDetectionSphere object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>PrintCollision</code></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#console"> Console</a></li>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>PrintCollision</code></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#console">Console</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94783.gif" alt="printcollision"></p>
 <p><em>CollisionGroups properly configured, and printing collision detection</em></p>
 <ul>
-<li><a href="../../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <p>As can be seen by the printed message in the above image, the SkipResolutionSphere object is indeed detecting collision, whereas the SkipDetectionSphere object is not.</p>
 <p>Collision groups and tables allow for a lot of flexibility in the usage of collision for game logic. They can also allow for significant performance improvement in games that heavily use physics.</p>
@@ -235,10 +235,10 @@
 <h2 id="reference">Reference</h2>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="../../../../code_reference/command_reference.html#createsprite"> CreateSprite</a></li>
-<li><a href="../../../../code_reference/command_reference.html#createsphere"> CreateSphere</a></li>
-<li><a href="../../../../code_reference/command_reference.html#duplicate"> Duplicate</a></li>
-<li><a href="../../../../code_reference/command_reference.html#selectspace"> SelectSpace</a></li>
+<li><a href="../../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="../../../../code_reference/command_reference.html#createsphere">CreateSphere</a></li>
+<li><a href="../../../../code_reference/command_reference.html#duplicate">Duplicate</a></li>
+<li><a href="../../../../code_reference/command_reference.html#selectspace">SelectSpace</a></li>
 </ul>
 <h3 id="classes">Classes</h3>
 <ul>
@@ -250,11 +250,11 @@
 </ul>
 <h3 id="events">Events</h3>
 <ul>
-<li><a href="../../../../code_reference/event_reference.html#collisionstarted"> CollisionStarted</a></li>
+<li><a href="../../../../code_reference/event_reference.html#collisionstarted">CollisionStarted</a></li>
 </ul>
 <h3 id="enums">Enums</h3>
 <ul>
-<li><a href="../../../../code_reference/enum_reference.html#collisionfiltercollision"> CollisionFilterCollisionFlags</a></li>
+<li><a href="../../../../code_reference/enum_reference.html#collisionfiltercollision">CollisionFilterCollisionFlags</a></li>
 </ul>
 <h2 id="development-task">Development Task</h2>
 <ul>

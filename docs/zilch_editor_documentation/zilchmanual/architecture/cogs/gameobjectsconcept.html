@@ -86,10 +86,10 @@
 
         <article data-uid="">
 
-<p>Game objects in the Zilch Engine (game object compositions, or COGs) are not defined using classes. Instead they are collections of components, each of which provide a certain functionality to the object. A component can be data, behavior, and/or a link to a system. For example, an Cog called &quot;Ball&quot; might be a composition that includes the <a href="../../../../code_reference/class_reference/transform.html"> Transform  </a> (position, rotation, etc.), <a href="../../graphics/models.html"> Model  </a> (geometry, textures, etc.), <a href="../../physics/rigidbody.html"> RigidBody  </a> (movement), and Collider (shape, collision, etc.) components, while a &quot;Main Camera&quot; object would include Transform, Controller (mouse or keyboard input, etc.), and Camera (field of view, zoom, etc.). Or you could create a &quot;Ball Camera,&quot; with Transform, Model, Rigid Body, Collider, Controller, and Camera.</p>
+<p>Game objects in the Zilch Engine (game object compositions, or COGs) are not defined using classes. Instead they are collections of components, each of which provide a certain functionality to the object. A component can be data, behavior, and/or a link to a system. For example, an Cog called &quot;Ball&quot; might be a composition that includes the <a href="../../../../code_reference/class_reference/transform.html">Transform </a> (position, rotation, etc.), <a href="../../graphics/models.html">Model </a> (geometry, textures, etc.), <a href="../../physics/rigidbody.html">RigidBody </a> (movement), and Collider (shape, collision, etc.) components, while a &quot;Main Camera&quot; object would include Transform, Controller (mouse or keyboard input, etc.), and Camera (field of view, zoom, etc.). Or you could create a &quot;Ball Camera,&quot; with Transform, Model, Rigid Body, Collider, Controller, and Camera.</p>
 <p>One of the keys to working with a component based engine is to think of objects in terms of what they do, not what they are. If you have a hospital, a soldier, and a medic, the hospital and the medic have a healing component, while the soldier and the medic have a mobility component, but you don't need to group one as a building and the other two as infantry. All the game engine cares about is what the object can do. You might see a ball and a car as different types of things, but to the game engine they are both objects composed of Transform, Model, Rigid Body and Collider. They have the same functionality: the only difference is their data.</p>
 <h1 id="creating-a-cog">Creating a Cog</h1>
-<p>The easiest way to start creating your own cog is to start with a command that generates one for you, e.g. <a href="../../../../code_reference/command_reference.html#createsprite"> CreateSprite </a>, <a href="../../../../code_reference/command_reference.html#createcube"> CreateCube </a>, <a href="../../../../code_reference/command_reference.html#createtransform"> CreateTransform </a>, etc. These create cogs that you can then customize by adding or removing components and setting their properties in the Properties Window.</p>
+<p>The easiest way to start creating your own cog is to start with a command that generates one for you, e.g. <a href="../../../../code_reference/command_reference.html#createsprite">CreateSprite</a>, <a href="../../../../code_reference/command_reference.html#createcube">CreateCube</a>, <a href="../../../../code_reference/command_reference.html#createtransform">CreateTransform</a>, etc. These create cogs that you can then customize by adding or removing components and setting their properties in the Properties Window.</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47151.png" alt="image"></p>
 <h2 id="copy--paste">Copy &amp; Paste</h2>
 <p>When creating a new object, you can always copy and paste other objects and alter their properties from there. The copy and paste functionality places the same information on the clipboard that it does when saving.</p>
@@ -135,15 +135,15 @@
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="code-reference">Code Reference</h2>
 <ul>
-<li><a href="../../../../code_reference/class_reference/transform.html"> Transform  </a></li>
-<li><a href="../../../../code_reference/command_reference.html#createsprite"> CreateSprite </a></li>
-<li><a href="../../../../code_reference/command_reference.html#createcube"> CreateCube </a></li>
-<li><a href="../../../../code_reference/command_reference.html#createtransform"> CreateTransform </a></li>
+<li><a href="../../../../code_reference/class_reference/transform.html">Transform </a></li>
+<li><a href="../../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="../../../../code_reference/command_reference.html#createcube">CreateCube</a></li>
+<li><a href="../../../../code_reference/command_reference.html#createtransform">CreateTransform</a></li>
 </ul>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="../../graphics/models.html"> Model  </a></li>
-<li><a href="../../physics/rigidbody.html"> RigidBody  </a></li>
+<li><a href="../../graphics/models.html">Model </a></li>
+<li><a href="../../physics/rigidbody.html">RigidBody </a></li>
 </ul>
 
 </article>

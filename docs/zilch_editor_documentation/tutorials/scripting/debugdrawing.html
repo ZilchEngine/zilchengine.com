@@ -90,12 +90,12 @@
 <ul>
 <li>Drawing debug primitives</li>
 </ul>
-<p>Often when developing a game we may we run into data that is hard to interpret from just printing to the <a href="../../../code_reference/nada_base_types/console.html">console</a>. Values such as <a href="../../../code_reference/class_reference/rigidbody.html#velocity-zilch-engine-doc">Velocity</a> or the direction a <a href="../../../code_reference/class_reference/cog.html"> Cog </a> is facing are better represented visually than by numerical values. DebugDraw objects are a useful debuging technique that allows us to draw simple primitives to visually represent data in the game itself.</p>
+<p>Often when developing a game we may we run into data that is hard to interpret from just printing to the <a href="../../../code_reference/nada_base_types/console.html">console</a>. Values such as <a href="../../../code_reference/class_reference/rigidbody.html#velocity-zilch-engine-doc">Velocity</a> or the direction a <a href="../../../code_reference/class_reference/cog.html">Cog</a> is facing are better represented visually than by numerical values. DebugDraw objects are a useful debuging technique that allows us to draw simple primitives to visually represent data in the game itself.</p>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#newproject">New Project</a></p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createcube"> CreateCube</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createcube">CreateCube</a></p>
 </li>
 <li><p>In the <code>Properties Window</code></p>
 </li>
@@ -105,9 +105,9 @@
 </li>
 <li><p>Set Scale  to <code>[20, 1, 1]</code></p>
 </li>
-<li><p><a href="../../zilchmanual/editor/addremovecomponent.html"> Remove Component</a> : <a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></p>
+<li><p><a href="../../zilchmanual/editor/addremovecomponent.html">Remove Component</a> : <a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></p>
 </li>
 <li><p>Create a NadaScript resource using the Component template template and name it <code>DebugLauncher</code></p>
 </li>
@@ -162,19 +162,19 @@
 </code></pre>
 <p>Notice we use <a href="../../../code_reference/event_reference.html#frameupdate">FrameUpdate</a> as opposed to <a href="../../../code_reference/event_reference.html#logicupdate">LogicUpdate</a>. Generally, debug drawing should still occur when a <a href="../../../code_reference/class_reference/timespace.html">TimeSpace</a> is paused, and FrameUpdate is sent every frame, whether a space is paused or not.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsphere"> CreateSphere</a></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>DebugLauncher</code></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createsphere">CreateSphere</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>DebugLauncher</code></li>
 <li>In the <code>Properties Window</code></li>
 <li>Under <code>DebugLauncher</code></li>
 <li>Set Camera  to GameCamera object</li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 <li><code>Click + Hold</code> and <code>Release</code> around on the screen above the platform</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98966.gif" alt="DebugLauncher"></p>
 <p>NOTE: The yellow circle overlaying the cursor is added to the image by the screen-capture program after it is captured to indicate when the mouse button is down.</p>
 <p>We can see when the mouse button is released that the velocity of the ball is set and the ball launches towards the cursor position. This is a prime example of a physics-based behavior that can be hard to debug or tune without further visual assistance.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h1 id="debugline">DebugLine</h1>
 <p>One of the most common debug draw type is <a href="../../../code_reference/class_reference/debugline.html">DebugLine</a>, which is actually a line segment as it has start and end points.</p>
@@ -196,17 +196,17 @@
 </code></pre>
 <p>Calling our <code>DrawDebug</code> function every frame that the mouse is down allows our drawing of the line segment to be reactive to when we want to communicate the information about the launch velocity. Integrating debug drawing into functionality you are implementing is a fairly common task.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 <li><code>Click + Hold</code> and <code>Release</code> around on the screen above the platform</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98968.gif" alt="DebugLauncherDraw"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h1 id="debugcircle">DebugCircle</h1>
-<p>There are many types that can be debug drawn, as can be seen in the <a href="debugdrawing/.md#related_materials">Related Materials</a><a href="../../../code_reference/class_reference/debugcircle.html">DebugCircle</a>, which will be used to make a clock.</p>
+<p>There are many types that can be debug drawn, as can be seen in the <a href="debugdrawing.html#related_materials">Related Materials</a><a href="../../../code_reference/class_reference/debugcircle.html">DebugCircle</a>, which will be used to make a clock.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>DebugClock</code></li>
 <li>Update the <code>DebugClock</code> class to the following:</li>
 </ul>
@@ -240,17 +240,17 @@
 }
 </code></pre>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createtransform"> CreateTransform</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createtransform">CreateTransform</a></p>
 </li>
-<li><p><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>DebugClock</code></p>
+<li><p><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>DebugClock</code></p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98979.png" alt="image"></p>
 <p>We can see the <a href="../../../code_reference/class_reference/debugcircle.html">DebugCircle</a> being drawn in the background now. Just like we set the color of the line we can set the color of the circle.</p>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></p>
 </li>
 <li><p>Add the following to the <code>DebugClock</code> class:</p>
 </li>
@@ -348,7 +348,7 @@ function DrawMinuteHand()
 }
 </code></pre>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></p>
 </li>
 <li><p>Watch the clock</p>
 </li>
@@ -357,14 +357,14 @@ function DrawMinuteHand()
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/98983.gif" alt="Clock2"></p>
 <p><em>Here we see the clock in motion at different point in it's cycle</em></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <p>Now we know how to debug draw simple objects. Let's look at a more complicated built-in example.</p>
 <h1 id="vortexeffect">VortexEffect</h1>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createtransform"> CreateTransform</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createtransform">CreateTransform</a></li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <a href="../../../code_reference/class_reference/vortexeffect.html">VortexEffect</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <a href="../../../code_reference/class_reference/vortexeffect.html">VortexEffect</a></li>
 <li>Under <a href="../../../code_reference/class_reference/transform.html">Transform</a></li>
 <li>Set Translation  to <code>[0,5,0]</code></li>
 <li>Under <a href="../../../code_reference/class_reference/vortexeffect.html">VortexEffect</a></li>
@@ -375,10 +375,10 @@ function DrawMinuteHand()
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Remove Component</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Remove Component</a></li>
 </ul>
 <h2 id="tutorial">Tutorial</h2>
 <ul>
@@ -387,7 +387,7 @@ function DrawMinuteHand()
 <h2 id="reference">Reference</h2>
 <h3 id="classes">Classes</h3>
 <ul>
-<li><a href="../../../code_reference/class_reference/cog.html"> Cog </a></li>
+<li><a href="../../../code_reference/class_reference/cog.html">Cog</a></li>
 <li><a href="../../../code_reference/nada_base_types/console.html">Console</a></li>
 <li><a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
 <li><a href="../../../code_reference/class_reference/debugarc.html">DebugArc</a></li>
@@ -407,15 +407,15 @@ function DrawMinuteHand()
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><p><a href="../../../code_reference/command_reference.html#newproject"> New Project</a></p>
+<li><p><a href="../../../code_reference/command_reference.html#newproject">New Project</a></p>
 </li>
-<li><p><a href="../../../code_reference/command_reference.html#createtransform"> CreateTransform</a></p>
+<li><p><a href="../../../code_reference/command_reference.html#createtransform">CreateTransform</a></p>
 </li>
-<li><p><a href="../../../code_reference/command_reference.html#createcube"> CreateCube</a></p>
+<li><p><a href="../../../code_reference/command_reference.html#createcube">CreateCube</a></p>
 </li>
-<li><p><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></p>
 </li>
-<li><p><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></p>
+<li><p><a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></p>
 </li>
 </ul>
 <h2 id="development-task">Development Task</h2>

@@ -86,38 +86,38 @@
 
         <article data-uid="">
 
-<p><a href="../../../code_reference/class_reference/soundcue.html"> SoundCues </a> are a fundamental part of playing audio in the Zilch Engine. However the user chooses to play a sound, they will need to use a SoundCue to play it. SoundCues allow the user to modify various properties without affecting the original <a href="sound.html">Sound </a> resource: the same Sound can be applied to different SoundCues, have different property values on the SoundCue, and end up sounding completely different.</p>
+<p><a href="../../../code_reference/class_reference/soundcue.html">SoundCues</a> are a fundamental part of playing audio in the Zilch Engine. However the user chooses to play a sound, they will need to use a SoundCue to play it. SoundCues allow the user to modify various properties without affecting the original <a href="sound.html">Sound</a> resource: the same Sound can be applied to different SoundCues, have different property values on the SoundCue, and end up sounding completely different.</p>
 <h1 id="common-uses">Common Uses</h1>
 <ul>
-<li>Playing sounds with a <a href="simplesound.html">SimpleSound </a> component</li>
-<li>Playing sounds at runtime using methods on <a href="soundemitter.html">SoundEmitters </a> or <a href="soundspace.html">SoundSpaces </a></li>
-<li>Playing sounds directly on a <a href="soundnode.html">SoundNode </a></li>
+<li>Playing sounds with a <a href="simplesound.html">SimpleSound</a> component</li>
+<li>Playing sounds at runtime using methods on <a href="soundemitter.html">SoundEmitters</a> or <a href="soundspace.html">SoundSpaces</a></li>
+<li>Playing sounds directly on a <a href="soundnode.html">SoundNode</a></li>
 </ul>
 <h1 id="using-soundcues">Using SoundCues</h1>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47918.png" alt="SoundCue1"></p>
-<p>If a SoundCue has multiple Sounds attached it can either randomly select which Sound to use each time it is played or it can play them sequentially. Each time a SoundCue is played it creates a new <a href="soundinstance.html">SoundInstance </a>, which can then be accessed in NadaScripts to control the sound as it's playing. Changing properties on the SoundInstance does not affect the properties on the SoundCue.</p>
+<p>If a SoundCue has multiple Sounds attached it can either randomly select which Sound to use each time it is played or it can play them sequentially. Each time a SoundCue is played it creates a new <a href="soundinstance.html">SoundInstance</a>, which can then be accessed in NadaScripts to control the sound as it's playing. Changing properties on the SoundInstance does not affect the properties on the SoundCue.</p>
 <h2 id="volume-settings">Volume Settings</h2>
 <p>The Volume  and  Decibels  properties set the volume adjustment that is applied to a sound when the SoundCue is played. The Volume  property uses floating point values, while the Decibels  property uses the logarithmic decibel scale commonly used in audio. These properties are linked, so changing one will also change the value of the other.</p>
 <p>If UseDecibelVariation checkBox is checked, the DecibelVariation  property will be shown in the Property Window and will be used when randomizing the volume of a new SoundInstance. If not checked, the VolumeVariation  property will be shown and used for randomization. These properties set how much the volume of SoundInstances will be randomized each time the SoundCue plays. For instance, if the Volume  value is <code>1</code> and VolumeVariation  is <code>0.5</code> the volume of the SoundInstance will be chosen randomly from between <code>0.5</code> and <code>1.5</code>.</p>
-<p>Note that these volume changes will be multiplied together with any other volume modifications applied by objects such as <a href="soundtag.html">SoundTags </a>, SoundEmitters, and SoundSpaces. If a SoundCue's volume is set to <code>0.5</code> and it is played on a SoundEmitter which also has a volume of <code>0.5</code>, this effectively sets the resulting SoundInstance's volume to <code>0.25</code>.</p>
+<p>Note that these volume changes will be multiplied together with any other volume modifications applied by objects such as <a href="soundtag.html">SoundTags</a>, SoundEmitters, and SoundSpaces. If a SoundCue's volume is set to <code>0.5</code> and it is played on a SoundEmitter which also has a volume of <code>0.5</code>, this effectively sets the resulting SoundInstance's volume to <code>0.25</code>.</p>
 <h2 id="pitch-settings">Pitch Settings</h2>
 <p>The  Pitch  and  Semitones  properties set the pitch adjustment that is applied to the SoundInstance whenever the SoundCue is played. This adjustment affects both the pitch and speed of the sound: higher-pitched sounds will play faster, while lower-pitched sounds play slower. Large pitch changes will likely affect the quality of the sound. The  Pitch  property uses floating point values, while the Semitones  property uses semitones, or half-steps. These properties are linked, so changing one will also change the value of the other.</p>
 <p>If UseSemitoneVariation checkBox is checked, the  SemitoneVariation  property will be shown in the Property Window and will be used when randomizing the pitch of a new SoundInstance. If not checked, the  PitchVariation  property will be shown and used for randomization. These properties set how much the pitch of SoundInstances will be randomized every time the SoundCue plays. For instance, if the  Pitch  value is <code>0</code> and  PitchVariation  is <code>0.3</code> the pitch of the SoundInstance will be chosen randomly from between <code>-0.3</code> and <code>0.3</code>.</p>
 <p>Note that these changes will be combined with any other pitch modifications applied by objects such as SoundEmitters and SoundSpaces. If a SoundInstance's  Semitones  is set to <code>12</code> and it is played on a SoundEmitter with a  Semitones  value of <code>-6</code>, this effectively raises the SoundInstance's pitch by 6 semitones.</p>
 <h2 id="attenuation">Attenuation</h2>
-<p>If a <a href="soundattenuator.html">SoundAttenuator </a> resource other than <code>DefaultNoAttenuation</code> is selected its settings will be used when the SoundCue is played on a SoundEmitter to change the sound's volume depending on the distance to a <a href="soundlistener.html">SoundListener </a>. Otherwise, either the attenuation settings on the SoundEmitter will be used, or if the SoundEmitter has no settings, the sound will not be attenuated.</p>
+<p>If a <a href="soundattenuator.html">SoundAttenuator</a> resource other than <code>DefaultNoAttenuation</code> is selected its settings will be used when the SoundCue is played on a SoundEmitter to change the sound's volume depending on the distance to a <a href="soundlistener.html">SoundListener</a>. Otherwise, either the attenuation settings on the SoundEmitter will be used, or if the SoundEmitter has no settings, the sound will not be attenuated.</p>
 <h2 id="music-notification-settings">Music Notification Settings</h2>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47920.png" alt="SoundCue2"></p>
 <p>If the ShowMusicOptions checkBox box is checked, fields will be shown for setting the speed and time signature of a music file. The two numbers in the time signature tell how many beats are in each measure of music and what type of note has the beat. For instance, a time signature of 4/4 has four quarter note beats per measure, and 3/8 has three eighth note beats.</p>
-<p>If all three of the fields are set to values other than zero, whenever the SoundCue is played the resulting SoundInstance will send Nada events for every bar, beat, whole note, half note, quarter note, and eighth note (see the <a href="soundinstance.html">SoundInstance </a> page for more details).</p>
+<p>If all three of the fields are set to values other than zero, whenever the SoundCue is played the resulting SoundInstance will send Nada events for every bar, beat, whole note, half note, quarter note, and eighth note (see the <a href="soundinstance.html">SoundInstance</a> page for more details).</p>
 <h2 id="soundentries">SoundEntries</h2>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47922.png" alt="SoundEntry"></p>
-<p>Each <a href="../../../code_reference/class_reference/soundentry.html"> SoundEntry </a> holds a Sound which can be played by the SoundCue. SoundEntries have properties to control when the audio file starts and stops, when it starts looping and stops looping, and whether it should cross-fade audio after it loops.</p>
+<p>Each <a href="../../../code_reference/class_reference/soundentry.html">SoundEntry</a> holds a Sound which can be played by the SoundCue. SoundEntries have properties to control when the audio file starts and stops, when it starts looping and stops looping, and whether it should cross-fade audio after it loops.</p>
 <h2 id="soundtagentries">SoundTagEntries</h2>
-<p>Every <a href="soundtag.html"> SoundTag </a> in the list of SoundTagEntries will be applied to the resulting SoundInstance whenever a SoundCue is played. SoundTags allow the user to control SoundInstances as a group. See the <a href="soundtag.html">SoundTag </a> page for more information.</p>
+<p>Every <a href="soundtag.html">SoundTag</a> in the list of SoundTagEntries will be applied to the resulting SoundInstance whenever a SoundCue is played. SoundTags allow the user to control SoundInstances as a group. See the <a href="soundtag.html">SoundTag</a> page for more information.</p>
 <h2 id="nada-events">Nada Events</h2>
 <ul>
-<li>The <code>SoundCuePrePlay</code> <a href="../../../code_reference/class_reference/soundinstanceevent.html"> SoundInstanceEvent  </a> is sent just before a SoundInstance is played.</li>
+<li>The <code>SoundCuePrePlay</code> <a href="../../../code_reference/class_reference/soundinstanceevent.html">SoundInstanceEvent </a> is sent just before a SoundInstance is played.</li>
 <li>The <code>SoundCuePostPlay</code> SoundInstanceEvent is sent immediately afterward.</li>
 </ul>
 <p>The following code block shows how to connect to the <code>SoundCuePrePlay</code> event and change the SoundInstance's volume before it plays.</p>
@@ -137,22 +137,22 @@ function OnCuePlay(event : SoundInstanceEvent)
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="sound.html">Sound </a></li>
-<li><a href="simplesound.html">SimpleSound </a></li>
-<li><a href="soundemitter.html">SoundEmitter </a></li>
-<li><a href="soundspace.html">SoundSpace </a></li>
-<li><a href="soundnode.html">SoundNode </a></li>
-<li><a href="soundinstance.html">SoundInstance </a></li>
-<li><a href="soundtag.html">SoundTag </a></li>
-<li><a href="soundattenuator.html">SoundAttenuator </a></li>
-<li><a href="soundlistener.html">SoundListener </a></li>
+<li><a href="sound.html">Sound</a></li>
+<li><a href="simplesound.html">SimpleSound</a></li>
+<li><a href="soundemitter.html">SoundEmitter</a></li>
+<li><a href="soundspace.html">SoundSpace</a></li>
+<li><a href="soundnode.html">SoundNode</a></li>
+<li><a href="soundinstance.html">SoundInstance</a></li>
+<li><a href="soundtag.html">SoundTag</a></li>
+<li><a href="soundattenuator.html">SoundAttenuator</a></li>
+<li><a href="soundlistener.html">SoundListener</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="../../../code_reference/class_reference/soundcue.html"> SoundCue </a></li>
-<li><a href="../../../code_reference/class_reference/soundentry.html"> SoundEntry </a></li>
-<li><a href="../../../code_reference/class_reference/soundtag.html"> SoundTag </a></li>
-<li><a href="../../../code_reference/class_reference/soundinstanceevent.html"> SoundInstanceEvent </a></li>
+<li><a href="../../../code_reference/class_reference/soundcue.html">SoundCue</a></li>
+<li><a href="../../../code_reference/class_reference/soundentry.html">SoundEntry</a></li>
+<li><a href="../../../code_reference/class_reference/soundtag.html">SoundTag</a></li>
+<li><a href="../../../code_reference/class_reference/soundinstanceevent.html">SoundInstanceEvent</a></li>
 </ul>
 
 </article>

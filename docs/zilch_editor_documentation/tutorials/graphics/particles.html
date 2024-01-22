@@ -89,14 +89,14 @@
 <p>Particles are a great way to polish your game and are used for a variety of effects. The concept of a particle system is essentially a set of non-cog sprites which have a set of initial conditions and possible animation. Particle systems allow us to create thousands of small sprites and simulate physics for them with only one Cog. Particles are a deep topic and this lesson will only cover the basics.</p>
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
-<li><a href="../../../code_reference/class_reference/particleemittershared.html"> ParticleEmitters</a></li>
-<li><a href="../../../code_reference/class_reference/particleanimator.html"> ParticleAnimators</a></li>
+<li><a href="../../../code_reference/class_reference/particleemittershared.html">ParticleEmitters</a></li>
+<li><a href="../../../code_reference/class_reference/particleanimator.html">ParticleAnimators</a></li>
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#newproject">New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createspriteparticles">CreateSpriteParticles</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createspriteparticles">CreateSpriteParticles</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94837.gif" alt="BaseParticles"></p>
 <p>The first thing to realize is that particle systems require more than just one component to actually create, animate, and render particles. Let's look at the first component on the cog we just created, <a href="../../../code_reference/class_reference/spriteparticlesystem.html">SpriteParticleSystem</a>.</p>
@@ -184,7 +184,7 @@
 <h1 id="particle-color-animator">Particle Color Animator</h1>
 <p>The last thing we need in this particle system is to change the color throughout each particle's lifetime. The <a href="../../../code_reference/class_reference/particlecoloranimator.html">ParticleColorAnimator</a> allows you to choose a gradient which will change the color of the particles throughout their lifetime.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a Gradient resource using the Default template template and name it <code>Fire</code></li>
 <li>In the <code>Gradient Editor</code></li>
 <li><code>Double-Left-Click</code> to create a new <em>point</em> in the middle of the gradient
@@ -221,7 +221,7 @@
 </ul>
 <p>By setting this to true, the particle system will always run and render in-editor without the game playing. So far in this lesson, the campfire particle system has always been selected so it has always been running. Now that we are creating a second system that we want to run and preview at the same time, we need to use PreviewInEditor checkBox.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createspriteparticles">CreateSpriteParticles</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createspriteparticles">CreateSpriteParticles</a></li>
 <li>In the <code>Properties Window</code></li>
 <li>Rename the SpriteParticles object to <code>Sparks</code></li>
 <li>Under <a href="../../../code_reference/class_reference/spriteparticlesystem.html">SpriteParticleSystem</a></li>
@@ -263,9 +263,9 @@ By changing the geometry mode to beam we scale the sparks based on their individ
 <h2 id="manual">Manual</h2>
 <ul>
 <li><a href="../../zilchmanual/editor/editorcommands/launchernewproject.html">Create a New 2D Project</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a></li>
 <li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a></li>
 </ul>
 <h2 id="reference">Reference</h2>

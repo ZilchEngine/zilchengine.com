@@ -90,26 +90,26 @@
 <h1 id="learning-objectives">Learning Objectives</h1>
 <ul>
 <li>Creating custom components</li>
-<li><a href="../../zilchmanual/nada_in_zilch.html"> Nada</a> scripting basics</li>
+<li><a href="../../zilchmanual/nada_in_zilch.html">Nada</a> scripting basics</li>
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#newproject">New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48212.png" alt="image"></p>
 <h1 id="creating-custom-components">Creating Custom Components</h1>
 <p>Until now, we have explored components built into Zilch Engine. These components are essential building blocks for your games, but you'll also need to write your own components to achieve the custom behavior your game needs.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>MyComponent</code></li>
 </ul>
 <p>Once a component is created, we can add it to objects.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a> : Sprite object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : Sprite object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>MyComponent</code></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>MyComponent</code></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48331.gif" alt="AddComponent"></p>
 <p><em>Adding the <code>MyComponent</code> component in the <code>Properties Window</code></em></p>
@@ -142,13 +142,13 @@
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48336.png" alt="image"></p>
 <p><em>The <code>MyComponent</code> class, updated</em></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48338.png" alt="image"></p>
 <p><em>The Sprite object has turned red</em></p>
-<p>These instructions are telling the <strong>owner</strong> of this component (the Sprite object object) to set its <a href="../../../code_reference/class_reference/sprite.html">Sprite</a> component's VertexColor  property to red. This topic will be covered in more detail in the <a href="variables.html"> Variables</a> tutorial.</p>
+<p>These instructions are telling the <strong>owner</strong> of this component (the Sprite object object) to set its <a href="../../../code_reference/class_reference/sprite.html">Sprite</a> component's VertexColor  property to red. This topic will be covered in more detail in the <a href="variables.html">Variables</a> tutorial.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h2 id="code-comments">Code Comments</h2>
 <p>You may have noticed an interesting line within the scope of the <strong>Initialize</strong> function:</p>
@@ -165,7 +165,7 @@
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48340.gif" alt="Uncomment"></p>
 <p>NOTE: Another way of defining comments is to use the <code>/*</code> and <code>*/</code> tokens. This will cause everything between the two tokens to be considered a comment, which can be used to create multi-line comments.</p>
 <h2 id="logicupdate">LogicUpdate</h2>
-<p>Once the event connection is established (typically done in <code>Initialize</code>), the component is ready to receive <a href="../../../code_reference/event_reference.html#logicupdate"> LogicUpdate</a> events from the Engine. This allows the component to execute instructions every frame for as long as the connection exists.</p>
+<p>Once the event connection is established (typically done in <code>Initialize</code>), the component is ready to receive <a href="../../../code_reference/event_reference.html#logicupdate">LogicUpdate</a> events from the Engine. This allows the component to execute instructions every frame for as long as the connection exists.</p>
 <p>LogicUpdate can be a good place to listen for input and respond accordingly, or to manage persistent behaviors, such as a character's artificial intelligence.</p>
 <ul>
 <li>In the <code>MyComponent</code> script</li>
@@ -176,13 +176,13 @@
 <p>This is what your code should look like:</p>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48344.png" alt="image"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/48346.gif" alt="Game1"></p>
 <p><em>The Sprite object now moves to the right</em></p>
 <p>The instruction we just added causes the object to move to the right just slightly, but since our code is running every frame, it causes our Sprite object object to move all the way to the right.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="tutorials">Tutorials</h2>
@@ -200,10 +200,10 @@
 <h2 id="reference">Reference</h2>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="../../../code_reference/command_reference.html#newproject"> NewProject</a></li>
-<li><a href="../../../code_reference/command_reference.html#createsprite"> CreateSprite</a></li>
-<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
-<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#newproject">NewProject</a></li>
+<li><a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
+<li><a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h3 id="classes-1">Classes</h3>
 <ul>
@@ -212,7 +212,7 @@
 </ul>
 <h3 id="events">Events</h3>
 <ul>
-<li><a href="../../../code_reference/event_reference.html#logicupdate"> LogicUpdate</a></li>
+<li><a href="../../../code_reference/event_reference.html#logicupdate">LogicUpdate</a></li>
 </ul>
 
 </article>

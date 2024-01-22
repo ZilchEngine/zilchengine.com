@@ -86,7 +86,7 @@
 
         <article data-uid="">
 
-<p>The <a href="../../../code_reference/class_reference/soundemitter.html"> SoundEmitter </a> component handles the 3D positioning of sounds in a level. For instance, if the SoundEmitter's object is to the left of a <a href="soundlistener.html">SoundListener </a>, it will reduce the amount of sound going to the right speaker, so that the player hears the sound to their left.</p>
+<p>The <a href="../../../code_reference/class_reference/soundemitter.html">SoundEmitter</a> component handles the 3D positioning of sounds in a level. For instance, if the SoundEmitter's object is to the left of a <a href="soundlistener.html">SoundListener</a>, it will reduce the amount of sound going to the right speaker, so that the player hears the sound to their left.</p>
 <h1 id="using-soundemitters">Using SoundEmitters</h1>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/47924.png" alt="SoundEmitter1"></p>
 <h2 id="volume-and-pitch-settings">Volume and Pitch Settings</h2>
@@ -99,30 +99,30 @@
 <h2 id="attenuation">Attenuation</h2>
 <p>If a <a href="soundattenuator.html">SoundAttenuator</a> resource other than DefaultNoAttenuation resource is selected, its settings will be used for any SoundCues played through the SoundEmitter that have DefaultNoAttenuation resource selected on their Attenuator resource property.</p>
 <h2 id="soundnodes">SoundNodes</h2>
-<p>Unlike other objects, SoundEmitters are a collection of multiple <a href="soundnode.html">SoundNodes </a>. This allows them to have settings for volume and pitch as well as handling spatialization. Because of this, instead of one SoundNode property, SoundEmitters have two separate properties for the first and last SoundNodes in their chain.</p>
+<p>Unlike other objects, SoundEmitters are a collection of multiple <a href="soundnode.html">SoundNodes</a>. This allows them to have settings for volume and pitch as well as handling spatialization. Because of this, instead of one SoundNode property, SoundEmitters have two separate properties for the first and last SoundNodes in their chain.</p>
 <p>The <code>InputNode</code> property should be used for attaching other SoundNodes to the input of the SoundEmitter, while the <code>OutputNode</code> should be used for attaching to its output. Users cannot insert other SoundNodes before or after the <code>InputNode</code>, and cannot insert SoundNodes before the <code>OutputNode</code>. Neither of these nodes can be replaced or removed from the graph.</p>
 <h2 id="nada-events">Nada Events</h2>
 <ul>
-<li>The <code>SoundInstancePlayed</code> <a href="../../../code_reference/class_reference/soundinstanceevent.html"> SoundInstanceEvent  </a> will be sent when a SoundCue is played using either the <code>PlayCue</code> or <code>PlayCuePaused</code> methods.</li>
-<li>The <code>AudioInterpolationDone</code> <a href="../../../code_reference/class_reference/soundevent.html"> SoundEvent  </a> is sent whenever a volume or pitch interpolation has finished.</li>
+<li>The <code>SoundInstancePlayed</code> <a href="../../../code_reference/class_reference/soundinstanceevent.html">SoundInstanceEvent </a> will be sent when a SoundCue is played using either the <code>PlayCue</code> or <code>PlayCuePaused</code> methods.</li>
+<li>The <code>AudioInterpolationDone</code> <a href="../../../code_reference/class_reference/soundevent.html">SoundEvent </a> is sent whenever a volume or pitch interpolation has finished.</li>
 </ul>
 <hr>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="soundlistener.html">SoundListener </a></li>
-<li><a href="soundinstance.html">SoundInstance </a></li>
-<li><a href="soundtag.html">SoundTag </a></li>
-<li><a href="soundcue.html">SoundCue </a></li>
-<li><a href="soundspace.html">SoundSpace </a></li>
-<li><a href="soundattenuator.html">SoundAttenuator </a></li>
-<li><a href="soundnode.html">SoundNode </a></li>
+<li><a href="soundlistener.html">SoundListener</a></li>
+<li><a href="soundinstance.html">SoundInstance</a></li>
+<li><a href="soundtag.html">SoundTag</a></li>
+<li><a href="soundcue.html">SoundCue</a></li>
+<li><a href="soundspace.html">SoundSpace</a></li>
+<li><a href="soundattenuator.html">SoundAttenuator</a></li>
+<li><a href="soundnode.html">SoundNode</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="../../../code_reference/class_reference/soundemitter.html"> SoundEmitter </a></li>
-<li><a href="../../../code_reference/class_reference/soundinstanceevent.html"> SoundInstanceEvent  </a></li>
-<li><a href="../../../code_reference/class_reference/soundevent.html"> SoundEvent  </a></li>
+<li><a href="../../../code_reference/class_reference/soundemitter.html">SoundEmitter</a></li>
+<li><a href="../../../code_reference/class_reference/soundinstanceevent.html">SoundInstanceEvent </a></li>
+<li><a href="../../../code_reference/class_reference/soundevent.html">SoundEvent </a></li>
 </ul>
 
 </article>

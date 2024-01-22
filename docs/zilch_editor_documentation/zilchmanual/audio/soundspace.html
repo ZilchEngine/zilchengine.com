@@ -86,10 +86,10 @@
 
         <article data-uid="">
 
-<p>The <a href="../../../code_reference/class_reference/soundspace.html"> SoundSpace </a> is one of the default components of a Space. Its basic purpose is to separate sound areas, which means that a <a href="soundlistener.html">SoundListener</a> in one SoundSpace can't hear sounds in a different SoundSpace. It also allows the user to control properties like pitch and volume for all sounds in the Space.</p>
+<p>The <a href="../../../code_reference/class_reference/soundspace.html">SoundSpace</a> is one of the default components of a Space. Its basic purpose is to separate sound areas, which means that a <a href="soundlistener.html">SoundListener</a> in one SoundSpace can't hear sounds in a different SoundSpace. It also allows the user to control properties like pitch and volume for all sounds in the Space.</p>
 <h1 id="using-soundspaces">Using SoundSpaces</h1>
 <h2 id="playing-soundcues">Playing SoundCues</h2>
-<p><a href="soundcue.html">SoundCues  </a> can be played through SoundSpaces for non-positional audio that does not go through the SoundListeners. The <code>PlayCue</code> method will start playing the SoundCue immediately, while the <code>PlayCuePaused</code> method will create a paused <a href="soundinstance.html">SoundInstance </a>, which allows the user to change its settings before un-pausing it.</p>
+<p><a href="soundcue.html">SoundCues </a> can be played through SoundSpaces for non-positional audio that does not go through the SoundListeners. The <code>PlayCue</code> method will start playing the SoundCue immediately, while the <code>PlayCuePaused</code> method will create a paused <a href="soundinstance.html">SoundInstance</a>, which allows the user to change its settings before un-pausing it.</p>
 <pre><code class="lang-TS">this.MySoundInstance = this.Space.SoundSpace.PlayCuePaused(this.MySoundCue);
 this.MySoundInstance.Volume = 0.5;
 this.MySoundInstance.Paused = false;
@@ -104,23 +104,23 @@ this.MySoundInstance.Paused = false;
 <p>SoundSpaces can be paused by setting their Paused checkBox property to <code>true</code>. This will stop all audio processing for SoundInstances in that SoundSpace. When the Paused checkBox property is set to <code>false</code> the SoundInstances will resume playing with no changes.</p>
 <p>If the <code>icon-check-square-o, name=PauseWithTimeSpace</code> property is <code>true</code>, which is the default, the SoundSpace will be paused when the Space is paused.</p>
 <h2 id="soundnodes">SoundNodes</h2>
-<p>Each SoundSpace has a single <a href="soundnode.html">SoundNode </a> that all audio in the Space is connected to, the <code>InputNode</code>. SoundListeners are connected directly to this node, as well as SoundInstances that are not played through a SoundEmitter. Since the SoundSpace uses additional SoundNodes to modify pitch and volume, it also has an <code>OutputNode</code> property which you can use to attach to the output of the SoundSpace. SoundNodes that the user creates to affect all audio in the SoundSpace should be inserted after the <code>OutputNode</code>.</p>
+<p>Each SoundSpace has a single <a href="soundnode.html">SoundNode</a> that all audio in the Space is connected to, the <code>InputNode</code>. SoundListeners are connected directly to this node, as well as SoundInstances that are not played through a SoundEmitter. Since the SoundSpace uses additional SoundNodes to modify pitch and volume, it also has an <code>OutputNode</code> property which you can use to attach to the output of the SoundSpace. SoundNodes that the user creates to affect all audio in the SoundSpace should be inserted after the <code>OutputNode</code>.</p>
 <p>NOTE: SoundNodes that are inserted after the SoundSpace's <code>OutputNode</code> must be removed by the user, as these will not be automatically removed when the SoundSpace is destroyed.</p>
 <p>SoundNodes cannot be inserted after the <code>InputNode</code> or before the <code>OutputNode</code>, and neither of these nodes can be replaced or removed from the graph.</p>
 <hr>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="soundlistener.html">SoundListener </a></li>
-<li><a href="soundcue.html">SoundCue </a></li>
-<li><a href="soundinstance.html">SoundInstance </a></li>
-<li><a href="soundtag.html">SoundTag </a></li>
-<li><a href="soundemitter.html">SoundEmitter </a></li>
-<li><a href="soundnode.html">SoundNode </a></li>
+<li><a href="soundlistener.html">SoundListener</a></li>
+<li><a href="soundcue.html">SoundCue</a></li>
+<li><a href="soundinstance.html">SoundInstance</a></li>
+<li><a href="soundtag.html">SoundTag</a></li>
+<li><a href="soundemitter.html">SoundEmitter</a></li>
+<li><a href="soundnode.html">SoundNode</a></li>
 </ul>
 <h2 id="reference">Reference</h2>
 <ul>
-<li><a href="../../../code_reference/class_reference/soundspace.html"> SoundSpace </a></li>
+<li><a href="../../../code_reference/class_reference/soundspace.html">SoundSpace</a></li>
 </ul>
 
 </article>

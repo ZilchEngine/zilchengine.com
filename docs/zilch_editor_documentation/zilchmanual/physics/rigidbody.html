@@ -86,9 +86,9 @@
 
         <article data-uid="">
 
-<p>The <a href="../../../code_reference/class_reference/rigidbody.html"> RigidBody</a> component defines the inertia (mass, velocity, etc...) of a rigid object (i.e. one that cannot be deformed by forces). RigidBody approximations are used in physics to simplify common behaviors for both performance and stability.</p>
+<p>The <a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a> component defines the inertia (mass, velocity, etc...) of a rigid object (i.e. one that cannot be deformed by forces). RigidBody approximations are used in physics to simplify common behaviors for both performance and stability.</p>
 <h1 id="rigidbodydynamicstate">RigidBodyDynamicState</h1>
-<p>RigidBody defines the <a href="../../../code_reference/enum_reference.html#rigidbodydynamicstate"> DynamicState</a> property that changes how the dynamics (or resolution) for an object is handled. The default state of a RigidBody is dynamic (i.e. the body is free to move and resolve as normal).</p>
+<p>RigidBody defines the <a href="../../../code_reference/enum_reference.html#rigidbodydynamicstate">DynamicState</a> property that changes how the dynamics (or resolution) for an object is handled. The default state of a RigidBody is dynamic (i.e. the body is free to move and resolve as normal).</p>
 <p>Commonly, a body needs to be locked in space to behave as some fixed world geometry. One way to do this is to remove the RigidBody. Additionally a RigidBody's DynamicState enum can be changed to <code>Static</code>. This object will be treated as an infinite mass object that doesn't move. The difference between these two forms of static is mostly internal performance. The general rule of thumb is: if it always exists and never moves, remove the RigidBody; otherwise, mark it <code>Static</code>.</p>
 <p>A RigidBody can also be set to <code>Kinematic</code>. <code>Kinematic</code> is an infinite mass object like <code>Static</code>; however, it also gives the physics system extra information about how to resolve collisions. A static object is never expected to move, so if it is teleported by the user into contact with other objects, then the physics system doesn't know how to properly resolve the collision as no velocity was involved. A kinematic object tells the physics system to approximate the velocity in the collision based upon the last and current position of the object. This is typically used for moving platforms or other moving, infinite mass objects.</p>
 <h1 id="mode2d">Mode2D</h1>
@@ -125,7 +125,7 @@
 <li><a href="../../../code_reference/class_reference/physicsspace.html">PhysicsSpace</a></li>
 <li><a href="../../../code_reference/class_reference/rigidbody.html">RigidBody</a></li>
 <li><a href="../../../code_reference/class_reference/transform.html">Transform</a></li>
-<li><a href="../../../code_reference/enum_reference.html#rigidbodydynamicstate"> DynamicState  </a></li>
+<li><a href="../../../code_reference/enum_reference.html#rigidbodydynamicstate">DynamicState </a></li>
 </ul>
 
 </article>

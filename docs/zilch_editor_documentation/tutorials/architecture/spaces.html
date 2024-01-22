@@ -95,9 +95,9 @@
 </ul>
 <h1 id="level-setup">Level Setup</h1>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#newproject"> New Project</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#newproject">New Project</a></li>
 <li>Create a new project using the {nav icon=clone, name=Empty 2D Project} template</li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createspritetext">CreateSpriteText</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createspritetext">CreateSpriteText</a></li>
 <li>In the <code>Property Window</code></li>
 <li>Under <a href="../../../code_reference/class_reference/spritetext.html">SpriteText</a></li>
 <li>Set Text  to <code>Game Level SpriteText</code></li>
@@ -105,7 +105,7 @@
 <li>In the <code>Properties Window</code></li>
 <li>Under <a href="../../../code_reference/class_reference/camera.html">Camera</a></li>
 <li>Set Size  to <code>5</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>HUDManager</code></li>
 </ul>
 <h1 id="what-is-a-space">What is a Space?</h1>
@@ -115,14 +115,14 @@
 <li>Each game can have multiple spaces</li>
 <li>Objects in different spaces cannot interact graphically or physically</li>
 <li>Each <a href="../../../code_reference/class_reference/space.html">Space</a> (usually) has its own renderer(s) that draws the loaded level to the viewport</li>
-<li>Each <a href="../../../code_reference/class_reference/component.html"> Component</a> and each <a href="../../../code_reference/class_reference/cog.html"> Cog</a> contains a member variable that is a reference to the <a href="../../../code_reference/class_reference/space.html">Space</a> it exists in</li>
+<li>Each <a href="../../../code_reference/class_reference/component.html">Component</a> and each <a href="../../../code_reference/class_reference/cog.html">Cog</a> contains a member variable that is a reference to the <a href="../../../code_reference/class_reference/space.html">Space</a> it exists in</li>
 </ul>
 <h1 id="creating-a-space">Creating a Space</h1>
 <p>A very common reason for creating a second space is to implement a HUD that overlays the game. This approach takes advantage of the fact that objects in one space will not directly interact with objects in another. Let's make the level for our first HUD.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a Level resource using the {nav icon=clone, name=2D Level} template and name it <code>HUDLevel</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createspritetext">CreateSpriteText</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createspritetext">CreateSpriteText</a></li>
 <li>In the <code>Property Window</code></li>
 <li>Under <a href="../../../code_reference/class_reference/spritetext.html">SpriteText</a></li>
 <li>Set Text  to <code>HUD Level SpriteText</code></li>
@@ -131,9 +131,9 @@
 <li>Under <a href="../../../code_reference/class_reference/camera.html">Camera</a></li>
 <li>Set Size  to <code>5</code></li>
 <li>Open the Level resource named <code>Level</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html"> Select</a> : LevelSettings object</li>
+<li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : LevelSettings object</li>
 <li>In the <code>Properties Window</code></li>
-<li><a href="../../zilchmanual/editor/addremovecomponent.html"> Add Component</a> : <code>HUDManager</code></li>
+<li><a href="../../zilchmanual/editor/addremovecomponent.html">Add Component</a> : <code>HUDManager</code></li>
 <li>In <code>HUDManager</code></li>
 <li>Update the <code>HUDManager</code> script to the following:</li>
 </ul>
@@ -155,7 +155,7 @@
 }
 </code></pre>
 <ul>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#saveproject"> SaveProject</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#saveproject">SaveProject</a></p>
 </li>
 <li><p>In the <code>Properties Window</code></p>
 </li>
@@ -163,12 +163,12 @@
 </li>
 <li><p>Set HUDLevel window to HUDLevel resource</p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></p>
 </li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94416.png" alt="image"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <p>Notice how the text from the HUDLevel Level resource is visible, but not the text from the game Level resource. This is because by default spaces are rendered as opaque.</p>
 <h2 id="overlaying-the-hud">Overlaying the HUD</h2>
@@ -180,25 +180,25 @@
 <li>Set ClearColor  to <code>[R:0, G:0, B:0, A:0.00]</code></li>
 <li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : GameCamera object</li>
 <li>In the <code>Properties Window</code></li>
-<li>Under <a href="../../../code_reference/class_reference/cameraviewport.html"> CameraViewport</a></li>
+<li>Under <a href="../../../code_reference/class_reference/cameraviewport.html">CameraViewport</a></li>
 <li>Set RenderOrder  to <code>1</code></li>
 <li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a> : SpriteText object</li>
 <li>In the <code>Properties Window</code></li>
 <li>Under <a href="../../../code_reference/class_reference/transform.html">Transform</a></li>
 <li>Set Translation  to <code>[0,1,0]</code></li>
 <li>Open the Level resource named <code>Level</code></li>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/ZilchEngine/ZilchFiles/master/doc_files/94418.png" alt="image"></p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
-<p>Notice that both text objects are now visible. This is because we reduced the alpha value of the HUD level clear color to <code>0</code>. The clear color is what is rendered behind everything in a level. We've also set the RenderOrder  of the HUD GameCamera object's <a href="../../../code_reference/class_reference/cameraviewport.html"> CameraViewport</a> to <code>1</code>, while the main space's RenderOrder  remains at its default value of <code>0</code>. This is important for layering purposes: no two overlaid <a href="../../../code_reference/class_reference/cameraviewport.html"> CameraViewports</a> should have the same RenderOrder .</p>
+<p>Notice that both text objects are now visible. This is because we reduced the alpha value of the HUD level clear color to <code>0</code>. The clear color is what is rendered behind everything in a level. We've also set the RenderOrder  of the HUD GameCamera object's <a href="../../../code_reference/class_reference/cameraviewport.html">CameraViewport</a> to <code>1</code>, while the main space's RenderOrder  remains at its default value of <code>0</code>. This is important for layering purposes: no two overlaid <a href="../../../code_reference/class_reference/cameraviewport.html">CameraViewports</a> should have the same RenderOrder .</p>
 <p>Now that we know how to make a space transparent, it is fairly simple to extrapolate constructing a HUD within a dedicated level and rendering it on top of a game.</p>
 <h1 id="communicating-between-spaces">Communicating Between Spaces</h1>
 <p>Having multiple spaces can increase a project's complexity. It is important to know how to allow components which exists in seperate spaces to communicate with each other. Information is often sent between spaces via events. Let's make a basic meter in our HUD.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>Meter</code></li>
 <li>Update the <code>Meter</code> script to the following:</li>
 </ul>
@@ -258,7 +258,7 @@ class MeterUpdate : NadaEvent
 </code></pre>
 <p>This <code>Meter</code> component will be be <em>communicated// with via events sent from the //GameSpace// to the //HUDSpace</em> by the following <code>Input</code> component.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li>Create a NadaScript resource using the Component template template and name it <code>Input</code></li>
 <li>Update the <code>Input</code> script to the following:</li>
 </ul>
@@ -314,7 +314,7 @@ class MeterUpdate : NadaEvent
 </li>
 <li><p>Open the Level resource named <code>HUDLevel</code></p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></p>
 </li>
 <li><p>In the <code>Properties Window</code></p>
 </li>
@@ -326,7 +326,7 @@ class MeterUpdate : NadaEvent
 </li>
 <li><p>Under <a href="../../../code_reference/class_reference/area.html">Area</a></p>
 </li>
-<li><p>Set Origin enum to <a href="../../../code_reference/enum_reference.html#location"> BottomLeft</a></p>
+<li><p>Set Origin enum to <a href="../../../code_reference/enum_reference.html#location">BottomLeft</a></p>
 </li>
 <li><p>Set Size  to <code>[5, 0.5]</code></p>
 </li>
@@ -334,9 +334,9 @@ class MeterUpdate : NadaEvent
 </li>
 <li><p>Open the Level resource named <code>Level</code></p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#console">Console</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#console">Console</a></p>
 </li>
-<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></p>
+<li><p><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></p>
 </li>
 <li><p>Press key the <code>Up</code> and <code>Down</code> keys to send events between spaces.</p>
 </li>
@@ -345,13 +345,13 @@ class MeterUpdate : NadaEvent
 <p>Each time <code>Up</code> or <code>Down</code> is pressed, the <code>MeterUpdate</code> event is dispatched on the <code>HUDSpace</code>. The <code>Meter</code> component is listening to its space (this <code>HUDSpace</code>) for that event. So when it receives the event, the <code>ScaleMeter</code> function is invoked.</p>
 <p>(NOTE)Notice how the meter renders over the SpriteText object in the <code>GameLevel</code>. As mentioned earlier, spaces can not interact graphically or physically (forces, collision, clipping, etc.), and this is a prime example of that behavior.</p>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a> : <a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a> : <a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 </ul>
 <h1 id="related-materials">Related Materials</h1>
 <h2 id="manual">Manual</h2>
 <ul>
-<li><a href="../../zilchmanual/editor/editorcommands/commands.html"> Command</a></li>
-<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html"> Add Resource</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/commands.html">Command</a></li>
+<li><a href="../../zilchmanual/editor/editorcommands/resourceadding.html">Add Resource</a></li>
 <li><a href="../../zilchmanual/editor/editorcommands/selectobject.html">Select</a></li>
 <li>{icon university}[[zilch_engine_documentation/zilch_editor_documentation/zilchmanual/editor/addremovecomponent/|Add/Remove Component]]</li>
 </ul>
@@ -371,10 +371,10 @@ class MeterUpdate : NadaEvent
 </ul>
 <h3 id="commands">Commands</h3>
 <ul>
-<li><a href="../../../code_reference/command_reference.html#newproject"> New Project</a></li>
-<li><a href="../../../code_reference/command_reference.html#playgame"> PlayGame</a></li>
-<li><a href="../../../code_reference/command_reference.html#add"> Add</a></li>
-<li><a href="../../../code_reference/command_reference.html#stopgame"> StopGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#newproject">New Project</a></li>
+<li><a href="../../../code_reference/command_reference.html#playgame">PlayGame</a></li>
+<li><a href="../../../code_reference/command_reference.html#add">Add</a></li>
+<li><a href="../../../code_reference/command_reference.html#stopgame">StopGame</a></li>
 <li><a href="../../../code_reference/command_reference.html#createspritetext">CreateSpriteText</a></li>
 <li><a href="../../../code_reference/command_reference.html#createsprite">CreateSprite</a></li>
 </ul>
